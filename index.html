@@ -1,661 +1,482 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Chaos Intelligence — Market Update | MORNING Brief</title>
-<meta name="description" content="Fear 23 (Neutral). Market Update. AI market intelligence. Updated 3x daily.">
-<meta name="keywords" content="market intelligence,fear greed index,bitcoin,macro trading,money">
-<meta name="robots" content="index,follow,max-image-preview:large">
-<link rel="canonical" href="https://chaos.sumanthworks.com">
-<meta property="og:title" content="Chaos Intelligence — Market Update">
-<meta property="og:description" content="The market speaks in contradictions.">
-<meta property="og:url" content="https://chaos.sumanthworks.com">
-<meta property="og:type" content="article">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Chaos Intelligence — Market Update">
-<meta name="twitter:description" content="The market speaks in contradictions.">
-<meta name="theme-color" content="#08080c">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Market Update","description":"The market speaks in contradictions.","author":{"@type":"Organization","name":"Chaos Intelligence AI"},"publisher":{"@type":"Organization","name":"Chaos Intelligence"},"datePublished":"2026-05-29T10:59:18.194Z","dateModified":"2026-05-29T10:59:18.194Z","mainEntityOfPage":"https://chaos.sumanthworks.com","url":"https://chaos.sumanthworks.com"}</script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=JetBrains+Mono:wght@300;400;700&family=Barlow+Condensed:wght@300;400;600;700;900&display=swap" rel="stylesheet">
-<style>
-:root{--bg:#08080c;--bg2:#0d0d12;--s0:#101016;--s1:#14141c;--s2:#1a1a24;--s3:#22222e;--s4:#2c2c3c;--ink:#f0ece4;--ink2:#b8b0a4;--muted:#5a5a6e;--dim:#28283a;--red:#e8394a;--red-g:rgba(232,57,74,.12);--green:#22d45a;--green-g:rgba(34,212,90,.1);--gold:#f5a623;--gold-g:rgba(245,166,35,.1);--blue:#4cc9f0;--purple:#9d6cf8;--font-big:'Bebas Neue',Impact,sans-serif;--font-body:'Crimson Pro',Georgia,serif;--font-mono:'JetBrains Mono',monospace;--font-ui:'Barlow Condensed',sans-serif;--glow-red:0 0 40px rgba(232,57,74,.15);--glow-green:0 0 40px rgba(34,212,90,.12);--glow-gold:0 0 40px rgba(245,166,35,.1)}
-*{margin:0;padding:0;box-sizing:border-box;-webkit-font-smoothing:antialiased}
-html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--ink);font-family:var(--font-body);min-height:100vh;overflow-x:hidden}
-body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");opacity:.018;pointer-events:none;z-index:9998}
-body.light{--bg:#f4efe6;--bg2:#ede8de;--s0:#e6e0d5;--s1:#ddd6ca;--s2:#d1c9bc;--s3:#bab2a4;--s4:#a39b8e;--ink:#1a1610;--ink2:#3a342c;--muted:#6e6458;--dim:#c4bbb0;--red:#c42838;--green:#1a8c38;--gold:#9c6808;--blue:#1e6cb0;--glow-red:none;--glow-green:none;--glow-gold:none}
-body.light .brand em,body.light .vv{text-shadow:none!important}
-body.light .glass-card{background:rgba(255,255,255,.5);border-color:rgba(0,0,0,.06)}
-body.light .gauge-glow{display:none}
-/* Progress bar */
-#progress{position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,var(--red),var(--gold),var(--green));width:0;z-index:10001;transition:width .15s linear;box-shadow:0 0 10px rgba(232,57,74,.4)}
-/* Boot */
-#boot{position:fixed;inset:0;background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:9999;transition:opacity .6s ease,transform .6s ease}
-#boot.gone{opacity:0;transform:scale(1.05);pointer-events:none}
-.boot-ey{font-family:var(--font-mono);font-size:.5rem;color:var(--muted);letter-spacing:5px;margin-bottom:20px;animation:bootFade .6s ease}
-.boot-logo{font-family:var(--font-big);font-size:clamp(4rem,14vw,7rem);letter-spacing:8px;color:var(--ink);line-height:.9;text-shadow:0 0 80px rgba(232,57,74,.2)}
-.boot-logo em{color:var(--red);font-style:normal}
-.boot-bar-w{width:180px;height:2px;background:var(--s4);margin-top:28px;border-radius:1px;overflow:hidden}
-.boot-bar{height:100%;width:0;background:linear-gradient(90deg,var(--red),var(--gold));animation:bootLoad .8s cubic-bezier(.4,0,.2,1) forwards}
-@keyframes bootLoad{0%{width:0}60%{width:80%}100%{width:100%}}
-@keyframes bootFade{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
-/* Ticker */
-.ticker{background:var(--s0);border-bottom:1px solid var(--dim);height:30px;overflow:hidden;display:flex;align-items:center;position:sticky;top:0;z-index:100}
-.ticker:hover .tk-inner{animation-play-state:paused}
-.tk-lbl{padding:0 14px 0 16px;font-family:var(--font-mono);font-size:.46rem;color:var(--red);letter-spacing:2px;white-space:nowrap;border-right:1px solid var(--dim);display:flex;align-items:center;gap:6px;background:var(--s0);z-index:2;flex-shrink:0}
-.tk-dot{width:4px;height:4px;background:var(--red);border-radius:50%;animation:pulse 1.4s ease infinite}
-.tk-scroll{flex:1;overflow:hidden}
-.tk-inner{display:flex;animation:scroll 40s linear infinite;white-space:nowrap}
-.tk{padding:0 24px;font-family:var(--font-mono);font-size:.5rem;color:var(--muted);letter-spacing:.8px;display:flex;gap:6px;align-items:center;border-right:1px solid var(--s3)}
-.tk .v{font-weight:700}.tk .v.bull{color:var(--green)}.tk .v.bear{color:var(--red)}.tk .v.neut{color:var(--gold)}.tk .v.volt{color:#ff9852}
-@keyframes scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.3;transform:scale(.6)}}
-/* Layout */
-.wrap{max-width:700px;margin:0 auto;padding:0 24px}
-/* Header */
-.hdr{padding:32px 0 0;border-bottom:1px solid var(--dim)}
-.hdr-top{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:6px}
-.brand{font-family:var(--font-big);font-size:clamp(3rem,10vw,5rem);letter-spacing:4px;line-height:.9;color:var(--ink)}
-.brand em{color:var(--red);font-style:normal;text-shadow:0 0 30px rgba(232,57,74,.3)}
-.hdr-r{text-align:right;padding-bottom:4px}
-.live-b{display:inline-flex;align-items:center;gap:5px;font-family:var(--font-mono);font-size:.48rem;color:var(--green);letter-spacing:2px;border:1px solid rgba(34,212,90,.2);padding:4px 10px;border-radius:20px;background:rgba(34,212,90,.04);margin-bottom:4px}
-.live-d{width:5px;height:5px;background:var(--green);border-radius:50%;animation:pulse 1.4s ease infinite}
-.dateline{font-family:var(--font-mono);font-size:.5rem;color:var(--muted);letter-spacing:1.8px;padding:12px 0 14px;border-bottom:1px solid var(--s3);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
-.ed-badge{background:var(--red);font-family:var(--font-mono);font-size:.42rem;color:#fff;padding:3px 10px;letter-spacing:2px;border-radius:2px;font-weight:700}
-.th-tog{display:inline-flex;align-items:center;gap:7px;background:transparent;border:1px solid var(--s4);border-radius:20px;padding:5px 12px 5px 8px;cursor:pointer;transition:all .25s;font-family:var(--font-mono);font-size:.46rem;color:var(--muted);letter-spacing:1.5px}
-.th-tog:hover{border-color:var(--gold);color:var(--gold)}
-.th-track{width:26px;height:13px;background:var(--s3);border-radius:7px;position:relative;transition:background .3s;flex-shrink:0}
-body.light .th-track{background:rgba(156,104,8,.35)}
-.th-thumb{position:absolute;top:2px;left:2px;width:9px;height:9px;border-radius:50%;background:var(--muted);transition:all .3s}
-body.light .th-thumb{left:15px;background:var(--gold)}
-/* Vitals — Glass Cards */
-.vitals{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--dim);border-bottom:1px solid var(--dim)}
-.vital{padding:20px 14px;text-align:center;background:var(--bg2);transition:all .3s}
-.vital:hover{background:var(--s1);transform:translateY(-1px)}
-.vv{font-family:var(--font-big);font-size:1.8rem;letter-spacing:1px;line-height:1}
-.vv.bull{color:var(--green);text-shadow:var(--glow-green)}.vv.bear{color:var(--red);text-shadow:var(--glow-red)}.vv.neut{color:var(--gold);text-shadow:var(--glow-gold)}.vv.volt{color:#ff9852}
-.vl{font-family:var(--font-mono);font-size:.44rem;color:var(--muted);letter-spacing:1.5px;margin-top:6px}
-.vd{font-family:var(--font-mono);font-size:.42rem;margin-top:3px;letter-spacing:.5px}
-.vd.up{color:var(--green)}.vd.dn{color:var(--red)}.vd.flat{color:var(--muted)}
-/* Main area */
-.main{padding:40px 0}
-.ed-tag{font-family:var(--font-mono);font-size:.5rem;color:var(--red);letter-spacing:3px;margin-bottom:8px;display:flex;align-items:center;gap:8px}
-.ed-tag::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,var(--red),transparent);opacity:.3}
-h1.hl{font-family:var(--font-big);font-size:clamp(2.2rem,7vw,3.6rem);letter-spacing:1px;line-height:1.05;color:var(--ink);margin-bottom:16px}
-.sig-row{display:flex;gap:10px;align-items:center;margin-bottom:8px;flex-wrap:wrap}
-.sig{font-family:var(--font-mono);font-size:.52rem;font-weight:700;letter-spacing:2px;padding:5px 14px;border-radius:3px}
-.sig.bear{background:var(--red-g);color:var(--red);border:1px solid rgba(232,57,74,.3)}.sig.bull{background:var(--green-g);color:var(--green);border:1px solid rgba(34,212,90,.3)}.sig.neut{background:var(--gold-g);color:var(--gold);border:1px solid rgba(245,166,35,.3)}.sig.volt{background:rgba(255,152,82,.08);color:#ff9852;border:1px solid rgba(255,152,82,.3)}
-.conf{font-family:var(--font-mono);font-size:.48rem;color:var(--muted);letter-spacing:1px}
-.upd{font-family:var(--font-mono);font-size:.46rem;color:var(--muted);letter-spacing:1px;margin-bottom:36px;padding:6px 0;border-top:1px solid var(--s3);display:flex;align-items:center;gap:6px}
-.upd span{color:var(--green)}
-/* Glass Card base */
-.glass-card{padding:24px;background:rgba(20,20,28,.7);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.04);border-radius:12px;position:relative;overflow:hidden}
-.glass-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.06),transparent)}
-/* Section titles */
-.sec-title{font-family:var(--font-mono);font-size:.48rem;color:var(--muted);letter-spacing:2.5px;margin-bottom:14px;display:flex;align-items:center;gap:8px}
-.sec-title::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,var(--s3),transparent)}
-/* Fear Gauge */
-.gauge-wrap{display:flex;justify-content:center;margin:0 auto 48px;max-width:260px}
-.gauge-container{position:relative;width:220px;height:130px}
-.gauge-container svg{width:100%;height:100%}
-.gauge-bg{fill:none;stroke:var(--s3);stroke-width:8;stroke-linecap:round}
-.gauge-fill{fill:none;stroke-width:8;stroke-linecap:round;transition:stroke-dashoffset 1.5s cubic-bezier(.4,0,.2,1);filter:drop-shadow(0 0 6px currentColor)}
-.gauge-glow{position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:120px;height:60px;border-radius:60px 60px 0 0;filter:blur(30px);opacity:.25;pointer-events:none}
-.gauge-val{position:absolute;bottom:8px;left:50%;transform:translateX(-50%);font-family:var(--font-big);font-size:2.8rem;letter-spacing:2px;line-height:1}
-.gauge-label{position:absolute;bottom:-4px;left:50%;transform:translateX(-50%);font-family:var(--font-mono);font-size:.44rem;color:var(--muted);letter-spacing:2px;white-space:nowrap}
-.gauge-minmax{position:absolute;bottom:14px;font-family:var(--font-mono);font-size:.38rem;color:var(--muted);letter-spacing:1px}
-.gauge-min{left:8px}.gauge-max{right:8px}
-/* CX Tabs */
-.cx-section{margin-bottom:48px}
-.cx-tabs{display:grid;grid-template-columns:repeat(3,1fr);background:var(--s1);border:1px solid var(--s3);border-radius:10px 10px 0 0;overflow:hidden}
-.cx-btn{padding:16px 8px;background:transparent;border:none;border-right:1px solid var(--s3);cursor:pointer;transition:all .3s;text-align:center;position:relative}
-.cx-btn:last-child{border-right:none}
-.cx-btn::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--red);transform:scaleX(0);transition:transform .3s}
-.cx-btn.active::after{transform:scaleX(1)}
-.cx-btn.active{background:linear-gradient(180deg,rgba(232,57,74,.08),transparent)}
-.cx-n{display:block;font-family:var(--font-ui);font-size:.8rem;font-weight:700;letter-spacing:1.5px;color:var(--muted);transition:color .2s}
-.cx-btn.active .cx-n{color:var(--red)}
-.cx-sub{display:block;font-family:var(--font-mono);font-size:.44rem;color:var(--muted);margin-top:3px}
-.cx-btn.active .cx-sub{color:rgba(232,57,74,.6)}
-.pane{display:none;animation:fadeUp .4s ease}.pane.active{display:block}
-@keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
-.brief{padding:28px;background:var(--s1);border:1px solid var(--s3);border-top:none;border-radius:0 0 10px 10px;font-size:1.08rem;line-height:1.95;color:var(--ink)}
-.brief p{margin-bottom:14px}.brief p:last-child{margin-bottom:0}
-.brief strong{color:var(--gold);font-weight:600}.brief em{color:var(--ink2);font-style:italic}
-.brief-meta{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid var(--s3)}
-.brief-tag{font-family:var(--font-mono);font-size:.44rem;letter-spacing:1.5px;padding:3px 9px;border-radius:3px}
-.brief-tag.eli5{background:rgba(34,212,90,.06);color:var(--green);border:1px solid rgba(34,212,90,.15)}.brief-tag.analyst{background:rgba(76,201,240,.06);color:var(--blue);border:1px solid rgba(76,201,240,.15)}.brief-tag.quant{background:rgba(157,108,248,.06);color:var(--purple);border:1px solid rgba(157,108,248,.15)}.brief-tag.time{background:var(--s2);color:var(--muted);border:1px solid var(--s3)}
-.brief-metrics{display:flex;flex-wrap:wrap;margin-top:18px;border:1px solid var(--s3);border-radius:8px;overflow:hidden}
-.bm{flex:1;min-width:100px;padding:12px 14px;border-right:1px solid var(--s3);background:var(--s2)}
-.bm:last-child{border-right:none}
-.bm-v{font-family:var(--font-big);font-size:1.3rem;letter-spacing:1px;color:var(--gold);line-height:1}
-.bm-l{font-family:var(--font-mono);font-size:.42rem;color:var(--muted);letter-spacing:1.5px;margin-top:4px}
-/* Forces */
-.forces{margin-bottom:48px}
-.forces-grid{display:flex;flex-wrap:wrap;gap:8px}
-.fc{display:flex;align-items:center;gap:6px;padding:8px 14px;border-radius:6px;font-family:var(--font-mono);font-size:.52rem;font-weight:700;letter-spacing:1px;cursor:default;position:relative;transition:all .25s}
-.fc .fc-n{text-transform:uppercase}
-.fc.on{background:var(--red-g);border:1px solid rgba(232,57,74,.25);color:var(--red)}
-.fc.on:hover{background:rgba(232,57,74,.18);border-color:rgba(232,57,74,.5);transform:translateY(-2px);box-shadow:var(--glow-red)}
-.fc.off{background:var(--s1);border:1px solid var(--s3);color:var(--muted);opacity:.3}
-.fc.off:hover{opacity:.55}
-.fc-tip{position:absolute;bottom:calc(100% + 12px);left:50%;transform:translateX(-50%) translateY(6px);background:var(--s2);border:1px solid var(--s3);border-radius:8px;padding:12px 16px;min-width:210px;max-width:280px;opacity:0;pointer-events:none;transition:all .25s;z-index:50;box-shadow:0 12px 40px rgba(0,0,0,.6)}
-.fc:hover .fc-tip{opacity:1;transform:translateX(-50%) translateY(0)}
-.fc-tip::after{content:'';position:absolute;top:100%;left:50%;transform:translateX(-50%);border:6px solid transparent;border-top-color:var(--s3)}
-.ftt{font-family:var(--font-ui);font-size:.7rem;font-weight:700;letter-spacing:1.5px;margin-bottom:5px}
-.ftt.on{color:var(--red)}.ftt.off{color:var(--muted)}
-.ftd{font-family:var(--font-mono);font-size:.5rem;color:var(--ink2);line-height:1.55}
-.fts{font-family:var(--font-mono);font-size:.44rem;letter-spacing:1.5px;margin-top:7px;padding-top:7px;border-top:1px solid var(--s3)}
-.fts.on{color:var(--red)}.fts.off{color:var(--muted)}
-.fc .fc-dot{width:5px;height:5px;border-radius:50%;flex-shrink:0}
-.fc.on .fc-dot{background:var(--red);animation:pulse 1.4s ease infinite}
-.fc.off .fc-dot{background:var(--muted)}
-/* Chaos Line */
-.chaos{margin-bottom:48px;padding:32px;background:linear-gradient(135deg,rgba(245,166,35,.04) 0%,rgba(232,57,74,.02) 60%,transparent 100%);border-left:3px solid var(--gold);border-radius:0 12px 12px 0;position:relative;overflow:hidden}
-.chaos::before{content:'"';position:absolute;right:20px;top:-15px;font-family:var(--font-big);font-size:10rem;color:var(--gold);opacity:.03;pointer-events:none;line-height:1}
-.chaos-tag{font-family:var(--font-mono);font-size:.54rem;color:var(--gold);letter-spacing:4px;margin-bottom:16px;display:flex;align-items:center;gap:10px;opacity:.7}
-.chaos-tag .star{font-size:.6rem;animation:spin 8s linear infinite;display:inline-block}
-@keyframes spin{to{transform:rotate(360deg)}}
-.chaos-tag::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,rgba(245,166,35,.2),transparent)}
-.chaos-text{font-family:var(--font-body);font-size:clamp(1.35rem,3.8vw,1.65rem);font-style:italic;line-height:1.6;color:var(--ink);margin-bottom:22px;font-weight:300}
-.share-row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
-.s-btn{display:inline-flex;align-items:center;gap:6px;padding:9px 18px;border-radius:6px;font-family:var(--font-mono);font-size:.52rem;font-weight:700;letter-spacing:.5px;border:none;cursor:pointer;transition:all .2s;text-decoration:none;white-space:nowrap}
-.s-btn:hover{transform:translateY(-2px)}.s-btn:active{transform:scale(.97)}
-.s-btn.red{background:var(--red);color:#fff;box-shadow:0 4px 20px rgba(232,57,74,.25)}.s-btn.tg{background:#229ED9;color:#fff}.s-btn.x{background:#000;color:#fff;border:1px solid var(--s4)}.s-btn.ghost{background:var(--s2);color:var(--ink);border:1px solid var(--s3)}
-.copied-msg{font-family:var(--font-mono);font-size:.52rem;color:var(--green);display:none;align-self:center}
-/* Inline CTA */
-.inline-cta{margin-bottom:48px;padding:28px;background:linear-gradient(135deg,rgba(232,57,74,.06),var(--s1) 70%);border:1px solid rgba(232,57,74,.15);border-radius:12px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
-.cta-left{flex:1;min-width:200px}
-.cta-title{font-family:var(--font-body);font-size:1.2rem;font-style:italic;color:var(--ink);font-weight:300;margin-bottom:4px}
-.cta-sub{font-family:var(--font-mono);font-size:.48rem;color:var(--muted);letter-spacing:1px}
-.cta-btn{display:inline-block;padding:12px 32px;background:var(--red);color:#fff;text-decoration:none;font-family:var(--font-mono);font-size:.65rem;font-weight:700;letter-spacing:2.5px;border-radius:6px;transition:all .2s;box-shadow:0 4px 24px rgba(232,57,74,.3);white-space:nowrap}
-.cta-btn:hover{transform:translateY(-2px);box-shadow:0 8px 36px rgba(232,57,74,.4)}
-/* Macro */
-.macro{margin-bottom:48px}
-.mgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-.mi{padding:14px;background:var(--s2);border:1px solid var(--s3);border-radius:8px;transition:all .3s;animation:fadeUp .4s ease both}
-.mi:hover{border-color:var(--s4);transform:translateY(-1px)}
-.mi-l{font-family:var(--font-mono);font-size:.42rem;color:var(--muted);letter-spacing:1.5px;margin-bottom:6px}
-.mi-v{font-family:var(--font-big);font-size:1.2rem;letter-spacing:1px;line-height:1}
-.mi-v.up{color:var(--green)}.mi-v.dn{color:var(--red)}.mi-v.neut{color:var(--gold)}.mi-v.bear{color:var(--red)}
-.mi-s{font-family:var(--font-mono);font-size:.42rem;color:var(--muted);margin-top:4px}
-/* Play */
-.play{margin-bottom:48px;padding:28px;position:relative;overflow:hidden;border-radius:12px;background:linear-gradient(135deg,rgba(34,212,90,.04),var(--s1) 60%);border:1px solid rgba(34,212,90,.12)}
-.play::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--green),transparent)}
-.play-bg{position:absolute;right:-5px;bottom:-25px;font-family:var(--font-big);font-size:8rem;color:var(--green);opacity:.03;pointer-events:none;line-height:1}
-.play-tag{font-family:var(--font-mono);font-size:.48rem;color:var(--green);letter-spacing:3px;margin-bottom:14px;display:flex;align-items:center;gap:8px}
-.play-tag::after{content:'';flex:1;height:1px;background:rgba(34,212,90,.15)}
-.play-text{font-size:1.05rem;line-height:1.85;color:var(--ink);position:relative;z-index:1}
-.play-disc{font-family:var(--font-mono);font-size:.44rem;color:var(--muted);margin-top:14px;letter-spacing:.5px;position:relative;z-index:1}
-/* Wires */
-.wires{margin-bottom:48px}
-.wires-h{font-family:var(--font-mono);font-size:.48rem;color:var(--muted);letter-spacing:2px;margin-bottom:14px;display:flex;justify-content:space-between}
-.wire{border-top:1px solid var(--s3);padding:18px 0;cursor:pointer;transition:all .2s;position:relative}
-.wire:hover{padding-left:8px}.wire:last-child{border-bottom:1px solid var(--s3)}
-.wire-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px}
-.wire-src{font-family:var(--font-mono);font-size:.48rem;color:var(--red);letter-spacing:1.5px}
-.wire-arr{font-family:var(--font-mono);font-size:.6rem;color:var(--muted);transition:transform .3s}
-.wire.open .wire-arr{transform:rotate(180deg)}
-.wire-hl{font-size:1rem;line-height:1.5;color:var(--ink)}
-.wire-peek{font-family:var(--font-mono);font-size:.46rem;color:var(--muted);margin-top:4px}
-.wire.open .wire-peek{display:none}
-.wire-body{display:none;margin-top:14px;font-size:.9rem;color:var(--ink2);line-height:1.7;padding-left:16px;border-left:2px solid var(--gold);animation:fadeUp .3s ease}
-.wire.open .wire-body{display:block}
-.wire-ftag{display:inline-block;margin-top:8px;font-family:var(--font-mono);font-size:.42rem;color:var(--muted);letter-spacing:1px;padding:2px 8px;background:var(--s3);border-radius:3px}
-/* Context */
-.ctx{margin-bottom:48px}
-.ctx-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.ctx-card{padding:18px;background:var(--s1);border:1px solid var(--s3);border-radius:10px;position:relative;overflow:hidden;transition:all .3s;animation:fadeUp .4s ease both}
-.ctx-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent,var(--muted)),transparent)}
-.ctx-card:hover{transform:translateY(-2px);border-color:var(--s4)}
-.ctx-l{font-family:var(--font-mono);font-size:.44rem;color:var(--muted);letter-spacing:2px;margin-bottom:8px}
-.ctx-v{font-family:var(--font-big);font-size:1.4rem;letter-spacing:1px;line-height:1;margin-bottom:6px}
-.ctx-v.up{color:var(--green)}.ctx-v.dn{color:var(--red)}.ctx-v.neut{color:var(--gold)}
-.ctx-d{font-family:var(--font-mono);font-size:.48rem;color:var(--muted);line-height:1.55}
-/* Polymarket */
-.poly{margin-bottom:48px;padding:24px;position:relative;overflow:hidden;border-radius:12px;background:var(--s1);border:1px solid var(--s3)}
-.poly::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--blue),transparent)}
-.poly-tag{font-family:var(--font-mono);font-size:.48rem;color:var(--blue);letter-spacing:3px;margin-bottom:10px;display:flex;align-items:center;gap:8px}
-.poly-tag::after{content:'';flex:1;height:1px;background:rgba(76,201,240,.15)}
-.poly-q{font-size:1rem;line-height:1.5;color:var(--ink);margin-bottom:16px}
-.poly-row{display:flex;gap:24px;align-items:center;flex-wrap:wrap}
-.poly-odds{font-family:var(--font-big);font-size:2.4rem;letter-spacing:1px;color:var(--gold);line-height:1}
-.poly-bar-w{flex:1;min-width:100px}
-.poly-bar-l{font-family:var(--font-mono);font-size:.42rem;color:var(--muted);letter-spacing:1px;margin-bottom:5px;display:flex;justify-content:space-between}
-.poly-track{height:6px;background:var(--s3);border-radius:3px;overflow:hidden}
-.poly-fill{height:100%;background:linear-gradient(90deg,var(--gold),var(--red));border-radius:3px;transition:width 1.2s cubic-bezier(.4,0,.2,1);box-shadow:0 0 12px rgba(245,166,35,.3)}
-.poly-meta{font-family:var(--font-mono);font-size:.5rem;color:var(--muted);line-height:1.75}
-.poly-link{font-family:var(--font-mono);font-size:.5rem;color:var(--blue);text-decoration:none;border:1px solid rgba(76,201,240,.25);padding:6px 14px;border-radius:5px;transition:all .2s}
-.poly-link:hover{background:rgba(76,201,240,.08)}
-/* Footer */
-.ftr{border-top:1px solid var(--s3);padding:32px 0 48px;text-align:center}
-.ftr-brand{font-family:var(--font-big);font-size:1.6rem;letter-spacing:4px;color:var(--s4);margin-bottom:10px}
-.ftr-brand em{color:rgba(232,57,74,.3);font-style:normal}
-.ftr-links{display:flex;gap:20px;justify-content:center;margin-bottom:14px;flex-wrap:wrap}
-.ftr-link{font-family:var(--font-mono);font-size:.48rem;color:var(--muted);text-decoration:none;letter-spacing:1.5px;transition:color .2s}
-.ftr-link:hover{color:var(--ink2)}
-.ftr-disc{font-family:var(--font-mono);font-size:.46rem;color:var(--muted);line-height:1.85;max-width:480px;margin:0 auto}
-/* Modal */
-.modal-bg{display:none;position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:500;align-items:center;justify-content:center;padding:20px;backdrop-filter:blur(6px)}
-.modal-bg.open{display:flex;animation:fadeIn .2s ease}
-@keyframes fadeIn{from{opacity:0}to{opacity:1}}
-.modal{background:var(--s1);border:1px solid var(--s3);border-radius:14px;width:100%;max-width:420px;padding:30px;position:relative;animation:slideUp .3s cubic-bezier(.34,1.56,.64,1)}
-@keyframes slideUp{from{transform:translateY(20px);opacity:0}to{transform:none;opacity:1}}
-.modal-x{position:absolute;top:14px;right:16px;background:var(--s2);border:1px solid var(--s3);border-radius:6px;color:var(--muted);font-size:1rem;padding:4px 10px;cursor:pointer;transition:all .15s;font-family:var(--font-mono)}
-.modal-x:hover{color:var(--ink)}
-.modal-tag{font-family:var(--font-mono);font-size:.5rem;color:var(--red);letter-spacing:3px;margin-bottom:16px}
-.modal-q{font-family:var(--font-body);font-size:1.2rem;font-style:italic;line-height:1.6;margin-bottom:8px;color:var(--ink);font-weight:300}
-.modal-site{font-family:var(--font-mono);font-size:.48rem;color:var(--muted);margin-bottom:20px;letter-spacing:1px}
-.modal-btns{display:flex;gap:8px;flex-wrap:wrap}
-/* Scroll reveal */
-.rv{opacity:0;transform:translateY(18px);transition:opacity .6s cubic-bezier(.4,0,.2,1),transform .6s cubic-bezier(.4,0,.2,1)}
-.rv.vis{opacity:1;transform:none}
-/* v5: Trap section */
-.trap{margin-bottom:48px;padding:28px;position:relative;overflow:hidden;border-radius:12px;background:linear-gradient(135deg,rgba(232,57,74,.06),var(--s1) 60%);border:1px solid rgba(232,57,74,.15)}
-.trap::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--red),transparent)}
-.trap-icon{position:absolute;right:16px;top:12px;font-size:2.5rem;opacity:.08}
-.trap-tag{font-family:var(--font-mono);font-size:.52rem;color:var(--red);letter-spacing:3px;margin-bottom:12px;display:flex;align-items:center;gap:8px}
-.trap-tag::after{content:'';flex:1;height:1px;background:rgba(232,57,74,.15)}
-.trap-text{font-size:1.02rem;line-height:1.8;color:var(--ink)}
-/* v5: Edge section */
-.edge-section{margin-bottom:48px;padding:24px;border-radius:12px;background:var(--s1);border:1px solid var(--s3);border-left:3px solid var(--purple)}
-.edge-tag{font-family:var(--font-mono);font-size:.48rem;color:var(--purple);letter-spacing:2.5px;margin-bottom:10px}
-.edge-text{font-size:1rem;line-height:1.75;color:var(--ink);font-style:italic}
-/* v5: 3 Plays */
-.plays-grid{display:grid;gap:12px;margin-bottom:48px}
-.play-card{padding:22px;border-radius:10px;background:var(--s1);border:1px solid var(--s3);position:relative;overflow:hidden;transition:all .3s;animation:fadeUp .4s ease both}
-.play-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--green)}
-.play-card:hover{transform:translateY(-2px);border-color:var(--s4)}
-.play-card-type{font-family:var(--font-mono);font-size:.52rem;font-weight:700;letter-spacing:2px;margin-bottom:8px}
-.play-card-type.up{color:var(--green)}.play-card-type.bear{color:var(--red)}.play-card-type.neut{color:var(--gold)}
-.play-card-thesis{font-family:var(--font-ui);font-size:.85rem;font-weight:700;color:var(--ink);letter-spacing:.5px;margin-bottom:6px}
-.play-card-details{font-size:.92rem;line-height:1.7;color:var(--ink2)}
-/* v5: Time sensitivity */
-.ts-badge{display:inline-flex;align-items:center;gap:5px;font-family:var(--font-mono);font-size:.48rem;font-weight:700;letter-spacing:1.5px;padding:4px 12px;border-radius:4px;margin-left:8px}
-.ts-badge.bear{background:var(--red-g);color:var(--red);border:1px solid rgba(232,57,74,.25)}
-.ts-badge.neut{background:var(--gold-g);color:var(--gold);border:1px solid rgba(245,166,35,.25)}
-.ts-badge.up{background:var(--green-g);color:var(--green);border:1px solid rgba(34,212,90,.25)}
-/* v5: Brain badge */
-.brain-badge{font-family:var(--font-mono);font-size:.4rem;color:var(--muted);letter-spacing:1px;padding:2px 8px;background:var(--s2);border:1px solid var(--s3);border-radius:3px;margin-left:6px;display:none}
-.nuclear-badge{display:none!important}
-/* Responsive */
-@media(max-width:600px){.wrap{padding:0 14px}.vitals{grid-template-columns:repeat(2,1fr)}.vital:nth-child(2){border-right:none}.mgrid{grid-template-columns:repeat(2,1fr)}.ctx-grid{grid-template-columns:1fr}.share-row{gap:6px}.s-btn{font-size:.48rem;padding:7px 10px}.brief{font-size:.98rem;padding:18px}.brief-metrics{flex-direction:column}.bm{border-right:none;border-bottom:1px solid var(--s3)}.bm:last-child{border-bottom:none}.fc-tip{left:0;transform:translateX(0) translateY(6px)}.fc:hover .fc-tip{transform:translateX(0) translateY(0)}.poly-row{flex-direction:column;align-items:flex-start;gap:12px}.poly-bar-w{width:100%}.inline-cta{flex-direction:column;text-align:center}}
-@media(min-width:1280px){.wrap{max-width:820px}.brief{font-size:1.15rem;line-height:2}.chaos-text{font-size:1.75rem}h1.hl{font-size:3.6rem}.mgrid{grid-template-columns:repeat(3,1fr)}.ctx-grid{grid-template-columns:repeat(4,1fr)}}
-@media(min-width:1800px){:root{font-size:20px}.wrap{max-width:1100px}h1.hl{font-size:4.5rem}.brief{font-size:1.25rem;line-height:2.1;padding:32px}.chaos-text{font-size:2rem}.mgrid{grid-template-columns:repeat(6,1fr)}}
-.play-locked{position:relative;overflow:hidden}.play-blur-content{filter:blur(5px);pointer-events:none;user-select:none;opacity:.7}.play-lock-overlay{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;background:rgba(8,8,12,.55);backdrop-filter:blur(2px);border-radius:10px}.play-lock-icon{font-size:1.4rem}.play-lock-label{font-family:var(--font-mono);font-size:.48rem;color:var(--muted);letter-spacing:2px}.play-unlock-btn{display:inline-block;padding:10px 24px;background:var(--red);color:#fff;text-decoration:none;font-family:var(--font-mono);font-size:.58rem;font-weight:700;letter-spacing:2px;border-radius:6px;transition:all .2s;box-shadow:0 4px 20px rgba(232,57,74,.35)}.play-unlock-btn:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(232,57,74,.5)}.trap-text strong,.edge-text strong,.play-card-details strong{color:var(--gold);font-weight:600}
-
-/* v6: Voice buttons */
-.voice-btn{display:inline-flex;align-items:center;justify-content:center;gap:5px;height:28px;padding:0 12px;background:linear-gradient(135deg,rgba(245,166,35,.15),rgba(245,166,35,.08));border:1.5px solid rgba(245,166,35,.5);border-radius:14px;color:var(--gold);font-family:var(--font-mono);font-size:.42rem;font-weight:700;letter-spacing:1.5px;cursor:pointer;transition:all .25s;flex-shrink:0;position:relative;text-transform:uppercase}
-.voice-btn .v-icon{font-size:.85rem;line-height:1}
-.voice-btn:hover{background:linear-gradient(135deg,rgba(245,166,35,.3),rgba(245,166,35,.15));transform:translateY(-1px);box-shadow:0 4px 16px rgba(245,166,35,.25)}
-.voice-btn:active{transform:translateY(0);box-shadow:none}
-.voice-btn.playing{background:var(--gold);color:var(--bg);border-color:var(--gold);animation:pulse 1.4s infinite}
-.voice-btn.playing .v-icon{animation:spin 1s linear infinite}
-@keyframes spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
-body.light .voice-btn{background:linear-gradient(135deg,rgba(180,120,0,.1),rgba(180,120,0,.05));border-color:rgba(180,120,0,.6);color:#9a6b00}
-body.light .voice-btn:hover{background:linear-gradient(135deg,rgba(180,120,0,.2),rgba(180,120,0,.1));box-shadow:0 4px 16px rgba(180,120,0,.2)}
-body.light .voice-btn.playing{background:#9a6b00;color:#fff;border-color:#9a6b00}
-.brief-meta{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid var(--s3);align-items:center}
-/* v6: World clock bar */
-.world-clock-bar{display:flex;gap:16px;flex-wrap:wrap;padding:8px 0 10px;font-family:var(--font-mono);font-size:.44rem;color:var(--muted);letter-spacing:1px;border-bottom:1px solid var(--s3);align-items:center}
-.wc-item{display:flex;align-items:center;gap:4px;white-space:nowrap}
-.wc-item strong{color:var(--ink2);font-weight:600}
-.wc-time{color:var(--gold);font-weight:700}
-/* v6: Market session badge */
-.session-badge{display:inline-flex;align-items:center;gap:5px;font-family:var(--font-mono);font-size:.46rem;font-weight:700;letter-spacing:1.5px;padding:4px 12px;border-radius:4px}
-.session-badge.session-asia{background:rgba(76,201,240,.08);color:var(--blue);border:1px solid rgba(76,201,240,.25)}
-.session-badge.session-europe{background:rgba(157,108,248,.08);color:var(--purple);border:1px solid rgba(157,108,248,.25)}
-.session-badge.session-us{background:rgba(245,166,35,.08);color:var(--gold);border:1px solid rgba(245,166,35,.25)}
-/* v6: Market status indicator */
-.mkt-status{display:inline-flex;align-items:center;gap:5px;font-family:var(--font-mono);font-size:.42rem;letter-spacing:1.5px;padding:3px 10px;border-radius:12px}
-.mkt-open{color:var(--green);background:rgba(34,212,90,.06);border:1px solid rgba(34,212,90,.2)}
-.mkt-open .mkt-dot{width:5px;height:5px;background:var(--green);border-radius:50%;animation:pulse 1.4s ease infinite}
-.mkt-closed{color:var(--muted);background:var(--s2);border:1px solid var(--s3)}
-.mkt-closed .mkt-dot{width:5px;height:5px;background:var(--red);border-radius:50%}
-
-body.light .world-clock-bar{border-bottom-color:rgba(0,0,0,.1)}
-body.light .wc-time{color:#9a6b00}
-body.light .wc-item strong{color:#333}
-body.light .session-badge.session-asia{background:rgba(76,201,240,.12);border-color:rgba(76,201,240,.4)}
-body.light .session-badge.session-europe{background:rgba(157,108,248,.12);border-color:rgba(157,108,248,.4)}
-body.light .session-badge.session-us{background:rgba(180,120,0,.08);border-color:rgba(180,120,0,.3);color:#9a6b00}
-body.light .mkt-open{color:#0a8f3c;background:rgba(10,143,60,.08);border-color:rgba(10,143,60,.3)}
-body.light .mkt-closed{color:#888;background:rgba(0,0,0,.04);border-color:rgba(0,0,0,.1)}
-
-.hash-badge{display:flex;align-items:center;gap:8px;padding:10px 16px;background:rgba(0,255,136,.04);border:1px solid rgba(0,255,136,.2);border-radius:10px;font-family:var(--font-mono);font-size:.55rem;color:var(--green);margin:12px 0;letter-spacing:.5px;overflow:hidden}
-.hash-badge .hash-icon{font-size:1rem;flex-shrink:0}
-.hash-badge .hash-label{font-weight:700;color:var(--green);text-transform:uppercase;flex-shrink:0}
-.hash-badge .hash-val{color:var(--muted);word-break:break-all;opacity:.7}
-.hash-badge:hover .hash-val{opacity:1}
-body.light .hash-badge{background:rgba(0,180,90,.06);border-color:rgba(0,180,90,.25)}
-
-.agent-panel{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:16px 0}
-.agent-card{padding:12px 14px;border-radius:10px;border:1px solid var(--s3);background:var(--s1);text-align:center}
-.agent-card .agent-name{font-family:var(--font-mono);font-size:.5rem;letter-spacing:1.5px;color:var(--muted);margin-bottom:6px;text-transform:uppercase}
-.agent-card .agent-bias{font-family:var(--font-mono);font-size:.75rem;font-weight:700;letter-spacing:1px}
-.agent-card .agent-conf{font-size:.45rem;color:var(--muted);margin-top:4px}
-.agent-bias.bull{color:var(--green)}
-.agent-bias.bear{color:var(--red)}
-.agent-bias.neut{color:var(--gold)}
-.debate-badge{display:inline-flex;align-items:center;gap:4px;padding:4px 10px;border-radius:20px;font-family:var(--font-mono);font-size:.42rem;letter-spacing:1px;font-weight:700;margin-top:8px}
-.debate-badge.active{background:rgba(245,166,35,.1);border:1px solid var(--gold);color:var(--gold)}
-.debate-badge.consensus{background:rgba(0,255,136,.08);border:1px solid var(--green);color:var(--green)}
-
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Chaos Intelligence — ANTICONSENSUS TERMINAL</title>
+  <meta name="description" content="Chaos Intelligence live macro war-room brief.">
+  <meta name="keywords" content="market intelligence, fear greed index, macro trading, btc, spx, quantitative analysis, prediction markets, orderbook telemetry">
+  <link rel="canonical" href="https://chaos.sumanthworks.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://chaos.sumanthworks.com/">
+  <meta property="og:title" id="og-title" content="CHAOS. | Live Brief">
+  <meta property="og:description" id="og-desc" content="Chaos Intelligence live macro war-room brief.">
+  <meta property="og:image" content="https://chaos.sumanthworks.com/og-image.jpg">
+  <meta property="og:site_name" content="Chaos Intelligence Terminal">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://chaos.sumanthworks.com/">
+  <meta name="twitter:title" id="tw-title" content="CHAOS. | Live Brief">
+  <meta name="twitter:description" id="tw-desc" content="Chaos Intelligence live macro war-room brief.">
+  <meta name="twitter:image" content="https://chaos.sumanthworks.com/og-image.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=JetBrains+Mono:wght@300;400;700&family=Barlow+Condensed:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:#08080c;--bg2:#0d0d12;--s0:#101016;--s1:#14141c;--s2:#1a1a24;--s3:#22222e;--s4:#2c2c3c;
+      --ink:#f0ece4;--ink2:#b8b0a4;--muted:#5a5a6e;--dim:#28283a;
+      --red:#e8394a;--red-g:rgba(232,57,74,.12);--green:#22d45a;--green-g:rgba(34,212,90,.1);
+      --gold:#f5a623;--gold-g:rgba(245,166,35,.1);--blue:#4cc9f0;--purple:#9d6cf8;--orange:#ff9852;
+      --font-big:'Bebas Neue',Impact,sans-serif;--font-body:'Crimson Pro',Georgia,serif;--font-mono:'JetBrains Mono',monospace;--font-ui:'Barlow Condensed',sans-serif;
+      --glow-red:0 0 40px rgba(232,57,74,.15);--glow-green:0 0 40px rgba(34,212,90,.12);--glow-gold:0 0 40px rgba(245,166,35,.1);
+    }
+    *{margin:0;padding:0;box-sizing:border-box;-webkit-font-smoothing:antialiased}
+    html{scroll-behavior:smooth}
+    body{background:var(--bg);color:var(--ink);font-family:var(--font-body);min-height:100vh;overflow-x:hidden}
+    body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");opacity:.018;pointer-events:none;z-index:9998}
+    #progress{position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,var(--red),var(--gold),var(--green));width:0;z-index:10001;box-shadow:0 0 10px rgba(232,57,74,.4)}
+    #boot{position:fixed;inset:0;background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:9999;transition:opacity .6s ease,transform .6s ease}
+    #boot.gone{opacity:0;transform:scale(1.05);pointer-events:none}
+    .boot-ey{font-family:var(--font-mono);font-size:.5rem;color:var(--muted);letter-spacing:5px;margin-bottom:20px}
+    .boot-logo{font-family:var(--font-big);font-size:clamp(4rem,14vw,7rem);letter-spacing:8px;color:var(--ink);line-height:.9;text-shadow:0 0 80px rgba(232,57,74,.2)}
+    .boot-logo em{color:var(--red);font-style:normal}
+    .boot-bar-w{width:180px;height:2px;background:var(--s4);margin-top:28px;border-radius:1px;overflow:hidden}
+    .boot-bar{height:100%;width:0;background:linear-gradient(90deg,var(--red),var(--gold));animation:bootLoad .8s cubic-bezier(.4,0,.2,1) forwards}
+    @keyframes bootLoad{0%{width:0}60%{width:80%}100%{width:100%}}
+    @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.3;transform:scale(.6)}}
+    @keyframes scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+    .ticker{background:var(--s0);border-bottom:1px solid var(--dim);height:30px;overflow:hidden;display:flex;align-items:center;position:sticky;top:0;z-index:100}
+    .tk-lbl{padding:0 14px 0 16px;font-family:var(--font-mono);font-size:.46rem;color:var(--red);letter-spacing:2px;white-space:nowrap;border-right:1px solid var(--dim);display:flex;align-items:center;gap:6px;background:var(--s0);z-index:2;flex-shrink:0}
+    .tk-dot{width:4px;height:4px;background:var(--red);border-radius:50%;animation:pulse 1.4s ease infinite}
+    .tk-scroll{flex:1;overflow:hidden}.tk-inner{display:flex;animation:scroll 44s linear infinite;white-space:nowrap}.ticker:hover .tk-inner{animation-play-state:paused}
+    .tk{padding:0 24px;font-family:var(--font-mono);font-size:.5rem;color:var(--muted);letter-spacing:.8px;display:flex;gap:6px;align-items:center;border-right:1px solid var(--s3)}
+    .v{font-weight:700}.bull{color:var(--green)!important}.bear{color:var(--red)!important}.neut{color:var(--gold)!important}.volt{color:var(--orange)!important}.blue{color:var(--blue)!important}.purple{color:var(--purple)!important}
+    .wrap{max-width:760px;margin:0 auto;padding:0 24px}.wide{max-width:980px}
+    .hdr{padding:32px 0 0;border-bottom:1px solid var(--dim)}
+    .hdr-top{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:6px;gap:20px}
+    .brand{font-family:var(--font-big);font-size:clamp(3.2rem,10vw,5.2rem);letter-spacing:4px;line-height:.9;color:var(--ink)}
+    .brand em{color:var(--red);font-style:normal;text-shadow:0 0 30px rgba(232,57,74,.3)}
+    .live-b{display:inline-flex;align-items:center;gap:5px;font-family:var(--font-mono);font-size:.48rem;color:var(--green);letter-spacing:2px;border:1px solid rgba(34,212,90,.2);padding:4px 10px;border-radius:20px;background:rgba(34,212,90,.04);margin-bottom:4px;white-space:nowrap}
+    .live-d{width:5px;height:5px;background:var(--green);border-radius:50%;animation:pulse 1.4s ease infinite}
+    .dateline,.world-clock-bar{font-family:var(--font-mono);font-size:.5rem;color:var(--muted);letter-spacing:1.5px;padding:12px 0 14px;border-bottom:1px solid var(--s3);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+    .world-clock-bar{font-size:.44rem;justify-content:flex-start;gap:14px}.wc-time{color:var(--gold);font-weight:700}.wc-item{display:flex;gap:4px;align-items:center}
+    .ed-badge{background:var(--red);font-family:var(--font-mono);font-size:.42rem;color:#fff;padding:3px 10px;letter-spacing:2px;border-radius:2px;font-weight:700}
+    .hash-badge{display:flex;align-items:center;gap:8px;padding:10px 16px;background:rgba(0,255,136,.04);border:1px solid rgba(0,255,136,.2);border-radius:10px;font-family:var(--font-mono);font-size:.55rem;color:var(--green);margin:12px 0;letter-spacing:.5px;overflow:hidden}
+    .hash-val{color:var(--muted);word-break:break-all;opacity:.85}
+    .vitals{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--dim);border-bottom:1px solid var(--dim)}
+    .vital{padding:20px 14px;text-align:center;background:var(--bg2);transition:all .3s}.vital:hover{background:var(--s1);transform:translateY(-1px)}
+    .vv{font-family:var(--font-big);font-size:1.8rem;letter-spacing:1px;line-height:1}.vv.bull{text-shadow:var(--glow-green)}.vv.bear{text-shadow:var(--glow-red)}.vv.neut{text-shadow:var(--glow-gold)}
+    .vl{font-family:var(--font-mono);font-size:.44rem;color:var(--muted);letter-spacing:1.5px;margin-top:6px;text-transform:uppercase}
+    .vd{font-family:var(--font-mono);font-size:.42rem;margin-top:3px;letter-spacing:.5px;color:var(--muted)}
+    .main{padding:40px 0}.ed-tag{font-family:var(--font-mono);font-size:.5rem;color:var(--red);letter-spacing:3px;margin-bottom:8px;display:flex;align-items:center;gap:8px;text-transform:uppercase}
+    .ed-tag::after,.sec-title::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,var(--red),transparent);opacity:.3}
+    h1.hl{font-family:var(--font-big);font-size:clamp(2.35rem,7vw,4rem);letter-spacing:1px;line-height:1.02;color:var(--ink);margin-bottom:16px}
+    .sig-row{display:flex;gap:10px;align-items:center;margin-bottom:8px;flex-wrap:wrap}.sig,.ts-badge{font-family:var(--font-mono);font-size:.52rem;font-weight:700;letter-spacing:2px;padding:5px 14px;border-radius:3px}
+    .sig.bear{background:var(--red-g);color:var(--red);border:1px solid rgba(232,57,74,.3)}.sig.bull{background:var(--green-g);color:var(--green);border:1px solid rgba(34,212,90,.3)}.sig.neut{background:var(--gold-g);color:var(--gold);border:1px solid rgba(245,166,35,.3)}.sig.volt{background:rgba(255,152,82,.08);color:var(--orange);border:1px solid rgba(255,152,82,.3)}
+    .ts-badge{font-size:.48rem;background:var(--s2);color:var(--gold);border:1px solid var(--s3)}.conf,.upd{font-family:var(--font-mono);font-size:.48rem;color:var(--muted);letter-spacing:1px}.upd{margin-bottom:36px;padding:6px 0;border-top:1px solid var(--s3);display:flex;align-items:center;gap:6px}
+    .glass-card{padding:24px;background:rgba(20,20,28,.72);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.04);border-radius:12px;position:relative;overflow:hidden}
+    .sec-title{font-family:var(--font-mono);font-size:.48rem;color:var(--muted);letter-spacing:2.5px;margin-bottom:14px;display:flex;align-items:center;gap:8px;text-transform:uppercase}
+    .gauge-wrap{display:flex;justify-content:center;margin:0 auto 48px;max-width:270px}.gauge-container{position:relative;width:230px;height:136px}.gauge-container svg{width:100%;height:100%}
+    .gauge-bg{fill:none;stroke:var(--s3);stroke-width:8;stroke-linecap:round}.gauge-fill{fill:none;stroke-width:8;stroke-linecap:round;transition:stroke-dashoffset 1.4s cubic-bezier(.4,0,.2,1);filter:drop-shadow(0 0 6px currentColor)}
+    .gauge-glow{position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:120px;height:60px;border-radius:60px 60px 0 0;filter:blur(30px);opacity:.25;pointer-events:none}
+    .gauge-val{position:absolute;bottom:8px;left:50%;transform:translateX(-50%);font-family:var(--font-big);font-size:2.8rem;letter-spacing:2px;line-height:1}.gauge-label{position:absolute;bottom:-4px;left:50%;transform:translateX(-50%);font-family:var(--font-mono);font-size:.44rem;color:var(--muted);letter-spacing:2px;white-space:nowrap}
+    .cx-section,.forces,.chaos,.macro,.wires,.ctx,.poly,.trap,.edge-section{margin-bottom:48px}
+    .cx-tabs{display:grid;grid-template-columns:repeat(3,1fr);background:var(--s1);border:1px solid var(--s3);border-radius:10px 10px 0 0;overflow:hidden}
+    .cx-btn{padding:16px 8px;background:transparent;border:none;border-right:1px solid var(--s3);cursor:pointer;transition:all .3s;text-align:center;position:relative}.cx-btn:last-child{border-right:none}.cx-btn::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--red);transform:scaleX(0);transition:transform .3s}.cx-btn.active{background:linear-gradient(180deg,rgba(232,57,74,.08),transparent)}.cx-btn.active::after{transform:scaleX(1)}
+    .cx-n{display:block;font-family:var(--font-ui);font-size:.82rem;font-weight:700;letter-spacing:1.5px;color:var(--muted)}.cx-btn.active .cx-n{color:var(--red)}.cx-sub{display:block;font-family:var(--font-mono);font-size:.44rem;color:var(--muted);margin-top:3px}
+    .pane{display:none;animation:fadeUp .4s ease}.pane.active{display:block}.brief{padding:28px;background:var(--s1);border:1px solid var(--s3);border-top:none;border-radius:0 0 10px 10px;font-size:1.08rem;line-height:1.95;color:var(--ink)}.brief p{margin-bottom:14px}.brief p:last-child{margin-bottom:0}
+    .brief-meta{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid var(--s3);align-items:center}.brief-tag{font-family:var(--font-mono);font-size:.44rem;letter-spacing:1.5px;padding:3px 9px;border-radius:3px;background:var(--s2);color:var(--muted);border:1px solid var(--s3)}
+    .voice-btn{display:inline-flex;align-items:center;justify-content:center;gap:5px;height:28px;padding:0 12px;background:linear-gradient(135deg,rgba(245,166,35,.15),rgba(245,166,35,.08));border:1.5px solid rgba(245,166,35,.5);border-radius:14px;color:var(--gold);font-family:var(--font-mono);font-size:.42rem;font-weight:700;letter-spacing:1.5px;cursor:pointer;text-transform:uppercase}
+    .brief-metrics{display:flex;flex-wrap:wrap;margin-top:18px;border:1px solid var(--s3);border-radius:8px;overflow:hidden}.bm{flex:1;min-width:100px;padding:12px 14px;border-right:1px solid var(--s3);background:var(--s2)}.bm:last-child{border-right:none}.bm-v{font-family:var(--font-big);font-size:1.3rem;letter-spacing:1px;color:var(--gold);line-height:1}.bm-l{font-family:var(--font-mono);font-size:.42rem;color:var(--muted);letter-spacing:1.5px;margin-top:4px;text-transform:uppercase}
+    .forces-grid{display:flex;flex-wrap:wrap;gap:8px}.fc{display:flex;align-items:center;gap:6px;padding:8px 14px;border-radius:6px;font-family:var(--font-mono);font-size:.52rem;font-weight:700;letter-spacing:1px;border:1px solid var(--s3);background:var(--s1);color:var(--muted);opacity:.34}.fc.on{background:var(--red-g);border-color:rgba(232,57,74,.25);color:var(--red);opacity:1}.fc-dot{width:5px;height:5px;border-radius:50%;background:var(--muted)}.fc.on .fc-dot{background:var(--red);animation:pulse 1.4s ease infinite}
+    .agent-panel{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:16px 0}.agent-card{padding:13px 14px;border-radius:10px;border:1px solid var(--s3);background:var(--s1);text-align:center}.agent-name{font-family:var(--font-mono);font-size:.5rem;letter-spacing:1.5px;color:var(--muted);margin-bottom:6px;text-transform:uppercase}.agent-bias{font-family:var(--font-mono);font-size:.78rem;font-weight:700;letter-spacing:1px}.agent-thesis{font-family:var(--font-mono);font-size:.46rem;color:var(--muted);line-height:1.5;margin-top:8px}
+    .debate-badge{display:inline-flex;align-items:center;gap:4px;padding:4px 10px;border-radius:20px;font-family:var(--font-mono);font-size:.42rem;letter-spacing:1px;font-weight:700;margin-top:8px;background:rgba(245,166,35,.1);border:1px solid var(--gold);color:var(--gold)}
+    .chaos{padding:32px;background:linear-gradient(135deg,rgba(245,166,35,.04) 0%,rgba(232,57,74,.02) 60%,transparent 100%);border-left:3px solid var(--gold);border-radius:0 12px 12px 0;position:relative;overflow:hidden}.chaos::before{content:'"';position:absolute;right:20px;top:-15px;font-family:var(--font-big);font-size:10rem;color:var(--gold);opacity:.03;line-height:1}.chaos-tag{font-family:var(--font-mono);font-size:.54rem;color:var(--gold);letter-spacing:4px;margin-bottom:16px;display:flex;align-items:center;gap:10px;opacity:.75;text-transform:uppercase}.chaos-text{font-family:var(--font-body);font-size:clamp(1.35rem,3.8vw,1.7rem);font-style:italic;line-height:1.6;color:var(--ink);margin-bottom:22px;font-weight:300}
+    .share-row{display:flex;gap:8px;flex-wrap:wrap}.s-btn,.cta-btn,.play-unlock-btn,.poly-link{display:inline-flex;align-items:center;gap:6px;padding:9px 18px;border-radius:6px;font-family:var(--font-mono);font-size:.52rem;font-weight:700;letter-spacing:.5px;border:none;cursor:pointer;text-decoration:none;white-space:nowrap}.s-btn.red,.cta-btn,.play-unlock-btn{background:var(--red);color:#fff;box-shadow:0 4px 20px rgba(232,57,74,.25)}.s-btn.ghost{background:var(--s2);color:var(--ink);border:1px solid var(--s3)}.s-btn.x{background:#000;color:#fff;border:1px solid var(--s4)}
+    .inline-cta{margin-bottom:48px;padding:28px;background:linear-gradient(135deg,rgba(232,57,74,.06),var(--s1) 70%);border:1px solid rgba(232,57,74,.15);border-radius:12px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}.cta-title{font-family:var(--font-body);font-size:1.2rem;font-style:italic;color:var(--ink);font-weight:300;margin-bottom:4px}.cta-sub{font-family:var(--font-mono);font-size:.48rem;color:var(--muted);letter-spacing:1px}
+    .mgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.mi{padding:14px;background:var(--s2);border:1px solid var(--s3);border-radius:8px;transition:all .3s;animation:fadeUp .4s ease both}.mi-l{font-family:var(--font-mono);font-size:.42rem;color:var(--muted);letter-spacing:1.5px;margin-bottom:6px;text-transform:uppercase}.mi-v{font-family:var(--font-big);font-size:1.2rem;letter-spacing:1px;line-height:1}.mi-s{font-family:var(--font-mono);font-size:.42rem;color:var(--muted);margin-top:4px}
+    .trap{padding:28px;position:relative;overflow:hidden;border-radius:12px;background:linear-gradient(135deg,rgba(232,57,74,.06),var(--s1) 60%);border:1px solid rgba(232,57,74,.15)}.trap::before,.play-card::before,.poly::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--red),transparent)}.trap-tag{font-family:var(--font-mono);font-size:.52rem;color:var(--red);letter-spacing:3px;margin-bottom:12px;text-transform:uppercase}.trap-text,.edge-text,.play-card-details{font-size:1.02rem;line-height:1.8;color:var(--ink)}
+    .edge-section{padding:24px;border-radius:12px;background:var(--s1);border:1px solid var(--s3);border-left:3px solid var(--purple)}.edge-tag{font-family:var(--font-mono);font-size:.48rem;color:var(--purple);letter-spacing:2.5px;margin-bottom:10px;text-transform:uppercase}.edge-text{font-style:italic}
+    .plays-grid{display:grid;gap:12px;margin-bottom:48px}.play-card{padding:22px;border-radius:10px;background:var(--s1);border:1px solid var(--s3);position:relative;overflow:hidden;transition:all .3s}.play-card::before{background:var(--green)}.play-card:hover{transform:translateY(-2px);border-color:var(--s4)}.play-card-type{font-family:var(--font-mono);font-size:.52rem;font-weight:700;letter-spacing:2px;margin-bottom:8px}.play-card-thesis{font-family:var(--font-ui);font-size:.9rem;font-weight:700;color:var(--ink);letter-spacing:.5px;margin-bottom:6px}.play-blur-content{filter:blur(5px);pointer-events:none;user-select:none;opacity:.68}.play-lock-overlay{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;background:rgba(8,8,12,.55);backdrop-filter:blur(2px);border-radius:10px}.play-lock-label{font-family:var(--font-mono);font-size:.48rem;color:var(--muted);letter-spacing:2px;text-transform:uppercase}
+    .wires-h{font-family:var(--font-mono);font-size:.48rem;color:var(--muted);letter-spacing:2px;margin-bottom:14px;display:flex;justify-content:space-between;text-transform:uppercase}.wire{border-top:1px solid var(--s3);padding:18px 0;cursor:pointer}.wire:last-child{border-bottom:1px solid var(--s3)}.wire-src{font-family:var(--font-mono);font-size:.48rem;color:var(--red);letter-spacing:1.5px}.wire-hl{font-size:1rem;line-height:1.5;color:var(--ink);margin-top:6px}.wire-body{display:none;margin-top:14px;font-size:.9rem;color:var(--ink2);line-height:1.7;padding-left:16px;border-left:2px solid var(--gold)}.wire.open .wire-body{display:block}
+    .ctx-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.ctx-card{padding:18px;background:var(--s1);border:1px solid var(--s3);border-radius:10px;position:relative;overflow:hidden}.ctx-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent,var(--muted)),transparent)}.ctx-l{font-family:var(--font-mono);font-size:.44rem;color:var(--muted);letter-spacing:2px;margin-bottom:8px;text-transform:uppercase}.ctx-v{font-family:var(--font-big);font-size:1.4rem;letter-spacing:1px;line-height:1;margin-bottom:6px}.ctx-d{font-family:var(--font-mono);font-size:.48rem;color:var(--muted);line-height:1.55}
+    .poly{padding:24px;position:relative;overflow:hidden;border-radius:12px;background:var(--s1);border:1px solid var(--s3)}.poly::before{background:linear-gradient(90deg,var(--blue),transparent)}.poly-tag{font-family:var(--font-mono);font-size:.48rem;color:var(--blue);letter-spacing:3px;margin-bottom:10px;text-transform:uppercase}.poly-q{font-size:1rem;line-height:1.5;color:var(--ink);margin-bottom:16px}.poly-row{display:flex;gap:24px;align-items:center;flex-wrap:wrap}.poly-odds{font-family:var(--font-big);font-size:2.4rem;letter-spacing:1px;color:var(--gold);line-height:1}.poly-track{height:6px;background:var(--s3);border-radius:3px;overflow:hidden;min-width:170px}.poly-fill{height:100%;background:linear-gradient(90deg,var(--gold),var(--red));border-radius:3px;transition:width 1.2s cubic-bezier(.4,0,.2,1)}.poly-link{color:var(--blue);background:transparent;border:1px solid rgba(76,201,240,.25);box-shadow:none}
+    .ledger-row{display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid var(--s3);padding:8px 0;font-family:var(--font-mono);font-size:.68rem;color:var(--ink);line-height:1.5}.ledger-row:last-child{border-bottom:0}
+    .ftr{border-top:1px solid var(--s3);padding:32px 0 48px;text-align:center}.ftr-brand{font-family:var(--font-big);font-size:1.6rem;letter-spacing:4px;color:var(--s4);margin-bottom:10px}.ftr-brand em{color:rgba(232,57,74,.3);font-style:normal}.ftr-disc{font-family:var(--font-mono);font-size:.46rem;color:var(--muted);line-height:1.85;max-width:480px;margin:0 auto}
+    .rv{opacity:0;transform:translateY(18px);transition:opacity .6s cubic-bezier(.4,0,.2,1),transform .6s cubic-bezier(.4,0,.2,1)}.rv.vis{opacity:1;transform:none}
+    @media(max-width:700px){.wrap{padding:0 14px}.hdr-top{align-items:flex-start;flex-direction:column}.vitals{grid-template-columns:repeat(2,1fr)}.mgrid{grid-template-columns:repeat(2,1fr)}.ctx-grid,.agent-panel{grid-template-columns:1fr}.brief{font-size:.98rem;padding:18px}.brief-metrics{flex-direction:column}.bm{border-right:0;border-bottom:1px solid var(--s3)}.inline-cta{flex-direction:column;text-align:center}.s-btn{font-size:.48rem;padding:7px 10px}.poly-row{flex-direction:column;align-items:flex-start}.poly-track{width:100%}}
+    @media(min-width:1280px){.wrap{max-width:820px}.brief{font-size:1.15rem;line-height:2}.chaos-text{font-size:1.75rem}h1.hl{font-size:3.8rem}.ctx-grid{grid-template-columns:repeat(4,1fr)}}
+    .spa-view{display:none}.spa-view.active{display:block}
+    .sticky-hdr{position:sticky;top:0;z-index:200;background:rgba(8,8,12,0.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--dim);display:flex;align-items:center;justify-content:space-between;padding:10px 24px}
+    .sticky-brand{font-family:var(--font-big);font-size:1.8rem;letter-spacing:4px;color:var(--ink);text-decoration:none;line-height:1}
+    .sticky-brand em{color:var(--red);font-style:normal}
+    .sticky-center{display:flex;align-items:center;gap:10px}
+    .desktop-nav{display:flex;gap:18px;align-items:center}
+    .desktop-nav a{font-family:var(--font-mono);font-size:.52rem;color:var(--muted);text-decoration:none;text-transform:uppercase;letter-spacing:1.5px;font-weight:700;transition:color 0.2s;padding-bottom:4px;border-bottom:2px solid transparent}
+    .desktop-nav a:hover{color:var(--ink)}
+    .desktop-nav a.active{color:var(--red);border-bottom-color:var(--red)}
+    .mobile-dock{display:none;position:fixed;bottom:0;left:0;right:0;background:rgba(8,8,12,0.95);backdrop-filter:blur(12px);border-top:1px solid var(--dim);z-index:200}
+    .dock-grid{display:grid;grid-template-columns:repeat(4,1fr);height:56px}
+    .dock-btn{display:flex;flex-direction:column;align-items:center;justify-content:center;text-decoration:none;border-right:1px solid var(--s3);transition:background 0.2s}
+    .dock-btn:last-child{border-right:none}
+    .dock-icon{font-size:1.1rem;margin-bottom:2px}
+    .dock-label{font-family:var(--font-mono);font-size:.42rem;color:var(--muted);text-transform:uppercase;letter-spacing:1.5px;font-weight:700}
+    .dock-btn.active .dock-label{color:var(--red)}
+    @media(max-width:700px){.mobile-dock{display:block}.desktop-nav{display:none}body{padding-bottom:70px}}
+    .alpha-lock{max-width:480px;margin:100px auto;text-align:center;padding:48px 32px;background:linear-gradient(135deg,rgba(245,166,35,0.04),var(--s1) 70%);border:1px solid rgba(245,166,35,0.2);border-radius:12px}
+    .alpha-lock h2{font-family:var(--font-ui);font-size:1.3rem;font-weight:700;letter-spacing:1px;color:var(--ink);margin:16px 0 8px}
+    .alpha-lock p{font-family:var(--font-mono);font-size:.55rem;color:var(--muted);line-height:1.7;letter-spacing:0.5px;margin-bottom:24px}
+    .alpha-btn{display:inline-block;background:var(--gold);color:#000;padding:12px 28px;font-family:var(--font-mono);font-size:.55rem;font-weight:700;text-transform:uppercase;letter-spacing:2px;border:none;border-radius:6px;cursor:pointer;box-shadow:0 4px 20px rgba(245,166,35,0.25);transition:all 0.2s}
+    .alpha-btn:hover{box-shadow:0 6px 35px rgba(245,166,35,0.4);transform:translateY(-2px)}
+    .page-title{font-family:var(--font-big);font-size:clamp(2rem,6vw,3rem);letter-spacing:2px;color:var(--ink);margin-bottom:8px}
+    .page-sub{font-family:var(--font-mono);font-size:.55rem;color:var(--muted);letter-spacing:1px;margin-bottom:24px}
+    .ftr-content{display:flex;flex-direction:column;align-items:center;margin-bottom:32px}
+    .ftr-links{display:flex;gap:32px;flex-wrap:wrap;justify-content:center}
+    .ftr-link{font-family:var(--font-mono);font-size:.6rem;color:var(--ink2);text-decoration:none;letter-spacing:2px;text-transform:uppercase;transition:all 0.25s ease}
+    .ftr-link:hover{color:var(--gold);transform:translateY(-1px)}
+    .ftr-disc{font-family:var(--font-mono);font-size:.45rem;color:var(--muted);line-height:1.9;max-width:850px;margin:0 auto;letter-spacing:.8px;padding:24px;background:rgba(0,0,0,0.25);border:1px solid var(--s2);border-radius:6px}
+  </style>
 </head>
 <body>
-<div id="progress"></div>
-<div id="boot"><div class="boot-ey">INITIALIZING WAR ROOM</div><div class="boot-logo">CHAOS<em>.</em></div><div class="boot-bar-w"><div class="boot-bar"></div></div></div>
+  <div id="progress"></div>
+  <div id="boot"><div class="boot-ey">INITIALIZING WAR ROOM</div><div class="boot-logo">CHAOS<em>.</em></div><div class="boot-bar-w"><div class="boot-bar"></div></div></div>
 
-<div class="ticker"><div class="tk-lbl"><span class="tk-dot"></span>LIVE</div><div class="tk-scroll"><div class="tk-inner"><span class="tk">FEAR <span class="v bear">23</span></span><span class="tk">NEUTRAL</span><span class="tk">BTC <span class="v bull">$73,650</span></span><span class="tk">24H <span class="v bull">+0.3%</span></span><span class="tk">SIGNAL <span class="v neut">NEUTRAL</span></span><span class="tk">CONF <span class="v neut">65%</span></span><span class="tk">FORCES <span class="v bear">1/9</span></span><span class="tk">10Y <span class="v neut">4.455%</span></span><span class="tk">DXY <span class="v neut">99.09</span></span><span class="tk">FRI, MAY 29, 2026</span><span class="tk">FEAR <span class="v bear">23</span></span><span class="tk">NEUTRAL</span><span class="tk">BTC <span class="v bull">$73,650</span></span><span class="tk">24H <span class="v bull">+0.3%</span></span><span class="tk">SIGNAL <span class="v neut">NEUTRAL</span></span><span class="tk">CONF <span class="v neut">65%</span></span><span class="tk">FORCES <span class="v bear">1/9</span></span><span class="tk">10Y <span class="v neut">4.455%</span></span><span class="tk">DXY <span class="v neut">99.09</span></span><span class="tk">FRI, MAY 29, 2026</span></div></div></div>
-
-<div class="wrap"><header class="hdr"><div class="hdr-top"><div class="brand">CHAOS<em>.</em></div><div class="hdr-r"><div class="live-b"><span class="live-d"></span>LIVE BRIEF</div></div></div><div class="dateline"><span>FRI, MAY 29, 2026 · 10:59 UTC · CHAOS INTELLIGENCE</span><div style="display:flex;align-items:center;gap:10px"><span class="ed-badge">MORNING BRIEF</span><button class="th-tog" onclick="toggleTheme()" aria-label="Toggle theme"><div class="th-track"><div class="th-thumb"></div></div><span id="th-lbl">DARK</span></button></div></div><div id="world-clock-bar" class="world-clock-bar" style="display:none"></div></header>
-<!-- VERIFIED SIGNAL HASH -->
-<div class="hash-badge rv">
-  <span class="hash-icon">🔐</span>
-  <span class="hash-label">VERIFIED</span>
-  <span class="hash-val">Hash pending...</span>
-</div></div>
-
-<div class="wrap"><div class="vitals"><div class="vital"><div class="vv bear">23</div><div class="vl">Fear Index</div><div class="vd dn">▲ +1 vs yest</div></div><div class="vital"><div class="vv bull">$73,650</div><div class="vl">BTC/USD</div><div class="vd bull">24h ▲+0.3%</div></div><div class="vital"><div class="vv neut">NEUTRAL</div><div class="vl">Signal</div><div class="vd flat">— AI model</div></div><div class="vital"><div class="vv neut">65%</div><div class="vl">Confidence</div><div class="vd flat">— v4.1</div></div></div></div>
-
-<main class="wrap"><div class="main">
-<article>
-<div class="ed-tag">TODAY'S BRIEFING · NYC</div>
-<h1 class="hl">Market Update</h1>
-<div class="sig-row"><span class="sig neut">NEUTRAL</span><span class="ts-badge up">🟢 THIS WEEK</span><span class="conf">65% AI CONFIDENCE · 1/9 FORCES</span></div>
-<div class="upd"><span>●</span> 10:59 UTC · ∞ BRAIN + LIVE DATA</div>
-
-<!-- SVG FEAR GAUGE -->
-<section class="rv">
-<div class="sec-title">MARKET FEAR GAUGE</div>
-<div class="gauge-wrap"><div class="gauge-container">
-<svg viewBox="0 0 200 110"><path class="gauge-bg" d="M20,100 A80,80 0 0,1 180,100"/><path class="gauge-fill" id="gauge-arc" d="M20,100 A80,80 0 0,1 180,100" stroke="var(--red)" stroke-dasharray="251" stroke-dashoffset="251"/></svg>
-<div class="gauge-glow" id="gauge-glow" style="background:var(--red)"></div>
-<div class="gauge-val bear" id="gauge-num">0</div>
-<div class="gauge-label">NEUTRAL</div>
-<span class="gauge-minmax gauge-min">0</span><span class="gauge-minmax gauge-max">100</span>
-</div></div>
-</section>
-
-<!-- INTELLIGENCE TABS -->
-<section class="cx-section rv">
-<div class="sec-title">INTELLIGENCE LEVEL — PICK YOURS</div>
-<div class="cx-tabs" role="tablist">
-<button class="cx-btn" onclick="setCx('eli5',this)"><span class="cx-n">ELI5</span><span class="cx-sub">Simple · 3 min</span></button>
-<button class="cx-btn active" onclick="setCx('analyst',this)"><span class="cx-n">Analyst</span><span class="cx-sub">Intermediate · 5 min</span></button>
-<button class="cx-btn" onclick="setCx('quant',this)"><span class="cx-n">Quant</span><span class="cx-sub">Advanced · 7 min</span></button>
-</div>
-<div class="pane" id="pane-eli5"><div class="brief"><div class="brief-meta"><span class="brief-tag eli5">ELI5 — FOR EVERYONE</span><span class="brief-tag time">⏱ 3 MIN</span><button class="voice-btn" onclick="chaosSpeak('pane-eli5',this)" title="Listen to ELI5 briefing" aria-label="Play ELI5 audio"><span class="v-icon">🔊</span> LISTEN</button></div><p>Analysis underway.</p><div class="brief-metrics"><div class="bm"><div class="bm-v">23</div><div class="bm-l">Fear Index</div></div><div class="bm"><div class="bm-v">$73,650</div><div class="bm-l">Bitcoin</div></div><div class="bm"><div class="bm-v">4.455%</div><div class="bm-l">10Y Yield</div></div></div></div></div>
-<div class="pane active" id="pane-analyst"><div class="brief"><div class="brief-meta"><span class="brief-tag analyst">ANALYST — INTERMEDIATE</span><span class="brief-tag time">⏱ 5 MIN</span><button class="voice-btn" onclick="chaosSpeak('pane-analyst',this)" title="Listen to Analyst briefing" aria-label="Play Analyst audio"><span class="v-icon">🔊</span> LISTEN</button></div><p>Analysis underway.</p><div class="brief-metrics"><div class="bm"><div class="bm-v">4.455%</div><div class="bm-l">10Y Treasury</div></div><div class="bm"><div class="bm-v">99.09</div><div class="bm-l">DXY</div></div><div class="bm"><div class="bm-v">7,564</div><div class="bm-l">S&P 500</div></div></div></div></div>
-<div class="pane" id="pane-quant"><div class="brief"><div class="brief-meta"><span class="brief-tag quant">QUANT — ADVANCED</span><span class="brief-tag time">⏱ 7 MIN</span><button class="voice-btn" onclick="chaosSpeak('pane-quant',this)" title="Listen to Quant briefing" aria-label="Play Quant audio"><span class="v-icon">🔊</span> LISTEN</button></div><p>Analysis underway.</p><div class="brief-metrics"><div class="bm"><div class="bm-v">15.85</div><div class="bm-l">VIX</div></div><div class="bm"><div class="bm-v">$2,011</div><div class="bm-l">ETH</div></div><div class="bm"><div class="bm-v">65%</div><div class="bm-l">AI Confidence</div></div></div></div></div>
-</section>
-</article>
-
-<!-- FORCES -->
-<section class="forces rv"><div class="sec-title">ACTIVE MACRO FORCES</div><div class="forces-grid"><div class="fc on"><span class="fc-dot"></span>💰 <span class="fc-n">MONEY</span><div class="fc-tip"><div class="ftt on">💰 MONEY</div><div class="ftd">Central bank policy, interest rates, and global liquidity.</div><div class="fts on">⚡ ACTIVE — Monetary policy transmission active</div></div></div><div class="fc off"><span class="fc-dot"></span>🤖 <span class="fc-n">TECH</span><div class="fc-tip"><div class="ftt off">🤖 TECH</div><div class="ftd">AI development, semiconductor supply chains, digital infrastructure.</div><div class="fts off">○ DORMANT — Chip war + AI investment cycle dominant</div></div></div><div class="fc off"><span class="fc-dot"></span>⚡ <span class="fc-n">ENERGY</span><div class="fc-tip"><div class="ftt off">⚡ ENERGY</div><div class="ftd">Oil, gas, renewable transition, energy geopolitics.</div><div class="fts off">○ DORMANT — Oil markets stable, no acute supply shock</div></div></div><div class="fc off"><span class="fc-dot"></span>🏛️ <span class="fc-n">POLITICS</span><div class="fc-tip"><div class="ftt off">🏛️ POLITICS</div><div class="ftd">Elections, regulation, government spending, fiscal policy.</div><div class="fts off">○ DORMANT — Fiscal policy under debate</div></div></div><div class="fc off"><span class="fc-dot"></span>⚔️ <span class="fc-n">WAR</span><div class="fc-tip"><div class="ftt off">⚔️ WAR</div><div class="ftd">Active conflicts, sanctions, military escalations.</div><div class="fts off">○ DORMANT — No new escalation this session</div></div></div><div class="fc off"><span class="fc-dot"></span>💸 <span class="fc-n">DEBT</span><div class="fc-tip"><div class="ftt off">💸 DEBT</div><div class="ftd">Sovereign debt, deficit spending, bond market dynamics.</div><div class="fts off">○ DORMANT — Near-record Treasury issuance</div></div></div><div class="fc off"><span class="fc-dot"></span>💼 <span class="fc-n">JOBS</span><div class="fc-tip"><div class="ftt off">💼 JOBS</div><div class="ftd">Employment data, wage growth, labor market slack.</div><div class="fts off">○ DORMANT — Labor market data inline</div></div></div><div class="fc off"><span class="fc-dot"></span>🌾 <span class="fc-n">FOOD</span><div class="fc-tip"><div class="ftt off">🌾 FOOD</div><div class="ftd">Agricultural commodity prices and food inflation.</div><div class="fts off">○ DORMANT — Agricultural prices stable</div></div></div><div class="fc off"><span class="fc-dot"></span>🧑 <span class="fc-n">PEOPLE</span><div class="fc-tip"><div class="ftt off">🧑 PEOPLE</div><div class="ftd">Demographics, migration, social sentiment.</div><div class="fts off">○ DORMANT — No acute population shock</div></div></div></div></section>
-
-
-<!-- AGENT CONSENSUS -->
-<section class="glass-card rv" style="margin-bottom:24px">
-  <div class="sec-title">🤖 AGENT CONSENSUS</div>
-  <div class="agent-panel">
-    <div class="agent-card">
-      <div class="agent-name">🧠 Fundamental</div>
-      <div class="agent-bias neut">—</div>
+  <header class="sticky-hdr">
+    <a class="sticky-brand" href="#terminal">CHAOS<em>.</em></a>
+    <div class="sticky-center">
+      <div class="live-b"><span class="live-d"></span>LIVE BRIEF</div>
+      <div id="terminal-status" style="font-family:var(--font-mono);font-size:0.45rem;color:#fff;letter-spacing:1px;margin-left:10px;padding-left:10px;border-left:1px solid var(--s3);white-space:nowrap;">LOADING...</div>
     </div>
-    <div class="agent-card">
-      <div class="agent-name">📊 Technical</div>
-      <div class="agent-bias neut">—</div>
+    <nav class="desktop-nav">
+      <a href="#terminal" class="nav-link active" data-target="view-terminal">⚡ INTEL</a>
+      <a href="#ledger" class="nav-link" data-target="view-ledger">📋 LEDGER</a>
+      <a href="#vitals" class="nav-link" data-target="view-vitals">📊 VITALS</a>
+      <a href="#alpha" class="nav-link" data-target="view-alpha" style="color:var(--gold)">🔒 ALPHA</a>
+    </nav>
+  </header>
+
+  <div class="ticker"><div class="tk-lbl"><span class="tk-dot"></span>LIVE</div><div class="tk-scroll"><div class="tk-inner" id="ticker-inner"></div></div></div>
+
+  <div id="view-terminal" class="spa-view active">
+    <div class="wrap">
+      <header class="hdr">
+        <div class="hdr-top"><div class="brand">CHAOS<em>.</em></div><div class="live-b"><span class="live-d"></span>LIVE BRIEF</div></div>
+        <div class="dateline"><span id="date-line">LOADING</span><span class="ed-badge" id="session-badge">DAILY BRIEF</span></div>
+        <div id="world-clock-bar" class="world-clock-bar"></div>
+      </header>
+      <div class="hash-badge rv"><span>🔐 VERIFIED</span><span class="hash-val" id="hash-val">Hash pending...</span></div>
     </div>
-    <div class="agent-card">
-      <div class="agent-name">🎭 Sentiment</div>
-      <div class="agent-bias neut">—</div>
+    <div class="wrap"><div class="vitals" id="vitals"></div></div>
+    <main class="wrap"><div class="main">
+      <article>
+        <div class="ed-tag" id="brief-tag">TODAY'S BRIEFING</div>
+        <h1 class="hl" id="headline">Loading Chaos Brief</h1>
+        <div class="sig-row" id="sig-row"></div>
+        <div class="upd"><span class="bull">●</span><span id="updated-line">Loading live data</span></div>
+        <section class="rv">
+          <div class="sec-title">MARKET FEAR GAUGE</div>
+          <div class="gauge-wrap"><div class="gauge-container">
+            <svg viewBox="0 0 200 110"><path class="gauge-bg" d="M20,100 A80,80 0 0,1 180,100"/><path class="gauge-fill" id="gauge-arc" d="M20,100 A80,80 0 0,1 180,100" stroke="var(--gold)" stroke-dasharray="251" stroke-dashoffset="251"/></svg>
+            <div class="gauge-glow" id="gauge-glow"></div>
+            <div class="gauge-val" id="gauge-num">0</div>
+            <div class="gauge-label" id="gauge-label">NEUTRAL</div>
+          </div></div>
+        </section>
+        <section class="rv"><div class="sec-title">THE PLAYS — 3 WAYS TO TRADE THIS</div><div class="plays-grid" id="plays-grid"></div><div style="font-family:var(--font-mono);font-size:.44rem;color:var(--muted);margin-top:10px">⚠ THESIS ONLY — NOT FINANCIAL ADVICE</div></section>
+        <section class="cx-section rv">
+          <div class="sec-title">INTELLIGENCE LEVEL — PICK YOURS</div>
+          <div class="cx-tabs" role="tablist">
+            <button class="cx-btn" onclick="setCx('eli5',this)"><span class="cx-n">ELI5</span><span class="cx-sub">Simple · 3 min</span></button>
+            <button class="cx-btn active" onclick="setCx('analyst',this)"><span class="cx-n">Analyst</span><span class="cx-sub">Intermediate · 5 min</span></button>
+            <button class="cx-btn" onclick="setCx('quant',this)"><span class="cx-n">Quant</span><span class="cx-sub">Advanced · 7 min</span></button>
+          </div>
+          <div class="pane" id="pane-eli5"></div>
+          <div class="pane active" id="pane-analyst"></div>
+          <div class="pane" id="pane-quant"></div>
+        </section>
+      </article>
+      <section class="forces rv"><div class="sec-title">ACTIVE MACRO FORCES</div><div class="forces-grid" id="forces-grid"></div></section>
+      <section class="glass-card rv" style="margin-bottom:24px" id="agent-consensus"></section>
+      <section class="chaos rv" id="chaos-line-card"></section>
+      <section class="trap rv" id="trap-card"></section>
+      <section class="edge-section rv" id="edge-card"></section>
+    </div></main>
+  </div>
+
+  <div id="view-ledger" class="spa-view">
+    <div class="wrap" style="padding-top:40px">
+      <div class="page-title">PUBLIC SIGNAL LEDGER</div>
+      <div class="page-sub">FULL SIGNAL HISTORY WITH RESOLUTION STATUS</div>
+      <section class="glass-card rv vis" style="margin-bottom:48px"><div class="sec-title">SIGNAL LEDGER</div><div id="ledger"></div></section>
     </div>
   </div>
-  <div style="text-align:center">
-    <span class="debate-badge consensus">✓ UNANIMOUS</span>
+
+  <div id="view-vitals" class="spa-view">
+    <div class="wrap" style="padding-top:40px">
+      <div class="page-title">MACRO DASHBOARD</div>
+      <div class="page-sub">CROSS-MARKET INTELLIGENCE</div>
+      <section class="glass-card macro rv vis"><div class="sec-title">MACRO DASHBOARD</div><div class="mgrid" id="macro-grid"></div></section>
+      <section class="ctx rv vis"><div class="sec-title">CROSS-MARKET CONTEXT</div><div class="ctx-grid" id="context-grid"></div></section>
+      <section class="poly rv vis" id="poly-card"></section>
+      <section class="wires rv vis"><div class="wires-h"><span>INTEL WIRES</span><span style="font-size:.42rem;opacity:.5">CLICK TO EXPAND</span></div><div id="wires"></div></section>
+    </div>
   </div>
-  
-</section>
-<!-- CHAOS LINE -->
-<section class="chaos rv"><span class="chaos-tag"><span class="star">✦</span> THE CHAOS LINE</span><div class="chaos-text">&ldquo;The market speaks in contradictions.&rdquo;</div><div class="share-row"><button class="s-btn red" onclick="openShare()">↗ Share</button><a class="s-btn x" href="https://twitter.com/intent/tweet?text=%22The%20market%20speaks%20in%20contradictions.%22%20%E2%80%94%20Chaos%20Intelligence%0Ahttps%3A%2F%2Fchaos.sumanthworks.com" target="_blank" rel="noopener">𝕏 Post</a><a class="s-btn tg" href="https://t.me/share/url?url=https%3A%2F%2Fchaos.sumanthworks.com&text=%22The%20market%20speaks%20in%20contradictions.%22%20%E2%80%94%20Chaos%20Intelligence%0A%0AFRI%2C%20MAY%2029%2C%202026%20brief%3A%20https%3A%2F%2Fchaos.sumanthworks.com" target="_blank" rel="noopener">✈ Telegram</a><button class="s-btn ghost" onclick="copyLine()">📋 Copy</button><span class="copied-msg" id="copied-msg">✓ Copied!</span></div></section>
 
-<!-- INLINE CTA (moved up from bottom!) -->
-<section class="inline-cta rv"><div class="cta-left"><div class="cta-title">3 trades. Before the bell. Zero guesswork. Miss the signal → chase the loss.</div><div class="cta-sub">PRIVATE CHANNEL · REAL-TIME ALERTS · FULL PLAYBOOK</div></div><a class="cta-btn" href="https://sumanth664.gumroad.com/l/hlpqa" target="_blank" rel="noopener">GET THE NEXT SIGNAL →</a></section>
+  <div id="view-alpha" class="spa-view">
+    <div class="wrap">
+      <div class="alpha-lock">
+        <div style="font-size:3rem;margin-bottom:16px">🔒</div>
+        <h2>Unlock Whale Orderbook Telemetry</h2>
+        <p>Get real-time execution parameters and webhook trade updates pushed direct to your console interface. Unfiltered algorithmic dissent straight from the pool trackers.</p>
+        <button class="alpha-btn">UNLOCK ACCESS TIER</button>
+      </div>
+    </div>
+  </div>
 
-<!-- TRACK RECORD -->
-<section class="glass-card rv" style="margin-bottom:48px"><div class="sec-title">LAST 7 SIGNALS</div><div style="font-family:var(--font-mono);font-size:.8rem;color:var(--ink);line-height:1.8"><div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--s3);padding:8px 0"><span style="color:var(--green)">✔ BTC Long</span><span style="color:var(--green)">+4.5%</span></div><div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--s3);padding:8px 0"><span style="color:var(--green)">✔ Oil Trade</span><span style="color:var(--gold)">Running</span></div><div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--s3);padding:8px 0"><span style="color:var(--red)">❌ SPX Short</span><span style="color:var(--red)">-1.2%</span></div><div style="display:flex;justify-content:space-between;padding-top:12px;font-size:1rem;font-weight:700;color:var(--ink)"><span>Win Rate:</span><span style="color:var(--green)">68%</span></div></div><div style="font-family:var(--font-mono);font-size:.42rem;color:var(--muted);margin-top:12px;padding:8px 12px;background:var(--s2);border-radius:6px;border-left:2px solid var(--gold);letter-spacing:.5px">⚠ Sample signals shown. Live performance tracking rolling out.</div></section>
+  <div class="mobile-dock">
+    <div class="dock-grid">
+      <a href="#terminal" class="dock-btn nav-link" data-target="view-terminal"><span class="dock-icon">⚡</span><span class="dock-label">INTEL</span></a>
+      <a href="#ledger" class="dock-btn nav-link" data-target="view-ledger"><span class="dock-icon">📋</span><span class="dock-label">LEDGER</span></a>
+      <a href="#vitals" class="dock-btn nav-link" data-target="view-vitals"><span class="dock-icon">📊</span><span class="dock-label">VITALS</span></a>
+      <a href="#alpha" class="dock-btn nav-link" data-target="view-alpha"><span class="dock-icon">🔒</span><span class="dock-label" style="color:var(--gold)">ALPHA</span></a>
+    </div>
+  </div>
 
-<!-- MACRO DASHBOARD -->
-<section class="glass-card rv" style="margin-bottom:48px"><div class="sec-title">MACRO DASHBOARD</div><div class="mgrid"><div class="mi" style="animation-delay:0ms"><div class="mi-l">10Y Treasury</div><div class="mi-v neut">4.455%</div><div class="mi-s">Yield change</div></div><div class="mi" style="animation-delay:80ms"><div class="mi-l">DXY Dollar</div><div class="mi-v neut">99.09</div><div class="mi-s">— Neutral</div></div><div class="mi" style="animation-delay:160ms"><div class="mi-l">VIX</div><div class="mi-v neut">15.85</div><div class="mi-s">Implied vol</div></div><div class="mi" style="animation-delay:240ms"><div class="mi-l">S&amp;P 500</div><div class="mi-v up">7,564</div><div class="mi-s">+0.58%</div></div><div class="mi" style="animation-delay:320ms"><div class="mi-l">Recession Prob</div><div class="mi-v up">1.8%</div><div class="mi-s">FRED/NY Fed model</div></div><div class="mi" style="animation-delay:400ms"><div class="mi-l">BTC Dominance</div><div class="mi-v neut">57.7%</div><div class="mi-s">$2.55T</div></div><div class="mi" style="animation-delay:480ms"><div class="mi-l">Gold /oz</div><div class="mi-v up">N/A</div><div class="mi-s">Safe-haven demand</div></div><div class="mi" style="animation-delay:560ms"><div class="mi-l">WSB Sentiment</div><div class="mi-v neut">MIXED</div><div class="mi-s">Retail positioning</div></div></div></section>
+  <footer class="ftr wrap">
+    <div class="ftr-content">
+      <div class="ftr-brand">CHAOS<em>.</em></div>
+      <div class="ftr-links">
+        <a href="https://t.me/chaosterminal" class="ftr-link" target="_blank">Telegram</a>
+        <a href="https://chaos.sumanthworks.com" class="ftr-link">Live Brief</a>
+      </div>
+    </div>
+    <div class="ftr-disc">Not financial advice. AI-generated from public data. Public ledger required before performance claims. Chaos Intelligence. &copy; 2026 Chaos Intelligence · https://chaos.sumanthworks.com</div>
+  </footer>
 
+  <script>
+    // SPA ROUTER
+    function runClientRouter(){
+      const hash=window.location.hash||'#terminal';
+      const map={'#terminal':'view-terminal','#ledger':'view-ledger','#vitals':'view-vitals','#alpha':'view-alpha'};
+      const vid=map[hash]||'view-terminal';
+      document.querySelectorAll('.spa-view').forEach(v=>v.classList.remove('active'));
+      const el=document.getElementById(vid);if(el)el.classList.add('active');
+      document.querySelectorAll('.nav-link').forEach(l=>l.classList.toggle('active',l.getAttribute('data-target')===vid));
+      window.scrollTo(0,0);
+    }
+    window.addEventListener('hashchange',runClientRouter);
 
+    const ALL_FORCES=['MONEY','TECH','ENERGY','POLITICS','WAR','DEBT','JOBS','FOOD','PEOPLE'];
+    const FI={MONEY:'💰',TECH:'🤖',ENERGY:'⚡',POLITICS:'🏛️',WAR:'⚔️',DEBT:'💸',JOBS:'💼',FOOD:'🌾',PEOPLE:'🧑'};
+    const SITE='https://chaos.sumanthworks.com';
+    let speechInst=null,currentLine='';
 
+    function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+    function num(v,f=0){const n=parseFloat(String(v??'').replace(/[^0-9.-]/g,''));return Number.isFinite(n)?n:f}
+    function sigCls(s){return s==='BULLISH'?'bull':s==='BEARISH'?'bear':s==='VOLATILE'?'volt':'neut'}
+    function briefHtml(t){return(String(t||'No data available.').split(/\n\n+/).filter(Boolean)).map(p=>`<p>${esc(p)}</p>`).join('')}
+    function metric(l,v,s,c='neut'){return`<div class="mi"><div class="mi-l">${esc(l)}</div><div class="mi-v ${c}">${esc(v)}</div><div class="mi-s">${esc(s)}</div></div>`}
+    function vital(l,v,s,c='neut'){return`<div class="vital"><div class="vv ${c}">${esc(v)}</div><div class="vl">${esc(l)}</div><div class="vd">${esc(s)}</div></div>`}
 
+    function agentCard(name,agent){
+      if(!agent)return`<div class="agent-card"><div class="agent-name">${esc(name)}</div><div class="agent-bias neut">—</div></div>`;
+      const bc=sigCls(agent.bias||'NEUTRAL');
+      return`<div class="agent-card"><div class="agent-name">🧠 ${esc(name)}</div><div class="agent-bias ${bc}">${esc(agent.bias||'—')}</div><div class="agent-thesis">${esc(agent.thesis||'')}</div></div>`;
+    }
 
+    function playCard(p,i){
+      const tc={SAFE:'bull',AGGRESSIVE:'bear',CONTRARIAN:'neut'};
+      const c=tc[p.type]||'neut';
+      const safe=p.type==='SAFE';
+      const inner=`<div class="play-card-type ${c}">${esc(p.type)}</div><div class="play-card-thesis">${esc(p.thesis)}</div><div class="play-card-details ${safe?'':'play-blur-content'}">${briefHtml(p.details)}</div>`;
+      const lock=safe?'':` <div class="play-lock-overlay"><div class="play-lock-label">🔒 ALPHA MEMBERS ONLY</div><button class="play-unlock-btn" onclick="window.open('https://t.me/chaosterminal','_blank')">UNLOCK ACCESS</button></div>`;
+      return`<div class="play-card" style="animation-delay:${i*80}ms">${inner}${lock}</div>`;
+    }
 
+    function renderLedger(signals){
+      if(!signals||!signals.length)return'<div style="font-family:var(--font-mono);font-size:.55rem;color:var(--muted);padding:20px 0">No signal history yet.</div>';
+      return signals.slice(0,10).map(s=>{
+        const sc=sigCls(s.signal);
+        const rs=s.resolution_status||'OPEN';
+        const rc=rs==='WIN'?'bull':rs==='LOSS'?'bear':'neut';
+        return`<div class="ledger-row"><span>${esc(s.date||'')}</span><span>${esc(s.headline||s.signal||'')}</span><span class="${sc}">${esc(s.signal||'')}</span><span class="${rc}">${esc(rs)}</span></div>`;
+      }).join('');
+    }
 
-<!-- 3 PLAYS (v5) -->
-<section class="rv"><div class="sec-title">⚡ THE PLAYS — 3 WAYS TO TRADE THIS</div><div class="plays-grid"><div class="play-text"><p>No data available.</p></div></div><div style="font-family:var(--font-mono);font-size:.44rem;color:var(--muted);margin-top:10px;letter-spacing:.5px">⚠ THESIS ONLY — NOT FINANCIAL ADVICE</div></section>
-
-<!-- WIRES -->
-<section class="wires rv"><div class="wires-h"><span>INTEL WIRES</span><span style="font-size:.42rem;opacity:.5">CLICK TO EXPAND</span></div><div class="wire"><div class="wire-hl" style="color:var(--muted)">No wires this session.</div></div></section>
-
-<!-- CROSS-MARKET CONTEXT (DYNAMIC) -->
-<section class="ctx rv"><div class="sec-title">CROSS-MARKET CONTEXT</div><div class="ctx-grid"><div class="ctx-card" style="--accent:var(--red);animation-delay:0ms"><div class="ctx-l">Bond Market</div><div class="ctx-v dn">CAUTION</div><div class="ctx-d">10Y at 4.455% — yields within normal range.</div></div><div class="ctx-card" style="--accent:var(--green);animation-delay:100ms"><div class="ctx-l">Equity Market</div><div class="ctx-v up">BULLISH</div><div class="ctx-d">S&amp;P 500 +0.58% session.</div></div><div class="ctx-card" style="--accent:var(--gold);animation-delay:200ms"><div class="ctx-l">Crypto</div><div class="ctx-v neut">HEDGING</div><div class="ctx-d">BTC at $73,650 — positive momentum.</div></div><div class="ctx-card" style="--accent:var(--purple);animation-delay:300ms"><div class="ctx-l">Sentiment</div><div class="ctx-v up">FEAR 23</div><div class="ctx-d">Neutral sentiment across retail.</div></div></div></section>
-
-<!-- POLYMARKET -->
-<section class="poly rv"><span class="poly-tag">⚡ TOP PREDICTION MARKET</span><div class="poly-q">Unknown</div><div class="poly-row"><div class="poly-odds">50.0%</div><div class="poly-bar-w"><div class="poly-bar-l"><span>YES probability</span><span>24h tracked</span></div><div class="poly-track"><div class="poly-fill" id="poly-fill" style="width:0%"></div></div></div></div><div style="margin-top:14px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px"><div class="poly-meta">Volume: $0</div><a class="poly-link" href="https://polymarket.com" target="_blank" rel="noopener">VIEW LIVE →</a></div></section>
-
-</div></main>
-
-<footer class="wrap"><div class="ftr"><div class="ftr-brand">CHAOS<em>.</em></div><div class="ftr-links"><a href="https://sumanth664.gumroad.com/l/hlpqa" class="ftr-link" target="_blank" rel="noopener">Telegram</a><a href="https://chaos.sumanthworks.com" class="ftr-link">Live Brief</a></div><div class="ftr-disc">Not financial advice. AI-generated from public data. © 2026 Chaos Intelligence · https://chaos.sumanthworks.com</div></div></footer>
-
-<div class="modal-bg" id="modal-bg" onclick="closeShareBg(event)"><div class="modal"><button class="modal-x" onclick="closeShare()">✕</button><div class="modal-tag">CHAOS INTELLIGENCE — SHARE</div><div class="modal-q">&ldquo;The market speaks in contradictions.&rdquo;</div><div class="modal-site">https://chaos.sumanthworks.com</div><div class="modal-btns"><a class="s-btn x" href="https://twitter.com/intent/tweet?text=%22The%20market%20speaks%20in%20contradictions.%22%20%E2%80%94%20Chaos%20Intelligence%0Ahttps%3A%2F%2Fchaos.sumanthworks.com" target="_blank" rel="noopener">𝕏 Twitter/X</a><a class="s-btn tg" href="https://t.me/share/url?url=https%3A%2F%2Fchaos.sumanthworks.com&text=%22The%20market%20speaks%20in%20contradictions.%22%20%E2%80%94%20Chaos%20Intelligence%0A%0AFRI%2C%20MAY%2029%2C%202026%20brief%3A%20https%3A%2F%2Fchaos.sumanthworks.com" target="_blank" rel="noopener">✈ Telegram</a><button class="s-btn ghost" onclick="copyModal()">📋 Copy</button></div></div></div>
-
-<script>
-// Boot — fast 800ms
-(function(){var b=document.getElementById('boot'),done=false;function fin(){if(done)return;done=true;setTimeout(function(){b.classList.add('gone');setTimeout(function(){b.style.display='none'},600)},300)}window.addEventListener('load',fin);setTimeout(fin,900)})();
-
-// Reading progress bar
-window.addEventListener('scroll',function(){var h=document.documentElement,b=document.body,st=h.scrollTop||b.scrollTop,sh=h.scrollHeight||b.scrollHeight,ch=h.clientHeight;document.getElementById('progress').style.width=Math.round((st/(sh-ch))*100)+'%'});
-
-// Fear gauge animation
-(function(){var target=23,arc=document.getElementById('gauge-arc'),num=document.getElementById('gauge-num');if(!arc||!num)return;var total=251,offset=total-(target/100)*total;setTimeout(function(){arc.style.strokeDashoffset=offset;var c=0,step=Math.max(1,Math.round(target/40));var iv=setInterval(function(){c+=step;if(c>=target){c=target;clearInterval(iv)}num.textContent=c},25)},1200)})();
-
-// Tab switching
-function setCx(cx,btn){if(window.speechSynthesis)speechSynthesis.cancel();document.querySelectorAll('.voice-btn').forEach(function(b){b.classList.remove('playing');b.innerHTML='<span class="v-icon">🔊</span> LISTEN'});document.querySelectorAll('.cx-btn').forEach(function(b){b.classList.remove('active')});document.querySelectorAll('.pane').forEach(function(p){p.classList.remove('active')});btn.classList.add('active');document.getElementById('pane-'+cx).classList.add('active')}
-
-// Theme
-function toggleTheme(){var l=document.body.classList.toggle('light');document.getElementById('th-lbl').textContent=l?'LIGHT':'DARK';try{localStorage.setItem('chaos-theme',l?'light':'dark')}catch(e){}}
-(function(){try{if(localStorage.getItem('chaos-theme')==='light'){document.body.classList.add('light');var l=document.getElementById('th-lbl');if(l)l.textContent='LIGHT'}}catch(e){}})();
-
-// Share modal
-function openShare(){document.getElementById('modal-bg').classList.add('open');document.body.style.overflow='hidden'}
-function closeShare(){document.getElementById('modal-bg').classList.remove('open');document.body.style.overflow=''}
-function closeShareBg(e){if(e.target===document.getElementById('modal-bg'))closeShare()}
-
-// Copy
-var CL="The market speaks in contradictions.",SU='https://chaos.sumanthworks.com';
-function copyLine(){navigator.clipboard.writeText('\u201c'+CL+'\u201d \u2014 Chaos Intelligence\n'+SU).then(function(){var m=document.getElementById('copied-msg');m.style.display='inline';setTimeout(function(){m.style.display='none'},2200)}).catch(function(){})}
-function copyModal(){navigator.clipboard.writeText('\u201c'+CL+'\u201d \u2014 '+SU).catch(function(){});closeShare()}
-
-// Wire expand
-document.querySelectorAll('.wire').forEach(function(w){w.addEventListener('click',function(){this.setAttribute('aria-expanded',this.classList.contains('open')?'true':'false')})});
-
-// Context card mobile toggle
-document.querySelectorAll('.ctx-card').forEach(function(c){c.addEventListener('click',function(){if(window.innerWidth<=600)this.classList.toggle('open')})});
-
-// Scroll reveal with stagger
-var rvs=document.querySelectorAll('.rv'),obs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('vis');obs.unobserve(e.target)}})},{threshold:.06,rootMargin:'0px 0px -30px 0px'});rvs.forEach(function(r){obs.observe(r)});
-
-// Polymarket bar
-setTimeout(function(){var f=document.getElementById('poly-fill');if(f)f.style.width='50.0%'},2000);
-
-// Keyboard
-document.addEventListener('keydown',function(e){if(e.key==='Escape')closeShare()});
-
-// Debug mode: add ?debug=1 to URL to reveal nuclear fallback status
-(function(){var params=new URLSearchParams(window.location.search);if(params.get('debug')==='1'){document.querySelectorAll('.nuclear-badge,.brain-badge').forEach(function(el){el.style.display='inline'})}})();
-
-
-// ═══════════════ VOICE ENGINE + WORLD CLOCK + SESSION ═══════════════
-
-// --- VOICE: Text-to-Speech for each intelligence level ---
-var currentUtterances = [];
-
-function chaosSpeak(paneId, btn) {
-  if (!('speechSynthesis' in window)) {
-    btn.innerHTML = '<span class="v-icon">❌</span> N/A';
-    setTimeout(function(){ btn.innerHTML = '<span class="v-icon">🔊</span> LISTEN'; }, 1500);
-    return;
-  }
-  
-  // If already playing, stop
-  if (btn.classList.contains('playing')) {
-    speechSynthesis.cancel();
-    currentUtterances = [];
-    btn.classList.remove('playing');
-    btn.innerHTML = '<span class="v-icon">🔊</span> LISTEN';
-    return;
-  }
-  
-  // Reset all other buttons
-  document.querySelectorAll('.voice-btn').forEach(function(b){
-    b.classList.remove('playing');
-    b.innerHTML = '<span class="v-icon">🔊</span> LISTEN';
-  });
-  
-  var pane = document.getElementById(paneId);
-  if (!pane) return;
-  var brief = pane.querySelector('.brief');
-  if (!brief) return;
-  
-  // Extract clean text from <p> tags only
-  var rawText = '';
-  var paragraphs = brief.querySelectorAll('p');
-  if (paragraphs.length > 0) {
-    paragraphs.forEach(function(p){ rawText += p.textContent + ' '; });
-  } else {
-    rawText = brief.textContent;
-  }
-  
-  var text = rawText.replace(/**/g, '').replace(/s+/g, ' ').trim();
-  if (!text) return;
-
-  speechSynthesis.cancel();
-  currentUtterances = [];
-  
-  btn.classList.add('playing');
-  btn.innerHTML = '<span class="v-icon">⏸</span> PLAYING';
-  
-  // CHUNK TEXT TO AVOID CHROME 15-SECOND CUTOFF BUG
-  // Split by common sentence endings
-  var chunks = text.match(/[^.!?]+[.!?]+/g) || [text];
-  
-  var rates = {'pane-eli5': 0.9, 'pane-analyst': 0.95, 'pane-quant': 1.05};
-  var currentRate = rates[paneId] || 0.95;
-
-  chunks.forEach(function(chunk, index) {
-      var u = new SpeechSynthesisUtterance(chunk.trim());
-      u.lang = 'en-US';
-      u.rate = currentRate;
-      u.pitch = 1;
-      u.volume = 1.0;
-      
-      // Force loading of voices (helps on mobile Safari)
-      var voices = speechSynthesis.getVoices();
-      if (voices.length > 0) {
-          // Try to pick a premium/natural English voice if available
-          var bestVoice = voices.find(v => v.name.includes('Google US English') || v.name.includes('Samantha') || v.name.includes('Premium'));
-          if (bestVoice) u.voice = bestVoice;
+    function renderWires(wires,newsText){
+      if(!wires||!wires.length){
+        if(newsText)return`<div class="wire"><div class="wire-src">WIRE</div><div class="wire-hl">${esc(newsText.split('\n')[0]||'No wires this session.')}</div></div>`;
+        return'<div style="font-family:var(--font-mono);font-size:.55rem;color:var(--muted);padding:20px 0">No wires this session.</div>';
       }
+      return wires.map(w=>`<div class="wire" onclick="this.classList.toggle('open')"><div class="wire-src">${esc(w.source||'WIRE')}</div><div class="wire-hl">${esc(w.title||'')}</div><div class="wire-body">${esc(w.impact||'')}</div></div>`).join('');
+    }
 
-      if (index === chunks.length - 1) {
-          u.onend = function() {
-              btn.classList.remove('playing');
-              btn.innerHTML = '<span class="v-icon">🔊</span> LISTEN';
-              currentUtterances = [];
-          };
+    function renderContext(m,b){
+      const cm=b.cross_market||{};
+      const items=[
+        {l:'Bond Market',v:cm.bond?.label||'CAUTION',d:cm.bond?.desc||`10Y at ${m.yieldVal||'N/A'}%`,c:cm.bond?.label==='CAUTION'?'bear':'neut',a:'var(--red)'},
+        {l:'Equity Market',v:cm.equity?.label||'BULLISH',d:cm.equity?.desc||`S&P ${m.spxChange||'flat'}`,c:cm.equity?.label==='BULLISH'?'bull':'neut',a:'var(--green)'},
+        {l:'Crypto',v:cm.crypto?.label||'HEDGING',d:cm.crypto?.desc||`BTC at ${m.btcPrice||'N/A'}`,c:'neut',a:'var(--gold)'},
+        {l:'Sentiment',v:cm.sentiment?.label||`FEAR ${m.fearIndex||50}`,d:cm.sentiment?.desc||`${m.fearLabel||'Mixed'} retail sentiment`,c:num(m.fearIndex)>50?'bear':'bull',a:'var(--purple)'}
+      ];
+      return items.map(x=>`<div class="ctx-card" style="--accent:${x.a}"><div class="ctx-l">${esc(x.l)}</div><div class="ctx-v ${x.c}">${esc(x.v)}</div><div class="ctx-d">${esc(x.d)}</div></div>`).join('');
+    }
+
+    function pane(id,tag,time,text,metrics){
+      const metricsHtml=metrics.map(([l,v])=>`<div class="bm"><div class="bm-v">${esc(v||'N/A')}</div><div class="bm-l">${esc(l)}</div></div>`).join('');
+      document.getElementById(`pane-${id}`).innerHTML=`<div class="brief"><div class="brief-meta"><span class="brief-tag">⏱ ${esc(time)}</span><button class="voice-btn" onclick="speak('${id}')">🔊 LISTEN</button></div>${briefHtml(text)}<div class="brief-metrics">${metricsHtml}</div></div>`;
+    }
+
+    function animateGauge(fear){
+      const total=251,offset=total-(fear/100)*total;
+      const arc=document.getElementById('gauge-arc');
+      const num=document.getElementById('gauge-num');
+      if(arc)arc.style.strokeDashoffset=offset;
+      let cur=0;const step=()=>{cur=Math.min(cur+2,fear);if(num)num.textContent=Math.round(cur);if(cur<fear)requestAnimationFrame(step);};
+      step();
+    }
+
+    function setCx(id,btn){
+      document.querySelectorAll('.cx-btn').forEach(b=>b.classList.remove('active'));
+      document.querySelectorAll('.pane').forEach(p=>p.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById(`pane-${id}`).classList.add('active');
+    }
+
+    function speak(id){
+      const el=document.getElementById(`pane-${id}`);
+      const text=el?el.innerText:'';
+      if(!text)return;
+      if(speechInst){window.speechSynthesis.cancel();speechInst=null;return;}
+      speechInst=new SpeechSynthesisUtterance(text);
+      speechInst.rate=0.95;speechInst.pitch=1;
+      speechInst.onend=()=>{speechInst=null;};
+      window.speechSynthesis.speak(speechInst);
+    }
+
+    function copyLine(){
+      navigator.clipboard.writeText(currentLine).then(()=>{
+        const btn=event.target;btn.textContent='Copied!';setTimeout(()=>btn.textContent='Copy Line',2000);
+      });
+    }
+
+    function reveal(){
+      const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');obs.unobserve(e.target);}});},{threshold:.08});
+      document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
+    }
+
+    function updateWorldClock(){
+      const zones=[['UTC','UTC'],['NY','America/New_York'],['LDN','Europe/London'],['MUM','Asia/Kolkata'],['TKY','Asia/Tokyo']];
+      const bar=document.getElementById('world-clock-bar');
+      function tick(){
+        const now=new Date();
+        bar.innerHTML=zones.map(([label,tz])=>`<div class="wc-item"><span>${esc(label)}</span><span class="wc-time">${now.toLocaleTimeString('en-GB',{timeZone:tz,hour:'2-digit',minute:'2-digit'})}</span></div>`).join('');
       }
-      u.onerror = function(e) {
-          console.error("Speech error", e);
-          btn.classList.remove('playing');
-          btn.innerHTML = '<span class="v-icon">🔊</span> LISTEN';
-      };
-      
-      currentUtterances.push(u);
-      speechSynthesis.speak(u);
-  });
-  
-  // Keep-alive hack for Chrome Android to prevent deep sleep during long speech
-  var keepAliveIV = setInterval(function() {
-      if (!speechSynthesis.speaking) {
-          clearInterval(keepAliveIV);
-      } else {
-          speechSynthesis.pause();
-          speechSynthesis.resume();
+      tick();setInterval(tick,30000);
+    }
+
+    function updateProgress(){
+      let w=0;const i=setInterval(()=>{w=Math.min(w+Math.random()*12,95);document.getElementById('progress').style.width=w+'%';},120);
+      return()=>{clearInterval(i);document.getElementById('progress').style.width='100%';setTimeout(()=>document.getElementById('progress').style.opacity=0,400);};
+    }
+
+    async function loadData(){
+      const done=updateProgress();
+      try{
+        const [lr,sr]=await Promise.all([fetch('./api/latest.json',{cache:'no-store'}),fetch('./api/signals.json',{cache:'no-store'})]);
+        const latest=await lr.json();
+        const signals=await sr.json();
+        render(latest,signals);
+      }catch(e){
+        console.error('Failed to load data:',e);
+        document.getElementById('headline').textContent='Data Unavailable — Check Back Soon';
+        document.getElementById('terminal-status').textContent='OFFLINE';
+      }finally{
+        done();
+        setTimeout(()=>{document.getElementById('boot').classList.add('gone');},400);
       }
-  }, 10000);
-}
+    }
 
-// Voice buttons are now embedded directly in the HTML template
+    function render(latest,signals){
+      const m=latest.market||{};
+      const b=latest.brief||{};
+      const agents=latest.agents||{};
+      const signal=b.signal||'NEUTRAL';
+      const scls=sigCls(signal);
+      const fear=num(m.fearIndex,50);
+      const fearCls=fear<25?'bear':fear>60?'bull':'neut';
+      const fearColor=fear<25?'var(--red)':fear>60?'var(--green)':'var(--gold)';
+      const btcCls=num(m.btcChange)>=0?'bull':'bear';
+      const generated=new Date(b.generated_at||Date.now());
+      const dateStr=generated.toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric',year:'numeric'}).toUpperCase();
+      const timeStr=generated.toISOString().slice(11,16)+' UTC';
+      currentLine=b.chaos_line||'';
 
-// Voice stop is handled by chaosSpeak toggle — no setCx override needed
+      const tickerItems=[
+        ['FEAR',m.fearIndex,fearCls],['BTC',m.btcPrice,btcCls],['24H',`${num(m.btcChange).toFixed(2)}%`,btcCls],
+        ['SIGNAL',signal,scls],['CONF',`${b.confidence||0}%`,'neut'],['FORCES',`${(b.forces||[]).length}/9`,'bear'],
+        ['10Y',`${m.yieldVal||'N/A'}%`,num(m.yieldVal)>4.5?'bear':'neut'],['DXY',m.dxyVal||'N/A','neut'],[dateStr,'','']
+      ];
+      const tk=tickerItems.map(([k,v,c])=>`<span class="tk">${esc(k)} ${v?`<span class="v ${c}">${esc(v)}</span>`:''}</span>`).join('');
+      document.getElementById('ticker-inner').innerHTML=tk+tk;
+      document.getElementById('terminal-status').textContent=`${dateStr} · ${timeStr}`;
+      if(document.getElementById('og-title'))document.getElementById('og-title').content=`CHAOS. | ${b.headline||'Live Brief'}`;
+      if(document.getElementById('tw-title'))document.getElementById('tw-title').content=`CHAOS. | ${b.headline||'Live Brief'}`;
+      if(document.getElementById('og-desc'))document.getElementById('og-desc').content=b.chaos_line||'';
+      if(document.getElementById('tw-desc'))document.getElementById('tw-desc').content=b.chaos_line||'';
+      document.getElementById('date-line').textContent=`${dateStr} · ${timeStr} · CHAOS INTELLIGENCE`;
+      document.getElementById('session-badge').textContent=`${m.session||'MORNING'} BRIEF`;
+      document.getElementById('hash-val').textContent=latest.signal?.signal_hash||latest.signal_hash||'Hash pending...';
+      document.getElementById('vitals').innerHTML=[
+        vital('Fear Index',m.fearIndex||'N/A',`${m.fearLabel||''} ${m.fearDelta?(m.fearDelta>0?'▲ +':' ▼ ')+m.fearDelta+' vs yest':''}`,fearCls),
+        vital('BTC/USD',m.btcPrice||'N/A',`24h ${num(m.btcChange)>=0?'▲+':'▼'}${num(m.btcChange).toFixed(2)}%`,btcCls),
+        vital('Signal',signal,'— AI model',scls),
+        vital('Confidence',`${b.confidence||0}%`,`— v4.1`,'neut')
+      ].join('');
+      document.getElementById('brief-tag').textContent=`TODAY'S BRIEFING · ${(b.dateline||'NYC').toUpperCase()}`;
+      document.getElementById('headline').textContent=b.headline||'Market Update';
+      document.getElementById('sig-row').innerHTML=`<span class="sig ${scls}">${esc(signal)}</span><span class="ts-badge">${esc(b.time_sensitivity||'THIS WEEK')}</span><span class="conf">${esc(b.confidence||0)}% AI CONFIDENCE · ${(b.forces||[]).length}/9 FORCES</span>`;
+      document.getElementById('updated-line').textContent=`${timeStr} · ∞ BRAIN + LIVE DATA`;
+      document.getElementById('gauge-arc').setAttribute('stroke',fearColor);
+      document.getElementById('gauge-glow').style.background=fearColor;
+      document.getElementById('gauge-num').className=`gauge-val ${fearCls}`;
+      document.getElementById('gauge-label').textContent=String(m.fearLabel||'Neutral').toUpperCase();
+      setTimeout(()=>animateGauge(fear),120);
+      pane('eli5','ELI5 — FOR EVERYONE','3 MIN',b.eli5,[['Fear Index',m.fearIndex],['Bitcoin',m.btcPrice],['10Y Yield',`${m.yieldVal||'N/A'}%`]]);
+      pane('analyst','ANALYST — INTERMEDIATE','5 MIN',b.analyst,[['10Y Treasury',`${m.yieldVal||'N/A'}%`],['DXY',m.dxyVal],['S&P 500',m.spxVal]]);
+      pane('quant','QUANT — ADVANCED','7 MIN',b.quant,[['VIX',m.vixVal],['ETH',m.ethPrice],['Sentiment',m.wsbSentiment]]);
+      const active=new Set((b.forces||[]).map(x=>String(x).toUpperCase()));
+      document.getElementById('forces-grid').innerHTML=ALL_FORCES.map(f=>`<div class="fc ${active.has(f)?'on':''}"><span class="fc-dot"></span>${FI[f]} <span>${f}</span></div>`).join('');
+      document.getElementById('agent-consensus').innerHTML=`<div class="sec-title">🤖 AGENT CONSENSUS</div><div class="agent-panel">${agentCard('Fundamental',agents.fundamental)}${agentCard('Technical',agents.technical)}${agentCard('Sentiment',agents.sentiment)}</div><div style="text-align:center"><span class="debate-badge">${esc(b.agent_consensus?.debate_required?'DEBATE RESOLVED':'✓ UNANIMOUS')}</span></div>`;
+      document.getElementById('chaos-line-card').innerHTML=`<span class="chaos-tag">✦ THE CHAOS LINE</span><div class="chaos-text">&ldquo;${esc(b.chaos_line||'')}&rdquo;</div><div class="share-row"><a class="s-btn x" target="_blank" href="https://twitter.com/intent/tweet?text=${encodeURIComponent('"'+(b.chaos_line||'')+'" — Chaos Intelligence\n'+SITE)}">𝕏 Post</a><a class="s-btn ghost" target="_blank" href="https://t.me/share/url?url=${encodeURIComponent(SITE)}&text=${encodeURIComponent('"'+(b.chaos_line||'')+'" — Chaos Intelligence')}">✈ Telegram</a><button class="s-btn ghost" onclick="copyLine()">📋 Copy</button></div>`;
+      document.getElementById('trap-card').innerHTML=`<div class="trap-tag">⚠ MARKET TRAP</div><div class="trap-text">${briefHtml(b.trap)}</div>`;
+      document.getElementById('edge-card').innerHTML=`<div class="edge-tag">🔍 THE EDGE — WHAT OTHERS ARE MISSING</div><div class="edge-text">${briefHtml(b.edge)}</div>`;
+      document.getElementById('plays-grid').innerHTML=(b.plays||[]).map(playCard).join('');
+      document.getElementById('ledger').innerHTML=renderLedger(signals);
+      document.getElementById('macro-grid').innerHTML=[
+        metric('10Y Treasury',`${m.yieldVal||'N/A'}%`,`Yield change`,num(m.yieldVal)>4.5?'bear':'neut'),
+        metric('DXY Dollar',m.dxyVal||'N/A',num(m.dxyVal)>104?'↑ EM pressure':'— Neutral','neut'),
+        metric('VIX',m.vixVal||'N/A','Implied vol',num(m.vixVal)>20?'bear':'neut'),
+        metric('S&P 500',m.spxVal||'N/A',m.spxChange||'',String(m.spxChange||'').startsWith('+')?'bull':'bear'),
+        metric('Recession Prob',m.recessionProb||'N/A','FRED/NY Fed model','neut'),
+        metric('BTC Dominance',m.btcDominance||'N/A',m.totalMarketCap||'Crypto MCap','neut'),
+        metric('Gold /oz',m.goldPrice||'N/A','Safe-haven demand','neut'),
+        metric('WSB Sentiment',m.wsbSentiment||'N/A','Retail positioning',m.wsbSentiment==='BULLISH'?'bull':m.wsbSentiment==='BEARISH'?'bear':'neut')
+      ].join('');
+      document.getElementById('context-grid').innerHTML=renderContext(m,b);
+      const odds=num(m.marketOdds,50);
+      document.getElementById('poly-card').innerHTML=`<span class="poly-tag">⚡ TOP PREDICTION MARKET</span><div class="poly-q">${esc(m.marketTitle||'Prediction market unavailable')}</div><div class="poly-row"><div class="poly-odds">${esc(m.marketOdds||'50.0')}%</div><div><div style="font-family:var(--font-mono);font-size:.44rem;color:var(--muted);margin-bottom:6px">YES probability</div><div class="poly-track"><div class="poly-fill" style="width:${Math.max(0,Math.min(100,odds))}%"></div></div></div></div><div style="margin-top:14px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px"><div class="vd">Volume: ${esc(m.marketVolume||'$0')}</div><a class="poly-link" href="${esc(m.marketLink||'https://polymarket.com')}" target="_blank">VIEW LIVE →</a></div>`;
+      document.getElementById('wires').innerHTML=renderWires(b.news_wires,m.newsText);
+      reveal();
+      updateWorldClock();
+    }
 
-// --- WORLD CLOCK + SESSION INDICATOR + MARKET STATUS ---
-function updateWorldClock() {
-  var bar = document.getElementById('world-clock-bar');
-  if (!bar) return;
-  bar.style.display = 'flex';
-
-  var now = new Date();
-  var utcH = now.getUTCHours();
-
-  // Market session logic (UTC-based)
-  var session, sessionCls, sessionIcon;
-  if (utcH >= 0 && utcH < 7) {
-    session = 'ASIA SESSION'; sessionCls = 'session-asia'; sessionIcon = '🌏';
-  } else if (utcH >= 7 && utcH < 13) {
-    session = 'EUROPE SESSION'; sessionCls = 'session-europe'; sessionIcon = '🇪🇺';
-  } else {
-    session = 'US SESSION'; sessionCls = 'session-us'; sessionIcon = '🇺🇸';
-  }
-
-  // US Market status (NYSE: 9:30 AM - 4:00 PM ET)
-  var nyOpts = {timeZone:'America/New_York', hour:'2-digit', minute:'2-digit', hour12:false};
-  var nyStr = now.toLocaleTimeString('en-GB', nyOpts);
-  var nyParts = nyStr.split(':');
-  var nyHr = parseInt(nyParts[0], 10);
-  var nyMin = parseInt(nyParts[1], 10);
-  var nyDecimal = nyHr + nyMin/60;
-  var isWeekday = now.getDay() >= 1 && now.getDay() <= 5;
-  var mktOpen = isWeekday && nyDecimal >= 9.5 && nyDecimal < 16;
-
-  function tz(zone, flag) {
-    return now.toLocaleTimeString('en-US', {timeZone:zone, hour:'2-digit', minute:'2-digit', hour12:false});
-  }
-
-  bar.innerHTML = '' +
-    '<span class="session-badge ' + sessionCls + '">' + sessionIcon + ' ' + session + '</span>' +
-    '<span class="mkt-status ' + (mktOpen ? 'mkt-open' : 'mkt-closed') + '"><span class="mkt-dot"></span>' + (mktOpen ? 'NYSE OPEN' : 'NYSE CLOSED') + '</span>' +
-    '<span class="wc-item">🌍 <strong>UTC</strong> <span class="wc-time">' + tz('UTC','') + '</span></span>' +
-    '<span class="wc-item">🇺🇸 <strong>NY</strong> <span class="wc-time">' + tz('America/New_York','') + '</span></span>' +
-    '<span class="wc-item">🇬🇧 <strong>LDN</strong> <span class="wc-time">' + tz('Europe/London','') + '</span></span>' +
-    '<span class="wc-item">🇮🇳 <strong>MUM</strong> <span class="wc-time">' + tz('Asia/Kolkata','') + '</span></span>' +
-    '<span class="wc-item">🇯🇵 <strong>TKY</strong> <span class="wc-time">' + tz('Asia/Tokyo','') + '</span></span>';
-}
-
-updateWorldClock();
-setInterval(updateWorldClock, 15000);
-
-// Stop speech on page unload
-window.addEventListener('beforeunload', function(){ if(window.speechSynthesis) speechSynthesis.cancel(); });
-
-</script>
+    // Boot
+    window.addEventListener('load',()=>{
+      runClientRouter();
+      setTimeout(()=>loadData(),900);
+    });
+  </script>
 </body>
 </html>
