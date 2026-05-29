@@ -1,1 +1,88 @@
-<h1>No content generated</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Chaos Intelligence v7 — Market Update</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=JetBrains+Mono:wght@300;400;700&family=Barlow+Condensed:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#08080c;--bg2:#0d0d12;--s0:#101016;--s1:#14141c;--s2:#1a1a24;--s3:#22222e;--s4:#2c2c3c;--ink:#f0ece4;--ink2:#b8b0a4;--muted:#5a5a6e;--dim:#28283a;--red:#e8394a;--red-g:rgba(232,57,74,.12);--green:#22d45a;--green-g:rgba(34,212,90,.1);--gold:#f5a623;--gold-g:rgba(245,166,35,.1);--blue:#4cc9f0;--purple:#9d6cf8;--font-big:'Bebas Neue',sans-serif;--font-body:'Crimson Pro',serif;--font-mono:'JetBrains Mono',monospace;--font-ui:'Barlow Condensed',sans-serif;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--bg);color:var(--ink);font-family:var(--font-body);padding:24px; max-width:800px; margin:0 auto; line-height: 1.6;}
+.hdr-top { font-family: var(--font-big); font-size: 3rem; margin-bottom: 24px; color: var(--gold); border-bottom: 1px solid var(--s3); padding-bottom: 12px; }
+.headline { font-size: 2.5rem; font-family: var(--font-ui); font-weight: 700; line-height: 1.1; margin-bottom: 24px; }
+.chaos-line { font-family: var(--font-mono); font-size: 1.1rem; color: var(--gold); padding: 16px; background: var(--s0); border-left: 3px solid var(--gold); margin-bottom: 32px; }
+.glass-card { background: var(--s1); border: 1px solid var(--dim); border-radius: 8px; padding: 24px; margin-bottom: 24px; }
+.sec-title { font-family: var(--font-mono); font-size: 0.8rem; letter-spacing: 2px; color: var(--muted); margin-bottom: 16px; }
+.mgrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 16px; margin-bottom: 32px; }
+.mi { background: var(--s0); padding: 12px; border-radius: 6px; }
+.mi-l { font-family: var(--font-mono); font-size: 0.75rem; color: var(--muted); margin-bottom: 4px; }
+.mi-v { font-family: var(--font-mono); font-size: 1.2rem; font-weight: 700; }
+.mi-v.up { color: var(--green); } .mi-v.dn { color: var(--red); } .mi-v.neut { color: var(--ink); }
+.mi-s { font-size: 0.85rem; color: var(--ink2); margin-top: 4px; }
+.ctx-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-bottom: 32px; }
+.ctx-card { background: var(--s0); border-top: 2px solid var(--accent); padding: 16px; }
+.ctx-l { font-family: var(--font-mono); font-size: 0.75rem; color: var(--muted); margin-bottom: 8px; }
+.ctx-v { font-family: var(--font-ui); font-size: 1.4rem; font-weight: 700; margin-bottom: 8px; }
+.ctx-v.up { color: var(--green); } .ctx-v.dn { color: var(--red); } .ctx-v.neut { color: var(--gold); }
+.ctx-d { font-size: 0.95rem; color: var(--ink2); }
+.play-card { background: var(--s1); border-left: 3px solid var(--gold); padding: 20px; margin-bottom: 16px; border-radius: 0 8px 8px 0; }
+.play-card-type { font-family: var(--font-mono); font-weight: 700; font-size: 0.8rem; margin-bottom: 8px; display: inline-block; padding: 4px 8px; border-radius: 4px; background: var(--s2); }
+.play-card-type.up { color: var(--green); } .play-card-type.bear { color: var(--red); } .play-card-type.neut { color: var(--gold); }
+.play-card-thesis { font-family: var(--font-ui); font-size: 1.5rem; font-weight: 700; margin-bottom: 12px; }
+.wire { padding: 12px; border-bottom: 1px solid var(--dim); }
+.wire-src { font-family: var(--font-mono); font-size: 0.7rem; color: var(--blue); margin-right: 8px; }
+.wire-hl { font-size: 1.1rem; font-weight: 600; margin: 4px 0; }
+.wire-body { font-size: 0.95rem; color: var(--ink2); }
+.trap { background: rgba(232,57,74,0.05); border: 1px solid var(--red-g); padding: 24px; border-radius: 8px; margin-bottom: 24px; }
+.trap-tag { font-family: var(--font-mono); color: var(--red); font-size: 0.8rem; margin-bottom: 12px; font-weight: 700; }
+.edge-section { background: rgba(245,166,35,0.05); border: 1px solid var(--gold-g); padding: 24px; border-radius: 8px; margin-bottom: 24px; }
+.edge-tag { font-family: var(--font-mono); color: var(--gold); font-size: 0.8rem; margin-bottom: 12px; font-weight: 700; }
+.forces-wrap { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; }
+.fc { display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; border-radius: 20px; background: var(--s0); font-family: var(--font-mono); font-size: 0.8rem; }
+.fc.on { border: 1px solid var(--gold); color: var(--gold); }
+.fc.off { opacity: 0.5; }
+.fc-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--dim); }
+.fc.on .fc-dot { background: var(--gold); box-shadow: 0 0 8px var(--gold); }
+</style>
+</head>
+<body>
+  <div class="hdr-top">CHAOS INTELLIGENCE <span>v7</span></div>
+  <div class="headline">Market Update</div>
+  <div class="chaos-line">"The market speaks in contradictions."</div>
+  
+  <div class="sec-title">MACRO DASHBOARD</div>
+  <div class="mgrid"><div class="mi" style="animation-delay:0ms"><div class="mi-l">10Y Treasury</div><div class="mi-v neut">N/A%</div><div class="mi-s">Yield change</div></div><div class="mi" style="animation-delay:80ms"><div class="mi-l">DXY Dollar</div><div class="mi-v neut">N/A</div><div class="mi-s">— Neutral</div></div><div class="mi" style="animation-delay:160ms"><div class="mi-l">VIX</div><div class="mi-v neut">N/A</div><div class="mi-s">Implied vol</div></div><div class="mi" style="animation-delay:240ms"><div class="mi-l">S&amp;P 500</div><div class="mi-v dn">N/A</div><div class="mi-s">N/A</div></div><div class="mi" style="animation-delay:320ms"><div class="mi-l">Recession Prob</div><div class="mi-v up">N/A</div><div class="mi-s">FRED/NY Fed model</div></div><div class="mi" style="animation-delay:400ms"><div class="mi-l">BTC Dominance</div><div class="mi-v neut">N/A</div><div class="mi-s">N/A</div></div><div class="mi" style="animation-delay:480ms"><div class="mi-l">WSB Sentiment</div><div class="mi-v neut">N/A</div><div class="mi-s">No data</div></div></div>
+  
+  <div class="ctx-grid"><div class="ctx-card" style="--accent:var(--red);animation-delay:0ms"><div class="ctx-l">Bond Market</div><div class="ctx-v neut">CALM</div><div class="ctx-d">10Y at N/A% — yields within normal range.</div></div><div class="ctx-card" style="--accent:var(--green);animation-delay:100ms"><div class="ctx-l">Equity Market</div><div class="ctx-v up">CALM</div><div class="ctx-d">S&amp;P 500 N/A session.</div></div><div class="ctx-card" style="--accent:var(--gold);animation-delay:200ms"><div class="ctx-l">Crypto</div><div class="ctx-v neut">HEDGING</div><div class="ctx-d">BTC at N/A — positive momentum.</div></div><div class="ctx-card" style="--accent:var(--purple);animation-delay:300ms"><div class="ctx-l">Sentiment</div><div class="ctx-v up">FEAR 50</div><div class="ctx-d">Neutral sentiment across retail.</div></div></div>
+  
+  
+  
+  
+  <div class="glass-card">
+    <div class="sec-title">THE ANALYST DESK</div>
+    <div style="font-size: 1.15rem; line-height: 1.7; color: var(--ink)"><p>Analysis underway.</p></div>
+  </div>
+  
+  <div class="sec-title">ACTIVE FORCES</div>
+  <div class="forces-wrap"><div class="fc on"><span class="fc-dot"></span>💰 <span class="fc-n">MONEY</span><div class="fc-tip"><div class="ftt on">💰 MONEY</div><div class="ftd">Central bank policy, interest rates, and global liquidity.</div><div class="fts on">⚡ ACTIVE — Monetary policy transmission active</div></div></div><div class="fc off"><span class="fc-dot"></span>🤖 <span class="fc-n">TECH</span><div class="fc-tip"><div class="ftt off">🤖 TECH</div><div class="ftd">AI development, semiconductor supply chains, digital infrastructure.</div><div class="fts off">○ DORMANT — Chip war + AI investment cycle dominant</div></div></div><div class="fc off"><span class="fc-dot"></span>⚡ <span class="fc-n">ENERGY</span><div class="fc-tip"><div class="ftt off">⚡ ENERGY</div><div class="ftd">Oil, gas, renewable transition, energy geopolitics.</div><div class="fts off">○ DORMANT — Oil markets stable, no acute supply shock</div></div></div><div class="fc off"><span class="fc-dot"></span>🏛️ <span class="fc-n">POLITICS</span><div class="fc-tip"><div class="ftt off">🏛️ POLITICS</div><div class="ftd">Elections, regulation, government spending, fiscal policy.</div><div class="fts off">○ DORMANT — Fiscal policy under debate</div></div></div><div class="fc off"><span class="fc-dot"></span>⚔️ <span class="fc-n">WAR</span><div class="fc-tip"><div class="ftt off">⚔️ WAR</div><div class="ftd">Active conflicts, sanctions, military escalations.</div><div class="fts off">○ DORMANT — No new escalation this session</div></div></div><div class="fc off"><span class="fc-dot"></span>💸 <span class="fc-n">DEBT</span><div class="fc-tip"><div class="ftt off">💸 DEBT</div><div class="ftd">Sovereign debt, deficit spending, bond market dynamics.</div><div class="fts off">○ DORMANT — Near-record Treasury issuance</div></div></div><div class="fc off"><span class="fc-dot"></span>💼 <span class="fc-n">JOBS</span><div class="fc-tip"><div class="ftt off">💼 JOBS</div><div class="ftd">Employment data, wage growth, labor market slack.</div><div class="fts off">○ DORMANT — Labor market data inline</div></div></div><div class="fc off"><span class="fc-dot"></span>🌾 <span class="fc-n">FOOD</span><div class="fc-tip"><div class="ftt off">🌾 FOOD</div><div class="ftd">Agricultural commodity prices and food inflation.</div><div class="fts off">○ DORMANT — Agricultural prices stable</div></div></div><div class="fc off"><span class="fc-dot"></span>🧑 <span class="fc-n">PEOPLE</span><div class="fc-tip"><div class="ftt off">🧑 PEOPLE</div><div class="ftd">Demographics, migration, social sentiment.</div><div class="fts off">○ DORMANT — No acute population shock</div></div></div></div>
+  
+  
+  
+  
+  <div class="sec-title">ACTIONABLE PLAYS</div>
+  <div><div class="play-text">No plays generated.</div></div>
+  
+  
+  
+  <div class="glass-card">
+    <div class="sec-title">GEOPOLITICAL WIRES</div>
+    <div></div>
+  </div>
+  
+  <div style="text-align: center; margin-top: 60px; padding: 20px; font-family: var(--font-mono); font-size: 0.8rem; color: var(--muted); border-top: 1px solid var(--s3);">
+    Generated at 09:41 UTC | Chaos Intelligence v7<br>
+    Powered by Llama 3.1, Gemini Flash, and Claude 3.5 Sonnet
+  </div>
+</body>
+</html>
