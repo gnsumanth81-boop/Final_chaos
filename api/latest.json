@@ -1,0 +1,110 @@
+{
+  "market": {
+    "fearIndex": 50,
+    "fearLabel": "Neutral",
+    "fearDelta": 0,
+    "btcPrice": "Loading...",
+    "btcChange": "0.00",
+    "btcVolume": "N/A",
+    "btcHigh": "N/A",
+    "btcLow": "N/A",
+    "ethPrice": "N/A",
+    "ethChange": "0.00",
+    "vixVal": "N/A",
+    "yieldVal": "N/A",
+    "yieldPrev": "N/A",
+    "dxyVal": "N/A",
+    "spxVal": "N/A",
+    "spxChange": "N/A",
+    "marketTitle": "Loading markets...",
+    "marketOdds": "50.0",
+    "marketVolume": "$0",
+    "marketLink": "https://polymarket.com",
+    "session": "MORNING",
+    "newsText": "",
+    "btcDominance": "N/A",
+    "totalMarketCap": "N/A",
+    "wsbSentiment": "N/A",
+    "wsbTopTickers": "No data",
+    "recessionProb": "N/A",
+    "goldPrice": "N/A"
+  },
+  "brief": {
+    "headline": "Chaos Intelligence v7 \u2014 Initializing",
+    "dateline": "NYC",
+    "signal": "NEUTRAL",
+    "confidence": 65,
+    "eli5": "The system is warming up. First full brief will appear once the n8n workflow runs. All data sources are being connected.",
+    "analyst": "Chaos Intelligence v7 is initializing. The workflow will push live market data and AI-generated analysis to this endpoint on every scheduled run.",
+    "quant": "System boot sequence in progress. Awaiting first workflow execution to populate live market data and AI analysis across all nine macro force vectors.",
+    "chaos_line": "The engine is cold. The markets are not.",
+    "plays": [
+      {
+        "type": "SAFE",
+        "thesis": "Await confirmation before entry",
+        "details": "System is initializing. Full plays will be generated on the next n8n run."
+      },
+      {
+        "type": "AGGRESSIVE",
+        "thesis": "First mover advantage",
+        "details": "Watch this space. AI analysis loading..."
+      },
+      {
+        "type": "CONTRARIAN",
+        "thesis": "Everyone is waiting",
+        "details": "The best trades happen when no one is watching."
+      }
+    ],
+    "trap": "Retail is waiting for the perfect signal. The perfect signal never comes. The market moves while you wait.",
+    "edge": "Watch the bond market. It tells the truth before equities do.",
+    "time_sensitivity": "THIS WEEK",
+    "forces": [
+      "MONEY"
+    ],
+    "active_regime": "TRANSITION",
+    "cross_market": {
+      "bond": {
+        "label": "CALM",
+        "desc": "Awaiting yield data from first workflow run."
+      },
+      "equity": {
+        "label": "CALM",
+        "desc": "Awaiting S&P data from first workflow run."
+      },
+      "crypto": {
+        "label": "HEDGING",
+        "desc": "Awaiting BTC data from first workflow run."
+      },
+      "sentiment": {
+        "label": "NEUTRAL",
+        "desc": "Fear & Greed data loading..."
+      }
+    },
+    "news_wires": [],
+    "key_levels": {},
+    "weekly_catalyst": "First n8n workflow execution",
+    "agent_consensus": {
+      "debate_required": false,
+      "resolution": "Awaiting first AI analysis run."
+    },
+    "generated_at": "2026-05-29T11:00:00.000Z"
+  },
+  "agents": {
+    "fundamental": {
+      "bias": "NEUTRAL",
+      "thesis": "Awaiting analysis..."
+    },
+    "technical": {
+      "bias": "NEUTRAL",
+      "thesis": "Awaiting analysis..."
+    },
+    "sentiment": {
+      "bias": "NEUTRAL",
+      "thesis": "Awaiting analysis..."
+    }
+  },
+  "signal": {
+    "signal_hash": "INITIALIZING",
+    "timestamp": "2026-05-29T11:00:00.000Z"
+  }
+}
