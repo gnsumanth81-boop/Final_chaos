@@ -83,7 +83,7 @@
       "debate_required": false,
       "resolution": ""
     },
-    "generated_at": "2026-05-30T06:53:40.616Z"
+    "generated_at": "2026-05-30T06:53:42.388Z"
   },
   "agents": {
     "fundamental": {
@@ -100,7 +100,7 @@
     }
   },
   "signal": {
-    "signal_hash": "CI-MPRZVP21-N",
-    "timestamp": "2026-05-30T06:53:40.616Z"
+    "signal_hash": "CI-MPRZVQF8-N",
+    "timestamp": "2026-05-30T06:53:42.388Z"
   }
 }
