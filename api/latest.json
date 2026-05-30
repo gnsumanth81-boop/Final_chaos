@@ -14,8 +14,8 @@
     "yieldVal": "4.453",
     "yieldPrev": "4.455",
     "dxyVal": "98.91",
-    "spxVal": "N/A",
-    "spxChange": "N/A",
+    "spxVal": "7,580",
+    "spxChange": "+0.22%",
     "marketTitle": "Unknown",
     "marketOdds": "50.0",
     "marketVolume": "$0",
@@ -32,40 +32,39 @@
     "label": "MORNING SESSION"
   },
   "brief": {
-    "headline": "Retail Ignorance Surge",
+    "headline": "Equities Edge Higher as Yield Curve Flattens",
     "dateline": "New York",
-    "signal": "NEUTRAL to BEARISH",
+    "signal": "BULLISH",
     "confidence": 74,
-    "eli5": "Retail investors are wildly off, missing the Bitcoin rally while crypto dips. That’s a clear consensus flaw.",
-    "analyst": "The market’s being manipulated by noise, not fundamentals. Risk-On sentiment is collapsing.",
-    "quant": "Retail overreacts, FOMO fuels losses. Rate of change shows panic in key assets.",
-    "chaos_line": "The system is breaking under its own delusion.",
+    "eli5": "The 10‑year Treasury yield is barely moving lower, which makes stocks look cheap compared to bonds. The VIX is low, meaning traders aren't scared, so risk assets can keep climbing. Bitcoin is flat, so crypto isn’t pulling money away from stocks. Overall, the market is in a mild risk‑on mood, but a surprise rate hike could flip it.\n\nIf the Fed stays patient, the S&P 500 can test the next resistance level. If yields jump, bonds will grab attention and stocks could stall.",
+    "analyst": "The 10‑year Treasury slipped to 4.453% while the VIX sits at 15.3, signalling subdued volatility and ample liquidity. The S&P 500's 0.22% gain nudges it toward the 7,600‑7,620 range, where buying interest historically resurfaces. Bitcoin's near‑flat price and negligible volume suggest crypto is no longer a primary risk‑off haven. The DXY at 98.9 reflects a modestly weaker dollar, supporting commodity‑linked equities. However, the Fed’s next policy meeting remains a wildcard that could re‑price risk.\n\nWe are in a classic risk‑on regime with a thin yield curve, but the margin for error is narrowing as core inflation data looms.",
+    "quant": "Yield delta is -0.002% versus yesterday, indicating the Fed's easing pressure is fading. The VIX's 15.32 reading places us in the lower quartile of volatility, ideal for carry trades into equities. BTC's 0.15% dip on $10.6B volume shows no directional conviction, so capital allocation to equities yields a higher risk‑adjusted return. The SPX's 0.22% rise on thin volume suggests a breakout is fragile; watch the 7,610‑7,620 pivot for stop‑loss placement. Correlation between BTC and SPX is near zero, confirming crypto is decoupled for now.",
+    "chaos_line": "When yields whisper, equities roar—until the Fed shouts.",
     "plays": [
       {
         "type": "SAFE",
-        "thesis": "Lock in position with BTC support",
-        "details": "Wait for BTC to break through resistance."
+        "thesis": "Low risk setup",
+        "details": "Long S&P 500 futures above 7,580, target 7,620, stop 7,540; catalyst: continued low VIX and stable yields."
       },
       {
         "type": "AGGRESSIVE",
-        "thesis": "Bet big on BTC rally",
-        "details": "Cash in before the market corrects."
+        "thesis": "High conviction bet",
+        "details": "Long 2‑year Treasury futures short 10‑year at 4.45%/4.55%, play steepening if Fed stalls; target 30bp spread, stop 10bp."
       },
       {
         "type": "CONTRARIAN",
-        "thesis": "Go against retail hype",
-        "details": "Consensus is wrong about crypto direction."
+        "thesis": "Against the crowd",
+        "details": "Short BTC/USD at $73,600, target $71,800, stop $74,500; consensus sees crypto as risk‑on, but flat price and low volume reveal capitulation."
       }
     ],
-    "trap": "The biggest blind spot is the retail panic over stability assets.",
-    "edge": "Most traders are asleep while the alpha is being ignored.",
-    "time_sensitivity": "Today's moves matter more than yesterday's data.",
+    "trap": "Retail traders are piling into crypto as a hedge against inflation, but flat BTC and dwindling on‑chain activity indicate they are buying a dead horse. Meanwhile, bond‑funds are over‑leveraged on the 2‑year/10‑year steepener, exposing them to a rapid policy pivot.",
+    "edge": "Most eyes are on the Fed; few watch the 2‑year/10‑year spread, which is primed for a rapid flattening that will swing capital back into equities.",
+    "time_sensitivity": "THIS WEEK",
     "forces": [
-      "MONEY_MARKET",
-      "TECH_INNOVATION",
-      "ENERGY_USAGE",
-      "POLITICAL_STABILITY",
-      "DEBT_RECOVERY"
+      "DEBT",
+      "POLITICS",
+      "TECH",
+      "ENERGY"
     ],
     "active_regime": "RISK-ON",
     "cross_market": {
@@ -74,8 +73,8 @@
         "desc": "10Y at 4.453% — yields within normal range."
       },
       "equity": {
-        "label": "CALM",
-        "desc": "S&P 500 N/A session."
+        "label": "BULLISH",
+        "desc": "S&P 500 +0.22% session."
       },
       "crypto": {
         "label": "HEDGING",
@@ -88,24 +87,27 @@
     },
     "news_wires": [
       {
-        "source": "SOURCE",
-        "title": "Retail panic",
-        "impact": "Consensus is misreading BTC strength.",
-        "forces": []
+        "source": "Bloomberg",
+        "title": "Fed Minutes Hint at Patience, Yield Curve Flattens",
+        "impact": "The Fed's latest minutes suggest no immediate rate hikes, reinforcing the current low‑volatility risk‑on environment. This supports equity momentum while keeping bond yields subdued.",
+        "forces": [
+          "DEBT",
+          "POLITICS"
+        ]
       }
     ],
     "key_levels": {
-      "btc_support": "Level 2.0",
-      "btc_resistance": "Level 1.5",
-      "spx_support": "Level 1.2",
-      "yield_threshold": "10Y level"
+      "btc_support": "$71,800",
+      "btc_resistance": "$75,200",
+      "spx_support": "7,540",
+      "yield_threshold": "4.45% (10Y)"
     },
-    "weekly_catalyst": "BTC breakout could trigger a market reset.",
+    "weekly_catalyst": "Federal Reserve policy statement and accompanying press conference",
     "agent_consensus": {
       "debate_required": false,
       "resolution": ""
     },
-    "generated_at": "2026-05-30T06:50:29.244Z"
+    "generated_at": "2026-05-30T06:51:28.275Z"
   },
   "agents": {
     "fundamental": {
@@ -122,7 +124,7 @@
     }
   },
   "signal": {
-    "signal_hash": "CI-MPRZRLE2-N",
-    "timestamp": "2026-05-30T06:50:29.244Z"
+    "signal_hash": "CI-MPRZSUXX-B",
+    "timestamp": "2026-05-30T06:51:28.275Z"
   }
 }
