@@ -25,48 +25,29 @@
     "btcDominance": "57.4%",
     "totalMarketCap": "$2.56T",
     "stablecoinPct": "Inflows",
-    "wsbSentiment": "N/A",
-    "wsbTopTickers": "No data",
+    "wsbSentiment": "MIXED",
+    "wsbTopTickers": "No ticker mentions",
     "recessionProb": "N/A",
     "goldPrice": "N/A",
     "label": "MORNING SESSION"
   },
   "brief": {
-    "headline": "Equities Rally, Bonds Stall as Liquidity Squeezes",
-    "dateline": "New York",
-    "signal": "BULLISH",
-    "confidence": 74,
-    "eli5": "The stock market is inching up while bond yields are barely moving, meaning investors are still chasing risk. Bitcoin is holding steady around $73k, but its dominance is falling, hinting that money may soon flow back into stocks. Mortgage rates are climbing, which could dampen housing demand and weigh on the economy. Overall, the market is in a fragile \"risk‑on\" mood that could flip if yields rise or a shock hits.",
-    "analyst": "The S&P 500 is up modestly (+0.22%) on the back of a low VIX (15.3) and a flat DXY, suggesting risk appetite persists. However, the 10‑year Treasury slipped to 4.453%, barely below the recent peak, indicating limited room for further yield compression. Crypto remains resilient with BTC at $73,494 and stablecoin inflows, but dominance at 57.4% signals a potential reallocation to equities. Mortgage rates hitting 6.53% could start to bite consumer balance sheets, adding a latent downside. The regime is risk‑on but perched on a liquidity trap; any surprise in yields or credit spreads could trigger a swift reversal.",
-    "quant": "Technicals show BTC holding between $72,400 and $74,300, a narrow 2.5% channel; a break below $72,400 would likely trigger a 5% sell‑off. SPX sits above the 7,560 support and below the 7,640 resistance, with the 200‑day MA at 7,525 providing a soft floor. The 10Y yield flatlining near 4.45% suggests a pending breakout; a move above 4.50% would pressure equities and lift the dollar. Monitor the VIX for any uptick above 16 as a volatility trigger.",
-    "chaos_line": "Liquidity whispers, risk roars—until the bond market finally decides to scream.",
-    "plays": [
-      {
-        "type": "SAFE",
-        "thesis": "Low risk setup",
-        "details": "Buy S&P 500 ETF (SPY) above 7,560, target 7,640, catalyst: continued low VIX and stable yields."
-      },
-      {
-        "type": "AGGRESSIVE",
-        "thesis": "High conviction bet",
-        "details": "Long BTC at $73,500, stop $72,300, target $76,000, catalyst: stablecoin inflows and risk‑on sentiment persisting."
-      },
-      {
-        "type": "CONTRARIAN",
-        "thesis": "Against the crowd",
-        "details": "Short 10‑year Treasury futures if yield breaches 4.50%, contrary to the prevailing belief yields are capped."
-      }
-    ],
-    "trap": "Retail investors are overly bullish on crypto's safety net, ignoring the looming yield rise that could force capital back into bonds and equities. Meanwhile, many hedge funds are still hedged on a yield dip that may never materialize.",
-    "edge": "The hidden lever is mortgage rate pressure on consumer spending, a factor most traders overlook in the current risk‑on narrative.",
+    "headline": "Market Update",
+    "dateline": "NYC",
+    "signal": "NEUTRAL",
+    "confidence": 65,
+    "eli5": "Analysis underway.",
+    "analyst": "Analysis underway.",
+    "quant": "Analysis underway.",
+    "chaos_line": "The market speaks in contradictions.",
+    "plays": [],
+    "trap": "",
+    "edge": "",
     "time_sensitivity": "THIS WEEK",
     "forces": [
-      "MONEY",
-      "DEBT",
-      "TECH",
-      "POLITICS"
+      "MONEY"
     ],
-    "active_regime": "RISK-ON",
+    "active_regime": "TRANSITION",
     "cross_market": {
       "bond": {
         "label": "CAUTION",
@@ -114,18 +95,13 @@
         ]
       }
     ],
-    "key_levels": {
-      "btc_support": "$72,400",
-      "btc_resistance": "$74,300",
-      "spx_support": "7,560",
-      "yield_threshold": "4.50%"
-    },
-    "weekly_catalyst": "Federal Reserve's upcoming policy statement and minutes release",
+    "key_levels": {},
+    "weekly_catalyst": "",
     "agent_consensus": {
       "debate_required": false,
       "resolution": ""
     },
-    "generated_at": "2026-05-30T07:58:45.428Z"
+    "generated_at": "2026-05-30T07:58:51.894Z"
   },
   "agents": {
     "fundamental": {
@@ -138,11 +114,11 @@
     },
     "sentiment": {
       "bias": "BEARISH",
-      "thesis": "Fear & Greed at 23 (Neutral). WSB: N/A."
+      "thesis": "Fear & Greed at 23 (Neutral). WSB: MIXED."
     }
   },
   "signal": {
-    "signal_hash": "CI-MPS27E15-B",
-    "timestamp": "2026-05-30T07:58:45.428Z"
+    "signal_hash": "CI-MPS27J0L-N",
+    "timestamp": "2026-05-30T07:58:51.894Z"
   }
 }
