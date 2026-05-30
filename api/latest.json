@@ -3,11 +3,11 @@
     "fearIndex": 23,
     "fearLabel": "Neutral",
     "fearDelta": 0,
-    "btcPrice": "N/A",
-    "btcChange": "0.00",
-    "btcVolume": "N/A",
-    "btcHigh": "N/A",
-    "btcLow": "N/A",
+    "btcPrice": "$73,479",
+    "btcChange": "0.10",
+    "btcVolume": "$10.4B",
+    "btcHigh": "$74,293",
+    "btcLow": "$72,436",
     "ethPrice": "N/A",
     "ethChange": "0.00",
     "vixVal": "N/A",
@@ -32,41 +32,40 @@
     "label": "MORNING SESSION"
   },
   "brief": {
-    "headline": "Retail Blind Spot: Yield Curve Misread Fuels Risk-On Mirage",
+    "headline": "Bitcoin Stalls, Markets Stiffened",
     "dateline": "New York",
-    "signal": "BEARISH",
-    "confidence": 71,
-    "eli5": "Investors think the 10‑year Treasury yield is stable, but it's actually slipping, making bonds cheap and pushing money into risky stocks. This hidden yield drop means the market's confidence is built on a wobbling foundation. If rates keep falling, the rally could implode, leaving late‑comers with losses.\n\nMeanwhile, the dollar is flat and the VIX is quiet, so nobody sees the danger coming. The real story is the silent shift in bond pricing that the crowd is ignoring.",
-    "analyst": "The consensus narrative that the yield curve is flattening without consequence is fundamentally wrong. Recent Treasury auction data shows a 6‑basis‑point pull‑back in the 10‑year, eroding the term premium and incentivising leverage. This creates a hidden liquidity trap: equities are buoyed by cheap financing, but any shock to rates will force a rapid deleveraging. Credit spreads remain tight, signaling that banks are over‑exposed to rate‑sensitive balance sheets. The risk‑on bias is therefore overstated, and positioning should be trimmed.\n\nA prudent tilt toward defensive assets and short‑duration credit is warranted until the yield trajectory clarifies.",
-    "quant": "Bond markets are pricing a forward 10‑year yield around 3.75%, down from 4.1% two weeks ago, a move not reflected in the equity forward curve. The implied carry differential between equities and Treasuries has narrowed to 0.2%, a level historically associated with heightened volatility spikes. Momentum indicators on the S&P 500 remain positive but are diverging from the underlying term structure. Short‑term options skews are tightening, suggesting market makers expect a sudden shock. Position sizing should reflect a 30% reduction in long equity exposure and a 20% increase in short‑duration bond futures.",
-    "chaos_line": "When the bond market whispers, the herd shouts—blind to the tremor beneath the rally.",
+    "signal": "NEUTRAL",
+    "confidence": 74,
+    "eli5": "Bitcoin just barely moved today, going up a tiny bit. That means nobody’s really excited about it. Even though people sometimes get nervous or happy about money, today’s numbers were pretty calm. \n\nEveryone’s waiting to see if something big will change the mood again soon.",
+    "analyst": "Bitcoin’s 24‑hour move of 0.10% is negligible, indicating a consolidation phase rather than a breakout. The lack of volatility and unchanged Fear & Greed index suggest retail sentiment is neutral and not driving price action. In the absence of significant macro events, the crypto market remains in a low‑energy regime, likely to stay flat until a catalyst emerges. Traditional equity and bond markets are similarly muted, with no headline data to shift risk appetite. The current environment points to a risk‑off stance, but with no clear trigger, positioning should be cautious.",
+    "quant": "The 0.10% rise in BTC with a volume of $10.4B shows liquidity is present but demand is weak. Technical levels are unclear due to missing data, but the price is near a minor support that could be tested if a sudden spike occurs. Without a clear trend, the best strategy is to monitor for a breakout or breakdown and act quickly. Use tight stops and small position sizes to hedge against potential rapid reversals.",
+    "chaos_line": "In the calm, the market waits for the storm to break the silence.",
     "plays": [
       {
         "type": "SAFE",
-        "thesis": "Low risk setup",
-        "details": "Short 10‑year Treasury futures at 3.80% with stop at 4.00%; hedge with 2‑year futures to capture curve flattening."
+        "thesis": "Hold cash, watch for volatility",
+        "details": "Maintain liquidity, avoid large exposure until clear catalyst"
       },
       {
         "type": "AGGRESSIVE",
-        "thesis": "High conviction bet",
-        "details": "Long short‑duration corporate credit ETFs (e.g., LQD) with 3x leverage, targeting 5% upside if yields dip further; exit on 10‑year yield breach above 4.1%."
+        "thesis": "Short BTC if price breaks below $72,400",
+        "details": "Target $70,000, stop at $73,500, trigger on breakout of support"
       },
       {
         "type": "CONTRARIAN",
-        "thesis": "Against the crowd",
-        "details": "Short S&P 500 index futures at 5,300, citing over‑reliance on cheap financing; protect with ATM put spreads expiring in 2 weeks."
+        "thesis": "Long BTC on breakout above $74,300",
+        "details": "Consensus sees flat; rally after reaching new high could signal reversal"
       }
     ],
-    "trap": "Retail and many quant funds are long equities, assuming rates will stay put; they're over‑leveraged and will be squeezed hard if the 10‑year spikes back above 4.1%.",
-    "edge": "The subtle decay in Treasury auction demand is invisible on headline yields but is already reshaping carry dynamics.",
+    "trap": "Retail traders are overly complacent, assuming flatness will continue. They are positioned WRONG if a sudden breakout occurs. The market may move sharply when a catalyst hits.",
+    "edge": "The absence of any headline data means the market is ignoring potential macro shocks. Watch for unexpected policy moves or geopolitical events that can trigger rapid shifts.",
     "time_sensitivity": "THIS WEEK",
     "forces": [
-      "DEBT",
       "POLITICS",
-      "MONEY",
+      "DEBT",
       "JOBS"
     ],
-    "active_regime": "LIQUIDITY TRAP",
+    "active_regime": "RISK-OFF",
     "cross_market": {
       "bond": {
         "label": "CALM",
@@ -78,43 +77,26 @@
       },
       "crypto": {
         "label": "HEDGING",
-        "desc": "BTC at N/A — positive momentum."
+        "desc": "BTC at $73,479 — positive momentum."
       },
       "sentiment": {
         "label": "FEAR 23",
         "desc": "Neutral sentiment across retail."
       }
     },
-    "news_wires": [
-      {
-        "source": "Bloomberg",
-        "title": "U.S. Treasury Auction Demand Slips, Yields Edge Lower",
-        "impact": "Auction data shows a 12% drop in bid‑to‑cover ratio, pushing the 10‑year yield down 6bps. The move undermines the narrative of a stable yield curve and raises concerns about future rate hikes.",
-        "forces": [
-          "DEBT"
-        ]
-      },
-      {
-        "source": "Reuters",
-        "title": "Corporate Credit Spreads Remain Tight Amid Rate Uncertainty",
-        "impact": "Investment‑grade spreads have narrowed to 1.15% over Treasuries, indicating high leverage risk if yields rebound. Market makers are pricing in a potential shock scenario.",
-        "forces": [
-          "MONEY"
-        ]
-      }
-    ],
+    "news_wires": [],
     "key_levels": {
-      "btc_support": "N/A",
-      "btc_resistance": "N/A",
-      "spx_support": "5,150",
-      "yield_threshold": "4.10% (10‑year ceiling)"
+      "btc_support": "$72,400",
+      "btc_resistance": "$74,300",
+      "spx_support": "N/A",
+      "yield_threshold": "N/A"
     },
-    "weekly_catalyst": "U.S. Treasury 10‑year auction results on Thursday",
+    "weekly_catalyst": "None scheduled",
     "agent_consensus": {
       "debate_required": false,
       "resolution": ""
     },
-    "generated_at": "2026-05-30T07:41:19.164Z"
+    "generated_at": "2026-05-30T07:41:44.090Z"
   },
   "agents": {
     "fundamental": {
@@ -122,7 +104,7 @@
       "thesis": "Awaiting whale data..."
     },
     "technical": {
-      "bias": "NEUTRAL",
+      "bias": "BULLISH",
       "thesis": "BTC positive momentum. VIX at N/A."
     },
     "sentiment": {
@@ -131,7 +113,7 @@
     }
   },
   "signal": {
-    "signal_hash": "CI-MPS1KYQR-B",
-    "timestamp": "2026-05-30T07:41:19.164Z"
+    "signal_hash": "CI-MPS1LHZ5-N",
+    "timestamp": "2026-05-30T07:41:44.090Z"
   }
 }
