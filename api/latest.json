@@ -2,47 +2,47 @@
   "market": {
     "fearIndex": 23,
     "fearLabel": "Extreme Fear",
-    "btcPrice": "$73,443",
-    "btcChange": "-0.21",
-    "yieldVal": "4.337",
-    "dxyVal": "103.17",
-    "spxVal": "5,277",
-    "vixVal": "15.86",
+    "btcPrice": "$73,455",
+    "btcChange": "-0.32",
+    "yieldVal": "4.294",
+    "dxyVal": "103.04",
+    "spxVal": "5,234",
+    "vixVal": "14.65",
     "ethPrice": "$2,013"
   },
   "brief": {
-    "headline": "Extreme Fear Rides Market to Safe Havens",
+    "headline": "Market on Knife‑Edge",
     "dateline": "NYC",
     "signal": "BEARISH",
-    "confidence": 80,
-    "eli5": "When people are scared, they rush to safe places like bonds and the dollar, which makes those assets go up and everything else fall.",
-    "analyst": "The market is currently in a state of extreme fear, with the VIX near 16 and the S&P 500 hovering close to a psychological ceiling. Treasury yields are positive and rising, attracting liquidity into bonds. Bitcoin and other risk assets are flat, suggesting a potential sell‑the‑news scenario if risk sentiment deteriorates further.",
-    "quant": "The volatility spike is muted at 15.9, implying that the market is not yet reacting strongly to potential shocks. However, the combination of extreme fear and positive real yields creates a pressure cooker environment where a small trigger could cause a rapid shift toward flight‑to‑quality, pushing bond yields higher and credit spreads wider. Statistically, the probability of a 3–5% drop in the S&P 500 over the next 4–6 weeks rises to 25% under these conditions.",
-    "chaos_line": "When everyone’s terrified of a crash, the real danger is that nobody’s buying the dip.",
+    "confidence": 75,
+    "eli5": "Prices are high, risk is low, and the market feels like a house of cards. If something pushes the dollar or yields higher, everything can tumble.",
+    "analyst": "The economy’s fragile, the dollar is strong, and yields are flattening. With risk‑premia cheap and equity rallies over‑levered, a small shock could trigger a systemic wobble.",
+    "quant": "Volatility is low (VIX 14.65) while risk‑premia are cheap. A sudden Fed rate hike or a sharp dollar rally could push yields higher, tightening credit and forcing a pullback in equity and crypto markets.",
+    "chaos_line": "When the world’s biggest banks whisper ‘stability’, the only thing stable is the chaos coming to eat their lunch.",
     "plays": [
       {
         "type": "SAFE",
-        "thesis": "Long 10‑yr Treasury Futures",
-        "details": "Real yields > 4% + extreme fear = flight‑to‑quality. Expect continued inflows into Treasuries for the next 4‑6 weeks."
+        "thesis": "Short 10‑yr Treasury Futures",
+        "details": "Yields near 4.3% with inflation expectations nudging higher; Fed runoff likely to push rates up."
       },
       {
         "type": "AGGRESSIVE",
-        "thesis": "Short S&P 500 Index Futures",
-        "details": "The SPX is perched at a psychological ceiling with a thin VIX. A modest spike in geopolitical risk or a Fed hard‑talk could trigger a 3‑5% drop."
+        "thesis": "Long S&P 500 Call Spread",
+        "details": "Market over‑bought on cheap VIX; a shock could ignite a short‑term rally before a crash."
       },
       {
         "type": "CONTRARIAN",
         "thesis": "Long BTC / ETH",
-        "details": "Crypto is the only asset class still priced for no fear. A fear‑induced sell‑off could push BTC below $70k, setting up a 15‑20% upside as capital chases yield."
+        "details": "Crypto offers uncorrelated upside as dollar strengthens and yields rise."
       }
     ],
-    "trap": "Beware of a panic‑driven sell‑off that could force a sharp decline in risk assets.",
-    "edge": "Flight to quality in Treasuries and the dollar provides a defensive moat.",
+    "trap": "Cheap risk‑premia and over‑levered equity rally may lure in buyers until a rate or dollar shock occurs.",
+    "edge": "Tight spreads on futures and options provide a cushion against sudden moves.",
     "forces": [
       "MONEY",
       "TECH"
     ],
-    "generated_at": "2026-05-30T08:09:12.357Z"
+    "generated_at": "2026-05-30T08:28:19.333Z"
   },
   "agents": {
     "fundamental": {
@@ -59,8 +59,8 @@
     }
   },
   "signal": {
-    "signal_hash": "CI-T8FWT4RU-B",
-    "timestamp": "2026-05-30T08:09:12.357Z"
+    "signal_hash": "CI-FHE3YB6F-B",
+    "timestamp": "2026-05-30T08:28:19.333Z"
   },
   "performance": {
     "win_rate": 100,
