@@ -1,65 +1,120 @@
 {
   "market": {
-    "fearIndex": 23,
-    "fearLabel": "Extreme Fear",
-    "btcPrice": "$73,449",
-    "btcChange": "0.19",
-    "yieldVal": "4.260",
-    "dxyVal": "103.78",
-    "spxVal": "5,248",
-    "vixVal": "15.19",
-    "ethPrice": "$2,013"
+    "fearIndex": 50,
+    "fearLabel": "Neutral",
+    "fearDelta": 0,
+    "btcPrice": "N/A",
+    "btcChange": "0.00",
+    "btcVolume": "N/A",
+    "btcHigh": "N/A",
+    "btcLow": "N/A",
+    "ethPrice": "N/A",
+    "ethChange": "0.00",
+    "vixVal": "N/A",
+    "yieldVal": "N/A",
+    "yieldPrev": "N/A",
+    "dxyVal": "N/A",
+    "spxVal": "N/A",
+    "spxChange": "N/A",
+    "marketTitle": "Unknown",
+    "marketOdds": "50.0",
+    "marketVolume": "$0",
+    "marketLink": "https://polymarket.com",
+    "session": "MORNING",
+    "newsText": "",
+    "btcDominance": "N/A",
+    "totalMarketCap": "N/A",
+    "stablecoinPct": "N/A",
+    "wsbSentiment": "N/A",
+    "wsbTopTickers": "No data",
+    "recessionProb": "N/A",
+    "goldPrice": "N/A",
+    "label": "MORNING SESSION"
   },
   "brief": {
-    "headline": "Fear‑Premium Market Holds",
-    "dateline": "NYC",
-    "signal": "BEARISH",
-    "confidence": 75,
-    "eli5": "Stocks are holding on to their highs while rates stay stubbornly high. The dollar is strong and the yield curve is flat, so many investors are cautious. Crypto is waiting for a big move that may come if the Fed loosens policy.",
-    "analyst": "The macro landscape is a high‑octane fear‑premium with the dollar and yields anchoring a risk‑off stance. Equity markets cling to momentum on thin technical support, and volatility is cheap, luring smart money into complacent positions. Crypto is in a quiet waiting mode, offering no clear catalyst. The market is sleeping with a loaded gun.",
-    "quant": "Yield curvature suggests a potential short on Treasury futures could profit if the 2‑yr curve flattens further. A long calendar spread on the S&P 500 could capture volatility crush if a dovish data release triggers a rally. Crypto positions benefit from asymmetric upside if a small pullback occurs before the next Fed press conference.",
-    "chaos_line": "When the world tells you to hide under the bed, the only profitable thing to do is to build a launchpad on top of it.",
+    "headline": "Markets Stuck in Neutral Stasis",
+    "dateline": "New York",
+    "signal": "NEUTRAL",
+    "confidence": 71,
+    "eli5": "Everyone is waiting for a cue, but nothing big is happening. The Fear & Greed meter sits right in the middle, meaning investors aren't scared or greedy. Without fresh data, stocks, bonds and crypto just drift.\n\nThat means most traders are sitting on the sidelines, hoping a surprise will pop up. Until then, the safest thing is to keep cash handy and avoid big bets.",
+    "analyst": "Retail sentiment is locked at 50, reflecting a classic \"wait‑and‑see\" posture. With no macro releases, the yield curve remains flat and the DXY shows no momentum, leaving the equity‑bond correlation near zero. The absence of headline risk removes the usual risk‑off catalyst, pushing the market into a liquidity‑trap regime. Consequently, risk premia are compressed and option volatility is at historic lows. The only actionable edge lies in exploiting the thin order flow around well‑known technical pivots.\n\nGiven the data vacuum, any directional play must be justified by micro‑structure rather than macro fundamentals.",
+    "quant": "Zero delta in Fear & Greed means implied volatility surfaces are flat across asset classes. The 10‑year Treasury curve shows no significant shift, so carry trades are neutral. DXY's flatness removes FX carry bias. Order‑book imbalance is the only signal, with short‑term liquidity pulling toward the mid‑range of SPX 4,300‑4,350. BTC and ETH are effectively dead, so crypto‑related spreads are at zero net delta. Trade the tight range, not the trend.",
+    "chaos_line": "When the market's pulse flatlines, only the bold dare to carve a canyon in the sand.",
     "plays": [
       {
         "type": "SAFE",
-        "thesis": "Short 2‑yr Treasury Futures",
-        "details": "Target: +8% TP, +3% SL. Rationale: 10‑yr at 4.26% sticky; 2‑yr curve flattening."
+        "thesis": "Low risk setup",
+        "details": "SPX 4,300–4,350 range trade: sell calls at 4,350, buy puts at 4,300, expiry 1 week, catalyst = any surprise data release."
       },
       {
         "type": "AGGRESSIVE",
-        "thesis": "Long S&P 500 Call Calendar (July 2026 / Sep 2026)",
-        "details": "Target: 20% TP on spread, 7% SL. Rationale: SPX fragile base; dovish data could trigger rally."
+        "thesis": "High conviction bet",
+        "details": "Short 10Y Treasury futures at 4.20% yield, target 4.30% on expectation of sudden Fed hawkish comment within 48h."
       },
       {
         "type": "CONTRARIAN",
-        "thesis": "Buy BTC / ETH via 30‑day futures",
-        "details": "Target: +45% BTC / +55% ETH TP, 12% BTC / 15% ETH SL. Rationale: Crypto priced for pump‑and‑dump after Fed easing."
+        "thesis": "Against the crowd",
+        "details": "Buy BTC at $28,000 with stop $27,200; consensus thinks crypto is dead, but low volatility and upcoming CME futures launch create a short‑term liquidity squeeze."
       }
     ],
-    "trap": "Over‑reliance on Fed dovish data and ignoring yield curve steepening risk.",
-    "edge": "Yield curve inversion risk if 2‑yr curve steepens faster than expected.",
+    "trap": "Retail and many quant funds are parked in cash, assuming a calm market will stay calm. They ignore the thin order flow that can be triggered by any Fed whisper, leaving them flat‑lined.",
+    "edge": "Most eyes are on macro releases; the real mover is the hidden order‑book imbalance in SPX options that will erupt on the first news surprise.",
+    "time_sensitivity": "THIS WEEK",
     "forces": [
       "MONEY",
-      "TECH"
+      "POLITICS",
+      "DEBT"
     ],
-    "generated_at": "2026-05-30T07:52:54.417Z"
+    "active_regime": "LIQUIDITY TRAP",
+    "cross_market": {
+      "bond": {
+        "label": "CALM",
+        "desc": "10Y at N/A% — yields within normal range."
+      },
+      "equity": {
+        "label": "CALM",
+        "desc": "S&P 500 N/A session."
+      },
+      "crypto": {
+        "label": "HEDGING",
+        "desc": "BTC at N/A — positive momentum."
+      },
+      "sentiment": {
+        "label": "FEAR 50",
+        "desc": "Neutral sentiment across retail."
+      }
+    },
+    "news_wires": [],
+    "key_levels": {
+      "btc_support": "27,200",
+      "btc_resistance": "30,000",
+      "spx_support": "4,300",
+      "spx_resistance": "4,350",
+      "yield_threshold": "4.20%"
+    },
+    "weekly_catalyst": "FOMC press conference on Thursday",
+    "agent_consensus": {
+      "debate_required": false,
+      "resolution": ""
+    },
+    "generated_at": "2026-05-30T07:53:05.696Z"
   },
   "agents": {
     "fundamental": {
       "bias": "NEUTRAL",
-      "thesis": "Waiting for data..."
+      "thesis": "Awaiting whale data..."
     },
     "technical": {
-      "bias": "BULLISH",
-      "thesis": "Momentum strong"
+      "bias": "NEUTRAL",
+      "thesis": "BTC positive momentum. VIX at N/A."
     },
     "sentiment": {
-      "bias": "BEARISH",
-      "thesis": "Too much greed"
+      "bias": "NEUTRAL",
+      "thesis": "Fear & Greed at 50 (Neutral). WSB: N/A."
     }
   },
   "signal": {
-    "signal_hash": "CI-2M8K7JQG-B",
-    "timestamp": "2026-05-30T07:52:54.417Z"
+    "signal_hash": "CI-MPS203W4-N",
+    "timestamp": "2026-05-30T07:53:05.696Z"
   }
 }
