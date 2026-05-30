@@ -92,22 +92,31 @@
     },
     "news_wires": [
       {
-        "source": "WIRE",
-        "title": "",
-        "impact": "",
-        "forces": []
+        "source": "POLITICS",
+        "title": "U.S.-Iran Deal Eases Tensions",
+        "impact": "DXY may weaken as geopolitical risks subside; SPX could rally on improved risk appetite. 10Y yields may dip as safe-haven demand for Treasuries eases.",
+        "forces": [
+          "POLITICS",
+          "MONEY"
+        ]
       },
       {
-        "source": "WIRE",
-        "title": "",
-        "impact": "",
-        "forces": []
+        "source": "TECH",
+        "title": "Anthropic's $1T Valuation Sparks AI Frenzy",
+        "impact": "Tech equities (e.g., NVDA, AMD) may outperform as AI hype accelerates; SPX could see broad-based gains. Dell's AI-driven rally highlights sector strength.",
+        "forces": [
+          "TECH",
+          "MONEY"
+        ]
       },
       {
-        "source": "WIRE",
-        "title": "",
-        "impact": "",
-        "forces": []
+        "source": "ENERGY",
+        "title": "Oil Gains Fade on Mideast Deal Hopes",
+        "impact": "WTI may reverse as Mideast stability risks materialize; DXY could rally on energy-driven inflation concerns. SPX may underperform energy-linked assets.",
+        "forces": [
+          "ENERGY",
+          "MONEY"
+        ]
       }
     ],
     "key_levels": "BTC near support, SPX near resistance",
@@ -116,7 +125,7 @@
       "debate_required": false,
       "resolution": ""
     },
-    "generated_at": "2026-05-30T05:51:00.760Z"
+    "generated_at": "2026-05-30T05:51:10.210Z"
   },
   "agents": {
     "fundamental": {
@@ -133,7 +142,7 @@
     }
   },
   "signal": {
-    "signal_hash": "CI-MPRXN3YC-B",
-    "timestamp": "2026-05-30T05:51:00.760Z"
+    "signal_hash": "CI-MPRXNB8O-B",
+    "timestamp": "2026-05-30T05:51:10.210Z"
   }
 }
