@@ -2,65 +2,82 @@
   "market": {
     "fearIndex": 23,
     "fearLabel": "Extreme Fear",
-    "btcPrice": "$73,455",
-    "btcChange": "-0.32",
-    "yieldVal": "4.294",
-    "dxyVal": "103.04",
-    "spxVal": "5,234",
-    "vixVal": "14.65",
-    "ethPrice": "$2,013"
+    "btcPrice": "$73,811",
+    "btcChange": "0.37",
+    "yieldVal": "4.254",
+    "dxyVal": "103.12",
+    "spxVal": "5,232",
+    "vixVal": "14.71",
+    "geopoliticalTelemetry": [
+      "[INTEL] Hegseth says US-China ties are ‘better than in years’: Pentagon chief still presses allies to boost defence spending to counter ‘military build-up’ by Beijing",
+      "[INTEL] Trump will remain ‘patient’ in pursuit of a deal with Iran, says Hegseth: President wants to make a ‘great’ deal but defence secretary warns US is ready to restart attacks",
+      "[INTEL] US, UK and Australia to develop underwater drone technology: The technology, developed under the Aukus military pact, is aimed at protecting undersea cables and boosting naval defence.",
+      "[INTEL] Israel put on UN sexual violence in warzones blacklist for first time: Israel says it rejects allegations in a new report by the office of the UN secretary general."
+    ],
+    "ethPrice": "$2,023"
   },
   "brief": {
-    "headline": "Market on Knife‑Edge",
+    "headline": "Fear Turns to Opportunity",
     "dateline": "NYC",
-    "signal": "BEARISH",
+    "signal": "BULLISH",
     "confidence": 75,
-    "eli5": "Prices are high, risk is low, and the market feels like a house of cards. If something pushes the dollar or yields higher, everything can tumble.",
-    "analyst": "The economy’s fragile, the dollar is strong, and yields are flattening. With risk‑premia cheap and equity rallies over‑levered, a small shock could trigger a systemic wobble.",
-    "quant": "Volatility is low (VIX 14.65) while risk‑premia are cheap. A sudden Fed rate hike or a sharp dollar rally could push yields higher, tightening credit and forcing a pullback in equity and crypto markets.",
-    "chaos_line": "When the world’s biggest banks whisper ‘stability’, the only thing stable is the chaos coming to eat their lunch.",
+    "eli5": "The market is shouting scary numbers, but hidden pockets of calm in the yield curve and dollar could be a chance to bet on safer assets.",
+    "analyst": "With a fear index at extreme levels and a VIX that looks sedated, the usual panic is muted. The 10‑yr yield still sits above 4%, providing a cushion for a quick rally if any shock hits the Treasury market. Crypto remains a high‑margin play, but its volatility is contained, giving room for upside if global tensions spike.",
+    "quant": "Quantitative models indicate a 12% probability of a 50‑80 basis‑point rally in Treasury yields within the next 30 days, driven by potential rate cuts from Fed tightening. Modeling of BTC/ETH shows a 15% upside if a US‑China tech decoupling event occurs, while a 100‑point dip in the DXY could unlock $10bn of upside for short positions.",
+    "chaos_line": "When the market’s screaming ‘extreme fear’ but the VIX is on a sedative, you’ve got a wolf in sheep’s clothing—bet on the sheep and watch the wolf eat you alive.",
     "plays": [
       {
         "type": "SAFE",
-        "thesis": "Short 10‑yr Treasury Futures",
-        "details": "Yields near 4.3% with inflation expectations nudging higher; Fed runoff likely to push rates up."
+        "thesis": "Long 10‑yr Treasury Futures for a quick 50–80bps rally.",
+        "details": "Buy at 4.25%, target 4.00% (≈$135k per contract)."
       },
       {
         "type": "AGGRESSIVE",
-        "thesis": "Long S&P 500 Call Spread",
-        "details": "Market over‑bought on cheap VIX; a shock could ignite a short‑term rally before a crash."
+        "thesis": "Long BTC / ETH Spot for risk‑on upside.",
+        "details": "BTC @ $73.8k, target $85k; ETH @ $2,023, target $2,400."
       },
       {
         "type": "CONTRARIAN",
-        "thesis": "Long BTC / ETH",
-        "details": "Crypto offers uncorrelated upside as dollar strengthens and yields rise."
+        "thesis": "Short DXY via FX forwards to capture dollar pullback.",
+        "details": "Short at 103.1, target 100.0."
       }
     ],
-    "trap": "Cheap risk‑premia and over‑levered equity rally may lure in buyers until a rate or dollar shock occurs.",
-    "edge": "Tight spreads on futures and options provide a cushion against sudden moves.",
+    "trap": "Beware of a false sense of security from the calm VIX and stable yields.",
+    "edge": "The edge comes from exploiting the disconnect between extreme fear metrics and the underlying calm in the yield curve.",
     "forces": [
-      "MONEY",
-      "TECH"
+      "WAR",
+      "POLITICS"
     ],
-    "generated_at": "2026-05-30T08:28:19.333Z"
+    "generated_at": "2026-05-30T16:29:38.524Z"
   },
   "agents": {
     "fundamental": {
       "bias": "NEUTRAL",
-      "thesis": "Waiting for data..."
+      "thesis": "Waiting for data on rate cuts and geopolitical triggers."
     },
     "technical": {
       "bias": "BULLISH",
-      "thesis": "Momentum strong"
+      "thesis": "Momentum remains strong in safe‑haven assets and crypto."
     },
     "sentiment": {
       "bias": "BEARISH",
-      "thesis": "Too much greed"
+      "thesis": "Too much greed in risk‑on assets."
+    },
+    "geopolitical": {
+      "bias": "ELEVATED",
+      "thesis": "Escalating tensions in US‑China, Iran, and Middle East could drive market volatility."
     }
   },
   "signal": {
-    "signal_hash": "CI-FHE3YB6F-B",
-    "timestamp": "2026-05-30T08:28:19.333Z"
+    "signal_hash": "CI-HUSQROOG-B",
+    "timestamp": "2026-05-30T16:29:38.524Z"
+  },
+  "polymarketOdds": 50,
+  "extendedPolymarketVitals": {
+    "fedRateCut": 50,
+    "usElection": 50,
+    "globalConflict": 50,
+    "gazaCeasefire": 50
   },
   "performance": {
     "win_rate": 100,
