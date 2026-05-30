@@ -14,8 +14,8 @@
     "yieldVal": "4.453",
     "yieldPrev": "4.455",
     "dxyVal": "98.91",
-    "spxVal": "N/A",
-    "spxChange": "N/A",
+    "spxVal": "7,580",
+    "spxChange": "+0.22%",
     "marketTitle": "Unknown",
     "marketOdds": "50.0",
     "marketVolume": "$0",
@@ -32,49 +32,47 @@
     "label": "MORNING SESSION"
   },
   "brief": {
-    "headline": "Crypto Holds Steady as Markets Drift Neutral",
-    "dateline": "New York",
+    "headline": "Markets In Motion",
+    "dateline": "NYC",
     "signal": "NEUTRAL",
-    "confidence": 74,
-    "eli5": "Bitcoin is barely moving, staying around $73,500. The stock market's fear gauge (VIX) is low, meaning investors aren't jittery. Treasury yields have slipped a hair, which usually helps risk assets. Overall, nobody is making big bets, so the market is in a snooze mode.\n\nIf anything shifts—like a surprise rate cut or a major geopolitical flare—prices could snap, but for now the calm is the story.",
-    "analyst": "The 10‑year Treasury slipped to 4.453%, signaling marginal easing pressure on equities, yet the VIX at 15.3 reflects a complacent risk appetite. Bitcoin's 0.1% rise on $10.4B volume suggests liquidity is ample but directional conviction is absent. The DXY near 99 indicates a modestly weak dollar, supporting commodity and emerging market risk assets. With no clear macro catalyst, the regime remains a low‑volatility, risk‑on tilt, but underlying credit spreads hint at latent stress. Attention should focus on the upcoming Fed minutes and any surprise in core CPI, which could break the current equilibrium.",
-    "quant": "Yield curve flattening continues; 10Y at 4.453% versus 2Y around 4.6% creates a mild inversion, a classic recession warning yet not yet priced in. BTC's micro‑structure shows tight order books and low open interest, implying a fragile support level around $72,400. The VIX's sub‑16 reading reduces option premiums, tightening risk premia across asset classes. Correlation between BTC and risk assets is rising, suggesting crypto is behaving more like a risk‑on instrument. Watch for order flow spikes in the $73,000‑$74,000 band as a trigger for breakout or breakdown.",
-    "chaos_line": "When the market's pulse flatlines, the quiet killer is the unseen tide of credit stress.",
+    "confidence": 65,
+    "eli5": "Global markets are processing mixed signals as central banks hold their ground.",
+    "analyst": "The macro environment remains in a transitional phase. Monitor yield curve dynamics and dollar strength for directional cues.",
+    "quant": "Vol-adjusted signals lean neutral. Watch for breakout above resistance with volume confirmation.",
+    "chaos_line": "The silence before the storm is just the market holding its breath.",
     "plays": [
       {
         "type": "SAFE",
-        "thesis": "Low risk setup",
-        "details": "Buy 10‑year Treasury futures at 4.45% with stop at 4.55%; catalyst: potential Fed rate pause in June."
+        "thesis": "Hold cash or short-term bonds",
+        "details": "Preserve capital until direction clarifies"
       },
       {
         "type": "AGGRESSIVE",
-        "thesis": "High conviction bet",
-        "details": "Long BTC futures at $73,500 target $75,500; stop $71,800; catalyst: surprise easing in US inflation data."
+        "thesis": "BTC long on dip to $70k",
+        "details": "Strong accumulation zone, institutional support"
       },
       {
         "type": "CONTRARIAN",
-        "thesis": "Against the crowd",
-        "details": "Short S&P 500 ETFs at current levels; consensus expects rally but credit spreads are widening, indicating hidden downside."
+        "thesis": "Fade the equity rally",
+        "details": "VIX suppression masking real risk"
       }
     ],
-    "trap": "Retail investors are piling into Bitcoin, assuming the low VIX guarantees a safe ride, but tightening credit and a potential yield curve inversion threaten a rapid sell‑off.",
-    "edge": "Most eyes miss the subtle widening of high‑yield spreads, a leading indicator of emerging liquidity strain.",
+    "trap": "Retail is chasing the S&P rally. Smart money is quietly hedging.",
+    "edge": "Credit spreads diverging from equity complacency.",
     "time_sensitivity": "THIS WEEK",
     "forces": [
-      "DEBT",
-      "TECH",
-      "POLITICS",
-      "MONEY"
+      "MONEY",
+      "DEBT"
     ],
-    "active_regime": "RISK-ON",
+    "active_regime": "TRANSITION",
     "cross_market": {
       "bond": {
         "label": "CAUTION",
         "desc": "10Y at 4.453% — yields within normal range."
       },
       "equity": {
-        "label": "CALM",
-        "desc": "S&P 500 N/A session."
+        "label": "BULLISH",
+        "desc": "S&P 500 +0.22% session."
       },
       "crypto": {
         "label": "HEDGING",
@@ -86,18 +84,13 @@
       }
     },
     "news_wires": [],
-    "key_levels": {
-      "btc_support": "$72,400",
-      "btc_resistance": "$74,300",
-      "spx_support": "N/A",
-      "yield_threshold": "4.50% (break above may trigger rate hike bets)"
-    },
-    "weekly_catalyst": "Federal Reserve June meeting minutes release",
+    "key_levels": {},
+    "weekly_catalyst": "Fed speakers Friday",
     "agent_consensus": {
       "debate_required": false,
       "resolution": ""
     },
-    "generated_at": "2026-05-30T07:44:56.647Z"
+    "generated_at": "2026-05-30T07:45:27.645Z"
   },
   "agents": {
     "fundamental": {
@@ -114,7 +107,7 @@
     }
   },
   "signal": {
-    "signal_hash": "CI-MPS1PMKD-N",
-    "timestamp": "2026-05-30T07:44:56.647Z"
+    "signal_hash": "CI-MPS1QAGQ-N",
+    "timestamp": "2026-05-30T07:45:27.645Z"
   }
 }
