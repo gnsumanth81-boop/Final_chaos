@@ -27,27 +27,46 @@
     "stablecoinPct": "Inflows",
     "wsbSentiment": "MIXED",
     "wsbTopTickers": "No ticker mentions",
-    "recessionProb": "N/A",
+    "recessionProb": "1.8%",
     "goldPrice": "N/A",
     "label": "MORNING SESSION"
   },
   "brief": {
-    "headline": "Market Update",
-    "dateline": "NYC",
-    "signal": "NEUTRAL",
-    "confidence": 65,
-    "eli5": "Analysis underway.",
-    "analyst": "Analysis underway.",
-    "quant": "Analysis underway.",
-    "chaos_line": "The market speaks in contradictions.",
-    "plays": [],
-    "trap": "",
-    "edge": "",
+    "headline": "Markets Slip Into Liquidity Trap Amid Rising Yields",
+    "dateline": "New York",
+    "signal": "BEARISH",
+    "confidence": 74,
+    "eli5": "The Fed's interest rates are still high, making bonds more attractive than stocks. That pushes money into safe assets, leaving less cash for riskier bets like tech or crypto. At the same time, the dollar is strong, which hurts exporters and keeps inflation in check. So investors are stuck in a waiting room, not sure whether to gamble or hide.\n\nBecause the VIX is low and the S&P is inching up, many think the rally will continue, but the underlying credit and yield pressures suggest a pullback is more likely.",
+    "analyst": "Retail narratives are bullish on equities, citing a modest S&P gain and low VIX, yet the 10‑year yield at 4.45% signals tightening financing conditions. Mortgage rates climbing to 6.5% erode consumer spending, while DXY near 99 further pressures corporate earnings. Crypto dominance remains high, but stablecoin inflows hint at hedging rather than risk appetite. The macro backdrop points to a liquidity trap where capital is parked in short‑duration bonds, limiting upside for risk assets. Consequently, the risk‑on narrative is overstated, and a shift toward defensive positioning is warranted.\n\nThe regime is transitioning to risk‑off, with the market caught between modest equity gains and tightening credit spreads.",
+    "quant": "The 10‑year slipped 2bps, but remains above the 4.3% support zone, suggesting a ceiling for further rate hikes. BTC trades near its 57% dominance ceiling, with support around $71k and resistance near $75k. SPX is holding above the 7,540 200‑day EMA, but a break below 7,500 could trigger a 5% pullback. VIX at 15.3 indicates complacency; a spike above 18 would confirm rising fear. Correlation between equity and bond volatility is tightening, implying a regime shift.",
+    "chaos_line": "When yields choke growth, even the boldest bulls find their swords dulled by a silent, sticky trap.",
+    "plays": [
+      {
+        "type": "SAFE",
+        "thesis": "Low risk setup",
+        "details": "Short 10‑yr Treasury futures at 4.45% with stop at 4.40%; catalyst: persistent mortgage rate pressure and sticky inflation."
+      },
+      {
+        "type": "AGGRESSIVE",
+        "thesis": "High conviction bet",
+        "details": "Long short‑duration corporate credit ETFs (e.g., LQD) while shorting high‑beta tech ETFs; catalyst: credit spread widening as earnings risk rises."
+      },
+      {
+        "type": "CONTRARIAN",
+        "thesis": "Against the crowd",
+        "details": "Short BTC/USD at $73,500 with target $70,000; consensus thinks crypto will rally on stablecoin inflows, but liquidity trap saps risk appetite."
+      }
+    ],
+    "trap": "Retail investors are over‑weighting equities and crypto, believing the low VIX guarantees a continued rally. Fixed‑income and macro‑tightening forces are positioning for a pullback, leaving the crowd exposed.",
+    "edge": "Most eyes are on headline earnings, ignoring the converging pressure of rising mortgage rates and a firm dollar that will choke consumer demand.",
     "time_sensitivity": "THIS WEEK",
     "forces": [
-      "MONEY"
+      "DEBT",
+      "POLITICS",
+      "TECH",
+      "ENERGY"
     ],
-    "active_regime": "TRANSITION",
+    "active_regime": "LIQUIDITY TRAP",
     "cross_market": {
       "bond": {
         "label": "CAUTION",
@@ -95,13 +114,18 @@
         ]
       }
     ],
-    "key_levels": {},
-    "weekly_catalyst": "",
+    "key_levels": {
+      "btc_support": "$71,000",
+      "btc_resistance": "$75,000",
+      "spx_support": "7,500",
+      "yield_threshold": "4.50% (psychological ceiling for 10‑yr)"
+    },
+    "weekly_catalyst": "Federal Reserve's June policy meeting minutes release",
     "agent_consensus": {
       "debate_required": false,
       "resolution": ""
     },
-    "generated_at": "2026-05-30T07:58:53.708Z"
+    "generated_at": "2026-05-30T07:59:57.523Z"
   },
   "agents": {
     "fundamental": {
@@ -118,7 +142,7 @@
     }
   },
   "signal": {
-    "signal_hash": "CI-MPS27KEZ-N",
-    "timestamp": "2026-05-30T07:58:53.708Z"
+    "signal_hash": "CI-MPS28XNY-B",
+    "timestamp": "2026-05-30T07:59:57.523Z"
   }
 }
