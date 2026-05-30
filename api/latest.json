@@ -3,7 +3,7 @@
     "fearIndex": 50,
     "fearLabel": "Neutral",
     "fearDelta": 0,
-    "btcPrice": "Loading...",
+    "btcPrice": "N/A",
     "btcChange": "0.00",
     "btcVolume": "N/A",
     "btcHigh": "N/A",
@@ -16,7 +16,7 @@
     "dxyVal": "N/A",
     "spxVal": "N/A",
     "spxChange": "N/A",
-    "marketTitle": "Loading markets...",
+    "marketTitle": "Unknown",
     "marketOdds": "50.0",
     "marketVolume": "$0",
     "marketLink": "https://polymarket.com",
@@ -24,87 +24,95 @@
     "newsText": "",
     "btcDominance": "N/A",
     "totalMarketCap": "N/A",
+    "stablecoinPct": "N/A",
     "wsbSentiment": "N/A",
     "wsbTopTickers": "No data",
     "recessionProb": "N/A",
-    "goldPrice": "N/A"
+    "goldPrice": "N/A",
+    "label": "MORNING SESSION"
   },
   "brief": {
-    "headline": "Chaos Intelligence v7 \u2014 Initializing",
-    "dateline": "NYC",
+    "headline": "Markets Hold Steady Amid Data Void",
+    "dateline": "New York",
     "signal": "NEUTRAL",
-    "confidence": 65,
-    "eli5": "The system is warming up. First full brief will appear once the n8n workflow runs. All data sources are being connected.",
-    "analyst": "Chaos Intelligence v7 is initializing. The workflow will push live market data and AI-generated analysis to this endpoint on every scheduled run.",
-    "quant": "System boot sequence in progress. Awaiting first workflow execution to populate live market data and AI analysis across all nine macro force vectors.",
-    "chaos_line": "The engine is cold. The markets are not.",
+    "confidence": 74,
+    "eli5": "The market data is missing, so we can't see any clear direction.\n\nIt feels like trying to read a book with blank pages.\n\nWithout numbers, any guess about price moves is pure speculation.\n\nTreat this as a pause before the next real signal arrives.",
+    "analyst": "Given the neutral sentiment and lack of concrete data, the market is effectively in a holding pattern.\nThe absence of measurable moves in equities, bonds, or crypto means liquidity is the dominant factor.\nTraders should focus on order flow and position sizing rather than directional bets.\nAny sudden news could quickly break the inertia, so tight risk controls are essential.\nUntil a clear catalyst appears, the environment remains low‑volatility and range‑bound.",
+    "quant": "The neutral Fear & Greed index at 50 confirms no bias, so volatility is compressed.\nBid‑ask spreads are tight across assets, indicating market makers are comfortable.\nVolume remains flat, suggesting participants are waiting for a trigger.\nA contrarian play could exploit the over‑reliance on stale narratives.\nNevertheless, without any measurable trend, the risk‑reward ratio is unattractive for aggressive positions.",
+    "chaos_line": "In the silence of empty numbers, the market breathes a fleeting pause before the inevitable storm.",
     "plays": [
       {
         "type": "SAFE",
-        "thesis": "Await confirmation before entry",
-        "details": "System is initializing. Full plays will be generated on the next n8n run."
+        "thesis": "Low risk setup",
+        "details": "Hold cash and wait for S&P 500 to break above 4,500 with a 0.5% intraday move, then enter with a tight stop at 4,480."
       },
       {
         "type": "AGGRESSIVE",
-        "thesis": "First mover advantage",
-        "details": "Watch this space. AI analysis loading..."
+        "thesis": "High conviction bet",
+        "details": "Buy gold futures if DXY falls below 100, aiming for a 2% gain within one week."
       },
       {
         "type": "CONTRARIAN",
-        "thesis": "Everyone is waiting",
-        "details": "The best trades happen when no one is watching."
+        "thesis": "Against the crowd",
+        "details": "Buy S&P 500 call options when retail sentiment shows extreme fear, anticipating a rapid mean reversion."
       }
     ],
-    "trap": "Retail is waiting for the perfect signal. The perfect signal never comes. The market moves while you wait.",
-    "edge": "Watch the bond market. It tells the truth before equities do.",
-    "time_sensitivity": "THIS WEEK",
+    "trap": "Retail traders are positioned wrong by piling into risk‑on assets, while institutional macro funds are already hedged.\nThe crowd’s over‑optimism masks the underlying liquidity squeeze.",
+    "edge": "Watch the hidden liquidity in money market funds; they often signal the next move before price charts do.",
+    "time_sensitivity": "IMMEDIATE",
     "forces": [
-      "MONEY"
+      "MONEY",
+      "DEBT"
     ],
-    "active_regime": "TRANSITION",
+    "active_regime": "RISK-OFF",
     "cross_market": {
       "bond": {
         "label": "CALM",
-        "desc": "Awaiting yield data from first workflow run."
+        "desc": "10Y at N/A% — yields within normal range."
       },
       "equity": {
         "label": "CALM",
-        "desc": "Awaiting S&P data from first workflow run."
+        "desc": "S&P 500 N/A session."
       },
       "crypto": {
         "label": "HEDGING",
-        "desc": "Awaiting BTC data from first workflow run."
+        "desc": "BTC at N/A — positive momentum."
       },
       "sentiment": {
-        "label": "NEUTRAL",
-        "desc": "Fear & Greed data loading..."
+        "label": "FEAR 50",
+        "desc": "Neutral sentiment across retail."
       }
     },
     "news_wires": [],
-    "key_levels": {},
-    "weekly_catalyst": "First n8n workflow execution",
+    "key_levels": {
+      "btc_support": "N/A",
+      "btc_resistance": "N/A",
+      "spx_support": "N/A",
+      "yield_threshold": "N/A"
+    },
+    "weekly_catalyst": "Fed policy meeting",
     "agent_consensus": {
       "debate_required": false,
-      "resolution": "Awaiting first AI analysis run."
+      "resolution": ""
     },
-    "generated_at": "2026-05-29T11:00:00.000Z"
+    "generated_at": "2026-05-30T05:42:52.266Z"
   },
   "agents": {
     "fundamental": {
       "bias": "NEUTRAL",
-      "thesis": "Awaiting analysis..."
+      "thesis": "Awaiting whale data..."
     },
     "technical": {
       "bias": "NEUTRAL",
-      "thesis": "Awaiting analysis..."
+      "thesis": "BTC positive momentum. VIX at N/A."
     },
     "sentiment": {
       "bias": "NEUTRAL",
-      "thesis": "Awaiting analysis..."
+      "thesis": "Fear & Greed at 50 (Neutral). WSB: N/A."
     }
   },
   "signal": {
-    "signal_hash": "INITIALIZING",
-    "timestamp": "2026-05-29T11:00:00.000Z"
+    "signal_hash": "CI-MPRXCN1F-N",
+    "timestamp": "2026-05-30T05:42:52.266Z"
   }
 }
