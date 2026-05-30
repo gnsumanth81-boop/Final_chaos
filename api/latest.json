@@ -11,8 +11,8 @@
     "ethPrice": "$2,014",
     "ethChange": "0.49",
     "vixVal": "15.32",
-    "yieldVal": "N/A",
-    "yieldPrev": "N/A",
+    "yieldVal": "4.453",
+    "yieldPrev": "4.455",
     "dxyVal": "N/A",
     "spxVal": "N/A",
     "spxChange": "N/A",
@@ -32,26 +32,44 @@
     "label": "MORNING SESSION"
   },
   "brief": {
-    "headline": "Market Update",
-    "dateline": "NYC",
+    "headline": "Crypto Stagnates, Markets Stumble",
+    "dateline": "New York",
     "signal": "NEUTRAL",
-    "confidence": 65,
-    "eli5": "Analysis underway.",
-    "analyst": "Analysis underway.",
-    "quant": "Analysis underway.",
-    "chaos_line": "The market speaks in contradictions.",
-    "plays": [],
-    "trap": "",
-    "edge": "",
-    "time_sensitivity": "THIS WEEK",
-    "forces": [
-      "MONEY"
+    "confidence": 74,
+    "eli5": "Bitcoin and Ethereum are only moving a little today, like a car stuck in traffic. The fear‑greed index says investors feel neutral, not scared or super happy.\n\nThe big bond rate is almost flat, so the economy isn’t feeling a big shock yet. But no headlines means nothing dramatic is happening right now.",
+    "analyst": "The market is in a quiet consolidation phase. Bitcoin’s 24‑hour change is negligible, and the VIX remains moderate at 15.32, suggesting limited volatility. Treasury yields are flat, implying neutral risk appetite. Given the lack of catalysts, the consensus remains that the market will stay range‑bound until a clear economic signal emerges.\n\nHowever, the absence of news can be a warning sign; investors often over‑react to silence, creating mispricing. The current stance is risk‑on on a micro‑level but risk‑off on macro fundamentals, especially with no clear earnings or policy updates.\n\nTrade decisions should focus on tight risk control and look for micro‑arbitrage opportunities. Avoid over‑exposure to single assets until a catalyst triggers a breakout.",
+    "quant": "From a trader’s perspective, the BTC–ETH pair is trading within a tight band; the 0.16% daily move is statistically insignificant. The VIX at 15.32 indicates moderate tail risk, but not enough to trigger a flight to quality. With no change in 10Y yields and neutral sentiment, the market is likely to stay in a low‑variance regime.\n\nThe best approach is to employ tight stop‑losses and short‑term scalping around key support/resistance levels. Avoid large position sizing and focus on liquidity pools with high volume. Monitor the 24‑hour volume spike for any sign of momentum shift.\n\nThe key is to stay nimble and avoid being caught in a liquidity trap if a sudden shock occurs.",
+    "chaos_line": "When silence is loud, the market whispers its next betrayal.",
+    "plays": [
+      {
+        "type": "SAFE",
+        "thesis": "BTC holds at 73k",
+        "details": "Long BTC at 73,500, target 75,000, stop 72,000, catalyst: volume spike >10B"
+      },
+      {
+        "type": "AGGRESSIVE",
+        "thesis": "ETH breakout",
+        "details": "Short ETH at 2,020, target 1,900, stop 2,050, catalyst: 24h % drop >1%"
+      },
+      {
+        "type": "CONTRARIAN",
+        "thesis": "Crypto fear is overblown",
+        "details": "Buy BTC at 73,000, target 75,500, stop 71,500, reasoning: consensus underestimates resilience due to lack of negative catalysts"
+      }
     ],
-    "active_regime": "TRANSITION",
+    "trap": "Retail traders are over‑confident in the neutral stance, expecting a major rally that never materializes. Institutional players, meanwhile, are quietly positioning for a downturn, betting on a sudden shift in macro fundamentals.",
+    "edge": "The crypto market’s stablecoin flows are hidden; a sudden drain could signal a liquidity crunch.",
+    "time_sensitivity": "TODAY",
+    "forces": [
+      "DEBT",
+      "JOBS",
+      "TECH"
+    ],
+    "active_regime": "RISK-ON",
     "cross_market": {
       "bond": {
-        "label": "CALM",
-        "desc": "10Y at N/A% — yields within normal range."
+        "label": "CAUTION",
+        "desc": "10Y at 4.453% — yields within normal range."
       },
       "equity": {
         "label": "CALM",
@@ -67,13 +85,18 @@
       }
     },
     "news_wires": [],
-    "key_levels": {},
-    "weekly_catalyst": "",
+    "key_levels": {
+      "btc_support": "72,500",
+      "btc_resistance": "75,000",
+      "spx_support": "N/A",
+      "yield_threshold": "4.400%"
+    },
+    "weekly_catalyst": "Fed policy meeting",
     "agent_consensus": {
       "debate_required": false,
       "resolution": ""
     },
-    "generated_at": "2026-05-30T07:55:04.523Z"
+    "generated_at": "2026-05-30T07:55:32.267Z"
   },
   "agents": {
     "fundamental": {
@@ -90,7 +113,7 @@
     }
   },
   "signal": {
-    "signal_hash": "CI-MPS22NKX-N",
-    "timestamp": "2026-05-30T07:55:04.523Z"
+    "signal_hash": "CI-MPS238ZJ-N",
+    "timestamp": "2026-05-30T07:55:32.267Z"
   }
 }
