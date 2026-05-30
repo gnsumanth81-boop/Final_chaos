@@ -86,19 +86,12 @@
     },
     "news_wires": [
       {
-        "source": "ABC News",
-        "title": "Average US long-term mortgage rate climbs to 6.53%, highest level in nine months",
-        "impact": "Higher mortgage rates increase borrowing costs, dampen housing demand and consumer spending, which could weigh on economic growth and equity valuations.",
+        "source": "Business Insider",
+        "title": "Dell Q1 earnings beat; AI surge fuels market",
+        "impact": "Positive AI sentiment lifts tech stocks, pressuring rates.",
         "forces": [
-          "DEBT"
-        ]
-      },
-      {
-        "source": "San Francisco Chronicle",
-        "title": "Meta’s mass layoffs hit nearly 3,200 Bay Area workers, among region’s worst job losses in years",
-        "impact": "Large-scale layoffs signal weakening ad revenue and potential slowdown in tech sector performance, raising concerns for growth stocks.",
-        "forces": [
-          "TECH"
+          "TECH",
+          "JOBS"
         ]
       }
     ],
@@ -113,7 +106,7 @@
       "debate_required": false,
       "resolution": ""
     },
-    "generated_at": "2026-05-30T06:51:56.140Z"
+    "generated_at": "2026-05-30T06:51:59.312Z"
   },
   "agents": {
     "fundamental": {
@@ -130,7 +123,7 @@
     }
   },
   "signal": {
-    "signal_hash": "CI-MPRZTGG0-B",
-    "timestamp": "2026-05-30T06:51:56.140Z"
+    "signal_hash": "CI-MPRZTIW1-B",
+    "timestamp": "2026-05-30T06:51:59.312Z"
   }
 }
