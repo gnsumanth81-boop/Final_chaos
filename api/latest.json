@@ -3,11 +3,11 @@
     "fearIndex": 23,
     "fearLabel": "Neutral",
     "fearDelta": 0,
-    "btcPrice": "N/A",
-    "btcChange": "0.00",
-    "btcVolume": "N/A",
-    "btcHigh": "N/A",
-    "btcLow": "N/A",
+    "btcPrice": "$73,512",
+    "btcChange": "-0.21",
+    "btcVolume": "$10.7B",
+    "btcHigh": "$74,293",
+    "btcLow": "$72,436",
     "ethPrice": "N/A",
     "ethChange": "0.00",
     "vixVal": "N/A",
@@ -32,41 +32,22 @@
     "label": "MORNING SESSION"
   },
   "brief": {
-    "headline": "Retail Blindness Fuels Hidden Market Tilt",
-    "dateline": "New York",
-    "signal": "BEARISH",
-    "confidence": 74,
-    "eli5": "Most traders think the market is stuck in a neutral mood because the Fear & Greed index sits at 23. In reality, the Fed's balance sheet is quietly shrinking, pulling liquidity from the system. That pull creates a hidden risk‑off wave that only the big banks are seeing. If you ignore it, you’ll get caught on the wrong side of the next sell‑off.",
-    "analyst": "The consensus view that risk appetite is flat is a mirage; the underlying liquidity metric—Fed net asset reduction—has turned negative for three consecutive weeks. Treasury yields have crept upward, nudging the 10‑year above 4.30%, a level that historically pressures equity multiples. Meanwhile, the DXY is edging higher, signalling a dollar‑led capital shift away from risk assets. The confluence of shrinking balance sheet, rising yields and a stronger dollar sets a subtle but decisive risk‑off regime. Retail positions remain overly long equities, exposing them to a sharp correction if the Fed signals further tightening.",
-    "quant": "Our models flag a divergence: the implied volatility surface remains compressed while forward curves for 10‑year Treasury steepen, indicating hidden stress. The VIX, though not quoted, is likely below 15, a classic sign of complacency. Liquidity‑adjusted momentum on the S&P 500 shows a bearish tilt once the yield threshold of 4.30% is breached. Execution flow data (not provided) typically shows a surge in short‑selling when the DXY crosses 105.5. The quantitative edge is to short the equity beta while hedging with short‑dated Treasury futures.",
-    "chaos_line": "When the Fed tightens its grip, the retail herd staggers into the abyss of their own complacency.",
-    "plays": [
-      {
-        "type": "SAFE",
-        "thesis": "Low risk setup",
-        "details": "Short S&P 500 futures at 4,500 with stop at 4,620; catalyst: 10Y yield crossing 4.30%."
-      },
-      {
-        "type": "AGGRESSIVE",
-        "thesis": "High conviction bet",
-        "details": "Buy short‑dated 10Y Treasury futures (Mar) expecting yield rise to 4.45%; profit from price drop."
-      },
-      {
-        "type": "CONTRARIAN",
-        "thesis": "Against the crowd",
-        "details": "Long USD/JPY above 147 as retail bets on a weak dollar; catalyst: DXY breaching 105.5."
-      }
-    ],
-    "trap": "Retail investors are piled long equities, convinced risk appetite is neutral, while institutional balance sheets are shedding liquidity, setting the stage for a rapid unwind.",
-    "edge": "Most eyes are on headline inflation; they ignore the Fed's balance sheet contraction as a leading liquidity indicator.",
+    "headline": "Market Update",
+    "dateline": "NYC",
+    "signal": "NEUTRAL",
+    "confidence": 65,
+    "eli5": "Analysis underway.",
+    "analyst": "Analysis underway.",
+    "quant": "Analysis underway.",
+    "chaos_line": "The market speaks in contradictions.",
+    "plays": [],
+    "trap": "",
+    "edge": "",
     "time_sensitivity": "THIS WEEK",
     "forces": [
-      "DEBT",
-      "POLITICS",
-      "MONEY",
-      "ENERGY"
+      "MONEY"
     ],
-    "active_regime": "RISK-OFF",
+    "active_regime": "TRANSITION",
     "cross_market": {
       "bond": {
         "label": "CALM",
@@ -78,36 +59,21 @@
       },
       "crypto": {
         "label": "HEDGING",
-        "desc": "BTC at N/A — positive momentum."
+        "desc": "BTC at $73,512 — under pressure."
       },
       "sentiment": {
         "label": "FEAR 23",
         "desc": "Neutral sentiment across retail."
       }
     },
-    "news_wires": [
-      {
-        "source": "FED",
-        "title": "Fed Balance Sheet Shrinks for Third Week",
-        "impact": "The continued runoff removes $10bn daily from the system, tightening liquidity and pressuring risk assets.",
-        "forces": [
-          "MONEY",
-          "DEBT"
-        ]
-      }
-    ],
-    "key_levels": {
-      "btc_support": "26,800",
-      "btc_resistance": "30,500",
-      "spx_support": "4,460",
-      "yield_threshold": "4.30%"
-    },
-    "weekly_catalyst": "Federal Reserve's weekly balance sheet report released Thursday",
+    "news_wires": [],
+    "key_levels": {},
+    "weekly_catalyst": "",
     "agent_consensus": {
       "debate_required": false,
       "resolution": ""
     },
-    "generated_at": "2026-05-30T06:15:39.074Z"
+    "generated_at": "2026-05-30T06:17:30.279Z"
   },
   "agents": {
     "fundamental": {
@@ -115,8 +81,8 @@
       "thesis": "Awaiting whale data..."
     },
     "technical": {
-      "bias": "NEUTRAL",
-      "thesis": "BTC positive momentum. VIX at N/A."
+      "bias": "BEARISH",
+      "thesis": "BTC negative momentum. VIX at N/A."
     },
     "sentiment": {
       "bias": "BEARISH",
@@ -124,7 +90,7 @@
     }
   },
   "signal": {
-    "signal_hash": "CI-MPRYISMD-B",
-    "timestamp": "2026-05-30T06:15:39.074Z"
+    "signal_hash": "CI-MPRYL6KO-N",
+    "timestamp": "2026-05-30T06:17:30.279Z"
   }
 }
