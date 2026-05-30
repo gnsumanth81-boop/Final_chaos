@@ -14,8 +14,8 @@
     "yieldVal": "4.453",
     "yieldPrev": "4.455",
     "dxyVal": "98.91",
-    "spxVal": "N/A",
-    "spxChange": "N/A",
+    "spxVal": "7,580",
+    "spxChange": "+0.22%",
     "marketTitle": "Unknown",
     "marketOdds": "50.0",
     "marketVolume": "$0",
@@ -32,48 +32,49 @@
     "label": "MORNING SESSION"
   },
   "brief": {
-    "headline": "Neutral Masks Underlying Volatility",
+    "headline": "Equities Edge Higher as Yield Curve Flattens",
     "dateline": "New York",
-    "signal": "NEUTRAL",
+    "signal": "BULLISH",
     "confidence": 74,
-    "eli5": "Markets are pretending to be calm with a neutral Fear & Greed score, but the strong dollar and slightly down crypto tell a different story. \n\nThe VIX is low, but Treasury yields are stable, suggesting investors are not fully committed to either risk or safety. \n\nThis calm could be a setup for a move in either direction, so watch for catalysts that break the neutrality.",
-    "analyst": "The neutral Fear & Greed score of 23 masks underlying tensions in the market. The strong DXY at 98.91 suggests some risk aversion, while the stable 10Y Treasury yields indicate no flight to safety. \n\nThe slight decline in Bitcoin and Ethereum, despite low VIX, suggests crypto is underperforming traditional risk assets. \n\nThis divergence could be a precursor to a regime shift, and we should monitor cross-asset correlations closely for early signs of directional bias.",
-    "quant": "The current regime is characterized by low volatility (VIX 15.32) but mixed signals across asset classes. The DXY strength suggests USD flows, while the stable Treasury yields indicate no significant risk aversion. \n\nThe slight decline in crypto despite low VIX is notable and could indicate a sector-specific headwind. \n\nWe should watch for breakouts in key levels and monitor the correlation between USD strength and risk asset performance for regime confirmation.",
-    "chaos_line": "Neutral sentiment is the mask of hidden dissonance waiting for a catalyst to reveal truth.",
+    "eli5": "The stock market is nudging up because bond yields are slipping a hair, making stocks look cheap. The fear gauge (VIX) is low, so investors aren't nervous. Bitcoin is barely moving, showing no real crypto excitement. Overall, the economy feels like it's in a calm lull, not a panic or a boom.\n\nBut the real story is that most retail traders think the market is stuck, while the data says risk assets are quietly gathering steam.",
+    "analyst": "The S&P 500's 0.22% rise amid a 4.45% 10Y Treasury suggests a modest risk‑on tilt. VIX at 15.3 signals low volatility, while DXY under 99 reflects a weaker dollar, supporting commodity‑linked equities. Crypto's flat performance underscores a lack of speculative overflow. The market is in a liquidity‑trap regime: ample cash, low fear, but no strong directional catalyst. The consensus retail narrative of a looming crash is unsupported by the macro backdrop.\n\nWe see a tightening yield curve, which historically precedes a short‑term equity rally before any policy pivot. The primary risk remains a surprise shock to inflation or a geopolitical flare‑up.",
+    "quant": "BTC's 24h drift of -0.21% on $10.7B volume shows low order‑flow imbalance; no clear micro‑structure bias. The equity market's 0.22% gain on modest volume aligns with a positive spread between the 10Y and 2Y yields, indicating carry trade appeal. VIX's 15.32 level reduces implied volatility premiums, making option premiums cheap for sellers. Liquidity metrics point to a surplus of cash in money‑market funds, feeding into equities. Expect short‑term beta to rise on any positive earnings surprise.",
+    "chaos_line": "When the market whispers lullabies, the wolves of capital are already prowling the quiet aisles.",
     "plays": [
       {
         "type": "SAFE",
-        "thesis": "Short-duration Treasuries",
-        "details": "2Y Treasury notes, short, 4.40% level, stable yield environment"
+        "thesis": "Low risk setup",
+        "details": "Long S&P 500 ETF above 7,560, target 7,650 on continued yield flattening and low VIX"
       },
       {
         "type": "AGGRESSIVE",
-        "thesis": "Long USD against risk assets",
-        "details": "USD/JPY long, 152.00 level, DXY strength and low VIX"
+        "thesis": "High conviction bet",
+        "details": "Long 10Y Treasury futures short-term, entry 4.45%, target 4.35% if yield curve flattens further on Fed pause"
       },
       {
         "type": "CONTRARIAN",
-        "thesis": "Crypto dip buying",
-        "details": "Bitcoin $72,500 support, low VIX suggests oversold, neutral sentiment"
+        "thesis": "Against the crowd",
+        "details": "Short BTC/USD at $73,500, stop 74,500; retail hype expects crypto rally but macro shows risk‑on equity bias"
       }
     ],
-    "trap": "Retail investors positioned for neutrality as VIX remains low, missing the underlying USD strength and crypto weakness that could lead to a sudden risk-off event.",
-    "edge": "Most are not watching the divergence between low VIX and strong DXY, which could signal a regime shift before traditional indicators confirm it.",
-    "time_sensitivity": "TODAY",
+    "trap": "Retail traders are over‑weighting crypto and fearing a crash; the real mis‑pricing is on the equity side where cash is hunting yield.",
+    "edge": "Most ignore the subtle flattening of the 10Y‑2Y spread, a leading indicator of a short‑term equity rally.",
+    "time_sensitivity": "THIS WEEK",
     "forces": [
       "MONEY",
+      "TECH",
       "DEBT",
-      "PEOPLE"
+      "POLITICS"
     ],
-    "active_regime": "RISK-OFF",
+    "active_regime": "LIQUIDITY TRAP",
     "cross_market": {
       "bond": {
         "label": "CAUTION",
         "desc": "10Y at 4.453% — yields within normal range."
       },
       "equity": {
-        "label": "CALM",
-        "desc": "S&P 500 N/A session."
+        "label": "BULLISH",
+        "desc": "S&P 500 +0.22% session."
       },
       "crypto": {
         "label": "HEDGING",
@@ -84,29 +85,19 @@
         "desc": "Neutral sentiment across retail."
       }
     },
-    "news_wires": [
-      {
-        "source": "MARKET WATCH",
-        "title": "Treasury Yields Stabilize Amid Economic Uncertainty",
-        "impact": "Stable Treasury yields suggest investors are not fully pricing in economic risks, creating a potential mispricing opportunity.",
-        "forces": [
-          "MONEY",
-          "DEBT"
-        ]
-      }
-    ],
+    "news_wires": [],
     "key_levels": {
-      "btc_support": "$72,500",
+      "btc_support": "$72,400",
       "btc_resistance": "$74,300",
-      "spx_support": "N/A",
-      "yield_threshold": "4.50%"
+      "spx_support": "7,540",
+      "yield_threshold": "4.40% (support for equity rally)"
     },
-    "weekly_catalyst": "FOMC meeting minutes",
+    "weekly_catalyst": "Federal Reserve's policy statement and dot‑plot release",
     "agent_consensus": {
       "debate_required": false,
       "resolution": ""
     },
-    "generated_at": "2026-05-30T06:21:48.036Z"
+    "generated_at": "2026-05-30T06:22:39.941Z"
   },
   "agents": {
     "fundamental": {
@@ -123,7 +114,7 @@
     }
   },
   "signal": {
-    "signal_hash": "CI-MPRYQPBJ-N",
-    "timestamp": "2026-05-30T06:21:48.036Z"
+    "signal_hash": "CI-MPRYRTD8-B",
+    "timestamp": "2026-05-30T06:22:39.941Z"
   }
 }
