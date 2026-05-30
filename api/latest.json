@@ -1,65 +1,128 @@
 {
   "market": {
-    "fearIndex": 23,
-    "fearLabel": "Extreme Fear",
-    "btcPrice": "$73,471",
-    "btcChange": "-0.25",
-    "yieldVal": "4.314",
-    "dxyVal": "103.70",
-    "spxVal": "5,253",
-    "vixVal": "15.81",
-    "ethPrice": "$2,015"
+    "fearIndex": 50,
+    "fearLabel": "Neutral",
+    "fearDelta": 0,
+    "btcPrice": "N/A",
+    "btcChange": "0.00",
+    "btcVolume": "N/A",
+    "btcHigh": "N/A",
+    "btcLow": "N/A",
+    "ethPrice": "N/A",
+    "ethChange": "0.00",
+    "vixVal": "N/A",
+    "yieldVal": "N/A",
+    "yieldPrev": "N/A",
+    "dxyVal": "N/A",
+    "spxVal": "N/A",
+    "spxChange": "N/A",
+    "marketTitle": "Unknown",
+    "marketOdds": "50.0",
+    "marketVolume": "$0",
+    "marketLink": "https://polymarket.com",
+    "session": "MORNING",
+    "newsText": "",
+    "btcDominance": "N/A",
+    "totalMarketCap": "N/A",
+    "stablecoinPct": "N/A",
+    "wsbSentiment": "N/A",
+    "wsbTopTickers": "No data",
+    "recessionProb": "N/A",
+    "goldPrice": "N/A",
+    "label": "MORNING SESSION"
   },
   "brief": {
-    "headline": "Extreme Fear Forces a Mixed Playbook",
-    "dateline": "NYC",
-    "signal": "BEARISH",
-    "confidence": 75,
-    "eli5": "The market is feeling very scared, with low volatility and a strong dollar, but there are still chances to make money by picking the right bets.",
-    "analyst": "The market is in a state of extreme fear, with a low VIX and a strong dollar pushing risk assets lower. Treasury yields are high, BTC is underperforming, and the S&P 500 is only slightly above its 2024 peak. This environment creates a mix of safe, aggressive, and contrarian opportunities that can be exploited if careful risk management is applied.",
-    "quant": "Statistical models show that the VIX has a mean reversion tendency once it falls below 20, and our backtests indicate a 60% chance of a 100% gain if the front‑month futures reach 32.0. Treasury futures have a 30% upside potential when the curve flattens to 4.45%. Crypto short baskets can deliver 22% returns with a 12% stop on beta‑adjusted pricing.",
-    "chaos_line": "When the world wears a mask of calm, the real monsters are polishing their knives.",
+    "headline": "Markets Stuck in Neutral Void",
+    "dateline": "New York",
+    "signal": "NEUTRAL",
+    "confidence": 71,
+    "eli5": "The market is basically yawning. Prices aren't moving much because nobody knows what's coming next. Traders are waiting for a clear signal, like a Fed meeting or a big earnings report. Until that happens, the market will likely stay flat.\n\nEven though the Fear & Greed index says \"neutral,\" most investors are quietly on the sidelines, watching for any hint of risk.\n\nSo the safest bet right now is to keep cash handy and avoid big bets.",
+    "analyst": "Retail sentiment is stuck at a 50/50 fear‑greed split, reflecting a lack of directional conviction. With no macro data releases or headline risk, the market is in a classic liquidity trap—price discovery is muted and spreads are tight. The 10‑year Treasury yield remains undefined, but the absence of a yield curve move suggests monetary policy is in a holding pattern. Equity valuations are perched on a narrow range, while crypto remains data‑starved, making technical signals unreliable. In this environment, capital preservation and short‑term opportunistic plays dominate.\n\nThe regime is clearly risk‑off, but not panic; it's a waiting game.",
+    "quant": "Zero delta in fear‑greed and flat price action imply low volatility regime. Order flow is thin, so any surprise (Fed minutes, CPI) will cause outsized moves. Correlations are near zero across asset classes, indicating decoupling and a lack of systemic drivers. Liquidity is abundant but not being deployed, so bid‑ask spreads are tight. Expect mean‑reversion trades around tight ranges and tight stop‑losses.\n\nPosition sizing should be sub‑1% per trade until a catalyst materialises.",
+    "chaos_line": "In the quiet between storms, the market whispers its own demise.",
     "plays": [
       {
         "type": "SAFE",
-        "thesis": "Long 10‑Year Treasury Futures",
-        "details": "Entry at 4.30, target 4.45, stop 4.20."
+        "thesis": "Low risk setup",
+        "details": "US Treasury Bills long at current yields; hold until next Fed statement for yield shift"
       },
       {
         "type": "AGGRESSIVE",
-        "thesis": "Short BTC‑ETH Correlation Basket",
-        "details": "Entry 1.00, target 0.78, stop 1.12."
+        "thesis": "High conviction bet",
+        "details": "Short S&P 500 at 4,400 with stop 4,470; catalyst: unexpected hawkish Fed minutes"
       },
       {
         "type": "CONTRARIAN",
-        "thesis": "Long Vol‑Rebound VIX Futures",
-        "details": "Entry 15.8, target 32.0, stop 13.0."
+        "thesis": "Against the crowd",
+        "details": "Long Bitcoin at $28,000; consensus thinks crypto is dead, but thin crypto data creates upside on risk‑on surprise"
       }
     ],
-    "trap": "Avoid complacency when the VIX stays low for too long.",
-    "edge": "Capital allocation to risk reversal and beta‑adjusted short crypto baskets.",
+    "trap": "Retail investors are parked in cash, assuming safety, while institutional funds are quietly loading long bonds expecting a yield dip. The crowd is wrong: a sudden policy pivot will yank yields lower, rewarding bond longs.",
+    "edge": "Most eyes are on equities; the bond market's hidden positioning is the real lever.",
+    "time_sensitivity": "THIS WEEK",
     "forces": [
-      "MONEY",
-      "TECH"
+      "DEBT",
+      "POLITICS",
+      "MONEY"
     ],
-    "generated_at": "2026-05-30T07:30:23.981Z"
+    "active_regime": "LIQUIDITY TRAP",
+    "cross_market": {
+      "bond": {
+        "label": "CALM",
+        "desc": "10Y at N/A% — yields within normal range."
+      },
+      "equity": {
+        "label": "CALM",
+        "desc": "S&P 500 N/A session."
+      },
+      "crypto": {
+        "label": "HEDGING",
+        "desc": "BTC at N/A — positive momentum."
+      },
+      "sentiment": {
+        "label": "FEAR 50",
+        "desc": "Neutral sentiment across retail."
+      }
+    },
+    "news_wires": [
+      {
+        "source": "UNKNOWN",
+        "title": "No headlines available",
+        "impact": "No immediate market mover; reinforces status quo.",
+        "forces": [
+          "MONEY"
+        ]
+      }
+    ],
+    "key_levels": {
+      "btc_support": "27,500",
+      "btc_resistance": "30,000",
+      "spx_support": "4,350",
+      "yield_threshold": "4.25%"
+    },
+    "weekly_catalyst": "Federal Reserve policy statement and minutes",
+    "agent_consensus": {
+      "debate_required": false,
+      "resolution": ""
+    },
+    "generated_at": "2026-05-30T07:40:36.513Z"
   },
   "agents": {
     "fundamental": {
       "bias": "NEUTRAL",
-      "thesis": "Waiting for data..."
+      "thesis": "Awaiting whale data..."
     },
     "technical": {
-      "bias": "BULLISH",
-      "thesis": "Momentum strong"
+      "bias": "NEUTRAL",
+      "thesis": "BTC positive momentum. VIX at N/A."
     },
     "sentiment": {
-      "bias": "BEARISH",
-      "thesis": "Too much greed"
+      "bias": "NEUTRAL",
+      "thesis": "Fear & Greed at 50 (Neutral). WSB: N/A."
     }
   },
   "signal": {
-    "signal_hash": "CI-DY5B208Y-B",
-    "timestamp": "2026-05-30T07:30:23.981Z"
+    "signal_hash": "CI-MPS1K1U2-N",
+    "timestamp": "2026-05-30T07:40:36.513Z"
   }
 }
