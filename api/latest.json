@@ -25,46 +25,46 @@
     "btcDominance": "57.5%",
     "totalMarketCap": "$2.56T",
     "stablecoinPct": "Inflows",
-    "wsbSentiment": "N/A",
-    "wsbTopTickers": "No data",
+    "wsbSentiment": "MIXED",
+    "wsbTopTickers": "No ticker mentions",
     "recessionProb": "N/A",
     "goldPrice": "N/A",
     "label": "MORNING SESSION"
   },
   "brief": {
-    "headline": "AI Hubris Meets Mortgage Reality",
+    "headline": "Mortgage Rates Spike, Markets Edge Higher",
     "dateline": "New York",
-    "signal": "VOLATILE",
-    "confidence": 82,
-    "eli5": "The stock market is ignoring rising mortgage rates because they are obsessed with AI. Big companies are firing thousands of people while others are paying for houses with AI stock. It is a weird mix of high-tech wealth and real-world struggle.\n\nBasically, the 'AI bubble' is acting as a shield against bad economic news.",
-    "analyst": "Market divergence is reaching critical levels. S&P 500 is drifting higher despite mortgage rates hitting 9-month highs and mass tech layoffs. The acceptance of private AI equity for real estate transactions indicates a dangerous concentration of wealth in unlisted assets.\n\nLiquidity is rotating into concentrated AI winners while the broader labor market shows fractures. We are seeing a 'K-shaped' recovery on steroids where the AI narrative suppresses the signal of rising cost of capital.",
-    "quant": "BTC dominance at 57.5% shows a clear flight to quality within crypto; altcoins are bleeding. SPX is hovering at 7,580 with low VIX (15.32), suggesting extreme complacency. 10Y Treasury at 4.453% is the primary anchor; any spike above 4.6% triggers a systemic deleveraging.\n\nStablecoin inflows suggest dry powder is waiting for a dip, but the lack of volatility is a coiled spring. The delta between mortgage rates and equity prices is a widening gap that cannot persist indefinitely.",
-    "chaos_line": "The world burns in a mortgage fire while the elite trade imaginary AI coins for concrete castles.",
+    "signal": "BEARISH",
+    "confidence": 74,
+    "eli5": "Mortgage rates in the US just jumped to about 6.5%, the highest they've been in nine months. Higher rates make borrowing more expensive, which can slow down home buying and the broader economy. Despite that, the stock market is still climbing a bit, and investors are watching the Middle East for any sign of a peace deal that could boost oil prices. Crypto is mostly flat, but Bitcoin's dominance is staying above 55%, meaning traders still see it as a safe haven compared to other coins.",
+    "analyst": "Retail sentiment remains overly complacent, anchored by a neutral Fear & Greed index and modest equity gains. The surge in mortgage rates signals tightening credit conditions, which will eventually bleed into consumer spending and corporate earnings. Meanwhile, the VIX is low at 15.3, suggesting complacency, yet the 10‑year yield's slight dip to 4.453% hints at the market's search for yield amid limited upside. Geopolitical risk off the back of a tentative US‑Iran de‑escalation is propping oil and risk assets, but the underlying macro is shifting toward a liquidity squeeze. The confluence of higher borrowing costs and a still‑elevated DXY creates a subtle headwind for risk assets.",
+    "quant": "The BTC/USD pair is hugging its 57% dominance band, with support near $71,800 and resistance at $75,200. SPX is testing a short‑term ceiling around 7,620; a break below 7,540 would trigger a 200‑day moving average test. The 10‑year yield's 4.45% level is a soft floor; a move above 4.55% would pressure equities and raise the dollar. VIX staying sub‑16 suggests low volatility regime, but any spike could trigger rapid risk‑off. Position sizing should reflect the narrow risk premium and the looming credit tightening.",
+    "chaos_line": "When mortgage rates climb, the market's smile fades, revealing the thin veneer of optimism.",
     "plays": [
       {
         "type": "SAFE",
-        "thesis": "BTC Dominance Play",
-        "details": "Long BTC / Short ETH at $2,015; BTC dominance trend is absolute until alt-season trigger."
+        "thesis": "Low risk setup",
+        "details": "Short S&P 500 futures at 7,580 with stop at 7,630; catalyst: mortgage rate hike tightening credit."
       },
       {
         "type": "AGGRESSIVE",
-        "thesis": "Rate Sensitivity Short",
-        "details": "Short Real Estate ETFs (e.g., VNQ) as 10Y yields sustain above 4.4% and mortgage rates climb."
+        "thesis": "High conviction bet",
+        "details": "Long 10‑year Treasury futures at 4.45% with target 4.30%; catalyst: flight to safety as credit spreads widen."
       },
       {
         "type": "CONTRARIAN",
-        "thesis": "The AI Fatigue",
-        "details": "Short Big Tech on the next 1% SPX pop; the Meta layoffs signal the 'efficiency' phase is peaking."
+        "thesis": "Against the crowd",
+        "details": "Buy BTC at $73,000 with stop $71,500; consensus expects crypto to stall, but dominance and stablecoin inflows suggest a hedge against fiat tightening."
       }
     ],
-    "trap": "Retail traders longing altcoins expecting a 'rotation' that isn't coming. They are ignoring the 57.5% BTC dominance and the lack of liquidity outside the top 1%.",
-    "edge": "The decoupling of the housing market (mortgage rates) from the equity market. The crash starts when the mortgage pain hits the consumer's wallet.",
-    "time_sensitivity": "TODAY",
+    "trap": "Retail investors are betting on a continued risk‑on rally, ignoring the credit squeeze from rising mortgage rates and the modestly elevated DXY that will hurt equities.",
+    "edge": "Most overlook the tightening mortgage market as a leading indicator of broader consumer credit stress.",
+    "time_sensitivity": "THIS WEEK",
     "forces": [
-      "MONEY",
-      "TECH",
       "DEBT",
-      "JOBS"
+      "JOBS",
+      "POLITICS",
+      "ENERGY"
     ],
     "active_regime": "LIQUIDITY TRAP",
     "cross_market": {
@@ -115,17 +115,17 @@
       }
     ],
     "key_levels": {
-      "btc_support": "72,400",
-      "btc_resistance": "74,300",
-      "spx_support": "7,450",
-      "yield_threshold": "4.60%"
+      "btc_support": "71,800",
+      "btc_resistance": "75,200",
+      "spx_support": "7,540",
+      "yield_threshold": "4.55%"
     },
-    "weekly_catalyst": "US Treasury yield volatility and potential Mideast deal confirmation.",
+    "weekly_catalyst": "Federal Reserve's upcoming policy statement on potential rate adjustments",
     "agent_consensus": {
       "debate_required": false,
       "resolution": ""
     },
-    "generated_at": "2026-05-30T05:51:46.382Z"
+    "generated_at": "2026-05-30T05:52:34.146Z"
   },
   "agents": {
     "fundamental": {
@@ -138,11 +138,11 @@
     },
     "sentiment": {
       "bias": "BEARISH",
-      "thesis": "Fear & Greed at 23 (Neutral). WSB: N/A."
+      "thesis": "Fear & Greed at 23 (Neutral). WSB: MIXED."
     }
   },
   "signal": {
-    "signal_hash": "CI-MPRXO35O-V",
-    "timestamp": "2026-05-30T05:51:46.382Z"
+    "signal_hash": "CI-MPRXP41P-B",
+    "timestamp": "2026-05-30T05:52:34.146Z"
   }
 }
