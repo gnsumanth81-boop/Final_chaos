@@ -86,27 +86,30 @@
     },
     "news_wires": [
       {
+        "source": "CNBC / Wall Street Journal",
+        "title": "Iran deal hopes lift markets, oil stalls",
+        "impact": "Risk premium compresses as investors price a tentative U.S.-Iran agreement, boosting the DXY and easing 10Y yields. Oil prices retreat, supporting SPX and risk assets while BTC sees modest upside from reduced geopolitical stress.",
+        "forces": [
+          "POLITICS",
+          "ENERGY"
+        ]
+      },
+      {
+        "source": "Investor's Business Daily",
+        "title": "Dell smashes Q1, AI outlook raised",
+        "impact": "Dell's earnings beat fuels a rally in US tech equities, lifting SPX and pulling risk appetite higher; AI hype spills into related chips and cloud stocks, pressuring the DXY lower. Short‑term yield curve steadies as cash flows into equities.",
+        "forces": [
+          "TECH",
+          "DEBT"
+        ]
+      },
+      {
         "source": "ABC News",
-        "title": "Average US long-term mortgage rate climbs to 6.53%, highest level in nine months",
-        "impact": "Higher mortgage rates dampen housing demand, pressuring consumer spending and indirectly affecting equity valuations. This could tighten financial conditions, nudging the market toward a more cautious stance.",
+        "title": "US 30‑yr mortgage rate hits 6.53%",
+        "impact": "Higher long‑term mortgage rates signal tighter credit conditions, nudging 10Y Treasury yields up and strengthening the DXY. Housing‑sensitive REITs and consumer discretionary stocks face pressure, while BTC may see a modest inflow as investors seek non‑correlated assets.",
         "forces": [
-          "MONEY"
-        ]
-      },
-      {
-        "source": "CNBC",
-        "title": "SpaceX Lowers IPO Valuation Target to at least $1.8 Trillion",
-        "impact": "A reduced IPO target signals weaker near‑term fundraising appetite for mega‑tech, curbing speculative inflows. Investors may re‑allocate toward more certain earnings drivers.",
-        "forces": [
-          "TECH"
-        ]
-      },
-      {
-        "source": "The Wall Street Journal",
-        "title": "IBM, Red Hat Pledge $5 Billion for AI-Driven Open Source Security Initiative",
-        "impact": "The commitment underscores growing AI security spend, boosting enterprise tech budgets. This could lift related stocks amid a tech‑focused rally.",
-        "forces": [
-          "TECH"
+          "DEBT",
+          "JOBS"
         ]
       }
     ],
@@ -121,7 +124,7 @@
       "debate_required": false,
       "resolution": ""
     },
-    "generated_at": "2026-05-30T06:23:27.739Z"
+    "generated_at": "2026-05-30T06:23:49.243Z"
   },
   "agents": {
     "fundamental": {
@@ -138,7 +141,7 @@
     }
   },
   "signal": {
-    "signal_hash": "CI-MPRYSU97-N",
-    "timestamp": "2026-05-30T06:23:27.739Z"
+    "signal_hash": "CI-MPRYTAVH-N",
+    "timestamp": "2026-05-30T06:23:49.243Z"
   }
 }
