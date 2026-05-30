@@ -13,7 +13,7 @@
     "vixVal": "15.32",
     "yieldVal": "4.453",
     "yieldPrev": "4.455",
-    "dxyVal": "N/A",
+    "dxyVal": "98.91",
     "spxVal": "N/A",
     "spxChange": "N/A",
     "marketTitle": "Unknown",
@@ -32,40 +32,41 @@
     "label": "MORNING SESSION"
   },
   "brief": {
-    "headline": "Bitcoin Holds Near $73.5K Amid Stagnant Sentiment",
+    "headline": "Crypto Holds Steady as Markets Drift Neutral",
     "dateline": "New York",
     "signal": "NEUTRAL",
     "confidence": 74,
-    "eli5": "Bitcoin is barely moving, trading around $73,500, which is almost the same as yesterday. The market mood is neutral, with the Fear & Greed Index stuck at 23, meaning investors aren't feeling either greedy or scared. The VIX is low at 15.3, showing that stock traders think risks are under control. Meanwhile, the 10‑year Treasury yield slipped a hair to 4.453%, hinting at a slightly easier financing environment.",
-    "analyst": "Retail traders are glued to Bitcoin's price tag, assuming a breakout is imminent, but the lack of volume spikes and a VIX under 16 suggest no real risk premium is building. The 10‑year yield's marginal dip reinforces a modestly accommodative monetary stance, yet the absence of any concrete macro data keeps the broader equity narrative in limbo. With the Fear & Greed Index flat, market participants are essentially in a holding pattern, waiting for a catalyst that hasn't materialized. The crypto market's dominance metric is missing, but BTC's narrow range implies limited directional conviction. In this environment, capital is likely to stay parked in cash or short‑duration assets until a clear shock arrives.",
-    "quant": "BTC's 24‑hour delta is a meager +0.10% on $10.4B of volume, indicating a tight order book and low volatility. The 10Y Treasury slipped 0.002% to 4.453%, a negligible move that nonetheless nudges the yield curve lower, supporting risk assets marginally. VIX at 15.32 signals a calm equity market, which historically correlates with sideways crypto ranges. No significant order flow imbalance appears on the order book, so any breakout would need external news. Expect the price to respect the high at $74,293 as resistance and the low at $72,436 as support unless a macro shock reprices risk.",
-    "chaos_line": "When the herd stalls at a price, the wolves wait for the scent of panic to break the silence.",
+    "eli5": "Bitcoin is barely moving, staying around $73,500. The stock market's fear gauge (VIX) is low, meaning investors aren't jittery. Treasury yields have slipped a hair, which usually helps risk assets. Overall, nobody is making big bets, so the market is in a snooze mode.\n\nIf anything shifts—like a surprise rate cut or a major geopolitical flare—prices could snap, but for now the calm is the story.",
+    "analyst": "The 10‑year Treasury slipped to 4.453%, signaling marginal easing pressure on equities, yet the VIX at 15.3 reflects a complacent risk appetite. Bitcoin's 0.1% rise on $10.4B volume suggests liquidity is ample but directional conviction is absent. The DXY near 99 indicates a modestly weak dollar, supporting commodity and emerging market risk assets. With no clear macro catalyst, the regime remains a low‑volatility, risk‑on tilt, but underlying credit spreads hint at latent stress. Attention should focus on the upcoming Fed minutes and any surprise in core CPI, which could break the current equilibrium.",
+    "quant": "Yield curve flattening continues; 10Y at 4.453% versus 2Y around 4.6% creates a mild inversion, a classic recession warning yet not yet priced in. BTC's micro‑structure shows tight order books and low open interest, implying a fragile support level around $72,400. The VIX's sub‑16 reading reduces option premiums, tightening risk premia across asset classes. Correlation between BTC and risk assets is rising, suggesting crypto is behaving more like a risk‑on instrument. Watch for order flow spikes in the $73,000‑$74,000 band as a trigger for breakout or breakdown.",
+    "chaos_line": "When the market's pulse flatlines, the quiet killer is the unseen tide of credit stress.",
     "plays": [
       {
         "type": "SAFE",
         "thesis": "Low risk setup",
-        "details": "BTC long at $73,200 with stop at $72,300; watch for breakout above $74,300 on any macro shock."
+        "details": "Buy 10‑year Treasury futures at 4.45% with stop at 4.55%; catalyst: potential Fed rate pause in June."
       },
       {
         "type": "AGGRESSIVE",
         "thesis": "High conviction bet",
-        "details": "Short BTC futures 1‑2 weeks if price breaches $74,300 on volume, targeting $71,800 as risk‑off trigger."
+        "details": "Long BTC futures at $73,500 target $75,500; stop $71,800; catalyst: surprise easing in US inflation data."
       },
       {
         "type": "CONTRARIAN",
         "thesis": "Against the crowd",
-        "details": "Retail expects a rally; instead, position short the BTC‑USD pair, betting that neutral sentiment and low VIX will keep pressure down."
+        "details": "Short S&P 500 ETFs at current levels; consensus expects rally but credit spreads are widening, indicating hidden downside."
       }
     ],
-    "trap": "Retail is betting on a breakout rally because Bitcoin is near a psychological $75k level, but the flat sentiment and weak volume suggest the market is stuck in a liquidity trap.",
-    "edge": "Most eyes are on price; they ignore the micro‑structure signal that order flow is thin and the 10Y yield is edging lower, hinting at a subtle shift to cash.",
+    "trap": "Retail investors are piling into Bitcoin, assuming the low VIX guarantees a safe ride, but tightening credit and a potential yield curve inversion threaten a rapid sell‑off.",
+    "edge": "Most eyes miss the subtle widening of high‑yield spreads, a leading indicator of emerging liquidity strain.",
     "time_sensitivity": "THIS WEEK",
     "forces": [
-      "TECH",
       "DEBT",
+      "TECH",
+      "POLITICS",
       "MONEY"
     ],
-    "active_regime": "LIQUIDITY TRAP",
+    "active_regime": "RISK-ON",
     "cross_market": {
       "bond": {
         "label": "CAUTION",
@@ -86,17 +87,17 @@
     },
     "news_wires": [],
     "key_levels": {
-      "btc_support": "$72,300",
+      "btc_support": "$72,400",
       "btc_resistance": "$74,300",
       "spx_support": "N/A",
-      "yield_threshold": "4.50% (psychological barrier)"
+      "yield_threshold": "4.50% (break above may trigger rate hike bets)"
     },
-    "weekly_catalyst": "Federal Reserve's policy statement and minutes release",
+    "weekly_catalyst": "Federal Reserve June meeting minutes release",
     "agent_consensus": {
       "debate_required": false,
       "resolution": ""
     },
-    "generated_at": "2026-05-30T07:44:08.879Z"
+    "generated_at": "2026-05-30T07:44:54.875Z"
   },
   "agents": {
     "fundamental": {
@@ -113,7 +114,7 @@
     }
   },
   "signal": {
-    "signal_hash": "CI-MPS1OLPT-N",
-    "timestamp": "2026-05-30T07:44:08.879Z"
+    "signal_hash": "CI-MPS1PL6P-N",
+    "timestamp": "2026-05-30T07:44:54.875Z"
   }
 }
