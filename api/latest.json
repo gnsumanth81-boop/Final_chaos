@@ -11,8 +11,8 @@
     "ethPrice": "$2,015",
     "ethChange": "0.29",
     "vixVal": "15.32",
-    "yieldVal": "N/A",
-    "yieldPrev": "N/A",
+    "yieldVal": "4.453",
+    "yieldPrev": "4.455",
     "dxyVal": "N/A",
     "spxVal": "N/A",
     "spxChange": "N/A",
@@ -32,43 +32,45 @@
     "label": "MORNING SESSION"
   },
   "brief": {
-    "headline": "Markets In Motion",
-    "dateline": "NYC",
+    "headline": "Complacency Breeds Blind Spots",
+    "dateline": "New York",
     "signal": "NEUTRAL",
-    "confidence": 65,
-    "eli5": "Global markets are processing mixed signals as central banks hold their ground.",
-    "analyst": "The macro environment remains in a transitional phase. Monitor yield curve dynamics and dollar strength for directional cues.",
-    "quant": "Vol-adjusted signals lean neutral. Watch for breakout above resistance with volume confirmation.",
-    "chaos_line": "The silence before the storm is just the market holding its breath.",
+    "confidence": 74,
+    "eli5": "The market’s neutral vibe is a trap. When everyone’s calm, big moves often hide. Bitcoin’s small gains might look safe, but rising yields could hurt crypto. Don’t trust the quiet—it’s often a warning.",
+    "analyst": "The lack of headlines and stable metrics masks underlying fragility. Retail’s neutrality suggests they’re ignoring yield trends that could trigger a risk-off shift. Bitcoin’s resilience is overstated without volume confirmation.",
+    "quant": "Watch the 10Y yield delta—small rises here signal tightening liquidity. BTC’s support at $72,436 is critical; a break below means panic. VIX’s 15.32 is misleadingly low for a fragile regime.",
+    "chaos_line": "The calm before the storm isn’t peace—it’s a countdown to chaos.",
     "plays": [
       {
         "type": "SAFE",
-        "thesis": "Hold cash or short-term bonds",
-        "details": "Preserve capital until direction clarifies"
+        "thesis": "BTC holding above $72,436",
+        "details": "Bitcoin +1% if breaks $73,000; catalyst: VIX drops below 15"
       },
       {
         "type": "AGGRESSIVE",
-        "thesis": "BTC long on dip to $70k",
-        "details": "Strong accumulation zone, institutional support"
+        "thesis": "Short 10Y yield above 4.5%",
+        "details": "Yield surge signals risk-off; target 4.65%"
       },
       {
         "type": "CONTRARIAN",
-        "thesis": "Fade the equity rally",
-        "details": "VIX suppression masking real risk"
+        "thesis": "Ignore neutral Fear & Greed",
+        "details": "Retail consensus ignores yield-driven risks; BTC dominance could collapse"
       }
     ],
-    "trap": "Retail is chasing the S&P rally. Smart money is quietly hedging.",
-    "edge": "Credit spreads diverging from equity complacency.",
-    "time_sensitivity": "THIS WEEK",
+    "trap": "Investors betting on ‘calm’ are wrong. Rising yields and liquidity risks are being dismissed as irrelevant.",
+    "edge": "No one is tracking how stablecoin flows might dry up if yields spike.",
+    "time_sensitivity": "IMMEDIATE",
     "forces": [
       "MONEY",
-      "DEBT"
+      "TECH",
+      "DEBT",
+      "PEOPLE"
     ],
-    "active_regime": "TRANSITION",
+    "active_regime": "LIQUIDITY TRAP",
     "cross_market": {
       "bond": {
-        "label": "CALM",
-        "desc": "10Y at N/A% — yields within normal range."
+        "label": "CAUTION",
+        "desc": "10Y at 4.453% — yields within normal range."
       },
       "equity": {
         "label": "CALM",
@@ -84,13 +86,18 @@
       }
     },
     "news_wires": [],
-    "key_levels": {},
-    "weekly_catalyst": "Fed speakers Friday",
+    "key_levels": {
+      "btc_support": "$72,436",
+      "btc_resistance": "$74,293",
+      "spx_support": "N/A",
+      "yield_threshold": "4.5%"
+    },
+    "weekly_catalyst": "N/A",
     "agent_consensus": {
       "debate_required": false,
       "resolution": ""
     },
-    "generated_at": "2026-05-30T05:44:37.957Z"
+    "generated_at": "2026-05-30T05:46:17.270Z"
   },
   "agents": {
     "fundamental": {
@@ -107,7 +114,7 @@
     }
   },
   "signal": {
-    "signal_hash": "CI-MPRXEWKS-N",
-    "timestamp": "2026-05-30T05:44:37.957Z"
+    "signal_hash": "CI-MPRXH176-N",
+    "timestamp": "2026-05-30T05:46:17.270Z"
   }
 }
