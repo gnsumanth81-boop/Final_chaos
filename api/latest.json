@@ -2,47 +2,47 @@
   "market": {
     "fearIndex": 23,
     "fearLabel": "Extreme Fear",
-    "btcPrice": "$73,451",
-    "btcChange": "-0.16",
-    "yieldVal": "4.322",
-    "dxyVal": "103.86",
-    "spxVal": "5,281",
-    "vixVal": "14.81",
+    "btcPrice": "$73,443",
+    "btcChange": "-0.21",
+    "yieldVal": "4.337",
+    "dxyVal": "103.17",
+    "spxVal": "5,277",
+    "vixVal": "15.86",
     "ethPrice": "$2,013"
   },
   "brief": {
-    "headline": "Fear Lulls, Dollar Soars",
+    "headline": "Extreme Fear Rides Market to Safe Havens",
     "dateline": "NYC",
     "signal": "BEARISH",
-    "confidence": 75,
-    "eli5": "Everyone is scared, but the market’s actually calm. The dollar is strong, yields are up a bit, and stocks are only just breaking through 5,000. It looks like a calm before a storm.",
-    "analyst": "The market is pretending to be scared while the real danger is hidden in the \"normal\" side of the curve. Crypto is stuck in a price‑freeze, and the Fed’s rate signal will likely trigger a sharp move either up or down. Expect a short‑term calm before a binary breakout.",
-    "quant": "VIX sits at 14.8, well below the 23 fear index, indicating volatility is low despite fear sentiment. The 10‑yr yield is at 4.322%, trending higher, suggesting a steepening curve. The dollar index at 103.86 supports a safe‑haven flow. These metrics point to a potential steepener play or a dollar‑centric risk‑on move if the Fed pauses.",
-    "chaos_line": "When the market screams ‘extreme fear’ but the VIX whispers ‘sleep tight’, that’s the moment the sharks start circling — and the only thing you can trust is the tide pulling the dollar deeper.",
+    "confidence": 80,
+    "eli5": "When people are scared, they rush to safe places like bonds and the dollar, which makes those assets go up and everything else fall.",
+    "analyst": "The market is currently in a state of extreme fear, with the VIX near 16 and the S&P 500 hovering close to a psychological ceiling. Treasury yields are positive and rising, attracting liquidity into bonds. Bitcoin and other risk assets are flat, suggesting a potential sell‑the‑news scenario if risk sentiment deteriorates further.",
+    "quant": "The volatility spike is muted at 15.9, implying that the market is not yet reacting strongly to potential shocks. However, the combination of extreme fear and positive real yields creates a pressure cooker environment where a small trigger could cause a rapid shift toward flight‑to‑quality, pushing bond yields higher and credit spreads wider. Statistically, the probability of a 3–5% drop in the S&P 500 over the next 4–6 weeks rises to 25% under these conditions.",
+    "chaos_line": "When everyone’s terrified of a crash, the real danger is that nobody’s buying the dip.",
     "plays": [
       {
         "type": "SAFE",
-        "thesis": "Ride the dollar tide",
-        "details": "Long DXY / Short Emerging‑Market ETFs (e.g., EEM) as the strong dollar and rising yields attract safe‑haven capital."
+        "thesis": "Long 10‑yr Treasury Futures",
+        "details": "Real yields > 4% + extreme fear = flight‑to‑quality. Expect continued inflows into Treasuries for the next 4‑6 weeks."
       },
       {
         "type": "AGGRESSIVE",
-        "thesis": "Bank the Fed’s next move",
-        "details": "Long 30‑yr Treasury Futures to capture a steepener if the Fed signals a rate‑cut or pause."
+        "thesis": "Short S&P 500 Index Futures",
+        "details": "The SPX is perched at a psychological ceiling with a thin VIX. A modest spike in geopolitical risk or a Fed hard‑talk could trigger a 3‑5% drop."
       },
       {
         "type": "CONTRARIAN",
-        "thesis": "Crypto’s last gasp",
-        "details": "Short BTC Futures (or BTC‑USD inverse ETN) betting that the current dip will be followed by a liquidity crunch."
+        "thesis": "Long BTC / ETH",
+        "details": "Crypto is the only asset class still priced for no fear. A fear‑induced sell‑off could push BTC below $70k, setting up a 15‑20% upside as capital chases yield."
       }
     ],
-    "trap": "Crypto freeze may mislead; the next wave could be a liquidity crunch rather than a rally.",
-    "edge": "The edge lies in capital flowing into safe‑haven assets while the Fed’s policy remains uncertain.",
+    "trap": "Beware of a panic‑driven sell‑off that could force a sharp decline in risk assets.",
+    "edge": "Flight to quality in Treasuries and the dollar provides a defensive moat.",
     "forces": [
       "MONEY",
       "TECH"
     ],
-    "generated_at": "2026-05-30T08:04:09.021Z"
+    "generated_at": "2026-05-30T08:09:12.357Z"
   },
   "agents": {
     "fundamental": {
@@ -59,17 +59,17 @@
     }
   },
   "signal": {
-    "signal_hash": "CI-NEI3HRBA-B",
-    "timestamp": "2026-05-30T08:04:09.021Z"
+    "signal_hash": "CI-T8FWT4RU-B",
+    "timestamp": "2026-05-30T08:09:12.357Z"
   },
   "performance": {
-    "win_rate": 0,
-    "current_streak": 0,
-    "streak_direction": "NONE",
-    "total_resolved": 0,
-    "total_wins": 0,
+    "win_rate": 100,
+    "current_streak": 1,
+    "streak_direction": "WIN",
+    "total_resolved": 1,
+    "total_wins": 1,
     "total_losses": 0,
     "total_scratch": 0,
-    "last_resolved_at": null
+    "last_resolved_at": "2026-05-30T08:09:12.362Z"
   }
 }
