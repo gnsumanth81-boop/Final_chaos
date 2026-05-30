@@ -3,11 +3,11 @@
     "fearIndex": 23,
     "fearLabel": "Neutral",
     "fearDelta": 0,
-    "btcPrice": "N/A",
-    "btcChange": "0.00",
-    "btcVolume": "N/A",
-    "btcHigh": "N/A",
-    "btcLow": "N/A",
+    "btcPrice": "$73,603",
+    "btcChange": "-0.15",
+    "btcVolume": "$10.6B",
+    "btcHigh": "$74,293",
+    "btcLow": "$72,436",
     "ethPrice": "N/A",
     "ethChange": "0.00",
     "vixVal": "N/A",
@@ -32,40 +32,39 @@
     "label": "MORNING SESSION"
   },
   "brief": {
-    "headline": "Markets Hold Breath as Data Dries Up",
-    "dateline": "New York",
+    "headline": "Markets In Motion",
+    "dateline": "NYC",
     "signal": "NEUTRAL",
-    "confidence": 74,
-    "eli5": "Retail investors are piling into whatever feels hot, but the data shows no real direction.\n\nWithout clear signals, the market is just waiting for the next catalyst.",
-    "analyst": "The absence of any macro catalyst leaves positioning tentative.\n\nLiquidity is thin, so any surprise could trigger a rapid repricing.\n\nInvestors are watching the Treasury curve for subtle shifts that could signal a regime change.\n\nUntil then, the safest play is to stay in short-duration assets.",
-    "quant": "Volume is near zero, indicating a lack of conviction.\n\nOrder flow shows no directional bias across equities or crypto.\n\nThe VIX remains muted, suggesting complacency that could be shattered.\n\nTraders should prepare for a snapback by scaling into volatility.\n\nKey triggers will be any unexpected macro news.",
-    "chaos_line": "The silence of empty data screams louder than any rally, exposing the fragile illusion of control.",
+    "confidence": 65,
+    "eli5": "Global markets are processing mixed signals as central banks hold their ground.",
+    "analyst": "The macro environment remains in a transitional phase. Monitor yield curve dynamics and dollar strength for directional cues.",
+    "quant": "Vol-adjusted signals lean neutral. Watch for breakout above resistance with volume confirmation.",
+    "chaos_line": "The silence before the storm is just the market holding its breath.",
     "plays": [
       {
         "type": "SAFE",
-        "thesis": "Low risk setup",
-        "details": "Buy 2yr Treasury at 4.75% support, catalyst: Fed minutes release"
+        "thesis": "Hold cash or short-term bonds",
+        "details": "Preserve capital until direction clarifies"
       },
       {
         "type": "AGGRESSIVE",
-        "thesis": "High conviction bet",
-        "details": "Short S&P 500 futures if VIX spikes above 20, catalyst: weak earnings"
+        "thesis": "BTC long on dip to $70k",
+        "details": "Strong accumulation zone, institutional support"
       },
       {
         "type": "CONTRARIAN",
-        "thesis": "Against the crowd",
-        "details": "Buy gold miners as retail chases crypto, catalyst: dollar weakness"
+        "thesis": "Fade the equity rally",
+        "details": "VIX suppression masking real risk"
       }
     ],
-    "trap": "Retail traders are overleveraged in meme stocks, while institutions quietly unwind, leaving a crowded trade ripe for a snapback.",
-    "edge": "Stablecoin reserves are draining into money market funds, a hidden shift most investors ignore.",
-    "time_sensitivity": "TODAY",
+    "trap": "Retail is chasing the S&P rally. Smart money is quietly hedging.",
+    "edge": "Credit spreads diverging from equity complacency.",
+    "time_sensitivity": "THIS WEEK",
     "forces": [
       "MONEY",
-      "DEBT",
-      "JOBS"
+      "DEBT"
     ],
-    "active_regime": "RISK-OFF",
+    "active_regime": "TRANSITION",
     "cross_market": {
       "bond": {
         "label": "CALM",
@@ -77,35 +76,21 @@
       },
       "crypto": {
         "label": "HEDGING",
-        "desc": "BTC at N/A — positive momentum."
+        "desc": "BTC at $73,603 — under pressure."
       },
       "sentiment": {
         "label": "FEAR 23",
         "desc": "Neutral sentiment across retail."
       }
     },
-    "news_wires": [
-      {
-        "source": "Unknown",
-        "title": "No headlines",
-        "impact": "No impact",
-        "forces": [
-          "MONEY"
-        ]
-      }
-    ],
-    "key_levels": {
-      "btc_support": "15000",
-      "btc_resistance": "20000",
-      "spx_support": "4100",
-      "yield_threshold": "4.5%"
-    },
-    "weekly_catalyst": "Fed interest rate decision",
+    "news_wires": [],
+    "key_levels": {},
+    "weekly_catalyst": "Fed speakers Friday",
     "agent_consensus": {
       "debate_required": false,
       "resolution": ""
     },
-    "generated_at": "2026-05-30T06:48:35.896Z"
+    "generated_at": "2026-05-30T06:48:58.072Z"
   },
   "agents": {
     "fundamental": {
@@ -113,8 +98,8 @@
       "thesis": "Awaiting whale data..."
     },
     "technical": {
-      "bias": "NEUTRAL",
-      "thesis": "BTC positive momentum. VIX at N/A."
+      "bias": "BEARISH",
+      "thesis": "BTC negative momentum. VIX at N/A."
     },
     "sentiment": {
       "bias": "BEARISH",
@@ -122,7 +107,7 @@
     }
   },
   "signal": {
-    "signal_hash": "CI-MPRZP5XR-N",
-    "timestamp": "2026-05-30T06:48:35.896Z"
+    "signal_hash": "CI-MPRZPN1O-N",
+    "timestamp": "2026-05-30T06:48:58.072Z"
   }
 }
