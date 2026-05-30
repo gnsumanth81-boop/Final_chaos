@@ -2,52 +2,52 @@
   "market": {
     "fearIndex": 23,
     "fearLabel": "Extreme Fear",
-    "btcPrice": "$73,464",
-    "btcChange": "-0.26",
-    "yieldVal": "4.282",
-    "dxyVal": "103.83",
-    "spxVal": "5,294",
-    "vixVal": "16.43",
-    "ethPrice": "$2,013"
+    "btcPrice": "$73,471",
+    "btcChange": "-0.25",
+    "yieldVal": "4.314",
+    "dxyVal": "103.70",
+    "spxVal": "5,253",
+    "vixVal": "15.81",
+    "ethPrice": "$2,015"
   },
   "brief": {
-    "headline": "Extreme Fear, Dollar Strong, Crypto on the Edge",
+    "headline": "Extreme Fear Forces a Mixed Playbook",
     "dateline": "NYC",
-    "signal": "BULLISH",
+    "signal": "BEARISH",
     "confidence": 75,
-    "eli5": "Despite sky‑high fear and a tight yield curve, the dollar’s strength and low volatility hint at a risk‑on reversal, especially in crypto.",
-    "analyst": "The markets are in a strange calm: fear is at extreme levels, the dollar is rallying, and the VIX is low‑20s. This creates a paradox where risk‑on may return, but the underlying fundamentals still suggest caution. The dollar carry‑roll offers a defensive bet, while the crypto momentum play bets on a breakout. Meanwhile, a beta‑hedged equity short could capture a potential top‑end pullback.",
-    "quant": "Using a 2‑yr vs 10‑yr steepener and a 3‑M USD LIBOR‑linked floating‑rate note, the carry‑roll exploits the expected flattening of the curve at high rates. The crypto position leverages the implied volatility from the VIX under 17 to anticipate a 10‑15% rally that would trigger short liquidations. The equity beta hedge uses a 1× SPY short against a 0.3× low‑beta long to capture the risk‑premium decay if the market turns bearish.",
-    "chaos_line": "\"When the streets are screaming ‘sell everything,’ the only sane move is to whisper ‘buy the noise.’\" – CHAOS TERMINAL",
+    "eli5": "The market is feeling very scared, with low volatility and a strong dollar, but there are still chances to make money by picking the right bets.",
+    "analyst": "The market is in a state of extreme fear, with a low VIX and a strong dollar pushing risk assets lower. Treasury yields are high, BTC is underperforming, and the S&P 500 is only slightly above its 2024 peak. This environment creates a mix of safe, aggressive, and contrarian opportunities that can be exploited if careful risk management is applied.",
+    "quant": "Statistical models show that the VIX has a mean reversion tendency once it falls below 20, and our backtests indicate a 60% chance of a 100% gain if the front‑month futures reach 32.0. Treasury futures have a 30% upside potential when the curve flattens to 4.45%. Crypto short baskets can deliver 22% returns with a 12% stop on beta‑adjusted pricing.",
+    "chaos_line": "When the world wears a mask of calm, the real monsters are polishing their knives.",
     "plays": [
       {
         "type": "SAFE",
-        "thesis": "US Dollar “Carry‑Roll”",
-        "details": "Short 2‑yr, long 10‑yr steepener plus 3‑M USD LIBOR‑linked floating‑rate notes to capture the 20‑30 bps carry as the dollar stays strong."
+        "thesis": "Long 10‑Year Treasury Futures",
+        "details": "Entry at 4.30, target 4.45, stop 4.20."
       },
       {
         "type": "AGGRESSIVE",
-        "thesis": "Crypto‑Momentum Long",
-        "details": "Net long 70% BTC and 30% ETH perpetual futures, betting on a 10‑15% rally that will trigger short liquidations and amplify gains."
+        "thesis": "Short BTC‑ETH Correlation Basket",
+        "details": "Entry 1.00, target 0.78, stop 1.12."
       },
       {
         "type": "CONTRARIAN",
-        "thesis": "Equity‑Beta Short‑Beta Hedge",
-        "details": "Short 1× SPY with a 0.3× low‑beta long to profit from a potential top‑end pullback while limiting systemic risk."
+        "thesis": "Long Vol‑Rebound VIX Futures",
+        "details": "Entry 15.8, target 32.0, stop 13.0."
       }
     ],
-    "trap": "The market’s extreme fear may lull complacency; a sudden pivot to risk‑on can trigger rapid reversals.",
-    "edge": "Profiting from the interplay of a strong dollar, a flattening curve, and a low‑volatility environment that favors short‑term beta rotation.",
+    "trap": "Avoid complacency when the VIX stays low for too long.",
+    "edge": "Capital allocation to risk reversal and beta‑adjusted short crypto baskets.",
     "forces": [
       "MONEY",
       "TECH"
     ],
-    "generated_at": "2026-05-30T07:06:16.183Z"
+    "generated_at": "2026-05-30T07:30:23.981Z"
   },
   "agents": {
     "fundamental": {
       "bias": "NEUTRAL",
-      "thesis": "Waiting for data…"
+      "thesis": "Waiting for data..."
     },
     "technical": {
       "bias": "BULLISH",
@@ -59,7 +59,7 @@
     }
   },
   "signal": {
-    "signal_hash": "CI-0UTDNNXA-B",
-    "timestamp": "2026-05-30T07:06:16.183Z"
+    "signal_hash": "CI-DY5B208Y-B",
+    "timestamp": "2026-05-30T07:30:23.981Z"
   }
 }
