@@ -11,8 +11,8 @@
     "ethPrice": "$2,013",
     "ethChange": "-0.12",
     "vixVal": "15.32",
-    "yieldVal": "N/A",
-    "yieldPrev": "N/A",
+    "yieldVal": "4.453",
+    "yieldPrev": "4.455",
     "dxyVal": "N/A",
     "spxVal": "N/A",
     "spxChange": "N/A",
@@ -32,44 +32,43 @@
     "label": "MORNING SESSION"
   },
   "brief": {
-    "headline": "Liquidity Calm Masks Hidden Fragility",
-    "dateline": "New York",
+    "headline": "Markets In Motion",
+    "dateline": "NYC",
     "signal": "NEUTRAL",
-    "confidence": 74,
-    "eli5": "Markets look steady, but the water beneath is quietly draining. Investors are sipping coffee while the tide of cheap money recedes, exposing cracks.\n\nWithout fresh inflows, even small shocks can cause ripples. Watch the liquidity gauge, not just price moves.",
-    "analyst": "The current price action in Bitcoin reflects a narrow consolidation around $73,500, with volume barely moving.\n\nTechnical indicators show a modest bearish bias, yet the broader macro backdrop remains supportive.\n\nA break below $72,000 could trigger a quick cascade of stop‑losses.\n\nMeanwhile, the VIX stays low, suggesting complacency among risk‑averse investors.\n\nTraders should monitor funding rates for early signals of sentiment shift.",
-    "quant": "Volume in BTC remains subdued, hovering near $10.7B, indicating a lack of fresh directional conviction.\n\nFunding rates are flat, suggesting traders are not heavily leveraged on either side.\n\nIf the market decides to test the $72,000 support, expect a sharp reaction from short‑term liquidations.\n\nThe VIX‑linked risk appetite is low, so any surprise news could flip the bias quickly.\n\nWatch the order‑book depth for hidden liquidity pockets.",
-    "chaos_line": "Markets whisper calm while the tide of liquidity quietly erodes every illusion.",
+    "confidence": 65,
+    "eli5": "Global markets are processing mixed signals as central banks hold their ground.",
+    "analyst": "The macro environment remains in a transitional phase. Monitor yield curve dynamics and dollar strength for directional cues.",
+    "quant": "Vol-adjusted signals lean neutral. Watch for breakout above resistance with volume confirmation.",
+    "chaos_line": "The silence before the storm is just the market holding its breath.",
     "plays": [
       {
         "type": "SAFE",
-        "thesis": "Low risk setup",
-        "details": "Buy Bitcoin near $72,500 with stop at $71,800, targeting $75,000 on a modest volume uptick; catalyst: sustained low VIX and steady funding rates."
+        "thesis": "Hold cash or short-term bonds",
+        "details": "Preserve capital until direction clarifies"
       },
       {
         "type": "AGGRESSIVE",
-        "thesis": "High conviction bet",
-        "details": "Go long Bitcoin at $73,200, target $76,000, stop $72,000; catalyst: breakout above $74,000 with volume surge."
+        "thesis": "BTC long on dip to $70k",
+        "details": "Strong accumulation zone, institutional support"
       },
       {
         "type": "CONTRARIAN",
-        "thesis": "Against the crowd",
-        "details": "Short Bitcoin if it pierces $74,500 on weak volume, targeting $70,000; consensus expects rally, but overbought funding and thin volume make a reversal plausible."
+        "thesis": "Fade the equity rally",
+        "details": "VIX suppression masking real risk"
       }
     ],
-    "trap": "Retail traders are over‑exposed to leveraged long positions, believing the rally will continue, while institutional flows remain muted.",
-    "edge": "Most are ignoring the subtle shift in stablecoin minting rates, which could signal upcoming liquidity pressure.",
-    "time_sensitivity": "IMMEDIATE",
+    "trap": "Retail is chasing the S&P rally. Smart money is quietly hedging.",
+    "edge": "Credit spreads diverging from equity complacency.",
+    "time_sensitivity": "THIS WEEK",
     "forces": [
       "MONEY",
-      "DEBT",
-      "TECH"
+      "DEBT"
     ],
-    "active_regime": "RISK-ON",
+    "active_regime": "TRANSITION",
     "cross_market": {
       "bond": {
-        "label": "CALM",
-        "desc": "10Y at N/A% — yields within normal range."
+        "label": "CAUTION",
+        "desc": "10Y at 4.453% — yields within normal range."
       },
       "equity": {
         "label": "CALM",
@@ -84,28 +83,14 @@
         "desc": "Neutral sentiment across retail."
       }
     },
-    "news_wires": [
-      {
-        "source": "MarketWatch",
-        "title": "Liquidity Remains Abundant Amid Quiet Sessions",
-        "impact": "No fresh catalysts; low volume suggests complacency, but underlying fragility builds as funding rates stall.",
-        "forces": [
-          "MONEY"
-        ]
-      }
-    ],
-    "key_levels": {
-      "btc_support": " $71,500 ",
-      "btc_resistance": " $75,000 ",
-      "spx_support": " 4,500 ",
-      "yield_threshold": " 4.5% "
-    },
-    "weekly_catalyst": "Fed Policy Statement",
+    "news_wires": [],
+    "key_levels": {},
+    "weekly_catalyst": "Fed speakers Friday",
     "agent_consensus": {
       "debate_required": false,
       "resolution": ""
     },
-    "generated_at": "2026-05-30T06:18:39.475Z"
+    "generated_at": "2026-05-30T06:19:08.479Z"
   },
   "agents": {
     "fundamental": {
@@ -122,7 +107,7 @@
     }
   },
   "signal": {
-    "signal_hash": "CI-MPRYMNTQ-N",
-    "timestamp": "2026-05-30T06:18:39.475Z"
+    "signal_hash": "CI-MPRYNA8V-N",
+    "timestamp": "2026-05-30T06:19:08.479Z"
   }
 }
