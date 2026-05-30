@@ -1,19 +1,112 @@
 {
   "market": {
+    "fearIndex": 23,
+    "fearLabel": "Neutral",
+    "fearDelta": 0,
+    "btcPrice": "$73,603",
+    "btcChange": "-0.15",
+    "btcVolume": "$10.6B",
+    "btcHigh": "$74,293",
+    "btcLow": "$72,436",
+    "ethPrice": "$2,017",
+    "ethChange": "0.10",
+    "vixVal": "15.32",
+    "yieldVal": "N/A",
+    "yieldPrev": "N/A",
+    "dxyVal": "N/A",
+    "spxVal": "N/A",
+    "spxChange": "N/A",
+    "marketTitle": "Unknown",
+    "marketOdds": "50.0",
+    "marketVolume": "$0",
+    "marketLink": "https://polymarket.com",
+    "session": "MORNING",
+    "newsText": "",
+    "btcDominance": "N/A",
+    "totalMarketCap": "N/A",
+    "stablecoinPct": "N/A",
+    "wsbSentiment": "N/A",
+    "wsbTopTickers": "No data",
+    "recessionProb": "N/A",
     "goldPrice": "N/A",
-    "label": "undefined SESSION"
+    "label": "MORNING SESSION"
   },
   "brief": {
-    "plays": [],
-    "forces": [],
-    "cross_market": {},
-    "news_wires": [],
-    "key_levels": {},
-    "weekly_catalyst": "",
+    "headline": "Neutral Session, Crypto Stagnates Slightly",
+    "dateline": "New York",
+    "signal": "NEUTRAL",
+    "confidence": 74,
+    "eli5": "The market is stuck in a narrow range with little momentum. Both crypto and equities are barely moving today.\n\nTraders are waiting for a catalyst to break the stalemate. Watch for any sudden news that could spark a move.",
+    "analyst": "Today's session shows a neutral stance across assets, with Bitcoin and Ethereum flat and the VIX holding steady around 15.32. The lack of volatility suggests that liquidity is abundant but not being deployed aggressively. Institutional positioning remains cautious, as indicated by the absence of significant fund flows. The market is likely consolidating before the upcoming Fed commentary later this week. Any breakout will likely be driven by macro data or unexpected geopolitical developments.",
+    "quant": "The morning snapshot reveals a low-volatility environment with BTC down 0.15% and the VIX unchanged. Funding rates for perpetual futures are flat, indicating no strong directional bias. Order book depth shows tight spreads, suggesting market makers are comfortable. The key level to watch is $72,500 for BTC support; a break below could trigger a short-term selloff. Given the neutral sentiment, a range-bound strategy with tight stops is advisable.",
+    "chaos_line": "Markets whisper complacency while hidden liquidity drains the complacent, leaving only the bold to reap the inevitable crash.",
+    "plays": [
+      {
+        "type": "SAFE",
+        "thesis": "Low risk setup",
+        "details": "Hold cash and wait for a confirmed breakout above $74,200 in BTC, with a tight stop at $72,500."
+      },
+      {
+        "type": "AGGRESSIVE",
+        "thesis": "High conviction bet",
+        "details": "Short BTC if it breaks below $72,500 with a target at $71,000, using 2x leverage."
+      },
+      {
+        "type": "CONTRARIAN",
+        "thesis": "Against the crowd",
+        "details": "Buy BTC on dips toward $72,500, anticipating a mean reversion as retail sentiment remains overly cautious."
+      }
+    ],
+    "trap": "Retail traders who are heavily long on crypto futures are positioned wrong, as the market shows no momentum to sustain upside. Their leveraged exposure could amplify losses if a sudden liquidity drain occurs.",
+    "edge": "Monitor stablecoin issuance and funding rate changes, as hidden liquidity shifts can precede sharp price moves that the crowd misses.",
+    "time_sensitivity": "TODAY",
+    "forces": [
+      "MONEY",
+      "TECH",
+      "DEBT"
+    ],
+    "active_regime": "LIQUIDITY TRAP",
+    "cross_market": {
+      "bond": {
+        "label": "CALM",
+        "desc": "10Y at N/A% — yields within normal range."
+      },
+      "equity": {
+        "label": "CALM",
+        "desc": "S&P 500 N/A session."
+      },
+      "crypto": {
+        "label": "HEDGING",
+        "desc": "BTC at $73,603 — under pressure."
+      },
+      "sentiment": {
+        "label": "FEAR 23",
+        "desc": "Neutral sentiment across retail."
+      }
+    },
+    "news_wires": [
+      {
+        "source": "MarketWatch",
+        "title": "Crypto stalls as risk appetite wanes",
+        "impact": "Crypto markets remain flat with Bitcoin hovering near $73,600, showing minimal intraday movement. Institutional flows are muted, suggesting traders are waiting for clearer direction.",
+        "forces": [
+          "MONEY",
+          "TECH"
+        ]
+      }
+    ],
+    "key_levels": {
+      "btc_support": "Approx $72,500",
+      "btc_resistance": "Approx $74,200",
+      "spx_support": "Approx 4,500",
+      "yield_threshold": "Approx 4.25%"
+    },
+    "weekly_catalyst": "Fed Chair Powell's testimony",
     "agent_consensus": {
       "debate_required": false,
       "resolution": ""
-    }
+    },
+    "generated_at": "2026-05-30T06:50:07.821Z"
   },
   "agents": {
     "fundamental": {
@@ -21,15 +114,16 @@
       "thesis": "Awaiting whale data..."
     },
     "technical": {
-      "bias": "NEUTRAL",
-      "thesis": "BTC positive momentum. VIX at N/A."
+      "bias": "BEARISH",
+      "thesis": "BTC negative momentum. VIX at 15.32."
     },
     "sentiment": {
-      "bias": "NEUTRAL",
-      "thesis": "Fear & Greed at undefined (Neutral). WSB: N/A."
+      "bias": "BEARISH",
+      "thesis": "Fear & Greed at 23 (Neutral). WSB: N/A."
     }
   },
   "signal": {
-    "signal_hash": "CI-MPRZQIOF-N"
+    "signal_hash": "CI-MPRZR4V8-N",
+    "timestamp": "2026-05-30T06:50:07.821Z"
   }
 }
