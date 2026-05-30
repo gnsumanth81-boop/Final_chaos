@@ -13,7 +13,7 @@
     "vixVal": "15.32",
     "yieldVal": "4.453",
     "yieldPrev": "4.455",
-    "dxyVal": "N/A",
+    "dxyVal": "98.91",
     "spxVal": "N/A",
     "spxChange": "N/A",
     "marketTitle": "Unknown",
@@ -32,39 +32,42 @@
     "label": "MORNING SESSION"
   },
   "brief": {
-    "headline": "Markets In Motion",
-    "dateline": "NYC",
-    "signal": "NEUTRAL",
-    "confidence": 65,
-    "eli5": "Global markets are processing mixed signals as central banks hold their ground.",
-    "analyst": "The macro environment remains in a transitional phase. Monitor yield curve dynamics and dollar strength for directional cues.",
-    "quant": "Vol-adjusted signals lean neutral. Watch for breakout above resistance with volume confirmation.",
-    "chaos_line": "The silence before the storm is just the market holding its breath.",
+    "headline": "Retail Ignorance Surge",
+    "dateline": "New York",
+    "signal": "NEUTRAL to BEARISH",
+    "confidence": 74,
+    "eli5": "Retail investors are wildly off, missing the Bitcoin rally while crypto dips. That’s a clear consensus flaw.",
+    "analyst": "The market’s being manipulated by noise, not fundamentals. Risk-On sentiment is collapsing.",
+    "quant": "Retail overreacts, FOMO fuels losses. Rate of change shows panic in key assets.",
+    "chaos_line": "The system is breaking under its own delusion.",
     "plays": [
       {
         "type": "SAFE",
-        "thesis": "Hold cash or short-term bonds",
-        "details": "Preserve capital until direction clarifies"
+        "thesis": "Lock in position with BTC support",
+        "details": "Wait for BTC to break through resistance."
       },
       {
         "type": "AGGRESSIVE",
-        "thesis": "BTC long on dip to $70k",
-        "details": "Strong accumulation zone, institutional support"
+        "thesis": "Bet big on BTC rally",
+        "details": "Cash in before the market corrects."
       },
       {
         "type": "CONTRARIAN",
-        "thesis": "Fade the equity rally",
-        "details": "VIX suppression masking real risk"
+        "thesis": "Go against retail hype",
+        "details": "Consensus is wrong about crypto direction."
       }
     ],
-    "trap": "Retail is chasing the S&P rally. Smart money is quietly hedging.",
-    "edge": "Credit spreads diverging from equity complacency.",
-    "time_sensitivity": "THIS WEEK",
+    "trap": "The biggest blind spot is the retail panic over stability assets.",
+    "edge": "Most traders are asleep while the alpha is being ignored.",
+    "time_sensitivity": "Today's moves matter more than yesterday's data.",
     "forces": [
-      "MONEY",
-      "DEBT"
+      "MONEY_MARKET",
+      "TECH_INNOVATION",
+      "ENERGY_USAGE",
+      "POLITICAL_STABILITY",
+      "DEBT_RECOVERY"
     ],
-    "active_regime": "TRANSITION",
+    "active_regime": "RISK-ON",
     "cross_market": {
       "bond": {
         "label": "CAUTION",
@@ -83,14 +86,26 @@
         "desc": "Neutral sentiment across retail."
       }
     },
-    "news_wires": [],
-    "key_levels": {},
-    "weekly_catalyst": "Fed speakers Friday",
+    "news_wires": [
+      {
+        "source": "SOURCE",
+        "title": "Retail panic",
+        "impact": "Consensus is misreading BTC strength.",
+        "forces": []
+      }
+    ],
+    "key_levels": {
+      "btc_support": "Level 2.0",
+      "btc_resistance": "Level 1.5",
+      "spx_support": "Level 1.2",
+      "yield_threshold": "10Y level"
+    },
+    "weekly_catalyst": "BTC breakout could trigger a market reset.",
     "agent_consensus": {
       "debate_required": false,
       "resolution": ""
     },
-    "generated_at": "2026-05-30T06:50:20.219Z"
+    "generated_at": "2026-05-30T06:50:27.720Z"
   },
   "agents": {
     "fundamental": {
@@ -107,7 +122,7 @@
     }
   },
   "signal": {
-    "signal_hash": "CI-MPRZREFE-N",
-    "timestamp": "2026-05-30T06:50:20.219Z"
+    "signal_hash": "CI-MPRZRK9O-N",
+    "timestamp": "2026-05-30T06:50:27.720Z"
   }
 }
