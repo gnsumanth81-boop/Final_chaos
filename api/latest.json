@@ -22,9 +22,9 @@
     "marketLink": "https://polymarket.com",
     "session": "MORNING",
     "newsText": "1. Sound Transit board approves 25-year light rail plan in 16-2 vote - KOMO [KOMO News]\n2. Average US long-term mortgage rate climbs to 6.53%, highest level in nine months - ABC News - Breaking News, Latest News and Videos [Abcnews.com]\n3. Anthropic soars to $965bn valuation, leapfrogging OpenAI - Al Jazeera [Al Jazeera English]\n4. Michael Dell courted Trump early. His company has reaped rewards - CNBC [CNBC]\n5. SpaceX Lowers IPO Valuation Target to at Least $1.8 Trillion - Bloomberg.com [Bloomberg]\n6. 3-year-old California girl hospitalized with acute kidney failure after eating at Costa Mesa spot amid E. coli outbreak, lawsuit claims - Yahoo [New York Post]\n7. Pfizer and Innovent Biologics Enter Global Strategic Collaboration to Accelerate Development of Innovative Oncology Medicines - Pfizer [Pfizer.com]\n8. Caesars Entertainment, a Las Vegas Strip icon, is sold for nearly $6 billion - KOB.com [KOB]\n9. Dell Stock Soars 39% as Earnings Blow Past Wall Street Expectations - Investopedia [Investopedia]\n10. Stock Market Today: Oil Pares Gains as Investors Cling to Hope of Mideast Deal - WSJ [The Wall Street Journal]",
-    "btcDominance": "N/A",
-    "totalMarketCap": "N/A",
-    "stablecoinPct": "N/A",
+    "btcDominance": "57.4%",
+    "totalMarketCap": "$2.56T",
+    "stablecoinPct": "Inflows",
     "wsbSentiment": "N/A",
     "wsbTopTickers": "No data",
     "recessionProb": "N/A",
@@ -32,39 +32,41 @@
     "label": "MORNING SESSION"
   },
   "brief": {
-    "headline": "Markets In Motion",
-    "dateline": "NYC",
-    "signal": "NEUTRAL",
-    "confidence": 65,
-    "eli5": "Global markets are processing mixed signals as central banks hold their ground.",
-    "analyst": "The macro environment remains in a transitional phase. Monitor yield curve dynamics and dollar strength for directional cues.",
-    "quant": "Vol-adjusted signals lean neutral. Watch for breakout above resistance with volume confirmation.",
-    "chaos_line": "The silence before the storm is just the market holding its breath.",
+    "headline": "Equities Rally, Bonds Stall as Liquidity Squeezes",
+    "dateline": "New York",
+    "signal": "BULLISH",
+    "confidence": 74,
+    "eli5": "The stock market is inching up while bond yields are barely moving, meaning investors are still chasing risk. Bitcoin is holding steady around $73k, but its dominance is falling, hinting that money may soon flow back into stocks. Mortgage rates are climbing, which could dampen housing demand and weigh on the economy. Overall, the market is in a fragile \"risk‑on\" mood that could flip if yields rise or a shock hits.",
+    "analyst": "The S&P 500 is up modestly (+0.22%) on the back of a low VIX (15.3) and a flat DXY, suggesting risk appetite persists. However, the 10‑year Treasury slipped to 4.453%, barely below the recent peak, indicating limited room for further yield compression. Crypto remains resilient with BTC at $73,494 and stablecoin inflows, but dominance at 57.4% signals a potential reallocation to equities. Mortgage rates hitting 6.53% could start to bite consumer balance sheets, adding a latent downside. The regime is risk‑on but perched on a liquidity trap; any surprise in yields or credit spreads could trigger a swift reversal.",
+    "quant": "Technicals show BTC holding between $72,400 and $74,300, a narrow 2.5% channel; a break below $72,400 would likely trigger a 5% sell‑off. SPX sits above the 7,560 support and below the 7,640 resistance, with the 200‑day MA at 7,525 providing a soft floor. The 10Y yield flatlining near 4.45% suggests a pending breakout; a move above 4.50% would pressure equities and lift the dollar. Monitor the VIX for any uptick above 16 as a volatility trigger.",
+    "chaos_line": "Liquidity whispers, risk roars—until the bond market finally decides to scream.",
     "plays": [
       {
         "type": "SAFE",
-        "thesis": "Hold cash or short-term bonds",
-        "details": "Preserve capital until direction clarifies"
+        "thesis": "Low risk setup",
+        "details": "Buy S&P 500 ETF (SPY) above 7,560, target 7,640, catalyst: continued low VIX and stable yields."
       },
       {
         "type": "AGGRESSIVE",
-        "thesis": "BTC long on dip to $70k",
-        "details": "Strong accumulation zone, institutional support"
+        "thesis": "High conviction bet",
+        "details": "Long BTC at $73,500, stop $72,300, target $76,000, catalyst: stablecoin inflows and risk‑on sentiment persisting."
       },
       {
         "type": "CONTRARIAN",
-        "thesis": "Fade the equity rally",
-        "details": "VIX suppression masking real risk"
+        "thesis": "Against the crowd",
+        "details": "Short 10‑year Treasury futures if yield breaches 4.50%, contrary to the prevailing belief yields are capped."
       }
     ],
-    "trap": "Retail is chasing the S&P rally. Smart money is quietly hedging.",
-    "edge": "Credit spreads diverging from equity complacency.",
+    "trap": "Retail investors are overly bullish on crypto's safety net, ignoring the looming yield rise that could force capital back into bonds and equities. Meanwhile, many hedge funds are still hedged on a yield dip that may never materialize.",
+    "edge": "The hidden lever is mortgage rate pressure on consumer spending, a factor most traders overlook in the current risk‑on narrative.",
     "time_sensitivity": "THIS WEEK",
     "forces": [
       "MONEY",
-      "DEBT"
+      "DEBT",
+      "TECH",
+      "POLITICS"
     ],
-    "active_regime": "TRANSITION",
+    "active_regime": "RISK-ON",
     "cross_market": {
       "bond": {
         "label": "CAUTION",
@@ -112,13 +114,18 @@
         ]
       }
     ],
-    "key_levels": {},
-    "weekly_catalyst": "Fed speakers Friday",
+    "key_levels": {
+      "btc_support": "$72,400",
+      "btc_resistance": "$74,300",
+      "spx_support": "7,560",
+      "yield_threshold": "4.50%"
+    },
+    "weekly_catalyst": "Federal Reserve's upcoming policy statement and minutes release",
     "agent_consensus": {
       "debate_required": false,
       "resolution": ""
     },
-    "generated_at": "2026-05-30T07:57:54.975Z"
+    "generated_at": "2026-05-30T07:58:44.160Z"
   },
   "agents": {
     "fundamental": {
@@ -135,7 +142,7 @@
     }
   },
   "signal": {
-    "signal_hash": "CI-MPS26B3H-N",
-    "timestamp": "2026-05-30T07:57:54.975Z"
+    "signal_hash": "CI-MPS27D1O-B",
+    "timestamp": "2026-05-30T07:58:44.160Z"
   }
 }
