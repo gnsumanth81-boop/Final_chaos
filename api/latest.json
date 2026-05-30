@@ -22,9 +22,9 @@
     "marketLink": "https://polymarket.com",
     "session": "MORNING",
     "newsText": "1. Sound Transit board approves 25-year light rail plan in 16-2 vote - KOMO [KOMO News]\n2. Average US long-term mortgage rate climbs to 6.53%, highest level in nine months - ABC News - Breaking News, Latest News and Videos [Abcnews.com]\n3. Anthropic soars to $965bn valuation, leapfrogging OpenAI - Al Jazeera [Al Jazeera English]\n4. Michael Dell courted Trump early. His company has reaped rewards - CNBC [CNBC]\n5. SpaceX Lowers IPO Valuation Target to at Least $1.8 Trillion - Bloomberg.com [Bloomberg]\n6. 3-year-old California girl hospitalized with acute kidney failure after eating at Costa Mesa spot amid E. coli outbreak, lawsuit claims - Yahoo [New York Post]\n7. Pfizer and Innovent Biologics Enter Global Strategic Collaboration to Accelerate Development of Innovative Oncology Medicines - Pfizer [Pfizer.com]\n8. Caesars Entertainment, a Las Vegas Strip icon, is sold for nearly $6 billion - KOB.com [KOB]\n9. Dell Stock Soars 39% as Earnings Blow Past Wall Street Expectations - Investopedia [Investopedia]\n10. Stock Market Today: Oil Pares Gains as Investors Cling to Hope of Mideast Deal - WSJ [The Wall Street Journal]",
-    "btcDominance": "N/A",
-    "totalMarketCap": "N/A",
-    "stablecoinPct": "N/A",
+    "btcDominance": "57.4%",
+    "totalMarketCap": "$2.56T",
+    "stablecoinPct": "Inflows",
     "wsbSentiment": "N/A",
     "wsbTopTickers": "No data",
     "recessionProb": "N/A",
@@ -32,40 +32,22 @@
     "label": "MORNING SESSION"
   },
   "brief": {
-    "headline": "Crypto Quiet, Stocks Steady, Fed Eyes",
-    "dateline": "Washington",
+    "headline": "Market Update",
+    "dateline": "NYC",
     "signal": "NEUTRAL",
-    "confidence": 74,
-    "eli5": "The stock market is a bit like a calm pond today, with just a tiny ripple. Everyone’s watching the big banks and tech companies to see if they’re doing well. Bitcoin and Ethereum are barely moving, and the fear index is neutral, meaning people aren’t too scared or too excited.\n\nEven though the big headlines are about new tech companies and a light rail plan, the markets are still waiting for something big to happen.\n\n",
-    "analyst": "The S&P 500 is holding steady at 7,580 with a modest 0.22% gain, reflecting a neutral risk appetite. VIX remains low at 15.32, indicating complacent volatility expectations. Treasury yields have marginally decreased, suggesting a slight easing of short-term inflation concerns. Bitcoin’s 0.10% move and Ethereum’s 0.44% are within typical daily variance, offering no clear directional bias. The absence of significant macro data or earnings surprises keeps the environment flat.\n\n",
-    "quant": "From a trading perspective, the market is in a low‑volatility regime with tight spreads. BTC’s 24‑hour range is narrow, which could be an opportunity for mean‑reversion if a breakout occurs. The S&P’s 0.22% uptick is too modest for a large‑cap trend following system. In the absence of clear catalysts, a high‑frequency strategy would likely focus on arbitrage between crypto pairs or liquidity provision in the equity index.\n\n",
-    "chaos_line": "In the hush of the market, the only roar is the silent drift of numbers on a screen.",
-    "plays": [
-      {
-        "type": "SAFE",
-        "thesis": "Hold cash, wait for breakout",
-        "details": "Cash + hold + wait for BTC to break $74,300 or S&P to breach 7,600 before action"
-      },
-      {
-        "type": "AGGRESSIVE",
-        "thesis": "Bet on tech rally",
-        "details": "Long all large-cap tech ETFs (QQQ) at 100% of current price, expecting a 3% move as earnings season kicks in"
-      },
-      {
-        "type": "CONTRARIAN",
-        "thesis": "Sell risk-on",
-        "details": "Short S&P 500 futures at 7,580 anticipating a pullback as Fed signals tightening"
-      }
-    ],
-    "trap": "Retail traders are overconfident in the tech boom, assuming a steady rise. They ignore the subtle signs of a liquidity trap.\n\n",
-    "edge": "The Fed’s upcoming policy meeting is being ignored; its stance will dictate the next wave of risk appetite.\n\n",
+    "confidence": 65,
+    "eli5": "Analysis underway.",
+    "analyst": "Analysis underway.",
+    "quant": "Analysis underway.",
+    "chaos_line": "The market speaks in contradictions.",
+    "plays": [],
+    "trap": "",
+    "edge": "",
     "time_sensitivity": "THIS WEEK",
     "forces": [
-      "TECH",
-      "POLITICS",
-      "DEBT"
+      "MONEY"
     ],
-    "active_regime": "RISK-ON",
+    "active_regime": "TRANSITION",
     "cross_market": {
       "bond": {
         "label": "CAUTION",
@@ -113,18 +95,13 @@
         ]
       }
     ],
-    "key_levels": {
-      "btc_support": "$72,400",
-      "btc_resistance": "$74,300",
-      "spx_support": "7,560",
-      "yield_threshold": "4.5%"
-    },
-    "weekly_catalyst": "Federal Reserve policy meeting",
+    "key_levels": {},
+    "weekly_catalyst": "",
     "agent_consensus": {
       "debate_required": false,
       "resolution": ""
     },
-    "generated_at": "2026-05-30T07:46:22.477Z"
+    "generated_at": "2026-05-30T07:46:28.465Z"
   },
   "agents": {
     "fundamental": {
@@ -141,7 +118,7 @@
     }
   },
   "signal": {
-    "signal_hash": "CI-MPS1RGRG-N",
-    "timestamp": "2026-05-30T07:46:22.477Z"
+    "signal_hash": "CI-MPS1RLDV-N",
+    "timestamp": "2026-05-30T07:46:28.465Z"
   }
 }
