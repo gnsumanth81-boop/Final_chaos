@@ -1,6 +1,136 @@
 [
   {
     "date": "2026-05-30",
+    "timestamp": "2026-05-30T16:30:21.285Z",
+    "signal_hash": "CI-HUSQROOG-B",
+    "signal": "BULLISH",
+    "headline": "Fear Turns to Opportunity",
+    "btc_entry": 73811,
+    "resolved": false,
+    "resolution_status": "OPEN"
+  },
+  {
+    "date": "2026-05-30",
+    "timestamp": "2026-05-30T16:24:19.478Z",
+    "signal_hash": "CI-EC84E9Z5-N",
+    "signal": "NEUTRAL",
+    "headline": "Calm VIX, Rising USD, Crypto Lull",
+    "btc_entry": 73827,
+    "resolved": false,
+    "resolution_status": "OPEN"
+  },
+  {
+    "date": "2026-05-30",
+    "timestamp": "2026-05-30T16:14:29.963Z",
+    "signal_hash": "CI-JZ0XW5A7-B",
+    "signal": "BEARISH",
+    "headline": "Defence‑driven Dollar Powers Calm Markets",
+    "btc_entry": 73824,
+    "resolved": false,
+    "resolution_status": "OPEN"
+  },
+  {
+    "date": "2026-05-30",
+    "timestamp": "2026-05-30T16:05:57.571Z",
+    "signal_hash": "CI-EJWLY096-N",
+    "signal": "NEUTRAL",
+    "headline": "Calm on Surface, Storm Below",
+    "btc_entry": 73796,
+    "resolved": false,
+    "resolution_status": "OPEN"
+  },
+  {
+    "date": "2026-05-30",
+    "timestamp": "2026-05-30T16:01:56.217Z",
+    "signal_hash": "CI-ULOD7TAP-B",
+    "signal": "BEARISH",
+    "headline": "Extreme Fear, Safe-Haven Rush",
+    "btc_entry": 73829,
+    "resolved": false,
+    "resolution_status": "OPEN"
+  },
+  {
+    "date": "2026-05-30",
+    "timestamp": "2026-05-30T15:58:43.518Z",
+    "signal_hash": "CI-P71D35IW-N",
+    "signal": "NEUTRAL",
+    "headline": "Extreme Fear, Quiet Markets",
+    "btc_entry": 73848,
+    "resolved": false,
+    "resolution_status": "OPEN"
+  },
+  {
+    "date": "2026-05-30",
+    "timestamp": "2026-05-30T15:47:42.565Z",
+    "signal_hash": "CI-70AEOCHO-B",
+    "signal": "BEARISH",
+    "headline": "Markets on Edge as Fear Spikes",
+    "btc_entry": 73760,
+    "resolved": false,
+    "resolution_status": "OPEN"
+  },
+  {
+    "date": "2026-05-30",
+    "timestamp": "2026-05-30T11:03:13.776Z",
+    "signal_hash": "CI-S8CB891V-B",
+    "signal": "BEARISH",
+    "headline": "Extreme fear rattles markets, but a storm could clear skies",
+    "btc_entry": 73528,
+    "resolved": false,
+    "resolution_status": "OPEN"
+  },
+  {
+    "date": "2026-05-30",
+    "timestamp": "2026-05-30T10:44:47.604Z",
+    "signal_hash": "CI-AST6Z1YY-B",
+    "signal": "BEARISH",
+    "headline": "Fear‑filled markets stay flat",
+    "btc_entry": 73542,
+    "resolved": false,
+    "resolution_status": "OPEN"
+  },
+  {
+    "date": "2026-05-30",
+    "timestamp": "2026-05-30T10:28:34.587Z",
+    "signal_hash": "CI-IVV0K6B8-N",
+    "signal": "NEUTRAL",
+    "headline": "Extreme Fear Masks Calm Markets",
+    "btc_entry": 73549,
+    "resolved": false,
+    "resolution_status": "OPEN"
+  },
+  {
+    "date": "2026-05-30",
+    "timestamp": "2026-05-30T10:22:58.229Z",
+    "signal_hash": "CI-GOQXHTMK-B",
+    "signal": "BEARISH",
+    "headline": "Macro Tensions Rise",
+    "btc_entry": 73555,
+    "resolved": false,
+    "resolution_status": "OPEN"
+  },
+  {
+    "date": "2026-05-30",
+    "timestamp": "2026-05-30T10:08:28.387Z",
+    "signal_hash": "CI-2WRR776O-B",
+    "signal": "BEARISH",
+    "headline": "Macro Tensions Rise",
+    "btc_entry": 73507,
+    "resolved": false,
+    "resolution_status": "OPEN"
+  },
+  {
+    "date": "2026-05-30",
+    "timestamp": "2026-05-30T09:41:35.085Z",
+    "signal_hash": "CI-ANPWHEF6-B",
+    "signal": "BEARISH",
+    "headline": "Macro Tensions Rise",
+    "btc_entry": 73463,
+    "resolved": false,
+    "resolution_status": "OPEN"
+  },
+  {
+    "date": "2026-05-30",
     "timestamp": "2026-05-30T08:28:19.336Z",
     "signal_hash": "CI-FHE3YB6F-B",
     "signal": "BEARISH",
