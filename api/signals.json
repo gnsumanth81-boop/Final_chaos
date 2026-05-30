@@ -1,6 +1,16 @@
 [
   {
     "date": "2026-05-30",
+    "timestamp": "2026-05-30T08:04:09.022Z",
+    "signal_hash": "CI-NEI3HRBA-B",
+    "signal": "BEARISH",
+    "headline": "Fear Lulls, Dollar Soars",
+    "btc_entry": 73451,
+    "resolved": false,
+    "resolution_status": "OPEN"
+  },
+  {
+    "date": "2026-05-30",
     "signal": "BEARISH",
     "headline": "Fear‑Premium Market Holds",
     "resolution_status": "OPEN"
