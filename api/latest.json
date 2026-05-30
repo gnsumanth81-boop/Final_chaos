@@ -27,46 +27,27 @@
     "stablecoinPct": "Inflows",
     "wsbSentiment": "MIXED",
     "wsbTopTickers": "No ticker mentions",
-    "recessionProb": "N/A",
+    "recessionProb": "1.8%",
     "goldPrice": "N/A",
     "label": "MORNING SESSION"
   },
   "brief": {
-    "headline": "Mortgage Rates Spike, Markets Edge Higher",
-    "dateline": "New York",
-    "signal": "BEARISH",
-    "confidence": 74,
-    "eli5": "Mortgage rates in the US just jumped to about 6.5%, the highest they've been in nine months. Higher rates make borrowing more expensive, which can slow down home buying and the broader economy. Despite that, the stock market is still climbing a bit, and investors are watching the Middle East for any sign of a peace deal that could boost oil prices. Crypto is mostly flat, but Bitcoin's dominance is staying above 55%, meaning traders still see it as a safe haven compared to other coins.",
-    "analyst": "Retail sentiment remains overly complacent, anchored by a neutral Fear & Greed index and modest equity gains. The surge in mortgage rates signals tightening credit conditions, which will eventually bleed into consumer spending and corporate earnings. Meanwhile, the VIX is low at 15.3, suggesting complacency, yet the 10‑year yield's slight dip to 4.453% hints at the market's search for yield amid limited upside. Geopolitical risk off the back of a tentative US‑Iran de‑escalation is propping oil and risk assets, but the underlying macro is shifting toward a liquidity squeeze. The confluence of higher borrowing costs and a still‑elevated DXY creates a subtle headwind for risk assets.",
-    "quant": "The BTC/USD pair is hugging its 57% dominance band, with support near $71,800 and resistance at $75,200. SPX is testing a short‑term ceiling around 7,620; a break below 7,540 would trigger a 200‑day moving average test. The 10‑year yield's 4.45% level is a soft floor; a move above 4.55% would pressure equities and raise the dollar. VIX staying sub‑16 suggests low volatility regime, but any spike could trigger rapid risk‑off. Position sizing should reflect the narrow risk premium and the looming credit tightening.",
-    "chaos_line": "When mortgage rates climb, the market's smile fades, revealing the thin veneer of optimism.",
-    "plays": [
-      {
-        "type": "SAFE",
-        "thesis": "Low risk setup",
-        "details": "Short S&P 500 futures at 7,580 with stop at 7,630; catalyst: mortgage rate hike tightening credit."
-      },
-      {
-        "type": "AGGRESSIVE",
-        "thesis": "High conviction bet",
-        "details": "Long 10‑year Treasury futures at 4.45% with target 4.30%; catalyst: flight to safety as credit spreads widen."
-      },
-      {
-        "type": "CONTRARIAN",
-        "thesis": "Against the crowd",
-        "details": "Buy BTC at $73,000 with stop $71,500; consensus expects crypto to stall, but dominance and stablecoin inflows suggest a hedge against fiat tightening."
-      }
-    ],
-    "trap": "Retail investors are betting on a continued risk‑on rally, ignoring the credit squeeze from rising mortgage rates and the modestly elevated DXY that will hurt equities.",
-    "edge": "Most overlook the tightening mortgage market as a leading indicator of broader consumer credit stress.",
+    "headline": "Market Update",
+    "dateline": "NYC",
+    "signal": "NEUTRAL",
+    "confidence": 65,
+    "eli5": "Analysis underway.",
+    "analyst": "Analysis underway.",
+    "quant": "Analysis underway.",
+    "chaos_line": "The market speaks in contradictions.",
+    "plays": [],
+    "trap": "",
+    "edge": "",
     "time_sensitivity": "THIS WEEK",
     "forces": [
-      "DEBT",
-      "JOBS",
-      "POLITICS",
-      "ENERGY"
+      "MONEY"
     ],
-    "active_regime": "LIQUIDITY TRAP",
+    "active_regime": "TRANSITION",
     "cross_market": {
       "bond": {
         "label": "CAUTION",
@@ -114,18 +95,13 @@
         ]
       }
     ],
-    "key_levels": {
-      "btc_support": "71,800",
-      "btc_resistance": "75,200",
-      "spx_support": "7,540",
-      "yield_threshold": "4.55%"
-    },
-    "weekly_catalyst": "Federal Reserve's upcoming policy statement on potential rate adjustments",
+    "key_levels": {},
+    "weekly_catalyst": "",
     "agent_consensus": {
       "debate_required": false,
       "resolution": ""
     },
-    "generated_at": "2026-05-30T05:52:36.195Z"
+    "generated_at": "2026-05-30T06:00:22.028Z"
   },
   "agents": {
     "fundamental": {
@@ -142,7 +118,7 @@
     }
   },
   "signal": {
-    "signal_hash": "CI-MPRXP5L4-B",
-    "timestamp": "2026-05-30T05:52:36.195Z"
+    "signal_hash": "CI-MPRXZ51F-N",
+    "timestamp": "2026-05-30T06:00:22.028Z"
   }
 }
