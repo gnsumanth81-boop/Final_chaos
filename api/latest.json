@@ -22,9 +22,9 @@
     "marketLink": "https://polymarket.com",
     "session": "MORNING",
     "newsText": "1. Average US long-term mortgage rate climbs to 6.53%, highest level in nine months - ABC News - Breaking News, Latest News and Videos [Abcnews.com]\n2. With Caesars Deal, Tilman Fertitta Doubles Down on Vegas Comeback - WSJ [The Wall Street Journal]\n3. Michael Dell courted Trump early. His company has reaped rewards - CNBC [CNBC]\n4. SpaceX Lowers IPO Valuation Target to at Least $1.8 Trillion - Bloomberg.com [Bloomberg]\n5. 3-year-old California girl hospitalized with acute kidney failure after eating at Costa Mesa spot amid E. coli outbreak, lawsuit claims - Yahoo [New York Post]\n6. Asia markets rise as investors weigh Iran military activity against signs of temporary U.S.-Iran deal - CNBC [CNBC]\n7. Meta’s mass layoffs hit nearly 3,200 Bay Area workers, among region’s worst job losses in years - San Francisco Chronicle [San Francisco Chronicle]\n8. The seller of a $2.9 million San Francisco home is accepting payment in Anthropic or OpenAI stock - Business Insider [Business Insider]\n9. Stock Market Today: Oil Pares Gains as Investors Cling to Hope of Mideast Deal - WSJ [The Wall Street Journal]\n10. IBM, Red Hat Pledge $5 Billion for AI-Driven Open Source Security Initiative - WSJ [The Wall Street Journal]",
-    "btcDominance": "N/A",
-    "totalMarketCap": "N/A",
-    "stablecoinPct": "N/A",
+    "btcDominance": "57.5%",
+    "totalMarketCap": "$2.56T",
+    "stablecoinPct": "Inflows",
     "wsbSentiment": "N/A",
     "wsbTopTickers": "No data",
     "recessionProb": "N/A",
@@ -32,40 +32,41 @@
     "label": "MORNING SESSION"
   },
   "brief": {
-    "headline": "Risk-On Fluctuations Mask Retail Misjudgments",
+    "headline": "Crypto's fragile peace shattered by mortgage chaos",
     "dateline": "New York",
-    "signal": "BULLISH",
+    "signal": "NEUTRAL",
     "confidence": 74,
-    "eli5": "Markets are in a slightly bullish mood as the S&P 500 nudges up 0.2% while the VIX stays low at 15.3.\n\nBitcoin is barely moving, and mortgage rates have jumped to 6.53%, the highest in nine months, hinting at tighter credit.\n\nBig tech is shedding jobs, which could slow growth, but investors are still chasing risk.",
-    "analyst": "The morning session shows a modest risk‑on tilt, with the S&P 500 gaining 0.22% to 7,580 and the VIX holding at a comfortable 15.3, indicating low fear. Mortgage rates climbing to 6.53% suggest the Fed may keep policy restrictive longer, which could pressure housing and consumer spending. Meanwhile, Meta’s 3,200 layoffs highlight weakening ad demand and raise concerns about near‑term earnings momentum for tech. SpaceX’s valuation cut to $1.8 trillion trims the premium on private tech, shifting capital toward more established names. The 10‑year Treasury yield slipping to 4.453% eases some of the rate‑drag on equities, supporting the current rally.",
-    "quant": "Equity futures are modestly higher, reflecting a risk‑on environment where lower volatility (VIX 15) and a firm S&P 500 allow leveraged long positions. Bitcoin’s sub‑0.2% dip and $10.6 B volume show it is consolidating near $73.6k, offering little directional bias for crypto traders. The 10‑year yield at 4.453% is marginally lower than yesterday, providing a tailwind for equity indices while the DXY at 98.91 stays flat, limiting dollar‑driven headwinds. Implied volatility on SPX options remains low, suggesting traders are comfortable with the current rally but may be under‑positioned for a quick pullback. Given the macro backdrop, a balanced approach—adding exposure to high‑quality tech while keeping a tight stop on broader market bets—offers the best risk‑adjusted return.",
-    "chaos_line": "Amid whispering headlines, the market teeters on a razor‑thin edge where hope and reality clash violently.",
+    "eli5": "Bitcoin and Ethereum are digital money, but real-world problems like high mortgage rates are making people nervous. When regular loans get expensive, even crypto investors might worry about their money. This creates a tricky situation where crypto prices could drop suddenly. It's like trying to ride a bike while someone keeps throwing rocks at your wheels.",
+    "analyst": "The 6.53% mortgage rate spike creates asymmetric risk for crypto. Retail investors leveraged to both housing and crypto face margin calls, forcing crypto liquidations. S&P 500's tepid 0.22% gain suggests risk assets are decoupling from equities. BTC's 57.5% dominance indicates altcoins remain weak, creating concentration risk. The absence of safe-haven flows into Treasuries despite rising rates signals market dysfunction.",
+    "quant": "BTC's $73,603 price sits below the 50-day moving average (DA) at $74,293. Short-term traders should target $72,436 support with 15.32 VIX indicating elevated volatility. The 4.453% 10Y yield creates negative convexity for leveraged longs. Consider selling 40% of BTC positions with 20% put options at $71,000. Monitor stablecoin flows - inflows suggest retail FOMO that could reverse abruptly.",
+    "chaos_line": "Digital gold drowns in paper debt's rising tide",
     "plays": [
       {
         "type": "SAFE",
-        "thesis": "Low‑risk long equity",
-        "details": "Buy SPY on dip to 7,500, stop 7,450, target 7,650; 70% confidence as risk‑on regime persists."
+        "thesis": "Protective put strategy",
+        "details": "BTC at $73,603 with 10% puts at $66,243. Catalyst: 10Y yield above 4.5% triggers rate-sensitive portfolios"
       },
       {
         "type": "AGGRESSIVE",
-        "thesis": "High‑conviction AI exposure",
-        "details": "Go long BOTZ (AI ETF) on pullback to 70, target 78, 85% confidence driven by IBM‑Red Hat $5B AI security pledge."
+        "thesis": "Short ETH breakout",
+        "details": "Ethereum at $2,017 rejects 200-day MA at $2,050. Catalyst: Meta layoffs accelerate tech sector weakness"
       },
       {
         "type": "CONTRARIAN",
-        "thesis": "Short overhyped tech",
-        "details": "Short META at 320, target 300, 60% confidence as layoffs signal earnings weakness."
+        "thesis": "Bullish divergence",
+        "details": "BTC dominance rising to 57.5% while S&P 500 flat. Contrarians buy altcoins on crypto-specific rallies"
       }
     ],
-    "trap": "Retail investors piling into high‑growth tech stocks are positioned wrong; they ignore the earnings drag from mass layoffs and the tightening credit environment. Meanwhile, many hedge funds remain under‑weighted on defensive sectors, leaving them vulnerable to a sudden risk‑off shock.",
-    "edge": "Watch for a sudden unwind of leveraged crypto futures and the hidden liquidity squeeze in ESG‑focused equity positions, which could trigger a rapid market rotation.",
+    "trap": "Retail investors doubling down on BTC via leverage while ignoring real economy signals. They fail to recognize crypto's beta to interest rates, not tech innovation.",
+    "edge": "The $10.6B BTC volume masks institutional accumulation. Watch for whale transfers to cold storage as liquidity dries up.",
     "time_sensitivity": "TODAY",
     "forces": [
+      "DEBT",
       "MONEY",
       "TECH",
-      "ENERGY"
+      "JOBS"
     ],
-    "active_regime": "RISK-ON",
+    "active_regime": "LIQUIDITY TRAP",
     "cross_market": {
       "bond": {
         "label": "CAUTION",
@@ -96,17 +97,17 @@
       }
     ],
     "key_levels": {
-      "btc_support": "72,400",
-      "btc_resistance": "74,200",
-      "spx_support": "7,500",
+      "btc_support": "$71,000",
+      "btc_resistance": "$75,000",
+      "spx_support": "$7,400",
       "yield_threshold": "4.50%"
     },
-    "weekly_catalyst": "US CPI data release this week",
+    "weekly_catalyst": "Fed rate decision on Wednesday",
     "agent_consensus": {
       "debate_required": false,
       "resolution": ""
     },
-    "generated_at": "2026-05-30T06:51:59.312Z"
+    "generated_at": "2026-05-30T06:52:38.169Z"
   },
   "agents": {
     "fundamental": {
@@ -123,7 +124,7 @@
     }
   },
   "signal": {
-    "signal_hash": "CI-MPRZTIW1-B",
-    "timestamp": "2026-05-30T06:51:59.312Z"
+    "signal_hash": "CI-MPRZUCX2-N",
+    "timestamp": "2026-05-30T06:52:38.169Z"
   }
 }
