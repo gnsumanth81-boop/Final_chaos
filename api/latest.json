@@ -21,7 +21,7 @@
     "marketVolume": "$0",
     "marketLink": "https://polymarket.com",
     "session": "MORNING",
-    "newsText": "",
+    "newsText": "1. Average US long-term mortgage rate climbs to 6.53%, highest level in nine months - ABC News - Breaking News, Latest News and Videos [Abcnews.com]\n2. With Caesars Deal, Tilman Fertitta Doubles Down on Vegas Comeback - WSJ [The Wall Street Journal]\n3. Michael Dell courted Trump early. His company has reaped rewards - CNBC [CNBC]\n4. SpaceX Lowers IPO Valuation Target to at Least $1.8 Trillion - Bloomberg.com [Bloomberg]\n5. 3-year-old California girl hospitalized with acute kidney failure after eating at Costa Mesa spot amid E. coli outbreak, lawsuit claims - Yahoo [New York Post]\n6. Asia markets rise as investors weigh Iran military activity against signs of temporary U.S.-Iran deal - CNBC [CNBC]\n7. Meta’s mass layoffs hit nearly 3,200 Bay Area workers, among region’s worst job losses in years - San Francisco Chronicle [San Francisco Chronicle]\n8. The seller of a $2.9 million San Francisco home is accepting payment in Anthropic or OpenAI stock - Business Insider [Business Insider]\n9. Stock Market Today: Oil Pares Gains as Investors Cling to Hope of Mideast Deal - WSJ [The Wall Street Journal]\n10. IBM, Red Hat Pledge $5 Billion for AI-Driven Open Source Security Initiative - WSJ [The Wall Street Journal]",
     "btcDominance": "N/A",
     "totalMarketCap": "N/A",
     "stablecoinPct": "N/A",
@@ -32,41 +32,40 @@
     "label": "MORNING SESSION"
   },
   "brief": {
-    "headline": "Equities Edge Higher as Yield Curve Flattens",
+    "headline": "Markets Edge Higher as Crypto Stalls",
     "dateline": "New York",
-    "signal": "BULLISH",
+    "signal": "NEUTRAL",
     "confidence": 74,
-    "eli5": "The stock market is nudging up because bond yields are slipping a hair, making stocks look cheap. The fear gauge (VIX) is low, so investors aren't nervous. Bitcoin is barely moving, showing no real crypto excitement. Overall, the economy feels like it's in a calm lull, not a panic or a boom.\n\nBut the real story is that most retail traders think the market is stuck, while the data says risk assets are quietly gathering steam.",
-    "analyst": "The S&P 500's 0.22% rise amid a 4.45% 10Y Treasury suggests a modest risk‑on tilt. VIX at 15.3 signals low volatility, while DXY under 99 reflects a weaker dollar, supporting commodity‑linked equities. Crypto's flat performance underscores a lack of speculative overflow. The market is in a liquidity‑trap regime: ample cash, low fear, but no strong directional catalyst. The consensus retail narrative of a looming crash is unsupported by the macro backdrop.\n\nWe see a tightening yield curve, which historically precedes a short‑term equity rally before any policy pivot. The primary risk remains a surprise shock to inflation or a geopolitical flare‑up.",
-    "quant": "BTC's 24h drift of -0.21% on $10.7B volume shows low order‑flow imbalance; no clear micro‑structure bias. The equity market's 0.22% gain on modest volume aligns with a positive spread between the 10Y and 2Y yields, indicating carry trade appeal. VIX's 15.32 level reduces implied volatility premiums, making option premiums cheap for sellers. Liquidity metrics point to a surplus of cash in money‑market funds, feeding into equities. Expect short‑term beta to rise on any positive earnings surprise.",
-    "chaos_line": "When the market whispers lullabies, the wolves of capital are already prowling the quiet aisles.",
+    "eli5": "Imagine the market as a playground where kids (investors) are swinging on different swings. Today, most of them are pushing higher on the stock swing, but the crypto swing barely moves.\\n\\nIt's like the sun is out, but the slide stays cold.",
+    "analyst": "The modest S&P 500 gain of 0.22% alongside a sub‑5 VIX suggests a tentative risk‑on bias, but the lack of follow‑through in equities and crypto signals limited conviction.\\n\\nYield curve flattening and a flat DXY indicate that macro drivers are muted, leaving price action to micro news. Nevertheless, the earnings‑related headlines (Dell, IBM‑Red Hat) could provide short‑term catalysts for selective long positions. Watch the Treasury market; a break below 4.45% would likely reignite risk appetite and push equities higher. If the Fed’s minutes hint at a slower rate cut schedule, the rally could extend into tech.",
+    "quant": "Volume in Bitcoin remains modest at $10.7B, indicating lukewarm institutional appetite.\\n\\nThe 0.21% dip to $73,512 is a micro‑correction within a broader consolidation zone. A sustained move above $74,293 resistance would likely trigger short‑covering and a swift up‑trend. Ethereum’s sub‑1% move mirrors Bitcoin’s stagnation, suggesting crypto is awaiting a macro catalyst. The 15.32 VIX level is historically low, so any volatility spike could amplify price swings. Traders should consider scaling into long positions on a breakout above $74,500 with tight stops.",
+    "chaos_line": "The crowd cheers the climb while the silent tide of capital quietly retreats, reshaping tomorrow.",
     "plays": [
       {
         "type": "SAFE",
         "thesis": "Low risk setup",
-        "details": "Long S&P 500 ETF above 7,560, target 7,650 on continued yield flattening and low VIX"
+        "details": "Buy 10Y Treasury futures on dip, target 4.40% yield, catalyst: flattening yield curve"
       },
       {
         "type": "AGGRESSIVE",
         "thesis": "High conviction bet",
-        "details": "Long 10Y Treasury futures short-term, entry 4.45%, target 4.35% if yield curve flattens further on Fed pause"
+        "details": "Long S&P 500 ETF (SPY) targeting 7,650, catalyst: earnings momentum and Fed minutes"
       },
       {
         "type": "CONTRARIAN",
         "thesis": "Against the crowd",
-        "details": "Short BTC/USD at $73,500, stop 74,500; retail hype expects crypto rally but macro shows risk‑on equity bias"
+        "details": "Short Bitcoin below $73,000, target $71,500, catalyst: retail over‑exposure and weak volume"
       }
     ],
-    "trap": "Retail traders are over‑weighting crypto and fearing a crash; the real mis‑pricing is on the equity side where cash is hunting yield.",
-    "edge": "Most ignore the subtle flattening of the 10Y‑2Y spread, a leading indicator of a short‑term equity rally.",
-    "time_sensitivity": "THIS WEEK",
+    "trap": "Retail traders are over‑leveraged long on meme stocks, ignoring the flattening yield curve and rising Treasury yields. They also hold excessive crypto exposure, assuming perpetual upside while volume stalls.",
+    "edge": "Watch European sovereign bond flows and commodity inventory data; these hidden drivers often precede the next market shift.",
+    "time_sensitivity": "TODAY",
     "forces": [
       "MONEY",
       "TECH",
-      "DEBT",
-      "POLITICS"
+      "ENERGY"
     ],
-    "active_regime": "LIQUIDITY TRAP",
+    "active_regime": "RISK-ON",
     "cross_market": {
       "bond": {
         "label": "CAUTION",
@@ -85,19 +84,44 @@
         "desc": "Neutral sentiment across retail."
       }
     },
-    "news_wires": [],
+    "news_wires": [
+      {
+        "source": "ABC News",
+        "title": "Average US long-term mortgage rate climbs to 6.53%, highest level in nine months",
+        "impact": "Higher mortgage rates dampen housing demand, pressuring consumer spending and indirectly affecting equity valuations. This could tighten financial conditions, nudging the market toward a more cautious stance.",
+        "forces": [
+          "MONEY"
+        ]
+      },
+      {
+        "source": "CNBC",
+        "title": "SpaceX Lowers IPO Valuation Target to at least $1.8 Trillion",
+        "impact": "A reduced IPO target signals weaker near‑term fundraising appetite for mega‑tech, curbing speculative inflows. Investors may re‑allocate toward more certain earnings drivers.",
+        "forces": [
+          "TECH"
+        ]
+      },
+      {
+        "source": "The Wall Street Journal",
+        "title": "IBM, Red Hat Pledge $5 Billion for AI-Driven Open Source Security Initiative",
+        "impact": "The commitment underscores growing AI security spend, boosting enterprise tech budgets. This could lift related stocks amid a tech‑focused rally.",
+        "forces": [
+          "TECH"
+        ]
+      }
+    ],
     "key_levels": {
-      "btc_support": "$72,400",
-      "btc_resistance": "$74,300",
-      "spx_support": "7,540",
-      "yield_threshold": "4.40% (support for equity rally)"
+      "btc_support": "$72,000",
+      "btc_resistance": "$75,000",
+      "spx_support": "7,500",
+      "yield_threshold": "4.5%"
     },
-    "weekly_catalyst": "Federal Reserve's policy statement and dot‑plot release",
+    "weekly_catalyst": "Fed minutes release",
     "agent_consensus": {
       "debate_required": false,
       "resolution": ""
     },
-    "generated_at": "2026-05-30T06:22:41.319Z"
+    "generated_at": "2026-05-30T06:23:25.918Z"
   },
   "agents": {
     "fundamental": {
@@ -114,7 +138,7 @@
     }
   },
   "signal": {
-    "signal_hash": "CI-MPRYRUFG-B",
-    "timestamp": "2026-05-30T06:22:41.319Z"
+    "signal_hash": "CI-MPRYSSTX-N",
+    "timestamp": "2026-05-30T06:23:25.918Z"
   }
 }
