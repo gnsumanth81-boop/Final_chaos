@@ -1,124 +1,65 @@
 {
   "market": {
     "fearIndex": 23,
-    "fearLabel": "Neutral",
-    "fearDelta": 0,
-    "btcPrice": "$73,479",
-    "btcChange": "0.10",
-    "btcVolume": "$10.4B",
-    "btcHigh": "$74,293",
-    "btcLow": "$72,436",
-    "ethPrice": "$2,013",
-    "ethChange": "0.44",
-    "vixVal": "15.32",
-    "yieldVal": "4.453",
-    "yieldPrev": "4.455",
-    "dxyVal": "98.91",
-    "spxVal": "7,580",
-    "spxChange": "+0.22%",
-    "marketTitle": "Unknown",
-    "marketOdds": "50.0",
-    "marketVolume": "$0",
-    "marketLink": "https://polymarket.com",
-    "session": "MORNING",
-    "newsText": "1. Sound Transit board approves 25-year light rail plan in 16-2 vote - KOMO [KOMO News]\n2. Average US long-term mortgage rate climbs to 6.53%, highest level in nine months - ABC News - Breaking News, Latest News and Videos [Abcnews.com]\n3. Anthropic soars to $965bn valuation, leapfrogging OpenAI - Al Jazeera [Al Jazeera English]\n4. Michael Dell courted Trump early. His company has reaped rewards - CNBC [CNBC]\n5. SpaceX Lowers IPO Valuation Target to at Least $1.8 Trillion - Bloomberg.com [Bloomberg]\n6. 3-year-old California girl hospitalized with acute kidney failure after eating at Costa Mesa spot amid E. coli outbreak, lawsuit claims - Yahoo [New York Post]\n7. Pfizer and Innovent Biologics Enter Global Strategic Collaboration to Accelerate Development of Innovative Oncology Medicines - Pfizer [Pfizer.com]\n8. Caesars Entertainment, a Las Vegas Strip icon, is sold for nearly $6 billion - KOB.com [KOB]\n9. Dell Stock Soars 39% as Earnings Blow Past Wall Street Expectations - Investopedia [Investopedia]\n10. Stock Market Today: Oil Pares Gains as Investors Cling to Hope of Mideast Deal - WSJ [The Wall Street Journal]",
-    "btcDominance": "57.4%",
-    "totalMarketCap": "$2.56T",
-    "stablecoinPct": "Inflows",
-    "wsbSentiment": "MIXED",
-    "wsbTopTickers": "No ticker mentions",
-    "recessionProb": "1.8%",
-    "goldPrice": "N/A",
-    "label": "MORNING SESSION"
+    "fearLabel": "Extreme Fear",
+    "btcPrice": "$73,449",
+    "btcChange": "0.19",
+    "yieldVal": "4.260",
+    "dxyVal": "103.78",
+    "spxVal": "5,248",
+    "vixVal": "15.19",
+    "ethPrice": "$2,013"
   },
   "brief": {
-    "headline": "Market Update",
+    "headline": "Fear‑Premium Market Holds",
     "dateline": "NYC",
-    "signal": "NEUTRAL",
-    "confidence": 65,
-    "eli5": "Analysis underway.",
-    "analyst": "Analysis underway.",
-    "quant": "Analysis underway.",
-    "chaos_line": "The market speaks in contradictions.",
-    "plays": [],
-    "trap": "",
-    "edge": "",
-    "time_sensitivity": "THIS WEEK",
+    "signal": "BEARISH",
+    "confidence": 75,
+    "eli5": "Stocks are holding on to their highs while rates stay stubbornly high. The dollar is strong and the yield curve is flat, so many investors are cautious. Crypto is waiting for a big move that may come if the Fed loosens policy.",
+    "analyst": "The macro landscape is a high‑octane fear‑premium with the dollar and yields anchoring a risk‑off stance. Equity markets cling to momentum on thin technical support, and volatility is cheap, luring smart money into complacent positions. Crypto is in a quiet waiting mode, offering no clear catalyst. The market is sleeping with a loaded gun.",
+    "quant": "Yield curvature suggests a potential short on Treasury futures could profit if the 2‑yr curve flattens further. A long calendar spread on the S&P 500 could capture volatility crush if a dovish data release triggers a rally. Crypto positions benefit from asymmetric upside if a small pullback occurs before the next Fed press conference.",
+    "chaos_line": "When the world tells you to hide under the bed, the only profitable thing to do is to build a launchpad on top of it.",
+    "plays": [
+      {
+        "type": "SAFE",
+        "thesis": "Short 2‑yr Treasury Futures",
+        "details": "Target: +8% TP, +3% SL. Rationale: 10‑yr at 4.26% sticky; 2‑yr curve flattening."
+      },
+      {
+        "type": "AGGRESSIVE",
+        "thesis": "Long S&P 500 Call Calendar (July 2026 / Sep 2026)",
+        "details": "Target: 20% TP on spread, 7% SL. Rationale: SPX fragile base; dovish data could trigger rally."
+      },
+      {
+        "type": "CONTRARIAN",
+        "thesis": "Buy BTC / ETH via 30‑day futures",
+        "details": "Target: +45% BTC / +55% ETH TP, 12% BTC / 15% ETH SL. Rationale: Crypto priced for pump‑and‑dump after Fed easing."
+      }
+    ],
+    "trap": "Over‑reliance on Fed dovish data and ignoring yield curve steepening risk.",
+    "edge": "Yield curve inversion risk if 2‑yr curve steepens faster than expected.",
     "forces": [
-      "MONEY"
+      "MONEY",
+      "TECH"
     ],
-    "active_regime": "TRANSITION",
-    "cross_market": {
-      "bond": {
-        "label": "CAUTION",
-        "desc": "10Y at 4.453% — yields within normal range."
-      },
-      "equity": {
-        "label": "BULLISH",
-        "desc": "S&P 500 +0.22% session."
-      },
-      "crypto": {
-        "label": "HEDGING",
-        "desc": "BTC at $73,479 — positive momentum."
-      },
-      "sentiment": {
-        "label": "FEAR 23",
-        "desc": "Neutral sentiment across retail."
-      }
-    },
-    "news_wires": [
-      {
-        "source": "Investopedia",
-        "title": "Dell earnings beat fuels 39% stock jump",
-        "impact": "Dell's surprise earnings lift the broader tech sector and provide a short‑term boost to the S&P 500, while reinforcing risk‑on sentiment that could pressure the DXY lower. The rally also lifts semiconductor and data‑center exposure, nudging 10‑year Treasury yields higher as investors rotate into growth assets.",
-        "forces": [
-          "TECH",
-          "MONEY"
-        ]
-      },
-      {
-        "source": "ABC News",
-        "title": "US 30‑yr mortgage rate hits 6.53%",
-        "impact": "Higher long‑term mortgage rates increase borrowing costs for households, tightening credit conditions and weighing on consumer‑sensitive equities. The move pushes the 10‑year Treasury yield up, strengthens the DXY, and adds head‑room for a modest correction in risk assets.",
-        "forces": [
-          "DEBT",
-          "MONEY"
-        ]
-      },
-      {
-        "source": "Wall Street Journal",
-        "title": "Oil eases on hopes of US‑Iran deal",
-        "impact": "Improving US‑Iran diplomatic talks lift expectations of reduced Middle‑East supply risk, pulling oil prices lower and dampening energy‑sector equities. A softer oil market benefits the broader SPX but can also weaken the DXY as dollar‑priced commodities lose appeal.",
-        "forces": [
-          "ENERGY",
-          "POLITICS"
-        ]
-      }
-    ],
-    "key_levels": {},
-    "weekly_catalyst": "",
-    "agent_consensus": {
-      "debate_required": false,
-      "resolution": ""
-    },
-    "generated_at": "2026-05-30T07:47:18.915Z"
+    "generated_at": "2026-05-30T07:52:54.417Z"
   },
   "agents": {
     "fundamental": {
       "bias": "NEUTRAL",
-      "thesis": "Awaiting whale data..."
+      "thesis": "Waiting for data..."
     },
     "technical": {
       "bias": "BULLISH",
-      "thesis": "BTC positive momentum. VIX at 15.32."
+      "thesis": "Momentum strong"
     },
     "sentiment": {
       "bias": "BEARISH",
-      "thesis": "Fear & Greed at 23 (Neutral). WSB: MIXED."
+      "thesis": "Too much greed"
     }
   },
   "signal": {
-    "signal_hash": "CI-MPS1SOBU-N",
-    "timestamp": "2026-05-30T07:47:18.915Z"
+    "signal_hash": "CI-2M8K7JQG-B",
+    "timestamp": "2026-05-30T07:52:54.417Z"
   }
 }
