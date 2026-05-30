@@ -1,148 +1,75 @@
 {
   "market": {
     "fearIndex": 23,
-    "fearLabel": "Neutral",
-    "fearDelta": 0,
-    "btcPrice": "$73,494",
-    "btcChange": "0.16",
-    "btcVolume": "$10.3B",
-    "btcHigh": "$74,293",
-    "btcLow": "$72,436",
-    "ethPrice": "$2,014",
-    "ethChange": "0.49",
-    "vixVal": "15.32",
-    "yieldVal": "4.453",
-    "yieldPrev": "4.455",
-    "dxyVal": "98.91",
-    "spxVal": "7,580",
-    "spxChange": "+0.22%",
-    "marketTitle": "Unknown",
-    "marketOdds": "50.0",
-    "marketVolume": "$0",
-    "marketLink": "https://polymarket.com",
-    "session": "MORNING",
-    "newsText": "1. Sound Transit board approves 25-year light rail plan in 16-2 vote - KOMO [KOMO News]\n2. Average US long-term mortgage rate climbs to 6.53%, highest level in nine months - ABC News - Breaking News, Latest News and Videos [Abcnews.com]\n3. Anthropic soars to $965bn valuation, leapfrogging OpenAI - Al Jazeera [Al Jazeera English]\n4. Michael Dell courted Trump early. His company has reaped rewards - CNBC [CNBC]\n5. SpaceX Lowers IPO Valuation Target to at Least $1.8 Trillion - Bloomberg.com [Bloomberg]\n6. 3-year-old California girl hospitalized with acute kidney failure after eating at Costa Mesa spot amid E. coli outbreak, lawsuit claims - Yahoo [New York Post]\n7. Pfizer and Innovent Biologics Enter Global Strategic Collaboration to Accelerate Development of Innovative Oncology Medicines - Pfizer [Pfizer.com]\n8. Caesars Entertainment, a Las Vegas Strip icon, is sold for nearly $6 billion - KOB.com [KOB]\n9. Dell Stock Soars 39% as Earnings Blow Past Wall Street Expectations - Investopedia [Investopedia]\n10. Stock Market Today: Oil Pares Gains as Investors Cling to Hope of Mideast Deal - WSJ [The Wall Street Journal]",
-    "btcDominance": "57.4%",
-    "totalMarketCap": "$2.56T",
-    "stablecoinPct": "Inflows",
-    "wsbSentiment": "MIXED",
-    "wsbTopTickers": "No ticker mentions",
-    "recessionProb": "1.8%",
-    "goldPrice": "N/A",
-    "label": "MORNING SESSION"
+    "fearLabel": "Extreme Fear",
+    "btcPrice": "$73,451",
+    "btcChange": "-0.16",
+    "yieldVal": "4.322",
+    "dxyVal": "103.86",
+    "spxVal": "5,281",
+    "vixVal": "14.81",
+    "ethPrice": "$2,013"
   },
   "brief": {
-    "headline": "Markets Slip Into Liquidity Trap Amid Rising Yields",
-    "dateline": "New York",
+    "headline": "Fear Lulls, Dollar Soars",
+    "dateline": "NYC",
     "signal": "BEARISH",
-    "confidence": 74,
-    "eli5": "The Fed's interest rates are still high, making bonds more attractive than stocks. That pushes money into safe assets, leaving less cash for riskier bets like tech or crypto. At the same time, the dollar is strong, which hurts exporters and keeps inflation in check. So investors are stuck in a waiting room, not sure whether to gamble or hide.\n\nBecause the VIX is low and the S&P is inching up, many think the rally will continue, but the underlying credit and yield pressures suggest a pullback is more likely.",
-    "analyst": "Retail narratives are bullish on equities, citing a modest S&P gain and low VIX, yet the 10‑year yield at 4.45% signals tightening financing conditions. Mortgage rates climbing to 6.5% erode consumer spending, while DXY near 99 further pressures corporate earnings. Crypto dominance remains high, but stablecoin inflows hint at hedging rather than risk appetite. The macro backdrop points to a liquidity trap where capital is parked in short‑duration bonds, limiting upside for risk assets. Consequently, the risk‑on narrative is overstated, and a shift toward defensive positioning is warranted.\n\nThe regime is transitioning to risk‑off, with the market caught between modest equity gains and tightening credit spreads.",
-    "quant": "The 10‑year slipped 2bps, but remains above the 4.3% support zone, suggesting a ceiling for further rate hikes. BTC trades near its 57% dominance ceiling, with support around $71k and resistance near $75k. SPX is holding above the 7,540 200‑day EMA, but a break below 7,500 could trigger a 5% pullback. VIX at 15.3 indicates complacency; a spike above 18 would confirm rising fear. Correlation between equity and bond volatility is tightening, implying a regime shift.",
-    "chaos_line": "When yields choke growth, even the boldest bulls find their swords dulled by a silent, sticky trap.",
+    "confidence": 75,
+    "eli5": "Everyone is scared, but the market’s actually calm. The dollar is strong, yields are up a bit, and stocks are only just breaking through 5,000. It looks like a calm before a storm.",
+    "analyst": "The market is pretending to be scared while the real danger is hidden in the \"normal\" side of the curve. Crypto is stuck in a price‑freeze, and the Fed’s rate signal will likely trigger a sharp move either up or down. Expect a short‑term calm before a binary breakout.",
+    "quant": "VIX sits at 14.8, well below the 23 fear index, indicating volatility is low despite fear sentiment. The 10‑yr yield is at 4.322%, trending higher, suggesting a steepening curve. The dollar index at 103.86 supports a safe‑haven flow. These metrics point to a potential steepener play or a dollar‑centric risk‑on move if the Fed pauses.",
+    "chaos_line": "When the market screams ‘extreme fear’ but the VIX whispers ‘sleep tight’, that’s the moment the sharks start circling — and the only thing you can trust is the tide pulling the dollar deeper.",
     "plays": [
       {
         "type": "SAFE",
-        "thesis": "Low risk setup",
-        "details": "Short 10‑yr Treasury futures at 4.45% with stop at 4.40%; catalyst: persistent mortgage rate pressure and sticky inflation."
+        "thesis": "Ride the dollar tide",
+        "details": "Long DXY / Short Emerging‑Market ETFs (e.g., EEM) as the strong dollar and rising yields attract safe‑haven capital."
       },
       {
         "type": "AGGRESSIVE",
-        "thesis": "High conviction bet",
-        "details": "Long short‑duration corporate credit ETFs (e.g., LQD) while shorting high‑beta tech ETFs; catalyst: credit spread widening as earnings risk rises."
+        "thesis": "Bank the Fed’s next move",
+        "details": "Long 30‑yr Treasury Futures to capture a steepener if the Fed signals a rate‑cut or pause."
       },
       {
         "type": "CONTRARIAN",
-        "thesis": "Against the crowd",
-        "details": "Short BTC/USD at $73,500 with target $70,000; consensus thinks crypto will rally on stablecoin inflows, but liquidity trap saps risk appetite."
+        "thesis": "Crypto’s last gasp",
+        "details": "Short BTC Futures (or BTC‑USD inverse ETN) betting that the current dip will be followed by a liquidity crunch."
       }
     ],
-    "trap": "Retail investors are over‑weighting equities and crypto, believing the low VIX guarantees a continued rally. Fixed‑income and macro‑tightening forces are positioning for a pullback, leaving the crowd exposed.",
-    "edge": "Most eyes are on headline earnings, ignoring the converging pressure of rising mortgage rates and a firm dollar that will choke consumer demand.",
-    "time_sensitivity": "THIS WEEK",
+    "trap": "Crypto freeze may mislead; the next wave could be a liquidity crunch rather than a rally.",
+    "edge": "The edge lies in capital flowing into safe‑haven assets while the Fed’s policy remains uncertain.",
     "forces": [
-      "DEBT",
-      "POLITICS",
-      "TECH",
-      "ENERGY"
+      "MONEY",
+      "TECH"
     ],
-    "active_regime": "LIQUIDITY TRAP",
-    "cross_market": {
-      "bond": {
-        "label": "CAUTION",
-        "desc": "10Y at 4.453% — yields within normal range."
-      },
-      "equity": {
-        "label": "BULLISH",
-        "desc": "S&P 500 +0.22% session."
-      },
-      "crypto": {
-        "label": "HEDGING",
-        "desc": "BTC at $73,494 — positive momentum."
-      },
-      "sentiment": {
-        "label": "FEAR 23",
-        "desc": "Neutral sentiment across retail."
-      }
-    },
-    "news_wires": [
-      {
-        "source": "Investopedia",
-        "title": "Dell earnings beat fuels 39% rally",
-        "impact": "Dell's surprise earnings lift the broader tech sector, adding upward pressure on the SPX and pulling risk assets higher while boosting the DXY as investors rotate into USD‑denominated earnings. The rally may also lift semiconductor exposure, supporting BTC as risk appetite improves.",
-        "forces": [
-          "TECH",
-          "MONEY"
-        ]
-      },
-      {
-        "source": "ABC News",
-        "title": "US 30‑yr mortgage rate hits 6.53%",
-        "impact": "Higher long‑term rates tighten mortgage financing, dampening housing demand and pressuring REITs and consumer‑discretionary stocks, while reinforcing the 10Y yield trend upward. A stronger yield curve can attract capital to the dollar, supporting the DXY and weighing on risk assets including BTC.",
-        "forces": [
-          "DEBT",
-          "MONEY"
-        ]
-      },
-      {
-        "source": "Wall Street Journal",
-        "title": "Oil steadies on hope of US‑Iran deal",
-        "impact": "Improving US‑Iran diplomatic outlook lifts oil sentiment, narrowing spreads and buoying energy equities, which in turn supports the SPX energy weight and can reduce safe‑haven demand for the dollar. A softer DXY and lower 10Y yields may follow if the deal eases geopolitical risk, indirectly benefitting risk assets like BTC.",
-        "forces": [
-          "POLITICS",
-          "ENERGY"
-        ]
-      }
-    ],
-    "key_levels": {
-      "btc_support": "$71,000",
-      "btc_resistance": "$75,000",
-      "spx_support": "7,500",
-      "yield_threshold": "4.50% (psychological ceiling for 10‑yr)"
-    },
-    "weekly_catalyst": "Federal Reserve's June policy meeting minutes release",
-    "agent_consensus": {
-      "debate_required": false,
-      "resolution": ""
-    },
-    "generated_at": "2026-05-30T08:00:03.277Z"
+    "generated_at": "2026-05-30T08:04:09.021Z"
   },
   "agents": {
     "fundamental": {
       "bias": "NEUTRAL",
-      "thesis": "Awaiting whale data..."
+      "thesis": "Waiting for data..."
     },
     "technical": {
       "bias": "BULLISH",
-      "thesis": "BTC positive momentum. VIX at 15.32."
+      "thesis": "Momentum strong"
     },
     "sentiment": {
       "bias": "BEARISH",
-      "thesis": "Fear & Greed at 23 (Neutral). WSB: MIXED."
+      "thesis": "Too much greed"
     }
   },
   "signal": {
-    "signal_hash": "CI-MPS2924T-B",
-    "timestamp": "2026-05-30T08:00:03.277Z"
+    "signal_hash": "CI-NEI3HRBA-B",
+    "timestamp": "2026-05-30T08:04:09.021Z"
+  },
+  "performance": {
+    "win_rate": 0,
+    "current_streak": 0,
+    "streak_direction": "NONE",
+    "total_resolved": 0,
+    "total_wins": 0,
+    "total_losses": 0,
+    "total_scratch": 0,
+    "last_resolved_at": null
   }
 }
