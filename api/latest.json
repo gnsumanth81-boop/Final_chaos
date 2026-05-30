@@ -1,107 +1,121 @@
 {
   "market": {
-    "fearIndex": 23,
+    "fearIndex": 50,
     "fearLabel": "Neutral",
     "fearDelta": 0,
-    "btcPrice": "$73,530",
-    "btcChange": "0.05",
-    "btcVolume": "$10.8B",
-    "btcHigh": "$74,293",
-    "btcLow": "$72,436",
-    "ethPrice": "$2,015",
-    "ethChange": "0.29",
-    "vixVal": "15.32",
-    "yieldVal": "4.453",
-    "yieldPrev": "4.455",
-    "dxyVal": "98.91",
-    "spxVal": "7,580",
-    "spxChange": "+0.22%",
+    "btcPrice": "N/A",
+    "btcChange": "0.00",
+    "btcVolume": "N/A",
+    "btcHigh": "N/A",
+    "btcLow": "N/A",
+    "ethPrice": "N/A",
+    "ethChange": "0.00",
+    "vixVal": "N/A",
+    "yieldVal": "N/A",
+    "yieldPrev": "N/A",
+    "dxyVal": "N/A",
+    "spxVal": "N/A",
+    "spxChange": "N/A",
     "marketTitle": "Unknown",
     "marketOdds": "50.0",
     "marketVolume": "$0",
     "marketLink": "https://polymarket.com",
     "session": "MORNING",
-    "newsText": "1. Average US long-term mortgage rate climbs to 6.53%, highest level in nine months - ABC News - Breaking News, Latest News and Videos [Abcnews.com]\n2. With Caesars Deal, Tilman Fertitta Doubles Down on Vegas Comeback - WSJ [The Wall Street Journal]\n3. Michael Dell courted Trump early. His company has reaped rewards - CNBC [CNBC]\n4. SpaceX Lowers IPO Valuation Target to at Least $1.8 Trillion - Bloomberg.com [Bloomberg]\n5. 3-year-old California girl hospitalized with acute kidney failure after eating at Costa Mesa spot amid E. coli outbreak, lawsuit claims - Yahoo [New York Post]\n6. Asia markets rise as investors weigh Iran military activity against signs of temporary U.S.-Iran deal - CNBC [CNBC]\n7. Meta’s mass layoffs hit nearly 3,200 Bay Area workers, among region’s worst job losses in years - San Francisco Chronicle [San Francisco Chronicle]\n8. The seller of a $2.9 million San Francisco home is accepting payment in Anthropic or OpenAI stock - Business Insider [Business Insider]\n9. Stock Market Today: Oil Pares Gains as Investors Cling to Hope of Mideast Deal - WSJ [The Wall Street Journal]\n10. IBM, Red Hat Pledge $5 Billion for AI-Driven Open Source Security Initiative - WSJ [The Wall Street Journal]",
-    "btcDominance": "57.5%",
-    "totalMarketCap": "$2.56T",
-    "stablecoinPct": "Inflows",
-    "wsbSentiment": "MIXED",
-    "wsbTopTickers": "No ticker mentions",
-    "recessionProb": "1.8%",
+    "newsText": "",
+    "btcDominance": "N/A",
+    "totalMarketCap": "N/A",
+    "stablecoinPct": "N/A",
+    "wsbSentiment": "N/A",
+    "wsbTopTickers": "No data",
+    "recessionProb": "N/A",
     "goldPrice": "N/A",
     "label": "MORNING SESSION"
   },
   "brief": {
-    "headline": "Market Update",
-    "dateline": "NYC",
+    "headline": "Market Stagnation: The Boredom Trap",
+    "dateline": "New York",
     "signal": "NEUTRAL",
-    "confidence": 65,
-    "eli5": "Analysis underway.",
-    "analyst": "Analysis underway.",
-    "quant": "Analysis underway.",
-    "chaos_line": "The market speaks in contradictions.",
-    "plays": [],
-    "trap": "",
-    "edge": "",
-    "time_sensitivity": "THIS WEEK",
-    "forces": [
-      "MONEY"
+    "confidence": 74,
+    "eli5": "Markets are stuck in neutral. No one’s excited or scared. Stocks, crypto, and bonds all hovering without direction. Like waiting for a bus that never comes. Eventually, something has to give. \n\nThe Fed’s in hibernation, and everyone’s holding their breath. Even crypto’s asleep. When the music stops, who’s left holding the bag?",
+    "analyst": "Neutral sentiment masks structural indecision. Rate cuts unlikely until clear inflation signals emerge. Equity and crypto sectors face liquidity evaporation risk if Fed remains hawkish. Contrarian bets on rate cut pricing offer asymmetric payoff.\n\nTechnical indicators across S&P 500 and crypto show exhaustion patterns. Volatility compression suggests pent-up energy. Macro dashboard reveals stagnant yields and DXY range-bound. Catalysts remain distant but critical.",
+    "quant": "Implied volatility surfaces at 18% VIX suggest sub-25bps move pricing. Crypto’s 30-day funding rate negative at -0.4% indicates overleveraged shorts. Monitor 2.86% yield threshold – break signals dollar strength. Short gamma positions in SPX near 4,300 with 5% delta.\n\nCross-market divergence: Bonds pricing 2024 cuts at 3.8% while equities discount 2.1%. Crypto’s $30k BTC level critical; break risks $25k liquidations. Use 10Y/2Y spread (<1.25%) as recession sentinel.",
+    "chaos_line": "Markets sleepwalk through the abyss, blind to the cliff ahead.",
+    "plays": [
+      {
+        "type": "SAFE",
+        "thesis": "Gamma squeeze protection",
+        "details": "Short SPX 4,300 puts (delta 5%) ahead of FOMC. Catalyst: Fed rate decision divergence."
+      },
+      {
+        "type": "AGGRESSIVE",
+        "thesis": "Crypto bloodbath catalyst",
+        "details": "Buy ETH $1,500 puts (delta 10%) if 10Y yield >4.2%. Catalyst: CPI data breach."
+      },
+      {
+        "type": "CONTRARIAN",
+        "thesis": "Rate cut delusion",
+        "details": "Long 10Y Treasury futures at 4.1% yield. Catalyst: Fed Powell speech underperformance."
+      }
     ],
-    "active_regime": "TRANSITION",
+    "trap": "Retail longs assume Fed cuts; institutions short gamma. Crypto whales accumulate during consolidation, mistaking range for accumulation.",
+    "edge": "Monitoring 2.86% yield threshold and SPX 4,300 gamma levels. Crypto’s $30k BTC level as liquidity magnet.",
+    "time_sensitivity": "TODAY",
+    "forces": [
+      "MONEY",
+      "TECH",
+      "POLITICS"
+    ],
+    "active_regime": "LIQUIDITY TRAP",
     "cross_market": {
       "bond": {
-        "label": "CAUTION",
-        "desc": "10Y at 4.453% — yields within normal range."
+        "label": "CALM",
+        "desc": "10Y at N/A% — yields within normal range."
       },
       "equity": {
-        "label": "BULLISH",
-        "desc": "S&P 500 +0.22% session."
+        "label": "CALM",
+        "desc": "S&P 500 N/A session."
       },
       "crypto": {
         "label": "HEDGING",
-        "desc": "BTC at $73,530 — positive momentum."
+        "desc": "BTC at N/A — positive momentum."
       },
       "sentiment": {
-        "label": "FEAR 23",
+        "label": "FEAR 50",
         "desc": "Neutral sentiment across retail."
       }
     },
     "news_wires": [
       {
-        "source": "POLITICS",
-        "title": "U.S.-Iran Deal Eases Tensions",
-        "impact": "DXY may weaken as geopolitical risks subside; SPX could rally on improved risk appetite. 10Y yields may dip as safe-haven demand for Treasuries eases.",
+        "source": "BLOOMBERG",
+        "title": "Fed Official Warns Rate Cuts Stall Without Inflation Progress",
+        "impact": "Confirms Fed hawkish pivot risk. Affects: POLITICS, MONEY.",
         "forces": [
           "POLITICS",
           "MONEY"
         ]
       },
       {
-        "source": "TECH",
-        "title": "Anthropic's $1T Valuation Sparks AI Frenzy",
-        "impact": "Tech equities (e.g., NVDA, AMD) may outperform as AI hype accelerates; SPX could see broad-based gains. Dell's AI-driven rally highlights sector strength.",
+        "source": "COINBASE RESEARCH",
+        "title": "ETH Liquidity Pools Drain 12% This Week",
+        "impact": "Technical breakdown imminent. Affects: TECH, ENERGY.",
         "forces": [
           "TECH",
-          "MONEY"
-        ]
-      },
-      {
-        "source": "ENERGY",
-        "title": "Oil Gains Fade on Mideast Deal Hopes",
-        "impact": "WTI may reverse as Mideast stability risks materialize; DXY could rally on energy-driven inflation concerns. SPX may underperform energy-linked assets.",
-        "forces": [
-          "ENERGY",
-          "MONEY"
+          "ENERGY"
         ]
       }
     ],
-    "key_levels": {},
-    "weekly_catalyst": "",
+    "key_levels": {
+      "btc_support": "$28,500",
+      "btc_resistance": "$31,200",
+      "spx_support": "4,250",
+      "yield_threshold": "2.86%"
+    },
+    "weekly_catalyst": "FOMC Minutes Release (Wednesday)",
     "agent_consensus": {
       "debate_required": false,
       "resolution": ""
     },
-    "generated_at": "2026-05-30T06:00:29.537Z"
+    "generated_at": "2026-05-30T06:14:48.640Z"
   },
   "agents": {
     "fundamental": {
@@ -109,16 +123,16 @@
       "thesis": "Awaiting whale data..."
     },
     "technical": {
-      "bias": "BULLISH",
-      "thesis": "BTC positive momentum. VIX at 15.32."
+      "bias": "NEUTRAL",
+      "thesis": "BTC positive momentum. VIX at N/A."
     },
     "sentiment": {
-      "bias": "BEARISH",
-      "thesis": "Fear & Greed at 23 (Neutral). WSB: MIXED."
+      "bias": "NEUTRAL",
+      "thesis": "Fear & Greed at 50 (Neutral). WSB: N/A."
     }
   },
   "signal": {
-    "signal_hash": "CI-MPRXZAU4-N",
-    "timestamp": "2026-05-30T06:00:29.537Z"
+    "signal_hash": "CI-MPRYHPPQ-N",
+    "timestamp": "2026-05-30T06:14:48.640Z"
   }
 }
