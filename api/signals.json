@@ -1,8 +1,14 @@
 [
   {
-    "date": "2026-05-29",
-    "headline": "System Initializing",
+    "date": "2026-05-30",
     "signal": "NEUTRAL",
+    "headline": "Fear Trapped, but Opportunity Awaits",
+    "resolution_status": "OPEN"
+  },
+  {
+    "date": "2026-05-30",
+    "signal": "BULLISH",
+    "headline": "Risk Assets Cheap Amid Extreme Fear",
     "resolution_status": "OPEN"
   }
 ]
