@@ -22,9 +22,9 @@
     "marketLink": "https://polymarket.com",
     "session": "MORNING",
     "newsText": "1. Average US long-term mortgage rate climbs to 6.53%, highest level in nine months - ABC News - Breaking News, Latest News and Videos [Abcnews.com]\n2. With Caesars Deal, Tilman Fertitta Doubles Down on Vegas Comeback - WSJ [The Wall Street Journal]\n3. Michael Dell courted Trump early. His company has reaped rewards - CNBC [CNBC]\n4. SpaceX Lowers IPO Valuation Target to at Least $1.8 Trillion - Bloomberg.com [Bloomberg]\n5. 3-year-old California girl hospitalized with acute kidney failure after eating at Costa Mesa spot amid E. coli outbreak, lawsuit claims - Yahoo [New York Post]\n6. Asia markets rise as investors weigh Iran military activity against signs of temporary U.S.-Iran deal - CNBC [CNBC]\n7. Meta’s mass layoffs hit nearly 3,200 Bay Area workers, among region’s worst job losses in years - San Francisco Chronicle [San Francisco Chronicle]\n8. The seller of a $2.9 million San Francisco home is accepting payment in Anthropic or OpenAI stock - Business Insider [Business Insider]\n9. Stock Market Today: Oil Pares Gains as Investors Cling to Hope of Mideast Deal - WSJ [The Wall Street Journal]\n10. IBM, Red Hat Pledge $5 Billion for AI-Driven Open Source Security Initiative - WSJ [The Wall Street Journal]",
-    "btcDominance": "N/A",
-    "totalMarketCap": "N/A",
-    "stablecoinPct": "N/A",
+    "btcDominance": "57.5%",
+    "totalMarketCap": "$2.56T",
+    "stablecoinPct": "Inflows",
     "wsbSentiment": "N/A",
     "wsbTopTickers": "No data",
     "recessionProb": "N/A",
@@ -32,40 +32,41 @@
     "label": "MORNING SESSION"
   },
   "brief": {
-    "headline": "Markets Edge Higher as Crypto Stalls",
-    "dateline": "New York",
-    "signal": "NEUTRAL",
-    "confidence": 74,
-    "eli5": "Imagine the market as a playground where kids (investors) are swinging on different swings. Today, most of them are pushing higher on the stock swing, but the crypto swing barely moves.\\n\\nIt's like the sun is out, but the slide stays cold.",
-    "analyst": "The modest S&P 500 gain of 0.22% alongside a sub‑5 VIX suggests a tentative risk‑on bias, but the lack of follow‑through in equities and crypto signals limited conviction.\\n\\nYield curve flattening and a flat DXY indicate that macro drivers are muted, leaving price action to micro news. Nevertheless, the earnings‑related headlines (Dell, IBM‑Red Hat) could provide short‑term catalysts for selective long positions. Watch the Treasury market; a break below 4.45% would likely reignite risk appetite and push equities higher. If the Fed’s minutes hint at a slower rate cut schedule, the rally could extend into tech.",
-    "quant": "Volume in Bitcoin remains modest at $10.7B, indicating lukewarm institutional appetite.\\n\\nThe 0.21% dip to $73,512 is a micro‑correction within a broader consolidation zone. A sustained move above $74,293 resistance would likely trigger short‑covering and a swift up‑trend. Ethereum’s sub‑1% move mirrors Bitcoin’s stagnation, suggesting crypto is awaiting a macro catalyst. The 15.32 VIX level is historically low, so any volatility spike could amplify price swings. Traders should consider scaling into long positions on a breakout above $74,500 with tight stops.",
-    "chaos_line": "The crowd cheers the climb while the silent tide of capital quietly retreats, reshaping tomorrow.",
+    "headline": "Retail Blind Spot in Crypto Rally",
+    "dateline": "San Francisco",
+    "signal": "Bullish tilt with a significant edge on mispricing.",
+    "confidence": 65,
+    "eli5": "Retail traders are missing the crypto surge while big players bet big. The market thinks Bitcoin is safe, but the real risk lies elsewhere.",
+    "analyst": "Retail sentiment is skewed—what they see is a false calm, hiding a deeper volatility.",
+    "quant": "5-6 sentences",
+    "chaos_line": "A world where most investors are sleeping while the markets shift overnight.",
     "plays": [
       {
         "type": "SAFE",
-        "thesis": "Low risk setup",
-        "details": "Buy 10Y Treasury futures on dip, target 4.40% yield, catalyst: flattening yield curve"
+        "thesis": "Bet on the direction, not the noise",
+        "details": "Leverage macro trends to control risk."
       },
       {
         "type": "AGGRESSIVE",
-        "thesis": "High conviction bet",
-        "details": "Long S&P 500 ETF (SPY) targeting 7,650, catalyst: earnings momentum and Fed minutes"
+        "thesis": "Go big when the crowd is wrong",
+        "details": "Exploit mispriced assets with confidence."
       },
       {
         "type": "CONTRARIAN",
-        "thesis": "Against the crowd",
-        "details": "Short Bitcoin below $73,000, target $71,500, catalyst: retail over‑exposure and weak volume"
+        "thesis": "Go against the consensus",
+        "details": "See what others miss in this rally."
       }
     ],
-    "trap": "Retail traders are over‑leveraged long on meme stocks, ignoring the flattening yield curve and rising Treasury yields. They also hold excessive crypto exposure, assuming perpetual upside while volume stalls.",
-    "edge": "Watch European sovereign bond flows and commodity inventory data; these hidden drivers often precede the next market shift.",
-    "time_sensitivity": "TODAY",
+    "trap": "The biggest danger isn't the market—it's the people assuming stability.",
+    "edge": "They're only looking at the surface, not the storm beneath.",
+    "time_sensitivity": "Today's moves could reshape the entire sector.",
     "forces": [
-      "MONEY",
-      "TECH",
-      "ENERGY"
+      "MONEY_MARKET",
+      "TECH_INDUSTRY",
+      "GEOPOLITICAL_RISK",
+      "INFLATION_DRAGON"
     ],
-    "active_regime": "RISK-ON",
+    "active_regime": "Risk-On with hidden liquidity traps",
     "cross_market": {
       "bond": {
         "label": "CAUTION",
@@ -114,17 +115,17 @@
       }
     ],
     "key_levels": {
-      "btc_support": "$72,000",
-      "btc_resistance": "$75,000",
-      "spx_support": "7,500",
-      "yield_threshold": "4.5%"
+      "btc_support": "Key support at $72k",
+      "btc_resistance": "Target near $73k",
+      "spx_support": "SPX holding above 7,600",
+      "yield_threshold": "10Y yield approaching 4.5%"
     },
-    "weekly_catalyst": "Fed minutes release",
+    "weekly_catalyst": "",
     "agent_consensus": {
       "debate_required": false,
       "resolution": ""
     },
-    "generated_at": "2026-05-30T06:23:49.243Z"
+    "generated_at": "2026-05-30T06:23:59.285Z"
   },
   "agents": {
     "fundamental": {
@@ -141,7 +142,7 @@
     }
   },
   "signal": {
-    "signal_hash": "CI-MPRYTAVH-N",
-    "timestamp": "2026-05-30T06:23:49.243Z"
+    "signal_hash": "CI-MPRYTIKR-B",
+    "timestamp": "2026-05-30T06:23:59.285Z"
   }
 }
