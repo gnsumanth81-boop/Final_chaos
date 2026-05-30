@@ -8,8 +8,8 @@
     "btcVolume": "$10.7B",
     "btcHigh": "$74,293",
     "btcLow": "$72,436",
-    "ethPrice": "N/A",
-    "ethChange": "0.00",
+    "ethPrice": "$2,013",
+    "ethChange": "-0.12",
     "vixVal": "N/A",
     "yieldVal": "N/A",
     "yieldPrev": "N/A",
@@ -32,22 +32,40 @@
     "label": "MORNING SESSION"
   },
   "brief": {
-    "headline": "Market Update",
-    "dateline": "NYC",
+    "headline": "Crypto Drift Marks Regime Shift",
+    "dateline": "New York",
     "signal": "NEUTRAL",
-    "confidence": 65,
-    "eli5": "Analysis underway.",
-    "analyst": "Analysis underway.",
-    "quant": "Analysis underway.",
-    "chaos_line": "The market speaks in contradictions.",
-    "plays": [],
-    "trap": "",
-    "edge": "",
-    "time_sensitivity": "THIS WEEK",
-    "forces": [
-      "MONEY"
+    "confidence": 74,
+    "eli5": "Bitcoin and Ethereum are slightly down today while market fear is neutral. Think of it like a boat drifting - not sinking or rising fast, just moving sideways. The market doesn't know which direction to go, so it's waiting for clues.\n\nBig money is always watching for signs of trouble or opportunity, and right now, the signals are mixed. We're in a waiting game.",
+    "analyst": "The current data shows a market in limbo with crypto assets trading lower while sentiment remains neutral. The lack of significant movement in BTC (-0.21%) and ETH (-0.12%) suggests underlying weakness despite the Fear & Greed index holding at 23. This divergence between price action and sentiment indicators points to potential distribution.\n\nWith many key macro indicators showing as N/A, we must focus on what we can measure: the slight decline in crypto prices relative to yesterday, and the unchanged neutral sentiment. This suggests smart money may be positioning for either continued drift or a breakout soon.",
+    "quant": "BTC at $73,512 with volume at $10.7B indicates consolidation phase. The slight decline from highs ($74,293 to current) within a narrow range ($72,436-$74,293) suggests bearish compression. ETH following similar pattern at $2,013. Neutral sentiment at 23 with zero delta indicates trapped retail long positions. Wait for breakout above $74.5K or breakdown below $72K for directional bias.\n\nPosition sizing should be minimal until volatility expands. Key risk is sudden regime change given current uncertainty.",
+    "chaos_line": "Drift without direction, fear without conviction - markets price in nothing.",
+    "plays": [
+      {
+        "type": "SAFE",
+        "thesis": "Low risk setup",
+        "details": "BTC - Short term range play between $72.4K-$74.3K, wait for breakout confirmation"
+      },
+      {
+        "type": "AGGRESSIVE",
+        "thesis": "High conviction bet",
+        "details": "ETH - Break below $2K targets $1,900 with strong volume confirmation"
+      },
+      {
+        "type": "CONTRARIAN",
+        "thesis": "Against the crowd",
+        "details": "Fear & Greed at 23 neutral suggests complacency - smart money likely positioned for downside"
+      }
     ],
-    "active_regime": "TRANSITION",
+    "trap": "Retail is long via neutral sentiment while institutions quietly distribute. The calm before the storm.",
+    "edge": "Cross-asset correlation breakdown - crypto declining while traditional markets show no data, unusual divergence.",
+    "time_sensitivity": "TODAY",
+    "forces": [
+      "MONEY",
+      "TECH",
+      "PEOPLE"
+    ],
+    "active_regime": "LIQUIDITY TRAP",
     "cross_market": {
       "bond": {
         "label": "CALM",
@@ -66,14 +84,29 @@
         "desc": "Neutral sentiment across retail."
       }
     },
-    "news_wires": [],
-    "key_levels": {},
-    "weekly_catalyst": "",
+    "news_wires": [
+      {
+        "source": "MARKET DATA",
+        "title": "Crypto Drift Continues Amid Data Vacuum",
+        "impact": "Lack of macro data creates information vacuum filled by algorithmic drift. Smart money uses this to accumulate positions while retail chases momentum that doesn't exist.",
+        "forces": [
+          "MONEY",
+          "PEOPLE"
+        ]
+      }
+    ],
+    "key_levels": {
+      "btc_support": "$72,436",
+      "btc_resistance": "$74,293",
+      "spx_support": "N/A",
+      "yield_threshold": "10Y yield absent"
+    },
+    "weekly_catalyst": "FOMC minutes release could break current drift",
     "agent_consensus": {
       "debate_required": false,
       "resolution": ""
     },
-    "generated_at": "2026-05-30T06:17:32.371Z"
+    "generated_at": "2026-05-30T06:18:00.075Z"
   },
   "agents": {
     "fundamental": {
@@ -90,7 +123,7 @@
     }
   },
   "signal": {
-    "signal_hash": "CI-MPRYL81F-N",
-    "timestamp": "2026-05-30T06:17:32.371Z"
+    "signal_hash": "CI-MPRYLTF4-N",
+    "timestamp": "2026-05-30T06:18:00.075Z"
   }
 }
