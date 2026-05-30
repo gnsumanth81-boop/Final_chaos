@@ -27,46 +27,27 @@
     "stablecoinPct": "Inflows",
     "wsbSentiment": "MIXED",
     "wsbTopTickers": "No ticker mentions",
-    "recessionProb": "N/A",
+    "recessionProb": "1.8%",
     "goldPrice": "N/A",
     "label": "MORNING SESSION"
   },
   "brief": {
-    "headline": "Mortgage Rates Spike, Markets Eye Liquidity Trap",
-    "dateline": "Washington",
-    "signal": "BEARISH",
-    "confidence": 74,
-    "eli5": "Mortgage rates in the U.S. just hit 6.53%, the highest they've been in nine months. Higher rates make borrowing more expensive, which can slow down home buying and broader consumer spending. At the same time, the stock market is still climbing, but the low VIX and steady bond yields hint investors are getting complacent. If rates keep rising, the current risk‑on vibe could flip into a liquidity crunch.\n\nThe crypto market is barely moving, with Bitcoin hovering around $73,600 and a dominance of 57.5%. Stablecoins are seeing inflows, suggesting some investors are parking cash in less volatile assets while they wait for the next macro shock.",
-    "analyst": "Retail consensus is still treating the S&P 500 rally as a free‑falling bull market, ignoring the tightening credit environment signaled by the 6.53% mortgage rate. The 10‑year Treasury yield has stalled just above 4.45%, a level that historically precedes a pullback in risk assets when paired with a low VIX (15.3). The DXY at 98.9 reflects a still‑strong dollar, further pressuring emerging market equities and commodities. Meanwhile, the crypto sector's muted volatility suggests a hedging bias rather than genuine risk appetite. The regime is shifting from risk‑on to a liquidity trap: capital is cheap but risk appetite is fragile, making any shock disproportionately damaging.",
-    "quant": "BTC is testing a support zone around $72,400 and faces resistance near $74,300; a break below support could trigger a 5‑10% drop on the back of widening spreads. The SPX is holding above the 7,560–7,580 range; a close below 7,540 would likely unleash algorithmic selling into the 7,500 zone. The 10‑year yield's micro‑move from 4.453% to 4.460% is a leading indicator—if it breaches 4.48% the equity‑bond correlation reverts to positive, spurring a risk‑off cascade. Watch the VIX; a rise above 16 would confirm volatility re‑pricing. Position sizing should reflect a 1‑2% max drawdown per trade given the regime uncertainty.",
-    "chaos_line": "When mortgage rates climb, the market's bravado cracks like thin ice under a warming sun.",
-    "plays": [
-      {
-        "type": "SAFE",
-        "thesis": "Low risk setup",
-        "details": "Short S&P 500 futures at 7,540 with stop at 7,580; catalyst: 10Y yield crossing 4.48% and mortgage rate staying above 6.5%."
-      },
-      {
-        "type": "AGGRESSIVE",
-        "thesis": "High conviction bet",
-        "details": "Long short‑dated Treasury futures (2‑year) at 4.45% with put spread at 4.55%; catalyst: Fed likely to pause rate hikes, driving yields lower and boosting risk assets temporarily."
-      },
-      {
-        "type": "CONTRARIAN",
-        "thesis": "Against the crowd",
-        "details": "Long Bitcoin at $73,000 with stop at $71,500; consensus expects crypto to drop, but stablecoin inflows and low VIX suggest a short‑term safe haven rally."
-      }
-    ],
-    "trap": "Retail investors are over‑leveraged on equities, assuming the rally will continue despite tightening credit; they are positioned wrong if mortgage rates stay above 6.5% and yields edge higher.",
-    "edge": "Most eyes are on the equity rally, but the real driver is the mortgage‑rate‑driven credit crunch, a lagging indicator that markets are ignoring.",
+    "headline": "Market Update",
+    "dateline": "NYC",
+    "signal": "NEUTRAL",
+    "confidence": 65,
+    "eli5": "Analysis underway.",
+    "analyst": "Analysis underway.",
+    "quant": "Analysis underway.",
+    "chaos_line": "The market speaks in contradictions.",
+    "plays": [],
+    "trap": "",
+    "edge": "",
     "time_sensitivity": "THIS WEEK",
     "forces": [
-      "DEBT",
-      "POLITICS",
-      "MONEY",
-      "JOBS"
+      "MONEY"
     ],
-    "active_regime": "LIQUIDITY TRAP",
+    "active_regime": "TRANSITION",
     "cross_market": {
       "bond": {
         "label": "CAUTION",
@@ -96,18 +77,13 @@
         ]
       }
     ],
-    "key_levels": {
-      "btc_support": "72,400",
-      "btc_resistance": "74,300",
-      "spx_support": "7,540",
-      "yield_threshold": "4.48%"
-    },
-    "weekly_catalyst": "Federal Reserve's policy meeting minutes release on Thursday, expected to clarify the path of rates.",
+    "key_levels": {},
+    "weekly_catalyst": "",
     "agent_consensus": {
       "debate_required": false,
       "resolution": ""
     },
-    "generated_at": "2026-05-30T06:53:34.234Z"
+    "generated_at": "2026-05-30T06:53:40.616Z"
   },
   "agents": {
     "fundamental": {
@@ -124,7 +100,7 @@
     }
   },
   "signal": {
-    "signal_hash": "CI-MPRZVK4R-B",
-    "timestamp": "2026-05-30T06:53:34.234Z"
+    "signal_hash": "CI-MPRZVP21-N",
+    "timestamp": "2026-05-30T06:53:40.616Z"
   }
 }
