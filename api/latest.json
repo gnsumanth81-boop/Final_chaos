@@ -13,7 +13,7 @@
     "vixVal": "15.32",
     "yieldVal": "4.453",
     "yieldPrev": "4.455",
-    "dxyVal": "N/A",
+    "dxyVal": "98.91",
     "spxVal": "N/A",
     "spxChange": "N/A",
     "marketTitle": "Unknown",
@@ -32,37 +32,36 @@
     "label": "MORNING SESSION"
   },
   "brief": {
-    "headline": "Complacency Breeds Blind Spots",
-    "dateline": "New York",
-    "signal": "NEUTRAL",
-    "confidence": 74,
-    "eli5": "The market’s neutral vibe is a trap. When everyone’s calm, big moves often hide. Bitcoin’s small gains might look safe, but rising yields could hurt crypto. Don’t trust the quiet—it’s often a warning.",
-    "analyst": "The lack of headlines and stable metrics masks underlying fragility. Retail’s neutrality suggests they’re ignoring yield trends that could trigger a risk-off shift. Bitcoin’s resilience is overstated without volume confirmation.",
-    "quant": "Watch the 10Y yield delta—small rises here signal tightening liquidity. BTC’s support at $72,436 is critical; a break below means panic. VIX’s 15.32 is misleadingly low for a fragile regime.",
-    "chaos_line": "The calm before the storm isn’t peace—it’s a countdown to chaos.",
+    "headline": "STAGNANT VOLATILITY MASKS LIQUIDITY DRAIN",
+    "dateline": "NEW YORK",
+    "signal": "VOLATILE",
+    "confidence": 68,
+    "eli5": "Bitcoin is hovering near its peak while the rest of the market is asleep. Everyone is waiting for a sign, but the lack of movement is the signal itself.\n\nWhen the VIX is this low, the market is complacent. Complacency is usually the precursor to a sharp, violent move.",
+    "analyst": "The 10Y Treasury holding at 4.45% creates a restrictive floor that conflicts with the current BTC price action. We are seeing a divergence where crypto is pricing in a goldilocks scenario that the bond market isn't supporting.\n\nWith DXY under 100, there is temporary breathing room, but the lack of volatility suggests a coiled spring. The risk is a sudden regime shift from Risk-On to a Liquidity Trap if Treasury yields spike.\n\nPositioning is overly concentrated in BTC, leaving the broader altcoin market completely stranded.",
+    "quant": "BTC is consolidating in a tight range ($72.4k - $74.3k) with negligible delta. VIX at 15.32 indicates an extreme compression of risk premiums.\n\nExpected move is a volatility expansion. The delta between BTC and ETH is widening, suggesting a flight to quality within the asset class.\n\nLong gamma positions are likely getting decayed. A break below 72k triggers a cascade of stop-losses.",
+    "chaos_line": "The silence of the markets is not peace; it is the held breath before the guillotine falls.",
     "plays": [
       {
         "type": "SAFE",
-        "thesis": "BTC holding above $72,436",
-        "details": "Bitcoin +1% if breaks $73,000; catalyst: VIX drops below 15"
+        "thesis": "Yield stabilization play",
+        "details": "Long BTC above $73,000 targeting $75k if 10Y stays below 4.50%"
       },
       {
         "type": "AGGRESSIVE",
-        "thesis": "Short 10Y yield above 4.5%",
-        "details": "Yield surge signals risk-off; target 4.65%"
+        "thesis": "Volatility expansion bet",
+        "details": "Long VIX calls; betting on a regime shift as complacency peaks"
       },
       {
         "type": "CONTRARIAN",
-        "thesis": "Ignore neutral Fear & Greed",
-        "details": "Retail consensus ignores yield-driven risks; BTC dominance could collapse"
+        "thesis": "ETH recovery play",
+        "details": "Long ETH/BTC pair; retail is ignoring ETH while BTC is overextended"
       }
     ],
-    "trap": "Investors betting on ‘calm’ are wrong. Rising yields and liquidity risks are being dismissed as irrelevant.",
-    "edge": "No one is tracking how stablecoin flows might dry up if yields spike.",
-    "time_sensitivity": "IMMEDIATE",
+    "trap": "Retail long-leverage on BTC at the top. They are buying the 'stability' without realizing the liquidity is thinning.",
+    "edge": "The divergence between the low VIX and the high 10Y yield. The market is ignoring the cost of capital.",
+    "time_sensitivity": "TODAY",
     "forces": [
       "MONEY",
-      "TECH",
       "DEBT",
       "PEOPLE"
     ],
@@ -85,19 +84,28 @@
         "desc": "Neutral sentiment across retail."
       }
     },
-    "news_wires": [],
+    "news_wires": [
+      {
+        "source": "INTERNAL",
+        "title": "Market Stagnation",
+        "impact": "Low volume and neutral sentiment suggest a lack of conviction from institutional players.",
+        "forces": [
+          "MONEY"
+        ]
+      }
+    ],
     "key_levels": {
-      "btc_support": "$72,436",
-      "btc_resistance": "$74,293",
+      "btc_support": "72,436",
+      "btc_resistance": "74,293",
       "spx_support": "N/A",
-      "yield_threshold": "4.5%"
+      "yield_threshold": "4.50%"
     },
-    "weekly_catalyst": "N/A",
+    "weekly_catalyst": "Treasury yield movement relative to BTC resistance",
     "agent_consensus": {
       "debate_required": false,
       "resolution": ""
     },
-    "generated_at": "2026-05-30T05:46:19.955Z"
+    "generated_at": "2026-05-30T05:46:47.362Z"
   },
   "agents": {
     "fundamental": {
@@ -114,7 +122,7 @@
     }
   },
   "signal": {
-    "signal_hash": "CI-MPRXH3A0-N",
-    "timestamp": "2026-05-30T05:46:19.955Z"
+    "signal_hash": "CI-MPRXHOF3-V",
+    "timestamp": "2026-05-30T05:46:47.362Z"
   }
 }
