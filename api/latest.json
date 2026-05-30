@@ -83,14 +83,42 @@
         "desc": "Neutral sentiment across retail."
       }
     },
-    "news_wires": [],
+    "news_wires": [
+      {
+        "source": "Investopedia",
+        "title": "Dell earnings beat fuels 39% rally",
+        "impact": "Dell's surprise earnings lift the broader tech sector, adding upward pressure on the SPX and pulling risk assets higher while boosting the DXY as investors rotate into USD‑denominated earnings. The rally may also lift semiconductor exposure, supporting BTC as risk appetite improves.",
+        "forces": [
+          "TECH",
+          "MONEY"
+        ]
+      },
+      {
+        "source": "ABC News",
+        "title": "US 30‑yr mortgage rate hits 6.53%",
+        "impact": "Higher long‑term rates tighten mortgage financing, dampening housing demand and pressuring REITs and consumer‑discretionary stocks, while reinforcing the 10Y yield trend upward. A stronger yield curve can attract capital to the dollar, supporting the DXY and weighing on risk assets including BTC.",
+        "forces": [
+          "DEBT",
+          "MONEY"
+        ]
+      },
+      {
+        "source": "Wall Street Journal",
+        "title": "Oil steadies on hope of US‑Iran deal",
+        "impact": "Improving US‑Iran diplomatic outlook lifts oil sentiment, narrowing spreads and buoying energy equities, which in turn supports the SPX energy weight and can reduce safe‑haven demand for the dollar. A softer DXY and lower 10Y yields may follow if the deal eases geopolitical risk, indirectly benefitting risk assets like BTC.",
+        "forces": [
+          "POLITICS",
+          "ENERGY"
+        ]
+      }
+    ],
     "key_levels": {},
     "weekly_catalyst": "Fed speakers Friday",
     "agent_consensus": {
       "debate_required": false,
       "resolution": ""
     },
-    "generated_at": "2026-05-30T07:57:32.197Z"
+    "generated_at": "2026-05-30T07:57:54.975Z"
   },
   "agents": {
     "fundamental": {
@@ -107,7 +135,7 @@
     }
   },
   "signal": {
-    "signal_hash": "CI-MPS25TK3-N",
-    "timestamp": "2026-05-30T07:57:32.197Z"
+    "signal_hash": "CI-MPS26B3H-N",
+    "timestamp": "2026-05-30T07:57:54.975Z"
   }
 }
