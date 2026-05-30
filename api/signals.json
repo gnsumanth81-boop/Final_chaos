@@ -1,6 +1,16 @@
 [
   {
     "date": "2026-05-30",
+    "timestamp": "2026-05-30T08:28:19.336Z",
+    "signal_hash": "CI-FHE3YB6F-B",
+    "signal": "BEARISH",
+    "headline": "Market on Knife‑Edge",
+    "btc_entry": 73455,
+    "resolved": false,
+    "resolution_status": "OPEN"
+  },
+  {
+    "date": "2026-05-30",
     "timestamp": "2026-05-30T08:09:12.358Z",
     "signal_hash": "CI-T8FWT4RU-B",
     "signal": "BEARISH",
@@ -16,8 +26,12 @@
     "signal": "BEARISH",
     "headline": "Fear Lulls, Dollar Soars",
     "btc_entry": 74000,
-    "resolved": false,
-    "resolution_status": "OPEN"
+    "resolved": true,
+    "resolution_status": "WIN",
+    "btc_exit": 73443,
+    "pnl_percent": 0.75,
+    "resolved_at": "2026-05-30T08:09:12.362Z",
+    "grading_method": "24h_btc_close"
   },
   {
     "date": "2026-05-30",
