@@ -27,47 +27,46 @@
     "stablecoinPct": "Inflows",
     "wsbSentiment": "MIXED",
     "wsbTopTickers": "No ticker mentions",
-    "recessionProb": "N/A",
+    "recessionProb": "1.8%",
     "goldPrice": "N/A",
     "label": "MORNING SESSION"
   },
   "brief": {
-    "headline": "Mortgage Rates Spike, Meta Mass Layoffs Signal Recession Fears",
+    "headline": "Stablecoin Inflows Mask Geopolitical Risk",
     "dateline": "NEW YORK",
-    "signal": "BEARISH",
+    "signal": "NEUTRAL",
     "confidence": 74,
-    "eli5": "Mortgage rates just hit their highest level in nine months, making it even harder for people to buy homes. Big tech companies like Meta are laying off thousands of workers, which shows the economy might be slowing down. Meanwhile, tensions with Iran are adding to worries about oil prices and global stability.",
-    "analyst": "The confluence of rising mortgage rates (6.53%), Meta's massive layoffs (nearly 3,200 Bay Area workers), and Iran tensions suggests we're seeing early recession signals. The 10Y yield at 4.453% with stablecoin inflows indicates the Fed is maintaining restrictive stance. BTC dominance at 57.5% shows crypto rotation but not panic yet. The VIX at 15.32 suggests complacency despite macro stresses.",
-    "quant": "Bitcoin's minor decline (-0.21%) while S&P rises (+0.22%) shows risk appetite remains despite mortgage spike. Key levels: BTC support at $72,436 (daily low), resistance at $74,293. SPX needs to hold 7,580 level. Watch 10Y yield break above 4.5% as potential risk-off signal. Stablecoin inflows suggest some liquidity seeking protection.",
-    "chaos_line": "Mortgage rates spike while Meta bleeds workers—recession whispers grow louder.",
+    "eli5": "Markets are calm on the surface, but tensions in the Middle East and rising mortgage rates hint at hidden risks. Bitcoin and stocks are holding steady, but something's brewing beneath the surface. Keep an eye on oil prices and tech layoffs—they might be the first dominoes to fall.",
+    "analyst": "The neutral Fear & Greed score masks underlying fragility. Stablecoin inflows suggest crypto positioning, but geopolitical risks (Iran, oil) and tech sector stress (Meta layoffs) create a disconnect. The 1.8% recession probability is laughably low given the macro backdrop. Watch for a repricing of risk assets as reality sets in.",
+    "quant": "BTC holding $72.4K support with stablecoin inflows, but VIX at 15.32 is too low for the current geopolitical risk. S&P 500 grinding higher on low volume. Short-term, look for a break below SPX 7,500 or above BTC $74.3K to signal regime shift. Fade the consensus calm.",
+    "chaos_line": "Stablecoins flood in as the world burns—markets pricing paradise while mortgages hit 6.53% and Iran threatens to blow up oil markets.",
     "plays": [
       {
         "type": "SAFE",
-        "thesis": "Defensive positioning ahead of economic slowdown",
-        "details": "Long 10Y TIPS or 20Y bonds, rates still elevated at 4.453%, Fed pivot likely Q2"
+        "thesis": "Short 10Y Treasuries",
+        "details": "4.453% yield stable; fade the calm ahead of potential oil shock-driven inflation repricing."
       },
       {
         "type": "AGGRESSIVE",
-        "thesis": "Short tech growth as layoffs accelerate",
-        "details": "Short Nasdaq or long volatility (VIX calls), Meta layoffs signal broader tech rotation"
+        "thesis": "Long BTC below $72.4K",
+        "details": "Stablecoin inflows signal accumulation; breach of support could trigger panic buying."
       },
       {
         "type": "CONTRARIAN",
-        "thesis": "Energy plays despite Iran de-escalation hopes",
-        "details": "Long crude or energy stocks, housing shortage + geopolitical tensions create commodity squeeze potential"
+        "thesis": "Short S&P 500 above 7,600",
+        "details": "Consensus expects continued grind higher, but geopolitical risks and tech layoffs suggest a trap."
       }
     ],
-    "trap": "Long growth equities positioned for expansion while employment deterioration accelerates. Market pricing in soft landing despite mortgage spike and tech layoffs.",
-    "edge": "Stablecoin inflows amid flat sentiment (Fear & Greed 23) suggest smart money rotating to cash positions while retail remains complacent.",
+    "trap": "Long-only equity investors are positioned for a smooth ride, but Iran tensions and rising mortgage rates are ticking time bombs. The 1.8% recession odds are a joke—markets are pricing in perfection.",
+    "edge": "Stablecoin inflows are quietly building crypto long exposure while traditional markets ignore geopolitical risks. Watch for a sudden repricing if oil spikes.",
     "time_sensitivity": "IMMEDIATE",
     "forces": [
-      "MONEY",
       "TECH",
-      "POLITICS",
+      "WAR",
       "DEBT",
-      "PEOPLE"
+      "ENERGY"
     ],
-    "active_regime": "RISK-OFF",
+    "active_regime": "RISK-ON",
     "cross_market": {
       "bond": {
         "label": "CAUTION",
@@ -118,15 +117,15 @@
     "key_levels": {
       "btc_support": "$72,436",
       "btc_resistance": "$74,293",
-      "spx_support": "7,580",
+      "spx_support": "7,500",
       "yield_threshold": "4.5%"
     },
-    "weekly_catalyst": "Fed policy meeting and PCE inflation data could confirm recession trajectory",
+    "weekly_catalyst": "Iran military activity and U.S.-Iran diplomatic developments impacting oil markets and risk sentiment.",
     "agent_consensus": {
       "debate_required": false,
       "resolution": ""
     },
-    "generated_at": "2026-05-30T06:24:23.452Z"
+    "generated_at": "2026-05-30T06:25:02.944Z"
   },
   "agents": {
     "fundamental": {
@@ -143,7 +142,7 @@
     }
   },
   "signal": {
-    "signal_hash": "CI-MPRYU17X-B",
-    "timestamp": "2026-05-30T06:24:23.452Z"
+    "signal_hash": "CI-MPRYUVPS-N",
+    "timestamp": "2026-05-30T06:25:02.944Z"
   }
 }
