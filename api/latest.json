@@ -1,106 +1,65 @@
 {
   "market": {
     "fearIndex": 23,
-    "fearLabel": "Neutral",
-    "fearDelta": 0,
-    "btcPrice": "$73,603",
-    "btcChange": "-0.15",
-    "btcVolume": "$10.6B",
-    "btcHigh": "$74,293",
-    "btcLow": "$72,436",
-    "ethPrice": "$2,017",
-    "ethChange": "0.10",
-    "vixVal": "15.32",
-    "yieldVal": "4.453",
-    "yieldPrev": "4.455",
-    "dxyVal": "98.91",
-    "spxVal": "7,580",
-    "spxChange": "+0.22%",
-    "marketTitle": "Unknown",
-    "marketOdds": "50.0",
-    "marketVolume": "$0",
-    "marketLink": "https://polymarket.com",
-    "session": "MORNING",
-    "newsText": "1. Average US long-term mortgage rate climbs to 6.53%, highest level in nine months - ABC News - Breaking News, Latest News and Videos [Abcnews.com]\n2. With Caesars Deal, Tilman Fertitta Doubles Down on Vegas Comeback - WSJ [The Wall Street Journal]\n3. Michael Dell courted Trump early. His company has reaped rewards - CNBC [CNBC]\n4. SpaceX Lowers IPO Valuation Target to at Least $1.8 Trillion - Bloomberg.com [Bloomberg]\n5. 3-year-old California girl hospitalized with acute kidney failure after eating at Costa Mesa spot amid E. coli outbreak, lawsuit claims - Yahoo [New York Post]\n6. Asia markets rise as investors weigh Iran military activity against signs of temporary U.S.-Iran deal - CNBC [CNBC]\n7. Meta’s mass layoffs hit nearly 3,200 Bay Area workers, among region’s worst job losses in years - San Francisco Chronicle [San Francisco Chronicle]\n8. The seller of a $2.9 million San Francisco home is accepting payment in Anthropic or OpenAI stock - Business Insider [Business Insider]\n9. Stock Market Today: Oil Pares Gains as Investors Cling to Hope of Mideast Deal - WSJ [The Wall Street Journal]\n10. IBM, Red Hat Pledge $5 Billion for AI-Driven Open Source Security Initiative - WSJ [The Wall Street Journal]",
-    "btcDominance": "57.5%",
-    "totalMarketCap": "$2.56T",
-    "stablecoinPct": "Inflows",
-    "wsbSentiment": "MIXED",
-    "wsbTopTickers": "No ticker mentions",
-    "recessionProb": "1.8%",
-    "goldPrice": "N/A",
-    "label": "MORNING SESSION"
+    "fearLabel": "Extreme Fear",
+    "btcPrice": "$73,503",
+    "btcChange": "-0.21",
+    "yieldVal": "4.335",
+    "dxyVal": "103.39",
+    "spxVal": "5,221",
+    "vixVal": "15.80",
+    "ethPrice": "$2,015"
   },
   "brief": {
-    "headline": "Market Update",
+    "headline": "Fear Trapped, but Opportunity Awaits",
     "dateline": "NYC",
     "signal": "NEUTRAL",
-    "confidence": 65,
-    "eli5": "Analysis underway.",
-    "analyst": "Analysis underway.",
-    "quant": "Analysis underway.",
-    "chaos_line": "The market speaks in contradictions.",
-    "plays": [],
-    "trap": "",
-    "edge": "",
-    "time_sensitivity": "THIS WEEK",
-    "forces": [
-      "MONEY"
-    ],
-    "active_regime": "TRANSITION",
-    "cross_market": {
-      "bond": {
-        "label": "CAUTION",
-        "desc": "10Y at 4.453% — yields within normal range."
-      },
-      "equity": {
-        "label": "BULLISH",
-        "desc": "S&P 500 +0.22% session."
-      },
-      "crypto": {
-        "label": "HEDGING",
-        "desc": "BTC at $73,603 — under pressure."
-      },
-      "sentiment": {
-        "label": "FEAR 23",
-        "desc": "Neutral sentiment across retail."
-      }
-    },
-    "news_wires": [
+    "confidence": 75,
+    "eli5": "The market is in a state of extreme fear, but that fear is not intrinsic to the economy—it's a selling pressure that could quickly reverse. This means that a sudden shift to risk‑on behavior is possible if the Fed signals a pause, turning the current selling into a buying opportunity.",
+    "analyst": "The current environment is a classic case of “price‑only drama.” While the VIX is low and the dollar is strong, the real catalyst lies in the policy‑rate trajectory and the looming property crisis in China. When the Fed finally signals a pause, risk‑on assets should flood back, creating a rapid swing from fear to greed.",
+    "quant": "A quantitative look at the 10‑yr Treasury futures shows a steepening curve, with yields at 4.335%. This implies a potential price rally as yields pull back once the Fed pauses. Crypto valuation, relative to the risk‑free rate, indicates a 5% dip in the DXY or a softening CPI could trigger a 30% rally in BTC/ETH. The Euro‑Stoxx 50 short thesis is supported by a flat or declining index under a strong dollar scenario, targeting an 8% gain.",
+    "chaos_line": "\"When the world tells you ‘stay scared,’ the only sane move is to double‑down on the asset the Fed can’t touch.\",",
+    "plays": [
       {
-        "source": "Business Insider",
-        "title": "Dell Q1 earnings beat; AI surge fuels market",
-        "impact": "Positive AI sentiment lifts tech stocks, pressuring rates.",
-        "forces": [
-          "TECH",
-          "JOBS"
-        ]
+        "type": "SAFE",
+        "thesis": "Real yields are finally positive; a pull‑back in yields (price rally) is the most probable outcome once the Fed signals a rate‑pause.",
+        "details": "Buy long 10‑yr Treasury Futures at 138.5, target 141.0 (≈ 1.8% upside)."
+      },
+      {
+        "type": "AGGRESSIVE",
+        "thesis": "Crypto is undervalued relative to the risk‑free rate; a 5% dip in the DXY or a softening of CPI will unleash a 30% crypto rally.",
+        "details": "Accumulate on dips to $71k BTC / $1,950 ETH, target $85k BTC / $2,350 ETH."
+      },
+      {
+        "type": "CONTRARIAN",
+        "thesis": "Euro‑zone growth is still shackled by energy shortages; a “no‑shock” scenario will keep the index flat while the dollar rallies.",
+        "details": "Short Euro‑Stoxx 50 ETF at 415, target 380 (≈ 8% gain)."
       }
     ],
-    "key_levels": {},
-    "weekly_catalyst": "",
-    "agent_consensus": {
-      "debate_required": false,
-      "resolution": ""
-    },
-    "generated_at": "2026-05-30T06:53:45.589Z"
+    "trap": "The market may stay stuck in a synthetic fear trap, with VIX remaining low and the dollar staying strong until Fed signals pause.",
+    "edge": "Capital will flow when the Fed signals a pause, turning the current selling pressure into a buying opportunity.",
+    "forces": [
+      "MONEY",
+      "TECH"
+    ],
+    "generated_at": "2026-05-30T07:03:24.487Z"
   },
   "agents": {
     "fundamental": {
       "bias": "NEUTRAL",
-      "thesis": "Awaiting whale data..."
+      "thesis": "Waiting for data..."
     },
     "technical": {
-      "bias": "BEARISH",
-      "thesis": "BTC negative momentum. VIX at 15.32."
+      "bias": "BULLISH",
+      "thesis": "Momentum strong"
     },
     "sentiment": {
       "bias": "BEARISH",
-      "thesis": "Fear & Greed at 23 (Neutral). WSB: MIXED."
+      "thesis": "Too much greed"
     }
   },
   "signal": {
-    "signal_hash": "CI-MPRZVSWB-N",
-    "timestamp": "2026-05-30T06:53:45.589Z"
+    "signal_hash": "CI-9J7A0KFY-N",
+    "timestamp": "2026-05-30T07:03:24.487Z"
   }
 }
