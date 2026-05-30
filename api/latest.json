@@ -27,46 +27,27 @@
     "stablecoinPct": "Inflows",
     "wsbSentiment": "MIXED",
     "wsbTopTickers": "No ticker mentions",
-    "recessionProb": "N/A",
+    "recessionProb": "1.8%",
     "goldPrice": "N/A",
     "label": "MORNING SESSION"
   },
   "brief": {
-    "headline": "Crypto Bullish, Equity Tethered",
-    "dateline": "New York",
-    "signal": "BULLISH",
-    "confidence": 74,
-    "eli5": "Bitcoin is just a digital coin that people can buy and sell online. Right now it’s barely moving, staying around $73,000. Most people think the market is calm, but that might be a lie because the big companies are still making a lot of money and people are still putting money into crypto.",
-    "analyst": "The market presents a paradox: low volatility in crypto, modest equity gains, and a stable risk appetite reflected in a VIX of 15.32. The 10Y Treasury is flat, suggesting a pause in monetary tightening, while DXY remains near 99. The consensus over BTC’s upside is muted, yet institutional inflows into stablecoins signal hidden demand. A careful allocation to BTC and select growth equities could capture upside while hedging with Treasury futures.",
-    "quant": "Short-term BTC is trading near a 20‑day SMA of $73,500, with a 30‑day ATR of $1,200. A breakout above $74,300 would confirm a bullish bias. For equities, the 50‑day EMA of the S&P 500 sits at 7,575, suggesting a slight upside bias. A 5‑minute VWAP breakout would be a quick entry point. Watch the 10Y curve for a 10‑basis‑point rise before tightening funds.",
-    "chaos_line": "When the market smiles, the hidden wolves are already on the hunt.",
-    "plays": [
-      {
-        "type": "SAFE",
-        "thesis": "BTC rally with institutional support",
-        "details": "Buy BTC at $74,000, target $78,000, stop at $72,000; catalyst: stablecoin inflows and low VIX."
-      },
-      {
-        "type": "AGGRESSIVE",
-        "thesis": "Equity growth play",
-        "details": "Long SPX at 7,600, target 7,900, stop 7,500; catalyst: high corporate earnings and tech valuation surge."
-      },
-      {
-        "type": "CONTRARIAN",
-        "thesis": "Sell risk‑on sentiment",
-        "details": "Short SPX at 7,580, target 7,300, stop 7,650; consensus is overconfident in equity gains."
-      }
-    ],
-    "trap": "Retail traders are betting on a flat crypto market, ignoring the rising institutional inflows into stablecoins and the subtle bullish bias in equities.",
-    "edge": "The 10Y Treasury curve is almost flat; a tiny rise could trigger a sharp pullback in risk assets.",
+    "headline": "Market Update",
+    "dateline": "NYC",
+    "signal": "NEUTRAL",
+    "confidence": 65,
+    "eli5": "Analysis underway.",
+    "analyst": "Analysis underway.",
+    "quant": "Analysis underway.",
+    "chaos_line": "The market speaks in contradictions.",
+    "plays": [],
+    "trap": "",
+    "edge": "",
     "time_sensitivity": "THIS WEEK",
     "forces": [
-      "TECH",
-      "POLITICS",
-      "DEBT",
-      "JOBS"
+      "MONEY"
     ],
-    "active_regime": "RISK-ON",
+    "active_regime": "TRANSITION",
     "cross_market": {
       "bond": {
         "label": "CAUTION",
@@ -114,18 +95,13 @@
         ]
       }
     ],
-    "key_levels": {
-      "btc_support": "$72,400",
-      "btc_resistance": "$74,300",
-      "spx_support": "7,550",
-      "yield_threshold": "4.45%"
-    },
-    "weekly_catalyst": "US Corporate Earnings Season",
+    "key_levels": {},
+    "weekly_catalyst": "",
     "agent_consensus": {
       "debate_required": false,
       "resolution": ""
     },
-    "generated_at": "2026-05-30T07:47:05.897Z"
+    "generated_at": "2026-05-30T07:47:14.049Z"
   },
   "agents": {
     "fundamental": {
@@ -142,7 +118,7 @@
     }
   },
   "signal": {
-    "signal_hash": "CI-MPS1SEA6-B",
-    "timestamp": "2026-05-30T07:47:05.897Z"
+    "signal_hash": "CI-MPS1SKK5-N",
+    "timestamp": "2026-05-30T07:47:14.049Z"
   }
 }
