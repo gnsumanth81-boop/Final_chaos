@@ -21,7 +21,7 @@
     "marketVolume": "$0",
     "marketLink": "https://polymarket.com",
     "session": "MORNING",
-    "newsText": "",
+    "newsText": "1. Average US long-term mortgage rate climbs to 6.53%, highest level in nine months - ABC News - Breaking News, Latest News and Videos [Abcnews.com]\n2. With Caesars Deal, Tilman Fertitta Doubles Down on Vegas Comeback - WSJ [The Wall Street Journal]\n3. Michael Dell courted Trump early. His company has reaped rewards - CNBC [CNBC]\n4. SpaceX Lowers IPO Valuation Target to at Least $1.8 Trillion - Bloomberg.com [Bloomberg]\n5. 3-year-old California girl hospitalized with acute kidney failure after eating at Costa Mesa spot amid E. coli outbreak, lawsuit claims - Yahoo [New York Post]\n6. Asia markets rise as investors weigh Iran military activity against signs of temporary U.S.-Iran deal - CNBC [CNBC]\n7. Meta’s mass layoffs hit nearly 3,200 Bay Area workers, among region’s worst job losses in years - San Francisco Chronicle [San Francisco Chronicle]\n8. The seller of a $2.9 million San Francisco home is accepting payment in Anthropic or OpenAI stock - Business Insider [Business Insider]\n9. Stock Market Today: Oil Pares Gains as Investors Cling to Hope of Mideast Deal - WSJ [The Wall Street Journal]\n10. IBM, Red Hat Pledge $5 Billion for AI-Driven Open Source Security Initiative - WSJ [The Wall Street Journal]",
     "btcDominance": "N/A",
     "totalMarketCap": "N/A",
     "stablecoinPct": "N/A",
@@ -32,37 +32,36 @@
     "label": "MORNING SESSION"
   },
   "brief": {
-    "headline": "Equities Edge Higher as Yield Curve Flattens",
+    "headline": "Risk-On Fluctuations Mask Retail Misjudgments",
     "dateline": "New York",
     "signal": "BULLISH",
     "confidence": 74,
-    "eli5": "The 10‑year Treasury yield is barely moving lower, which makes stocks look cheap compared to bonds. The VIX is low, meaning traders aren't scared, so risk assets can keep climbing. Bitcoin is flat, so crypto isn’t pulling money away from stocks. Overall, the market is in a mild risk‑on mood, but a surprise rate hike could flip it.\n\nIf the Fed stays patient, the S&P 500 can test the next resistance level. If yields jump, bonds will grab attention and stocks could stall.",
-    "analyst": "The 10‑year Treasury slipped to 4.453% while the VIX sits at 15.3, signalling subdued volatility and ample liquidity. The S&P 500's 0.22% gain nudges it toward the 7,600‑7,620 range, where buying interest historically resurfaces. Bitcoin's near‑flat price and negligible volume suggest crypto is no longer a primary risk‑off haven. The DXY at 98.9 reflects a modestly weaker dollar, supporting commodity‑linked equities. However, the Fed’s next policy meeting remains a wildcard that could re‑price risk.\n\nWe are in a classic risk‑on regime with a thin yield curve, but the margin for error is narrowing as core inflation data looms.",
-    "quant": "Yield delta is -0.002% versus yesterday, indicating the Fed's easing pressure is fading. The VIX's 15.32 reading places us in the lower quartile of volatility, ideal for carry trades into equities. BTC's 0.15% dip on $10.6B volume shows no directional conviction, so capital allocation to equities yields a higher risk‑adjusted return. The SPX's 0.22% rise on thin volume suggests a breakout is fragile; watch the 7,610‑7,620 pivot for stop‑loss placement. Correlation between BTC and SPX is near zero, confirming crypto is decoupled for now.",
-    "chaos_line": "When yields whisper, equities roar—until the Fed shouts.",
+    "eli5": "Markets are in a slightly bullish mood as the S&P 500 nudges up 0.2% while the VIX stays low at 15.3.\n\nBitcoin is barely moving, and mortgage rates have jumped to 6.53%, the highest in nine months, hinting at tighter credit.\n\nBig tech is shedding jobs, which could slow growth, but investors are still chasing risk.",
+    "analyst": "The morning session shows a modest risk‑on tilt, with the S&P 500 gaining 0.22% to 7,580 and the VIX holding at a comfortable 15.3, indicating low fear. Mortgage rates climbing to 6.53% suggest the Fed may keep policy restrictive longer, which could pressure housing and consumer spending. Meanwhile, Meta’s 3,200 layoffs highlight weakening ad demand and raise concerns about near‑term earnings momentum for tech. SpaceX’s valuation cut to $1.8 trillion trims the premium on private tech, shifting capital toward more established names. The 10‑year Treasury yield slipping to 4.453% eases some of the rate‑drag on equities, supporting the current rally.",
+    "quant": "Equity futures are modestly higher, reflecting a risk‑on environment where lower volatility (VIX 15) and a firm S&P 500 allow leveraged long positions. Bitcoin’s sub‑0.2% dip and $10.6 B volume show it is consolidating near $73.6k, offering little directional bias for crypto traders. The 10‑year yield at 4.453% is marginally lower than yesterday, providing a tailwind for equity indices while the DXY at 98.91 stays flat, limiting dollar‑driven headwinds. Implied volatility on SPX options remains low, suggesting traders are comfortable with the current rally but may be under‑positioned for a quick pullback. Given the macro backdrop, a balanced approach—adding exposure to high‑quality tech while keeping a tight stop on broader market bets—offers the best risk‑adjusted return.",
+    "chaos_line": "Amid whispering headlines, the market teeters on a razor‑thin edge where hope and reality clash violently.",
     "plays": [
       {
         "type": "SAFE",
-        "thesis": "Low risk setup",
-        "details": "Long S&P 500 futures above 7,580, target 7,620, stop 7,540; catalyst: continued low VIX and stable yields."
+        "thesis": "Low‑risk long equity",
+        "details": "Buy SPY on dip to 7,500, stop 7,450, target 7,650; 70% confidence as risk‑on regime persists."
       },
       {
         "type": "AGGRESSIVE",
-        "thesis": "High conviction bet",
-        "details": "Long 2‑year Treasury futures short 10‑year at 4.45%/4.55%, play steepening if Fed stalls; target 30bp spread, stop 10bp."
+        "thesis": "High‑conviction AI exposure",
+        "details": "Go long BOTZ (AI ETF) on pullback to 70, target 78, 85% confidence driven by IBM‑Red Hat $5B AI security pledge."
       },
       {
         "type": "CONTRARIAN",
-        "thesis": "Against the crowd",
-        "details": "Short BTC/USD at $73,600, target $71,800, stop $74,500; consensus sees crypto as risk‑on, but flat price and low volume reveal capitulation."
+        "thesis": "Short overhyped tech",
+        "details": "Short META at 320, target 300, 60% confidence as layoffs signal earnings weakness."
       }
     ],
-    "trap": "Retail traders are piling into crypto as a hedge against inflation, but flat BTC and dwindling on‑chain activity indicate they are buying a dead horse. Meanwhile, bond‑funds are over‑leveraged on the 2‑year/10‑year steepener, exposing them to a rapid policy pivot.",
-    "edge": "Most eyes are on the Fed; few watch the 2‑year/10‑year spread, which is primed for a rapid flattening that will swing capital back into equities.",
-    "time_sensitivity": "THIS WEEK",
+    "trap": "Retail investors piling into high‑growth tech stocks are positioned wrong; they ignore the earnings drag from mass layoffs and the tightening credit environment. Meanwhile, many hedge funds remain under‑weighted on defensive sectors, leaving them vulnerable to a sudden risk‑off shock.",
+    "edge": "Watch for a sudden unwind of leveraged crypto futures and the hidden liquidity squeeze in ESG‑focused equity positions, which could trigger a rapid market rotation.",
+    "time_sensitivity": "TODAY",
     "forces": [
-      "DEBT",
-      "POLITICS",
+      "MONEY",
       "TECH",
       "ENERGY"
     ],
@@ -87,27 +86,34 @@
     },
     "news_wires": [
       {
-        "source": "Bloomberg",
-        "title": "Fed Minutes Hint at Patience, Yield Curve Flattens",
-        "impact": "The Fed's latest minutes suggest no immediate rate hikes, reinforcing the current low‑volatility risk‑on environment. This supports equity momentum while keeping bond yields subdued.",
+        "source": "ABC News",
+        "title": "Average US long-term mortgage rate climbs to 6.53%, highest level in nine months",
+        "impact": "Higher mortgage rates increase borrowing costs, dampen housing demand and consumer spending, which could weigh on economic growth and equity valuations.",
         "forces": [
-          "DEBT",
-          "POLITICS"
+          "DEBT"
+        ]
+      },
+      {
+        "source": "San Francisco Chronicle",
+        "title": "Meta’s mass layoffs hit nearly 3,200 Bay Area workers, among region’s worst job losses in years",
+        "impact": "Large-scale layoffs signal weakening ad revenue and potential slowdown in tech sector performance, raising concerns for growth stocks.",
+        "forces": [
+          "TECH"
         ]
       }
     ],
     "key_levels": {
-      "btc_support": "$71,800",
-      "btc_resistance": "$75,200",
-      "spx_support": "7,540",
-      "yield_threshold": "4.45% (10Y)"
+      "btc_support": "72,400",
+      "btc_resistance": "74,200",
+      "spx_support": "7,500",
+      "yield_threshold": "4.50%"
     },
-    "weekly_catalyst": "Federal Reserve policy statement and accompanying press conference",
+    "weekly_catalyst": "US CPI data release this week",
     "agent_consensus": {
       "debate_required": false,
       "resolution": ""
     },
-    "generated_at": "2026-05-30T06:51:30.177Z"
+    "generated_at": "2026-05-30T06:51:54.775Z"
   },
   "agents": {
     "fundamental": {
@@ -124,7 +130,7 @@
     }
   },
   "signal": {
-    "signal_hash": "CI-MPRZSWEY-B",
-    "timestamp": "2026-05-30T06:51:30.177Z"
+    "signal_hash": "CI-MPRZTFEB-B",
+    "timestamp": "2026-05-30T06:51:54.775Z"
   }
 }
