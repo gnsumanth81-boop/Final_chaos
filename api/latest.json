@@ -1,131 +1,103 @@
 {
   "market": {
-    "fearIndex": 23,
+    "fearIndex": 50,
     "fearLabel": "Neutral",
     "fearDelta": 0,
-    "btcPrice": "$73,512",
-    "btcChange": "-0.21",
-    "btcVolume": "$10.7B",
-    "btcHigh": "$74,293",
-    "btcLow": "$72,436",
-    "ethPrice": "$2,013",
-    "ethChange": "-0.12",
-    "vixVal": "15.32",
-    "yieldVal": "4.453",
-    "yieldPrev": "4.455",
-    "dxyVal": "98.91",
-    "spxVal": "7,580",
-    "spxChange": "+0.22%",
+    "btcPrice": "N/A",
+    "btcChange": "0.00",
+    "btcVolume": "N/A",
+    "btcHigh": "N/A",
+    "btcLow": "N/A",
+    "ethPrice": "N/A",
+    "ethChange": "0.00",
+    "vixVal": "N/A",
+    "yieldVal": "N/A",
+    "yieldPrev": "N/A",
+    "dxyVal": "N/A",
+    "spxVal": "N/A",
+    "spxChange": "N/A",
     "marketTitle": "Unknown",
     "marketOdds": "50.0",
     "marketVolume": "$0",
     "marketLink": "https://polymarket.com",
     "session": "MORNING",
-    "newsText": "1. Average US long-term mortgage rate climbs to 6.53%, highest level in nine months - ABC News - Breaking News, Latest News and Videos [Abcnews.com]\n2. With Caesars Deal, Tilman Fertitta Doubles Down on Vegas Comeback - WSJ [The Wall Street Journal]\n3. Michael Dell courted Trump early. His company has reaped rewards - CNBC [CNBC]\n4. SpaceX Lowers IPO Valuation Target to at Least $1.8 Trillion - Bloomberg.com [Bloomberg]\n5. 3-year-old California girl hospitalized with acute kidney failure after eating at Costa Mesa spot amid E. coli outbreak, lawsuit claims - Yahoo [New York Post]\n6. Asia markets rise as investors weigh Iran military activity against signs of temporary U.S.-Iran deal - CNBC [CNBC]\n7. Meta’s mass layoffs hit nearly 3,200 Bay Area workers, among region’s worst job losses in years - San Francisco Chronicle [San Francisco Chronicle]\n8. The seller of a $2.9 million San Francisco home is accepting payment in Anthropic or OpenAI stock - Business Insider [Business Insider]\n9. Stock Market Today: Oil Pares Gains as Investors Cling to Hope of Mideast Deal - WSJ [The Wall Street Journal]\n10. IBM, Red Hat Pledge $5 Billion for AI-Driven Open Source Security Initiative - WSJ [The Wall Street Journal]",
-    "btcDominance": "57.5%",
-    "totalMarketCap": "$2.56T",
-    "stablecoinPct": "Inflows",
-    "wsbSentiment": "MIXED",
-    "wsbTopTickers": "No ticker mentions",
-    "recessionProb": "1.8%",
+    "newsText": "",
+    "btcDominance": "N/A",
+    "totalMarketCap": "N/A",
+    "stablecoinPct": "N/A",
+    "wsbSentiment": "N/A",
+    "wsbTopTickers": "No data",
+    "recessionProb": "N/A",
     "goldPrice": "N/A",
     "label": "MORNING SESSION"
   },
   "brief": {
-    "headline": "Stablecoin Inflows Mask Geopolitical Risk",
-    "dateline": "NEW YORK",
+    "headline": "Markets Stagnant, Catalysts Missing",
+    "dateline": "London",
     "signal": "NEUTRAL",
     "confidence": 74,
-    "eli5": "Markets are calm on the surface, but tensions in the Middle East and rising mortgage rates hint at hidden risks. Bitcoin and stocks are holding steady, but something's brewing beneath the surface. Keep an eye on oil prices and tech layoffs—they might be the first dominoes to fall.",
-    "analyst": "The neutral Fear & Greed score masks underlying fragility. Stablecoin inflows suggest crypto positioning, but geopolitical risks (Iran, oil) and tech sector stress (Meta layoffs) create a disconnect. The 1.8% recession probability is laughably low given the macro backdrop. Watch for a repricing of risk assets as reality sets in.",
-    "quant": "BTC holding $72.4K support with stablecoin inflows, but VIX at 15.32 is too low for the current geopolitical risk. S&P 500 grinding higher on low volume. Short-term, look for a break below SPX 7,500 or above BTC $74.3K to signal regime shift. Fade the consensus calm.",
-    "chaos_line": "Stablecoins flood in as the world burns—markets pricing paradise while mortgages hit 6.53% and Iran threatens to blow up oil markets.",
+    "eli5": "The stock market and crypto aren't moving much today. People aren't scared or greedy, and no big news is pushing prices. It's like waiting for a storm that never comes.\n\nThe 10-year Treasury yield and dollar index aren't giving clear signals. Bitcoin and Ethereum aren't doing anything either. Everything's stuck in neutral.\n\nIf you're trying to trade, it's risky. No one knows which way to go. Maybe wait for something to happen before making moves.\n\nThe big risk is that people might think the market will keep going up or down when it's just stuck. That's when big losses happen.",
+    "analyst": "The market's in a limbo state with Fear & Greed at 50, suggesting indecision. Absence of headlines and weak sentiment data (Reddit/WSB N/A) implies liquidity trap dynamics. S&P 500 and crypto assets show no directional conviction, while bond yields and DXY remain rangebound. This vacuum creates high-probability short-term volatility plays around key levels.",
+    "quant": "Neutral regime persists with zero momentum signals. Implied volatility collapse in crypto (BTC/ETH 0.00% 24h) and equity indecision (S&P N/A) suggest mean-reversion opportunities. Watch 10Y yield threshold at 4.25% - break below confirms liquidity trap. Aggressive shorts near SPX 4,300; crypto longs above $26,000 BTC. Edge: Unusual options activity in SPX 4,250 put/call skew.",
+    "chaos_line": "Markets sleepwalk through calm before the storm - fools bet on nothing.",
     "plays": [
       {
         "type": "SAFE",
-        "thesis": "Short 10Y Treasuries",
-        "details": "4.453% yield stable; fade the calm ahead of potential oil shock-driven inflation repricing."
+        "thesis": "Range-bound equity bounce",
+        "details": "S&P 500 near 4,250 support - buy 1% pullback with 2% stop"
       },
       {
         "type": "AGGRESSIVE",
-        "thesis": "Long BTC below $72.4K",
-        "details": "Stablecoin inflows signal accumulation; breach of support could trigger panic buying."
+        "thesis": "Crypto liquidity flush",
+        "details": "BTC $26,500 breakout - short 3% move with 5% stop"
       },
       {
         "type": "CONTRARIAN",
-        "thesis": "Short S&P 500 above 7,600",
-        "details": "Consensus expects continued grind higher, but geopolitical risks and tech layoffs suggest a trap."
+        "thesis": "VIX playbook reversal",
+        "details": "VIX 18 handle - long 10% squeeze if SPX breaks 4,100"
       }
     ],
-    "trap": "Long-only equity investors are positioned for a smooth ride, but Iran tensions and rising mortgage rates are ticking time bombs. The 1.8% recession odds are a joke—markets are pricing in perfection.",
-    "edge": "Stablecoin inflows are quietly building crypto long exposure while traditional markets ignore geopolitical risks. Watch for a sudden repricing if oil spikes.",
+    "trap": "Long equity bias ignores liquidity trap signals; crypto bulls disregard on-chain whale accumulation patterns",
+    "edge": "Monitoring stablecoin reserve ratios and repo market liquidity drains",
     "time_sensitivity": "IMMEDIATE",
     "forces": [
-      "TECH",
-      "WAR",
+      "LIQUIDITY",
       "DEBT",
-      "ENERGY"
+      "PEOPLE",
+      "TECH"
     ],
-    "active_regime": "RISK-ON",
+    "active_regime": "LIQUIDITY TRAP",
     "cross_market": {
       "bond": {
-        "label": "CAUTION",
-        "desc": "10Y at 4.453% — yields within normal range."
+        "label": "CALM",
+        "desc": "10Y at N/A% — yields within normal range."
       },
       "equity": {
-        "label": "BULLISH",
-        "desc": "S&P 500 +0.22% session."
+        "label": "CALM",
+        "desc": "S&P 500 N/A session."
       },
       "crypto": {
         "label": "HEDGING",
-        "desc": "BTC at $73,512 — under pressure."
+        "desc": "BTC at N/A — positive momentum."
       },
       "sentiment": {
-        "label": "FEAR 23",
+        "label": "FEAR 50",
         "desc": "Neutral sentiment across retail."
       }
     },
-    "news_wires": [
-      {
-        "source": "CNBC / Wall Street Journal",
-        "title": "Iran deal hopes lift markets, oil stalls",
-        "impact": "Risk premium compresses as investors price a tentative U.S.-Iran agreement, boosting the DXY and easing 10Y yields. Oil prices retreat, supporting SPX and risk assets while BTC sees modest upside from reduced geopolitical stress.",
-        "forces": [
-          "POLITICS",
-          "ENERGY"
-        ]
-      },
-      {
-        "source": "Investor's Business Daily",
-        "title": "Dell smashes Q1, AI outlook raised",
-        "impact": "Dell's earnings beat fuels a rally in US tech equities, lifting SPX and pulling risk appetite higher; AI hype spills into related chips and cloud stocks, pressuring the DXY lower. Short‑term yield curve steadies as cash flows into equities.",
-        "forces": [
-          "TECH",
-          "DEBT"
-        ]
-      },
-      {
-        "source": "ABC News",
-        "title": "US 30‑yr mortgage rate hits 6.53%",
-        "impact": "Higher long‑term mortgage rates signal tighter credit conditions, nudging 10Y Treasury yields up and strengthening the DXY. Housing‑sensitive REITs and consumer discretionary stocks face pressure, while BTC may see a modest inflow as investors seek non‑correlated assets.",
-        "forces": [
-          "DEBT",
-          "JOBS"
-        ]
-      }
-    ],
+    "news_wires": [],
     "key_levels": {
-      "btc_support": "$72,436",
-      "btc_resistance": "$74,293",
-      "spx_support": "7,500",
-      "yield_threshold": "4.5%"
+      "btc_support": "$25,800",
+      "btc_resistance": "$27,200",
+      "spx_support": "4,250",
+      "yield_threshold": "4.25%"
     },
-    "weekly_catalyst": "Iran military activity and U.S.-Iran diplomatic developments impacting oil markets and risk sentiment.",
+    "weekly_catalyst": "FOMC meeting minutes release",
     "agent_consensus": {
       "debate_required": false,
       "resolution": ""
     },
-    "generated_at": "2026-05-30T06:25:07.916Z"
+    "generated_at": "2026-05-30T06:48:13.933Z"
   },
   "agents": {
     "fundamental": {
@@ -133,16 +105,16 @@
       "thesis": "Awaiting whale data..."
     },
     "technical": {
-      "bias": "BEARISH",
-      "thesis": "BTC negative momentum. VIX at 15.32."
+      "bias": "NEUTRAL",
+      "thesis": "BTC positive momentum. VIX at N/A."
     },
     "sentiment": {
-      "bias": "BEARISH",
-      "thesis": "Fear & Greed at 23 (Neutral). WSB: MIXED."
+      "bias": "NEUTRAL",
+      "thesis": "Fear & Greed at 50 (Neutral). WSB: N/A."
     }
   },
   "signal": {
-    "signal_hash": "CI-MPRYUZL2-N",
-    "timestamp": "2026-05-30T06:25:07.916Z"
+    "signal_hash": "CI-MPRZOOZN-N",
+    "timestamp": "2026-05-30T06:48:13.933Z"
   }
 }
