@@ -25,48 +25,49 @@
     "btcDominance": "57.5%",
     "totalMarketCap": "$2.56T",
     "stablecoinPct": "Inflows",
-    "wsbSentiment": "N/A",
-    "wsbTopTickers": "No data",
+    "wsbSentiment": "MIXED",
+    "wsbTopTickers": "No ticker mentions",
     "recessionProb": "N/A",
     "goldPrice": "N/A",
     "label": "MORNING SESSION"
   },
   "brief": {
-    "headline": "Retail Blind Spot in Crypto Rally",
-    "dateline": "San Francisco",
-    "signal": "Bullish tilt with a significant edge on mispricing.",
-    "confidence": 65,
-    "eli5": "Retail traders are missing the crypto surge while big players bet big. The market thinks Bitcoin is safe, but the real risk lies elsewhere.",
-    "analyst": "Retail sentiment is skewed—what they see is a false calm, hiding a deeper volatility.",
-    "quant": "5-6 sentences",
-    "chaos_line": "A world where most investors are sleeping while the markets shift overnight.",
+    "headline": "Mortgage Rates Spike, Meta Mass Layoffs Signal Recession Fears",
+    "dateline": "NEW YORK",
+    "signal": "BEARISH",
+    "confidence": 74,
+    "eli5": "Mortgage rates just hit their highest level in nine months, making it even harder for people to buy homes. Big tech companies like Meta are laying off thousands of workers, which shows the economy might be slowing down. Meanwhile, tensions with Iran are adding to worries about oil prices and global stability.",
+    "analyst": "The confluence of rising mortgage rates (6.53%), Meta's massive layoffs (nearly 3,200 Bay Area workers), and Iran tensions suggests we're seeing early recession signals. The 10Y yield at 4.453% with stablecoin inflows indicates the Fed is maintaining restrictive stance. BTC dominance at 57.5% shows crypto rotation but not panic yet. The VIX at 15.32 suggests complacency despite macro stresses.",
+    "quant": "Bitcoin's minor decline (-0.21%) while S&P rises (+0.22%) shows risk appetite remains despite mortgage spike. Key levels: BTC support at $72,436 (daily low), resistance at $74,293. SPX needs to hold 7,580 level. Watch 10Y yield break above 4.5% as potential risk-off signal. Stablecoin inflows suggest some liquidity seeking protection.",
+    "chaos_line": "Mortgage rates spike while Meta bleeds workers—recession whispers grow louder.",
     "plays": [
       {
         "type": "SAFE",
-        "thesis": "Bet on the direction, not the noise",
-        "details": "Leverage macro trends to control risk."
+        "thesis": "Defensive positioning ahead of economic slowdown",
+        "details": "Long 10Y TIPS or 20Y bonds, rates still elevated at 4.453%, Fed pivot likely Q2"
       },
       {
         "type": "AGGRESSIVE",
-        "thesis": "Go big when the crowd is wrong",
-        "details": "Exploit mispriced assets with confidence."
+        "thesis": "Short tech growth as layoffs accelerate",
+        "details": "Short Nasdaq or long volatility (VIX calls), Meta layoffs signal broader tech rotation"
       },
       {
         "type": "CONTRARIAN",
-        "thesis": "Go against the consensus",
-        "details": "See what others miss in this rally."
+        "thesis": "Energy plays despite Iran de-escalation hopes",
+        "details": "Long crude or energy stocks, housing shortage + geopolitical tensions create commodity squeeze potential"
       }
     ],
-    "trap": "The biggest danger isn't the market—it's the people assuming stability.",
-    "edge": "They're only looking at the surface, not the storm beneath.",
-    "time_sensitivity": "Today's moves could reshape the entire sector.",
+    "trap": "Long growth equities positioned for expansion while employment deterioration accelerates. Market pricing in soft landing despite mortgage spike and tech layoffs.",
+    "edge": "Stablecoin inflows amid flat sentiment (Fear & Greed 23) suggest smart money rotating to cash positions while retail remains complacent.",
+    "time_sensitivity": "IMMEDIATE",
     "forces": [
-      "MONEY_MARKET",
-      "TECH_INDUSTRY",
-      "GEOPOLITICAL_RISK",
-      "INFLATION_DRAGON"
+      "MONEY",
+      "TECH",
+      "POLITICS",
+      "DEBT",
+      "PEOPLE"
     ],
-    "active_regime": "Risk-On with hidden liquidity traps",
+    "active_regime": "RISK-OFF",
     "cross_market": {
       "bond": {
         "label": "CAUTION",
@@ -115,17 +116,17 @@
       }
     ],
     "key_levels": {
-      "btc_support": "Key support at $72k",
-      "btc_resistance": "Target near $73k",
-      "spx_support": "SPX holding above 7,600",
-      "yield_threshold": "10Y yield approaching 4.5%"
+      "btc_support": "$72,436",
+      "btc_resistance": "$74,293",
+      "spx_support": "7,580",
+      "yield_threshold": "4.5%"
     },
-    "weekly_catalyst": "",
+    "weekly_catalyst": "Fed policy meeting and PCE inflation data could confirm recession trajectory",
     "agent_consensus": {
       "debate_required": false,
       "resolution": ""
     },
-    "generated_at": "2026-05-30T06:24:01.026Z"
+    "generated_at": "2026-05-30T06:24:22.089Z"
   },
   "agents": {
     "fundamental": {
@@ -138,11 +139,11 @@
     },
     "sentiment": {
       "bias": "BEARISH",
-      "thesis": "Fear & Greed at 23 (Neutral). WSB: N/A."
+      "thesis": "Fear & Greed at 23 (Neutral). WSB: MIXED."
     }
   },
   "signal": {
-    "signal_hash": "CI-MPRYTJYT-B",
-    "timestamp": "2026-05-30T06:24:01.026Z"
+    "signal_hash": "CI-MPRYU06F-B",
+    "timestamp": "2026-05-30T06:24:22.089Z"
   }
 }
