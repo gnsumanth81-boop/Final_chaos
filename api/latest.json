@@ -1,96 +1,19 @@
 {
   "market": {
-    "fearIndex": 23,
-    "fearLabel": "Neutral",
-    "fearDelta": 0,
-    "btcPrice": "$73,603",
-    "btcChange": "-0.15",
-    "btcVolume": "$10.6B",
-    "btcHigh": "$74,293",
-    "btcLow": "$72,436",
-    "ethPrice": "N/A",
-    "ethChange": "0.00",
-    "vixVal": "N/A",
-    "yieldVal": "N/A",
-    "yieldPrev": "N/A",
-    "dxyVal": "N/A",
-    "spxVal": "N/A",
-    "spxChange": "N/A",
-    "marketTitle": "Unknown",
-    "marketOdds": "50.0",
-    "marketVolume": "$0",
-    "marketLink": "https://polymarket.com",
-    "session": "MORNING",
-    "newsText": "",
-    "btcDominance": "N/A",
-    "totalMarketCap": "N/A",
-    "stablecoinPct": "N/A",
-    "wsbSentiment": "N/A",
-    "wsbTopTickers": "No data",
-    "recessionProb": "N/A",
     "goldPrice": "N/A",
-    "label": "MORNING SESSION"
+    "label": "undefined SESSION"
   },
   "brief": {
-    "headline": "Markets In Motion",
-    "dateline": "NYC",
-    "signal": "NEUTRAL",
-    "confidence": 65,
-    "eli5": "Global markets are processing mixed signals as central banks hold their ground.",
-    "analyst": "The macro environment remains in a transitional phase. Monitor yield curve dynamics and dollar strength for directional cues.",
-    "quant": "Vol-adjusted signals lean neutral. Watch for breakout above resistance with volume confirmation.",
-    "chaos_line": "The silence before the storm is just the market holding its breath.",
-    "plays": [
-      {
-        "type": "SAFE",
-        "thesis": "Hold cash or short-term bonds",
-        "details": "Preserve capital until direction clarifies"
-      },
-      {
-        "type": "AGGRESSIVE",
-        "thesis": "BTC long on dip to $70k",
-        "details": "Strong accumulation zone, institutional support"
-      },
-      {
-        "type": "CONTRARIAN",
-        "thesis": "Fade the equity rally",
-        "details": "VIX suppression masking real risk"
-      }
-    ],
-    "trap": "Retail is chasing the S&P rally. Smart money is quietly hedging.",
-    "edge": "Credit spreads diverging from equity complacency.",
-    "time_sensitivity": "THIS WEEK",
-    "forces": [
-      "MONEY",
-      "DEBT"
-    ],
-    "active_regime": "TRANSITION",
-    "cross_market": {
-      "bond": {
-        "label": "CALM",
-        "desc": "10Y at N/A% — yields within normal range."
-      },
-      "equity": {
-        "label": "CALM",
-        "desc": "S&P 500 N/A session."
-      },
-      "crypto": {
-        "label": "HEDGING",
-        "desc": "BTC at $73,603 — under pressure."
-      },
-      "sentiment": {
-        "label": "FEAR 23",
-        "desc": "Neutral sentiment across retail."
-      }
-    },
+    "plays": [],
+    "forces": [],
+    "cross_market": {},
     "news_wires": [],
     "key_levels": {},
-    "weekly_catalyst": "Fed speakers Friday",
+    "weekly_catalyst": "",
     "agent_consensus": {
       "debate_required": false,
       "resolution": ""
-    },
-    "generated_at": "2026-05-30T06:48:59.472Z"
+    }
   },
   "agents": {
     "fundamental": {
@@ -98,16 +21,15 @@
       "thesis": "Awaiting whale data..."
     },
     "technical": {
-      "bias": "BEARISH",
-      "thesis": "BTC negative momentum. VIX at N/A."
+      "bias": "NEUTRAL",
+      "thesis": "BTC positive momentum. VIX at N/A."
     },
     "sentiment": {
-      "bias": "BEARISH",
-      "thesis": "Fear & Greed at 23 (Neutral). WSB: N/A."
+      "bias": "NEUTRAL",
+      "thesis": "Fear & Greed at undefined (Neutral). WSB: N/A."
     }
   },
   "signal": {
-    "signal_hash": "CI-MPRZPO4I-N",
-    "timestamp": "2026-05-30T06:48:59.472Z"
+    "signal_hash": "CI-MPRZQHGB-N"
   }
 }
