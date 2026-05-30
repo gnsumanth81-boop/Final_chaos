@@ -2,6 +2,12 @@
   {
     "date": "2026-05-30",
     "signal": "BEARISH",
+    "headline": "Fear‑Premium Market Holds",
+    "resolution_status": "OPEN"
+  },
+  {
+    "date": "2026-05-30",
+    "signal": "BEARISH",
     "headline": "Extreme Fear Forces a Mixed Playbook",
     "resolution_status": "OPEN"
   },
