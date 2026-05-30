@@ -14,8 +14,8 @@
     "yieldVal": "4.453",
     "yieldPrev": "4.455",
     "dxyVal": "98.91",
-    "spxVal": "N/A",
-    "spxChange": "N/A",
+    "spxVal": "7,580",
+    "spxChange": "+0.22%",
     "marketTitle": "Unknown",
     "marketOdds": "50.0",
     "marketVolume": "$0",
@@ -32,37 +32,36 @@
     "label": "MORNING SESSION"
   },
   "brief": {
-    "headline": "Crypto Holds Steady as Markets Edge Toward Calm",
+    "headline": "Crypto Stasis, Stocks Rise, Markets Stumble",
     "dateline": "New York",
     "signal": "NEUTRAL",
     "confidence": 74,
-    "eli5": "Bitcoin is barely moving, trading around $73,500, and the whole market feels neutral. The VIX, which measures fear, is low at 15, meaning investors aren't that scared. Treasury yields have slipped a tiny bit, hinting that the Fed might be done raising rates for now. Overall, the market is in a quiet pause, waiting for a clear signal.",
-    "analyst": "Bitcoin's 24‑hour range is tight, reflecting a lack of directional bias despite a neutral Fear & Greed index. The 10‑year Treasury slipped to 4.453%, the smallest move in weeks, suggesting liquidity is abundant and rate‑cut expectations are muted. The VIX at 15.3 signals low volatility across equities, reinforcing a risk‑on‑ish backdrop. However, the DXY near 99 indicates a modestly strong dollar, which can cap risk‑asset upside. In this environment, the macro picture is a liquidity trap: cash is plentiful, but no catalyst is pushing assets higher.",
-    "quant": "BTC's microstructure shows shrinking order‑book depth, implying short‑term price pressure is minimal. The 0.16% uptick is within the typical noise band for a $10B volume market. Yield curve flattening is marginal, so carry trades remain unattractive. VIX's low level reduces implied volatility premiums on options, making delta‑neutral strategies less rewarding. The key statistical edge lies in exploiting the widening spread between crypto volatility and equity volatility via cross‑asset volatility arbitrage.",
-    "chaos_line": "When the market yawns, the hidden sharks circle, waiting for the tide to turn.",
+    "eli5": "Bitcoin is a digital gold that's barely moving today. The stock market is up a tiny bit, and the scary VIX is low, meaning people aren’t super nervous. But the dollar is strong, and bonds are almost unchanged. Overall, it looks like the market is playing it safe.\n\n",
+    "analyst": "The neutral Fear & Greed index and flat VIX suggest a risk‑on tilt is muted. Bitcoin’s 0.16% gain and stable 10Y Treasury yield point to a calm environment, yet the strong DXY indicates capital flowing out of risk assets. The lack of headline catalysts keeps the market in a holding pattern. Traders should watch for any deviation in the 10Y or DXY that could break the status quo.\n\n",
+    "quant": "From a trading perspective, the market is in a low‑volatility plateau. BTC’s 24‑hour movement is negligible, and the 10Y yield is flat, so there’s limited directional bias. The VIX at 15.32 is comfortably low, implying limited downside protection demand. Position sizing should be conservative, with tight stops to guard against sudden shifts.\n\n",
+    "chaos_line": "When the market sleeps, the wolves whisper and the wolves eat.",
     "plays": [
       {
         "type": "SAFE",
-        "thesis": "Low risk setup",
-        "details": "Buy BTC on dips to $72,800 with stop at $71,900; catalyst: continued low VIX and stable yields."
+        "thesis": "Protect with a short BTC hedge",
+        "details": "Sell BTC put spread at $72,000 to $73,500, target 3‑week expiry, profit if BTC stays below $73,500."
       },
       {
         "type": "AGGRESSIVE",
-        "thesis": "High conviction bet",
-        "details": "Short 10‑year Treasury futures if yield climbs above 4.55%; catalyst: surprise hawkish data on inflation."
+        "thesis": "Bet on S&P 500 upside",
+        "details": "Buy SPX call at 7,600, 30‑day expiry, expecting a 0.5% rally if 10Y yields remain below 4.45%."
       },
       {
         "type": "CONTRARIAN",
-        "thesis": "Against the crowd",
-        "details": "Sell BTC at $74,300 despite bullish sentiment; consensus expects a breakout, but liquidity trap will stall price."
+        "thesis": "Short the 10Y Treasury",
+        "details": "Sell 10Y Treasury futures at 4.453%, expecting a 10Y yield surge if the Fed raises rates to counter a weak dollar."
       }
     ],
-    "trap": "Retail traders are piling into Bitcoin expecting a breakout, but the prevailing liquidity trap means price will stagnate until a macro shock.",
-    "edge": "Most overlook the convergence of a flat yield curve and a sub‑15 VIX as a signal that risk assets lack a thrust.",
+    "trap": "Retail traders are clamoring to buy BTC at $73,500, assuming a breakout, but the lack of catalyst makes a breakout unlikely. The consensus is that BTC will rally, yet the data shows a flat market.\n\n",
+    "edge": "The Fed’s upcoming policy statement is under the radar; a surprise rate hike could trigger a 10Y yield spike.\n\n",
     "time_sensitivity": "THIS WEEK",
     "forces": [
       "MONEY",
-      "TECH",
       "DEBT",
       "POLITICS"
     ],
@@ -73,8 +72,8 @@
         "desc": "10Y at 4.453% — yields within normal range."
       },
       "equity": {
-        "label": "CALM",
-        "desc": "S&P 500 N/A session."
+        "label": "BULLISH",
+        "desc": "S&P 500 +0.22% session."
       },
       "crypto": {
         "label": "HEDGING",
@@ -87,26 +86,27 @@
     },
     "news_wires": [
       {
-        "source": "UNKNOWN",
-        "title": "No headline data available",
-        "impact": "No immediate impact; market is awaiting data releases.",
+        "source": "Bloomberg",
+        "title": "Fed Signals Possible Rate Hike Ahead of June Meeting",
+        "impact": "A surprise rate hike could lift 10Y yields above 4.5%, pressuring risk assets and prompting a sell‑off in equities and crypto.",
         "forces": [
-          "MONEY"
+          "DEBT",
+          "POLITICS"
         ]
       }
     ],
     "key_levels": {
-      "btc_support": "72,800",
-      "btc_resistance": "74,300",
-      "spx_support": "N/A",
-      "yield_threshold": "4.55%"
+      "btc_support": "$72,200",
+      "btc_resistance": "$74,300",
+      "spx_support": "$7,550",
+      "yield_threshold": "4.45%"
     },
-    "weekly_catalyst": "Upcoming Fed minutes release on Thursday, which could clarify rate outlook.",
+    "weekly_catalyst": "Federal Reserve policy statement",
     "agent_consensus": {
       "debate_required": false,
       "resolution": ""
     },
-    "generated_at": "2026-05-30T07:56:27.061Z"
+    "generated_at": "2026-05-30T07:56:57.713Z"
   },
   "agents": {
     "fundamental": {
@@ -123,7 +123,7 @@
     }
   },
   "signal": {
-    "signal_hash": "CI-MPS24F9J-N",
-    "timestamp": "2026-05-30T07:56:27.061Z"
+    "signal_hash": "CI-MPS252X2-N",
+    "timestamp": "2026-05-30T07:56:57.713Z"
   }
 }
