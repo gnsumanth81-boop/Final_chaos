@@ -22,9 +22,9 @@
     "marketLink": "https://polymarket.com",
     "session": "MORNING",
     "newsText": "1. Average US long-term mortgage rate climbs to 6.53%, highest level in nine months - ABC News - Breaking News, Latest News and Videos [Abcnews.com]\n2. With Caesars Deal, Tilman Fertitta Doubles Down on Vegas Comeback - WSJ [The Wall Street Journal]\n3. Michael Dell courted Trump early. His company has reaped rewards - CNBC [CNBC]\n4. SpaceX Lowers IPO Valuation Target to at Least $1.8 Trillion - Bloomberg.com [Bloomberg]\n5. 3-year-old California girl hospitalized with acute kidney failure after eating at Costa Mesa spot amid E. coli outbreak, lawsuit claims - Yahoo [New York Post]\n6. Asia markets rise as investors weigh Iran military activity against signs of temporary U.S.-Iran deal - CNBC [CNBC]\n7. Meta’s mass layoffs hit nearly 3,200 Bay Area workers, among region’s worst job losses in years - San Francisco Chronicle [San Francisco Chronicle]\n8. The seller of a $2.9 million San Francisco home is accepting payment in Anthropic or OpenAI stock - Business Insider [Business Insider]\n9. Stock Market Today: Oil Pares Gains as Investors Cling to Hope of Mideast Deal - WSJ [The Wall Street Journal]\n10. IBM, Red Hat Pledge $5 Billion for AI-Driven Open Source Security Initiative - WSJ [The Wall Street Journal]",
-    "btcDominance": "N/A",
-    "totalMarketCap": "N/A",
-    "stablecoinPct": "N/A",
+    "btcDominance": "57.5%",
+    "totalMarketCap": "$2.56T",
+    "stablecoinPct": "Inflows",
     "wsbSentiment": "N/A",
     "wsbTopTickers": "No data",
     "recessionProb": "N/A",
@@ -32,46 +32,41 @@
     "label": "MORNING SESSION"
   },
   "brief": {
-    "headline": "Retail Misreads Risk On",
+    "headline": "AI Hubris Meets Mortgage Reality",
     "dateline": "New York",
-    "signal": "Bullish tilt on directional plays",
-    "confidence": 65,
-    "eli5": "Consensus is playing games; the market’s overreacting to noise while the real signals stay hidden. Don’t trust the surface.",
-    "analyst": "Retail optimism is a trap. Forget sentiment, focus on the quiet forces shaping the tide.",
-    "quant": "5-6 sentences",
-    "chaos_line": "Who’s really feeling the heat in this room?",
+    "signal": "VOLATILE",
+    "confidence": 82,
+    "eli5": "The stock market is ignoring rising mortgage rates because they are obsessed with AI. Big companies are firing thousands of people while others are paying for houses with AI stock. It is a weird mix of high-tech wealth and real-world struggle.\n\nBasically, the 'AI bubble' is acting as a shield against bad economic news.",
+    "analyst": "Market divergence is reaching critical levels. S&P 500 is drifting higher despite mortgage rates hitting 9-month highs and mass tech layoffs. The acceptance of private AI equity for real estate transactions indicates a dangerous concentration of wealth in unlisted assets.\n\nLiquidity is rotating into concentrated AI winners while the broader labor market shows fractures. We are seeing a 'K-shaped' recovery on steroids where the AI narrative suppresses the signal of rising cost of capital.",
+    "quant": "BTC dominance at 57.5% shows a clear flight to quality within crypto; altcoins are bleeding. SPX is hovering at 7,580 with low VIX (15.32), suggesting extreme complacency. 10Y Treasury at 4.453% is the primary anchor; any spike above 4.6% triggers a systemic deleveraging.\n\nStablecoin inflows suggest dry powder is waiting for a dip, but the lack of volatility is a coiled spring. The delta between mortgage rates and equity prices is a widening gap that cannot persist indefinitely.",
+    "chaos_line": "The world burns in a mortgage fire while the elite trade imaginary AI coins for concrete castles.",
     "plays": [
       {
         "type": "SAFE",
-        "thesis": "Lock in the safe move with a clear catalyst",
-        "details": "Target low volatility and stable assets"
+        "thesis": "BTC Dominance Play",
+        "details": "Long BTC / Short ETH at $2,015; BTC dominance trend is absolute until alt-season trigger."
       },
       {
         "type": "AGGRESSIVE",
-        "thesis": "Go big on direction when the data points clearly",
-        "details": "Exploit mispriced assets if sentiment collapses"
+        "thesis": "Rate Sensitivity Short",
+        "details": "Short Real Estate ETFs (e.g., VNQ) as 10Y yields sustain above 4.4% and mortgage rates climb."
       },
       {
         "type": "CONTRARIAN",
-        "thesis": "Bet against the crowd on the most ignored forces",
-        "details": "Identify the weak signals others miss"
+        "thesis": "The AI Fatigue",
+        "details": "Short Big Tech on the next 1% SPX pop; the Meta layoffs signal the 'efficiency' phase is peaking."
       }
     ],
-    "trap": "The loudest voices are usually the ones most afraid to speak.",
-    "edge": "People are missing the signal in the noise—watch what’s not being spoken.",
-    "time_sensitivity": "Today's decision matters more than any forecast.",
+    "trap": "Retail traders longing altcoins expecting a 'rotation' that isn't coming. They are ignoring the 57.5% BTC dominance and the lack of liquidity outside the top 1%.",
+    "edge": "The decoupling of the housing market (mortgage rates) from the equity market. The crash starts when the mortgage pain hits the consumer's wallet.",
+    "time_sensitivity": "TODAY",
     "forces": [
       "MONEY",
       "TECH",
-      "ENERGY",
-      "POLITICS",
-      "PEOPLE",
       "DEBT",
-      "JOBS",
-      "FOOD",
-      "CULTURE"
+      "JOBS"
     ],
-    "active_regime": "Risk-On with liquidity tightening",
+    "active_regime": "LIQUIDITY TRAP",
     "cross_market": {
       "bond": {
         "label": "CAUTION",
@@ -119,13 +114,18 @@
         ]
       }
     ],
-    "key_levels": "BTC near support, SPX near resistance",
-    "weekly_catalyst": "Yesterday's event sets today's momentum",
+    "key_levels": {
+      "btc_support": "72,400",
+      "btc_resistance": "74,300",
+      "spx_support": "7,450",
+      "yield_threshold": "4.60%"
+    },
+    "weekly_catalyst": "US Treasury yield volatility and potential Mideast deal confirmation.",
     "agent_consensus": {
       "debate_required": false,
       "resolution": ""
     },
-    "generated_at": "2026-05-30T05:51:10.210Z"
+    "generated_at": "2026-05-30T05:51:44.900Z"
   },
   "agents": {
     "fundamental": {
@@ -142,7 +142,7 @@
     }
   },
   "signal": {
-    "signal_hash": "CI-MPRXNB8O-B",
-    "timestamp": "2026-05-30T05:51:10.210Z"
+    "signal_hash": "CI-MPRXO222-V",
+    "timestamp": "2026-05-30T05:51:44.900Z"
   }
 }
