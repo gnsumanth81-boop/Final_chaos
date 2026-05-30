@@ -10,7 +10,7 @@
     "btcLow": "$72,436",
     "ethPrice": "$2,015",
     "ethChange": "0.29",
-    "vixVal": "N/A",
+    "vixVal": "15.32",
     "yieldVal": "N/A",
     "yieldPrev": "N/A",
     "dxyVal": "N/A",
@@ -32,39 +32,39 @@
     "label": "MORNING SESSION"
   },
   "brief": {
-    "headline": "BTC STAGNATION IN THE DEAD ZONE",
-    "dateline": "NEW YORK",
-    "signal": "VOLATILE",
-    "confidence": 62,
-    "eli5": "Bitcoin is stuck at a high price but nobody is moving. It is like a car idling at a red light while everyone waits for a signal.\n\nWithout new buyers or a crash, the market is just bored. This usually means a big move is coming soon.",
-    "analyst": "Price action is currently characterized by extreme compression at the $73.5k level. The lack of volatility despite being near all-time highs suggests a distribution phase or a low-conviction consolidation.\n\nWith Fear & Greed neutral at 23, the psychological floor is fragile. We are seeing a vacuum of narrative momentum. Expect a violent break once liquidity clusters are hit.",
-    "quant": "BTC is trading in a tight range with 0.05% 24h delta, indicating a total collapse in volatility. Volume at $10.8B is insufficient to sustain a breakout above $74.3k.\n\nMean reversion is the primary risk here. The tight bid-ask spread suggests a liquidity trap for breakout traders. Short-term gamma is likely neutralized.",
-    "chaos_line": "The silence of the tape is the loudest warning before the cliff edge falls away.",
+    "headline": "Markets In Motion",
+    "dateline": "NYC",
+    "signal": "NEUTRAL",
+    "confidence": 65,
+    "eli5": "Global markets are processing mixed signals as central banks hold their ground.",
+    "analyst": "The macro environment remains in a transitional phase. Monitor yield curve dynamics and dollar strength for directional cues.",
+    "quant": "Vol-adjusted signals lean neutral. Watch for breakout above resistance with volume confirmation.",
+    "chaos_line": "The silence before the storm is just the market holding its breath.",
     "plays": [
       {
         "type": "SAFE",
-        "thesis": "Range bound stability",
-        "details": "BTC Long at $72,400 with tight stop at $71,800; playing the support bounce."
+        "thesis": "Hold cash or short-term bonds",
+        "details": "Preserve capital until direction clarifies"
       },
       {
         "type": "AGGRESSIVE",
-        "thesis": "Breakout momentum",
-        "details": "BTC Long on a daily close above $74,300 targeting $78,000 on liquidity flush."
+        "thesis": "BTC long on dip to $70k",
+        "details": "Strong accumulation zone, institutional support"
       },
       {
         "type": "CONTRARIAN",
-        "thesis": "The Fake-out",
-        "details": "BTC Short at $74,200; betting on a failed breakout to trigger a cascade to $68k."
+        "thesis": "Fade the equity rally",
+        "details": "VIX suppression masking real risk"
       }
     ],
-    "trap": "Breakout traders longing the $74k level without volume confirmation. They are providing the exit liquidity for whales.",
-    "edge": "The divergence between price stability and neutral sentiment suggests an imminent volatility expansion.",
-    "time_sensitivity": "TODAY",
+    "trap": "Retail is chasing the S&P rally. Smart money is quietly hedging.",
+    "edge": "Credit spreads diverging from equity complacency.",
+    "time_sensitivity": "THIS WEEK",
     "forces": [
       "MONEY",
-      "PEOPLE"
+      "DEBT"
     ],
-    "active_regime": "LIQUIDITY TRAP",
+    "active_regime": "TRANSITION",
     "cross_market": {
       "bond": {
         "label": "CALM",
@@ -83,28 +83,14 @@
         "desc": "Neutral sentiment across retail."
       }
     },
-    "news_wires": [
-      {
-        "source": "INTERNAL",
-        "title": "Volatility Vacuum",
-        "impact": "Price stability at peaks without volume is a classic sign of a topping pattern or a massive spring. Expect sharp movement.",
-        "forces": [
-          "MONEY"
-        ]
-      }
-    ],
-    "key_levels": {
-      "btc_support": "$72,436",
-      "btc_resistance": "$74,293",
-      "spx_support": "N/A",
-      "yield_threshold": "N/A"
-    },
-    "weekly_catalyst": "Volatility expansion trigger",
+    "news_wires": [],
+    "key_levels": {},
+    "weekly_catalyst": "Fed speakers Friday",
     "agent_consensus": {
       "debate_required": false,
       "resolution": ""
     },
-    "generated_at": "2026-05-30T05:43:56.466Z"
+    "generated_at": "2026-05-30T05:44:36.196Z"
   },
   "agents": {
     "fundamental": {
@@ -113,7 +99,7 @@
     },
     "technical": {
       "bias": "BULLISH",
-      "thesis": "BTC positive momentum. VIX at N/A."
+      "thesis": "BTC positive momentum. VIX at 15.32."
     },
     "sentiment": {
       "bias": "BEARISH",
@@ -121,7 +107,7 @@
     }
   },
   "signal": {
-    "signal_hash": "CI-MPRXE0K8-V",
-    "timestamp": "2026-05-30T05:43:56.466Z"
+    "signal_hash": "CI-MPRXEV7Q-N",
+    "timestamp": "2026-05-30T05:44:36.196Z"
   }
 }
