@@ -21,7 +21,7 @@
     "marketVolume": "$0",
     "marketLink": "https://polymarket.com",
     "session": "MORNING",
-    "newsText": "",
+    "newsText": "1. Sound Transit board approves 25-year light rail plan in 16-2 vote - KOMO [KOMO News]\n2. Average US long-term mortgage rate climbs to 6.53%, highest level in nine months - ABC News - Breaking News, Latest News and Videos [Abcnews.com]\n3. Anthropic soars to $965bn valuation, leapfrogging OpenAI - Al Jazeera [Al Jazeera English]\n4. Michael Dell courted Trump early. His company has reaped rewards - CNBC [CNBC]\n5. SpaceX Lowers IPO Valuation Target to at Least $1.8 Trillion - Bloomberg.com [Bloomberg]\n6. 3-year-old California girl hospitalized with acute kidney failure after eating at Costa Mesa spot amid E. coli outbreak, lawsuit claims - Yahoo [New York Post]\n7. Pfizer and Innovent Biologics Enter Global Strategic Collaboration to Accelerate Development of Innovative Oncology Medicines - Pfizer [Pfizer.com]\n8. Caesars Entertainment, a Las Vegas Strip icon, is sold for nearly $6 billion - KOB.com [KOB]\n9. Dell Stock Soars 39% as Earnings Blow Past Wall Street Expectations - Investopedia [Investopedia]\n10. Stock Market Today: Oil Pares Gains as Investors Cling to Hope of Mideast Deal - WSJ [The Wall Street Journal]",
     "btcDominance": "N/A",
     "totalMarketCap": "N/A",
     "stablecoinPct": "N/A",
@@ -32,40 +32,39 @@
     "label": "MORNING SESSION"
   },
   "brief": {
-    "headline": "Crypto Stasis, Stocks Rise, Markets Stumble",
-    "dateline": "New York",
+    "headline": "Markets In Motion",
+    "dateline": "NYC",
     "signal": "NEUTRAL",
-    "confidence": 74,
-    "eli5": "Bitcoin is a digital gold that's barely moving today. The stock market is up a tiny bit, and the scary VIX is low, meaning people aren’t super nervous. But the dollar is strong, and bonds are almost unchanged. Overall, it looks like the market is playing it safe.\n\n",
-    "analyst": "The neutral Fear & Greed index and flat VIX suggest a risk‑on tilt is muted. Bitcoin’s 0.16% gain and stable 10Y Treasury yield point to a calm environment, yet the strong DXY indicates capital flowing out of risk assets. The lack of headline catalysts keeps the market in a holding pattern. Traders should watch for any deviation in the 10Y or DXY that could break the status quo.\n\n",
-    "quant": "From a trading perspective, the market is in a low‑volatility plateau. BTC’s 24‑hour movement is negligible, and the 10Y yield is flat, so there’s limited directional bias. The VIX at 15.32 is comfortably low, implying limited downside protection demand. Position sizing should be conservative, with tight stops to guard against sudden shifts.\n\n",
-    "chaos_line": "When the market sleeps, the wolves whisper and the wolves eat.",
+    "confidence": 65,
+    "eli5": "Global markets are processing mixed signals as central banks hold their ground.",
+    "analyst": "The macro environment remains in a transitional phase. Monitor yield curve dynamics and dollar strength for directional cues.",
+    "quant": "Vol-adjusted signals lean neutral. Watch for breakout above resistance with volume confirmation.",
+    "chaos_line": "The silence before the storm is just the market holding its breath.",
     "plays": [
       {
         "type": "SAFE",
-        "thesis": "Protect with a short BTC hedge",
-        "details": "Sell BTC put spread at $72,000 to $73,500, target 3‑week expiry, profit if BTC stays below $73,500."
+        "thesis": "Hold cash or short-term bonds",
+        "details": "Preserve capital until direction clarifies"
       },
       {
         "type": "AGGRESSIVE",
-        "thesis": "Bet on S&P 500 upside",
-        "details": "Buy SPX call at 7,600, 30‑day expiry, expecting a 0.5% rally if 10Y yields remain below 4.45%."
+        "thesis": "BTC long on dip to $70k",
+        "details": "Strong accumulation zone, institutional support"
       },
       {
         "type": "CONTRARIAN",
-        "thesis": "Short the 10Y Treasury",
-        "details": "Sell 10Y Treasury futures at 4.453%, expecting a 10Y yield surge if the Fed raises rates to counter a weak dollar."
+        "thesis": "Fade the equity rally",
+        "details": "VIX suppression masking real risk"
       }
     ],
-    "trap": "Retail traders are clamoring to buy BTC at $73,500, assuming a breakout, but the lack of catalyst makes a breakout unlikely. The consensus is that BTC will rally, yet the data shows a flat market.\n\n",
-    "edge": "The Fed’s upcoming policy statement is under the radar; a surprise rate hike could trigger a 10Y yield spike.\n\n",
+    "trap": "Retail is chasing the S&P rally. Smart money is quietly hedging.",
+    "edge": "Credit spreads diverging from equity complacency.",
     "time_sensitivity": "THIS WEEK",
     "forces": [
       "MONEY",
-      "DEBT",
-      "POLITICS"
+      "DEBT"
     ],
-    "active_regime": "LIQUIDITY TRAP",
+    "active_regime": "TRANSITION",
     "cross_market": {
       "bond": {
         "label": "CAUTION",
@@ -84,29 +83,14 @@
         "desc": "Neutral sentiment across retail."
       }
     },
-    "news_wires": [
-      {
-        "source": "Bloomberg",
-        "title": "Fed Signals Possible Rate Hike Ahead of June Meeting",
-        "impact": "A surprise rate hike could lift 10Y yields above 4.5%, pressuring risk assets and prompting a sell‑off in equities and crypto.",
-        "forces": [
-          "DEBT",
-          "POLITICS"
-        ]
-      }
-    ],
-    "key_levels": {
-      "btc_support": "$72,200",
-      "btc_resistance": "$74,300",
-      "spx_support": "$7,550",
-      "yield_threshold": "4.45%"
-    },
-    "weekly_catalyst": "Federal Reserve policy statement",
+    "news_wires": [],
+    "key_levels": {},
+    "weekly_catalyst": "Fed speakers Friday",
     "agent_consensus": {
       "debate_required": false,
       "resolution": ""
     },
-    "generated_at": "2026-05-30T07:56:59.071Z"
+    "generated_at": "2026-05-30T07:57:30.721Z"
   },
   "agents": {
     "fundamental": {
@@ -123,7 +107,7 @@
     }
   },
   "signal": {
-    "signal_hash": "CI-MPS253YR-N",
-    "timestamp": "2026-05-30T07:56:59.071Z"
+    "signal_hash": "CI-MPS25SE4-N",
+    "timestamp": "2026-05-30T07:57:30.721Z"
   }
 }
