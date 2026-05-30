@@ -1,11 +1,21 @@
 [
   {
     "date": "2026-05-30",
-    "timestamp": "2026-05-30T08:04:09.022Z",
+    "timestamp": "2026-05-30T08:09:12.358Z",
+    "signal_hash": "CI-T8FWT4RU-B",
+    "signal": "BEARISH",
+    "headline": "Extreme Fear Rides Market to Safe Havens",
+    "btc_entry": 73443,
+    "resolved": false,
+    "resolution_status": "OPEN"
+  },
+  {
+    "date": "2026-05-29",
+    "timestamp": "2026-05-29T07:04:09.022Z",
     "signal_hash": "CI-NEI3HRBA-B",
     "signal": "BEARISH",
     "headline": "Fear Lulls, Dollar Soars",
-    "btc_entry": 73451,
+    "btc_entry": 74000,
     "resolved": false,
     "resolution_status": "OPEN"
   },
