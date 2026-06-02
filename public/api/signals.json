@@ -1,0 +1,187 @@
+[
+  {
+    "id": "sig_20260528161529",
+    "timestamp": "2026-05-28T16:15:29.828Z",
+    "session": "US SESSION",
+    "headline": "Fear Rises, Vol Stays Contained",
+    "signal": "VOLATILE",
+    "confidence": 68,
+    "forces": [
+      "MONEY",
+      "DEBT"
+    ],
+    "active_regime": "TRANSITION",
+    "btc_entry": 73070,
+    "spx_entry": 7558,
+    "vix_entry": 15.93,
+    "plays": [
+      {
+        "type": "SAFE",
+        "thesis": "Wait for BTC range confirmation",
+        "details": "BTC / WAIT - Use $75,391 as upside confirmation and $72,556 as downside invalidation. Timeframe: today."
+      },
+      {
+        "type": "AGGRESSIVE",
+        "thesis": "Trade the range break",
+        "details": "BTC / MOMENTUM - A clean break above $75,391 favors upside continuation; a break below $72,556 favors downside acceleration. Keep stops tight because VIX is not confirming panic."
+      },
+      {
+        "type": "CONTRARIAN",
+        "thesis": "Fear can become fuel",
+        "details": "Consensus is defensive because Fear is 22. If BTC stops falling while SPX stays firm, trapped shorts can get squeezed before macro improves."
+      }
+    ],
+    "resolved": false,
+    "result": null,
+    "pnl_percent": null,
+    "signal_hash": "565fc006b6a63176ae07f9288c1f5d0e"
+  },
+  {
+    "id": "sig_20260528155006",
+    "timestamp": "2026-05-28T15:50:06.190Z",
+    "session": "US SESSION",
+    "headline": "Risk Cracks Under Pressure",
+    "signal": "BEARISH",
+    "confidence": 66,
+    "forces": [
+      "MONEY",
+      "DEBT"
+    ],
+    "active_regime": "RISK-OFF",
+    "btc_entry": 72868,
+    "spx_entry": 7557,
+    "vix_entry": 15.95,
+    "plays": [
+      {
+        "type": "SAFE",
+        "thesis": "Wait for BTC range confirmation",
+        "details": "BTC / WAIT - Use $75,408 as upside confirmation and $72,556 as downside invalidation. Timeframe: today."
+      },
+      {
+        "type": "AGGRESSIVE",
+        "thesis": "Trade the range break",
+        "details": "BTC / MOMENTUM - A clean break above $75,408 favors upside continuation; a break below $72,556 favors downside acceleration. Keep stops tight because VIX is not confirming panic."
+      },
+      {
+        "type": "CONTRARIAN",
+        "thesis": "Fear can become fuel",
+        "details": "Consensus is defensive because Fear is 22. If BTC stops falling while SPX stays firm, trapped shorts can get squeezed before macro improves."
+      }
+    ],
+    "resolved": false,
+    "result": null,
+    "pnl_percent": null,
+    "signal_hash": "e4bafd8308d3a84cc01d59b23931d4b0"
+  },
+  {
+    "id": "sig_20260527052505",
+    "timestamp": "2026-05-27T05:25:05.400Z",
+    "session": "ASIA SESSION",
+    "headline": "Fear Rises, Vol Stays Contained",
+    "signal": "VOLATILE",
+    "confidence": 68,
+    "forces": [
+      "MONEY",
+      "DEBT"
+    ],
+    "active_regime": "TRANSITION",
+    "btc_entry": 75634,
+    "spx_entry": 7519,
+    "vix_entry": 17.01,
+    "plays": [
+      {
+        "type": "SAFE",
+        "thesis": "Wait for BTC range confirmation",
+        "details": "BTC / WAIT - Use $78,077 as upside confirmation and $75,278 as downside invalidation. Timeframe: today."
+      },
+      {
+        "type": "AGGRESSIVE",
+        "thesis": "Trade the range break",
+        "details": "BTC / MOMENTUM - A clean break above $78,077 favors upside continuation; a break below $75,278 favors downside acceleration. Keep stops tight because VIX is not confirming panic."
+      },
+      {
+        "type": "CONTRARIAN",
+        "thesis": "Fear can become fuel",
+        "details": "Consensus is defensive because Fear is 25. If BTC stops falling while SPX stays firm, trapped shorts can get squeezed before macro improves."
+      }
+    ],
+    "resolved": false,
+    "result": null,
+    "pnl_percent": null,
+    "signal_hash": "fcf322179866b5efd4b8ecc540c621ec"
+  },
+  {
+    "id": "sig_20260527052348",
+    "timestamp": "2026-05-27T05:23:48.737Z",
+    "session": "ASIA SESSION",
+    "headline": "Confirmation Beats Noise",
+    "signal": "NEUTRAL",
+    "confidence": 60,
+    "forces": [
+      "MONEY",
+      "DEBT"
+    ],
+    "active_regime": "TRANSITION",
+    "btc_entry": 75620,
+    "spx_entry": 7519,
+    "vix_entry": 17.01,
+    "plays": [
+      {
+        "type": "SAFE",
+        "thesis": "Wait for confirmation",
+        "details": "Stay tactical until BTC and SPX confirm the same direction."
+      },
+      {
+        "type": "AGGRESSIVE",
+        "thesis": "Trade volatility only",
+        "details": "Only act if BTC breaks the prior day range with volume."
+      },
+      {
+        "type": "CONTRARIAN",
+        "thesis": "Fade forced certainty",
+        "details": "The crowd wants a single answer; the data is still split."
+      }
+    ],
+    "resolved": false,
+    "result": null,
+    "pnl_percent": null,
+    "signal_hash": "64d1a95bd8e81efe67320e27766f50ff"
+  },
+  {
+    "id": "sig_20260527040305",
+    "timestamp": "2026-05-27T04:03:05.832Z",
+    "session": "ASIA SESSION",
+    "headline": "Confirmation Beats Noise",
+    "signal": "NEUTRAL",
+    "confidence": 60,
+    "forces": [
+      "MONEY",
+      "DEBT"
+    ],
+    "active_regime": "TRANSITION",
+    "btc_entry": null,
+    "spx_entry": null,
+    "vix_entry": null,
+    "plays": [
+      {
+        "type": "SAFE",
+        "thesis": "Wait for confirmation",
+        "details": "Stay tactical until BTC and SPX confirm the same direction."
+      },
+      {
+        "type": "AGGRESSIVE",
+        "thesis": "Trade volatility only",
+        "details": "Only act if BTC breaks the prior day range with volume."
+      },
+      {
+        "type": "CONTRARIAN",
+        "thesis": "Fade forced certainty",
+        "details": "The crowd wants a single answer; the data is still split."
+      }
+    ],
+    "resolved": false,
+    "result": null,
+    "pnl_percent": null,
+    "signal_hash": "a2d76ba5a2205373d970e81d5339729c"
+  }
+]

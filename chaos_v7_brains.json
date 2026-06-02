@@ -1,0 +1,295 @@
+{
+  "name": "Chaos Brains v7 (Fully Wired)",
+  "nodes": [
+    {
+      "parameters": {
+        "url": "https://fapi.binance.com/fapi/v1/trades?symbol=BTCUSDT&limit=1000"
+      },
+      "id": "binance-raw-trades",
+      "name": "Binance Trades (Raw)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        0,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://fapi.binance.com/fapi/v1/allForceOrders?symbol=BTCUSDT&limit=100"
+      },
+      "id": "binance-raw-liqs",
+      "name": "Binance Liquidations (Raw)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        0,
+        200
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// ALPHA AGGREGATOR \nconst trades = $('Binance Trades (Raw)').first().json || [];\nconst liqs = $('Binance Liquidations (Raw)').first().json || [];\n\nlet whaleBlocks = [];\nif (Array.isArray(trades)) {\n  whaleBlocks = trades\n    .map(t => {\n      const price = parseFloat(t.price);\n      const qty = parseFloat(t.qty);\n      const totalValue = price * qty;\n      return { price, qty, totalValue, type: t.isBuyerMaker ? 'SELL' : 'BUY', time: t.time };\n    })\n    .filter(t => t.totalValue >= 500000)\n    .sort((a, b) => b.time - a.time)\n    .slice(0, 5)\n    .map(t => `${t.type} ${t.qty.toFixed(2)} BTC at $${t.price.toLocaleString('en-US')} ($${(t.totalValue / 1e6).toFixed(2)}M)`)\n    .join(' | ');\n}\nif (!whaleBlocks || whaleBlocks.length === 0) whaleBlocks = \"No singular block trades over $500k detected.\";\n\nlet liqSummary = \"No recent liquidation clusters detected.\";\nif (Array.isArray(liqs) && liqs.length > 0) {\n  let longLiq = 0;\n  let shortLiq = 0;\n  liqs.forEach(l => {\n    const val = parseFloat(l.p) * parseFloat(l.q);\n    if (l.S === 'BUY') shortLiq += val;\n    if (l.S === 'SELL') longLiq += val;\n  });\n  const dominant = longLiq > shortLiq ? \"LONGS\" : \"SHORTS\";\n  const totalFlushed = ((longLiq + shortLiq) / 1e6).toFixed(2);\n  if (totalFlushed > 0) {\n    liqSummary = `Recent Structural Flush: $${totalFlushed}M wiped. Dominant cascade: ${dominant}. (Longs flushed: $${(longLiq / 1e6).toFixed(2)}M, Shorts flushed: $${(shortLiq / 1e6).toFixed(2)}M).`;\n  }\n}\n\nreturn [{\n  json: {\n    whale_blocks: whaleBlocks,\n    liquidation_data: liqSummary\n  }\n}];"
+      },
+      "id": "alpha-aggregator-node",
+      "name": "Alpha Data Aggregator",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        200,
+        100
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// ALPHA WHALE PROMPT\nconst alphaData = $('Alpha Data Aggregator').first().json || {};\nconst rawLiqData = alphaData.liquidation_data || \"No data\";\nconst recentBlocks = alphaData.whale_blocks || \"No data\";\n\nconst promptText = `ROLE: You are the ALPHA TELEMETRY ENGINE for an elite macro trading terminal.\nTASK: Analyze raw orderbook and liquidation data and output strict, terminal-grade JSON.\nTONE: Clinical, robotic, highly precise. Use exact numbers.\n\nRAW DATA:\n- Liquidation Clusters: ${rawLiqData}\n- Recent Whale Executions: ${recentBlocks}\n\nOUTPUT REQUIREMENT:\nGenerate valid JSON matching this exact structure. Do NOT wrap in markdown.\n{\n  \"flush_detection\": {\n    \"cumulative_leverage\": \"Numeric value (e.g., $142.4M)\",\n    \"support_margin_lower\": \"Price (e.g., $72,300)\",\n    \"support_margin_upper\": \"Price (e.g., $72,550)\",\n    \"analysis\": \"1 sentence describing the cascade velocity event.\"\n  },\n  \"whale_blocks\": [\n    {\n      \"timestamp\": \"HH:MM:SS\",\n      \"asset\": \"BTCUSDT\",\n      \"type\": \"SHORT SWEEP or LIMIT BID WALL or BLOCK TWAP\",\n      \"size\": \"Volume + Asset (e.g., 420.50 BTC)\",\n      \"venue\": \"BINANCE FUTURES or COINBASE PRO\"\n    }\n  ]\n}`;\n\nreturn [{\n  json: {\n    model: 'meta-llama/llama-3.1-8b-instruct:free', \n    messages: [{ role: 'user', content: promptText }],\n    temperature: 0.3,\n    response_format: { type: \"json_object\" }\n  }\n}];"
+      },
+      "id": "alpha-prompt",
+      "name": "\ud83d\udcdd Alpha Whale Prompt",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        400,
+        100
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://openrouter.ai/api/v1/chat/completions",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "=Bearer {{ $('\u2699\ufe0f CONFIG').first().json.OPENROUTER_KEY || 'YOUR_OPENROUTER_KEY' }}"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "model",
+              "value": "={{ $json.model }}"
+            },
+            {
+              "name": "messages",
+              "value": "={{ $json.messages }}"
+            },
+            {
+              "name": "temperature",
+              "value": "={{ $json.temperature }}"
+            },
+            {
+              "name": "response_format",
+              "value": "={{ $json.response_format }}"
+            }
+          ]
+        }
+      },
+      "id": "alpha-openrouter",
+      "name": "OpenRouter (Alpha)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        600,
+        100
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// AUTOPSY / RESOLUTION BRAIN\n// Fetch from main workflow nodes\nlet pastSignals = [];\ntry { pastSignals = $('Read signals.json').first().json.ledger || []; } catch(e) {}\nlet currentMarket = {};\ntry { currentMarket = $('Chaos Pre-Processor v5').first().json || {}; } catch(e) {}\n\nconst openSignals = pastSignals.filter(s => s.status === 'OPEN' || s.status === 'PENDING').slice(0, 5);\nif (openSignals.length === 0) {\n  return [{ json: { skip: True, message: \"No open signals\" } }];\n}\n\nconst promptText = `ROLE: You are the AUTOPSY / RESOLUTION ENGINE.\nTASK: Review previously issued trading signals against current market prices. Grade them as WIN, LOSS, or OPEN.\nCURRENT MARKET: BTC: ${currentMarket.btcPrice || 'N/A'}\nPAST SIGNALS:\n${JSON.stringify(openSignals, null, 2)}\n\nOUTPUT REQUIREMENT:\nJSON array with keys: signal_hash, status, close_price, pnl_percent, autopsy_note`;\n\nreturn [{\n  json: {\n    model: 'google/gemini-2.5-flash',\n    messages: [{ role: 'user', content: promptText }],\n    temperature: 0.1,\n    response_format: { type: \"json_object\" }\n  }\n}];"
+      },
+      "id": "autopsy-prompt",
+      "name": "\ud83d\udcdd Autopsy Prompt",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        400,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://openrouter.ai/api/v1/chat/completions",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "=Bearer {{ $('\u2699\ufe0f CONFIG').first().json.OPENROUTER_KEY || 'YOUR_OPENROUTER_KEY' }}"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "model",
+              "value": "={{ $json.model }}"
+            },
+            {
+              "name": "messages",
+              "value": "={{ $json.messages }}"
+            },
+            {
+              "name": "temperature",
+              "value": "={{ $json.temperature }}"
+            },
+            {
+              "name": "response_format",
+              "value": "={{ $json.response_format }}"
+            }
+          ]
+        }
+      },
+      "id": "autopsy-openrouter",
+      "name": "OpenRouter (Autopsy)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        600,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// GEOPOLITICAL WIRES BRAIN\nlet articles = [];\ntry { articles = $('ContextNews').first().json.articles || []; } catch(e) {}\nif (articles.length === 0) return [{ json: { skip: true } }];\n\nconst rawNews = articles.slice(0, 15).map(a => `[${a.source?.name || 'Wire'}] ${a.title}`).join('\\n');\n\nconst promptText = `ROLE: CHIEF MACRO STRATEGIST.\nTASK: Extract 3 critical events moving liquidity today.\nRAW HEADLINES:\n${rawNews}\n\nOUTPUT REQUIREMENT:\nStrict JSON format:\n{\n  \"intel_wires\": [{ \"source\": \"\", \"title\": \"\", \"impact\": \"\", \"forces\": [] }]\n}`;\n\nreturn [{\n  json: {\n    model: 'anthropic/claude-3.5-sonnet', \n    messages: [{ role: 'user', content: promptText }],\n    temperature: 0.4,\n    response_format: { type: \"json_object\" }\n  }\n}];"
+      },
+      "id": "geo-wires-prompt",
+      "name": "\ud83d\udcdd Geopolitical Wires Prompt",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        400,
+        500
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://openrouter.ai/api/v1/chat/completions",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "=Bearer {{ $('\u2699\ufe0f CONFIG').first().json.OPENROUTER_KEY || 'YOUR_OPENROUTER_KEY' }}"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "model",
+              "value": "={{ $json.model }}"
+            },
+            {
+              "name": "messages",
+              "value": "={{ $json.messages }}"
+            },
+            {
+              "name": "temperature",
+              "value": "={{ $json.temperature }}"
+            },
+            {
+              "name": "response_format",
+              "value": "={{ $json.response_format }}"
+            }
+          ]
+        }
+      },
+      "id": "geo-openrouter",
+      "name": "OpenRouter (Geo Wires)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        600,
+        500
+      ]
+    }
+  ],
+  "connections": {
+    "Binance Trades (Raw)": {
+      "main": [
+        [
+          {
+            "node": "Alpha Data Aggregator",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Binance Liquidations (Raw)": {
+      "main": [
+        [
+          {
+            "node": "Alpha Data Aggregator",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Alpha Data Aggregator": {
+      "main": [
+        [
+          {
+            "node": "\ud83d\udcdd Alpha Whale Prompt",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "\ud83d\udcdd Alpha Whale Prompt": {
+      "main": [
+        [
+          {
+            "node": "OpenRouter (Alpha)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "\ud83d\udcdd Autopsy Prompt": {
+      "main": [
+        [
+          {
+            "node": "OpenRouter (Autopsy)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "\ud83d\udcdd Geopolitical Wires Prompt": {
+      "main": [
+        [
+          {
+            "node": "OpenRouter (Geo Wires)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  }
+}

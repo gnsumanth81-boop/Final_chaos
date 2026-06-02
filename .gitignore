@@ -1,0 +1,13 @@
+# .gitignore - Sovereign Security Boundary Protocol
+.env
+.env.local
+.env.*
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+.DS_Store
+
+# Protect raw testing states and history databases from cleartext exposure
+src/data/history.json
+*.json.bak
+api/*.bak

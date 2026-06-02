@@ -1,0 +1,150 @@
+{
+  "market": {
+    "fearIndex": 22,
+    "fearLabel": "Extreme Fear",
+    "fearDelta": -3,
+    "btcPrice": "$73,070",
+    "btcPriceRaw": 73070.1,
+    "btcChange": "-2.91",
+    "btcVolume": "$14.4B",
+    "btcHigh": "$75,391",
+    "btcLow": "$72,556",
+    "ethPrice": "$1,994",
+    "ethChange": "-3.66",
+    "vixVal": "15.93",
+    "yieldVal": "4.465",
+    "yieldPrev": "4.481",
+    "dxyVal": "99.04",
+    "spxVal": "7,558",
+    "spxChange": "+0.51%",
+    "btcDominance": "57.6",
+    "totalMarketCap": "$2.53T",
+    "marketCapFlow": "Outflows",
+    "marketTitle": "Prediction market unavailable",
+    "marketOdds": "50.0",
+    "marketVolume": "$0",
+    "marketLink": "https://polymarket.com",
+    "partial": true,
+    "newsText": "NewsAPI key not configured.",
+    "recessionProb": "N/A",
+    "session": "US SESSION",
+    "marketStatus": "NYSE OPEN",
+    "utcTime": "2026-05-28T16:15:29.823Z",
+    "label": "US SESSION / NYSE OPEN",
+    "cvxScore": 33.9,
+    "cvxRegime": "ALERT",
+    "cvxComponents": {
+      "vixNorm": 8.5,
+      "btcEwmaVol": 100,
+      "fearInv": 78,
+      "yieldStress": 32.2,
+      "btcDrawdown": 14.6,
+      "spxStress": 0,
+      "crossAssetDiv": 7.5
+    }
+  },
+  "agents": {
+    "fundamental": {
+      "agent": "FUNDAMENTAL",
+      "bias": "NEUTRAL",
+      "confidence": 64,
+      "thesis": "Rates remain the constraint: the 10Y is near 4.465% while DXY sits at 99.04. That keeps liquidity conditions tight even with VIX at 15.93.",
+      "valid": true
+    },
+    "technical": {
+      "agent": "TECHNICAL",
+      "bias": "NEUTRAL",
+      "confidence": 68,
+      "thesis": "BTC is trading at $73,070 after a -2.91% 24h move, with the session range between $72,556 and $75,391. Momentum is not broken, but confirmation requires a clean reclaim of the upper range.",
+      "valid": true
+    },
+    "sentiment": {
+      "agent": "SENTIMENT",
+      "bias": "BULLISH",
+      "confidence": 64,
+      "thesis": "The fear index is 22 (Extreme Fear), down -3 from yesterday. That is a contrarian setup only if price stabilizes instead of confirming the fear.",
+      "valid": true
+    }
+  },
+  "brief": {
+    "headline": "Fear Rises, Vol Stays Contained",
+    "dateline": "New York",
+    "signal": "VOLATILE",
+    "confidence": 68,
+    "eli5": "Markets are nervous, but not panicking. Bitcoin is at $73,070, while the fear index is 22. Think of it like a crowded theater where people smell smoke but nobody has run for the door yet. The stakes are simple: if price stabilizes, fear becomes fuel; if price slips, fear becomes forced selling.",
+    "analyst": "The current regime is transition with a tactical volatile bias. BTC is -2.91% over 24h at $73,070, while VIX remains contained at 15.93; that says crypto stress is present, but broad equity panic has not confirmed it yet.\n\nRates are the pressure point. The 10Y near 4.465% keeps duration-sensitive assets pinned, while DXY at 99.04 is not delivering a major dollar shock. SPX at 7,558 (+0.51%) suggests equities are still absorbing the macro pressure better than crypto.\n\nThe dominant tension is fear versus confirmation. If BTC reclaims the upper range near $75,391, the fear reading can become a contrarian tailwind. If BTC loses the lower range near $72,556, the market shifts from caution into liquidation risk.",
+    "quant": "Volatility is asymmetric rather than explosive. VIX at 15.93 is below a panic regime, but BTC's range from $72,556 to $75,391 keeps realized crypto volatility alive. The CVX regime is ALERT at 33.9, which argues for smaller sizing and faster invalidation.\n\nCross-asset correlation is not fully aligned. SPX is +0.51%, BTC is -2.91%, and rates remain elevated near 4.465%. That mix creates chop: risk assets can bounce locally while macro still caps upside.\n\nThe threshold is simple: BTC above $75,391 improves momentum; BTC below $72,556 confirms downside stress. Until one side wins, the highest-quality trade is confirmation, not prediction.",
+    "chaos_line": "Fear is cheap until price confirms it; then it becomes margin calls.",
+    "plays": [
+      {
+        "type": "SAFE",
+        "thesis": "Wait for BTC range confirmation",
+        "details": "BTC / WAIT - Use $75,391 as upside confirmation and $72,556 as downside invalidation. Timeframe: today."
+      },
+      {
+        "type": "AGGRESSIVE",
+        "thesis": "Trade the range break",
+        "details": "BTC / MOMENTUM - A clean break above $75,391 favors upside continuation; a break below $72,556 favors downside acceleration. Keep stops tight because VIX is not confirming panic."
+      },
+      {
+        "type": "CONTRARIAN",
+        "thesis": "Fear can become fuel",
+        "details": "Consensus is defensive because Fear is 22. If BTC stops falling while SPX stays firm, trapped shorts can get squeezed before macro improves."
+      }
+    ],
+    "trap": "The trap is treating fear as a sell signal by itself. Fear at 22 is only bearish if BTC loses $72,556; otherwise it becomes contrarian fuel.",
+    "edge": "VIX is the tell. If VIX stays near 15.93 while BTC stabilizes, crypto fear is isolated rather than systemic.",
+    "time_sensitivity": "TODAY",
+    "forces": [
+      "MONEY",
+      "DEBT"
+    ],
+    "active_regime": "TRANSITION",
+    "agent_consensus": {
+      "fundamental": "NEUTRAL",
+      "technical": "NEUTRAL",
+      "sentiment": "BULLISH",
+      "debate_required": true,
+      "resolution": "Agents split NEUTRAL/NEUTRAL/BULLISH - Supervisor resolves VOLATILE"
+    },
+    "generated_at": "2026-05-28T16:15:29.828Z",
+    "valid": true
+  },
+  "signal": {
+    "id": "sig_20260528161529",
+    "timestamp": "2026-05-28T16:15:29.828Z",
+    "session": "US SESSION",
+    "headline": "Fear Rises, Vol Stays Contained",
+    "signal": "VOLATILE",
+    "confidence": 68,
+    "forces": [
+      "MONEY",
+      "DEBT"
+    ],
+    "active_regime": "TRANSITION",
+    "btc_entry": 73070,
+    "spx_entry": 7558,
+    "vix_entry": 15.93,
+    "plays": [
+      {
+        "type": "SAFE",
+        "thesis": "Wait for BTC range confirmation",
+        "details": "BTC / WAIT - Use $75,391 as upside confirmation and $72,556 as downside invalidation. Timeframe: today."
+      },
+      {
+        "type": "AGGRESSIVE",
+        "thesis": "Trade the range break",
+        "details": "BTC / MOMENTUM - A clean break above $75,391 favors upside continuation; a break below $72,556 favors downside acceleration. Keep stops tight because VIX is not confirming panic."
+      },
+      {
+        "type": "CONTRARIAN",
+        "thesis": "Fear can become fuel",
+        "details": "Consensus is defensive because Fear is 22. If BTC stops falling while SPX stays firm, trapped shorts can get squeezed before macro improves."
+      }
+    ],
+    "resolved": false,
+    "result": null,
+    "pnl_percent": null,
+    "signal_hash": "565fc006b6a63176ae07f9288c1f5d0e"
+  }
+}
