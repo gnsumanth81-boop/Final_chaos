@@ -447,19 +447,7 @@
 
   <div class="ticker"><div class="tk-lbl"><span class="tk-dot"></span>LIVE</div><div class="tk-scroll"><div class="tk-inner" id="ticker-inner"></div></div></div>
 
-  <!-- SYSTEM TELEMETRY MARQUEE LAYER -->
-  <div class="marquee-wrapper">
-    <div class="marquee-content" id="live-marquee-tape">
-      <span class="marquee-item">🔹 [07:31:02 UTC] 🐋 <strong>BINANCE FUTURES</strong>: SHORT SWEEP <span class="txt-flash-red">410.50 BTC</span> @ $69,896</span>
-      <span class="marquee-item">⚠️ [07:31:45 UTC] 💥 <strong>LIQUIDATION CASCADE</strong>: <span class="txt-flash-red">$4.2M LONGS</span> PURGED AT $69,820</span>
-      <span class="marquee-item">🔹 [07:32:11 UTC] 🐋 <strong>COINBASE PRO</strong>: LIMIT BID WALL ADDED <span class="txt-flash-green">1,850 ETH</span> @ $3,742</span>
-      <span class="marquee-item">🔹 [07:32:59 UTC] 🐋 <strong>OKX FUTURES</strong>: BLOCK TWAP ORDER BUY <span class="txt-flash-green">120.00 BTC</span> @ $69,910</span>
-      <span class="marquee-item">🔹 [07:31:02 UTC] 🐋 <strong>BINANCE FUTURES</strong>: SHORT SWEEP <span class="txt-flash-red">410.50 BTC</span> @ $69,896</span>
-      <span class="marquee-item">⚠️ [07:31:45 UTC] 💥 <strong>LIQUIDATION CASCADE</strong>: <span class="txt-flash-red">$4.2M LONGS</span> PURGED AT $69,820</span>
-      <span class="marquee-item">🔹 [07:32:11 UTC] 🐋 <strong>COINBASE PRO</strong>: LIMIT BID WALL ADDED <span class="txt-flash-green">1,850 ETH</span> @ $3,742</span>
-      <span class="marquee-item">🔹 [07:32:59 UTC] 🐋 <strong>OKX FUTURES</strong>: BLOCK TWAP ORDER BUY <span class="txt-flash-green">120.00 BTC</span> @ $69,910</span>
-    </div>
-  </div>
+
 
   <!-- ═══════════ INTEL VIEW ═══════════ -->
   <div id="view-terminal" class="spa-view active">
@@ -958,7 +946,7 @@
       const snapEl = document.getElementById('snapshot-panel');
       if (snapEl) {
         snapEl.innerHTML = `
-          <div><div style="font-size:0.65rem; color:var(--text-muted); font-family:var(--font-mono);">REGIME</div><div style="font-weight:700; color:var(--text-pure);">${esc(b.active_regime||'N/A')}</div></div>
+          <div><div style="font-size:0.65rem; color:var(--text-muted); font-family:var(--font-mono);">REGIME</div><div style="font-weight:700; color:var(--text-pure);">${esc(b.active_regime||'NEUTRAL')}</div></div>
           <div><div style="font-size:0.65rem; color:var(--text-muted); font-family:var(--font-mono);">BIAS</div><div style="font-weight:700; color:var(--${scls==='bull'?'green':scls==='bear'?'red':'gold'});">${esc(signal)}</div></div>
           <div><div style="font-size:0.65rem; color:var(--text-muted); font-family:var(--font-mono);">CONFIDENCE</div><div style="font-weight:700; color:var(--text-bright);">${b.confidence||0}%</div><div style="font-size:0.5rem; color:var(--text-muted); font-family:var(--font-mono); margin-top:2px;">MAC: ${(agents.fundamental&&agents.fundamental.confidence)||70} | FLO: ${(agents.technical&&agents.technical.confidence)||75}</div></div>
           <div><div style="font-size:0.65rem; color:var(--text-muted); font-family:var(--font-mono);">TOP PLAY</div><div style="font-weight:700; color:var(--text-bright);">${esc(topPlay)}</div></div>

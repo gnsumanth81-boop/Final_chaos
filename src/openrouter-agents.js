@@ -9,15 +9,15 @@ if (!API_KEY || API_KEY.trim() === "") {
   process.exit(1);
 }
 const NARRATIVE_MODELS = [
-  'google/gemini-2.0-flash-exp:free',       // Primary: High-speed, structural champion
+  'google/gemini-2.5-flash',                // Primary: High-speed, structural champion (2026 model)
   'meta-llama/llama-3.3-70b-instruct:free', // Secondary: High-conviction open-source backup
-  'openrouter/free'                         // Ultimate Fallback: OpenRouter's smart load-balanced pool
+  'openrouter/auto'                         // Ultimate Fallback: OpenRouter's smart load-balanced pool
 ];
 
 const PARSER_MODELS = [
-  'google/gemini-2.0-flash-exp:free',
+  'google/gemini-2.5-flash',
   'meta-llama/llama-3.3-70b-instruct:free',
-  'openrouter/free'                         // Dynamically filters for structured output support
+  'openrouter/auto'                         // Dynamically filters for structured output support
 ];
 
 const delay = (ms) => new Promise(res => setTimeout(res, ms));
