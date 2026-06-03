@@ -1034,30 +1034,33 @@
 
       var btcChangeVal = num(m.btcChange).toFixed(2);
       var btcSign = num(m.btcChange) >= 0 ? '▲ +' : '▼ ';
-      document.getElementById('vitals-target').innerHTML=`
-        <div class="vitals-ribbon">
-          <div class="v-ribbon-cell">
-            <span class="v-cell-lbl">MATRIX VOLATILITY (CVX)</span>
-            <span class="v-cell-val terminal-num">73.9</span>
-            <span class="v-cell-delta txt-gold">● STRESSED</span>
+      var vitalsEl = document.getElementById('vitals-target');
+      if (vitalsEl) {
+        vitalsEl.innerHTML=`
+          <div class="vitals-ribbon">
+            <div class="v-ribbon-cell">
+              <span class="v-cell-lbl">MATRIX VOLATILITY (CVX)</span>
+              <span class="v-cell-val terminal-num">73.9</span>
+              <span class="v-cell-delta txt-gold">● STRESSED</span>
+            </div>
+            <div class="v-ribbon-cell">
+              <span class="v-cell-lbl">BITCOIN TARGET SPOT</span>
+              <span class="v-cell-val terminal-num">${esc(m.btcPrice||'N/A')}</span>
+              <span class="v-cell-delta ${btcCls}">${btcSign}${Math.abs(btcChangeVal)}%</span>
+            </div>
+            <div class="v-ribbon-cell">
+              <span class="v-cell-lbl">ALGORITHMIC BIND VERDICT</span>
+              <span class="v-cell-val terminal-num" style="color: var(--gold);">${esc(signal)}</span>
+              <span class="v-cell-delta" style="color: var(--muted)">CONVICTION: ${esc(b.confidence||0)}%</span>
+            </div>
+            <div class="v-ribbon-cell">
+              <span class="v-cell-lbl">GLOBAL SENTIMENT COMPASS</span>
+              <span class="v-cell-val ${fearCls} terminal-num">${esc(m.fearIndex||'N/A')}</span>
+              <span class="v-cell-delta ${fearCls}">${esc(m.fearLabel||'NEUTRAL').toUpperCase()}</span>
+            </div>
           </div>
-          <div class="v-ribbon-cell">
-            <span class="v-cell-lbl">BITCOIN TARGET SPOT</span>
-            <span class="v-cell-val terminal-num">${esc(m.btcPrice||'N/A')}</span>
-            <span class="v-cell-delta ${btcCls}">${btcSign}${Math.abs(btcChangeVal)}%</span>
-          </div>
-          <div class="v-ribbon-cell">
-            <span class="v-cell-lbl">ALGORITHMIC BIND VERDICT</span>
-            <span class="v-cell-val terminal-num" style="color: var(--gold);">${esc(signal)}</span>
-            <span class="v-cell-delta" style="color: var(--muted)">CONVICTION: ${esc(b.confidence||0)}%</span>
-          </div>
-          <div class="v-ribbon-cell">
-            <span class="v-cell-lbl">GLOBAL SENTIMENT COMPASS</span>
-            <span class="v-cell-val ${fearCls} terminal-num">${esc(m.fearIndex||'N/A')}</span>
-            <span class="v-cell-delta ${fearCls}">${esc(m.fearLabel||'NEUTRAL').toUpperCase()}</span>
-          </div>
-        </div>
-      `;
+        `;
+      }
 
       // Brief Header
       document.getElementById('brief-tag').textContent='TODAY\'S BRIEFING · '+(b.dateline||'NYC').toUpperCase();
@@ -1078,19 +1081,31 @@
       document.getElementById('forces-grid').innerHTML=ALL_FORCES.map(function(f){return'<div class="fc '+(active.has(f)?'on':'')+'"><span class="fc-dot"></span>'+FI[f]+' <span>'+f+'</span></div>';}).join('');
 
       // Agent Consensus
-      var hasGeo = agents.geopolitical && agents.geopolitical.bias;
-      var cols = hasGeo ? 4 : 3;
-      var geoCard = hasGeo ? agentCard('Geopolitical', agents.geopolitical) : '';
-      document.getElementById('agent-consensus').innerHTML='<div class="sec-title">🤖 AGENT CONSENSUS</div><div class="agent-panel" style="grid-template-columns:repeat('+cols+',1fr)">'+agentCard('Fundamental',agents.fundamental)+agentCard('Technical',agents.technical)+agentCard('Sentiment',agents.sentiment)+geoCard+'</div><div style="text-align:center"><span class="debate-badge">'+esc(b.agent_consensus?.debate_required?'DEBATE RESOLVED':'✓ UNANIMOUS')+'</span></div>';
+      var acEl = document.getElementById('agent-consensus');
+      if (acEl) {
+        var hasGeo = agents.geopolitical && agents.geopolitical.bias;
+        var cols = hasGeo ? 4 : 3;
+        var geoCard = hasGeo ? agentCard('Geopolitical', agents.geopolitical) : '';
+        acEl.innerHTML='<div class="sec-title">🤖 AGENT CONSENSUS</div><div class="agent-panel" style="grid-template-columns:repeat('+cols+',1fr)">'+agentCard('Fundamental',agents.fundamental)+agentCard('Technical',agents.technical)+agentCard('Sentiment',agents.sentiment)+geoCard+'</div><div style="text-align:center"><span class="debate-badge">'+esc(b.agent_consensus?.debate_required?'DEBATE RESOLVED':'✓ UNANIMOUS')+'</span></div>';
+      }
 
       // Chaos Line
-      document.getElementById('chaos-line-card').innerHTML='<span class="chaos-tag">✦ THE CHAOS LINE</span><div class="chaos-text">&ldquo;'+esc(b.chaos_line||'')+'&rdquo;</div><div class="share-row"><a class="btn btn-secondary" target="_blank" href="https://twitter.com/intent/tweet?text='+encodeURIComponent('"'+(b.chaos_line||'')+'" — Chaos Intelligence\n'+SITE)+'">𝕏 Post</a><a class="btn btn-secondary" target="_blank" href="https://t.me/share/url?url='+encodeURIComponent(SITE)+'&text='+encodeURIComponent('"'+(b.chaos_line||'')+'" — Chaos Intelligence')+'">✈ Telegram</a><button class="btn btn-secondary" onclick="copyLine()">📋 Copy Line</button></div>';
+      var clEl = document.getElementById('chaos-line-card');
+      if (clEl) {
+        clEl.innerHTML='<span class="chaos-tag">✦ THE CHAOS LINE</span><div class="chaos-text">&ldquo;'+esc(b.chaos_line||'')+'&rdquo;</div><div class="share-row"><a class="btn btn-secondary" target="_blank" href="https://twitter.com/intent/tweet?text='+encodeURIComponent('"'+(b.chaos_line||'')+'" — Chaos Intelligence\n'+SITE)+'">𝕏 Post</a><a class="btn btn-secondary" target="_blank" href="https://t.me/share/url?url='+encodeURIComponent(SITE)+'&text='+encodeURIComponent('"'+(b.chaos_line||'')+'" — Chaos Intelligence')+'">✈ Telegram</a><button class="btn btn-secondary" onclick="copyLine()">📋 Copy Line</button></div>';
+      }
 
       // Trap
-      document.getElementById('trap-card').innerHTML='<div class="trap-tag">⚠ MARKET TRAP</div><div class="trap-text">'+briefHtml(b.trap)+'</div>';
+      var tpEl = document.getElementById('trap-card');
+      if (tpEl) {
+        tpEl.innerHTML='<div class="trap-tag">⚠ MARKET TRAP</div><div class="trap-text">'+briefHtml(b.trap)+'</div>';
+      }
 
       // Edge
-      document.getElementById('edge-card').innerHTML='<div class="edge-tag">🔍 THE EDGE — WHAT OTHERS ARE MISSING</div><div class="edge-text">'+briefHtml(b.edge)+'</div>';
+      var edEl = document.getElementById('edge-card');
+      if (edEl) {
+        edEl.innerHTML='<div class="edge-tag">🔍 THE EDGE — WHAT OTHERS ARE MISSING</div><div class="edge-text">'+briefHtml(b.edge)+'</div>';
+      }
 
       // Plays
       document.getElementById('plays-grid').innerHTML=(b.plays||[]).map(playCard).join('');
