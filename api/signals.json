@@ -1,6 +1,16 @@
 [
   {
     "date": "2026-06-03",
+    "timestamp": "2026-06-03T09:50:36.544Z",
+    "signal_hash": "CI-5QR0X39A-B",
+    "signal": "BEARISH",
+    "headline": "Market Capitulation Imminent Amidst Geopolitical Storm",
+    "btc_entry": 66629,
+    "resolved": false,
+    "resolution_status": "OPEN"
+  },
+  {
+    "date": "2026-06-03",
     "timestamp": "2026-06-03T09:08:17.129Z",
     "signal_hash": "CI-OA3X2TSE-B",
     "signal": "BEARISH",
