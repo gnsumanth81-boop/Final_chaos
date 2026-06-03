@@ -94,6 +94,16 @@ export async function syncWithGitHub(latestJson) {
     ok = await pushFile('api/signals.json', signalsPath, commitMsg + ' [ledger]') && ok;
   }
   
+  // Push SEO Brief Archive
+  const briefsDir = path.resolve('api/briefs');
+  if (fs.existsSync(briefsDir)) {
+    const files = fs.readdirSync(briefsDir).filter(f => f.endsWith('.html'));
+    for (const f of files) {
+      const p = path.resolve('api/briefs', f);
+      ok = await pushFile(`api/briefs/${f}`, p, commitMsg + ' [seo archive]') && ok;
+    }
+  }
+
   // Push audio files if they exist
   const audioFiles = ['eli5.mp3', 'analyst.mp3', 'quant.mp3'];
   for (const f of audioFiles) {

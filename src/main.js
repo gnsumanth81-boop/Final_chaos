@@ -71,6 +71,34 @@ async function main() {
     fs.writeFileSync(apiPath, JSON.stringify(finalData, null, 2), 'utf8');
     console.log("✅ State overwritten in ./api/latest.json with zero data loss.");
 
+    // Save brief archive for SEO
+    const briefsDir = path.resolve('api', 'briefs');
+    if (!fs.existsSync(briefsDir)) fs.mkdirSync(briefsDir, { recursive: true });
+    const sessionDate = new Date().toISOString().split('T')[0];
+    const sessionName = finalData.market?.session || 'morning';
+    const briefPath = path.resolve(briefsDir, `${sessionDate}-${sessionName.toLowerCase()}.html`);
+    const briefHtml = `
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Chaos Intelligence | ${finalData.brief?.headline || 'Market Update'} - ${sessionDate}</title>
+  <meta name="description" content="${finalData.brief?.chaos_line || 'Chaos Intelligence live macro war-room brief.'}">
+  <style>body{font-family:sans-serif;line-height:1.6;max-width:800px;margin:0 auto;padding:2rem;}blockquote{border-left:4px solid #DC4A5A;margin:0;padding-left:1rem;font-style:italic;}</style>
+</head>
+<body>
+  <h1>${finalData.brief?.headline || 'Market Update'}</h1>
+  <p><strong>Date:</strong> ${sessionDate} | <strong>Session:</strong> ${sessionName.toUpperCase()}</p>
+  <p><strong>Signal:</strong> ${finalData.brief?.signal || 'NEUTRAL'} (${finalData.brief?.confidence || 0}% Confidence)</p>
+  <h2>The Chaos Line</h2>
+  <blockquote>${finalData.brief?.chaos_line || ''}</blockquote>
+  <h2>Analyst Brief</h2>
+  <p>${(finalData.brief?.analyst || '').replace(/\n/g, '<br>')}</p>
+</body>
+</html>`;
+    fs.writeFileSync(briefPath, briefHtml, 'utf8');
+    console.log(`✅ SEO brief archive saved to ${briefPath}`);
+
     // 5. Discord & Telegram Alerts
     await Promise.all([
       sendDiscordAlert(finalData),
