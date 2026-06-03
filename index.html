@@ -160,8 +160,8 @@
     /* ── INTELLIGENCE TABS ── */
     .cx-section,.forces,.chaos,.macro,.wires,.ctx,.poly,.trap,.edge-section{margin-bottom:48px}
     .cx-tabs{display:grid;grid-template-columns:repeat(3,1fr);background:var(--s1);border:1px solid var(--s3);border-radius:10px 10px 0 0;overflow:hidden}
-    .cx-btn{padding:16px 8px;background:transparent;border:none;border-right:1px solid var(--s3);border-bottom:2px solid transparent;cursor:pointer;transition:all .3s;text-align:center;position:relative}.cx-btn:last-child{border-right:none}.cx-btn.active{background:var(--s2);border-bottom:2px solid var(--red)}
-    .cx-n{display:block;font-family:var(--font-ui);font-size:.82rem;font-weight:700;letter-spacing:1.5px;color:var(--muted)}.cx-btn.active .cx-n{color:var(--red)}.cx-sub{display:block;font-family:var(--font-mono);font-size:.44rem;color:var(--muted);margin-top:3px}
+    .cx-btn{padding:16px 8px;background:transparent;border:none;border-right:1px solid var(--s3);border-bottom:3px solid transparent;cursor:pointer;transition:all .3s;text-align:center;position:relative}.cx-btn:last-child{border-right:none}.cx-btn.active{background:linear-gradient(to top, rgba(232,57,74,0.15), transparent);border-bottom:3px solid var(--red)}
+    .cx-n{display:block;font-family:var(--font-ui);font-size:.82rem;font-weight:700;letter-spacing:1.5px;color:var(--muted);transition:all 0.3s}.cx-btn.active .cx-n{color:var(--text-bright);text-shadow:0 0 10px rgba(232,57,74,0.5)}.cx-sub{display:block;font-family:var(--font-mono);font-size:.44rem;color:var(--muted);margin-top:3px}
     .pane{display:none;animation:fadeUp .4s ease}.pane.active{display:block}.brief{padding:28px;background:var(--s1);border:1px solid var(--s3);border-top:none;border-radius:0 0 10px 10px;font-size:1.08rem;line-height:1.95;color:var(--ink)}.brief p{margin-bottom:14px}.brief p:last-child{margin-bottom:0}
     .brief-meta{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid var(--s3);align-items:center}.brief-tag{font-family:var(--font-mono);font-size:.44rem;letter-spacing:1.5px;padding:3px 9px;border-radius:3px;background:var(--s2);color:var(--muted);border:1px solid var(--s3)}
     .voice-btn{display:inline-flex;align-items:center;justify-content:center;gap:5px;height:28px;padding:0 12px;background:linear-gradient(135deg,rgba(245,166,35,.15),rgba(245,166,35,.08));border:1.5px solid rgba(245,166,35,.5);border-radius:14px;color:var(--gold);font-family:var(--font-mono);font-size:.42rem;font-weight:700;letter-spacing:1.5px;cursor:pointer;text-transform:uppercase;border:1.5px solid rgba(245,166,35,.5)}
@@ -171,12 +171,12 @@
     .forces-grid{display:flex;flex-wrap:wrap;gap:8px}.fc{display:flex;align-items:center;gap:6px;padding:8px 14px;border-radius:6px;font-family:var(--font-mono);font-size:.52rem;font-weight:700;letter-spacing:1px;border:1px solid var(--s3);background:var(--s1);color:var(--muted);opacity:.15;filter:grayscale(100%);transition:all 0.3s}.fc.on{background:var(--red-g);border:1px solid rgba(232,57,74,.4);color:var(--red);opacity:1;filter:none;box-shadow:0 0 10px rgba(232,57,74,.15)}.fc-dot{width:5px;height:5px;border-radius:50%;background:var(--muted)}.fc.on .fc-dot{background:var(--red);animation:pulse 1.4s ease infinite}
 
     /* ── AGENTS ── */
-    .agent-panel{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;width:100%;margin-top:14px}
-    @media (min-width: 768px){.agent-panel{grid-template-columns:repeat(4,1fr);gap:14px}}
-    .agent-card{padding:18px 14px;border-radius:10px;border:1px solid var(--s3);background:linear-gradient(180deg, var(--s1), var(--s2));text-align:center;position:relative;overflow:hidden;transition:all 0.3s;}.agent-card:hover{transform:translateY(-2px);border-color:var(--s4);}
-    .agent-name{font-family:var(--font-mono);font-size:.55rem;font-weight:700;letter-spacing:1.5px;color:var(--muted);margin-bottom:8px;text-transform:uppercase}
-    .agent-bias{font-family:var(--font-mono);font-size:.85rem;font-weight:700;letter-spacing:1px;padding-bottom:12px;border-bottom:1px solid var(--s3);margin-bottom:12px}
-    .agent-thesis{font-family:'Inter',sans-serif;font-size:0.9rem;line-height:1.5;color:var(--ink);word-wrap:break-word}
+    .agent-panel{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;width:100%;margin-top:14px}
+    @media (min-width: 768px){.agent-panel{grid-template-columns:repeat(4,1fr);gap:18px}}
+    .agent-card{padding:22px 18px;border-radius:12px;border:1px solid var(--s3);background:linear-gradient(180deg, rgba(20,20,25,0.8), rgba(10,10,15,0.9));text-align:center;position:relative;overflow:hidden;transition:all 0.3s;box-shadow:0 4px 20px rgba(0,0,0,0.5);}.agent-card:hover{transform:translateY(-4px);border-color:var(--s4);box-shadow:0 8px 30px rgba(0,0,0,0.7);}
+    .agent-name{font-family:var(--font-mono);font-size:.65rem;font-weight:700;letter-spacing:1.5px;margin-bottom:12px;text-transform:uppercase;display:flex;align-items:center;justify-content:center;gap:6px;}
+    .agent-bias{font-family:var(--font-mono);font-size:1.1rem;font-weight:700;letter-spacing:2px;padding-bottom:14px;border-bottom:1px solid var(--s3);margin-bottom:14px;text-shadow:0 0 10px currentColor;}
+    .agent-thesis{font-family:'Inter',sans-serif;font-size:0.95rem;line-height:1.6;color:var(--text-bright);word-wrap:break-word;text-align:left;}
     .debate-badge{display:inline-flex;align-items:center;gap:4px;padding:4px 10px;border-radius:20px;font-family:var(--font-mono);font-size:.42rem;letter-spacing:1px;font-weight:700;margin-top:8px;background:rgba(245,166,35,.1);border:1px solid var(--gold);color:var(--gold)}
 
     /* ── CHAOS LINE ── */
@@ -714,9 +714,21 @@
     function metric(l,v,s,c='neut'){return'<div class="mi"><div class="mi-l">'+esc(l)+'</div><div class="mi-v '+c+'">'+esc(v)+'</div><div class="mi-s">'+esc(s)+'</div></div>';}
 
     function agentCard(name,agent){
-      if(!agent)return'<div class="agent-card"><div class="agent-name">'+esc(name)+'</div><div class="agent-bias neut">—</div></div>';
-      const bc=sigCls(agent.bias||'NEUTRAL');
-      return'<div class="agent-card"><div class="agent-name">🧠 '+esc(name)+'</div><div class="agent-bias '+bc+'">'+esc(agent.bias||'—')+'</div><div class="agent-thesis">'+esc(agent.thesis||'')+'</div></div>';
+      if(!agent)return'<div class="agent-card"><div class="agent-name" style="color:var(--muted)">'+esc(name)+'</div><div class="agent-bias neut">—</div></div>';
+      const biasRaw = agent.bias || 'NEUTRAL';
+      const bc = sigCls(biasRaw);
+      const colorVar = bc==='bull'?'var(--green)':bc==='bear'?'var(--red)':bc==='volt'?'var(--gold)':'var(--muted)';
+      const rgbShadow = bc==='bull'?'rgba(0,255,136,0.15)':bc==='bear'?'rgba(232,57,74,0.15)':bc==='volt'?'rgba(245,166,35,0.15)':'transparent';
+      
+      return `
+        <div class="agent-card" style="border-top: 3px solid ${colorVar}; background: linear-gradient(180deg, ${rgbShadow}, rgba(10,10,15,0.9));">
+          <div class="agent-name" style="color: ${colorVar};">
+            <span style="opacity:0.7;">🧠</span> ${esc(name)}
+          </div>
+          <div class="agent-bias ${bc}" style="border-bottom-color: ${colorVar}40;">${esc(biasRaw)}</div>
+          <div class="agent-thesis">${esc(agent.thesis||'')}</div>
+        </div>
+      `;
     }
 
     function playCard(p,i){
