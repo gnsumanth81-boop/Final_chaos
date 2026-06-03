@@ -160,7 +160,7 @@
     /* ── INTELLIGENCE TABS ── */
     .cx-section,.forces,.chaos,.macro,.wires,.ctx,.poly,.trap,.edge-section{margin-bottom:48px}
     .cx-tabs{display:grid;grid-template-columns:repeat(3,1fr);background:var(--s1);border:1px solid var(--s3);border-radius:10px 10px 0 0;overflow:hidden}
-    .cx-btn{padding:16px 8px;background:transparent;border:none;border-right:1px solid var(--s3);cursor:pointer;transition:all .3s;text-align:center;position:relative}.cx-btn:last-child{border-right:none}.cx-btn::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--red);transform:scaleX(0);transition:transform .3s}.cx-btn.active{background:linear-gradient(180deg,rgba(232,57,74,.08),transparent)}.cx-btn.active::after{transform:scaleX(1)}
+    .cx-btn{padding:16px 8px;background:transparent;border:none;border-right:1px solid var(--s3);border-bottom:2px solid transparent;cursor:pointer;transition:all .3s;text-align:center;position:relative}.cx-btn:last-child{border-right:none}.cx-btn.active{background:var(--s2);border-bottom:2px solid var(--red)}
     .cx-n{display:block;font-family:var(--font-ui);font-size:.82rem;font-weight:700;letter-spacing:1.5px;color:var(--muted)}.cx-btn.active .cx-n{color:var(--red)}.cx-sub{display:block;font-family:var(--font-mono);font-size:.44rem;color:var(--muted);margin-top:3px}
     .pane{display:none;animation:fadeUp .4s ease}.pane.active{display:block}.brief{padding:28px;background:var(--s1);border:1px solid var(--s3);border-top:none;border-radius:0 0 10px 10px;font-size:1.08rem;line-height:1.95;color:var(--ink)}.brief p{margin-bottom:14px}.brief p:last-child{margin-bottom:0}
     .brief-meta{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid var(--s3);align-items:center}.brief-tag{font-family:var(--font-mono);font-size:.44rem;letter-spacing:1.5px;padding:3px 9px;border-radius:3px;background:var(--s2);color:var(--muted);border:1px solid var(--s3)}
@@ -168,15 +168,15 @@
     .brief-metrics{display:flex;flex-wrap:wrap;margin-top:18px;border:1px solid var(--s3);border-radius:8px;overflow:hidden}.bm{flex:1;min-width:100px;padding:12px 14px;border-right:1px solid var(--s3);background:var(--s2)}.bm:last-child{border-right:none}.bm-v{font-family:var(--font-big);font-size:1.3rem;letter-spacing:1px;color:var(--gold);line-height:1}.bm-l{font-family:var(--font-mono);font-size:.42rem;color:var(--muted);letter-spacing:1.5px;margin-top:4px;text-transform:uppercase}
 
     /* ── FORCES ── */
-    .forces-grid{display:flex;flex-wrap:wrap;gap:8px}.fc{display:flex;align-items:center;gap:6px;padding:8px 14px;border-radius:6px;font-family:var(--font-mono);font-size:.52rem;font-weight:700;letter-spacing:1px;border:1px solid var(--s3);background:var(--s1);color:var(--muted);opacity:.34}.fc.on{background:var(--red-g);border-color:rgba(232,57,74,.25);color:var(--red);opacity:1}.fc-dot{width:5px;height:5px;border-radius:50%;background:var(--muted)}.fc.on .fc-dot{background:var(--red);animation:pulse 1.4s ease infinite}
+    .forces-grid{display:flex;flex-wrap:wrap;gap:8px}.fc{display:flex;align-items:center;gap:6px;padding:8px 14px;border-radius:6px;font-family:var(--font-mono);font-size:.52rem;font-weight:700;letter-spacing:1px;border:1px solid var(--s3);background:var(--s1);color:var(--muted);opacity:.15;filter:grayscale(100%);transition:all 0.3s}.fc.on{background:var(--red-g);border:1px solid rgba(232,57,74,.4);color:var(--red);opacity:1;filter:none;box-shadow:0 0 10px rgba(232,57,74,.15)}.fc-dot{width:5px;height:5px;border-radius:50%;background:var(--muted)}.fc.on .fc-dot{background:var(--red);animation:pulse 1.4s ease infinite}
 
     /* ── AGENTS ── */
     .agent-panel{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;width:100%;margin-top:14px}
     @media (min-width: 768px){.agent-panel{grid-template-columns:repeat(4,1fr);gap:14px}}
-    .agent-card{padding:13px 14px;border-radius:10px;border:1px solid var(--s3);background:var(--s1);text-align:center}
-    .agent-name{font-family:var(--font-mono);font-size:.5rem;letter-spacing:1.5px;color:var(--muted);margin-bottom:6px;text-transform:uppercase}
-    .agent-bias{font-family:var(--font-mono);font-size:.78rem;font-weight:700;letter-spacing:1px}
-    .agent-thesis{font-family:'Inter',sans-serif;font-size:11px;line-height:1.4;color:#d4d4d8;margin-top:8px;word-wrap:break-word}
+    .agent-card{padding:18px 14px;border-radius:10px;border:1px solid var(--s3);background:linear-gradient(180deg, var(--s1), var(--s2));text-align:center;position:relative;overflow:hidden;transition:all 0.3s;}.agent-card:hover{transform:translateY(-2px);border-color:var(--s4);}
+    .agent-name{font-family:var(--font-mono);font-size:.55rem;font-weight:700;letter-spacing:1.5px;color:var(--muted);margin-bottom:8px;text-transform:uppercase}
+    .agent-bias{font-family:var(--font-mono);font-size:.85rem;font-weight:700;letter-spacing:1px;padding-bottom:12px;border-bottom:1px solid var(--s3);margin-bottom:12px}
+    .agent-thesis{font-family:'Inter',sans-serif;font-size:0.9rem;line-height:1.5;color:var(--ink);word-wrap:break-word}
     .debate-badge{display:inline-flex;align-items:center;gap:4px;padding:4px 10px;border-radius:20px;font-family:var(--font-mono);font-size:.42rem;letter-spacing:1px;font-weight:700;margin-top:8px;background:rgba(245,166,35,.1);border:1px solid var(--gold);color:var(--gold)}
 
     /* ── CHAOS LINE ── */
@@ -654,7 +654,16 @@
     
     function formatNarrativeStrike(rawText) {
       if (!rawText) return '<div class="bg-card">Awaiting model consensus...</div>';
-      return '<div class="bg-card"><div style="font-family: var(--font-mono); font-size: 0.65rem; color: var(--accent-gold); margin-bottom: 12px; letter-spacing: 1px;">// TARGETED NARRATIVE STRIKE //</div><div class="editorial-text" style="color: var(--text-bright);">' + esc(rawText).replace(/\n\n+/g, '</div><div class="editorial-text" style="color: var(--text-bright); margin-top: 16px;">') + '</div></div>';
+      
+      const keywords = ['yields', '10-year Treasury yield', 'US Dollar Index', 'DXY', 'Bitcoin', 'S&P 500', 'bearish', 'bullish', 'liquidity', 'volatility', 'VIX'];
+      let formatted = esc(rawText);
+      keywords.forEach(kw => {
+         const regex = new RegExp(`\\b(${kw})\\b`, 'gi');
+         formatted = formatted.replace(regex, '<span style="color: var(--gold); font-weight: bold;">$1</span>');
+      });
+      formatted = formatted.replace(/\n\n+/g, '</div><div class="editorial-text" style="color: var(--text-bright); margin-top: 16px;">');
+      
+      return '<div class="bg-card"><div style="font-family: var(--font-mono); font-size: 0.65rem; color: var(--accent-gold); margin-bottom: 12px; letter-spacing: 1px;">// TARGETED NARRATIVE STRIKE //</div><div class="editorial-text" style="color: var(--text-bright); line-height:1.8;">' + formatted + '</div></div>';
     }
 
     // ── ODOMETER ANIMATION ──
@@ -673,7 +682,7 @@
 
     const animateSovereignGauge = (fearIndex) => {
       // DATA READY CHECK
-      if (!fearIndex || isNaN(parseInt(fearIndex))) return;
+      if (fearIndex === undefined || fearIndex === null || isNaN(parseInt(fearIndex))) return;
       const numEl = document.getElementById('gauge-num');
       const arc = document.getElementById('gauge-arc');
       const label = document.getElementById('gauge-label');
@@ -949,6 +958,15 @@
         deltaBtcEl.innerHTML = 'BTC: ' + (btcChange >= 0 ? '+' : '') + btcChange.toFixed(2) + '%';
         deltaBtcEl.style.color = btcChange >= 0 ? 'var(--green)' : 'var(--red)';
       }
+      // Update Final Chaos Bias section
+      const finalBiasEl = document.getElementById('final-chaos-bias');
+      const finalConfEl = document.getElementById('final-chaos-conf');
+      if (finalBiasEl && finalConfEl) {
+        finalBiasEl.textContent = signal;
+        finalBiasEl.style.color = 'var(--' + (scls === 'bull' ? 'green' : scls === 'bear' ? 'red' : 'gold') + ')';
+        finalConfEl.textContent = (b.confidence || 0) + '% CONFIDENCE';
+      }
+      
       const prevFear = parseFloat(m.fearPrev || m.fearIndex || 50);
       const fearShift = fear - prevFear;
       const deltaFearEl = document.getElementById('delta-fear');
@@ -1058,7 +1076,7 @@
       // Chaos Line
       var clEl = document.getElementById('chaos-line-card');
       if (clEl) {
-        clEl.innerHTML='<span class="chaos-tag">✦ THE CHAOS LINE</span><div class="chaos-text">&ldquo;'+esc(b.chaos_line||'')+'&rdquo;</div><div class="share-row"><a class="btn btn-secondary" target="_blank" href="https://twitter.com/intent/tweet?text='+encodeURIComponent('"'+(b.chaos_line||'')+'" — Chaos Intelligence\n'+SITE)+'">𝕏 Post</a><a class="btn btn-secondary" target="_blank" href="https://t.me/share/url?url='+encodeURIComponent(SITE)+'&text='+encodeURIComponent('"'+(b.chaos_line||'')+'" — Chaos Intelligence')+'">✈ Telegram</a><button class="btn btn-secondary" onclick="copyLine()">📋 Copy Line</button></div>';
+        clEl.innerHTML='<span class="chaos-tag">✦ THE CHAOS LINE</span><div class="chaos-text" id="chaos-quote-text">&ldquo;'+esc(b.chaos_line||'')+'&rdquo;</div><div class="share-row"><a class="btn btn-secondary" target="_blank" href="https://twitter.com/intent/tweet?text='+encodeURIComponent('"'+(b.chaos_line||'')+'" — Chaos Intelligence\n'+SITE)+'">𝕏 Post</a><a class="btn btn-secondary" target="_blank" href="https://t.me/share/url?url='+encodeURIComponent(SITE)+'&text='+encodeURIComponent('"'+(b.chaos_line||'')+'" — Chaos Intelligence')+'">✈ Telegram</a><button class="btn btn-secondary" onclick="copyLine()">📋 Copy Line</button><button class="btn btn-secondary" style="color:var(--gold);" onclick="generateChaosImage()">🖼️ Download Image</button></div>';
       }
 
       // Trap
@@ -1147,12 +1165,16 @@
       // Context
       document.getElementById('context-grid').innerHTML=renderContext(m,b);
 
-      // Polymarket
-      var odds=num(m.marketOdds,50);
-      document.getElementById('poly-card').innerHTML='<span class="poly-tag">⚡ TOP PREDICTION MARKET</span><div class="poly-q">'+esc(m.marketTitle||'Prediction market unavailable')+'</div><div class="poly-row"><div class="poly-odds">'+esc(m.marketOdds||'50.0')+'%</div><div><div style="font-family:var(--font-mono);font-size:.44rem;color:var(--muted);margin-bottom:6px">YES probability</div><div class="poly-track"><div class="poly-fill" style="width:'+Math.max(0,Math.min(100,odds))+'%"></div></div></div></div><div style="margin-top:14px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px"><div class="vd">Volume: '+esc(m.marketVolume||'$0')+'</div><a class="poly-link" href="'+esc(m.marketLink||'https://polymarket.com')+'" target="_blank">VIEW LIVE →</a></div>';
-
       // Wires
-      document.getElementById('wires').innerHTML=renderWires(b.news_wires);
+      const wiresEl = document.getElementById('wires');
+      if (wiresEl) {
+        if (!b.news_wires || b.news_wires.length === 0) {
+          wiresEl.parentElement.style.display = 'none';
+        } else {
+          wiresEl.parentElement.style.display = 'block';
+          wiresEl.innerHTML = renderWires(b.news_wires);
+        }
+      }
 
       // ══ CVX ENGINE ══
       var cvxFear = num(m.fearIndex, 50);
@@ -1329,6 +1351,81 @@
     document.addEventListener('keydown', function(e) {
       if (e.key === 'Escape') closeHashVerifier();
     });
+
+    // ── CHAOS LINE IMAGE GENERATOR ──
+    function generateChaosImage() {
+      const canvas = document.getElementById('og-canvas');
+      const ctx = canvas.getContext('2d');
+      const width = canvas.width;
+      const height = canvas.height;
+
+      // 1. Background
+      ctx.fillStyle = '#08080c';
+      ctx.fillRect(0, 0, width, height);
+      
+      // 2. Subtle Red Gradient Accent
+      const grd = ctx.createLinearGradient(0, 0, width, height);
+      grd.addColorStop(0, 'rgba(232,57,74,0.15)');
+      grd.addColorStop(1, 'rgba(8,8,12,1)');
+      ctx.fillStyle = grd;
+      ctx.fillRect(0, 0, width, height);
+
+      // 3. Brand Text
+      ctx.fillStyle = '#e8394a'; // var(--red)
+      ctx.font = 'bold 24px monospace';
+      ctx.letterSpacing = '4px';
+      ctx.textAlign = 'left';
+      ctx.fillText('CHAOS INTELLIGENCE', 80, 80);
+
+      // 4. Date & Vitals
+      const dateText = document.getElementById('brief-tag')?.textContent || 'TODAY';
+      ctx.fillStyle = '#8a8f9c'; // var(--muted)
+      ctx.font = '20px monospace';
+      ctx.letterSpacing = '2px';
+      ctx.fillText(dateText + '  //  chaos.sumanthworks.com', 80, 115);
+
+      // 5. The Chaos Line Text (Wrapping)
+      const quote = document.getElementById('chaos-quote-text')?.innerText || '"' + currentLine + '"';
+      ctx.fillStyle = '#ffffff';
+      ctx.font = 'italic 54px serif';
+      ctx.textAlign = 'center';
+      
+      const words = quote.split(' ');
+      let line = '';
+      let y = 300;
+      const maxWidth = 1000;
+      
+      ctx.letterSpacing = 'normal';
+      
+      // Handle multi-line wrapping
+      let lines = [];
+      for(let n = 0; n < words.length; n++) {
+        let testLine = line + words[n] + ' ';
+        let metrics = ctx.measureText(testLine);
+        if (metrics.width > maxWidth && n > 0) {
+          lines.push(line);
+          line = words[n] + ' ';
+        } else {
+          line = testLine;
+        }
+      }
+      lines.push(line);
+      
+      // Vertically center the block of text
+      const lineHeight = 75;
+      const totalHeight = lines.length * lineHeight;
+      y = (height / 2) - (totalHeight / 2) + 40;
+      
+      for(let i=0; i<lines.length; i++) {
+        ctx.fillText(lines[i], width/2, y + (i*lineHeight));
+      }
+      
+      // 6. Download Trigger
+      const link = document.createElement('a');
+      link.download = `chaos-line-${new Date().toISOString().slice(0,10)}.png`;
+      link.href = canvas.toDataURL('image/png');
+      link.click();
+    }
   </script>
 
   <!-- CRYPTOGRAPHIC PROOF VERIFIER TERM OVERLAY -->
@@ -1346,5 +1443,7 @@
       </div>
     </div>
   </div>
+  
+  <canvas id="og-canvas" width="1200" height="630" style="display:none;"></canvas>
 </body>
 </html>
