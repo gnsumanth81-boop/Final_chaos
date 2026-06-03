@@ -1,6 +1,16 @@
 [
   {
     "date": "2026-06-03",
+    "timestamp": "2026-06-03T02:55:55.520Z",
+    "signal_hash": "CI-UYU2DX50-B",
+    "signal": "BEARISH",
+    "headline": "Fear Fuels Dollar Rally Amid Crypto Turmoil",
+    "btc_entry": 66679,
+    "resolved": false,
+    "resolution_status": "OPEN"
+  },
+  {
+    "date": "2026-06-03",
     "timestamp": "2026-06-03T02:36:02.081Z",
     "signal_hash": "CI-VY7P5AT0-N",
     "signal": "NEUTRAL",
