@@ -1,6 +1,16 @@
 [
   {
     "date": "2026-06-03",
+    "timestamp": "2026-06-03T03:14:54.345Z",
+    "signal_hash": "CI-2CGMNBV3-B",
+    "signal": "BEARISH",
+    "headline": "Global Chaos Symphony: Fear Index at 11, BTC Plunges",
+    "btc_entry": 66366,
+    "resolved": false,
+    "resolution_status": "OPEN"
+  },
+  {
+    "date": "2026-06-03",
     "timestamp": "2026-06-03T03:13:55.263Z",
     "signal_hash": "CI-I9JR9OTY-B",
     "signal": "BEARISH",
