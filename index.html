@@ -422,6 +422,33 @@
     @media(max-width:700px){.wrap{padding:0 14px}.hdr-top{align-items:flex-start;flex-direction:column}.vitals{grid-template-columns:repeat(2,1fr)}.mgrid{grid-template-columns:repeat(2,1fr)}.ctx-grid,.agent-panel{grid-template-columns:1fr}.brief{font-size:.98rem;padding:18px}.brief-metrics{flex-direction:column}.bm{border-right:0;border-bottom:1px solid var(--s3)}.s-btn{font-size:.48rem;padding:7px 10px}.poly-row{flex-direction:column;align-items:flex-start}.poly-track{width:100%}.mobile-dock{display:block}.desktop-nav{display:none}body{padding-bottom:70px}.tv-row{grid-template-columns:1fr}.mobile-signal-card{display:block}}
     @media(min-width:701px){.mobile-signal-card{display:none}}
     @media(min-width:1280px){.wrap{max-width:820px}.brief{font-size:1.15rem;line-height:2}.chaos-text{font-size:1.75rem}h1.hl{font-size:3.8rem}.ctx-grid{grid-template-columns:repeat(4,1fr)}}
+
+    /* ─────────────────────────────────────────────────────────────────
+       ⚡ EXECUTIVE COMPRESSION TOKENS (HIGH-DENSITY GRID)
+       ───────────────────────────────────────────────────────────────── */
+    :root {
+      --bg-app: #030304;
+      --bg-card: #0c0d12;
+      --text-pure: #ffffff;
+      --text-bright: #f4f4f5;
+      --text-muted: #8a8f9c;
+      --accent-gold: #d4af37;
+    }
+    .terminal-container, .wrap { max-width: 1100px; padding: 12px 16px; margin: 0 auto; }
+    .main { padding: 16px 0; }
+    .brand { font-size: clamp(1.4rem, 4vw, 2.0rem); letter-spacing: -0.03em; }
+    h1.hl, .main-headline { font-size: clamp(1.4rem, 4vw, 2.0rem); margin: 8px 0 12px 0; color: var(--text-pure); }
+    .bg-card, .glass-card { padding: 14px 18px !important; margin-bottom: 10px !important; }
+    .sec-title { font-size: 0.7rem; margin-top: 16px; margin-bottom: 10px; padding-bottom: 4px; }
+    .gauge-wrap { max-width: 160px; margin: 0 auto 12px auto; }
+    .brief { padding: 12px 14px !important; font-size: 0.92rem; line-height: 1.6; }
+    .agent-card { padding: 8px 10px !important; }
+    .cx-section, .forces, .chaos, .macro, .wires, .ctx, .poly, .trap, .edge-section { margin-bottom: 20px !important; }
+    .plays-grid { margin-bottom: 16px !important; }
+    .chaos, .trap, .edge-section { padding: 12px 16px !important; }
+    /* Compact world clock */
+    .world-clock-bar { font-size: 0.45rem; padding: 6px 0; border-bottom: none; gap: 8px; }
+
   </style>
 </head>
 <body>
@@ -452,12 +479,20 @@
   <!-- ═══════════ INTEL VIEW ═══════════ -->
   <div id="view-terminal" class="spa-view active">
     <div class="wrap">
-      <header class="hdr">
-        <div class="hdr-top"><div class="brand">CHAOS<em>.</em></div><div class="live-b"><span class="live-d"></span>LIVE BRIEF</div></div>
-        <div class="dateline"><span id="date-line">LOADING</span><span class="ed-badge" id="session-badge">DAILY BRIEF</span></div>
-        <div id="world-clock-bar" class="world-clock-bar"></div>
-      </header>
-      <div class="hash-badge rv" onclick="openHashVerifier()" style="cursor: pointer;"><span>🔐 VERIFIED</span><span class="hash-val" id="hash-val">Hash pending...</span></div>
+      
+      <div style="display: flex; justify-content: space-between; align-items: center; font-family: 'JetBrains Mono'; font-size: 0.65rem; color: var(--text-muted); margin-top: 10px; margin-bottom: 10px;">
+        <div style="display:flex; align-items:center; gap:8px;">LIVE BRIEF // <span id="date-line">LOADING</span></div>
+        <div class="badge" style="color: var(--accent-gold); cursor:pointer;" onclick="openHashVerifier()">🔐 VERIFIED: <span id="hash-val">Hash pending...</span></div>
+      </div>
+      <div id="world-clock-bar" class="world-clock-bar"></div>
+      
+      <!-- FINAL CHAOS BIAS -->
+      <div style="text-align:center; padding: 12px; border-bottom:1px solid rgba(255,255,255,0.05); margin-bottom: 16px;">
+        <div style="font-family: var(--font-mono); font-size: 0.55rem; color: var(--text-muted); letter-spacing: 2px; text-transform:uppercase;">FINAL CHAOS BIAS</div>
+        <div id="final-chaos-bias" style="font-family: var(--font-big); font-size: 2.2rem; letter-spacing: 1px; color: var(--text-pure);">CALCULATING...</div>
+        <div id="final-chaos-conf" style="font-family: var(--font-mono); font-size: 0.55rem; color: var(--text-muted); margin-top:4px;">--% CONFIDENCE</div>
+      </div>
+
     </div>
     <div class="wrap"><div class="vitals" id="vitals"></div></div>
 
@@ -702,25 +737,32 @@
     }
 
     const animateSovereignGauge = (fearIndex) => {
-      const pointer = document.getElementById('linear-pointer-node');
-      const readout = document.getElementById('linear-gauge-readout-text');
-      if (!pointer || !readout) return;
-      const value = Math.min(100, Math.max(0, parseInt(fearIndex) || 50));
-      pointer.className = 'linear-gauge-pointer';
-      if (value < 30) {
-        pointer.classList.add('marker-chaos');
-        readout.className = 'l-gauge-readout txt-red';
-        readout.textContent = value + ' / 100 (CRITICAL FLUSH WINDOW)';
-      } else if (value > 60) {
-        pointer.classList.add('marker-calm');
-        readout.className = 'l-gauge-readout txt-green';
-        readout.textContent = value + ' / 100 (ASYMMETRIC LIQUIDITY RUN)';
-      } else {
-        pointer.classList.add('marker-stressed');
-        readout.className = 'l-gauge-readout txt-gold';
-        readout.textContent = value + ' / 100 (COMPRESSING EQUILIBRIUM)';
-      }
-      setTimeout(() => { pointer.style.left = value + '%'; }, 400);
+      // DATA READY CHECK
+      if (!fearIndex || isNaN(parseInt(fearIndex))) return;
+      const numEl = document.getElementById('gauge-num');
+      const arc = document.getElementById('gauge-arc');
+      const label = document.getElementById('gauge-label');
+      const glow = document.getElementById('gauge-glow');
+      if (!numEl || !arc || !label) return;
+      
+      const value = Math.min(100, Math.max(0, parseInt(fearIndex)));
+      numEl.textContent = value;
+      
+      // Calculate arc dashoffset (251 is full circle, 0 is full)
+      const maxOffset = 251;
+      const offset = maxOffset - (value / 100) * maxOffset;
+      setTimeout(() => { arc.style.strokeDashoffset = offset; }, 100);
+      
+      let color = 'var(--gold)';
+      let lblTxt = 'NEUTRAL';
+      if (value < 25) { color = 'var(--red)'; lblTxt = 'EXTREME FEAR'; }
+      else if (value > 60) { color = 'var(--green)'; lblTxt = 'GREED / BULLISH'; }
+      
+      arc.style.stroke = color;
+      numEl.style.color = color;
+      label.style.color = color;
+      label.textContent = lblTxt;
+      if (glow) glow.style.background = color;
     };
 
     // ── BUILDERS ──
