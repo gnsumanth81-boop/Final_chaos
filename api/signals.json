@@ -1,21 +1,11 @@
 [
   {
     "date": "2026-06-03",
-    "timestamp": "2026-06-03T03:14:54.345Z",
-    "signal_hash": "CI-2CGMNBV3-B",
+    "timestamp": "2026-06-03T09:08:17.129Z",
+    "signal_hash": "CI-OA3X2TSE-B",
     "signal": "BEARISH",
-    "headline": "Global Chaos Symphony: Fear Index at 11, BTC Plunges",
-    "btc_entry": 66366,
-    "resolved": false,
-    "resolution_status": "OPEN"
-  },
-  {
-    "date": "2026-06-03",
-    "timestamp": "2026-06-03T03:13:55.263Z",
-    "signal_hash": "CI-I9JR9OTY-B",
-    "signal": "BEARISH",
-    "headline": "Extreme Fear Grips Markets Amid Escalating Geopolitical Chaos",
-    "btc_entry": 66395,
+    "headline": "CHAOS TERMINAL: Markets in Turmoil, Fear Reigns Supreme",
+    "btc_entry": 66905,
     "resolved": false,
     "resolution_status": "OPEN"
   },
@@ -66,8 +56,13 @@
     "signal": "BEARISH",
     "headline": "Dollar Dominates, Bonds Stay Priced",
     "btc_entry": 69951,
-    "resolved": false,
-    "resolution_status": "OPEN"
+    "resolved": true,
+    "resolution_status": "WIN",
+    "btc_exit": 66905,
+    "pnl_percent": 4.35,
+    "resolved_at": "2026-06-03T09:08:17.134Z",
+    "grading_method": "24h_btc_close",
+    "autopsy_note": "Price moved favorably beyond target within 24h window."
   },
   {
     "date": "2026-06-02",
@@ -76,8 +71,13 @@
     "signal": "NEUTRAL",
     "headline": "Dollar Hammers, Crypto Hovers",
     "btc_entry": 70032,
-    "resolved": false,
-    "resolution_status": "OPEN"
+    "resolved": true,
+    "resolution_status": "LOSS",
+    "btc_exit": 66905,
+    "pnl_percent": -4.47,
+    "resolved_at": "2026-06-03T09:08:17.134Z",
+    "grading_method": "24h_btc_close",
+    "autopsy_note": "Price broke key support level against signal thesis."
   },
   {
     "date": "2026-06-02",
@@ -86,8 +86,13 @@
     "signal": "NEUTRAL",
     "headline": "Dollar Gains, Crypto Volatility",
     "btc_entry": 70130,
-    "resolved": false,
-    "resolution_status": "OPEN"
+    "resolved": true,
+    "resolution_status": "LOSS",
+    "btc_exit": 66905,
+    "pnl_percent": -4.6,
+    "resolved_at": "2026-06-03T09:08:17.134Z",
+    "grading_method": "24h_btc_close",
+    "autopsy_note": "Price broke key support level against signal thesis."
   },
   {
     "date": "2026-06-02",
@@ -96,8 +101,13 @@
     "signal": "NEUTRAL",
     "headline": "Crypto Flat, Bonds Tighten, Geopolitics Stir",
     "btc_entry": 69896,
-    "resolved": false,
-    "resolution_status": "OPEN"
+    "resolved": true,
+    "resolution_status": "LOSS",
+    "btc_exit": 66905,
+    "pnl_percent": -4.28,
+    "resolved_at": "2026-06-03T09:08:17.134Z",
+    "grading_method": "24h_btc_close",
+    "autopsy_note": "Price broke key support level against signal thesis."
   },
   {
     "date": "2026-06-02",
