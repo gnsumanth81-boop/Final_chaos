@@ -974,7 +974,8 @@
       // Header
       document.getElementById('terminal-status').textContent=dateStr+' · '+timeStr;
       document.getElementById('date-line').textContent=dateStr+' · '+timeStr+' · CHAOS INTELLIGENCE';
-      document.getElementById('session-badge').textContent=(m.session||'MORNING')+' BRIEF';
+      var sessionBadge = document.getElementById('session-badge');
+      if (sessionBadge) sessionBadge.textContent=(m.session||'MORNING')+' BRIEF';
       document.getElementById('hash-val').textContent=latest.signal?.signal_hash||'Hash pending...';
 
       // Vitals
