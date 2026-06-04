@@ -8,7 +8,7 @@ import util from 'util';
 
 const execPromise = util.promisify(exec);
 
-const GITHUB_PAT = process.env.GITHUB_PAT;
+const GITHUB_PAT = process.env.GH_PAT || process.env.GITHUB_PAT;
 if (!GITHUB_PAT) {
   console.warn("MOCK RUN: GITHUB_PAT missing, bypassing push to github.");
 }
