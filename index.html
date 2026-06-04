@@ -1034,6 +1034,16 @@
       var btcChangeVal = num(m.btcChange).toFixed(2);
       var btcSign = num(m.btcChange) >= 0 ? '▲ +' : '▼ ';
       var vitalsEl = document.getElementById('vitals-target');
+      if (!vitalsEl) {
+        // If it doesn't exist, try to inject it before the context grid
+        var contextGrid = document.getElementById('context-grid');
+        if (contextGrid) {
+          vitalsEl = document.createElement('div');
+          vitalsEl.id = 'vitals-target';
+          vitalsEl.style.marginBottom = '24px';
+          contextGrid.parentNode.insertBefore(vitalsEl, contextGrid);
+        }
+      }
       if (vitalsEl) {
         vitalsEl.innerHTML=`
           <div class="vitals-ribbon">
@@ -1061,11 +1071,8 @@
         `;
       }
 
-      // Brief Header
-      document.getElementById('brief-tag').textContent='TODAY\'S BRIEFING · '+(b.dateline||'NYC').toUpperCase();
-      document.getElementById('headline').textContent=b.headline||'Market Update';
-      document.getElementById('sig-row').innerHTML='<span class="sig '+scls+'">'+esc(signal)+'</span><span class="ts-badge">'+esc(b.time_sensitivity||'THIS WEEK')+'</span><span class="conf">'+esc(b.confidence||0)+'% AI CONFIDENCE · '+(b.forces||[]).length+'/9 FORCES</span>';
-      document.getElementById('updated-line').textContent=timeStr+' · ∞ BRAIN + LIVE DATA';
+      // Brief Header overrides removed (already handled earlier)
+      // Gauge animation deferred to loadData
 
       // Gauge animation deferred to loadData
 
