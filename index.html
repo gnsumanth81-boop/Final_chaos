@@ -693,7 +693,7 @@
       if (!numEl || !arc || !label) return;
       
       const value = Math.min(100, Math.max(0, parseInt(fearIndex)));
-      numEl.textContent = value;
+      animateNum(numEl, 0, value, 1400, Math.round);
       
       // Calculate arc dashoffset (251 is full circle, 0 is full)
       const maxOffset = 251;
