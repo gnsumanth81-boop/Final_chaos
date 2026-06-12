@@ -462,9 +462,19 @@
     /* Premium section dividers */
     .sec-title::after { content:''; flex:1; height:1px; background:linear-gradient(90deg,rgba(212,175,55,.3),transparent) !important; opacity:1 !important; }
 
-    /* Focus rings for keyboard users */
-    :focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
-    :focus:not(:focus-visible) { outline: none; }
+    /* Premium HUD Header */
+    .hud-top-bar { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin: 6px 0 16px 0; font-family: var(--font-mono); border-bottom: 1px solid var(--s3); padding-bottom: 12px; flex-wrap: wrap; }
+    .hud-left { display: flex; align-items: center; gap: 10px; font-size: 0.65rem; color: var(--text-muted); letter-spacing: 1px; }
+    .hud-blink { color: var(--green); animation: pulse 2s infinite; font-weight: 700; display: inline-flex; align-items: center; gap: 4px; }
+    .hud-blink::before { content:''; display:block; width:6px; height:6px; border-radius:50%; background:var(--green); }
+    .hud-badge { color: var(--accent-gold); cursor: pointer; border: 1px solid rgba(212,175,55,0.2); padding: 4px 8px; border-radius: 4px; font-size: 0.6rem; display: flex; align-items: center; gap: 6px; background: rgba(212,175,55,0.05); transition: background 0.2s; }
+    .hud-badge:hover { background: rgba(212,175,55,0.15); }
+    @media(max-width:700px) {
+      .hud-top-bar { flex-direction: column; align-items: flex-start; gap: 16px; margin-top: 12px; }
+      .hud-left { flex-wrap: wrap; line-height: 1.6; }
+      .final-bias-card { padding: 16px !important; margin-bottom: 24px !important; }
+      h1.hl { margin-top: 0 !important; }
+    }
   </style>
 </head>
 <body>
@@ -472,7 +482,7 @@
   <div id="boot"><div class="boot-ey">INITIALIZING WAR ROOM</div><div class="boot-logo">CHAOS<em>.</em></div><div class="boot-bar-w"><div class="boot-bar"></div></div></div>
 
   <header class="sticky-hdr">
-    <a class="sticky-brand" href="#terminal">CHAOS<em>.</em></a>
+    <a class="sticky-brand" href="#terminal" onclick="window.location.hash='#terminal'; runClientRouter(); return false;">CHAOS<em>.</em></a>
     <div class="sticky-center">
       <div class="live-b"><span class="live-d"></span>LIVE BRIEF</div>
       <div id="terminal-status" style="font-family:var(--font-mono);font-size:0.45rem;color:#fff;letter-spacing:1px;margin-left:10px;padding-left:10px;border-left:1px solid var(--s3);white-space:nowrap;">LOADING...</div>
@@ -480,10 +490,10 @@
     <div style="display:flex;align-items:center;gap:16px">
       <div class="hdr-cvx-wrap">CVX <span class="hdr-cvx-num" id="hdr-cvx">--</span></div>
       <nav class="desktop-nav">
-        <a href="#terminal" class="nav-link active" data-target="view-terminal">⚡ INTEL</a>
-        <a href="#ledger" class="nav-link" data-target="view-ledger">📋 LEDGER</a>
-        <a href="#vitals" class="nav-link" data-target="view-vitals">📊 VITALS</a>
-        <a href="#alpha" class="nav-link" data-target="view-alpha" style="color:var(--gold)">🔒 ALPHA</a>
+        <a href="#terminal" onclick="window.location.hash='#terminal'; runClientRouter(); return false;" class="nav-link active" data-target="view-terminal">⚡ INTEL</a>
+        <a href="#ledger" onclick="window.location.hash='#ledger'; runClientRouter(); return false;" class="nav-link" data-target="view-ledger">📋 LEDGER</a>
+        <a href="#vitals" onclick="window.location.hash='#vitals'; runClientRouter(); return false;" class="nav-link" data-target="view-vitals">📊 VITALS</a>
+        <a href="#alpha" onclick="window.location.hash='#alpha'; runClientRouter(); return false;" class="nav-link" data-target="view-alpha" style="color:var(--gold)">🔒 ALPHA</a>
       </nav>
     </div>
   </header>
@@ -496,17 +506,23 @@
   <div id="view-terminal" class="spa-view active">
     <div class="wrap">
       
-      <div style="display: flex; justify-content: space-between; align-items: center; font-family: 'JetBrains Mono'; font-size: 0.65rem; color: var(--text-muted); margin-top: 10px; margin-bottom: 10px;">
-        <div style="display:flex; align-items:center; gap:8px;">LIVE BRIEF // <span id="date-line">LOADING</span></div>
-        <div class="badge" style="color: var(--accent-gold); cursor:pointer;" onclick="openHashVerifier()">🔐 VERIFIED: <span id="hash-val">Hash pending...</span></div>
+      <div class="hud-top-bar">
+        <div class="hud-left">
+          <span class="hud-blink">LIVE</span>
+          <span style="opacity:0.3">|</span>
+          <span id="date-line" style="color: var(--text-bright);">LOADING...</span>
+        </div>
+        <div class="hud-badge" onclick="openHashVerifier()">
+          <span class="hud-icon">🔐</span> <span id="hash-val">VERIFIED HASH</span>
+        </div>
       </div>
-      <div id="world-clock-bar" class="world-clock-bar"></div>
+      <div id="world-clock-bar" class="world-clock-bar" style="margin-bottom: 24px;"></div>
       
       <!-- FINAL CHAOS BIAS -->
-      <div style="text-align:center; padding: 12px; border-bottom:1px solid rgba(255,255,255,0.05); margin-bottom: 16px;">
-        <div style="font-family: var(--font-mono); font-size: 0.55rem; color: var(--text-muted); letter-spacing: 2px; text-transform:uppercase;">FINAL CHAOS BIAS</div>
-        <div id="final-chaos-bias" style="font-family: var(--font-big); font-size: 2.2rem; letter-spacing: 1px; color: var(--text-pure);">CALCULATING...</div>
-        <div id="final-chaos-conf" style="font-family: var(--font-mono); font-size: 0.55rem; color: var(--text-muted); margin-top:4px;">--% CONFIDENCE</div>
+      <div class="final-bias-card" style="text-align:center; padding: 24px; border:1px solid var(--s3); background: rgba(255,255,255,0.01); border-radius: 8px; margin-bottom: 24px;">
+        <div style="font-family: var(--font-mono); font-size: 0.65rem; color: var(--text-muted); letter-spacing: 3px; text-transform:uppercase; margin-bottom: 8px;">FINAL CHAOS BIAS</div>
+        <div id="final-chaos-bias" style="font-family: var(--font-big); font-size: 3rem; letter-spacing: 2px; color: var(--text-pure); line-height: 1;">CALCULATING...</div>
+        <div id="final-chaos-conf" style="font-family: var(--font-mono); font-size: 0.65rem; color: var(--text-muted); margin-top: 12px; letter-spacing: 1px;">--% CONFIDENCE MATRIX</div>
       </div>
 
     </div>
@@ -653,10 +669,10 @@
 
   <div class="mobile-dock">
     <div class="dock-grid">
-      <a href="#terminal" class="dock-btn nav-link" data-target="view-terminal"><span class="dock-icon">⚡</span><span class="dock-label">INTEL</span></a>
-      <a href="#ledger" class="dock-btn nav-link" data-target="view-ledger"><span class="dock-icon">📋</span><span class="dock-label">LEDGER</span></a>
-      <a href="#vitals" class="dock-btn nav-link" data-target="view-vitals"><span class="dock-icon">📊</span><span class="dock-label">VITALS</span></a>
-      <a href="#alpha" class="dock-btn nav-link" data-target="view-alpha"><span class="dock-icon">🔓</span><span class="dock-label" style="color:var(--gold)">ALPHA</span></a>
+      <a href="#terminal" onclick="window.location.hash='#terminal'; runClientRouter(); return false;" class="dock-btn nav-link" data-target="view-terminal"><span class="dock-icon">⚡</span><span class="dock-label">INTEL</span></a>
+      <a href="#ledger" onclick="window.location.hash='#ledger'; runClientRouter(); return false;" class="dock-btn nav-link" data-target="view-ledger"><span class="dock-icon">📋</span><span class="dock-label">LEDGER</span></a>
+      <a href="#vitals" onclick="window.location.hash='#vitals'; runClientRouter(); return false;" class="dock-btn nav-link" data-target="view-vitals"><span class="dock-icon">📊</span><span class="dock-label">VITALS</span></a>
+      <a href="#alpha" onclick="window.location.hash='#alpha'; runClientRouter(); return false;" class="dock-btn nav-link" data-target="view-alpha"><span class="dock-icon">🔓</span><span class="dock-label" style="color:var(--gold)">ALPHA</span></a>
     </div>
   </div>
 
@@ -1053,7 +1069,7 @@
 
       // Header
       document.getElementById('terminal-status').textContent=dateStr+' · '+timeStr;
-      document.getElementById('date-line').textContent=dateStr+' · '+timeStr+' · CHAOS INTELLIGENCE';
+      document.getElementById('date-line').textContent=dateStr+' · '+timeStr;
       var sessionBadge = document.getElementById('session-badge');
       if (sessionBadge) sessionBadge.textContent=(m.session||'MORNING')+' BRIEF';
       document.getElementById('hash-val').textContent=latest.signal?.signal_hash||'Hash pending...';
