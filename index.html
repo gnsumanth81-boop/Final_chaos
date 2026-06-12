@@ -168,7 +168,8 @@
     .brief-metrics{display:flex;flex-wrap:wrap;margin-top:18px;border:1px solid var(--s3);border-radius:8px;overflow:hidden}.bm{flex:1;min-width:100px;padding:12px 14px;border-right:1px solid var(--s3);background:var(--s2)}.bm:last-child{border-right:none}.bm-v{font-family:var(--font-big);font-size:1.3rem;letter-spacing:1px;color:var(--gold);line-height:1}.bm-l{font-family:var(--font-mono);font-size:.42rem;color:var(--muted);letter-spacing:1.5px;margin-top:4px;text-transform:uppercase}
 
     /* ── FORCES ── */
-    .forces-grid{display:flex;flex-wrap:wrap;gap:8px}.fc{display:flex;align-items:center;gap:6px;padding:8px 14px;border-radius:6px;font-family:var(--font-mono);font-size:.52rem;font-weight:700;letter-spacing:1px;border:1px solid var(--s3);background:var(--s1);color:var(--muted);opacity:.15;filter:grayscale(100%);transition:all 0.3s}.fc.on{background:var(--red-g);border:1px solid rgba(232,57,74,.4);color:var(--red);opacity:1;filter:none;box-shadow:0 0 10px rgba(232,57,74,.15)}.fc-dot{width:5px;height:5px;border-radius:50%;background:var(--muted)}.fc.on .fc-dot{background:var(--red);animation:pulse 1.4s ease infinite}
+    @keyframes starPulse{0%{opacity:.5;transform:scale(.9)}50%{opacity:1;transform:scale(1.2);color:var(--gold);text-shadow:0 0 10px var(--gold)}100%{opacity:.5;transform:scale(.9)}}.chaos-star{display:inline-block;animation:starPulse 2s infinite ease-in-out}
+    .forces-grid{display:flex;flex-wrap:wrap;gap:8px}.fc{display:flex;align-items:center;gap:6px;padding:8px 14px;border-radius:6px;font-family:var(--font-mono);font-size:.52rem;font-weight:700;letter-spacing:1px;border:1px solid var(--s3);background:var(--s1);color:var(--muted);opacity:.4;filter:grayscale(80%);transition:all 0.3s}.fc.on{background:var(--red-g);border:1px solid rgba(232,57,74,.4);color:var(--red);opacity:1;filter:none;box-shadow:0 0 10px rgba(232,57,74,.15)}.fc-dot{width:5px;height:5px;border-radius:50%;background:var(--muted)}.fc.on .fc-dot{background:var(--red);animation:pulse 1.4s ease infinite}
 
     /* ── AGENTS ── */
     .agent-panel{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;width:100%;margin-top:14px}
@@ -521,7 +522,7 @@
       <!-- FINAL CHAOS BIAS (Removed to reduce clutter per user request) -->
 
     </div>
-    <div class="wrap"><div class="vitals" id="vitals" aria-live="polite"></div></div>
+    <!-- Vitals block removed to fix spacing gap -->
 
     
 
@@ -534,7 +535,7 @@
 
         <!-- 5-SECOND SYSTEM HUD -->
         <div class="bg-card" style="padding: 16px 24px; margin-top: 16px;">
-          <div style="font-family: var(--font-mono); font-size: 0.65rem; color: var(--accent-gold); margin-bottom: 12px; letter-spacing: 1px;">// 5-SECOND MARKET SNAPSHOT //</div>
+          <div style="font-family: var(--font-mono); font-size: 0.65rem; color: var(--accent-gold); margin-bottom: 12px; letter-spacing: 1px;">5-SECOND MARKET SNAPSHOT</div>
           <div id="snapshot-panel" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); gap: 16px; margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid var(--border-light);">
             <!-- Injected by JS -->
           </div>
@@ -724,7 +725,7 @@
       });
       formatted = formatted.replace(/\n\n+/g, '</div><div class="editorial-text" style="color: var(--text-bright); margin-top: 16px;">');
       
-      return '<div class="bg-card"><div style="font-family: var(--font-mono); font-size: 0.65rem; color: var(--accent-gold); margin-bottom: 12px; letter-spacing: 1px;">// TARGETED NARRATIVE STRIKE //</div><div class="editorial-text" style="color: var(--text-bright); line-height:1.8;">' + formatted + '</div></div>';
+      return '<div class="bg-card"><div style="font-family: var(--font-mono); font-size: 0.65rem; color: var(--accent-gold); margin-bottom: 12px; letter-spacing: 1px;">TARGETED NARRATIVE STRIKE</div><div class="editorial-text" style="color: var(--text-bright); line-height:1.8;">' + formatted + '</div></div>';
     }
 
     // ── ODOMETER ANIMATION ──
@@ -1130,11 +1131,6 @@
         `;
       }
 
-      // Brief Header overrides removed (already handled earlier)
-      // Gauge animation deferred to loadData
-
-      // Gauge animation deferred to loadData
-
       // Intelligence Panes
       pane('eli5','ELI5 — FOR EVERYONE','3 MIN',b.eli5,[['Fear Index',m.fearIndex],['Bitcoin',m.btcPrice],['10Y Yield',(m.yieldVal||'N/A')+'%']]);
       pane('analyst','ANALYST — INTERMEDIATE','5 MIN',b.analyst,[['10Y Treasury',(m.yieldVal||'N/A')+'%'],['DXY',m.dxyVal],['S&P 500',m.spxVal]]);
@@ -1142,7 +1138,7 @@
 
       // Forces
       var active=new Set((b.forces||[]).map(function(x){return String(x).toUpperCase();}));
-      document.getElementById('forces-grid').innerHTML=ALL_FORCES.map(function(f){return'<div class="fc '+(active.has(f)?'on':'')+'"><span class="fc-dot"></span>'+FI[f]+' <span>'+f+'</span></div>';}).join('');
+      document.getElementById('forces-grid').innerHTML=ALL_FORCES.map(function(f){return'<div class="fc '+(active.has(f)?'on':'off')+'"><span class="fc-dot"></span>'+FI[f]+' <span>'+f+'</span></div>';}).join('');
 
       // Agent Consensus
       var acEl = document.getElementById('agent-consensus');
@@ -1156,7 +1152,7 @@
       // Chaos Line
       var clEl = document.getElementById('chaos-line-card');
       if (clEl) {
-        clEl.innerHTML='<span class="chaos-tag">✦ THE CHAOS LINE</span><div class="chaos-text" id="chaos-quote-text">&ldquo;'+esc(b.chaos_line||'')+'&rdquo;</div><div class="share-row"><a class="s-btn ghost" target="_blank" href="https://twitter.com/intent/tweet?text='+encodeURIComponent('"'+(b.chaos_line||'')+'" — Chaos Intelligence\n'+SITE)+'">𝕏 Post</a><a class="s-btn ghost" target="_blank" href="https://t.me/share/url?url='+encodeURIComponent(SITE)+'&text='+encodeURIComponent('"'+(b.chaos_line||'')+'" — Chaos Intelligence')+'">✈ Telegram</a><button class="s-btn ghost" onclick="copyLine()">📋 Copy Line</button><button class="s-btn ghost" style="color:var(--gold); border-color:var(--gold);" onclick="generateChaosImage()">🖼️ Download Image</button></div>';
+        clEl.innerHTML='<span class="chaos-tag"><span class="chaos-star">✦</span> THE CHAOS LINE</span><div class="chaos-text" id="chaos-quote-text">&ldquo;'+esc(b.chaos_line||'')+'&rdquo;</div><div class="share-row"><a class="s-btn ghost" target="_blank" href="https://twitter.com/intent/tweet?text='+encodeURIComponent('"'+(b.chaos_line||'')+'" — Chaos Intelligence\n'+SITE)+'">𝕏 Post</a><a class="s-btn ghost" target="_blank" href="https://t.me/share/url?url='+encodeURIComponent(SITE)+'&text='+encodeURIComponent('"'+(b.chaos_line||'')+'" — Chaos Intelligence')+'">✈ Telegram</a><button class="s-btn ghost" onclick="copyLine()">📋 Copy Line</button><button class="s-btn ghost" style="color:var(--gold); border-color:var(--gold);" onclick="generateChaosImage()">🖼️ Download Image</button></div>';
       }
 
       // Trap
