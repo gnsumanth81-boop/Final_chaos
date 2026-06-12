@@ -395,7 +395,7 @@
       .vitals{grid-template-columns:repeat(2,1fr)}
       .mgrid{grid-template-columns:repeat(2,1fr)}
       .ctx-grid{grid-template-columns:1fr 1fr}
-      .agent-panel{grid-template-columns:1fr}
+      .agent-panel{grid-template-columns:1fr !important}
       .brief{font-size:.98rem;padding:18px}
       .brief-metrics{flex-direction:column}
       .bm{border-right:0;border-bottom:1px solid var(--s3)}
@@ -572,10 +572,10 @@
 
         <section class="cx-section rv">
           <div class="sec-title">INTELLIGENCE LEVEL — PICK YOURS</div>
-          <div class="tab-container" role="tablist">
-            <button class="tab-btn" onclick="setCx('eli5',this)"><span class="cx-n">ELI5</span><span class="cx-sub">Simple · 3 min</span></button>
-            <button class="tab-btn active" onclick="setCx('analyst',this)"><span class="cx-n">Analyst</span><span class="cx-sub">Intermediate · 5 min</span></button>
-            <button class="tab-btn" onclick="setCx('quant',this)"><span class="cx-n">Quant</span><span class="cx-sub">Advanced · 7 min</span></button>
+          <div class="cx-tabs" role="tablist">
+            <button class="cx-btn" onclick="setCx('eli5',this)"><span class="cx-n">ELI5</span><span class="cx-sub">Simple · 3 min</span></button>
+            <button class="cx-btn active" onclick="setCx('analyst',this)"><span class="cx-n">Analyst</span><span class="cx-sub">Intermediate · 5 min</span></button>
+            <button class="cx-btn" onclick="setCx('quant',this)"><span class="cx-n">Quant</span><span class="cx-sub">Advanced · 7 min</span></button>
           </div>
           <div class="pane" id="pane-eli5"></div>
           <div class="pane active" id="pane-analyst"></div>
@@ -822,7 +822,7 @@
 
     function pane(id,tag,time,text,metrics){
       const mh=metrics.map(function(m){return'<div class="bm"><div class="bm-v">'+esc(m[1]||'N/A')+'</div><div class="bm-l">'+esc(m[0])+'</div></div>';}).join('');
-      document.getElementById('pane-'+id).innerHTML='<div class="brief"><div class="brief-meta"><span class="brief-tag">⏱ '+esc(time)+'</span><button class="btn btn-primary" id="audio-btn-'+id+'" onclick="playAudio(\''+id+'\')">🔊 LISTEN</button></div>'+formatNarrativeStrike(text)+'<div class="brief-metrics">'+mh+'</div></div>';
+      document.getElementById('pane-'+id).innerHTML='<div class="brief"><div class="brief-meta"><span class="brief-tag">⏱ '+esc(time)+'</span><button class="voice-btn" id="audio-btn-'+id+'" onclick="playAudio(\''+id+'\')">🔊 LISTEN</button></div>'+formatNarrativeStrike(text)+'<div class="brief-metrics">'+mh+'</div></div>';
     }
 
     function renderContext(m,b){
@@ -918,7 +918,7 @@
     }
 
     function setCx(id,btn){
-      document.querySelectorAll('.tab-btn').forEach(function(b){b.classList.remove('active');});
+      document.querySelectorAll('.cx-btn').forEach(function(b){b.classList.remove('active');});
       document.querySelectorAll('.pane').forEach(function(p){p.classList.remove('active');});
       btn.classList.add('active');
       document.getElementById('pane-'+id).classList.add('active');
@@ -1160,7 +1160,7 @@
       // Chaos Line
       var clEl = document.getElementById('chaos-line-card');
       if (clEl) {
-        clEl.innerHTML='<span class="chaos-tag">✦ THE CHAOS LINE</span><div class="chaos-text" id="chaos-quote-text">&ldquo;'+esc(b.chaos_line||'')+'&rdquo;</div><div class="share-row"><a class="btn btn-secondary" target="_blank" href="https://twitter.com/intent/tweet?text='+encodeURIComponent('"'+(b.chaos_line||'')+'" — Chaos Intelligence\n'+SITE)+'">𝕏 Post</a><a class="btn btn-secondary" target="_blank" href="https://t.me/share/url?url='+encodeURIComponent(SITE)+'&text='+encodeURIComponent('"'+(b.chaos_line||'')+'" — Chaos Intelligence')+'">✈ Telegram</a><button class="btn btn-secondary" onclick="copyLine()">📋 Copy Line</button><button class="btn btn-secondary" style="color:var(--gold);" onclick="generateChaosImage()">🖼️ Download Image</button></div>';
+        clEl.innerHTML='<span class="chaos-tag">✦ THE CHAOS LINE</span><div class="chaos-text" id="chaos-quote-text">&ldquo;'+esc(b.chaos_line||'')+'&rdquo;</div><div class="share-row"><a class="s-btn ghost" target="_blank" href="https://twitter.com/intent/tweet?text='+encodeURIComponent('"'+(b.chaos_line||'')+'" — Chaos Intelligence\n'+SITE)+'">𝕏 Post</a><a class="s-btn ghost" target="_blank" href="https://t.me/share/url?url='+encodeURIComponent(SITE)+'&text='+encodeURIComponent('"'+(b.chaos_line||'')+'" — Chaos Intelligence')+'">✈ Telegram</a><button class="s-btn ghost" onclick="copyLine()">📋 Copy Line</button><button class="s-btn ghost" style="color:var(--gold); border-color:var(--gold);" onclick="generateChaosImage()">🖼️ Download Image</button></div>';
       }
 
       // Trap
