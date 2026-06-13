@@ -77,7 +77,7 @@
     @keyframes flashGreen{0%{box-shadow:0 0 0 0 rgba(34,212,90,.5)}100%{box-shadow:0 0 0 0 transparent}}
 
     /* ── TICKER ── */
-    .ticker{background:var(--s0);border-bottom:1px solid var(--dim);height:30px;overflow:hidden;display:flex;align-items:center;position:sticky;top:0;z-index:100}
+    .ticker{background:var(--s0);border-bottom:1px solid var(--dim);height:30px;overflow:hidden;display:flex;align-items:center;position:sticky;top:56px;z-index:100}
     .tk-lbl{padding:0 14px 0 16px;font-family:var(--font-mono);font-size:.46rem;color:var(--red);letter-spacing:2px;white-space:nowrap;border-right:1px solid var(--dim);display:flex;align-items:center;gap:6px;background:var(--s0);z-index:2;flex-shrink:0}
     .tk-dot{width:4px;height:4px;background:var(--red);border-radius:50%;animation:pulse 1.4s ease infinite}
     .tk-scroll{flex:1;overflow:hidden}.tk-inner{display:flex;animation:scroll 44s linear infinite;white-space:nowrap}.ticker:hover .tk-inner{animation-play-state:paused}
@@ -216,10 +216,15 @@
 
     /* ── SPA & NAV ── */
     .spa-view{display:none}.spa-view.active{display:block}
-    .sticky-hdr{position:sticky;top:0;z-index:200;background:rgba(8,8,12,0.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--dim);display:flex;align-items:center;justify-content:space-between;padding:10px 24px}
+    .sticky-hdr{position:sticky;top:0;z-index:201;background:rgba(5,5,8,0.82);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border-bottom:1px solid rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:space-between;padding:10px 24px;transition:box-shadow 0.4s ease, background 0.4s ease}
+    .sticky-hdr.scrolled{background:rgba(5,5,8,0.95);box-shadow:0 8px 32px rgba(0,0,0,0.6), 0 0 1px rgba(255,255,255,0.1)}
     .sticky-brand{font-family:var(--font-big);font-size:1.8rem;letter-spacing:4px;color:var(--ink);text-decoration:none;line-height:1}
-    .sticky-brand em{color:var(--red);font-style:normal}
+    .sticky-brand em{color:var(--red);font-style:normal;text-shadow:0 0 20px rgba(220,58,74,0.4)}
     .sticky-center{display:flex;align-items:center;gap:10px}
+    .hdr-cvx-wrap{font-family:var(--font-mono);font-size:.48rem;color:var(--muted);letter-spacing:1.5px;display:flex;align-items:center;gap:5px;white-space:nowrap}
+    .hdr-cvx-num{font-family:var(--font-big);font-size:1.1rem;color:var(--ink);font-weight:700;min-width:22px;text-align:right}
+    .streak-badge{font-family:var(--font-mono);font-size:.42rem;font-weight:700;letter-spacing:1.5px;padding:3px 8px;border-radius:6px;white-space:nowrap;animation:streakPulse 2.5s ease infinite}
+    @keyframes streakPulse{0%,100%{box-shadow:0 0 8px rgba(212,175,55,0.3)}50%{box-shadow:0 0 16px rgba(212,175,55,0.6)}}
     .desktop-nav{display:flex;gap:18px;align-items:center}
     .desktop-nav a{font-family:var(--font-mono);font-size:.52rem;color:var(--muted);text-decoration:none;text-transform:uppercase;letter-spacing:1.5px;font-weight:700;transition:color 0.2s;padding-bottom:4px;border-bottom:2px solid transparent}
     .desktop-nav a:hover{color:var(--ink)}
@@ -449,15 +454,16 @@
       .terminal-container,.wrap{padding:0 12px !important}
 
       /* ── STICKY HEADER: compact single row ── */
-      .sticky-hdr{padding:8px 12px !important;gap:8px !important;flex-wrap:nowrap !important}
-      .sticky-brand{font-size:1.2rem !important;letter-spacing:2px !important;flex-shrink:0}
+      .sticky-hdr{padding:8px 14px !important;gap:8px !important;flex-wrap:nowrap !important}
+      .sticky-brand{font-size:1.3rem !important;letter-spacing:3px !important;flex-shrink:0}
       .sticky-center{gap:6px !important}
-      .sticky-center .live-b{font-size:.38rem !important;padding:2px 6px !important}
+      .sticky-center .live-b{font-size:.38rem !important;padding:2px 7px !important}
       #terminal-status{display:none !important}
-      .sticky-hdr > div:last-child{gap:6px !important}
-      .hdr-cvx-wrap{font-size:.38rem !important;gap:3px !important}
-      .hdr-cvx-num{font-size:.65rem !important;min-width:18px !important}
-      .streak-badge{font-size:.34rem !important;padding:2px 5px !important}
+      .sticky-hdr > div:last-child{gap:8px !important}
+      .hdr-cvx-wrap{font-size:.4rem !important;gap:3px !important}
+      .hdr-cvx-num{font-size:.75rem !important;min-width:18px !important}
+      .streak-badge{font-size:.36rem !important;padding:3px 6px !important}
+      .ticker{top:44px !important}
 
       /* ── TICKER ── */
       .ticker{font-size:.42rem !important}
@@ -894,6 +900,22 @@
     const SITE='https://chaos.sumanthworks.com';
     const VIEWS=['view-terminal','view-ledger','view-vitals','view-alpha'];
     let speechInst=null, currentLine='', lastHash='', tvLoaded=false;
+
+    // ── SCROLL-DRIVEN HEADER GLOW ──
+    (function(){
+      const hdr = document.querySelector('.sticky-hdr');
+      if(!hdr) return;
+      let ticking = false;
+      window.addEventListener('scroll', function(){
+        if(!ticking){
+          window.requestAnimationFrame(function(){
+            hdr.classList.toggle('scrolled', window.scrollY > 40);
+            ticking = false;
+          });
+          ticking = true;
+        }
+      }, {passive:true});
+    })();
 
     // ── HELPERS ──
     function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
