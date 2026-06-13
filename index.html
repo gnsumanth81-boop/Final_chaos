@@ -535,14 +535,32 @@
         <div class="sig-row" id="sig-row"></div>
         <div class="upd"><span class="bull">●</span><span id="updated-line">Loading live data</span></div>
 
-        <section class="rv">
-          <div class="sec-title">MARKET FEAR GAUGE</div>
-          <div class="gauge-wrap"><div class="gauge-container">
-            <svg viewBox="0 0 200 110"><path class="gauge-bg" d="M20,100 A80,80 0 0,1 180,100"/><path class="gauge-fill" id="gauge-arc" d="M20,100 A80,80 0 0,1 180,100" stroke="var(--gold)" stroke-dasharray="251" stroke-dashoffset="251"/></svg>
-            <div class="gauge-glow" id="gauge-glow"></div>
-            <div class="gauge-val" id="gauge-num">0</div>
-            <div class="gauge-label" id="gauge-label">NEUTRAL</div>
-          </div></div>
+        <section class="glass-card rv" style="margin-bottom: 24px; display: flex; flex-direction: column; align-items: center; text-align: center;">
+          <div style="font-family: var(--font-mono); font-size: 0.65rem; color: var(--accent-gold); margin-bottom: 24px; letter-spacing: 2px; text-transform: uppercase; font-weight: 700; display: flex; align-items: center; gap: 8px;">
+            <div style="width: 6px; height: 6px; background: var(--accent-gold); border-radius: 50%; box-shadow: 0 0 8px rgba(245,166,35,0.8);"></div>
+            MARKET FEAR GAUGE
+          </div>
+          
+          <div class="gauge-wrap" style="margin-bottom: 16px;">
+            <div class="gauge-container" style="width: 260px; height: 150px;">
+              <svg viewBox="0 0 200 110">
+                <defs>
+                  <linearGradient id="gaugeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="#E8394A" /> <!-- Red (Extreme Fear) -->
+                    <stop offset="50%" stop-color="#F5A623" /> <!-- Gold (Neutral) -->
+                    <stop offset="100%" stop-color="#22D45A" /> <!-- Green (Greed) -->
+                  </linearGradient>
+                </defs>
+                <!-- Thick background track with segments -->
+                <path d="M20,100 A80,80 0 0,1 180,100" fill="none" stroke="var(--s2)" stroke-width="14" stroke-linecap="round"/>
+                <!-- Filled gradient track -->
+                <path class="gauge-fill" id="gauge-arc" d="M20,100 A80,80 0 0,1 180,100" fill="none" stroke="url(#gaugeGrad)" stroke-width="14" stroke-linecap="round" stroke-dasharray="251" stroke-dashoffset="251" style="filter: drop-shadow(0 0 8px rgba(245,166,35,0.4));"/>
+              </svg>
+              <div class="gauge-glow" id="gauge-glow" style="width: 160px; height: 80px; bottom: 0; filter: blur(40px);"></div>
+              <div class="gauge-val" id="gauge-num" style="font-size: 3.5rem; bottom: 20px;">0</div>
+              <div class="gauge-label" id="gauge-label" style="bottom: -5px; font-size: 0.55rem; letter-spacing: 3px; font-weight: 700;">NEUTRAL</div>
+            </div>
+          </div>
         </section>
 
         <section class="cx-section rv">
