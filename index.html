@@ -745,20 +745,10 @@
           <div class="pane" id="pane-quant"></div>
         </section>
 
-        <!-- 5-SECOND SYSTEM HUD -->
-        <div class="bg-card" style="padding: 16px 24px; margin-top: 16px;">
-          <div style="font-family: var(--font-mono); font-size: 0.65rem; color: var(--accent-gold); margin-bottom: 12px; letter-spacing: 1px;">5-SECOND MARKET SNAPSHOT</div>
-          <div id="snapshot-panel" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); gap: 16px; margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid var(--border-light);">
-            <!-- Injected by JS -->
-          </div>
-          <div style="display: flex; justify-content: space-between; align-items: center;">
-            <div style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-muted);">24H SYSTEM DELTA</div>
-            <div style="display: flex; gap: 24px;">
-              <span style="font-weight: 700;" id="delta-btc">BTC: --</span>
-              <span style="font-weight: 700; color: var(--accent-gold);" id="delta-fear">FEAR SHIFT: --</span>
-            </div>
-          </div>
-        </div>
+        <!-- AGENT CONSENSUS MOVED UP -->
+        <section class="glass-card rv" style="margin-bottom:24px" id="agent-consensus"></section>
+
+        <!-- 5-SECOND MARKET SNAPSHOT REMOVED -->
 
         <!-- PROMOTED TACTICAL PLAYS -->
         <section class="rv">
@@ -767,11 +757,7 @@
         </section>
       </article>
 
-      <section class="forces rv"><div class="sec-title">ACTIVE MACRO FORCES</div><div class="forces-grid" id="forces-grid" role="list" aria-label="Active macro forces"></div></section>
-      <section class="glass-card rv" style="margin-bottom:24px" id="agent-consensus"></section>
       <section class="chaos rv" id="chaos-line-card"></section>
-      <section class="trap rv" id="trap-card"></section>
-      <section class="edge-section rv" id="edge-card"></section>
     </div></main>
   </div>
 
@@ -821,6 +807,7 @@
 
       <section class="glass-card macro rv vis"><div class="sec-title">MACRO DASHBOARD</div><div class="mgrid" id="macro-grid"></div></section>
       <section class="ctx rv vis" style="margin-top:24px"><div class="sec-title">CROSS-MARKET CONTEXT</div><div class="ctx-grid" id="context-grid"></div></section>
+      <section class="forces rv vis" style="margin-top:24px"><div class="sec-title">ACTIVE MACRO FORCES</div><div class="forces-grid" id="forces-grid" role="list" aria-label="Active macro forces"></div></section>
       <section class="poly rv vis" style="margin-top:24px" id="poly-card"></section>
       <section class="wires rv vis" style="margin-top:24px"><div class="wires-h"><span>INTEL WIRES</span><span style="font-size:.42rem;opacity:.5">CLICK TO EXPAND</span></div><div id="wires"></div></section>
     </div>
