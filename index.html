@@ -219,8 +219,10 @@
     .spa-view{display:none}.spa-view.active{display:block}
     .sticky-hdr{position:sticky;top:0;z-index:201;background:rgba(5,5,8,0.82);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border-bottom:1px solid rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:space-between;padding:10px 24px;transition:box-shadow 0.4s ease, background 0.4s ease}
     .sticky-hdr.scrolled{background:rgba(5,5,8,0.95);box-shadow:0 8px 32px rgba(0,0,0,0.6), 0 0 1px rgba(255,255,255,0.1)}
-    .sticky-brand{font-family:var(--font-big);font-size:1.8rem;letter-spacing:4px;color:var(--ink);text-decoration:none;line-height:1}
+    .sticky-brand{font-family:var(--font-big);font-size:1.8rem;letter-spacing:4px;color:var(--ink);text-decoration:none;line-height:1;display:flex;align-items:baseline;gap:6px}
     .sticky-brand em{color:var(--red);font-style:normal;text-shadow:0 0 20px rgba(220,58,74,0.4)}
+    .brand-sub{font-family:var(--font-mono);font-size:0.45rem;color:#fff;letter-spacing:1px;text-transform:lowercase;opacity:0.9;font-weight:700;letter-spacing:0}
+    .brand-sub-grad{background:linear-gradient(90deg, #3b82f6, #a855f7, #ec4899);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:700;letter-spacing:0}
     .sticky-center{display:flex;align-items:center;gap:10px}
     .hdr-cvx-wrap{font-family:var(--font-mono);font-size:.48rem;color:var(--muted);letter-spacing:1.5px;display:flex;align-items:center;gap:5px;white-space:nowrap}
     .hdr-cvx-num{font-family:var(--font-big);font-size:1.1rem;color:var(--ink);font-weight:700;min-width:22px;text-align:right}
@@ -456,7 +458,8 @@
 
       /* ── STICKY HEADER: compact single row ── */
       .sticky-hdr{padding:8px 14px !important;gap:8px !important;flex-wrap:nowrap !important}
-      .sticky-brand{font-size:1.3rem !important;letter-spacing:3px !important;flex-shrink:0}
+      .sticky-brand{font-size:1.3rem !important;letter-spacing:3px !important;flex-shrink:0;gap:4px !important}
+      .brand-sub{font-size:0.32rem !important;letter-spacing:0 !important;display:inline-block !important}
       .sticky-center{gap:6px !important}
       .sticky-center .live-b{font-size:.38rem !important;padding:2px 7px !important}
       #terminal-status{display:none !important}
@@ -651,7 +654,7 @@
   </div>
 
   <header class="sticky-hdr">
-    <a class="sticky-brand" href="#terminal" onclick="window.location.hash='#terminal'; runClientRouter(); return false;">CHAOS<em>.</em></a>
+    <a class="sticky-brand" href="#terminal" onclick="window.location.hash='#terminal'; runClientRouter(); return false;">CHAOS<em>.</em><span class="brand-sub">sumanth<span class="brand-sub-grad">works.com</span></span></a>
     <div class="sticky-center">
       <div class="live-b"><span class="live-d"></span>LIVE BRIEF</div>
       <div id="terminal-status" style="font-family:var(--font-mono);font-size:0.45rem;color:#fff;letter-spacing:1px;margin-left:10px;padding-left:10px;border-left:1px solid var(--s3);white-space:nowrap;">LOADING...</div>
