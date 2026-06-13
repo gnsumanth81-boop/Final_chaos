@@ -103,7 +103,7 @@
 
     /* ── MAIN ── */
     .main{padding:40px 0}.ed-tag{font-family:var(--font-mono);font-size:.5rem;color:var(--red);letter-spacing:3px;margin-bottom:8px;display:flex;align-items:center;gap:8px;text-transform:uppercase}
-    .ed-tag::after,.sec-title::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,var(--red),transparent);opacity:.3}
+    .ed-tag::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,var(--red),transparent);opacity:.3}
     h1.hl{font-family:var(--font-big);font-size:clamp(2.35rem,7vw,4rem);letter-spacing:1px;line-height:1.02;color:var(--ink);margin-bottom:16px}
     .sig-row{display:flex;gap:10px;align-items:center;margin-bottom:8px;flex-wrap:wrap}.sig,.ts-badge{font-family:var(--font-mono);font-size:.52rem;font-weight:700;letter-spacing:2px;padding:5px 14px;border-radius:3px}
     .sig.bear{background:var(--red-g);color:var(--red);border:1px solid rgba(232,57,74,.3)}.sig.bull{background:var(--green-g);color:var(--green);border:1px solid rgba(34,212,90,.3)}.sig.neut{background:var(--gold-g);color:var(--gold);border:1px solid rgba(245,166,35,.3)}.sig.volt{background:rgba(255,152,82,.08);color:var(--orange);border:1px solid rgba(255,152,82,.3)}
@@ -113,28 +113,30 @@
     /* ── GLASS / SECTIONS ── */
     .glass-card{padding:24px;background:rgba(20,20,28,.72);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.04);border-radius:12px;position:relative;overflow:hidden}
     .sec-title {
-      font-family: var(--font-ui);
-      font-size: 0.85rem;
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
       font-weight: 700;
-      color: var(--text-pure);
-      letter-spacing: 0.1em;
+      color: var(--accent-gold);
+      letter-spacing: 2px;
       text-transform: uppercase;
-      margin-bottom: 24px;
-      margin-top: 24px;
-      border-bottom: 1px solid var(--border-light);
-      padding-bottom: 8px;
-      display: flex;
+      margin: 32px 0 24px 0;
+      display: inline-flex;
       align-items: center;
+      gap: 10px;
+      padding: 6px 14px;
+      background: rgba(245,166,35,0.05);
+      border: 1px solid rgba(245,166,35,0.2);
+      border-radius: 4px;
+      box-shadow: 0 0 15px rgba(245,166,35,0.05);
     }
-    
     .sec-title::before {
       content: '';
       display: inline-block;
-      width: 8px;
-      height: 8px;
+      width: 5px;
+      height: 5px;
       background: var(--accent-gold);
-      margin-right: 12px;
-      box-shadow: 0 0 8px rgba(212, 175, 55, 0.4);
+      box-shadow: 0 0 8px rgba(245,166,35,0.8);
+      border-radius: 50%;
     }
     
     .bg-card {
@@ -533,6 +535,28 @@
         <div class="sig-row" id="sig-row"></div>
         <div class="upd"><span class="bull">●</span><span id="updated-line">Loading live data</span></div>
 
+        <section class="rv">
+          <div class="sec-title">MARKET FEAR GAUGE</div>
+          <div class="gauge-wrap"><div class="gauge-container">
+            <svg viewBox="0 0 200 110"><path class="gauge-bg" d="M20,100 A80,80 0 0,1 180,100"/><path class="gauge-fill" id="gauge-arc" d="M20,100 A80,80 0 0,1 180,100" stroke="var(--gold)" stroke-dasharray="251" stroke-dashoffset="251"/></svg>
+            <div class="gauge-glow" id="gauge-glow"></div>
+            <div class="gauge-val" id="gauge-num">0</div>
+            <div class="gauge-label" id="gauge-label">NEUTRAL</div>
+          </div></div>
+        </section>
+
+        <section class="cx-section rv">
+          <div class="sec-title">INTELLIGENCE LEVEL — PICK YOURS</div>
+          <div class="cx-tabs" role="tablist">
+            <button class="cx-btn" onclick="setCx('eli5',this)"><span class="cx-n">ELI5</span><span class="cx-sub">Simple · 3 min</span></button>
+            <button class="cx-btn active" onclick="setCx('analyst',this)"><span class="cx-n">Analyst</span><span class="cx-sub">Intermediate · 5 min</span></button>
+            <button class="cx-btn" onclick="setCx('quant',this)"><span class="cx-n">Quant</span><span class="cx-sub">Advanced · 7 min</span></button>
+          </div>
+          <div class="pane" id="pane-eli5"></div>
+          <div class="pane active" id="pane-analyst"></div>
+          <div class="pane" id="pane-quant"></div>
+        </section>
+
         <!-- 5-SECOND SYSTEM HUD -->
         <div class="bg-card" style="padding: 16px 24px; margin-top: 16px;">
           <div style="font-family: var(--font-mono); font-size: 0.65rem; color: var(--accent-gold); margin-bottom: 12px; letter-spacing: 1px;">5-SECOND MARKET SNAPSHOT</div>
@@ -552,30 +576,6 @@
         <section class="rv">
           <div class="sec-title">IMMEDIATE TACTICAL EXECUTIONS</div>
           <div class="plays-grid" id="plays-grid" aria-label="Tactical Plays"></div>
-        </section>
-
-        <section class="rv">
-          <div class="sec-title">MARKET FEAR GAUGE</div>
-          <div class="gauge-wrap"><div class="gauge-container">
-            <svg viewBox="0 0 200 110"><path class="gauge-bg" d="M20,100 A80,80 0 0,1 180,100"/><path class="gauge-fill" id="gauge-arc" d="M20,100 A80,80 0 0,1 180,100" stroke="var(--gold)" stroke-dasharray="251" stroke-dashoffset="251"/></svg>
-            <div class="gauge-glow" id="gauge-glow"></div>
-            <div class="gauge-val" id="gauge-num">0</div>
-            <div class="gauge-label" id="gauge-label">NEUTRAL</div>
-          </div></div>
-        </section>
-
-
-
-        <section class="cx-section rv">
-          <div class="sec-title">INTELLIGENCE LEVEL — PICK YOURS</div>
-          <div class="cx-tabs" role="tablist">
-            <button class="cx-btn" onclick="setCx('eli5',this)"><span class="cx-n">ELI5</span><span class="cx-sub">Simple · 3 min</span></button>
-            <button class="cx-btn active" onclick="setCx('analyst',this)"><span class="cx-n">Analyst</span><span class="cx-sub">Intermediate · 5 min</span></button>
-            <button class="cx-btn" onclick="setCx('quant',this)"><span class="cx-n">Quant</span><span class="cx-sub">Advanced · 7 min</span></button>
-          </div>
-          <div class="pane" id="pane-eli5"></div>
-          <div class="pane active" id="pane-analyst"></div>
-          <div class="pane" id="pane-quant"></div>
         </section>
       </article>
 
