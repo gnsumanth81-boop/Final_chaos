@@ -114,29 +114,30 @@
     .glass-card{padding:24px;background:rgba(20,20,28,.72);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.04);border-radius:12px;position:relative;overflow:hidden}
     .sec-title {
       font-family: var(--font-mono);
-      font-size: 0.65rem;
+      font-size: 0.75rem;
       font-weight: 700;
-      color: var(--accent-gold);
-      letter-spacing: 2px;
+      color: var(--red);
+      letter-spacing: 4px;
       text-transform: uppercase;
       margin: 32px 0 24px 0;
-      display: inline-flex;
+      display: flex;
       align-items: center;
-      gap: 10px;
-      padding: 6px 14px;
-      background: rgba(245,166,35,0.05);
-      border: 1px solid rgba(245,166,35,0.2);
-      border-radius: 4px;
-      box-shadow: 0 0 15px rgba(245,166,35,0.05);
+      gap: 16px;
+      padding: 0;
+      background: none;
+      border: none;
+      box-shadow: none;
+      width: 100%;
+    }
+    .sec-title::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, var(--red), transparent);
+      opacity: 0.4;
     }
     .sec-title::before {
-      content: '';
-      display: inline-block;
-      width: 5px;
-      height: 5px;
-      background: var(--accent-gold);
-      box-shadow: 0 0 8px rgba(245,166,35,0.8);
-      border-radius: 50%;
+      display: none;
     }
     
     .bg-card {
@@ -536,10 +537,7 @@
         <div class="upd"><span class="bull">●</span><span id="updated-line">Loading live data</span></div>
 
         <section class="glass-card rv" style="margin-bottom: 24px; display: flex; flex-direction: column; align-items: center; text-align: center;">
-          <div style="font-family: var(--font-mono); font-size: 0.65rem; color: var(--accent-gold); margin-bottom: 24px; letter-spacing: 2px; text-transform: uppercase; font-weight: 700; display: flex; align-items: center; gap: 8px;">
-            <div style="width: 6px; height: 6px; background: var(--accent-gold); border-radius: 50%; box-shadow: 0 0 8px rgba(245,166,35,0.8);"></div>
-            MARKET FEAR GAUGE
-          </div>
+          <div class="sec-title" style="align-self: stretch; margin-top: 0;">MARKET FEAR GAUGE</div>
           
           <div class="gauge-wrap" style="margin-bottom: 16px;">
             <div class="gauge-container" style="width: 260px; height: 150px;">
