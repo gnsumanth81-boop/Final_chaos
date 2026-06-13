@@ -108,7 +108,7 @@
     .vd{font-family:var(--font-mono);font-size:.42rem;margin-top:3px;letter-spacing:.5px;color:var(--muted)}
 
     /* ── MAIN ── */
-    .main{padding:24px 0}.ed-tag{font-family:var(--font-mono);font-size:.5rem;color:var(--red);letter-spacing:3px;margin-bottom:8px;display:flex;align-items:center;gap:8px;text-transform:uppercase}
+    .main{padding:12px 0 24px 0}.ed-tag{font-family:var(--font-mono);font-size:.5rem;color:var(--red);letter-spacing:3px;margin-bottom:8px;display:flex;align-items:center;gap:8px;text-transform:uppercase}
     .ed-tag::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,var(--red),transparent);opacity:.3}
     h1.hl{font-family:var(--font-big);font-size:clamp(2.35rem,7vw,4rem);letter-spacing:1px;line-height:1.02;color:var(--ink);margin-bottom:16px}
     .sig-row{display:flex;gap:10px;align-items:center;margin-bottom:8px;flex-wrap:wrap}.sig,.ts-badge{font-family:var(--font-mono);font-size:.52rem;font-weight:700;letter-spacing:2px;padding:5px 14px;border-radius:3px}
@@ -518,9 +518,9 @@
       #command-bar{display:none !important}
 
       /* ── HUD TOP BAR ── */
-      .hud-top-bar{flex-direction:column !important;align-items:flex-start !important;gap:8px !important;margin:8px 0 12px 0 !important}
-      .hud-left{flex-wrap:wrap !important;font-size:.55rem !important;line-height:1.6 !important}
-      .world-clock-bar{font-size:.38rem !important;gap:6px !important;flex-wrap:wrap !important}
+      .hud-top-bar{flex-direction:row !important;flex-wrap:wrap !important;justify-content:space-between !important;align-items:center !important;gap:8px !important;margin:4px 0 8px 0 !important}
+      .hud-left{font-size:.48rem !important;line-height:1.2 !important}
+      .world-clock-bar{font-size:.38rem !important;gap:6px !important;flex-wrap:wrap !important;padding:6px 0 !important}
 
       /* ── VITALS / GRIDS ── */
       .vitals{grid-template-columns:repeat(2,1fr)}
@@ -749,7 +749,7 @@
           <span class="hud-icon">🔐</span> <span id="hash-val">VERIFIED HASH</span>
         </div>
       </div>
-      <div id="world-clock-bar" class="world-clock-bar" style="margin-bottom: 24px;"></div>
+      <div id="world-clock-bar" class="world-clock-bar" style="margin-bottom: 8px;"></div>
       
       <!-- FINAL CHAOS BIAS (Removed to reduce clutter per user request) -->
 
