@@ -518,7 +518,7 @@
       .ledger-row>span:nth-child(3){font-size:.52rem !important}
 
       /* ── MOBILE DOCK ── */
-      .mobile-dock{display:block}
+      .mobile-dock{display:flex}
       .desktop-nav{display:none}
       body{padding-bottom:70px}
 
@@ -599,6 +599,15 @@
     .hud-badge { color: var(--accent-gold); cursor: pointer; border: 1px solid rgba(212,175,55,0.2); padding: 4px 8px; border-radius: 4px; font-size: 0.6rem; display: flex; align-items: center; gap: 6px; background: rgba(212,175,55,0.05); transition: background 0.2s; }
     .hud-badge:hover { background: rgba(212,175,55,0.15); }
     /* mobile overrides moved to main @media block above */
+
+    /* ── MOBILE DOCK BASE ── */
+    .mobile-dock { display: none; position: fixed; bottom: 0; left: 0; width: 100%; height: 60px; background: #050507; border-top: 1px solid var(--s3); z-index: 1000; font-family: var(--font-mono); }
+    .mobile-dock .nav-link { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; text-decoration: none; color: var(--ink2); transition: color 0.2s; border-top: 2px solid transparent; }
+    .mobile-dock .nav-link.active { color: var(--red); border-top-color: var(--red); background: rgba(220,38,38,0.05); }
+    .mobile-dock .nav-link.alpha-link { color: var(--accent-gold); }
+    .mobile-dock .nav-link.alpha-link.active { border-top-color: var(--accent-gold); background: rgba(212,175,55,0.05); }
+    .md-icon { font-size: 1.1rem; }
+    .md-lbl { font-size: 0.55rem; letter-spacing: 1px; font-weight: bold; }
   </style>
 </head>
 <body>
@@ -1774,5 +1783,24 @@
       </div>
     </div>
   </div>
+  <nav class="mobile-dock">
+    <a href="#terminal" onclick="window.location.hash='#terminal'; runClientRouter(); return false;" class="nav-link active" data-target="view-terminal">
+      <span class="md-icon">⚡</span>
+      <span class="md-lbl">INTEL</span>
+    </a>
+    <a href="#ledger" onclick="window.location.hash='#ledger'; runClientRouter(); return false;" class="nav-link" data-target="view-ledger">
+      <span class="md-icon">📋</span>
+      <span class="md-lbl">LEDGER</span>
+    </a>
+    <a href="#vitals" onclick="window.location.hash='#vitals'; runClientRouter(); return false;" class="nav-link" data-target="view-vitals">
+      <span class="md-icon">📊</span>
+      <span class="md-lbl">VITALS</span>
+    </a>
+    <a href="#alpha" onclick="window.location.hash='#alpha'; runClientRouter(); return false;" class="nav-link alpha-link" data-target="view-alpha">
+      <span class="md-icon">🔒</span>
+      <span class="md-lbl">ALPHA</span>
+    </a>
+  </nav>
+
 </body>
 </html>
