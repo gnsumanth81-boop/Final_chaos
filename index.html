@@ -224,19 +224,20 @@
     .desktop-nav a{font-family:var(--font-mono);font-size:.52rem;color:var(--muted);text-decoration:none;text-transform:uppercase;letter-spacing:1.5px;font-weight:700;transition:color 0.2s;padding-bottom:4px;border-bottom:2px solid transparent}
     .desktop-nav a:hover{color:var(--ink)}
     .desktop-nav a.active{color:var(--red);border-bottom-color:var(--red)}
-    .mobile-dock{display:none;position:fixed;bottom:0;left:0;right:0;background:rgba(5,5,8,0.85);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-top:1px solid rgba(255,255,255,0.06);z-index:200}
-    .dock-grid{display:grid;grid-template-columns:repeat(4,1fr);height:60px}
-    .dock-btn{display:flex;flex-direction:column;align-items:center;justify-content:center;text-decoration:none;position:relative;color:var(--muted);transition:all 0.2s}
-    .dock-btn::before{content:'';position:absolute;top:-1px;left:50%;transform:translateX(-50%);width:0;height:2px;background:transparent;transition:all 0.3s cubic-bezier(0.4, 0, 0.2, 1);border-radius:0 0 4px 4px}
-    .dock-icon{margin-bottom:4px;opacity:0.6;transition:all 0.3s;display:flex;align-items:center;justify-content:center}
-    .dock-label{font-family:var(--font-mono);font-size:.45rem;text-transform:uppercase;letter-spacing:1px;font-weight:700;transition:all 0.3s}
-    .dock-btn.active{color:#fff}
-    .dock-btn.active .dock-icon{opacity:1;color:var(--red);filter:drop-shadow(0 2px 8px rgba(220,38,38,0.5));transform:translateY(-1px)}
-    .dock-btn.active::before{width:36px;background:var(--red);box-shadow:0 1px 12px var(--red)}
-    .dock-btn.alpha-link .dock-label{color:rgba(212,175,55,0.5)}
-    .dock-btn.alpha-link.active .dock-icon{color:var(--accent-gold);filter:drop-shadow(0 2px 8px rgba(212,175,55,0.5))}
-    .dock-btn.alpha-link.active .dock-label{color:var(--accent-gold)}
-    .dock-btn.alpha-link.active::before{background:var(--accent-gold);box-shadow:0 1px 12px var(--accent-gold)}
+    .mobile-dock{display:none;position:fixed;bottom:16px;left:50%;transform:translateX(-50%);width:calc(100% - 32px);max-width:500px;background:rgba(12,12,16,0.85);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,0.08);border-radius:24px;box-shadow:0 12px 40px rgba(0,0,0,0.8), 0 0 20px rgba(220,38,38,0.1);z-index:200;padding:4px 8px}
+    .dock-grid{display:grid;grid-template-columns:repeat(4,1fr);height:56px;align-items:center}
+    .dock-btn{display:flex;flex-direction:column;align-items:center;justify-content:center;text-decoration:none;position:relative;color:var(--muted);height:48px;border-radius:18px;transition:all 0.3s cubic-bezier(0.4, 0, 0.2, 1)}
+    .dock-icon{margin-bottom:2px;opacity:0.75;transition:all 0.3s}
+    .dock-icon svg{stroke-width:2.5px}
+    .dock-label{font-family:var(--font-mono);font-size:.42rem;text-transform:uppercase;letter-spacing:1px;font-weight:700;transition:all 0.3s;opacity:0.8}
+    .dock-btn.active{background:rgba(220,38,38,0.12);color:#fff}
+    .dock-btn.active .dock-icon{opacity:1;color:var(--red);filter:drop-shadow(0 2px 8px rgba(220,38,38,0.6));transform:translateY(-1px)}
+    .dock-btn.active .dock-label{opacity:1;color:var(--red)}
+    .dock-btn.alpha-link .dock-icon{opacity:0.65;color:rgba(212,175,55,0.8)}
+    .dock-btn.alpha-link .dock-label{color:rgba(212,175,55,0.6)}
+    .dock-btn.alpha-link.active{background:rgba(212,175,55,0.12)}
+    .dock-btn.alpha-link.active .dock-icon{opacity:1;color:var(--accent-gold);filter:drop-shadow(0 2px 8px rgba(212,175,55,0.6));transform:translateY(-1px)}
+    .dock-btn.alpha-link.active .dock-label{opacity:1;color:var(--accent-gold)}
 
     /* ── ALPHA ── */
     .alpha-lock{max-width:480px;margin:100px auto;text-align:center;padding:48px 32px;background:linear-gradient(135deg,rgba(245,166,35,0.04),var(--s1) 70%);border:1px solid rgba(245,166,35,0.2);border-radius:12px}
@@ -526,7 +527,7 @@
       /* ── MOBILE DOCK ── */
       .mobile-dock{display:block}
       .desktop-nav{display:none}
-      body{padding-bottom:70px}
+      body{padding-bottom:100px}
 
       /* ── TABS ── */
       .tab-container{gap:2px}
