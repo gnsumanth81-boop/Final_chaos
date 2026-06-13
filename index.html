@@ -374,6 +374,42 @@
     .hdr-cvx-num.cvx-stressed{color:var(--gold)}
     .hdr-cvx-num.cvx-chaos{color:var(--red);text-shadow:0 0 12px rgba(231,76,60,.4)}
 
+    /* ── STREAK BADGE ── */
+    .streak-badge{display:inline-flex;align-items:center;gap:4px;font-family:var(--font-mono);font-size:.42rem;font-weight:700;letter-spacing:1px;padding:3px 8px;border-radius:3px;white-space:nowrap}
+    .streak-badge.win-streak{background:rgba(52,211,153,.1);color:var(--green);border:1px solid rgba(52,211,153,.25)}
+    .streak-badge.loss-streak{background:rgba(220,74,90,.1);color:var(--red);border:1px solid rgba(220,74,90,.25)}
+
+    /* ── COMMAND BAR ── */
+    #command-bar{position:sticky;top:30px;z-index:99;background:rgba(8,8,12,0.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.04);padding:7px 0;display:none}
+    #command-bar.loaded{display:block}
+    .cmd-inner{max-width:760px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+    .cmd-chip{display:flex;align-items:center;gap:6px;font-family:var(--font-mono);font-size:.42rem;letter-spacing:1px;color:var(--muted);white-space:nowrap}
+    .cmd-chip strong{color:var(--text-bright);font-size:.48rem}
+    .cmd-chip.bear strong{color:var(--red)}
+    .cmd-chip.bull strong{color:var(--green)}
+    .cmd-chip.neut strong{color:var(--gold)}
+    .cmd-divider{width:1px;height:14px;background:var(--s3);flex-shrink:0}
+    .cmd-countdown{font-family:var(--font-mono);font-size:.42rem;color:var(--muted);letter-spacing:1px}
+    .cmd-countdown strong{color:var(--gold)}
+
+    /* ── FIRST-VISIT OVERLAY ── */
+    #onboard-overlay{position:fixed;inset:0;background:rgba(3,3,4,0.92);backdrop-filter:blur(16px);z-index:99990;display:flex;align-items:center;justify-content:center;padding:24px}
+    #onboard-overlay.hidden{display:none}
+    .onboard-card{background:rgba(12,13,18,0.98);border:1px solid rgba(255,255,255,.08);border-radius:16px;max-width:520px;width:100%;padding:40px 36px;box-shadow:0 32px 80px rgba(0,0,0,.9);animation:cliFadeScale 0.3s cubic-bezier(.34,1.56,.64,1)}
+    .onboard-step{display:none}.onboard-step.active{display:block}
+    .onboard-num{font-family:var(--font-mono);font-size:.45rem;color:var(--red);letter-spacing:3px;margin-bottom:16px;text-transform:uppercase}
+    .onboard-title{font-family:var(--font-big);font-size:2.2rem;color:var(--text-pure);letter-spacing:2px;margin-bottom:12px;line-height:1.1}
+    .onboard-desc{font-size:1rem;color:var(--text-secondary);line-height:1.7;margin-bottom:28px}
+    .onboard-desc strong{color:var(--text-bright)}
+    .onboard-dots{display:flex;gap:6px;margin-bottom:24px}
+    .onboard-dot{width:6px;height:6px;border-radius:50%;background:var(--s4);transition:background .3s}
+    .onboard-dot.active{background:var(--red)}
+    .onboard-btn-row{display:flex;gap:12px}
+    .onboard-next{flex:1;padding:12px;background:var(--red);color:#fff;font-family:var(--font-mono);font-size:.55rem;font-weight:700;letter-spacing:2px;border:none;border-radius:6px;cursor:pointer;transition:background .2s}
+    .onboard-next:hover{background:#c43a4a}
+    .onboard-skip{padding:12px 16px;background:transparent;color:var(--muted);font-family:var(--font-mono);font-size:.5rem;letter-spacing:1px;border:1px solid var(--s3);border-radius:6px;cursor:pointer;transition:color .2s}
+    .onboard-skip:hover{color:var(--ink)}
+
     /* ── MARQUEE & VERIFIER ── */
     .marquee-wrapper { background: #070709; border-bottom: 1px solid rgba(255, 255, 255, 0.03); overflow: hidden; white-space: nowrap; padding: 6px 0; display: flex; align-items: center; z-index: 99; }
     .marquee-content { display: inline-block; white-space: nowrap; animation: marqueeVelocity 30s linear infinite; font-family: 'JetBrains Mono', monospace; font-size: 0.52rem; color: #8a8f9c; letter-spacing: 1px; }
@@ -485,7 +521,35 @@
 </head>
 <body>
   <div id="progress"></div>
-  <div id="boot"><div class="boot-ey">INITIALIZING WAR ROOM</div><div class="boot-logo">CHAOS<em>.</em></div><div class="boot-bar-w"><div class="boot-bar"></div></div></div>
+  <div id="boot"><div class="boot-ey">INITIALIZING TERMINAL</div><div class="boot-logo">CHAOS<em>.</em></div><div class="boot-bar-w"><div class="boot-bar"></div></div></div>
+
+  <!-- FIRST-VISIT ONBOARDING OVERLAY -->
+  <div id="onboard-overlay" class="hidden">
+    <div class="onboard-card">
+      <div class="onboard-dots"><div class="onboard-dot active" id="od0"></div><div class="onboard-dot" id="od1"></div><div class="onboard-dot" id="od2"></div></div>
+
+      <div class="onboard-step active" id="os0">
+        <div class="onboard-num">STEP 01 OF 03</div>
+        <div class="onboard-title">THIS IS TODAY'S SIGNAL</div>
+        <div class="onboard-desc">Every day, our four AI agents — Fundamental, Technical, Sentiment, and Geopolitical — converge on a single directional verdict. <strong>BEARISH, BULLISH, or NEUTRAL.</strong> All decisions flow from this.</div>
+        <div class="onboard-btn-row"><button class="onboard-skip" onclick="dismissOnboard()">SKIP</button><button class="onboard-next" onclick="nextOnboard(1)">NEXT →</button></div>
+      </div>
+
+      <div class="onboard-step" id="os1">
+        <div class="onboard-num">STEP 02 OF 03</div>
+        <div class="onboard-title">THIS IS THE VERIFIED LEDGER</div>
+        <div class="onboard-desc">Every signal we've ever published is <strong>SHA-256 hashed and locked on GitHub.</strong> 26 resolved signals. 57.7% win rate. Nothing is retroactively edited. Click <strong>LEDGER</strong> in the nav to see every call, ever.</div>
+        <div class="onboard-btn-row"><button class="onboard-skip" onclick="dismissOnboard()">SKIP</button><button class="onboard-next" onclick="nextOnboard(2)">NEXT →</button></div>
+      </div>
+
+      <div class="onboard-step" id="os2">
+        <div class="onboard-num">STEP 03 OF 03</div>
+        <div class="onboard-title">THIS IS THE CHAOS LINE — SHARE IT</div>
+        <div class="onboard-desc">Every brief ends with one unforgettable line distilling the market's entire mood. Download it as an image. Post it. Share it. It's your proof you were reading the right signals.</div>
+        <div class="onboard-btn-row"><button class="onboard-next" style="background:var(--green);" onclick="dismissOnboard()">GOT IT ✓</button></div>
+      </div>
+    </div>
+  </div>
 
   <header class="sticky-hdr">
     <a class="sticky-brand" href="#terminal" onclick="window.location.hash='#terminal'; runClientRouter(); return false;">CHAOS<em>.</em></a>
@@ -493,8 +557,9 @@
       <div class="live-b"><span class="live-d"></span>LIVE BRIEF</div>
       <div id="terminal-status" style="font-family:var(--font-mono);font-size:0.45rem;color:#fff;letter-spacing:1px;margin-left:10px;padding-left:10px;border-left:1px solid var(--s3);white-space:nowrap;">LOADING...</div>
     </div>
-    <div style="display:flex;align-items:center;gap:16px">
+    <div style="display:flex;align-items:center;gap:12px">
       <div class="hdr-cvx-wrap">CVX <span class="hdr-cvx-num" id="hdr-cvx">--</span></div>
+      <span id="hdr-streak" class="streak-badge" style="display:none;"></span>
       <nav class="desktop-nav">
         <a href="#terminal" onclick="window.location.hash='#terminal'; runClientRouter(); return false;" class="nav-link active" data-target="view-terminal">⚡ INTEL</a>
         <a href="#ledger" onclick="window.location.hash='#ledger'; runClientRouter(); return false;" class="nav-link" data-target="view-ledger">📋 LEDGER</a>
@@ -506,6 +571,20 @@
 
   <div class="ticker"><div class="tk-lbl"><span class="tk-dot"></span>LIVE</div><div class="tk-scroll"><div class="tk-inner" id="ticker-inner"></div></div></div>
 
+  <!-- PERSISTENT COMMAND BAR -->
+  <div id="command-bar">
+    <div class="cmd-inner">
+      <div class="cmd-chip bear" id="cmd-signal-chip"><span>SIGNAL</span><strong id="cmd-signal">--</strong></div>
+      <div class="cmd-divider"></div>
+      <div class="cmd-chip"><span>CONF</span><strong id="cmd-conf">--%</strong></div>
+      <div class="cmd-divider"></div>
+      <div class="cmd-chip"><span>CVX</span><strong id="cmd-cvx">--</strong></div>
+      <div class="cmd-divider"></div>
+      <div class="cmd-chip"><span>FEAR</span><strong id="cmd-fear">--</strong></div>
+      <div class="cmd-divider"></div>
+      <div class="cmd-countdown">NEXT UPDATE <strong id="cmd-countdown">--</strong></div>
+    </div>
+  </div>
 
 
   <!-- ═══════════ INTEL VIEW ═══════════ -->
@@ -592,7 +671,7 @@
 
         <!-- PROMOTED TACTICAL PLAYS -->
         <section class="rv">
-          <div class="sec-title">IMMEDIATE TACTICAL EXECUTIONS</div>
+          <div class="sec-title">TODAY'S PLAYS</div>
           <div class="plays-grid" id="plays-grid" aria-label="Tactical Plays"></div>
         </section>
       </article>
@@ -812,30 +891,59 @@
       `;
     }
 
-    function playCard(p,i){
+    function playCard(p, i, agents) {
       const typeLabel = (p.type || 'SAFE').toUpperCase();
-      const tagClass = typeLabel === 'SAFE' ? 'tag-green' : typeLabel === 'AGGRESSIVE' ? 'tag-gold' : 'tag-purple';
       const icon = typeLabel === 'SAFE' ? '🛡️' : typeLabel === 'AGGRESSIVE' ? '⚡' : '🔄';
       const borderClr = typeLabel === 'SAFE' ? 'var(--green)' : typeLabel === 'AGGRESSIVE' ? 'var(--accent-gold)' : 'var(--purple)';
+      const labelClr = typeLabel === 'SAFE' ? 'var(--green)' : typeLabel === 'AGGRESSIVE' ? 'var(--accent-gold)' : 'var(--purple)';
+
+      // Real agent alignment logic
+      const agentList = ['fundamental', 'technical', 'sentiment', 'geopolitical'];
+      const agentNames = { fundamental: 'Fundamental', technical: 'Technical', sentiment: 'Sentiment', geopolitical: 'Geopolitical' };
+      let aligned = [], misaligned = [];
+      agentList.forEach(key => {
+        const ag = agents && agents[key];
+        if (!ag) return;
+        const bias = (ag.bias || '').toUpperCase();
+        if (typeLabel === 'SAFE' || typeLabel === 'AGGRESSIVE') {
+          if (bias === 'BEARISH') aligned.push(agentNames[key]);
+          else if (bias === 'BULLISH') misaligned.push(agentNames[key]);
+          else misaligned.push(agentNames[key] + ' (' + bias + ')');
+        } else { // CONTRARIAN
+          if (bias === 'ELEVATED' || bias === 'BULLISH') aligned.push(agentNames[key]);
+          else misaligned.push(agentNames[key]);
+        }
+      });
+
+      const alignTxt = aligned.length
+        ? `${aligned.length}/${agentList.length} agents aligned: ${aligned.join(', ')}`
+        : 'No agents directly aligned — high-conviction contrarian';
+      const misalignTxt = misaligned.length
+        ? `${misaligned.length} agent${misaligned.length>1?'s':''} neutral/opposing: ${misaligned.join(', ')}`
+        : 'Full agent consensus';
+      const alignBg = aligned.length >= 3 ? 'rgba(52,211,153,0.06)' : 'rgba(212,168,67,0.06)';
+      const alignBorder = aligned.length >= 3 ? 'rgba(52,211,153,0.2)' : 'rgba(212,168,67,0.2)';
+      const alignColor = aligned.length >= 3 ? 'var(--green)' : 'var(--gold)';
+
       return `
         <div class="bg-card razor-play-card" style="animation-delay: ${i * 100}ms; border-left: 3px solid ${borderClr}; margin-bottom:0; padding:12px;">
           <div class="r-play-header" style="margin-bottom:6px;">
-            <span class="r-play-tag ${tagClass}" style="font-family:var(--font-mono); font-size:0.6rem; font-weight:700;">${icon} ${typeLabel} OPERATIONS MATRIX</span>
-            <div class="r-play-asset terminal-num" style="margin-top:4px; font-size:1rem; color:var(--text-pure); font-weight:700;">${esc(p.thesis || 'Tactical Positioning')}</div>
+            <span style="font-family:var(--font-mono); font-size:0.58rem; font-weight:700; color:${labelClr}; letter-spacing:1.5px; text-transform:uppercase;">${icon} ${typeLabel}</span>
+            <div class="r-play-asset" style="margin-top:4px; font-size:1rem; color:var(--text-pure); font-weight:700; font-family:var(--font-ui); letter-spacing:0.5px;">${esc(p.thesis || 'Tactical Positioning')}</div>
           </div>
-          <div class="r-play-body" style="color:var(--text-muted); font-size:0.85rem; line-height:1.4;">
-            ${briefHtml(p.details || 'Awaiting validation catalyst parameters.')}
+          <div style="color:var(--text-secondary); font-size:0.85rem; line-height:1.5; margin-bottom:8px;">
+            ${briefHtml(p.details || '')}
           </div>
-          <div style="border-top: 1px solid var(--border-light); margin-top: 8px; padding-top: 8px;">
-            <div style="font-family: var(--font-mono); font-size: 0.6rem; color: var(--accent-gold); margin-bottom: 8px; letter-spacing: 1px;">// SIGNAL VALIDATION</div>
+          <div style="border-top: 1px solid var(--border-light); margin-top:8px; padding-top:8px;">
+            <div style="font-family:var(--font-mono); font-size:0.55rem; color:var(--muted); margin-bottom:6px; letter-spacing:1px;">// AGENT ALIGNMENT</div>
             <div style="display:flex; flex-direction:column; gap:4px;">
-              <div style="display:flex; align-items:flex-start; gap:8px; background: rgba(0, 255, 102, 0.05); border: 1px solid rgba(0, 255, 102, 0.2); padding: 6px 8px; border-radius: 4px;">
-                <div style="color:var(--green); font-family:var(--font-mono); font-weight:bold; font-size:0.85rem;">+</div>
-                <div style="font-size: 0.8rem; color: var(--text-bright); line-height: 1.4;">${esc(p.driver || "System alignment confirmed")}</div>
+              <div style="display:flex; align-items:flex-start; gap:8px; background:${alignBg}; border:1px solid ${alignBorder}; padding:5px 8px; border-radius:4px;">
+                <div style="color:${alignColor}; font-family:var(--font-mono); font-weight:bold; font-size:0.85rem; flex-shrink:0;">+</div>
+                <div style="font-size:0.78rem; color:var(--text-bright); line-height:1.4;">${alignTxt}</div>
               </div>
-              <div style="display:flex; align-items:flex-start; gap:8px; background: rgba(255, 0, 60, 0.05); border: 1px solid rgba(255, 0, 60, 0.2); padding: 6px 8px; border-radius: 4px;">
-                <div style="color:var(--red); font-family:var(--font-mono); font-weight:bold; font-size:0.85rem;">-</div>
-                <div style="font-size: 0.8rem; color: var(--text-bright); line-height: 1.4;">${esc(p.risk || "Pending macro validation")}</div>
+              <div style="display:flex; align-items:flex-start; gap:8px; background:rgba(255,0,60,0.04); border:1px solid rgba(255,0,60,0.15); padding:5px 8px; border-radius:4px;">
+                <div style="color:var(--red); font-family:var(--font-mono); font-weight:bold; font-size:0.85rem; flex-shrink:0;">−</div>
+                <div style="font-size:0.78rem; color:var(--text-bright); line-height:1.4;">${misalignTxt}</div>
               </div>
             </div>
           </div>
@@ -1160,7 +1268,7 @@
       }
 
       // Plays
-      document.getElementById('plays-grid').innerHTML=(b.plays||[]).map(playCard).join('');
+      document.getElementById('plays-grid').innerHTML=(b.plays||[]).map(function(p,i){return playCard(p,i,agents);}).join('');
 
       // Ledger
       document.getElementById('ledger').innerHTML=renderLedger(signals);
@@ -1254,8 +1362,44 @@
       var hdrCvx = document.getElementById('hdr-cvx');
       if (hdrCvx) { hdrCvx.textContent = cvxScore; hdrCvx.className = 'hdr-cvx-num ' + cvxCls; }
 
-      // ══ MOBILE SIGNAL CARD POPULATION ══
+      // Header streak badge
       var perf = latest.performance || {};
+      var streakEl = document.getElementById('hdr-streak');
+      if (streakEl && perf.current_streak > 0) {
+        var isWin = (perf.streak_direction || 'WIN') === 'WIN';
+        streakEl.style.display = 'inline-flex';
+        streakEl.className = 'streak-badge ' + (isWin ? 'win-streak' : 'loss-streak');
+        streakEl.textContent = (isWin ? '🔥' : '❄️') + ' ' + perf.current_streak + (isWin ? 'W' : 'L') + ' STREAK';
+      }
+
+      // Command bar population
+      var cmdBar = document.getElementById('command-bar');
+      if (cmdBar) {
+        cmdBar.classList.add('loaded');
+        var cmdSignalEl = document.getElementById('cmd-signal');
+        var cmdSignalChip = document.getElementById('cmd-signal-chip');
+        if (cmdSignalEl) cmdSignalEl.textContent = signal;
+        if (cmdSignalChip) cmdSignalChip.className = 'cmd-chip ' + scls;
+        var cmdConf = document.getElementById('cmd-conf');
+        if (cmdConf) cmdConf.textContent = (b.confidence || 0) + '%';
+        var cmdCvx = document.getElementById('cmd-cvx');
+        if (cmdCvx) { cmdCvx.textContent = cvxScore; cmdCvx.className = cvxCls === 'cvx-chaos' ? '' : ''; cmdCvx.style.color = cvxCls === 'cvx-chaos' ? 'var(--red)' : cvxCls === 'cvx-stressed' ? 'var(--gold)' : 'var(--green)'; }
+        var cmdFear = document.getElementById('cmd-fear');
+        if (cmdFear) { cmdFear.textContent = fear; cmdFear.style.color = fearColor; }
+        // Countdown: assume 24h refresh cadence from generated_at
+        if (!window.cmdCountdownInterval) {
+          window.cmdCountdownInterval = setInterval(function() {
+            var genTime = new Date(b.generated_at || Date.now()).getTime();
+            var nextUpdate = genTime + (24 * 60 * 60 * 1000);
+            var diff = Math.max(0, Math.floor((nextUpdate - Date.now()) / 1000));
+            var h = Math.floor(diff / 3600); var m = Math.floor((diff % 3600) / 60);
+            var cdEl = document.getElementById('cmd-countdown');
+            if (cdEl) cdEl.textContent = diff > 0 ? h + 'h ' + m + 'm' : 'IMMINENT';
+          }, 10000);
+        }
+      }
+
+      // ══ MOBILE SIGNAL CARD POPULATION ══
       var mHash = document.getElementById('m-hash');
       if (mHash) mHash.textContent = latest.signal && latest.signal.signal_hash ? latest.signal.signal_hash.substring(0, 12) : '';
 
@@ -1361,7 +1505,7 @@
         }
       }finally{
         if(done)done();
-        if(!isPoll)setTimeout(function(){document.getElementById('boot').classList.add('gone');},400);
+        if(!isPoll)setTimeout(function(){document.getElementById('boot').classList.add('gone'); initOnboard(); initCmdCountdown(latest.brief && latest.brief.generated_at);},400);
       }
     }
 
@@ -1437,6 +1581,37 @@
     document.addEventListener('keydown', function(e) {
       if (e.key === 'Escape') closeHashVerifier();
     });
+
+    // ── FIRST-VISIT ONBOARDING ──
+    var _onboardStep = 0;
+    function initOnboard() {
+      if (localStorage.getItem('chaos_onboarded')) return;
+      document.getElementById('onboard-overlay').classList.remove('hidden');
+    }
+    function nextOnboard(step) {
+      document.getElementById('os' + _onboardStep).classList.remove('active');
+      document.getElementById('od' + _onboardStep).classList.remove('active');
+      _onboardStep = step;
+      document.getElementById('os' + _onboardStep).classList.add('active');
+      document.getElementById('od' + _onboardStep).classList.add('active');
+    }
+    function dismissOnboard() {
+      localStorage.setItem('chaos_onboarded', '1');
+      document.getElementById('onboard-overlay').classList.add('hidden');
+    }
+
+    // ── CMD COUNTDOWN INIT ──
+    function initCmdCountdown(generatedAt) {
+      if (window.cmdCountdownInterval) clearInterval(window.cmdCountdownInterval);
+      window.cmdCountdownInterval = setInterval(function() {
+        var genTime = new Date(generatedAt || Date.now()).getTime();
+        var nextUpdate = genTime + (24 * 60 * 60 * 1000);
+        var diff = Math.max(0, Math.floor((nextUpdate - Date.now()) / 1000));
+        var h = Math.floor(diff / 3600); var m = Math.floor((diff % 3600) / 60);
+        var cdEl = document.getElementById('cmd-countdown');
+        if (cdEl) cdEl.textContent = diff > 0 ? h + 'h ' + m + 'm' : 'IMMINENT';
+      }, 10000);
+    }
 
     // ── VIRAL SIGNAL CARD GENERATOR (HTML2CANVAS) ──
     async function generateChaosImage() {
