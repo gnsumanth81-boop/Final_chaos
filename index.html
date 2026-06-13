@@ -224,13 +224,19 @@
     .desktop-nav a{font-family:var(--font-mono);font-size:.52rem;color:var(--muted);text-decoration:none;text-transform:uppercase;letter-spacing:1.5px;font-weight:700;transition:color 0.2s;padding-bottom:4px;border-bottom:2px solid transparent}
     .desktop-nav a:hover{color:var(--ink)}
     .desktop-nav a.active{color:var(--red);border-bottom-color:var(--red)}
-    .mobile-dock{display:none;position:fixed;bottom:0;left:0;right:0;background:rgba(8,8,12,0.95);backdrop-filter:blur(12px);border-top:1px solid var(--dim);z-index:200}
-    .dock-grid{display:grid;grid-template-columns:repeat(4,1fr);height:56px}
-    .dock-btn{display:flex;flex-direction:column;align-items:center;justify-content:center;text-decoration:none;border-right:1px solid var(--s3);transition:background 0.2s}
-    .dock-btn:last-child{border-right:none}
-    .dock-icon{font-size:1.1rem;margin-bottom:2px}
-    .dock-label{font-family:var(--font-mono);font-size:.42rem;color:var(--muted);text-transform:uppercase;letter-spacing:1.5px;font-weight:700}
-    .dock-btn.active .dock-label{color:var(--red)}
+    .mobile-dock{display:none;position:fixed;bottom:0;left:0;right:0;background:rgba(5,5,8,0.85);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-top:1px solid rgba(255,255,255,0.06);z-index:200}
+    .dock-grid{display:grid;grid-template-columns:repeat(4,1fr);height:60px}
+    .dock-btn{display:flex;flex-direction:column;align-items:center;justify-content:center;text-decoration:none;position:relative;color:var(--muted);transition:all 0.2s}
+    .dock-btn::before{content:'';position:absolute;top:-1px;left:50%;transform:translateX(-50%);width:0;height:2px;background:transparent;transition:all 0.3s cubic-bezier(0.4, 0, 0.2, 1);border-radius:0 0 4px 4px}
+    .dock-icon{margin-bottom:4px;opacity:0.6;transition:all 0.3s;display:flex;align-items:center;justify-content:center}
+    .dock-label{font-family:var(--font-mono);font-size:.45rem;text-transform:uppercase;letter-spacing:1px;font-weight:700;transition:all 0.3s}
+    .dock-btn.active{color:#fff}
+    .dock-btn.active .dock-icon{opacity:1;color:var(--red);filter:drop-shadow(0 2px 8px rgba(220,38,38,0.5));transform:translateY(-1px)}
+    .dock-btn.active::before{width:36px;background:var(--red);box-shadow:0 1px 12px var(--red)}
+    .dock-btn.alpha-link .dock-label{color:rgba(212,175,55,0.5)}
+    .dock-btn.alpha-link.active .dock-icon{color:var(--accent-gold);filter:drop-shadow(0 2px 8px rgba(212,175,55,0.5))}
+    .dock-btn.alpha-link.active .dock-label{color:var(--accent-gold)}
+    .dock-btn.alpha-link.active::before{background:var(--accent-gold);box-shadow:0 1px 12px var(--accent-gold)}
 
     /* ── ALPHA ── */
     .alpha-lock{max-width:480px;margin:100px auto;text-align:center;padding:48px 32px;background:linear-gradient(135deg,rgba(245,166,35,0.04),var(--s1) 70%);border:1px solid rgba(245,166,35,0.2);border-radius:12px}
@@ -833,10 +839,22 @@
 
   <div class="mobile-dock">
     <div class="dock-grid">
-      <a href="#terminal" onclick="window.location.hash='#terminal'; runClientRouter(); return false;" class="dock-btn nav-link" data-target="view-terminal"><span class="dock-icon">⚡</span><span class="dock-label">INTEL</span></a>
-      <a href="#ledger" onclick="window.location.hash='#ledger'; runClientRouter(); return false;" class="dock-btn nav-link" data-target="view-ledger"><span class="dock-icon">📋</span><span class="dock-label">LEDGER</span></a>
-      <a href="#vitals" onclick="window.location.hash='#vitals'; runClientRouter(); return false;" class="dock-btn nav-link" data-target="view-vitals"><span class="dock-icon">📊</span><span class="dock-label">VITALS</span></a>
-      <a href="#alpha" onclick="window.location.hash='#alpha'; runClientRouter(); return false;" class="dock-btn nav-link" data-target="view-alpha"><span class="dock-icon">🔓</span><span class="dock-label" style="color:var(--gold)">ALPHA</span></a>
+      <a href="#terminal" onclick="window.location.hash='#terminal'; runClientRouter(); return false;" class="dock-btn nav-link active" data-target="view-terminal">
+        <span class="dock-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg></span>
+        <span class="dock-label">INTEL</span>
+      </a>
+      <a href="#ledger" onclick="window.location.hash='#ledger'; runClientRouter(); return false;" class="dock-btn nav-link" data-target="view-ledger">
+        <span class="dock-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect><path d="M9 14h6"></path><path d="M9 18h6"></path><path d="M9 10h6"></path></svg></span>
+        <span class="dock-label">LEDGER</span>
+      </a>
+      <a href="#vitals" onclick="window.location.hash='#vitals'; runClientRouter(); return false;" class="dock-btn nav-link" data-target="view-vitals">
+        <span class="dock-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg></span>
+        <span class="dock-label">VITALS</span>
+      </a>
+      <a href="#alpha" onclick="window.location.hash='#alpha'; runClientRouter(); return false;" class="dock-btn nav-link alpha-link" data-target="view-alpha">
+        <span class="dock-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg></span>
+        <span class="dock-label">ALPHA</span>
+      </a>
     </div>
   </div>
 
