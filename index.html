@@ -244,11 +244,31 @@
       --ink:#18181b;--ink2:#3f3f46;--muted:#71717a;--dim:#e4e4e7;
       --text-pure:#000000;--text-bright:#18181b;--text-secondary:#52525b;
       --border-light:rgba(0,0,0,0.1);--border-focus:rgba(0,0,0,0.2);
+      
+      --green:#059669; --green-g:rgba(5,150,105,0.1);
+      --gold:#b45309; --gold-g:rgba(180,83,9,0.1);
+      --red:#dc2626; --red-g:rgba(220,38,38,0.1);
     }
     body.light-mode .sticky-hdr { background: rgba(255,255,255,0.9); border-bottom-color: rgba(0,0,0,0.05); }
     body.light-mode .sticky-hdr.scrolled { background: rgba(255,255,255,0.95); box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
     body.light-mode .brand-sub { color: #333; }
     body.light-mode .ticker { border-bottom-color: rgba(0,0,0,0.05); }
+    
+    body.light-mode .glass-card, 
+    body.light-mode .ctx-card, 
+    body.light-mode .poly, 
+    body.light-mode .mobile-dock, 
+    body.light-mode .alpha-lock, 
+    body.light-mode .onboard-card, 
+    body.light-mode .creator-modal,
+    body.light-mode .agent-card {
+      background: rgba(255, 255, 255, 0.95) !important;
+      border-color: rgba(0, 0, 0, 0.1) !important;
+    }
+    body.light-mode .mobile-dock { box-shadow: 0 -4px 24px rgba(0,0,0,0.05) !important; }
+    body.light-mode .cx-btn.active { background: rgba(220,38,38,0.05) !important; }
+    body.light-mode .poly-fill { box-shadow: none !important; }
+    body.light-mode .poly-link { color: #000; border-color: rgba(0,0,0,0.1); }
     .desktop-nav{display:flex;gap:18px;align-items:center}
     .desktop-nav a{font-family:var(--font-mono);font-size:.52rem;color:var(--muted);text-decoration:none;text-transform:uppercase;letter-spacing:1.5px;font-weight:700;transition:color 0.2s;padding-bottom:4px;border-bottom:2px solid transparent}
     .desktop-nav a:hover{color:var(--ink)}
