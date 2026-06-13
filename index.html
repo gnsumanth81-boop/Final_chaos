@@ -29,6 +29,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=JetBrains+Mono:wght@300;400;700&family=Barlow+Condensed:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
   <style>
     :root {
       --bg:#050507;--bg2:#0b0c10;--s0:#0e0e14;--s1:#12121a;--s2:#181820;--s3:#20202c;--s4:#2a2a38;
@@ -52,8 +53,9 @@
     }
     *{margin:0;padding:0;box-sizing:border-box;-webkit-font-smoothing:antialiased}
     html{scroll-behavior:smooth}
-    body{background:var(--bg-app);color:var(--text-bright);font-family:var(--font-body);min-height:100vh;overflow-x:hidden;font-size:16px;line-height:1.7}
+    body{background:var(--bg-app);color:var(--text-bright);font-family:var(--font-body);min-height:100vh;overflow-x:hidden;font-size:16px;line-height:1.7;transition:background 1.5s ease-in-out;}
     body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");opacity:.018;pointer-events:none;z-index:9998}
+    body::after{content:'';position:fixed;inset:0;background-image:linear-gradient(to right,rgba(255,255,255,0.015) 1px,transparent 1px),linear-gradient(to bottom,rgba(255,255,255,0.015) 1px,transparent 1px);background-size:32px 32px;pointer-events:none;z-index:1}
 
     /* ── BOOT ── */
     #progress{position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,var(--red),var(--gold),var(--green));width:0;z-index:10001;box-shadow:0 0 10px rgba(232,57,74,.4);transition:width .3s}
@@ -1021,6 +1023,14 @@
       var fearCls=fear<25?'bear':fear>60?'bull':'neut';
       var fearColor=fear<25?'var(--red)':fear>60?'var(--green)':'var(--gold)';
       var btcCls=num(m.btcChange)>=0?'bull':'bear';
+
+      // Phase 2: Dynamic Regime Background Tint
+      var glowBg = '';
+      if (fear < 25) glowBg = 'radial-gradient(circle at 50% -20%, rgba(220, 38, 38, 0.12) 0%, var(--bg-app) 70%)';
+      else if (fear < 40) glowBg = 'radial-gradient(circle at 50% -20%, rgba(234, 179, 8, 0.08) 0%, var(--bg-app) 70%)';
+      else if (fear > 60) glowBg = 'radial-gradient(circle at 50% -20%, rgba(16, 185, 129, 0.08) 0%, var(--bg-app) 70%)';
+      else glowBg = 'radial-gradient(circle at 50% -20%, rgba(59, 130, 246, 0.05) 0%, var(--bg-app) 70%)';
+      document.body.style.backgroundImage = glowBg;
       var generated=new Date(b.generated_at||Date.now());
       var dateStr=generated.toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric',year:'numeric'}).toUpperCase();
       var timeStr=generated.toISOString().slice(11,16)+' UTC';
@@ -1134,7 +1144,7 @@
       // Chaos Line
       var clEl = document.getElementById('chaos-line-card');
       if (clEl) {
-        clEl.innerHTML='<span class="chaos-tag"><span class="chaos-star">✦</span> THE CHAOS LINE</span><div class="chaos-text" id="chaos-quote-text">&ldquo;'+esc(b.chaos_line||'')+'&rdquo;</div><div class="share-row"><a class="s-btn ghost" target="_blank" href="https://twitter.com/intent/tweet?text='+encodeURIComponent('"'+(b.chaos_line||'')+'" — Chaos Intelligence\n'+SITE)+'">𝕏 Post</a><a class="s-btn ghost" target="_blank" href="https://t.me/share/url?url='+encodeURIComponent(SITE)+'&text='+encodeURIComponent('"'+(b.chaos_line||'')+'" — Chaos Intelligence')+'">✈ Telegram</a><button class="s-btn ghost" onclick="copyLine()">📋 Copy Line</button><button class="s-btn ghost" style="color:var(--gold); border-color:var(--gold);" onclick="generateChaosImage()">🖼️ Download Image</button></div>';
+        clEl.innerHTML='<span class="chaos-tag"><span class="chaos-star">✦</span> THE CHAOS LINE</span><div class="chaos-text" id="chaos-quote-text">&ldquo;'+esc(b.chaos_line||'')+'&rdquo;</div><div class="share-row"><a class="s-btn ghost" target="_blank" href="https://twitter.com/intent/tweet?text='+encodeURIComponent('"'+(b.chaos_line||'')+'" — Chaos Intelligence\n'+SITE)+'">𝕏 Post</a><a class="s-btn ghost" target="_blank" href="https://t.me/share/url?url='+encodeURIComponent(SITE)+'&text='+encodeURIComponent('"'+(b.chaos_line||'')+'" — Chaos Intelligence')+'">✈ Telegram</a><button class="s-btn ghost" onclick="copyLine()">📋 Copy Line</button><button class="s-btn ghost" id="export-btn" style="color:var(--gold); border-color:var(--gold); font-weight:700; font-family:var(--font-mono); letter-spacing:1px; background:rgba(212,168,67,0.05);" onclick="generateChaosImage()">⚡ EXPORT VIRAL SIGNAL CARD</button></div>';
       }
 
       // Trap
@@ -1283,6 +1293,26 @@
         if (w <= 25) mDecayFill.classList.add('decay-critical'); else mDecayFill.classList.remove('decay-critical');
       }
 
+      // Populate Viral Export Card
+      const vcSignal = document.getElementById('vc-signal');
+      if (vcSignal) vcSignal.innerText = esc(signal);
+      const vcTime = document.getElementById('vc-time');
+      if (vcTime) vcTime.innerText = dateStr + ' ' + timeStr;
+      const vcFear = document.getElementById('vc-fear');
+      if (vcFear) vcFear.innerText = fear;
+      const vcFearZone = document.getElementById('vc-fear-zone');
+      if (vcFearZone) {
+        vcFearZone.innerText = fearCls === 'bear' ? 'CRITICAL RISK ZONE' : fearCls === 'bull' ? 'ELEVATED GREED' : 'NEUTRAL ZONE';
+        vcFearZone.style.color = fearCls === 'bear' ? '#a1a1aa' : fearCls === 'bull' ? 'var(--green)' : 'var(--gold)';
+      }
+      const vcFearNum = document.getElementById('vc-fear');
+      if (vcFearNum) vcFearNum.style.color = fearColor;
+      const vcPlayTitle = document.getElementById('vc-play-title');
+      if (vcPlayTitle) vcPlayTitle.innerText = esc(topPlay);
+      const vcPlayAction = document.getElementById('vc-play-action');
+      const playAction = (b.plays && b.plays[0]) ? b.plays[0].thesis : 'Awaiting parameters';
+      if (vcPlayAction) vcPlayAction.innerText = '"' + esc(playAction) + '"';
+
       // Reveal & Clock
       reveal();
       updateWorldClock();
@@ -1408,79 +1438,32 @@
       if (e.key === 'Escape') closeHashVerifier();
     });
 
-    // ── CHAOS LINE IMAGE GENERATOR ──
-    function generateChaosImage() {
-      const canvas = document.getElementById('og-canvas');
-      const ctx = canvas.getContext('2d');
-      const width = canvas.width;
-      const height = canvas.height;
-
-      // 1. Background
-      ctx.fillStyle = '#08080c';
-      ctx.fillRect(0, 0, width, height);
+    // ── VIRAL SIGNAL CARD GENERATOR (HTML2CANVAS) ──
+    async function generateChaosImage() {
+      const btn = document.getElementById('export-btn');
+      if (btn) { btn.disabled = true; btn.innerText = '⚡ GENERATING...'; }
       
-      // 2. Subtle Red Gradient Accent
-      const grd = ctx.createLinearGradient(0, 0, width, height);
-      grd.addColorStop(0, 'rgba(232,57,74,0.15)');
-      grd.addColorStop(1, 'rgba(8,8,12,1)');
-      ctx.fillStyle = grd;
-      ctx.fillRect(0, 0, width, height);
-
-      // 3. Brand Text
-      ctx.fillStyle = '#e8394a'; // var(--red)
-      ctx.font = 'bold 24px monospace';
-      ctx.letterSpacing = '4px';
-      ctx.textAlign = 'left';
-      ctx.fillText('CHAOS INTELLIGENCE', 80, 80);
-
-      // 4. Date & Vitals
-      const dateText = document.getElementById('brief-tag')?.textContent || 'TODAY';
-      ctx.fillStyle = '#8a8f9c'; // var(--muted)
-      ctx.font = '20px monospace';
-      ctx.letterSpacing = '2px';
-      ctx.fillText(dateText + '  //  chaos.sumanthworks.com', 80, 115);
-
-      // 5. The Chaos Line Text (Wrapping)
-      const quote = document.getElementById('chaos-quote-text')?.innerText || '"' + currentLine + '"';
-      ctx.fillStyle = '#ffffff';
-      ctx.font = 'italic 54px serif';
-      ctx.textAlign = 'center';
+      const card = document.getElementById('export-card-wrap');
       
-      const words = quote.split(' ');
-      let line = '';
-      let y = 300;
-      const maxWidth = 1000;
-      
-      ctx.letterSpacing = 'normal';
-      
-      // Handle multi-line wrapping
-      let lines = [];
-      for(let n = 0; n < words.length; n++) {
-        let testLine = line + words[n] + ' ';
-        let metrics = ctx.measureText(testLine);
-        if (metrics.width > maxWidth && n > 0) {
-          lines.push(line);
-          line = words[n] + ' ';
-        } else {
-          line = testLine;
-        }
+      try {
+        card.style.display = 'flex';
+        const canvas = await html2canvas(card, {
+          backgroundColor: '#0a0a0c',
+          scale: 2,
+          logging: false,
+          useCORS: true,
+        });
+        card.style.display = 'none';
+
+        const link = document.createElement('a');
+        link.download = `CHAOS_SIGNAL_${new Date().toISOString().slice(0,10)}.png`;
+        link.href = canvas.toDataURL('image/png');
+        link.click();
+      } catch (e) {
+        console.error('Failed to generate viral card:', e);
+      } finally {
+        if (btn) { btn.disabled = false; btn.innerText = '⚡ EXPORT VIRAL SIGNAL CARD'; }
       }
-      lines.push(line);
-      
-      // Vertically center the block of text
-      const lineHeight = 75;
-      const totalHeight = lines.length * lineHeight;
-      y = (height / 2) - (totalHeight / 2) + 40;
-      
-      for(let i=0; i<lines.length; i++) {
-        ctx.fillText(lines[i], width/2, y + (i*lineHeight));
-      }
-      
-      // 6. Download Trigger
-      const link = document.createElement('a');
-      link.download = `chaos-line-${new Date().toISOString().slice(0,10)}.png`;
-      link.href = canvas.toDataURL('image/png');
-      link.click();
     }
   </script>
 
@@ -1500,6 +1483,39 @@
     </div>
   </div>
   
-  <canvas id="og-canvas" width="1200" height="630" style="display:none;"></canvas>
+  <!-- HIDDEN VIRAL EXPORT CARD (1080x1350) -->
+  <div style="position:absolute; top:-9999px; left:-9999px; overflow:hidden; z-index:-1000;">
+    <div id="export-card-wrap" style="display:none; width:1080px; height:1350px; background:#0a0a0c; color:#fff; font-family:var(--font-mono); border:4px solid rgba(220,38,38,0.3); padding:64px; flex-direction:column; justify-content:space-between; box-sizing:border-box;">
+      
+      <div style="display:flex; justify-content:space-between; align-items:flex-start; border-bottom:1px solid rgba(255,255,255,0.1); padding-bottom:32px;">
+        <div>
+          <h1 style="font-family:var(--font-big); font-size:6rem; letter-spacing:4px; color:var(--red); margin:0; line-height:1;">CHAOS.</h1>
+          <p style="font-size:1.4rem; color:var(--muted); margin-top:12px; letter-spacing:4px; text-transform:uppercase;">Institutional Intelligence Engine</p>
+        </div>
+        <div style="text-align:right;">
+          <span id="vc-signal" style="display:inline-block; padding:12px 24px; background:var(--red-g); color:var(--red); border:1px solid rgba(220,38,38,0.5); font-size:1.4rem; text-transform:uppercase; letter-spacing:4px; font-weight:700;">BEARISH</span>
+          <p id="vc-time" style="font-size:1.2rem; color:var(--muted); margin-top:16px;">JUN 4, 2026 06:17 UTC</p>
+        </div>
+      </div>
+
+      <div style="display:grid; grid-template-columns:1fr 2fr; gap:40px; margin:auto 0;">
+        <div style="border:1px solid rgba(255,255,255,0.05); background:rgba(255,255,255,0.02); padding:40px; display:flex; flex-direction:column; justify-content:space-between; height:320px; box-sizing:border-box;">
+          <span style="font-size:1.2rem; text-transform:uppercase; letter-spacing:4px; color:var(--muted);">FEAR GAUGE</span>
+          <span id="vc-fear" style="font-size:9rem; font-weight:900; font-family:var(--font-big); color:var(--red); line-height:1;">12</span>
+          <span id="vc-fear-zone" style="font-size:1.2rem; color:#a1a1aa; text-transform:uppercase;">CRITICAL RISK ZONE</span>
+        </div>
+        <div style="border:1px solid rgba(220,38,38,0.2); background:rgba(220,38,38,0.05); padding:40px; display:flex; flex-direction:column; justify-content:space-between; height:320px; box-sizing:border-box;">
+          <span style="font-size:1.2rem; text-transform:uppercase; letter-spacing:4px; color:var(--red); font-weight:700;">TOP TACTICAL PLAY</span>
+          <h2 id="vc-play-title" style="font-size:3.2rem; font-family:var(--font-ui); font-weight:700; color:#f4f4f5; margin:0; line-height:1.1; letter-spacing:1px;">Short the S&P 500</h2>
+          <p id="vc-play-action" style="font-size:1.6rem; color:#a1a1aa; font-style:italic; line-height:1.4;">"Initiate short positions on the S&P 500..."</p>
+        </div>
+      </div>
+
+      <div style="border-top:1px solid rgba(255,255,255,0.1); padding-top:32px; display:flex; justify-content:space-between; align-items:center; font-size:1.2rem; color:var(--muted);">
+        <p>NOT FINANCIAL ADVICE • AI-GENERATED VIA GLOBAL DEEP LIQUIDITY DATA</p>
+        <p style="letter-spacing:4px; font-weight:700; color:#a1a1aa;">CHAOS-TERMINAL.ALPHA</p>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
