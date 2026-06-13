@@ -62,6 +62,7 @@
 
     /* ── BOOT ── */
     #progress{position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,var(--red),var(--gold),var(--green));width:0;z-index:10001;box-shadow:0 0 10px rgba(232,57,74,.4);transition:width .3s}
+    #scroll-progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--red),var(--gold));width:0;z-index:10000;box-shadow:0 0 16px rgba(220,38,38,0.5);transition:width 0.1s ease-out;pointer-events:none}
     #boot{position:fixed;inset:0;background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:9999;transition:opacity .6s ease,transform .6s ease}
     #boot.gone{opacity:0;transform:scale(1.05);pointer-events:none}
     .boot-ey{font-family:var(--font-mono);font-size:.5rem;color:var(--muted);letter-spacing:5px;margin-bottom:20px}
@@ -618,6 +619,7 @@
 </head>
 <body>
   <div id="progress"></div>
+  <div id="scroll-progress"></div>
   <div id="boot"><div class="boot-ey">INITIALIZING TERMINAL</div><div class="boot-logo">CHAOS<em>.</em></div><div class="boot-bar-w"><div class="boot-bar"></div></div></div>
 
   <!-- FIRST-VISIT ONBOARDING OVERLAY -->
@@ -901,15 +903,23 @@
     const VIEWS=['view-terminal','view-ledger','view-vitals','view-alpha'];
     let speechInst=null, currentLine='', lastHash='', tvLoaded=false;
 
-    // ── SCROLL-DRIVEN HEADER GLOW ──
+    // ── SCROLL-DRIVEN HEADER GLOW & PROGRESS BAR ──
     (function(){
       const hdr = document.querySelector('.sticky-hdr');
-      if(!hdr) return;
+      const scrollProgress = document.getElementById('scroll-progress');
       let ticking = false;
       window.addEventListener('scroll', function(){
         if(!ticking){
           window.requestAnimationFrame(function(){
-            hdr.classList.toggle('scrolled', window.scrollY > 40);
+            const scrollY = window.scrollY;
+            if(hdr) hdr.classList.toggle('scrolled', scrollY > 40);
+            
+            if(scrollProgress) {
+              const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+              const scrolled = docHeight > 0 ? (scrollY / docHeight) * 100 : 0;
+              scrollProgress.style.width = Math.min(100, Math.max(0, scrolled)) + '%';
+            }
+            
             ticking = false;
           });
           ticking = true;
