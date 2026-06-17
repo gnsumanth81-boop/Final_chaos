@@ -67,17 +67,6 @@ function render(latest,signals){
       if(document.getElementById('tw-desc'))document.getElementById('tw-desc').content=b.chaos_line||'';
 
       
-      // Ticker & Header Metrics
-      if (document.getElementById('ticker-inner')) {
-        var tickerItems=[
-          ['FEAR',m.fearIndex,fearCls],['BTC',m.btcPrice,btcCls],['24H',num(m.btcChange).toFixed(2)+'%',btcCls],
-          ['SIGNAL',signal,scls],['CONF',(b.confidence||0)+'%','neut'],['FORCES',(b.forces||[]).length+'/9','bear'],
-          ['10Y',(m.yieldVal||'N/A')+'%',num(m.yieldVal)>4.5?'bear':'neut'],['DXY',m.dxyVal||'N/A','neut'],[dateStr,'','']
-        ];
-        var tk=tickerItems.map(function(t){return'<span class="tk">'+esc(t[0])+' '+(t[1]?'<span class="v '+t[2]+'">'+esc(t[1])+'</span>':'')+'</span>';}).join('');
-        document.getElementById('ticker-inner').innerHTML=tk+tk;
-      }
-      
       // NEW: 2-Row Executive Header Metrics
       const hSig = document.getElementById('hdr-signal');
       if (hSig) {
@@ -104,13 +93,24 @@ function render(latest,signals){
         h10y.className = 'hm-val ' + (num(m.yieldVal)>4.5?'bear':'neut');
       }
 
+      // Old Ticker (Keep as fallback)
+      if (document.getElementById('ticker-inner')) {
+        var tickerItems=[
+          ['FEAR',m.fearIndex,fearCls],['BTC',m.btcPrice,btcCls],['24H',num(m.btcChange).toFixed(2)+'%',btcCls],
+          ['SIGNAL',signal,scls],['CONF',(b.confidence||0)+'%','neut'],['FORCES',(b.forces||[]).length+'/9','bear'],
+          ['10Y',(m.yieldVal||'N/A')+'%',num(m.yieldVal)>4.5?'bear':'neut'],['DXY',m.dxyVal||'N/A','neut'],[dateStr,'','']
+        ];
+        var tk=tickerItems.map(function(t){return'<span class="tk">'+esc(t[0])+' '+(t[1]?'<span class="v '+t[2]+'">'+esc(t[1])+'</span>':'')+'</span>';}).join('');
+        document.getElementById('ticker-inner').innerHTML=tk+tk;
+      }
+
 
       // Header
-      document.getElementById('terminal-status').textContent=dateStr+' · '+timeStr;
-      document.getElementById('date-line').textContent=dateStr+' · '+timeStr+' · CHAOS INTELLIGENCE';
+      var termStat = document.getElementById('terminal-status'); if(termStat) termStat.textContent=dateStr+' · '+timeStr;
+      var dl = document.getElementById('date-line'); if(dl) dl.textContent=dateStr+' · '+timeStr+' · CHAOS INTELLIGENCE';
       var sessionBadge = document.getElementById('session-badge');
       if (sessionBadge) sessionBadge.textContent=(m.session||'MORNING')+' BRIEF';
-      document.getElementById('hash-val').textContent=latest.signal?.signal_hash||'Hash pending...';
+      var hv = document.getElementById('hash-val'); if(hv) hv.textContent=latest.signal?.signal_hash||'Hash pending...';
 
       // Vitals
       var perf = latest.performance || {};
@@ -119,18 +119,18 @@ function render(latest,signals){
       var wrSubText = tr < 10 ? tr + '/10 SIGNALS' : (perf.current_streak || 0) + ' ' + (perf.streak_direction || 'WIN') + ' STREAK';
 
       // Ledger tab updates
-      document.getElementById('ledger-win-rate').textContent = tr < 10 ? 'CALIBRATING...' : (perf.win_rate || 0) + '%';
-      document.getElementById('ledger-win-rate').style.color = tr < 10 ? 'var(--gold)' : 'var(--green)';
-      document.getElementById('ledger-sample-size').textContent = tr + ' resolved signals';
-      document.getElementById('ledger-streak').textContent = (perf.current_streak || 0) + ' ' + (perf.streak_direction || 'WIN');
-      document.getElementById('ledger-streak').style.color = perf.streak_direction === 'LOSS' ? 'var(--red)' : 'var(--green)';
+      var lwr = document.getElementById('ledger-win-rate'); if(lwr) lwr.textContent = tr < 10 ? 'CALIBRATING...' : (perf.win_rate || 0) + '%';
+      var lwr2 = document.getElementById('ledger-win-rate'); if(lwr2) lwr2.style.color = tr < 10 ? 'var(--gold)' : 'var(--green)';
+      var lss = document.getElementById('ledger-sample-size'); if(lss) lss.textContent = tr + ' resolved signals';
+      var lstr = document.getElementById('ledger-streak'); if(lstr) lstr.textContent = (perf.current_streak || 0) + ' ' + (perf.streak_direction || 'WIN');
+      var lstr2 = document.getElementById('ledger-streak'); if(lstr2) lstr2.style.color = perf.streak_direction === 'LOSS' ? 'var(--red)' : 'var(--green)';
 
       // Brief Header
       var topConfText = tr < 10 ? 'CALIBRATING ('+tr+'/10 SIGNALS)' : perf.win_rate + '% VERIFIED WR · ' + perf.current_streak + ' ' + (perf.streak_direction || 'WIN') + ' STREAK';
-      document.getElementById('brief-tag').textContent='TODAY\'S BRIEFING · '+(b.dateline||'NYC').toUpperCase();
-      document.getElementById('headline').textContent=b.headline||'Market Update';
-      document.getElementById('sig-row').innerHTML='<span class="sig '+scls+'">'+esc(signal)+'</span><span class="ts-badge">'+esc(b.time_sensitivity||'THIS WEEK')+'</span><span class="conf">'+esc(topConfText)+'</span>';
-      document.getElementById('updated-line').textContent=timeStr+' · ∞ BRAIN + LIVE DATA';
+      var bt = document.getElementById('brief-tag'); if(bt) bt.textContent='TODAY\'S BRIEFING · '+(b.dateline||'NYC').toUpperCase();
+      var hl = document.getElementById('headline'); if(hl) hl.textContent=b.headline||'Market Update';
+      var sr = document.getElementById('sig-row'); if(sr) sr.innerHTML='<span class="sig '+scls+'">'+esc(signal)+'</span><span class="ts-badge">'+esc(b.time_sensitivity||'THIS WEEK')+'</span><span class="conf">'+esc(topConfText)+'</span>';
+      var ul = document.getElementById('updated-line'); if(ul) ul.textContent=timeStr+' · ∞ BRAIN + LIVE DATA';
 
       var btcChangeVal = num(m.btcChange).toFixed(2);
       var btcSign = num(m.btcChange) >= 0 ? '▲ +' : '▼ ';
@@ -163,10 +163,10 @@ function render(latest,signals){
       }
 
       // Brief Header
-      document.getElementById('brief-tag').textContent='TODAY\'S BRIEFING · '+(b.dateline||'NYC').toUpperCase();
-      document.getElementById('headline').textContent=b.headline||'Market Update';
-      document.getElementById('sig-row').innerHTML='<span class="sig '+scls+'">'+esc(signal)+'</span><span class="ts-badge">'+esc(b.time_sensitivity||'THIS WEEK')+'</span><span class="conf">'+esc(b.confidence||0)+'% AI CONFIDENCE · '+(b.forces||[]).length+'/9 FORCES</span>';
-      document.getElementById('updated-line').textContent=timeStr+' · ∞ BRAIN + LIVE DATA';
+      var bt = document.getElementById('brief-tag'); if(bt) bt.textContent='TODAY\'S BRIEFING · '+(b.dateline||'NYC').toUpperCase();
+      var hl = document.getElementById('headline'); if(hl) hl.textContent=b.headline||'Market Update';
+      var sr2 = document.getElementById('sig-row'); if(sr2) sr2.innerHTML='<span class="sig '+scls+'">'+esc(signal)+'</span><span class="ts-badge">'+esc(b.time_sensitivity||'THIS WEEK')+'</span><span class="conf">'+esc(b.confidence||0)+'% AI CONFIDENCE · '+(b.forces||[]).length+'/9 FORCES</span>';
+      var ul = document.getElementById('updated-line'); if(ul) ul.textContent=timeStr+' · ∞ BRAIN + LIVE DATA';
 
       // Gauge animation deferred to loadData
 
