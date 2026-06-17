@@ -725,9 +725,26 @@
 
     /* Mobile adjustments */
     @media (max-width: 900px) {
-      .hdr-metrics { display: none; } /* Hide heavy metrics on very small screens, let dashboard handle it */
-      .desktop-nav-compact { display: none; }
-      .hdr-row-2 { justify-content: flex-end; }
+      .hdr-metrics { 
+        display: flex; 
+        overflow-x: auto; 
+        -webkit-overflow-scrolling: touch; 
+        scrollbar-width: none; 
+        width: 100%;
+        padding-top: 8px;
+      }
+      .hdr-metrics::-webkit-scrollbar { display: none; }
+      
+      .hdr-row-1 { flex-wrap: wrap; }
+      .desktop-nav-compact { 
+        display: flex; 
+        overflow-x: auto; 
+        padding-bottom: 8px;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none; /* Firefox */
+      }
+      .desktop-nav-compact::-webkit-scrollbar { display: none; } /* Safari/Chrome */
+      .hdr-row-2 { justify-content: flex-start; padding-top: 8px; border-top: 1px solid rgba(255,255,255,0.05); flex-wrap: wrap; gap: 12px; }
       .sticky-brand { font-size: 1.8rem; }
     }
 
@@ -1482,6 +1499,7 @@
     function updateWorldClock(){
       var zones=[['🌍','UTC','UTC'],['🇺🇸','NY','America/New_York'],['🇬🇧','LDN','Europe/London'],['🇮🇳','MUM','Asia/Kolkata'],['🇯🇵','TKY','Asia/Tokyo']];
       var bar=document.getElementById('world-clock-bar');
+      if (!bar) return; // SAFEGUARD
       function tick(){
         var now=new Date();
         bar.innerHTML=zones.map(function(z){return'<div class="wc-item"><span>'+z[0]+'</span><span>'+z[1]+'</span><span class="wc-time">'+now.toLocaleTimeString('en-GB',{timeZone:z[2],hour:'2-digit',minute:'2-digit'})+'</span></div>';}).join('');
