@@ -10,4 +10,24 @@
     <changefreq>hourly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://chaos.sumanthworks.com/api/briefs/2026-06-03-morning.html</loc>
+    <changefreq>never</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://chaos.sumanthworks.com/api/briefs/2026-06-03-session.html</loc>
+    <changefreq>never</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://chaos.sumanthworks.com/api/briefs/2026-06-05-morning.html</loc>
+    <changefreq>never</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://chaos.sumanthworks.com/api/briefs/2026-06-13-morning.html</loc>
+    <changefreq>never</changefreq>
+    <priority>0.6</priority>
+  </url>
 </urlset>
