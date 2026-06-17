@@ -1581,7 +1581,13 @@
         var hasGeo = agents.geopolitical && agents.geopolitical.bias;
         var cols = hasGeo ? 4 : 3;
         var geoCard = hasGeo ? agentCard('Geopolitical', agents.geopolitical) : '';
-        acEl.innerHTML='<div class="sec-title">🤖 AGENT CONSENSUS</div><div class="agent-panel" style="grid-template-columns:repeat('+cols+',1fr)">'+agentCard('Fundamental',agents.fundamental)+agentCard('Technical',agents.technical)+agentCard('Sentiment',agents.sentiment)+geoCard+'</div><div style="text-align:center"><span class="debate-badge">'+esc(b.agent_consensus?.debate_required?'DEBATE RESOLVED':'✓ UNANIMOUS')+'</span></div>';
+        
+        // Calculate unanimity dynamically
+        var allBiases = Object.values(agents).map(a => a && a.bias ? String(a.bias).toUpperCase() : '');
+        var uniqueBiases = new Set(allBiases.filter(b => b && b !== 'NEUTRAL'));
+        var isUnanimous = uniqueBiases.size <= 1;
+        
+        acEl.innerHTML='<div class="sec-title">🤖 AGENT CONSENSUS</div><div class="agent-panel" style="grid-template-columns:repeat('+cols+',1fr)">'+agentCard('Fundamental',agents.fundamental)+agentCard('Technical',agents.technical)+agentCard('Sentiment',agents.sentiment)+geoCard+'</div><div style="text-align:center"><span class="debate-badge">'+(isUnanimous?'✓ UNANIMOUS':'DEBATE RESOLVED')+'</span></div>';
       }
 
       // Chaos Line
@@ -1614,7 +1620,7 @@
       if (polyCard) {
         let isUnavailable = false;
         const mTitle = m.marketTitle || '';
-        if (!b.extendedPolymarketVitals && (!mTitle || mTitle.includes('unavailable'))) {
+        if (!latest.extendedPolymarketVitals && (!mTitle || mTitle.includes('unavailable'))) {
           isUnavailable = true;
         }
 
@@ -1622,8 +1628,8 @@
           polyCard.style.display = 'none';
         } else {
           polyCard.style.display = 'block';
-          if (b.extendedPolymarketVitals) {
-            const pData = b.extendedPolymarketVitals;
+          if (latest.extendedPolymarketVitals) {
+            const pData = latest.extendedPolymarketVitals;
             const labelsMap = {
               fedRateCut: "Fed Rate Cut Next Session",
               usElection: "US Presidential Futures",
