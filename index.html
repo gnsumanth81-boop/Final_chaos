@@ -677,7 +677,61 @@
     /* mobile overrides moved to main @media block above */
 
 
-  </style>
+  
+    /* ── EXECUTIVE 2-ROW HEADER ── */
+    .sticky-hdr {
+      position: -webkit-sticky; position: sticky; top: 0; z-index: 201;
+      background: rgba(5,5,8,0.95); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      display: flex; flex-direction: column; padding: 12px 24px; transition: box-shadow 0.4s ease;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.6);
+    }
+    .hdr-row-1 {
+      display: flex; align-items: center; justify-content: space-between; gap: 24px;
+      padding-bottom: 12px; border-bottom: 1px solid rgba(255,255,255,0.05); margin-bottom: 10px;
+    }
+    .hdr-row-2 {
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    
+    .sticky-brand { font-family: var(--font-big); font-size: 2.2rem; letter-spacing: 4px; color: var(--ink); line-height: 1; display: flex; align-items: center; }
+    .sticky-brand em { color: var(--red); font-style: normal; text-shadow: 0 0 20px rgba(220,58,74,0.4); }
+    
+    .hdr-live-status {
+      display: flex; align-items: center; gap: 6px; font-family: var(--font-mono); font-size: 0.5rem; letter-spacing: 1.5px;
+      padding: 4px 10px; background: rgba(34,212,90,0.05); border: 1px solid rgba(34,212,90,0.2); border-radius: 4px; white-space: nowrap;
+    }
+    .live-d { width: 5px; height: 5px; background: var(--green); border-radius: 50%; animation: pulse 1.4s ease infinite; }
+    
+    .hdr-metrics { display: flex; align-items: center; gap: 12px; }
+    .hm-item { display: flex; flex-direction: column; justify-content: center; min-width: 60px; }
+    .hm-label { font-family: var(--font-mono); font-size: 0.42rem; color: var(--muted); letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 2px; }
+    .hm-val { font-family: var(--font-mono); font-size: 0.65rem; font-weight: 700; letter-spacing: 0.5px; color: var(--ink); }
+    .hm-val.bull { color: var(--green); }
+    .hm-val.bear { color: var(--red); }
+    .hm-val.neut { color: var(--gold); }
+    .hm-divider { width: 1px; height: 24px; background: var(--s3); }
+    
+    .desktop-nav-compact { display: flex; align-items: center; gap: 16px; }
+    .desktop-nav-compact a {
+      font-family: var(--font-mono); font-size: 0.55rem; font-weight: 700; color: #71717a; text-decoration: none;
+      letter-spacing: 2px; text-transform: uppercase; transition: color 0.2s ease, text-shadow 0.2s ease;
+    }
+    .desktop-nav-compact a:hover { color: #fff; }
+    .desktop-nav-compact a.active { color: #fff; text-shadow: 0 0 10px rgba(255,255,255,0.4); }
+    .desktop-nav-compact a.alpha-link { color: rgba(212,175,55,0.6); }
+    .desktop-nav-compact a.alpha-link.active { color: var(--accent-gold); text-shadow: 0 0 10px rgba(212,175,55,0.4); }
+    .nav-sep { color: var(--s3); font-size: 0.7rem; }
+
+    /* Mobile adjustments */
+    @media (max-width: 900px) {
+      .hdr-metrics { display: none; } /* Hide heavy metrics on very small screens, let dashboard handle it */
+      .desktop-nav-compact { display: none; }
+      .hdr-row-2 { justify-content: flex-end; }
+      .sticky-brand { font-size: 1.8rem; }
+    }
+
+</style>
 </head>
 <body style="background-image: radial-gradient(circle at 50% -20%, rgba(220, 38, 38, 0.12) 0%, var(--bg-app) 70%);" class="defcon-calm">
   <div id="progress"></div>
@@ -712,81 +766,70 @@
     </div>
   </div>
 
+  
   <header class="sticky-hdr">
-    <div class="sticky-brand">
-      <a href="#terminal" onclick="window.location.hash='#terminal'; runClientRouter(); return false;" style="color:inherit; text-decoration:none;"><img src="/favicon.svg" style="height: 1.15em; vertical-align: text-bottom; margin-right: 6px; border-radius: 4px;">CHAOS<em>.</em></a>
-      <a href="https://sumanthworks.com" target="_blank" rel="noopener" class="brand-sub" style="text-decoration:none;">sumanth<span class="brand-sub-grad">works.com</span></a>
+    <!-- ROW 1: BRAND + METRICS -->
+    <div class="hdr-row-1">
+      <div class="sticky-brand">
+        <a href="#terminal" onclick="window.location.hash='#terminal'; runClientRouter(); return false;" style="color:inherit; text-decoration:none;"><img src="/favicon.svg" style="height: 1.55em; vertical-align: text-bottom; margin-right: 8px; border-radius: 4px;">CHAOS<em>.</em></a>
+      </div>
+      
+      <div class="hdr-live-status">
+        <span class="live-d"></span>
+        <span style="color: var(--green); margin-right: 4px;">LIVE</span> 
+        <span style="color: var(--muted);" id="terminal-status">Updated just now</span>
+      </div>
+
+      <div class="hdr-metrics">
+        <div class="hm-item" id="hdr-signal-wrap"><span class="hm-label">SIGNAL</span><strong id="hdr-signal" class="hm-val bull">BULLISH <span id="hdr-conf" style="font-size: 0.8em; opacity: 0.8; margin-left: 4px;">85%</span></strong></div>
+        <div class="hm-divider"></div>
+        <div class="hm-item"><span class="hm-label">BTC</span><strong id="hdr-btc" class="hm-val bull">--</strong></div>
+        <div class="hm-divider"></div>
+        <div class="hm-item"><span class="hm-label">FEAR</span><strong id="hdr-fear" class="hm-val bear">--</strong></div>
+        <div class="hm-divider"></div>
+        <div class="hm-item"><span class="hm-label">DXY</span><strong id="hdr-dxy" class="hm-val neut">--</strong></div>
+        <div class="hm-divider"></div>
+        <div class="hm-item"><span class="hm-label">10Y</span><strong id="hdr-10y" class="hm-val neut">--</strong></div>
+        <div class="hm-divider"></div>
+        <div class="hm-item"><span class="hm-label">CVX</span><strong id="hdr-cvx" class="hm-val">--</strong></div>
+        
+        <div id="theme-toggle" class="theme-toggle" onclick="document.body.classList.toggle('light-mode')">
+          <div class="theme-thumb"></div>
+          <span class="icon">☾</span><span class="icon icon-sun">☼</span>
+        </div>
+      </div>
     </div>
-    <div class="sticky-center">
-      <div class="live-b"><span class="live-d"></span>LIVE BRIEF</div>
-      <div id="terminal-status" style="font-family:var(--font-mono);font-size:0.45rem;color:#fff;letter-spacing:1px;margin-left:10px;padding-left:10px;border-left:1px solid var(--s3);white-space:nowrap;">SAT, JUN 13, 2026 · 08:01 UTC</div>
-    </div>
-    <div style="display:flex;align-items:center;gap:12px">
-      <div class="hdr-cvx-wrap">CVX <span class="hdr-cvx-num cvx-calm" id="hdr-cvx">47</span></div>
-      <span id="hdr-streak" class="streak-badge win-streak" style="display: inline-flex;">🔥 2W STREAK</span>
-      <nav class="desktop-nav">
-        <a href="#terminal" onclick="window.location.hash='#terminal'; runClientRouter(); return false;" class="nav-link active" data-target="view-terminal">
-          <svg class="dnav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
-          INTEL
-        </a>
-        <a href="#ledger" onclick="window.location.hash='#ledger'; runClientRouter(); return false;" class="nav-link" data-target="view-ledger">
-          <svg class="dnav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect><path d="M9 14h6"></path><path d="M9 10h6"></path></svg>
-          LEDGER
-        </a>
-        <a href="#vitals" onclick="window.location.hash='#vitals'; runClientRouter(); return false;" class="nav-link" data-target="view-vitals">
-          <svg class="dnav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
-          VITALS
-        </a>
-        <a href="#alpha" onclick="window.location.hash='#alpha'; runClientRouter(); return false;" class="nav-link alpha-link" data-target="view-alpha">
-          <svg class="dnav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
-          ALPHA
-        </a>
-        <a href="#archive" onclick="window.location.hash='#archive'; runClientRouter(); return false;" class="nav-link" data-target="view-archive">
-          <svg class="dnav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 22h14a2 2 0 0 0 2-2V7.5L14.5 2H6a2 2 0 0 0-2 2v4"></path><polyline points="14 2 14 8 20 8"></polyline><path d="M2 15h10"></path><path d="M5 12l-3 3 3 3"></path></svg>
-          ARCHIVE
-        </a>
+
+    <!-- ROW 2: COMPACT NAVIGATION -->
+    <div class="hdr-row-2">
+      <nav class="desktop-nav-compact">
+        <a href="#terminal" onclick="window.location.hash='#terminal'; runClientRouter(); return false;" class="nav-link active" data-target="view-terminal">INTEL</a>
+        <span class="nav-sep">|</span>
+        <a href="#ledger" onclick="window.location.hash='#ledger'; runClientRouter(); return false;" class="nav-link" data-target="view-ledger">LEDGER</a>
+        <span class="nav-sep">|</span>
+        <a href="#vitals" onclick="window.location.hash='#vitals'; runClientRouter(); return false;" class="nav-link" data-target="view-vitals">VITALS</a>
+        <span class="nav-sep">|</span>
+        <a href="#alpha" onclick="window.location.hash='#alpha'; runClientRouter(); return false;" class="nav-link alpha-link" data-target="view-alpha">ALPHA</a>
+        <span class="nav-sep">|</span>
+        <a href="#archive" onclick="window.location.hash='#archive'; runClientRouter(); return false;" class="nav-link" data-target="view-archive">ARCHIVE</a>
       </nav>
-      <div id="theme-toggle" class="theme-toggle" onclick="document.body.classList.toggle('light-mode')">
-        <div class="theme-thumb"></div>
-        <span class="icon">☾</span>
-        <span class="icon icon-sun">☼</span>
+      
+      <!-- Moved Hash Verifier and Streak here -->
+      <div style="display: flex; gap: 12px; align-items: center;">
+        <span id="hdr-streak" class="streak-badge win-streak" style="display: none;">🔥 2W STREAK</span>
+        <div class="hud-badge" onclick="openHashVerifier()" style="cursor:pointer; font-family:var(--font-mono); font-size:0.45rem; color:var(--gold); border:1px solid rgba(245,166,35,0.3); padding:4px 8px; border-radius:4px; background:rgba(245,166,35,0.05); letter-spacing:1px; display:inline-flex; align-items:center; gap:4px;">
+          <span class="hud-icon">🔐</span> <span id="hash-val">CI-VERIFIED</span>
+        </div>
       </div>
     </div>
   </header>
 
-  <div class="ticker"><div class="tk-lbl"><span class="tk-dot"></span>LIVE</div><div class="tk-scroll"><div class="tk-inner" id="ticker-inner"><span class="tk">FEAR <span class="v bear">13</span></span><span class="tk">BTC <span class="v bull">$63,791</span></span><span class="tk">24H <span class="v bull">1.14%</span></span><span class="tk">SIGNAL <span class="v bull">BULLISH</span></span><span class="tk">CONF <span class="v neut">85%</span></span><span class="tk">FORCES <span class="v bear">3/9</span></span><span class="tk">10Y <span class="v neut">4.319%</span></span><span class="tk">DXY <span class="v neut">103.82</span></span><span class="tk">FEAR <span class="v bear">13</span></span><span class="tk">BTC <span class="v bull">$63,791</span></span><span class="tk">24H <span class="v bull">1.14%</span></span><span class="tk">SIGNAL <span class="v bull">BULLISH</span></span><span class="tk">CONF <span class="v neut">85%</span></span><span class="tk">FORCES <span class="v bear">3/9</span></span><span class="tk">10Y <span class="v neut">4.319%</span></span><span class="tk">DXY <span class="v neut">103.82</span></span></div></div></div>
-
-  <!-- PERSISTENT COMMAND BAR -->
-  <div id="command-bar" class="loaded">
-    <div class="cmd-inner">
-      <div class="cmd-chip bull" id="cmd-signal-chip"><span>SIGNAL</span><strong id="cmd-signal">BULLISH</strong></div>
-      <div class="cmd-divider"></div>
-      <div class="cmd-chip"><span>CONF</span><strong id="cmd-conf">85%</strong></div>
-      <div class="cmd-divider"></div>
-      <div class="cmd-chip"><span>CVX</span><strong id="cmd-cvx" class="" style="color: var(--green);">47</strong></div>
-      <div class="cmd-divider"></div>
-      <div class="cmd-chip"><span>FEAR</span><strong id="cmd-fear" style="color: var(--red);">13</strong></div>
-      <div class="cmd-divider"></div>
-      <div class="cmd-countdown">NEXT UPDATE <strong id="cmd-countdown">--</strong></div>
-    </div>
   </div>
 
 
   <!-- ═══════════ INTEL VIEW ═══════════ -->
   <div id="view-terminal" class="spa-view active">
     <div class="wrap">
-      
-      <div class="hud-top-bar">
-        <div class="hud-left">
-          <span class="hud-blink">LIVE</span>
-          <span style="opacity:0.3">|</span>
-          <span id="date-line" style="color: var(--text-bright);">SAT, JUN 13, 2026 · 08:01 UTC</span>
-        </div>
-        <div class="hud-badge" onclick="openHashVerifier()">
-          <span class="hud-icon">🔐</span> <span id="hash-val">CI-7THELBKQ-B</span>
-        </div>
-      </div>
-      <div id="world-clock-bar" class="world-clock-bar" style="margin-bottom: 8px;"><div class="wc-item"><span>🌍</span><span>UTC</span><span class="wc-time">06:40</span></div><div class="wc-item"><span>🇺🇸</span><span>NY</span><span class="wc-time">02:40</span></div><div class="wc-item"><span>🇬🇧</span><span>LDN</span><span class="wc-time">07:40</span></div><div class="wc-item"><span>🇮🇳</span><span>MUM</span><span class="wc-time">12:10</span></div><div class="wc-item"><span>🇯🇵</span><span>TKY</span><span class="wc-time">15:40</span></div></div>
       
       <!-- FINAL CHAOS BIAS (Removed to reduce clutter per user request) -->
 
