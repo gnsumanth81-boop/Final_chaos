@@ -287,7 +287,7 @@
     body.light-mode .desktop-nav a.active{color:#18181b;background:#fff;box-shadow:0 0 0 1px rgba(220,38,38,0.3), 0 4px 16px rgba(220,38,38,0.1), inset 0 1px 0 #fff}
     body.light-mode .desktop-nav a.alpha-link.active{background:#fffbeb;box-shadow:0 0 0 1px rgba(180,83,9,0.3), 0 4px 16px rgba(180,83,9,0.1)}
     .mobile-dock{display:none;position:fixed;bottom:16px;left:50%;transform:translateX(-50%);width:calc(100% - 32px);max-width:500px;background:rgba(12,12,16,0.85);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,0.08);border-radius:24px;box-shadow:0 12px 40px rgba(0,0,0,0.8), 0 0 20px rgba(220,38,38,0.1);z-index:200;padding:4px 8px}
-    .dock-grid{display:grid;grid-template-columns:repeat(4,1fr);height:56px;align-items:center}
+    .dock-grid{display:grid;grid-template-columns:repeat(5,1fr);height:56px;align-items:center}
     .dock-btn{display:flex;flex-direction:column;align-items:center;justify-content:center;text-decoration:none;position:relative;color:#a1a1aa;height:48px;border-radius:18px;transition:all 0.3s cubic-bezier(0.4, 0, 0.2, 1)}
     body.light-mode .dock-btn{color:#3f3f46}
     .dock-icon{margin-bottom:2px;opacity:0.85;transition:all 0.3s}
@@ -738,6 +738,10 @@
           <svg class="dnav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
           ALPHA
         </a>
+        <a href="#archive" onclick="window.location.hash='#archive'; runClientRouter(); return false;" class="nav-link" data-target="view-archive">
+          <svg class="dnav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 22h14a2 2 0 0 0 2-2V7.5L14.5 2H6a2 2 0 0 0-2 2v4"></path><polyline points="14 2 14 8 20 8"></polyline><path d="M2 15h10"></path><path d="M5 12l-3 3 3 3"></path></svg>
+          ARCHIVE
+        </a>
       </nav>
       <div id="theme-toggle" class="theme-toggle" onclick="document.body.classList.toggle('light-mode')">
         <div class="theme-thumb"></div>
@@ -779,7 +783,7 @@
           <span class="hud-icon">🔐</span> <span id="hash-val">CI-7THELBKQ-B</span>
         </div>
       </div>
-      <div id="world-clock-bar" class="world-clock-bar" style="margin-bottom: 8px;"><div class="wc-item"><span>🌍</span><span>UTC</span><span class="wc-time">06:14</span></div><div class="wc-item"><span>🇺🇸</span><span>NY</span><span class="wc-time">02:14</span></div><div class="wc-item"><span>🇬🇧</span><span>LDN</span><span class="wc-time">07:14</span></div><div class="wc-item"><span>🇮🇳</span><span>MUM</span><span class="wc-time">11:44</span></div><div class="wc-item"><span>🇯🇵</span><span>TKY</span><span class="wc-time">15:14</span></div></div>
+      <div id="world-clock-bar" class="world-clock-bar" style="margin-bottom: 8px;"><div class="wc-item"><span>🌍</span><span>UTC</span><span class="wc-time">06:40</span></div><div class="wc-item"><span>🇺🇸</span><span>NY</span><span class="wc-time">02:40</span></div><div class="wc-item"><span>🇬🇧</span><span>LDN</span><span class="wc-time">07:40</span></div><div class="wc-item"><span>🇮🇳</span><span>MUM</span><span class="wc-time">12:10</span></div><div class="wc-item"><span>🇯🇵</span><span>TKY</span><span class="wc-time">15:40</span></div></div>
       
       <!-- FINAL CHAOS BIAS (Removed to reduce clutter per user request) -->
 
@@ -1026,6 +1030,46 @@
     </div>
   </div>
 
+
+  <!-- ═══════════ ARCHIVE VIEW ═══════════ -->
+  <div id="view-archive" class="spa-view">
+    <div class="wrap" style="padding-top:40px">
+      <div class="page-title">SIGNAL ARCHIVE</div>
+      <div class="page-sub">HISTORICAL VERIFIED BRIEFS</div>
+      <section class="glass-card rv vis" style="margin-bottom:48px">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;border-bottom:1px solid var(--s3);padding-bottom:15px;">
+          <div>
+            <span style="font-family:var(--font-mono);font-size:1.5rem;color:var(--text-pure);font-weight:700;">ALL REPORTS</span>
+          </div>
+        </div>
+        
+        <div style="display:grid; grid-template-columns: 2fr 5fr 2fr; gap: 8px; font-family:var(--font-mono); font-size:0.75rem; color:var(--muted); text-transform:uppercase; padding-bottom:10px; border-bottom:1px solid var(--s2); margin-bottom:10px;">
+          <div>Date</div>
+          <div>Report</div>
+          <div style="text-align:right;">Action</div>
+        </div>
+        
+        <div id="archive-list" style="display:flex; flex-direction:column; gap:5px;"><div class="ledger-row" style="display:grid; grid-template-columns: 2fr 5fr 2fr; gap: 8px; align-items:center; background:rgba(255,255,255,0.02); border-radius:4px; padding:8px 12px; margin-bottom: 6px; border: 1px solid var(--s2); cursor:pointer;" onclick="window.open('/api/briefs/2026-06-13-morning.html', '_blank')">
+            <span>2026-06-13</span>
+            <span style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis; color: var(--text-bright);">MORNING REPORT</span>
+            <span style="text-align:right;"><a href="/api/briefs/2026-06-13-morning.html" target="_blank" style="color:var(--gold); text-decoration:none; font-weight:bold; font-size: 0.7rem; letter-spacing: 1px;">READ ↗</a></span>
+          </div><div class="ledger-row" style="display:grid; grid-template-columns: 2fr 5fr 2fr; gap: 8px; align-items:center; background:rgba(255,255,255,0.02); border-radius:4px; padding:8px 12px; margin-bottom: 6px; border: 1px solid var(--s2); cursor:pointer;" onclick="window.open('/api/briefs/2026-06-05-morning.html', '_blank')">
+            <span>2026-06-05</span>
+            <span style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis; color: var(--text-bright);">MORNING REPORT</span>
+            <span style="text-align:right;"><a href="/api/briefs/2026-06-05-morning.html" target="_blank" style="color:var(--gold); text-decoration:none; font-weight:bold; font-size: 0.7rem; letter-spacing: 1px;">READ ↗</a></span>
+          </div><div class="ledger-row" style="display:grid; grid-template-columns: 2fr 5fr 2fr; gap: 8px; align-items:center; background:rgba(255,255,255,0.02); border-radius:4px; padding:8px 12px; margin-bottom: 6px; border: 1px solid var(--s2); cursor:pointer;" onclick="window.open('/api/briefs/2026-06-03-session.html', '_blank')">
+            <span>2026-06-03</span>
+            <span style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis; color: var(--text-bright);">SESSION REPORT</span>
+            <span style="text-align:right;"><a href="/api/briefs/2026-06-03-session.html" target="_blank" style="color:var(--gold); text-decoration:none; font-weight:bold; font-size: 0.7rem; letter-spacing: 1px;">READ ↗</a></span>
+          </div><div class="ledger-row" style="display:grid; grid-template-columns: 2fr 5fr 2fr; gap: 8px; align-items:center; background:rgba(255,255,255,0.02); border-radius:4px; padding:8px 12px; margin-bottom: 6px; border: 1px solid var(--s2); cursor:pointer;" onclick="window.open('/api/briefs/2026-06-03-morning.html', '_blank')">
+            <span>2026-06-03</span>
+            <span style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis; color: var(--text-bright);">MORNING REPORT</span>
+            <span style="text-align:right;"><a href="/api/briefs/2026-06-03-morning.html" target="_blank" style="color:var(--gold); text-decoration:none; font-weight:bold; font-size: 0.7rem; letter-spacing: 1px;">READ ↗</a></span>
+          </div></div>
+      </section>
+    </div>
+  </div>
+
   <div class="mobile-dock">
     <div class="dock-grid">
       <a href="#terminal" onclick="window.location.hash='#terminal'; runClientRouter(); return false;" class="dock-btn nav-link active" data-target="view-terminal">
@@ -1044,6 +1088,10 @@
         <span class="dock-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg></span>
         <span class="dock-label">ALPHA</span>
       </a>
+      <a href="#archive" onclick="window.location.hash='#archive'; runClientRouter(); return false;" class="dock-btn nav-link" data-target="view-archive">
+        <span class="dock-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 22h14a2 2 0 0 0 2-2V7.5L14.5 2H6a2 2 0 0 0-2 2v4"></path><polyline points="14 2 14 8 20 8"></polyline><path d="M2 15h10"></path><path d="M5 12l-3 3 3 3"></path></svg></span>
+        <span class="dock-label">ARCHIVE</span>
+      </a>
     </div>
   </div>
 
@@ -1052,6 +1100,7 @@
     <div class="ftr-links">
       <a href="https://t.me/chaosterminal" class="ftr-link" target="_blank">Telegram</a>
       <a href="https://chaos.sumanthworks.com" class="ftr-link">Live Brief</a>
+      <a href="#archive" class="ftr-link" onclick="window.location.hash='#archive'; runClientRouter(); return false;">Archive</a>
       <a href="#" class="ftr-link" onclick="document.getElementById('creator-modal').classList.add('open');return false;">About the Creator</a>
     </div>
     <div class="ftr-disc">Not financial advice. AI-generated from public data. Public ledger required before performance claims. Chaos Intelligence. © 2026 Chaos Intelligence · https://chaos.sumanthworks.com</div>
@@ -1080,7 +1129,7 @@
     const ALL_FORCES=['MONEY','TECH','ENERGY','POLITICS','WAR','DEBT','JOBS','FOOD','PEOPLE'];
     const FI={MONEY:'💰',TECH:'🤖',ENERGY:'⚡',POLITICS:'🏛️',WAR:'⚔️',DEBT:'💸',JOBS:'💼',FOOD:'🌾',PEOPLE:'🧑'};
     const SITE='https://chaos.sumanthworks.com';
-    const VIEWS=['view-terminal','view-ledger','view-vitals','view-alpha'];
+    const VIEWS=['view-terminal','view-ledger','view-vitals','view-alpha','view-archive'];
     let speechInst=null, currentLine='', lastHash='', tvLoaded=false;
 
     // ── SCROLL-DRIVEN HEADER GLOW & PROGRESS BAR ──
@@ -1360,7 +1409,7 @@
     // ── SPA ROUTER ──
     function runClientRouter(){
       var hash=window.location.hash||'#terminal';
-      var map={'#terminal':'view-terminal','#ledger':'view-ledger','#vitals':'view-vitals','#alpha':'view-alpha'};
+      var map={'#terminal':'view-terminal','#ledger':'view-ledger','#vitals':'view-vitals','#alpha':'view-alpha','#archive':'view-archive'};
       var vid=map[hash]||'view-terminal';
       document.querySelectorAll('.spa-view').forEach(function(v){v.classList.remove('active');});
       var el=document.getElementById(vid);if(el)el.classList.add('active');
@@ -1377,7 +1426,7 @@
       var dx=touchX-e.changedTouches[0].screenX;
       if(Math.abs(dx)<60)return;
       var h=window.location.hash||'#terminal';
-      var hashes=['#terminal','#ledger','#vitals','#alpha'];
+      var hashes=['#terminal','#ledger','#vitals','#alpha','#archive'];
       var idx=hashes.indexOf(h);if(idx<0)idx=0;
       if(dx>0&&idx<hashes.length-1)window.location.hash=hashes[idx+1];
       else if(dx<0&&idx>0)window.location.hash=hashes[idx-1];
