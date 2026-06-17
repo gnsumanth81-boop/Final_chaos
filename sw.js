@@ -3,7 +3,7 @@
 // Cache-first for shell assets, network-first for live data
 // ═══════════════════════════════════════════════════════
 
-const CACHE_NAME = 'chaos-terminal-v13';
+const CACHE_NAME = 'chaos-terminal-v14';
 
 // Shell assets cached on install — the UI loads instantly offline
 const SHELL_ASSETS = [
