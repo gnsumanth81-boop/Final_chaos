@@ -3,13 +3,15 @@
 // Cache-first for shell assets, network-first for live data
 // ═══════════════════════════════════════════════════════
 
-const CACHE_NAME = 'chaos-terminal-v17';
+const CACHE_NAME = 'chaos-terminal-v19';
 
 // Shell assets cached on install — the UI loads instantly offline
 const SHELL_ASSETS = [
   '/',
   '/index.html',
-  '/icon.svg',
+  '/favicon-32x32.png',
+  '/favicon-16x16.png',
+  '/apple-touch-icon.png',
   '/manifest.json'
 ];
 
