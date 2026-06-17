@@ -1,12 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-  <rect width="512" height="512" rx="64" fill="#050507"/>
-  <rect x="16" y="16" width="480" height="480" rx="52" fill="none" stroke="#13151f" stroke-width="2"/>
-  <text x="256" y="235" text-anchor="middle" font-family="'Barlow Condensed','Helvetica Neue',Arial,sans-serif" font-weight="900" font-size="180" letter-spacing="8" fill="#f4f4f6">CHAOS</text>
-  <text x="390" y="235" text-anchor="start" font-family="'Barlow Condensed','Helvetica Neue',Arial,sans-serif" font-weight="900" font-size="180" fill="#e74c3c">.</text>
-  <line x1="80" y1="290" x2="432" y2="290" stroke="#13151f" stroke-width="1.5"/>
-  <text x="256" y="340" text-anchor="middle" font-family="'JetBrains Mono','Courier New',monospace" font-weight="700" font-size="32" letter-spacing="12" fill="#4e515d">TERMINAL</text>
-  <circle cx="256" cy="410" r="4" fill="#e74c3c">
-    <animate attributeName="opacity" values="1;0.3;1" dur="2s" repeatCount="indefinite"/>
-  </circle>
-  <text x="256" y="440" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-weight="400" font-size="16" letter-spacing="6" fill="#4e515d">LIVE</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <rect width="100" height="100" fill="#050507" rx="22"/>
+  <path d="M 60 25 A 25 25 0 1 0 60 75" fill="none" stroke="#FFFFFF" stroke-width="15" stroke-linecap="round"/>
+  <circle cx="75" cy="75" r="9" fill="#E8394A"/>
 </svg>
