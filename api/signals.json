@@ -1,13 +1,28 @@
 [
   {
+    "date": "2026-06-20",
+    "timestamp": "2026-06-20T07:35:01.256Z",
+    "signal_hash": "CI-BZIXC2T8-B",
+    "signal": "BEARISH",
+    "headline": "Fear Grips Markets Amidst Geopolitical Turmoil",
+    "btc_entry": 63709,
+    "resolved": false,
+    "resolution_status": "OPEN"
+  },
+  {
     "date": "2026-06-17",
     "timestamp": "2026-06-17T13:13:09.471Z",
     "signal_hash": "CI-RYFVVVLE-B",
     "signal": "BEARISH",
     "headline": "CHAOS TERMINAL: Fear Grips Markets, Volatility Beckons",
     "btc_entry": 64937,
-    "resolved": false,
-    "resolution_status": "OPEN"
+    "resolved": true,
+    "resolution_status": "WIN",
+    "btc_exit": 63709,
+    "pnl_percent": 1.89,
+    "resolved_at": "2026-06-20T07:35:01.267Z",
+    "grading_method": "24h_btc_close",
+    "autopsy_note": "Price moved favorably beyond target within 24h window."
   },
   {
     "date": "2026-06-17",
@@ -16,8 +31,13 @@
     "signal": "BEARISH",
     "headline": "Digital Abyss: Fear Grips Markets as Crypto Bleeds",
     "btc_entry": 64907,
-    "resolved": false,
-    "resolution_status": "OPEN"
+    "resolved": true,
+    "resolution_status": "WIN",
+    "btc_exit": 63709,
+    "pnl_percent": 1.85,
+    "resolved_at": "2026-06-20T07:35:01.267Z",
+    "grading_method": "24h_btc_close",
+    "autopsy_note": "Price moved favorably beyond target within 24h window."
   },
   {
     "date": "2026-06-17",
@@ -26,8 +46,13 @@
     "signal": "BEARISH",
     "headline": "Extreme Fear Grips Markets Amidst Geopolitical Tensions and Economic Headwinds",
     "btc_entry": 64741,
-    "resolved": false,
-    "resolution_status": "OPEN"
+    "resolved": true,
+    "resolution_status": "WIN",
+    "btc_exit": 63709,
+    "pnl_percent": 1.59,
+    "resolved_at": "2026-06-20T07:35:01.267Z",
+    "grading_method": "24h_btc_close",
+    "autopsy_note": "Price moved favorably beyond target within 24h window."
   },
   {
     "date": "2026-06-17",
@@ -36,8 +61,13 @@
     "signal": "BEARISH",
     "headline": "Global Chaos: Fear Reigns, Markets Brace",
     "btc_entry": 64889,
-    "resolved": false,
-    "resolution_status": "OPEN"
+    "resolved": true,
+    "resolution_status": "WIN",
+    "btc_exit": 63709,
+    "pnl_percent": 1.82,
+    "resolved_at": "2026-06-20T07:35:01.267Z",
+    "grading_method": "24h_btc_close",
+    "autopsy_note": "Price moved favorably beyond target within 24h window."
   },
   {
     "date": "2026-06-03",
