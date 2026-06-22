@@ -3,7 +3,7 @@
 // Cache-first for shell assets, network-first for live data
 // ═══════════════════════════════════════════════════════
 
-const CACHE_NAME = 'chaos-terminal-v30';
+const CACHE_NAME = 'chaos-terminal-v31';
 
 // Shell assets cached on install — the UI loads instantly offline
 const SHELL_ASSETS = [
@@ -38,36 +38,39 @@ self.addEventListener('activate', (event) => {
 });
 
 // ── FETCH STRATEGY ──
-// Network-first for live JSON data (latest.json, signals.json)
-// Cache-first for everything else (HTML, CSS, fonts, icons)
+// Network-first for live JSON data AND index.html (to ensure code updates propagate)
+// Cache-first for static assets only (icons, fonts, manifest)
 self.addEventListener('fetch', (event) => {
   const url = new URL(event.request.url);
 
   // Skip non-GET requests and cross-origin requests
   if (event.request.method !== 'GET' || url.origin !== location.origin) return;
 
-  // Live data endpoints — always try network first
-  if (url.pathname.startsWith('/api/')) {
+  // Network-first: API data, index.html, and the root page
+  const isLiveAsset = url.pathname.startsWith('/api/') ||
+                      url.pathname === '/' ||
+                      url.pathname === '/index.html' ||
+                      url.pathname === '/sw.js';
+
+  if (isLiveAsset) {
     event.respondWith(
       fetch(event.request)
         .then((response) => {
-          // Clone and cache the fresh response
           const clone = response.clone();
           caches.open(CACHE_NAME).then((cache) => cache.put(event.request, clone));
           return response;
         })
-        .catch(() => caches.match(event.request)) // Offline fallback to cached data
+        .catch(() => caches.match(event.request))
     );
     return;
   }
 
-  // Shell assets — cache-first for instant load
+  // Static assets — cache-first for instant load (icons, fonts, manifest)
   event.respondWith(
     caches.match(event.request)
       .then((cached) => {
         if (cached) return cached;
         return fetch(event.request).then((response) => {
-          // Cache new assets dynamically (fonts, etc.)
           if (response.ok) {
             const clone = response.clone();
             caches.open(CACHE_NAME).then((cache) => cache.put(event.request, clone));
