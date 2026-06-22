@@ -33,6 +33,28 @@
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&amp;family=JetBrains+Mono:wght@300;400;700&amp;family=Barlow+Condensed:wght@300;400;600;700;900&amp;display=swap">
   <link rel="stylesheet" media="print" onload="this.media='all'" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&amp;family=JetBrains+Mono:wght@300;400;700&amp;family=Barlow+Condensed:wght@300;400;600;700;900&amp;display=swap">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=JetBrains+Mono:wght@300;400;700&family=Barlow+Condensed:wght@300;400;600;700;900&display=swap"></noscript>
+  <script>
+    // Self-healing cache purge: nuke old Service Workers and caches
+    (function(){
+      var EXPECTED_VER = 'v31';
+      var lastPurge = localStorage.getItem('chaos_sw_ver');
+      if (lastPurge !== EXPECTED_VER) {
+        if ('serviceWorker' in navigator) {
+          navigator.serviceWorker.getRegistrations().then(function(regs) {
+            regs.forEach(function(r) { r.unregister(); });
+          });
+        }
+        if ('caches' in window) {
+          caches.keys().then(function(names) {
+            names.forEach(function(n) { caches.delete(n); });
+          });
+        }
+        localStorage.setItem('chaos_sw_ver', EXPECTED_VER);
+        // Only reload if we actually had a stale cache
+        if (lastPurge) { location.reload(true); return; }
+      }
+    })();
+  </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
   <style>
     :root {
