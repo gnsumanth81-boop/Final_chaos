@@ -1,13 +1,28 @@
 [
   {
+    "date": "2026-06-22",
+    "timestamp": "2026-06-22T10:26:19.169Z",
+    "signal_hash": "CI-GEKM65H9-B",
+    "signal": "BEARISH",
+    "headline": "Global Chaos Unravels Market Stability",
+    "btc_entry": 64119,
+    "resolved": false,
+    "resolution_status": "OPEN"
+  },
+  {
     "date": "2026-06-20",
     "timestamp": "2026-06-20T07:35:01.256Z",
     "signal_hash": "CI-BZIXC2T8-B",
     "signal": "BEARISH",
     "headline": "Fear Grips Markets Amidst Geopolitical Turmoil",
     "btc_entry": 63709,
-    "resolved": false,
-    "resolution_status": "OPEN"
+    "resolved": true,
+    "resolution_status": "LOSS",
+    "btc_exit": 64119,
+    "pnl_percent": -0.64,
+    "resolved_at": "2026-06-22T10:26:19.173Z",
+    "grading_method": "24h_btc_close",
+    "autopsy_note": "Price broke key support level against signal thesis."
   },
   {
     "date": "2026-06-17",
