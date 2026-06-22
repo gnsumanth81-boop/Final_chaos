@@ -54,6 +54,10 @@
         if (lastPurge) { location.reload(true); return; }
       }
     })();
+    // Enforce Official Domain
+    if (window.location.hostname === 'gnsumanth81-boop.github.io' || window.location.hostname === 'sumanthworks.github.io' || (window.location.protocol === 'http:' && window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1')) {
+      window.location.replace('https://chaos.sumanthworks.com' + window.location.pathname + window.location.hash);
+    }
   </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
   <style>
