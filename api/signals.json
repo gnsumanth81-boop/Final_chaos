@@ -1,6 +1,16 @@
 [
   {
     "date": "2026-06-22",
+    "timestamp": "2026-06-22T11:27:57.358Z",
+    "signal_hash": "CI-OTS8TQ45-B",
+    "signal": "BEARISH",
+    "headline": "Extreme Fear Grips Markets Amid Geopolitical and Tech Woes",
+    "btc_entry": 64248,
+    "resolved": false,
+    "resolution_status": "OPEN"
+  },
+  {
+    "date": "2026-06-22",
     "timestamp": "2026-06-22T11:22:14.059Z",
     "signal_hash": "CI-VEEF5MH2-B",
     "signal": "BEARISH",
