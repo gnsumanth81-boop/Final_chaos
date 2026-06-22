@@ -1,6 +1,16 @@
 [
   {
     "date": "2026-06-22",
+    "timestamp": "2026-06-22T11:20:46.652Z",
+    "signal_hash": "CI-145CNWG9-B",
+    "signal": "BEARISH",
+    "headline": "Systemic Breakdown Looms: Fear Index Misleading",
+    "btc_entry": 64234,
+    "resolved": false,
+    "resolution_status": "OPEN"
+  },
+  {
+    "date": "2026-06-22",
     "timestamp": "2026-06-22T10:29:46.244Z",
     "signal_hash": "CI-3HGTZ1FL-B",
     "signal": "BEARISH",
