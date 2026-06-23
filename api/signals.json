@@ -1,6 +1,16 @@
 [
   {
     "date": "2026-06-23",
+    "timestamp": "2026-06-23T12:53:23.122Z",
+    "signal_hash": "CI-30H0Y0QD-B",
+    "signal": "BEARISH",
+    "headline": "Market Meltdown: Tech Bleeding, Dollar Soaring",
+    "btc_entry": 62229,
+    "resolved": false,
+    "resolution_status": "OPEN"
+  },
+  {
+    "date": "2026-06-23",
     "timestamp": "2026-06-23T10:14:09.464Z",
     "signal_hash": "CI-DN9LIY39-B",
     "signal": "BEARISH",
@@ -36,8 +46,13 @@
     "signal": "BEARISH",
     "headline": "Extreme Fear Grips Markets Amid Geopolitical and Climate Shocks",
     "btc_entry": 64657,
-    "resolved": false,
-    "resolution_status": "OPEN"
+    "resolved": true,
+    "resolution_status": "WIN",
+    "btc_exit": 62229,
+    "pnl_percent": 3.76,
+    "resolved_at": "2026-06-23T12:53:23.179Z",
+    "grading_method": "24h_btc_close",
+    "autopsy_note": "Price moved favorably beyond target within 24h window."
   },
   {
     "date": "2026-06-22",
@@ -46,8 +61,13 @@
     "signal": "BEARISH",
     "headline": "Extreme Fear Grips Markets Amid Geopolitical and Tech Woes",
     "btc_entry": 64248,
-    "resolved": false,
-    "resolution_status": "OPEN"
+    "resolved": true,
+    "resolution_status": "WIN",
+    "btc_exit": 62229,
+    "pnl_percent": 3.14,
+    "resolved_at": "2026-06-23T12:53:23.179Z",
+    "grading_method": "24h_btc_close",
+    "autopsy_note": "Price moved favorably beyond target within 24h window."
   },
   {
     "date": "2026-06-22",
@@ -56,8 +76,13 @@
     "signal": "BEARISH",
     "headline": "Extreme Fear Grips Markets Amid Geopolitical and Economic Turmoil",
     "btc_entry": 64237,
-    "resolved": false,
-    "resolution_status": "OPEN"
+    "resolved": true,
+    "resolution_status": "WIN",
+    "btc_exit": 62229,
+    "pnl_percent": 3.13,
+    "resolved_at": "2026-06-23T12:53:23.179Z",
+    "grading_method": "24h_btc_close",
+    "autopsy_note": "Price moved favorably beyond target within 24h window."
   },
   {
     "date": "2026-06-22",
@@ -66,8 +91,13 @@
     "signal": "BEARISH",
     "headline": "Systemic Breakdown Looms: Fear Index Misleading",
     "btc_entry": 64234,
-    "resolved": false,
-    "resolution_status": "OPEN"
+    "resolved": true,
+    "resolution_status": "WIN",
+    "btc_exit": 62229,
+    "pnl_percent": 3.12,
+    "resolved_at": "2026-06-23T12:53:23.179Z",
+    "grading_method": "24h_btc_close",
+    "autopsy_note": "Price moved favorably beyond target within 24h window."
   },
   {
     "date": "2026-06-22",
@@ -76,8 +106,13 @@
     "signal": "BEARISH",
     "headline": "Extreme Fear Grips Markets Amidst Geopolitical Turmoil",
     "btc_entry": 64105,
-    "resolved": false,
-    "resolution_status": "OPEN"
+    "resolved": true,
+    "resolution_status": "WIN",
+    "btc_exit": 62229,
+    "pnl_percent": 2.93,
+    "resolved_at": "2026-06-23T12:53:23.179Z",
+    "grading_method": "24h_btc_close",
+    "autopsy_note": "Price moved favorably beyond target within 24h window."
   },
   {
     "date": "2026-06-22",
@@ -86,8 +121,13 @@
     "signal": "BEARISH",
     "headline": "Global Chaos Unravels Market Stability",
     "btc_entry": 64119,
-    "resolved": false,
-    "resolution_status": "OPEN"
+    "resolved": true,
+    "resolution_status": "WIN",
+    "btc_exit": 62229,
+    "pnl_percent": 2.95,
+    "resolved_at": "2026-06-23T12:53:23.179Z",
+    "grading_method": "24h_btc_close",
+    "autopsy_note": "Price moved favorably beyond target within 24h window."
   },
   {
     "date": "2026-06-20",
