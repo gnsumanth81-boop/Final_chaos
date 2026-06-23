@@ -1,6 +1,16 @@
 [
   {
     "date": "2026-06-23",
+    "timestamp": "2026-06-23T10:04:22.992Z",
+    "signal_hash": "CI-5DEAGJ0C-B",
+    "signal": "BEARISH",
+    "headline": "Geopolitical Fault Lines Trigger Market Jitters",
+    "btc_entry": 62399,
+    "resolved": false,
+    "resolution_status": "OPEN"
+  },
+  {
+    "date": "2026-06-23",
     "timestamp": "2026-06-23T09:34:54.601Z",
     "signal_hash": "CI-0IGXDS8P-B",
     "signal": "BEARISH",
