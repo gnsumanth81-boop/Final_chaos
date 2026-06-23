@@ -1,6 +1,16 @@
 [
   {
     "date": "2026-06-23",
+    "timestamp": "2026-06-23T10:14:09.464Z",
+    "signal_hash": "CI-DN9LIY39-B",
+    "signal": "BEARISH",
+    "headline": "CHAOS TERMINAL: Extreme Fear Grips Markets Amid Geopolitical Storm",
+    "btc_entry": 62384,
+    "resolved": false,
+    "resolution_status": "OPEN"
+  },
+  {
+    "date": "2026-06-23",
     "timestamp": "2026-06-23T10:04:22.992Z",
     "signal_hash": "CI-5DEAGJ0C-B",
     "signal": "BEARISH",
