@@ -1499,7 +1499,7 @@
       currentLine=b.chaos_line||'';
 
       // 5-Second Market Snapshot & Liveness Timer
-      const topPlay = (b.plays && b.plays[0]) ? b.plays[0].type : 'N/A';
+      var topPlay = (b.plays && b.plays[0]) ? b.plays[0].type : 'N/A';
       const snapEl = document.getElementById('snapshot-panel');
       if (snapEl) {
         snapEl.innerHTML = `
@@ -1806,7 +1806,7 @@
       const vcFearNum = document.getElementById('vc-fear');
       if (vcFearNum) vcFearNum.style.color = fearColor;
       const vcPlayTitle = document.getElementById('vc-play-title');
-      const topPlay = (b.plays && b.plays[0]) ? b.plays[0].type : 'TACTICAL';
+      var topPlay = (b.plays && b.plays[0]) ? b.plays[0].type : 'TACTICAL';
       if (vcPlayTitle) vcPlayTitle.innerText = esc(topPlay);
       const vcPlayAction = document.getElementById('vc-play-action');
       const playAction = (b.plays && b.plays[0]) ? b.plays[0].thesis : 'Awaiting parameters';
