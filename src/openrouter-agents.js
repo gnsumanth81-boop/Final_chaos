@@ -140,9 +140,9 @@ REQUIRED STRUCTURE:
     "forces": ["MONEY", "WAR"]
   },
   "agents": {
-    "fundamental": { "bias": "NEUTRAL", "thesis": "Waiting for data..." },
-    "technical": { "bias": "BULLISH", "thesis": "Momentum strong" },
-    "sentiment": { "bias": "BEARISH", "thesis": "Too much greed" },
+    "fundamental": { "bias": "NEUTRAL", "thesis": "1-sentence summary of macro fundamental factors." },
+    "technical": { "bias": "BULLISH", "thesis": "1-sentence summary of chart structure and momentum." },
+    "sentiment": { "bias": "BEARISH", "thesis": "1-sentence summary of retail and institutional sentiment." },
     "geopolitical": { 
       "bias": "ELEVATED", 
       "thesis": "1-sentence summary of the geopolitical threat level mapped to markets."
