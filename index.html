@@ -813,7 +813,7 @@
                 <path class="gauge-fill" id="gauge-arc" d="M20,100 A80,80 0 0,1 180,100" fill="none" stroke="url(#gaugeGrad)" stroke-width="14" stroke-linecap="round" stroke-dasharray="251" stroke-dashoffset="251" style="filter: drop-shadow(0 0 8px rgba(245,166,35,0.4));"></path>
               </svg>
               <div class="gauge-glow" id="gauge-glow" style="width: 160px; height: 80px; bottom: 0; filter: blur(40px);"></div>
-              <div class="gauge-val" id="gauge-num" style="font-size: 3.5rem; bottom: 20px;">0</div>
+              <div class="gauge-val" id="fear-num" style="font-size: 3.5rem; bottom: 20px;">0</div>
               <div class="gauge-label" id="gauge-label" style="bottom: -5px; font-size: 0.55rem; letter-spacing: 3px; font-weight: 700;">NEUTRAL</div>
             </div>
           </div>
@@ -945,6 +945,10 @@
       </article>
 
       <section class="chaos rv" id="chaos-line-card"><span class="chaos-tag"><span class="chaos-star">✦</span> THE CHAOS LINE</span><div class="chaos-text" id="chaos-quote-text">“The market doesn't care if you're right, it only cares if you're alive to collect.”</div><div class="share-row"><a class="s-btn ghost" target="_blank" href="https://twitter.com/intent/tweet?text=%22The%20market%20doesn't%20care%20if%20you're%20right%2C%20it%20only%20cares%20if%20you're%20alive%20to%20collect.%22%20%E2%80%94%20Chaos%20Intelligence%0Ahttps%3A%2F%2Fchaos.sumanthworks.com">𝕏 Post</a><a class="s-btn ghost" target="_blank" href="https://t.me/share/url?url=https%3A%2F%2Fchaos.sumanthworks.com&amp;text=%22The%20market%20doesn't%20care%20if%20you're%20right%2C%20it%20only%20cares%20if%20you're%20alive%20to%20collect.%22%20%E2%80%94%20Chaos%20Intelligence">✈ Telegram</a><button class="s-btn ghost" onclick="copyLine()">📋 Copy Line</button><button class="s-btn ghost" id="export-btn" style="color:var(--gold); border-color:var(--gold); font-weight:700; font-family:var(--font-mono); letter-spacing:1px; background:rgba(212,168,67,0.05);" onclick="generateChaosImage()">⚡ EXPORT VIRAL SIGNAL CARD</button></div></section>
+
+        <div id="trap-card" class="bg-card trap" style="margin-bottom: 24px;"></div>
+        <div id="edge-card" class="bg-card edge-section" style="margin-bottom: 24px;"></div>
+
     </div></main>
   </div>
 
@@ -1193,7 +1197,7 @@
     const animateSovereignGauge = (fearIndex) => {
       // DATA READY CHECK
       if (fearIndex === undefined || fearIndex === null || isNaN(parseInt(fearIndex))) return;
-      const numEl = document.getElementById('gauge-num');
+      const numEl = document.getElementById('fear-num');
       const arc = document.getElementById('gauge-arc');
       const label = document.getElementById('gauge-label');
       const glow = document.getElementById('gauge-glow');
@@ -1495,7 +1499,7 @@
       currentLine=b.chaos_line||'';
 
       // 5-Second Market Snapshot & Liveness Timer
-      var topPlay = (b.plays && b.plays[0]) ? b.plays[0].type : 'N/A';
+      const topPlay = (b.plays && b.plays[0]) ? b.plays[0].type : 'N/A';
       const snapEl = document.getElementById('snapshot-panel');
       if (snapEl) {
         snapEl.innerHTML = `
@@ -1802,7 +1806,7 @@
       const vcFearNum = document.getElementById('vc-fear');
       if (vcFearNum) vcFearNum.style.color = fearColor;
       const vcPlayTitle = document.getElementById('vc-play-title');
-      var topPlay = (b.plays && b.plays[0]) ? b.plays[0].type : 'TACTICAL';
+      const topPlay = (b.plays && b.plays[0]) ? b.plays[0].type : 'TACTICAL';
       if (vcPlayTitle) vcPlayTitle.innerText = esc(topPlay);
       const vcPlayAction = document.getElementById('vc-play-action');
       const playAction = (b.plays && b.plays[0]) ? b.plays[0].thesis : 'Awaiting parameters';
