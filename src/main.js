@@ -9,7 +9,7 @@ import { generateCinematicAudio } from './tts-engine.js';
 import { syncWithGitHub } from './github-sync.js';
 import { resolveExpiredSignals } from './autopsy-brain.js';
 import { sendTelegramBrief } from './telegram-alerts.js';
-import { fetchAggregatedPolymarketTelemetry } from './polymarket-hooks.js';
+// Polymarket hooks removed as per user request
 async function main() {
   console.log("==============================================");
   console.log("🚀 CHAOS TERMINAL: CRON SEQUENCE INITIATED");
@@ -31,10 +31,7 @@ async function main() {
     let finalData = await runDualStagePipeline(marketData);
     finalData = enforceStructuralIntegrity(finalData);
 
-    // 2.5 Polymarket Live Odds Injection (Multi-Contract Sweep)
-    const livePolymarketMatrix = await fetchAggregatedPolymarketTelemetry();
-    finalData.polymarketOdds = livePolymarketMatrix.fedRateCut; // Main HUD tracking
-    finalData.extendedPolymarketVitals = livePolymarketMatrix; // Full matrix for UI
+    // Polymarket Live Odds Injection removed
 
     let processedNewsWires = [];
     if (Array.isArray(geoData) && geoData.length > 0) {
