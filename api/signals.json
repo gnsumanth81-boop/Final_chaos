@@ -1,5 +1,15 @@
 [
   {
+    "date": "2026-06-23",
+    "timestamp": "2026-06-23T09:34:54.601Z",
+    "signal_hash": "CI-0IGXDS8P-B",
+    "signal": "BEARISH",
+    "headline": "Market Jitters as Geopolitical Tensions Rise",
+    "btc_entry": 62423,
+    "resolved": false,
+    "resolution_status": "OPEN"
+  },
+  {
     "date": "2026-06-22",
     "timestamp": "2026-06-22T12:21:17.979Z",
     "signal_hash": "CI-EPYBMXR5-B",
