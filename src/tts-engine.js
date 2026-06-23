@@ -28,17 +28,35 @@ export async function generateCinematicAudio(terminalData) {
   for (const tier of tiers) {
     try {
       // Clean out markdown wrappers/HTML tags before feeding the voice synthesiser
-      const cleanText = tier.text.replace(/<\/?strong>/g, "").replace(/\*\*+/g, "").replace(/"/g, "'");
+      const cleanText = tier.text
+        .replace(/<\/?strong>/g, "")
+        .replace(/\*\*+/g, "")
+        .replace(/<[^>]*>/g, "")   // strip any HTML tags
+        .replace(/&amp;/g, "and")
+        .replace(/&/g, "and")
+        .replace(/"/g, "'")
+        .replace(/`/g, "'");
 
       const filePath = path.join(audioDir, `${tier.id}.mp3`);
       
-      // Execute edge-tts via python module
-      await execAsync(`python -m edge_tts --voice ${tier.voice} --text "${cleanText}" --write-media "${filePath}"`);
+      // Write text to a temp file to avoid shell escaping and argument length limits
+      const tmpTextPath = path.join(audioDir, `${tier.id}_input.txt`);
+      await fs.writeFile(tmpTextPath, cleanText, 'utf8');
       
-      console.log(`🎵 [AUDIO ENGINE]: Successfully mastered ${tier.id}.mp3 with voice ${tier.voice}`);
+      // Execute edge-tts via python module using --file instead of --text
+      await execAsync(`python -m edge_tts --voice ${tier.voice} --file "${tmpTextPath}" --write-media "${filePath}"`, {
+        timeout: 120000  // 2 minute timeout per track
+      });
+      
+      // Clean up temp file
+      await fs.unlink(tmpTextPath).catch(() => {});
+      
+      // Verify the file was actually created/updated
+      const stat = await fs.stat(filePath);
+      console.log(`🎵 [AUDIO ENGINE]: Successfully mastered ${tier.id}.mp3 with voice ${tier.voice} (${(stat.size / 1024).toFixed(0)}KB)`);
 
     } catch (error) {
-      console.error(`⚠️ Republication error on [${tier.id.toUpperCase()} VOICE LOOP]:`, error.message);
+      console.error(`⚠️ [AUDIO ENGINE FAIL] ${tier.id.toUpperCase()}: ${error.message}`);
     }
   }
 
