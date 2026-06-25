@@ -1,6 +1,16 @@
 [
   {
     "date": "2026-06-25",
+    "timestamp": "2026-06-25T08:36:21.876Z",
+    "signal_hash": "CI-5BJQD5OZ-B",
+    "signal": "BEARISH",
+    "headline": "Market on Edge: Geopolitical Tremors and Asset Divergences Signal Impending Chaos",
+    "btc_entry": 61642,
+    "resolved": false,
+    "resolution_status": "OPEN"
+  },
+  {
+    "date": "2026-06-25",
     "timestamp": "2026-06-25T05:08:35.899Z",
     "signal_hash": "CI-RKTYLJIX-B",
     "signal": "BEARISH",
