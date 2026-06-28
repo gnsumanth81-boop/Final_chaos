@@ -1,13 +1,29 @@
 [
   {
+    "date": "2026-06-28",
+    "timestamp": "2026-06-28T03:53:23.405Z",
+    "signal_hash": "CI-10E8982F-B",
+    "sha256": "10e8982fb3ca0866c26ca19b6d3bc53a768fdfcbeb0c60fdb16c34bd487662a1",
+    "signal": "BEARISH",
+    "headline": "Geopolitical Escalation Triggers Extreme Fear, Markets Brace for Impact",
+    "btc_entry": 60119,
+    "resolved": false,
+    "resolution_status": "OPEN"
+  },
+  {
     "date": "2026-06-25",
     "timestamp": "2026-06-25T08:36:21.876Z",
     "signal_hash": "CI-5BJQD5OZ-B",
     "signal": "BEARISH",
     "headline": "Market on Edge: Geopolitical Tremors and Asset Divergences Signal Impending Chaos",
     "btc_entry": 61642,
-    "resolved": false,
-    "resolution_status": "OPEN"
+    "resolved": true,
+    "resolution_status": "WIN",
+    "btc_exit": 60119,
+    "pnl_percent": 2.47,
+    "resolved_at": "2026-06-28T03:53:23.409Z",
+    "grading_method": "24h_btc_close",
+    "autopsy_note": "Price moved favorably ≥1.5% within 24h window, confirming directional thesis."
   },
   {
     "date": "2026-06-25",
@@ -16,8 +32,13 @@
     "signal": "BEARISH",
     "headline": "Fear Index Spikes as Geopolitical Storm Gathers",
     "btc_entry": 61474,
-    "resolved": false,
-    "resolution_status": "OPEN"
+    "resolved": true,
+    "resolution_status": "WIN",
+    "btc_exit": 60119,
+    "pnl_percent": 2.2,
+    "resolved_at": "2026-06-28T03:53:23.409Z",
+    "grading_method": "24h_btc_close",
+    "autopsy_note": "Price moved favorably ≥1.5% within 24h window, confirming directional thesis."
   },
   {
     "date": "2026-06-23",
@@ -627,35 +648,5 @@
     "pnl_percent": 0.75,
     "resolved_at": "2026-05-30T08:09:12.362Z",
     "grading_method": "24h_btc_close"
-  },
-  {
-    "date": "2026-05-30",
-    "signal": "BEARISH",
-    "headline": "Fear‑Premium Market Holds",
-    "resolution_status": "OPEN"
-  },
-  {
-    "date": "2026-05-30",
-    "signal": "BEARISH",
-    "headline": "Extreme Fear Forces a Mixed Playbook",
-    "resolution_status": "OPEN"
-  },
-  {
-    "date": "2026-05-30",
-    "signal": "BULLISH",
-    "headline": "Extreme Fear, Dollar Strong, Crypto on the Edge",
-    "resolution_status": "OPEN"
-  },
-  {
-    "date": "2026-05-30",
-    "signal": "NEUTRAL",
-    "headline": "Fear Trapped, but Opportunity Awaits",
-    "resolution_status": "OPEN"
-  },
-  {
-    "date": "2026-05-30",
-    "signal": "BULLISH",
-    "headline": "Risk Assets Cheap Amid Extreme Fear",
-    "resolution_status": "OPEN"
   }
 ]
