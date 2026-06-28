@@ -1,6 +1,17 @@
 [
   {
     "date": "2026-06-28",
+    "timestamp": "2026-06-28T12:53:16.842Z",
+    "signal_hash": "CI-BCD0D5D8-B",
+    "sha256": "bcd0d5d885b94b0c438febbffcf9171eac22ab06e219ce2904ddd223409d2d4b",
+    "signal": "BEARISH",
+    "headline": "Global Chaos Fuels Extreme Fear, Markets Brace for Impact",
+    "btc_entry": 60198,
+    "resolved": false,
+    "resolution_status": "OPEN"
+  },
+  {
+    "date": "2026-06-28",
     "timestamp": "2026-06-28T03:53:23.405Z",
     "signal_hash": "CI-10E8982F-B",
     "sha256": "10e8982fb3ca0866c26ca19b6d3bc53a768fdfcbeb0c60fdb16c34bd487662a1",
