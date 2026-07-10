@@ -1516,7 +1516,8 @@
       }, 1000);
 
       // Hash and verification
-      document.getElementById('hash-val').textContent=latest.signal?.sha256 || latest.signal?.signal_hash || 'Hash pending...';
+      var hashEl = document.getElementById('hash-val');
+      if (hashEl) hashEl.textContent = latest.signal?.sha256 || latest.signal?.signal_hash || 'Hash pending...';
 
       // Signal Row and Validation Target
       var sigRowEl = document.getElementById('sig-row');
@@ -1564,7 +1565,8 @@
         ['10Y',(m.yieldVal||'N/A')+'%',num(m.yieldVal)>4.5?'bear':'neut'],['DXY',m.dxyVal||'N/A','neut']
       ];
       var tk=tickerItems.map(function(t){return'<span class="tk">'+esc(t[0])+' '+(t[1]?'<span class="v '+t[2]+'">'+esc(t[1])+'</span>':'')+'</span>';}).join('');
-      document.getElementById('ticker-inner').innerHTML=tk+tk;
+      var tkEl = document.getElementById('ticker-inner');
+      if (tkEl) tkEl.innerHTML=tk+tk;
 
       // Header
       var tStatus = document.getElementById('terminal-status');
