@@ -49,7 +49,7 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-  <!-- Non-blocking font load: preload â†’ swap, eliminates render-blocking resource -->
+  <!-- Non-blocking font load: preload → swap, eliminates render-blocking resource -->
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&amp;family=JetBrains+Mono:wght@300;400;700&amp;family=Barlow+Condensed:wght@300;400;600;700;900&amp;display=swap">
   <link rel="stylesheet" media="print" onload="this.media='all'" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&amp;family=JetBrains+Mono:wght@300;400;700&amp;family=Barlow+Condensed:wght@300;400;600;700;900&amp;display=swap">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=JetBrains+Mono:wght@300;400;700&family=Barlow+Condensed:wght@300;400;600;700;900&display=swap"></noscript>
@@ -725,20 +725,20 @@
       <div class="onboard-step active" id="os0">
         <div class="onboard-num">STEP 01 OF 03</div>
         <div class="onboard-title">THIS IS TODAY'S SIGNAL</div>
-        <div class="onboard-desc">Every day, our four AI agents â€” Fundamental, Technical, Sentiment, and Geopolitical â€” converge on a single directional verdict. <strong>BEARISH, BULLISH, or NEUTRAL.</strong> All decisions flow from this.</div>
-        <div class="onboard-btn-row"><button class="onboard-skip" onclick="dismissOnboard()">SKIP</button><button class="onboard-next" onclick="nextOnboard(1)">NEXT â†’</button></div>
+        <div class="onboard-desc">Every day, our four AI agents — Fundamental, Technical, Sentiment, and Geopolitical — converge on a single directional verdict. <strong>BEARISH, BULLISH, or NEUTRAL.</strong> All decisions flow from this.</div>
+        <div class="onboard-btn-row"><button class="onboard-skip" onclick="dismissOnboard()">SKIP</button><button class="onboard-next" onclick="nextOnboard(1)">NEXT →</button></div>
       </div>
 
       <div class="onboard-step" id="os1">
         <div class="onboard-num">STEP 02 OF 03</div>
         <div class="onboard-title">THIS IS THE VERIFIED LEDGER</div>
         <div class="onboard-desc">Every signal we've ever published is <strong>SHA-256 hashed and locked on GitHub.</strong> 30+ resolved signals. Nothing is retroactively edited. Click <strong>LEDGER</strong> in the nav to see every call, ever.</div>
-        <div class="onboard-btn-row"><button class="onboard-skip" onclick="dismissOnboard()">SKIP</button><button class="onboard-next" onclick="nextOnboard(2)">NEXT â†’</button></div>
+        <div class="onboard-btn-row"><button class="onboard-skip" onclick="dismissOnboard()">SKIP</button><button class="onboard-next" onclick="nextOnboard(2)">NEXT →</button></div>
       </div>
 
       <div class="onboard-step" id="os2">
         <div class="onboard-num">STEP 03 OF 03</div>
-        <div class="onboard-title">THIS IS THE CHAOS LINE â€” SHARE IT</div>
+        <div class="onboard-title">THIS IS THE CHAOS LINE — SHARE IT</div>
         <div class="onboard-desc">Every brief ends with one unforgettable line distilling the market's entire mood. Download it as an image. Post it. Share it. It's your proof you were reading the right signals.</div>
         <div class="onboard-btn-row"><button class="onboard-next" style="background:var(--green);" onclick="dismissOnboard()">GOT IT âœ“</button></div>
       </div>
@@ -816,13 +816,13 @@
 
     <main class="wrap"><div class="main">
       <article>
-        <div class="ed-tag" id="brief-tag">TODAY'S BRIEFING Â· NYC</div>
+        <div class="ed-tag" id="brief-tag">TODAY'S BRIEFING · NYC</div>
         <h1 class="hl" id="headline">Global Chaos: Fear Reigns, Markets Brace</h1>
         <div class="sig-row" id="sig-row"><span class="sig bear">LOADING</span><span class="ts-badge">THIS WEEK</span><span class="conf">VERIFYING LEDGER WR...</span></div>
         <div id="validation-target" style="font-family:var(--font-mono); font-size:0.75rem; color:var(--muted); margin-top:12px; margin-bottom:12px; border-left:2px solid var(--purple); padding-left:10px; display:none;">
           <span style="color:var(--text-bright); font-weight:bold;">WIN CONDITION:</span> <span id="vt-text">Loading validation parameters...</span>
         </div>
-        <div class="upd"><span class="bull">â—</span><span id="updated-line">08:50 UTC Â· âˆž BRAIN + LIVE DATA</span></div>
+        <div class="upd"><span class="bull">â—</span><span id="updated-line">08:50 UTC · ∞ BRAIN + LIVE DATA</span></div>
 
         <section class="glass-card rv" style="margin-bottom: 24px; display: flex; flex-direction: column; align-items: center; text-align: center;">
           <div class="sec-title" style="align-self: stretch; margin-top: 0;">MARKET FEAR GAUGE</div>
@@ -843,11 +843,11 @@
         </section>
 
         <section class="cx-section rv">
-          <div class="sec-title">INTELLIGENCE LEVEL â€” PICK YOURS</div>
+          <div class="sec-title">INTELLIGENCE LEVEL — PICK YOURS</div>
           <div class="cx-tabs" role="tablist">
-            <button class="cx-btn" onclick="setCx('eli5',this)"><span class="cx-n">ELI5</span><span class="cx-sub">Simple Â· 3 min</span></button>
-            <button class="cx-btn active" onclick="setCx('analyst',this)"><span class="cx-n">Analyst</span><span class="cx-sub">Intermediate Â· 5 min</span></button>
-            <button class="cx-btn" onclick="setCx('quant',this)"><span class="cx-n">Quant</span><span class="cx-sub">Advanced Â· 7 min</span></button>
+            <button class="cx-btn" onclick="setCx('eli5',this)"><span class="cx-n">ELI5</span><span class="cx-sub">Simple · 3 min</span></button>
+            <button class="cx-btn active" onclick="setCx('analyst',this)"><span class="cx-n">Analyst</span><span class="cx-sub">Intermediate · 5 min</span></button>
+            <button class="cx-btn" onclick="setCx('quant',this)"><span class="cx-n">Quant</span><span class="cx-sub">Advanced · 7 min</span></button>
           </div>
           <div class="pane" id="pane-eli5"><div class="brief" style="text-align:center;color:var(--muted);font-family:var(--font-mono);padding:40px;">Decrypting intelligence brief...</div></div>
           <div class="pane active" id="pane-analyst"><div class="brief" style="text-align:center;color:var(--muted);font-family:var(--font-mono);padding:40px;">Decrypting intelligence brief...</div></div>
@@ -985,11 +985,11 @@
       <div class="page-sub">CROSS-MARKET INTELLIGENCE</div>
 
       <div class="tv-row" id="tv-row">
-        <div class="glass-card"><div class="sec-title">BTC/USD â€” LIVE CHART</div><div class="tv-widget" id="tv-btc"></div></div>
-        <div class="glass-card"><div class="sec-title">S&amp;P 500 â€” LIVE CHART</div><div class="tv-widget" id="tv-spx"></div></div>
+        <div class="glass-card"><div class="sec-title">BTC/USD — LIVE CHART</div><div class="tv-widget" id="tv-btc"></div></div>
+        <div class="glass-card"><div class="sec-title">S&amp;P 500 — LIVE CHART</div><div class="tv-widget" id="tv-spx"></div></div>
       </div>
 
-      <section class="glass-card macro rv vis"><div class="sec-title">MACRO DASHBOARD</div><div class="mgrid" id="macro-grid"><div class="mi"><div class="mi-l">10Y Treasury</div><div class="mi-v neut">...</div><div class="mi-s">Yield change</div></div><div class="mi"><div class="mi-l">DXY Dollar</div><div class="mi-v neut">...</div><div class="mi-s">â€” Neutral</div></div><div class="mi"><div class="mi-l">VIX</div><div class="mi-v neut">...</div><div class="mi-s">Implied vol</div></div><div class="mi"><div class="mi-l">S&amp;P 500</div><div class="mi-v neut">...</div><div class="mi-s"></div></div></div></section>
+      <section class="glass-card macro rv vis"><div class="sec-title">MACRO DASHBOARD</div><div class="mgrid" id="macro-grid"><div class="mi"><div class="mi-l">10Y Treasury</div><div class="mi-v neut">...</div><div class="mi-s">Yield change</div></div><div class="mi"><div class="mi-l">DXY Dollar</div><div class="mi-v neut">...</div><div class="mi-s">— Neutral</div></div><div class="mi"><div class="mi-l">VIX</div><div class="mi-v neut">...</div><div class="mi-s">Implied vol</div></div><div class="mi"><div class="mi-l">S&amp;P 500</div><div class="mi-v neut">...</div><div class="mi-s"></div></div></div></section>
       <section class="ctx rv vis" style="margin-top:24px"><div class="sec-title">CROSS-MARKET CONTEXT</div><div class="ctx-grid" id="context-grid"><div class="ctx-card" style="--accent:var(--red)"><div class="ctx-l">Bond Market</div><div class="ctx-v neut">CAUTION</div><div class="ctx-d">10Y at 4.350%</div></div><div class="ctx-card" style="--accent:var(--green)"><div class="ctx-l">Equity Market</div><div class="ctx-v neut">BULLISH</div><div class="ctx-d">S&amp;P flat</div></div><div class="ctx-card" style="--accent:var(--gold)"><div class="ctx-l">Crypto</div><div class="ctx-v neut">HEDGING</div><div class="ctx-d">BTC at $64,889</div></div><div class="ctx-card" style="--accent:var(--purple)"><div class="ctx-l">Sentiment</div><div class="ctx-v bear">FEAR 22</div><div class="ctx-d">Mixed sentiment</div></div></div></section>
       <section class="forces rv vis" style="margin-top:24px"><div class="sec-title">ACTIVE MACRO FORCES</div><div class="forces-grid" id="forces-grid" role="list" aria-label="Active macro forces"><div class="fc on"><span class="fc-dot"></span>ðŸ’° <span>MONEY</span></div><div class="fc off"><span class="fc-dot"></span>ðŸ¤– <span>TECH</span></div><div class="fc on"><span class="fc-dot"></span>âš¡ <span>ENERGY</span></div><div class="fc off"><span class="fc-dot"></span>ðŸ›ï¸ <span>POLITICS</span></div><div class="fc on"><span class="fc-dot"></span>âš”ï¸ <span>WAR</span></div><div class="fc off"><span class="fc-dot"></span>ðŸ’¸ <span>DEBT</span></div><div class="fc off"><span class="fc-dot"></span>ðŸ’¼ <span>JOBS</span></div><div class="fc off"><span class="fc-dot"></span>ðŸŒ¾ <span>FOOD</span></div><div class="fc off"><span class="fc-dot"></span>ðŸ§‘ <span>PEOPLE</span></div></div></section>
       <section class="poly rv vis" style="margin-top: 24px; display: none;" id="poly-card"></section>
@@ -1015,7 +1015,7 @@
           </p>
           
           <a href="https://t.me/chaosterminal" target="_blank" rel="noopener" class="s-btn red" style="display: inline-flex; justify-content: center; align-items: center; max-width: 320px; width: 100%; margin: 0 auto; font-family: var(--font-mono); font-size: 0.65rem; letter-spacing: 2px; height: 44px; font-weight: 700; text-transform: uppercase; border-radius: 4px;">
-            JOIN THE FREE TELEGRAM WAR ROOM â†’
+            JOIN THE FREE TELEGRAM WAR ROOM →
           </a>
         </div>
       </div>
@@ -1099,7 +1099,7 @@
       <a href="#archive" class="ftr-link" onclick="window.location.hash='#archive'; runClientRouter(); return false;">Archive</a>
       <a href="#" class="ftr-link" onclick="document.getElementById('creator-modal').classList.add('open');return false;">About the Creator</a>
     </div>
-    <div class="ftr-disc">Not financial advice. AI-generated from public data. Public ledger tracks closed signals (Â±1.5% required for WIN). Chaos Intelligence. Â© 2026 Chaos Intelligence Â· https://chaos.sumanthworks.com</div>
+    <div class="ftr-disc">Not financial advice. AI-generated from public data. Public ledger tracks closed signals (Â±1.5% required for WIN). Chaos Intelligence. © 2026 Chaos Intelligence · https://chaos.sumanthworks.com</div>
   </footer>
 
   <!-- CREATOR TRUST ANCHOR -->
@@ -1112,13 +1112,13 @@
         <p style="margin-bottom: 12px">Wall Street pays $24,000/year for Bloomberg terminals to tell them what already happened. I built Chaos to track live whale orderbook liquidations and macro sentiment to tell you what happens next.</p>
         <p>Built by a single engineer. 100% verifiable signal ledger. No black boxes. Pure asymmetric advantage.</p>
       </div>
-      <a href="https://x.com/sumanthworks" target="_blank" class="cm-link">CONNECT ON X (TWITTER) â†’</a>
+      <a href="https://x.com/sumanthworks" target="_blank" class="cm-link">CONNECT ON X (TWITTER) →</a>
     </div>
   </div>
 
   <script>
     /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-       CHAOS INTELLIGENCE v7 â€” FULL ENGINE
+       CHAOS INTELLIGENCE v7 — FULL ENGINE
        â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 
     // â”€â”€ CONSTANTS â”€â”€
@@ -1221,7 +1221,7 @@
     function metric(l,v,s,c='neut'){return'<div class="mi"><div class="mi-l">'+esc(l)+'</div><div class="mi-v '+c+'">'+esc(v)+'</div><div class="mi-s">'+esc(s)+'</div></div>';}
 
     function agentCard(name,agent){
-      if(!agent)return'<div class="agent-card"><div class="agent-name" style="color:var(--muted)">'+esc(name)+'</div><div class="agent-bias neut">â€”</div></div>';
+      if(!agent)return'<div class="agent-card"><div class="agent-name" style="color:var(--muted)">'+esc(name)+'</div><div class="agent-bias neut">—</div></div>';
       const biasRaw = agent.bias || 'NEUTRAL';
       const bc = sigCls(biasRaw);
       const colorVar = bc==='bull'?'var(--green)':bc==='bear'?'var(--red)':bc==='volt'?'var(--gold)':'var(--muted)';
@@ -1264,7 +1264,7 @@
 
       const alignTxt = aligned.length
         ? `${aligned.length}/${agentList.length} agents aligned: ${aligned.join(', ')}`
-        : 'No agents directly aligned â€” high-conviction contrarian';
+        : 'No agents directly aligned — high-conviction contrarian';
       const misalignTxt = misaligned.length
         ? `${misaligned.length} agent${misaligned.length>1?'s':''} neutral/opposing: ${misaligned.join(', ')}`
         : 'Full agent consensus';
@@ -1466,7 +1466,7 @@
     }
 
     // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-    //  RENDER â€” THE FULL MASTERPIECE
+    //  RENDER — THE FULL MASTERPIECE
     // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
     function render(latest,signals){
       var m=latest.market||{};
@@ -1571,8 +1571,8 @@
       // Header
       var tStatus = document.getElementById('terminal-status');
       var dLine = document.getElementById('date-line');
-      if (tStatus) tStatus.textContent = dateStr+' Â· '+timeStr;
-      if (dLine) dLine.textContent = dateStr+' Â· '+timeStr;
+      if (tStatus) tStatus.textContent = dateStr+' · '+timeStr;
+      if (dLine) dLine.textContent = dateStr+' · '+timeStr;
       
       var hdrFear = document.getElementById('hdr-fear');
       var hdrBtc = document.getElementById('hdr-btc');
@@ -1612,11 +1612,11 @@
       document.getElementById('ledger-streak').style.color = perf.streak_direction === 'LOSS' ? 'var(--red)' : 'var(--green)';
 
       // Brief Header
-      var topConfText = tr < 10 ? 'CALIBRATING ('+tr+'/10 SIGNALS)' : perf.win_rate + '% VERIFIED WR Â· ' + perf.current_streak + ' ' + (perf.streak_direction || 'WIN') + ' STREAK';
-      document.getElementById('brief-tag').textContent='TODAY\'S BRIEFING Â· '+(b.dateline||'NYC').toUpperCase();
+      var topConfText = tr < 10 ? 'CALIBRATING ('+tr+'/10 SIGNALS)' : perf.win_rate + '% VERIFIED WR · ' + perf.current_streak + ' ' + (perf.streak_direction || 'WIN') + ' STREAK';
+      document.getElementById('brief-tag').textContent='TODAY\'S BRIEFING · '+(b.dateline||'NYC').toUpperCase();
       document.getElementById('headline').textContent=b.headline||'Market Update';
       document.getElementById('sig-row').innerHTML='<span class="sig '+scls+'">'+esc(signal)+'</span><span class="ts-badge">'+esc(b.time_sensitivity||'THIS WEEK')+'</span><span class="conf">'+esc(topConfText)+'</span>';
-      document.getElementById('updated-line').textContent=timeStr+' Â· âˆž BRAIN + LIVE DATA';
+      document.getElementById('updated-line').textContent=timeStr+' · ∞ BRAIN + LIVE DATA';
 
       var btcChangeVal = num(m.btcChange).toFixed(2);
       var btcSign = num(m.btcChange) >= 0 ? 'â–² +' : 'â–¼ ';
@@ -1624,9 +1624,9 @@
       // Removed vitals-target ribbon injection to eliminate metric duplication
 
       // Intelligence Panes
-      pane('eli5','ELI5 â€” FOR EVERYONE','3 MIN',b.eli5,[['Fear Index',m.fearIndex],['Bitcoin',m.btcPrice],['10Y Yield',(m.yieldVal||'N/A')+'%']]);
-      pane('analyst','ANALYST â€” INTERMEDIATE','5 MIN',b.analyst,[['10Y Treasury',(m.yieldVal||'N/A')+'%'],['DXY',m.dxyVal],['S&P 500',m.spxVal]]);
-      pane('quant','QUANT â€” ADVANCED','7 MIN',b.quant,[['VIX',m.vixVal],['ETH',m.ethPrice],['Sentiment',m.wsbSentiment]]);
+      pane('eli5','ELI5 — FOR EVERYONE','3 MIN',b.eli5,[['Fear Index',m.fearIndex],['Bitcoin',m.btcPrice],['10Y Yield',(m.yieldVal||'N/A')+'%']]);
+      pane('analyst','ANALYST — INTERMEDIATE','5 MIN',b.analyst,[['10Y Treasury',(m.yieldVal||'N/A')+'%'],['DXY',m.dxyVal],['S&P 500',m.spxVal]]);
+      pane('quant','QUANT — ADVANCED','7 MIN',b.quant,[['VIX',m.vixVal],['ETH',m.ethPrice],['Sentiment',m.wsbSentiment]]);
 
       // Forces
       var active=new Set((b.forces||[]).map(function(x){return String(x).toUpperCase();}));
@@ -1644,7 +1644,7 @@
       // Chaos Line
       var clEl = document.getElementById('chaos-line-card');
       if (clEl) {
-        clEl.innerHTML='<span class="chaos-tag"><span class="chaos-star">âœ¦</span> THE CHAOS LINE</span><div class="chaos-text" id="chaos-quote-text">&ldquo;'+esc(b.chaos_line||'')+'&rdquo;</div><div class="share-row"><a class="s-btn ghost" target="_blank" href="https://twitter.com/intent/tweet?text='+encodeURIComponent('"'+(b.chaos_line||'')+'" â€” Chaos Intelligence\n'+SITE)+'">ð• Post</a><a class="s-btn ghost" target="_blank" href="https://t.me/share/url?url='+encodeURIComponent(SITE)+'&text='+encodeURIComponent('"'+(b.chaos_line||'')+'" â€” Chaos Intelligence')+'">âœˆ Telegram</a><button class="s-btn ghost" onclick="copyLine()">ðŸ“‹ Copy Line</button><button class="s-btn ghost" id="export-btn" style="color:var(--gold); border-color:var(--gold); font-weight:700; font-family:var(--font-mono); letter-spacing:1px; background:rgba(212,168,67,0.05);" onclick="generateChaosImage()">âš¡ EXPORT VIRAL SIGNAL CARD</button></div>';
+        clEl.innerHTML='<span class="chaos-tag"><span class="chaos-star">âœ¦</span> THE CHAOS LINE</span><div class="chaos-text" id="chaos-quote-text">&ldquo;'+esc(b.chaos_line||'')+'&rdquo;</div><div class="share-row"><a class="s-btn ghost" target="_blank" href="https://twitter.com/intent/tweet?text='+encodeURIComponent('"'+(b.chaos_line||'')+'" — Chaos Intelligence\n'+SITE)+'">ð• Post</a><a class="s-btn ghost" target="_blank" href="https://t.me/share/url?url='+encodeURIComponent(SITE)+'&text='+encodeURIComponent('"'+(b.chaos_line||'')+'" — Chaos Intelligence')+'">âœˆ Telegram</a><button class="s-btn ghost" onclick="copyLine()">ðŸ“‹ Copy Line</button><button class="s-btn ghost" id="export-btn" style="color:var(--gold); border-color:var(--gold); font-weight:700; font-family:var(--font-mono); letter-spacing:1px; background:rgba(212,168,67,0.05);" onclick="generateChaosImage()">âš¡ EXPORT VIRAL SIGNAL CARD</button></div>';
       }
 
       // Fear Gauge
@@ -1666,7 +1666,7 @@
       // Trap
       var tpEl = document.getElementById('trap-card');
       if (tpEl) {
-        var trapText = b.market_trap || b.trap || "The market is setting a classic liquidity trap â€” encouraging retail to buy the dip while smart money quietly de-risks.";
+        var trapText = b.market_trap || b.trap || "The market is setting a classic liquidity trap — encouraging retail to buy the dip while smart money quietly de-risks.";
         tpEl.innerHTML='<div class="trap-tag" style="color:var(--gold);">âš  MARKET TRAP</div><div class="trap-text">'+briefHtml(trapText)+'</div>';
       }
 
@@ -1725,13 +1725,13 @@
             polyCard.innerHTML = matrixHtml;
           } else {
             const odds=num(m.marketOdds,50);
-            polyCard.innerHTML='<span class="poly-tag">âš¡ TOP PREDICTION MARKET</span><div class="poly-q">'+esc(m.marketTitle||'Prediction market unavailable')+'</div><div class="poly-row"><div class="poly-odds">'+esc(m.marketOdds||'50.0')+'%</div><div><div style="font-family:var(--font-mono);font-size:.44rem;color:var(--muted);margin-bottom:6px">YES probability</div><div class="poly-track"><div class="poly-fill" style="width:'+Math.max(0,Math.min(100,odds))+'%"></div></div></div></div><div style="margin-top:14px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px"><div class="vd">Volume: '+esc(m.marketVolume||'$0')+'</div><a class="poly-link" href="'+esc(m.marketLink||'https://polymarket.com')+'" target="_blank">VIEW LIVE â†’</a></div>';
+            polyCard.innerHTML='<span class="poly-tag">âš¡ TOP PREDICTION MARKET</span><div class="poly-q">'+esc(m.marketTitle||'Prediction market unavailable')+'</div><div class="poly-row"><div class="poly-odds">'+esc(m.marketOdds||'50.0')+'%</div><div><div style="font-family:var(--font-mono);font-size:.44rem;color:var(--muted);margin-bottom:6px">YES probability</div><div class="poly-track"><div class="poly-fill" style="width:'+Math.max(0,Math.min(100,odds))+'%"></div></div></div></div><div style="margin-top:14px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px"><div class="vd">Volume: '+esc(m.marketVolume||'$0')+'</div><a class="poly-link" href="'+esc(m.marketLink||'https://polymarket.com')+'" target="_blank">VIEW LIVE →</a></div>';
           }
         }
       }
       document.getElementById('macro-grid').innerHTML=[
         metric('10Y Treasury',(m.yieldVal||'N/A')+'%','Yield change',num(m.yieldVal)>4.5?'bear':'neut'),
-        metric('DXY Dollar',m.dxyVal||'N/A',num(m.dxyVal)>104?'â†‘ EM pressure':'â€” Neutral','neut'),
+        metric('DXY Dollar',m.dxyVal||'N/A',num(m.dxyVal)>104?'â†‘ EM pressure':'— Neutral','neut'),
         metric('VIX',m.vixVal||'N/A','Implied vol',num(m.vixVal)>20?'bear':'neut'),
         metric('S&P 500',m.spxVal||'N/A',m.spxChange||'',String(m.spxChange||'').startsWith('+')?'bull':'bear')
       ].join('');
@@ -1834,7 +1834,7 @@
       }
 
       var mDecayTxt = document.getElementById('m-decay-txt');
-      if (mDecayTxt) mDecayTxt.textContent = 'VALID â€” ' + esc(b.time_sensitivity || 'THIS WEEK');
+      if (mDecayTxt) mDecayTxt.textContent = 'VALID — ' + esc(b.time_sensitivity || 'THIS WEEK');
       var mDecayFill = document.getElementById('m-decay-fill');
       if (mDecayFill) {
         var ts = String(b.time_sensitivity || '').toUpperCase();
@@ -1907,7 +1907,7 @@
       }catch(e){
         console.error('Load error:',e);
         if(!isPoll){
-          document.getElementById('headline').textContent='Data Unavailable â€” Check Back Soon';
+          document.getElementById('headline').textContent='Data Unavailable — Check Back Soon';
           document.getElementById('terminal-status').textContent='OFFLINE';
         }
       }finally{
