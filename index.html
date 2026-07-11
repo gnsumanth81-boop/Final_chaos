@@ -1,4 +1,18 @@
 <!DOCTYPE html><html lang="en"><head>
+<script>
+  // Safe getElementById wrapper to prevent crashes on missing UI elements
+  (function(){
+    var originalGetElementById = document.getElementById;
+    document.getElementById = function(id) {
+      var el = originalGetElementById.call(document, id);
+      if (!el) {
+        // Return a dummy element so .innerHTML and .textContent don't crash
+        return document.createElement('div');
+      }
+      return el;
+    };
+  })();
+</script>
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -10,32 +24,13 @@
   <meta property="og:url" content="https://chaos.sumanthworks.com/">
   <meta property="og:title" id="og-title" content="Chaos Intelligence | Global Chaos: Fear Reigns, Markets Brace">
   <meta property="og:description" id="og-desc" content="The market doesn't care if you're right, it only cares if you're alive to collect.">
-  <meta property="og:image" content="https://chaos.sumanthworks.com/og-image.png">
+  <meta property="og:image" content="https://chaos.sumanthworks.com/og-image.jpg">
   <meta property="og:site_name" content="Chaos Intelligence Terminal">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:url" content="https://chaos.sumanthworks.com/">
   <meta name="twitter:title" id="tw-title" content="Chaos Intelligence | Global Chaos: Fear Reigns, Markets Brace">
   <meta name="twitter:description" id="tw-desc" content="The market doesn't care if you're right, it only cares if you're alive to collect.">
-  <meta name="twitter:image" content="https://chaos.sumanthworks.com/og-image.png">
-
-  <!-- SCHEMA MARKUP (SEO) -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": "Chaos Intelligence Terminal",
-    "url": "https://chaos.sumanthworks.com",
-    "description": "Verifiable AI financial signal terminal providing real-time macro analysis, cryptocurrency telemetry, and fear/greed market data.",
-    "applicationCategory": "FinanceApplication",
-    "operatingSystem": "Web",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "USD"
-    }
-  }
-  </script>
-
+  <meta name="twitter:image" content="https://chaos.sumanthworks.com/og-image.jpg">
   <!-- PWA -->
   <link rel="manifest" href="/manifest.json">
   <meta name="theme-color" content="#050507">
@@ -76,11 +71,12 @@
       --accent-gold: #d4af37;
     }
     *{margin:0;padding:0;box-sizing:border-box;-webkit-font-smoothing:antialiased}
+    html{}
     body{background:var(--bg-app);color:var(--text-bright);font-family:var(--font-body);min-height:100vh;overflow-x:clip;font-size:16px;line-height:1.7;transition:background 1.5s ease-in-out;}
     body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");opacity:.018;pointer-events:none;z-index:9998}
     body::after{content:'';position:fixed;inset:0;background-image:linear-gradient(to right,rgba(255,255,255,0.015) 1px,transparent 1px),linear-gradient(to bottom,rgba(255,255,255,0.015) 1px,transparent 1px);background-size:32px 32px;pointer-events:none;z-index:1}
 
-    /* â”€â”€ BOOT â”€â”€ */
+    /* ── BOOT ── */
     #progress{position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,var(--red),var(--gold),var(--green));width:0;z-index:10001;box-shadow:0 0 10px rgba(232,57,74,.4);transition:width .3s}
     #scroll-progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--red),var(--gold),var(--green));width:0;z-index:10000;box-shadow:0 0 16px rgba(220,38,38,0.5);transition:width 0.1s ease-out;pointer-events:none}
     #boot{position:fixed;inset:0;background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:9999;transition:opacity .6s ease,transform .6s ease}
@@ -97,7 +93,7 @@
     @keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
     @keyframes flashGreen{0%{box-shadow:0 0 0 0 rgba(34,212,90,.5)}100%{box-shadow:0 0 0 0 transparent}}
 
-    /* â”€â”€ TICKER â”€â”€ */
+    /* ── TICKER ── */
     .ticker{background:var(--s0);border-bottom:1px solid var(--dim);height:30px;overflow:hidden;display:flex;align-items:center;position:-webkit-sticky;position:sticky;top:56px;z-index:100}
     .tk-lbl{padding:0 14px 0 16px;font-family:var(--font-mono);font-size:.46rem;color:var(--red);letter-spacing:2px;white-space:nowrap;border-right:1px solid var(--dim);display:flex;align-items:center;gap:6px;background:var(--s0);z-index:2;flex-shrink:0}
     .tk-dot{width:4px;height:4px;background:var(--red);border-radius:50%;animation:pulse 1.4s ease infinite}
@@ -105,7 +101,7 @@
     .tk{padding:0 24px;font-family:var(--font-mono);font-size:.5rem;color:var(--muted);letter-spacing:.8px;display:flex;gap:6px;align-items:center;border-right:1px solid var(--s3)}
     .v{font-weight:700}.bull{color:var(--green)!important}.bear{color:var(--red)!important}.neut{color:var(--gold)!important}.volt{color:var(--orange)!important}.blue{color:var(--blue)!important}.purple{color:var(--purple)!important}
 
-    /* â”€â”€ LAYOUT â”€â”€ */
+    /* ── LAYOUT ── */
     .wrap{max-width:760px;margin:0 auto;padding:0 24px}.wide{max-width:980px}
     .hdr{padding:32px 0 0;border-bottom:1px solid var(--dim)}
     .hdr-top{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:6px;gap:20px}
@@ -119,7 +115,7 @@
     .hash-badge{display:flex;align-items:center;gap:8px;padding:10px 16px;background:rgba(0,255,136,.04);border:1px solid rgba(0,255,136,.2);border-radius:10px;font-family:var(--font-mono);font-size:.55rem;color:var(--green);margin:12px 0;letter-spacing:.5px;overflow:hidden}
     .hash-val{color:var(--muted);word-break:break-all;opacity:.85}
 
-    /* â”€â”€ VITALS GRID â”€â”€ */
+    /* ── VITALS GRID ── */
     .vitals{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--dim);border-bottom:1px solid var(--dim)}
     .vital{padding:20px 14px;text-align:center;background:var(--bg2);transition:all .3s}.vital:hover{background:var(--s1);transform:translateY(-1px)}
     .vital.flash{animation:flashGreen .6s ease}
@@ -127,7 +123,7 @@
     .vl{font-family:var(--font-mono);font-size:.44rem;color:var(--muted);letter-spacing:1.5px;margin-top:6px;text-transform:uppercase}
     .vd{font-family:var(--font-mono);font-size:.42rem;margin-top:3px;letter-spacing:.5px;color:var(--muted)}
 
-    /* â”€â”€ MAIN â”€â”€ */
+    /* ── MAIN ── */
     .main{padding:12px 0 24px 0}.ed-tag{font-family:var(--font-mono);font-size:.5rem;color:var(--red);letter-spacing:3px;margin-bottom:8px;display:flex;align-items:center;gap:8px;text-transform:uppercase}
     .ed-tag::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,var(--red),transparent);opacity:.3}
     h1.hl{font-family:var(--font-big);font-size:clamp(2.35rem,7vw,4rem);letter-spacing:1px;line-height:1.02;color:var(--ink);margin-bottom:16px}
@@ -136,7 +132,7 @@
     .ts-badge{font-size:.48rem;background:var(--s2);color:var(--gold);border:1px solid var(--s3)}.conf{font-family:var(--font-mono);font-size:.48rem;color:var(--muted);letter-spacing:1px}
     .upd{font-family:var(--font-mono);font-size:.48rem;color:var(--muted);letter-spacing:1px;margin-bottom:36px;padding:6px 0;border-top:1px solid var(--s3);display:flex;align-items:center;gap:6px}
 
-    /* â”€â”€ GLASS / SECTIONS â”€â”€ */
+    /* ── GLASS / SECTIONS ── */
     .glass-card{padding:16px;background:rgba(20,20,28,.72);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.04);border-radius:12px;position:relative;overflow:hidden}
     .sec-title {
       font-family: var(--font-mono);
@@ -180,13 +176,13 @@
       transform: scale(0.98);
     }
 
-    /* â”€â”€ GAUGE â”€â”€ */
+    /* ── GAUGE ── */
     .gauge-wrap{display:flex;justify-content:center;margin:0 auto 48px;max-width:270px}.gauge-container{position:relative;width:230px;height:136px}.gauge-container svg{width:100%;height:100%}
     .gauge-bg{fill:none;stroke:var(--s3);stroke-width:8;stroke-linecap:round}.gauge-fill{fill:none;stroke-width:8;stroke-linecap:round;transition:stroke-dashoffset 1.4s cubic-bezier(.4,0,.2,1);filter:drop-shadow(0 0 6px currentColor)}
     .gauge-glow{position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:120px;height:60px;border-radius:60px 60px 0 0;filter:blur(30px);opacity:.25;pointer-events:none}
     .gauge-val{position:absolute;bottom:8px;left:50%;transform:translateX(-50%);font-family:var(--font-big);font-size:2.8rem;letter-spacing:2px;line-height:1}.gauge-label{position:absolute;bottom:-4px;left:50%;transform:translateX(-50%);font-family:var(--font-mono);font-size:.44rem;color:var(--muted);letter-spacing:2px;white-space:nowrap}
 
-    /* â”€â”€ INTELLIGENCE TABS â”€â”€ */
+    /* ── INTELLIGENCE TABS ── */
     .cx-section,.forces,.chaos,.macro,.wires,.ctx,.poly,.trap,.edge-section{margin-bottom:48px}
     .cx-tabs{display:grid;grid-template-columns:repeat(3,1fr);background:var(--s1);border:1px solid var(--s3);border-radius:10px 10px 0 0;overflow:hidden}
     .cx-btn{padding:16px 8px;background:transparent;border:none;border-right:1px solid var(--s3);border-bottom:3px solid transparent;cursor:pointer;transition:all .3s;text-align:center;position:relative}.cx-btn:last-child{border-right:none}.cx-btn.active{background:linear-gradient(to top, rgba(232,57,74,0.15), transparent);border-bottom:3px solid var(--red)}
@@ -196,11 +192,11 @@
     .voice-btn{display:inline-flex;align-items:center;justify-content:center;gap:5px;height:28px;padding:0 12px;background:linear-gradient(135deg,rgba(245,166,35,.15),rgba(245,166,35,.08));border:1.5px solid rgba(245,166,35,.5);border-radius:14px;color:var(--gold);font-family:var(--font-mono);font-size:.42rem;font-weight:700;letter-spacing:1.5px;cursor:pointer;text-transform:uppercase;border:1.5px solid rgba(245,166,35,.5)}
     .brief-metrics{display:flex;flex-wrap:wrap;margin-top:18px;border:1px solid var(--s3);border-radius:8px;overflow:hidden}.bm{flex:1;min-width:100px;padding:12px 14px;border-right:1px solid var(--s3);background:var(--s2)}.bm:last-child{border-right:none}.bm-v{font-family:var(--font-big);font-size:1.3rem;letter-spacing:1px;color:var(--gold);line-height:1}.bm-l{font-family:var(--font-mono);font-size:.42rem;color:var(--muted);letter-spacing:1.5px;margin-top:4px;text-transform:uppercase}
 
-    /* â”€â”€ FORCES â”€â”€ */
+    /* ── FORCES ── */
     @keyframes starPulse{0%{opacity:.5;transform:scale(.9)}50%{opacity:1;transform:scale(1.2);color:var(--gold);text-shadow:0 0 10px var(--gold)}100%{opacity:.5;transform:scale(.9)}}.chaos-star{display:inline-block;animation:starPulse 2s infinite ease-in-out}
     .forces-grid{display:flex;flex-wrap:wrap;gap:8px}.fc{display:flex;align-items:center;gap:6px;padding:8px 14px;border-radius:6px;font-family:var(--font-mono);font-size:.52rem;font-weight:700;letter-spacing:1px;border:1px solid var(--s3);background:var(--s1);color:var(--muted);opacity:.4;filter:grayscale(80%);transition:all 0.3s}.fc.on{background:var(--red-g);border:1px solid rgba(232,57,74,.4);color:var(--red);opacity:1;filter:none;box-shadow:0 0 10px rgba(232,57,74,.15)}.fc-dot{width:5px;height:5px;border-radius:50%;background:var(--muted)}.fc.on .fc-dot{background:var(--red);animation:pulse 1.4s ease infinite}
 
-    /* â”€â”€ AGENTS â”€â”€ */
+    /* ── AGENTS ── */
     .agent-panel{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;width:100%;margin-top:14px}
     @media (min-width: 768px){.agent-panel{grid-template-columns:repeat(4,1fr);gap:18px}}
     .agent-card{padding:22px 18px;border-radius:12px;border:1px solid var(--s3);background:linear-gradient(180deg, rgba(20,20,25,0.8), rgba(10,10,15,0.9));text-align:center;position:relative;overflow:hidden;transition:all 0.3s;box-shadow:0 4px 20px rgba(0,0,0,0.5);}.agent-card:hover{transform:translateY(-4px);border-color:var(--s4);box-shadow:0 8px 30px rgba(0,0,0,0.7);}
@@ -209,33 +205,33 @@
     .agent-thesis{font-family:'Inter',sans-serif;font-size:0.95rem;line-height:1.6;color:var(--text-bright);word-wrap:break-word;text-align:left;}
     .debate-badge{display:inline-flex;align-items:center;gap:4px;padding:4px 10px;border-radius:20px;font-family:var(--font-mono);font-size:.42rem;letter-spacing:1px;font-weight:700;margin-top:8px;background:rgba(245,166,35,.1);border:1px solid var(--gold);color:var(--gold)}
 
-    /* â”€â”€ CHAOS LINE â”€â”€ */
+    /* ── CHAOS LINE ── */
     .chaos{padding:32px;background:linear-gradient(135deg,rgba(245,166,35,.04) 0%,rgba(232,57,74,.02) 60%,transparent 100%);border-left:3px solid var(--gold);border-radius:0 12px 12px 0;position:relative;overflow:hidden}.chaos::before{content:'"';position:absolute;right:20px;top:-15px;font-family:var(--font-big);font-size:10rem;color:var(--gold);opacity:.03;line-height:1}.chaos-tag{font-family:var(--font-ui);font-size:1.5rem;font-weight:700;color:var(--text-pure);letter-spacing:2px;margin-bottom:16px;display:flex;align-items:center;gap:10px;text-transform:uppercase}.chaos-star{color:var(--gold);font-size:1.3rem;animation:pulse 2s infinite}.chaos-text{font-family:var(--font-body);font-size:clamp(1.35rem,3.8vw,1.7rem);font-style:italic;line-height:1.6;color:var(--ink);margin-bottom:22px;font-weight:300}
     .share-row{display:flex;gap:8px;flex-wrap:wrap}.s-btn,.cta-btn,.play-unlock-btn,.poly-link{display:inline-flex;align-items:center;gap:6px;padding:9px 18px;border-radius:6px;font-family:var(--font-mono);font-size:.52rem;font-weight:700;letter-spacing:.5px;border:none;cursor:pointer;text-decoration:none;white-space:nowrap}.s-btn.red,.cta-btn,.play-unlock-btn{background:var(--red);color:#fff;box-shadow:0 4px 20px rgba(232,57,74,.25)}.s-btn.ghost{background:var(--s2);color:var(--ink);border:1px solid var(--s3)}.s-btn.x{background:#000;color:#fff;border:1px solid var(--s4)}
 
-    /* â”€â”€ TRAP & EDGE â”€â”€ */
+    /* ── TRAP & EDGE ── */
     .trap{padding:28px;position:relative;overflow:hidden;border-radius:12px;background:linear-gradient(135deg,rgba(232,57,74,.06),var(--s1) 60%);border:1px solid rgba(232,57,74,.15)}.trap::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--red),transparent)}.trap-tag{font-family:var(--font-mono);font-size:.52rem;color:var(--red);letter-spacing:3px;margin-bottom:12px;text-transform:uppercase}.trap-text{font-size:1.02rem;line-height:1.8;color:var(--ink)}
     .edge-section{padding:24px;border-radius:12px;background:var(--s1);border:1px solid var(--s3);border-left:3px solid var(--purple)}.edge-tag{font-family:var(--font-mono);font-size:.48rem;color:var(--purple);letter-spacing:2.5px;margin-bottom:10px;text-transform:uppercase}.edge-text{font-size:1.02rem;line-height:1.8;color:var(--ink);font-style:italic}
 
-    /* â”€â”€ PLAYS â”€â”€ */
+    /* ── PLAYS ── */
     .plays-grid{display:grid;gap:12px;margin-bottom:48px}.play-card{padding:22px;border-radius:10px;background:var(--s1);border:1px solid var(--s3);position:relative;overflow:hidden;transition:all .3s}.play-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--green)}.play-card:hover{transform:translateY(-2px);border-color:var(--s4)}.play-card-type{font-family:var(--font-mono);font-size:.52rem;font-weight:700;letter-spacing:2px;margin-bottom:8px}.play-card-thesis{font-family:var(--font-ui);font-size:.9rem;font-weight:700;color:var(--ink);letter-spacing:.5px;margin-bottom:6px}.play-card-details{font-size:1.02rem;line-height:1.8;color:var(--ink)}.play-locked{position:relative}.play-blur{filter:blur(6px);opacity:0.4;pointer-events:none;user-select:none;font-size:1.02rem;line-height:1.8;color:var(--ink);padding-bottom:20px}.unlock-overlay{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;z-index:10}.unlock-overlay p{font-family:var(--font-mono);font-size:0.55rem;color:var(--muted);text-transform:uppercase;letter-spacing:1.5px;margin:0;text-align:center}.pro-btn{background:var(--gold);color:#000;font-family:var(--font-mono);font-size:0.55rem;font-weight:700;letter-spacing:2px;padding:10px 18px;border-radius:6px;text-decoration:none;text-transform:uppercase;transition:all 0.2s}.pro-btn:hover{background:#ffcc00;transform:scale(1.05)}
 
-    /* â”€â”€ MACRO GRID â”€â”€ */
+    /* ── MACRO GRID ── */
     .mgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.mi{padding:14px;background:var(--s2);border:1px solid var(--s3);border-radius:8px;transition:all .3s;animation:fadeUp .4s ease both}.mi-l{font-family:var(--font-mono);font-size:.42rem;color:var(--muted);letter-spacing:1.5px;margin-bottom:6px;text-transform:uppercase}.mi-v{font-family:var(--font-big);font-size:1.2rem;letter-spacing:1px;line-height:1}.mi-s{font-family:var(--font-mono);font-size:.42rem;color:var(--muted);margin-top:4px}
 
-    /* â”€â”€ CONTEXT â”€â”€ */
+    /* ── CONTEXT ── */
     .ctx-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.ctx-card{padding:18px;background:var(--s1);border:1px solid var(--s3);border-radius:10px;position:relative;overflow:hidden}.ctx-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent,var(--muted)),transparent)}.ctx-l{font-family:var(--font-mono);font-size:.44rem;color:var(--muted);letter-spacing:2px;margin-bottom:8px;text-transform:uppercase}.ctx-v{font-family:var(--font-big);font-size:1.4rem;letter-spacing:1px;line-height:1;margin-bottom:6px}.ctx-d{font-family:var(--font-mono);font-size:.48rem;color:var(--muted);line-height:1.55}
 
-    /* â”€â”€ POLY â”€â”€ */
+    /* ── POLY ── */
     .poly{padding:24px;position:relative;overflow:hidden;border-radius:12px;background:var(--s1);border:1px solid var(--s3)}.poly::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--blue),transparent)}.poly-tag{font-family:var(--font-mono);font-size:.48rem;color:var(--blue);letter-spacing:3px;margin-bottom:10px;text-transform:uppercase}.poly-q{font-size:1rem;line-height:1.5;color:var(--ink);margin-bottom:16px}.poly-row{display:flex;gap:24px;align-items:center;flex-wrap:wrap}.poly-odds{font-family:var(--font-big);font-size:2.4rem;letter-spacing:1px;color:var(--gold);line-height:1}.poly-track{height:6px;background:var(--s3);border-radius:3px;overflow:hidden;min-width:170px}.poly-fill{height:100%;background:linear-gradient(90deg,var(--gold),var(--red));border-radius:3px;transition:width 1.2s cubic-bezier(.4,0,.2,1)}.poly-link{color:var(--blue);background:transparent;border:1px solid rgba(76,201,240,.25);box-shadow:none}
 
-    /* â”€â”€ WIRES â”€â”€ */
+    /* ── WIRES ── */
     .wires-h{font-family:var(--font-mono);font-size:.48rem;color:var(--muted);letter-spacing:2px;margin-bottom:14px;display:flex;justify-content:space-between;text-transform:uppercase}.wire{border-top:1px solid var(--s3);padding:18px 0;cursor:pointer}.wire:last-child{border-bottom:1px solid var(--s3)}.wire-src{font-family:var(--font-mono);font-size:.48rem;color:var(--red);letter-spacing:1.5px}.wire-hl{font-size:1rem;line-height:1.5;color:var(--ink);margin-top:6px}.wire-body{display:none;margin-top:14px;font-size:.9rem;color:var(--ink2);line-height:1.7;padding-left:16px;border-left:2px solid var(--gold)}.wire.open .wire-body{display:block}
 
-    /* â”€â”€ LEDGER â”€â”€ */
+    /* ── LEDGER ── */
     .ledger-row{display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid var(--s3);padding:8px 0;font-family:var(--font-mono);font-size:.68rem;color:var(--ink);line-height:1.5}.ledger-row:last-child{border-bottom:0}
 
-    /* â”€â”€ SPA & NAV â”€â”€ */
+    /* ── SPA & NAV ── */
     .spa-view{display:none}.spa-view.active{display:block}
     .sticky-hdr{position:-webkit-sticky;position:sticky;top:0;z-index:201;background:rgba(5,5,8,0.82);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border-bottom:1px solid rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:space-between;padding:10px 24px;transition:box-shadow 0.4s ease, background 0.4s ease}
     .sticky-hdr.scrolled{background:rgba(5,5,8,0.95);box-shadow:0 8px 32px rgba(0,0,0,0.6), 0 0 1px rgba(255,255,255,0.1)}
@@ -249,7 +245,7 @@
     .streak-badge{font-family:var(--font-mono);font-size:.42rem;font-weight:700;letter-spacing:1.5px;padding:3px 8px;border-radius:6px;white-space:nowrap;animation:streakPulse 2.5s ease infinite}
     @keyframes streakPulse{0%,100%{box-shadow:0 0 8px rgba(212,175,55,0.3)}50%{box-shadow:0 0 16px rgba(212,175,55,0.6)}}
     
-    /* â”€â”€ THEME TOGGLE â”€â”€ */
+    /* ── THEME TOGGLE ── */
     .theme-toggle{width:46px;height:24px;border-radius:12px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.25);cursor:pointer;display:flex;align-items:center;justify-content:space-between;position:relative;padding:0 5px;box-sizing:border-box;color:#a1a1aa;font-size:11px;margin-left:8px;transition:background 0.3s;user-select:none}
     body.light-mode .theme-toggle{background:#e4e4e7;border:1px solid #d4d4d8;color:#52525b}
     .theme-thumb{position:absolute;left:2px;top:2px;width:18px;height:18px;border-radius:50%;background:rgba(255,255,255,0.3);transition:transform 0.3s cubic-bezier(.4,0,.2,1), background 0.3s}
@@ -257,7 +253,7 @@
     .theme-toggle .icon{position:relative;z-index:1;line-height:1;margin-top:-2px}
     body.light-mode .theme-toggle .icon-sun{color:#fff}
     
-    /* â”€â”€ LIGHT MODE OVERRIDES â”€â”€ */
+    /* ── LIGHT MODE OVERRIDES ── */
     body.light-mode {
       --bg:#ffffff;--bg2:#f8f9fa;--s0:#f4f4f5;--s1:#ffffff;--s2:#f1f3f5;--s3:#e9ecef;--s4:#dee2e6;
       --bg-app:#f4f4f5;--bg-card:#ffffff;--bg-surface:#f8f9fa;--bg-hover:#e2e8f0;
@@ -322,7 +318,7 @@
     .dock-btn.alpha-link.active .dock-icon{opacity:1;color:var(--accent-gold);filter:drop-shadow(0 2px 8px rgba(212,175,55,0.6));transform:translateY(-1px)}
     .dock-btn.alpha-link.active .dock-label{opacity:1;color:var(--accent-gold)}
 
-    /* â”€â”€ ALPHA â”€â”€ */
+    /* ── ALPHA ── */
     .alpha-lock{max-width:480px;margin:100px auto;text-align:center;padding:48px 32px;background:linear-gradient(135deg,rgba(245,166,35,0.04),var(--s1) 70%);border:1px solid rgba(245,166,35,0.2);border-radius:12px}
     .alpha-lock h2{font-family:var(--font-ui);font-size:1.3rem;font-weight:700;letter-spacing:1px;color:var(--ink);margin:16px 0 8px}
     .alpha-lock p{font-family:var(--font-mono);font-size:.55rem;color:var(--muted);line-height:1.7;letter-spacing:0.5px;margin-bottom:24px}
@@ -332,7 +328,7 @@
     .alpha-overlay{position:relative}
     .alpha-overlay-lock{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;background:rgba(8,8,12,.4);border-radius:8px}
 
-    /* â”€â”€ CREATOR MODAL â”€â”€ */
+    /* ── CREATOR MODAL ── */
     .creator-modal-wrap{position:fixed;inset:0;background:rgba(5,5,7,0.85);backdrop-filter:blur(8px);z-index:999;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity 0.3s ease}
     .creator-modal-wrap.open{opacity:1;pointer-events:auto}
     .creator-modal{background:var(--s1);border:1px solid var(--s3);border-radius:12px;max-width:440px;width:90%;padding:32px;position:relative;box-shadow:0 12px 48px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.05);transform:translateY(20px);transition:transform 0.3s cubic-bezier(0.4, 0, 0.2, 1)}
@@ -348,9 +344,9 @@
     .page-title{font-family:var(--font-big);font-size:clamp(2rem,6vw,3rem);letter-spacing:2px;color:var(--ink);margin-bottom:8px}
     .page-sub{font-family:var(--font-mono);font-size:.55rem;color:var(--muted);letter-spacing:1px;margin-bottom:24px}
 
-    /* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+    /* ─────────────────────────────────────────────────────────────────
        PREMIUM BUTTON AFFORDANCE
-       â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+       ───────────────────────────────────────────────────────────────── */
     .btn {
       display: inline-flex;
       align-items: center;
@@ -387,9 +383,22 @@
       border-color: var(--border-focus);
     }
 
-    /* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-       TABS (New Executive Styling)
-       â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.03);
+      color: var(--text-secondary);
+      border: 1px solid var(--border-light);
+      border-radius: 4px;
+      padding: 4px 8px;
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      pointer-events: none;
+    }
+
+    /* ─────────────────────────────────────────────────────────────────
+       TAB NAVIGATION SWITCHES
+       ───────────────────────────────────────────────────────────────── */
     .tab-container {
       display: flex;
       background: var(--bg-surface);
@@ -414,31 +423,6 @@
       transition: all 0.2s ease;
     }
 
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      background: rgba(255, 255, 255, 0.03);
-      color: var(--text-secondary);
-      border: 1px solid var(--border-light);
-      border-radius: 4px;
-      padding: 4px 8px;
-      font-family: var(--font-mono);
-      font-size: 0.65rem;
-      pointer-events: none;
-    }
-
-    /* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-       TAB NAVIGATION SWITCHES
-       â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
-    .tab-container {
-      display: flex;
-      background: transparent;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      transition: all 0.2s ease;
-    }
-
     .tab-btn.active {
       background: var(--bg-hover);
       color: var(--text-primary);
@@ -449,42 +433,42 @@
       color: var(--text-primary);
     }
 
-    /* â”€â”€ FOOTER â”€â”€ */
+    /* ── FOOTER ── */
     .ftr{border-top:1px solid var(--s3);padding:32px 0 48px;text-align:center}.ftr-brand{font-family:var(--font-big);font-size:1.6rem;letter-spacing:4px;color:var(--s4);margin-bottom:10px}.ftr-brand em{color:rgba(232,57,74,.3);font-style:normal}
     .ftr-links{display:flex;gap:32px;flex-wrap:wrap;justify-content:center;margin-bottom:16px}
     .ftr-link{font-family:var(--font-mono);font-size:.6rem;color:var(--ink2);text-decoration:none;letter-spacing:2px;text-transform:uppercase;transition:all 0.25s ease}
     .ftr-link:hover{color:var(--gold)}
     .ftr-disc{font-family:var(--font-mono);font-size:.45rem;color:var(--muted);line-height:1.9;max-width:850px;margin:0 auto;letter-spacing:.8px;padding:24px;background:rgba(0,0,0,0.25);border:1px solid var(--s2);border-radius:6px}
 
-    /* â”€â”€ TRADINGVIEW â”€â”€ */
+    /* ── TRADINGVIEW ── */
     .tv-widget{height:220px;width:100%;border-radius:8px;overflow:hidden;border:1px solid var(--s3);margin-top:8px}
     .tv-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:24px}
 
-    /* â”€â”€ REVEAL â”€â”€ */
+    /* ── REVEAL ── */
     .rv{opacity:0;transform:translateY(18px);transition:opacity .6s cubic-bezier(.4,0,.2,1),transform .6s cubic-bezier(.4,0,.2,1)}.rv.vis{opacity:1;transform:none}
     /* FAILSAFE: If JS observer doesn't fire, auto-reveal after 2s */
     @keyframes autoReveal{to{opacity:1;transform:none}}
     .rv{animation:autoReveal 0s 2.5s forwards}
 
-    /* â”€â”€ CVX DEFCON REGIME TINT â”€â”€ */
+    /* ── CVX DEFCON REGIME TINT ── */
     body.defcon-chaos{--bg:#070304;--bg2:#0e0709;--dim:rgba(231,76,60,.08);--dim-glow:rgba(231,76,60,.15);animation:subtlePulse 4s infinite alternate ease-in-out}
     body.defcon-stressed{--dim:rgba(212,168,67,.05);--dim-glow:rgba(212,168,67,.08)}
     body.defcon-calm{--dim-glow:rgba(46,204,113,.04)}
     @keyframes subtlePulse{0%{box-shadow:inset 0 0 30px rgba(231,76,60,.01)}100%{box-shadow:inset 0 0 60px rgba(231,76,60,.04)}}
 
-    /* â”€â”€ CVX SCORE IN HEADER â”€â”€ */
+    /* ── CVX SCORE IN HEADER ── */
     .hdr-cvx-wrap{display:flex;align-items:center;gap:6px;font-family:var(--font-mono);font-size:.48rem;letter-spacing:1.5px;color:var(--muted);white-space:nowrap}
     .hdr-cvx-num{font-size:.9rem;font-weight:700;letter-spacing:0;min-width:24px;text-align:right}
     .hdr-cvx-num.cvx-calm{color:var(--green)}
     .hdr-cvx-num.cvx-stressed{color:var(--gold)}
     .hdr-cvx-num.cvx-chaos{color:var(--red);text-shadow:0 0 12px rgba(231,76,60,.4)}
 
-    /* â”€â”€ STREAK BADGE â”€â”€ */
+    /* ── STREAK BADGE ── */
     .streak-badge{display:inline-flex;align-items:center;gap:4px;font-family:var(--font-mono);font-size:.42rem;font-weight:700;letter-spacing:1px;padding:3px 8px;border-radius:3px;white-space:nowrap}
     .streak-badge.win-streak{background:rgba(52,211,153,.1);color:var(--green);border:1px solid rgba(52,211,153,.25)}
     .streak-badge.loss-streak{background:rgba(220,74,90,.1);color:var(--red);border:1px solid rgba(220,74,90,.25)}
 
-    /* â”€â”€ COMMAND BAR â”€â”€ */
+    /* ── COMMAND BAR ── */
     #command-bar{position:sticky;top:30px;z-index:99;background:rgba(8,8,12,0.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.04);padding:7px 0;display:none}
     #command-bar.loaded{display:block}
     .cmd-inner{max-width:760px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
@@ -497,7 +481,7 @@
     .cmd-countdown{font-family:var(--font-mono);font-size:.42rem;color:var(--muted);letter-spacing:1px}
     .cmd-countdown strong{color:var(--gold)}
 
-    /* â”€â”€ FIRST-VISIT OVERLAY â”€â”€ */
+    /* ── FIRST-VISIT OVERLAY ── */
     #onboard-overlay{position:fixed;inset:0;background:rgba(3,3,4,0.92);backdrop-filter:blur(16px);z-index:99990;display:flex;align-items:center;justify-content:center;padding:24px}
     #onboard-overlay.hidden{display:none}
     .onboard-card{background:rgba(12,13,18,0.98);border:1px solid rgba(255,255,255,.08);border-radius:16px;max-width:520px;width:100%;padding:40px 36px;box-shadow:0 32px 80px rgba(0,0,0,.9);animation:cliFadeScale 0.3s cubic-bezier(.34,1.56,.64,1)}
@@ -515,7 +499,7 @@
     .onboard-skip{padding:12px 16px;background:transparent;color:var(--muted);font-family:var(--font-mono);font-size:.5rem;letter-spacing:1px;border:1px solid var(--s3);border-radius:6px;cursor:pointer;transition:color .2s}
     .onboard-skip:hover{color:var(--ink)}
 
-    /* â”€â”€ MARQUEE & VERIFIER â”€â”€ */
+    /* ── MARQUEE & VERIFIER ── */
     .marquee-wrapper { background: #070709; border-bottom: 1px solid rgba(255, 255, 255, 0.03); overflow: hidden; white-space: nowrap; padding: 6px 0; display: flex; align-items: center; z-index: 99; }
     .marquee-content { display: inline-block; white-space: nowrap; animation: marqueeVelocity 30s linear infinite; font-family: 'JetBrains Mono', monospace; font-size: 0.52rem; color: #8a8f9c; letter-spacing: 1px; }
     .marquee-item { display: inline-flex; align-items: center; gap: 8px; margin-right: 48px; }
@@ -535,15 +519,15 @@
     .cli-body { padding: 20px; font-size: 0.62rem; line-height: 1.6; color: var(--green); background: #060608; max-height: 380px; overflow-y: auto; }
     .cli-json-pre { font-family: 'JetBrains Mono', monospace; white-space: pre-wrap; word-break: break-all; color: #2ecc71; margin: 0; }
 
-    /* â”€â”€ RESPONSIVE â”€â”€ */
+    /* ── RESPONSIVE ── */
     @media(max-width:700px){
-      /* â”€â”€ GLOBAL OVERFLOW FIX â”€â”€ */
+      /* ── GLOBAL OVERFLOW FIX ── */
       html,body{overflow-x:hidden !important;max-width:100vw !important}
       *{box-sizing:border-box}
       .wrap{padding:0 12px !important}
       .terminal-container,.wrap{padding:0 12px !important}
 
-      /* â”€â”€ STICKY HEADER: compact single row â”€â”€ */
+      /* ── STICKY HEADER: compact single row ── */
       .sticky-hdr{padding:8px 14px !important;gap:8px !important;flex-wrap:nowrap !important}
       .sticky-brand{font-size:1.3rem !important;letter-spacing:3px !important;flex-shrink:0;gap:4px !important}
       .brand-sub{font-size:0.5rem !important;letter-spacing:0 !important;display:inline-block !important}
@@ -556,19 +540,19 @@
       .streak-badge{font-size:.36rem !important;padding:3px 6px !important}
       .ticker{top:44px !important}
 
-      /* â”€â”€ TICKER â”€â”€ */
+      /* ── TICKER ── */
       .ticker{font-size:.42rem !important}
       .tk-lbl{font-size:.38rem !important;padding:0 6px !important}
 
-      /* â”€â”€ COMMAND BAR: hide on mobile (info is in ticker + header) â”€â”€ */
+      /* ── COMMAND BAR: hide on mobile (info is in ticker + header) ── */
       #command-bar{display:none !important}
 
-      /* â”€â”€ HUD TOP BAR â”€â”€ */
+      /* ── HUD TOP BAR ── */
       .hud-top-bar{flex-direction:row !important;flex-wrap:wrap !important;justify-content:space-between !important;align-items:center !important;gap:8px !important;margin:4px 0 8px 0 !important}
       .hud-left{font-size:.48rem !important;line-height:1.2 !important}
       .world-clock-bar{font-size:.38rem !important;gap:6px !important;flex-wrap:wrap !important;padding:6px 0 !important}
 
-      /* â”€â”€ VITALS / GRIDS â”€â”€ */
+      /* ── VITALS / GRIDS ── */
       .vitals{grid-template-columns:repeat(2,1fr)}
       .vital{padding:14px 10px !important}
       .vv{font-size:1.4rem !important}
@@ -577,66 +561,66 @@
       .ctx-grid{grid-template-columns:1fr !important}
       .agent-panel{grid-template-columns:1fr !important}
 
-      /* â”€â”€ HEADLINE â”€â”€ */
+      /* ── HEADLINE ── */
       h1.hl{font-size:clamp(1.4rem,5vw,2rem) !important;margin:6px 0 12px 0 !important}
       .chaos-text{font-size:clamp(1rem,3.2vw,1.3rem) !important}
 
-      /* â”€â”€ INTELLIGENCE TABS â”€â”€ */
+      /* ── INTELLIGENCE TABS ── */
       .cx-tabs{grid-template-columns:repeat(3,1fr) !important}
       .cx-btn{font-size:.42rem !important;padding:10px 6px !important}
       .cx-sub{font-size:.32rem !important}
 
-      /* â”€â”€ BRIEF / ANALYST TEXT â”€â”€ */
+      /* ── BRIEF / ANALYST TEXT ── */
       .brief{font-size:.92rem !important;padding:14px !important;line-height:1.7 !important}
       .brief-metrics{flex-direction:column}
       .bm{border-right:0;border-bottom:1px solid var(--s3)}
 
-      /* â”€â”€ FEAR GAUGE â”€â”€ */
+      /* ── FEAR GAUGE ── */
       .gauge-wrap{max-width:200px !important;margin:8px auto 20px auto !important}
       .gauge-val{font-size:2.2rem !important}
 
-      /* â”€â”€ PLAYS â”€â”€ */
+      /* ── PLAYS ── */
       .plays-grid{gap:10px !important;margin-bottom:20px !important}
       .play-card{padding:16px !important}
       .play-card-thesis{font-size:.82rem !important}
       .play-card-details,.play-blur{font-size:.9rem !important}
 
-      /* â”€â”€ SHARE ROW â”€â”€ */
+      /* ── SHARE ROW ── */
       .share-row{display:grid !important;grid-template-columns:1fr 1fr;gap:8px}
       .share-row .btn{font-size:.48rem !important;padding:10px 6px !important;justify-content:center}
 
-      /* â”€â”€ FORCES / MACRO â”€â”€ */
+      /* ── FORCES / MACRO ── */
       .forces-grid{gap:6px}
       .fc{font-size:.42rem !important;padding:5px 8px !important}
 
-      /* â”€â”€ POLYMARKET â”€â”€ */
+      /* ── POLYMARKET ── */
       .poly-row{flex-direction:column;align-items:flex-start}
       .poly-track{width:100%}
 
-      /* â”€â”€ TV CHARTS â”€â”€ */
+      /* ── TV CHARTS ── */
       .tv-row{grid-template-columns:1fr}
 
-      /* â”€â”€ LEDGER â”€â”€ */
+      /* ── LEDGER ── */
       .ledger-row{grid-template-columns:1fr !important;gap:4px !important;padding:12px 8px !important;border-radius:8px !important;border:1px solid var(--s3) !important;margin-bottom:6px !important}
       .ledger-row>span:nth-child(2){white-space:normal !important;font-size:.72rem !important;color:var(--ink) !important}
-      .ledger-row>span:nth-child(3){font-size:.65rem !important}
+      .ledger-row>span:nth-child(3){font-size:.52rem !important}
 
-      /* â”€â”€ MOBILE DOCK â”€â”€ */
+      /* ── MOBILE DOCK ── */
       .mobile-dock{display:block}
       .desktop-nav{display:none}
       body{padding-bottom:100px}
 
-      /* â”€â”€ TABS â”€â”€ */
+      /* ── TABS ── */
       .tab-container{gap:2px}
       .tab-btn{padding:10px 4px}
 
-      /* â”€â”€ ALPHA LOCK â”€â”€ */
+      /* ── ALPHA LOCK ── */
       .alpha-lock{padding:24px 16px !important;margin:40px auto !important}
       .onboard-card{padding:24px 18px !important}
       .onboard-title{font-size:1.6rem !important}
       .onboard-desc{font-size:.88rem !important}
 
-      /* â”€â”€ VIRAL CARD â”€â”€ */
+      /* ── VIRAL CARD ── */
       #vc-card{padding:24px 16px !important}
       #vc-card > div:first-child{flex-direction:column !important;gap:12px !important}
       #vc-card > div:first-child h1{font-size:3rem !important}
@@ -647,7 +631,7 @@
       #vc-play-action{font-size:1rem !important}
       #vc-card > div:last-child{flex-direction:column !important;gap:8px !important;text-align:center !important}
 
-      /* â”€â”€ SECTIONS SPACING â”€â”€ */
+      /* ── SECTIONS SPACING ── */
       .cx-section,.forces,.chaos,.macro,.wires,.ctx,.poly,.trap,.edge-section{margin-bottom:24px !important}
       .sec-title{font-size:.7rem !important;margin-top:20px !important;margin-bottom:12px !important}
       .glass-card,.bg-card{padding:14px !important;margin-bottom:12px !important}
@@ -655,9 +639,17 @@
     }
     @media(min-width:1280px){.wrap{max-width:820px}.brief{font-size:1.15rem;line-height:2}.chaos-text{font-size:1.75rem}h1.hl{font-size:3.8rem}.ctx-grid{grid-template-columns:repeat(4,1fr)}}
 
-    /* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-       âš¡ EXECUTIVE COMPRESSION TOKENS (HIGH-DENSITY GRID)
-       â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    /* ─────────────────────────────────────────────────────────────────
+       ⚡ EXECUTIVE COMPRESSION TOKENS (HIGH-DENSITY GRID)
+       ───────────────────────────────────────────────────────────────── */
+    :root {
+      --bg-app: #030304;
+      --bg-card: #0c0d12;
+      --text-pure: #ffffff;
+      --text-bright: #f4f4f5;
+      --text-muted: #8a8f9c;
+      --accent-gold: #d4af37;
+    }
     .terminal-container, .wrap { max-width: 820px; padding: 12px 20px; margin: 0 auto; }
     .main { padding: 20px 0; }
     .brand { font-size: clamp(1.4rem, 4vw, 2.0rem); letter-spacing: -0.03em; }
@@ -667,6 +659,7 @@
     .gauge-wrap { max-width: 240px; margin: 12px auto 28px auto; }
     .brief { padding: 18px 20px !important; font-size: 0.98rem; line-height: 1.75; }
     .agent-card { padding: 16px 14px !important; }
+    .cx-section, .forces, .chaos, .macro, .wires, .ctx, .poly, .trap, .edge-section { margin-bottom: 32px !important; }
     .plays-grid { margin-bottom: 24px !important; gap: 14px !important; }
     .chaos, .trap, .edge-section { padding: 20px 24px !important; }
     /* Compact world clock */
@@ -696,20 +689,6 @@
     /* mobile overrides moved to main @media block above */
 
 
-      /* â”€â”€ VERTICAL BREATHING ROOM (Phase 1 Polish) â”€â”€ */
-    .main > * {
-      margin-bottom: 2.5rem !important;
-    }
-    .brief p {
-      line-height: 1.75;
-      margin-bottom: 1.25rem;
-    }
-    .glass-card {
-      padding: 1.25rem;
-    }
-    .brief-metrics {
-      display: none !important;
-    }
   </style>
 </head>
 <body style="background-image: radial-gradient(circle at 50% -20%, rgba(220, 38, 38, 0.12) 0%, var(--bg-app) 70%);" class="defcon-calm">
@@ -732,7 +711,7 @@
       <div class="onboard-step" id="os1">
         <div class="onboard-num">STEP 02 OF 03</div>
         <div class="onboard-title">THIS IS THE VERIFIED LEDGER</div>
-        <div class="onboard-desc">Every signal we've ever published is <strong>SHA-256 hashed and locked on GitHub.</strong> 30+ resolved signals. Nothing is retroactively edited. Click <strong>LEDGER</strong> in the nav to see every call, ever.</div>
+        <div class="onboard-desc">Every signal we've ever published is <strong>SHA-256 hashed and locked on GitHub.</strong> 26 resolved signals. 57.7% win rate. Nothing is retroactively edited. Click <strong>LEDGER</strong> in the nav to see every call, ever.</div>
         <div class="onboard-btn-row"><button class="onboard-skip" onclick="dismissOnboard()">SKIP</button><button class="onboard-next" onclick="nextOnboard(2)">NEXT →</button></div>
       </div>
 
@@ -740,7 +719,7 @@
         <div class="onboard-num">STEP 03 OF 03</div>
         <div class="onboard-title">THIS IS THE CHAOS LINE — SHARE IT</div>
         <div class="onboard-desc">Every brief ends with one unforgettable line distilling the market's entire mood. Download it as an image. Post it. Share it. It's your proof you were reading the right signals.</div>
-        <div class="onboard-btn-row"><button class="onboard-next" style="background:var(--green);" onclick="dismissOnboard()">GOT IT âœ“</button></div>
+        <div class="onboard-btn-row"><button class="onboard-next" style="background:var(--green);" onclick="dismissOnboard()">GOT IT ✓</button></div>
       </div>
     </div>
   </div>
@@ -750,19 +729,13 @@
       <a href="#terminal" onclick="window.location.hash='#terminal'; runClientRouter(); return false;" style="color:inherit; text-decoration:none;">CHAOS<em>.</em></a>
       <a href="https://sumanthworks.com" target="_blank" rel="noopener" class="brand-sub" style="text-decoration:none; transition:opacity 0.2s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.9">sumanth<span class="brand-sub-grad">works.com</span></a>
     </div>
-    <div class="sticky-center" style="display:flex; align-items:center; gap:20px; display:none;">
-      <!-- Hidden on mobile to save space, but we'll show it using media queries in css. Let's just put it inline for now -->
-      <div class="live-b" style="margin:0;"><span class="live-d"></span>LIVE</div>
-      <div class="desktop-only-metrics" style="font-family:var(--font-mono); font-size:0.65rem; color:var(--text-pure); display:flex; gap:16px; align-items:center;">
-        <span>FEAR <span id="hdr-fear" style="color:var(--red); font-weight:700;">--</span></span>
-        <span>BTC <span id="hdr-btc" style="font-weight:700;">$--</span></span>
-        <span id="hdr-btc-pct" style="color:var(--red);">--%</span>
-        <span id="hdr-signal" style="color:var(--red); font-weight:700; text-transform:uppercase;">LOADING</span>
-      </div>
+    <div class="sticky-center">
+      <div class="live-b"><span class="live-d"></span>LIVE BRIEF</div>
+      <div id="terminal-status" style="font-family:var(--font-mono);font-size:0.45rem;color:#fff;letter-spacing:1px;margin-left:10px;padding-left:10px;border-left:1px solid var(--s3);white-space:nowrap;">WED, JUN 17, 2026 · 08:50 UTC</div>
     </div>
     <div style="display:flex;align-items:center;gap:12px">
       <div class="hdr-cvx-wrap">CVX <span class="hdr-cvx-num cvx-calm" id="hdr-cvx">47</span></div>
-      <span id="hdr-streak" class="streak-badge win-streak" style="display: inline-flex;">ðŸ”¥ 2W STREAK</span>
+      <span id="hdr-streak" class="streak-badge win-streak" style="display: inline-flex;">🔥 2W STREAK</span>
       <nav class="desktop-nav">
         <a href="#terminal" onclick="window.location.hash='#terminal'; runClientRouter(); return false;" class="nav-link active" data-target="view-terminal">
           <svg class="dnav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
@@ -788,8 +761,8 @@
       </nav>
       <div id="theme-toggle" class="theme-toggle" onclick="document.body.classList.toggle('light-mode')">
         <div class="theme-thumb"></div>
-        <span class="icon">â˜¾</span>
-        <span class="icon icon-sun">â˜¼</span>
+        <span class="icon">☾</span>
+        <span class="icon icon-sun">☼</span>
       </div>
     </div>
   </header>
@@ -800,7 +773,7 @@
   
 
 
-  <!-- â•â•â•â•â•â•â•â•â•â•â• INTEL VIEW â•â•â•â•â•â•â•â•â•â•â• -->
+  <!-- ═══════════ INTEL VIEW ═══════════ -->
   <div id="view-terminal" class="spa-view active">
     <div class="wrap">
       
@@ -818,26 +791,30 @@
       <article>
         <div class="ed-tag" id="brief-tag">TODAY'S BRIEFING · NYC</div>
         <h1 class="hl" id="headline">Global Chaos: Fear Reigns, Markets Brace</h1>
-        <div class="sig-row" id="sig-row"><span class="sig bear">LOADING</span><span class="ts-badge">THIS WEEK</span><span class="conf">VERIFYING LEDGER WR...</span></div>
-        <div id="validation-target" style="font-family:var(--font-mono); font-size:0.75rem; color:var(--muted); margin-top:12px; margin-bottom:12px; border-left:2px solid var(--purple); padding-left:10px; display:none;">
-          <span style="color:var(--text-bright); font-weight:bold;">WIN CONDITION:</span> <span id="vt-text">Loading validation parameters...</span>
-        </div>
-        <div class="upd"><span class="bull">â—</span><span id="updated-line">08:50 UTC · ∞ BRAIN + LIVE DATA</span></div>
+        <div class="sig-row" id="sig-row"><span class="sig bear">BEARISH</span><span class="ts-badge">THIS WEEK</span><span class="conf">57.7% VERIFIED WR · 2 WIN STREAK</span></div>
+        <div class="upd"><span class="bull">●</span><span id="updated-line">08:50 UTC · ∞ BRAIN + LIVE DATA</span></div>
 
         <section class="glass-card rv" style="margin-bottom: 24px; display: flex; flex-direction: column; align-items: center; text-align: center;">
           <div class="sec-title" style="align-self: stretch; margin-top: 0;">MARKET FEAR GAUGE</div>
-          <div class="fear-gauge-wrapper" style="position: relative; width: 100%; max-width: 200px; margin: 0 auto; display: flex; flex-direction: column; align-items: center;">
-            <div style="position: relative; width: 128px; height: 128px; margin: 0 auto;">
-              <svg class="gauge-svg" viewBox="0 0 100 100" style="width:100%; height:100%; transform: rotate(-90deg);">
-                <circle cx="50" cy="50" r="45" fill="none" stroke="var(--s3)" stroke-width="8"></circle>
-                <circle id="fear-arc" cx="50" cy="50" r="45" fill="none" stroke="var(--red)" stroke-width="8" stroke-dasharray="283" stroke-dashoffset="141" style="transition: stroke-dashoffset 1s ease-out; filter: drop-shadow(0 0 8px rgba(220,38,38,0.5));"></circle>
+          
+          <div class="gauge-wrap" style="margin-bottom: 16px;">
+            <div class="gauge-container" style="width: 260px; height: 150px;">
+              <svg viewBox="0 0 200 110">
+                <defs>
+                  <linearGradient id="gaugeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="#E8394A"></stop> <!-- Red (Extreme Fear) -->
+                    <stop offset="50%" stop-color="#F5A623"></stop> <!-- Gold (Neutral) -->
+                    <stop offset="100%" stop-color="#22D45A"></stop> <!-- Green (Greed) -->
+                  </linearGradient>
+                </defs>
+                <!-- Thick background track with segments -->
+                <path d="M20,100 A80,80 0 0,1 180,100" fill="none" stroke="var(--s2)" stroke-width="14" stroke-linecap="round"></path>
+                <!-- Filled gradient track -->
+                <path class="gauge-fill" id="gauge-arc" d="M20,100 A80,80 0 0,1 180,100" fill="none" stroke="url(#gaugeGrad)" stroke-width="14" stroke-linecap="round" stroke-dasharray="251" stroke-dashoffset="251" style="filter: drop-shadow(0 0 8px rgba(245,166,35,0.4));"></path>
               </svg>
-              <div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;">
-                <span id="fear-number" style="font-size: 3rem; font-weight: bold; font-family: var(--font-mono); color: var(--red);">12</span>
-              </div>
-            </div>
-            <div style="text-align: center; margin-top: 12px;">
-              <span id="fear-label-text" style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; color: var(--red); font-weight: bold;">EXTREME FEAR</span>
+              <div class="gauge-glow" id="gauge-glow" style="width: 160px; height: 80px; bottom: 0; filter: blur(40px);"></div>
+              <div class="gauge-val" id="fear-num" style="font-size: 3.5rem; bottom: 20px;">0</div>
+              <div class="gauge-label" id="gauge-label" style="bottom: -5px; font-size: 0.55rem; letter-spacing: 3px; font-weight: 700;">NEUTRAL</div>
             </div>
           </div>
         </section>
@@ -849,15 +826,45 @@
             <button class="cx-btn active" onclick="setCx('analyst',this)"><span class="cx-n">Analyst</span><span class="cx-sub">Intermediate · 5 min</span></button>
             <button class="cx-btn" onclick="setCx('quant',this)"><span class="cx-n">Quant</span><span class="cx-sub">Advanced · 7 min</span></button>
           </div>
-          <div class="pane" id="pane-eli5"><div class="brief" style="text-align:center;color:var(--muted);font-family:var(--font-mono);padding:40px;">Decrypting intelligence brief...</div></div>
-          <div class="pane active" id="pane-analyst"><div class="brief" style="text-align:center;color:var(--muted);font-family:var(--font-mono);padding:40px;">Decrypting intelligence brief...</div></div>
-          <div class="pane" id="pane-quant"><div class="brief" style="text-align:center;color:var(--muted);font-family:var(--font-mono);padding:40px;">Decrypting intelligence brief...</div></div>
+          <div class="pane" id="pane-eli5"><div class="brief"><div class="brief-meta"><span class="brief-tag">⏱ 3 MIN</span><button class="voice-btn" id="audio-btn-eli5" onclick="playAudio('eli5')">🔊 LISTEN</button></div><div class="bg-card"><div style="font-family: var(--font-mono); font-size: 0.65rem; color: var(--accent-gold); margin-bottom: 12px; letter-spacing: 1px;">TARGETED NARRATIVE STRIKE</div><ul style="list-style-type:none; padding:0; margin:0; color: var(--text-bright); line-height:1.5; font-size: 0.88rem;"><li style="margin-bottom:10px; padding-left:14px; position:relative;"><span style="position:absolute; left:0; top:6px; width:5px; height:5px; background:var(--red); border-radius:50%; box-shadow:0 0 5px rgba(232,57,74,0.5);"></span>Imagine the world is like a big, shaky amusement park ride right now. Everyone's feeling a bit nervous, like when you're at the top of the roller coaster, and that's why the 'Fear Index' is down at 22. <span style="color: var(--gold); font-weight: bold;">Bitcoin</span>, our digital playground money, is also taking a tumble, currently sitting at $64,889. It's like the ride has hit a bump, and people are holding on tight. There are a lot of little worries popping up everywhere, making everyone a bit jumpy. We need to keep an eye on these bumps, as they could shake things up even more.</li></ul></div><div class="brief-metrics"><div class="bm"><div class="bm-v">22</div><div class="bm-l">Fear Index</div></div><div class="bm"><div class="bm-v">$64,889</div><div class="bm-l">Bitcoin</div></div><div class="bm"><div class="bm-v">4.350%</div><div class="bm-l">10Y Yield</div></div></div></div></div>
+          <div class="pane active" id="pane-analyst"><div class="brief"><div class="brief-meta"><span class="brief-tag">⏱ 5 MIN</span><button class="voice-btn" id="audio-btn-analyst" onclick="playAudio('analyst')">🔊 LISTEN</button></div><div class="bg-card"><div style="font-family: var(--font-mono); font-size: 0.65rem; color: var(--accent-gold); margin-bottom: 12px; letter-spacing: 1px;">TARGETED NARRATIVE STRIKE</div><ul style="list-style-type:none; padding:0; margin:0; color: var(--text-bright); line-height:1.5; font-size: 0.88rem;"><li style="margin-bottom:10px; padding-left:14px; position:relative;"><span style="position:absolute; left:0; top:6px; width:5px; height:5px; background:var(--red); border-radius:50%; box-shadow:0 0 5px rgba(232,57,74,0.5);"></span>The fixed-income landscape is currently characterized by a persistent upward pressure on <span style="color: var(--gold); font-weight: bold;">yields</span>, with the <span style="color: var(--gold); font-weight: bold;">10-year Treasury yield</span> holding firm at 4.350%. This resilience in <span style="color: var(--gold); font-weight: bold;">yields</span>, despite broader market anxieties, is being supported by the Dollar Index (<span style="color: var(--gold); font-weight: bold;">DXY</span>) which remains elevated at 103.71. The strength in the dollar suggests a global demand for safe-haven assets, which in turn caps the upside potential for riskier investments and reinforces the current yield structure. Investors are closely monitoring central bank commentary for any shifts in policy outlook that could challenge this stability.</li><li style="margin-bottom:10px; padding-left:14px; position:relative;"><span style="position:absolute; left:0; top:6px; width:5px; height:5px; background:var(--red); border-radius:50%; box-shadow:0 0 5px rgba(232,57,74,0.5);"></span>Cross-asset correlations are exhibiting a pronounced sensitivity to bond market movements, acting as a primary gating mechanism for equity allocations. As <span style="color: var(--gold); font-weight: bold;">yields</span> remain sticky, the cost of capital for corporations increases, thereby directly impacting equity valuations and investor sentiment. This dynamic is creating a bifurcated market where defensive sectors may outperform, while growth-oriented equities face headwinds due to higher discount rates. The current bond behavior is thus dictating a cautious approach to equity exposure, prioritizing capital preservation over aggressive growth.</li><li style="margin-bottom:10px; padding-left:14px; position:relative;"><span style="position:absolute; left:0; top:6px; width:5px; height:5px; background:var(--red); border-radius:50%; box-shadow:0 0 5px rgba(232,57,74,0.5);"></span>Technical divergences are becoming increasingly apparent when comparing the performance of traditional equity indices like the S&amp;P 500 against cryptocurrency assets. While the S&amp;P 500 has shown some resilience, cryptocurrencies, including <span style="color: var(--gold); font-weight: bold;">Bitcoin</span>, are experiencing significant pullbacks. This divergence suggests a risk-off sentiment that is disproportionately affecting digital assets, potentially due to their higher beta and perceived speculative nature. The structural breakdown indicates a flight from riskier, more volatile assets towards perceived stability, even within the context of elevated global uncertainty.</li><li style="margin-bottom:10px; padding-left:14px; position:relative;"><span style="position:absolute; left:0; top:6px; width:5px; height:5px; background:var(--red); border-radius:50%; box-shadow:0 0 5px rgba(232,57,74,0.5);"></span>Our directional bias remains <span style="color: var(--gold); font-weight: bold;">bearish</span> in the short-term horizon, primarily driven by persistent geopolitical tensions and the sticky yield environment. We will be closely watching the S&amp;P 500 for validation targets around the 5,150 level, where a breakdown could signal further downside. Conversely, a sustained hold above 5,250, coupled with a decline in the <span style="color: var(--gold); font-weight: bold;">DXY</span>, could indicate a temporary reprieve, though underlying pressures suggest this is less likely in the immediate future.</li></ul></div><div class="brief-metrics"><div class="bm"><div class="bm-v">4.350%</div><div class="bm-l">10Y Treasury</div></div><div class="bm"><div class="bm-v">103.71</div><div class="bm-l">DXY</div></div><div class="bm"><div class="bm-v">5,227</div><div class="bm-l">S&amp;P 500</div></div></div></div></div>
+          <div class="pane" id="pane-quant"><div class="brief"><div class="brief-meta"><span class="brief-tag">⏱ 7 MIN</span><button class="voice-btn" id="audio-btn-quant" onclick="playAudio('quant')">🔊 LISTEN</button></div><div class="bg-card"><div style="font-family: var(--font-mono); font-size: 0.65rem; color: var(--accent-gold); margin-bottom: 12px; letter-spacing: 1px;">TARGETED NARRATIVE STRIKE</div><ul style="list-style-type:none; padding:0; margin:0; color: var(--text-bright); line-height:1.5; font-size: 0.88rem;"><li style="margin-bottom:10px; padding-left:14px; position:relative;"><span style="position:absolute; left:0; top:6px; width:5px; height:5px; background:var(--red); border-radius:50%; box-shadow:0 0 5px rgba(232,57,74,0.5);"></span>The current <span style="color: var(--gold); font-weight: bold;">volatility</span> regime analysis reveals a market characterized by suppressed realized <span style="color: var(--gold); font-weight: bold;">volatility</span> juxtaposed with elevated implied <span style="color: var(--gold); font-weight: bold;">volatility</span>, as indicated by the <span style="color: var(--gold); font-weight: bold;">VIX</span> at 14.53. This spread suggests that while recent price action has been relatively calm, market participants are pricing in a higher probability of future price swings. The variance premium parameters are reflecting this nervousness, indicating a demand for downside protection, which is creating an underlying tension in the market structure.</li><li style="margin-bottom:10px; padding-left:14px; position:relative;"><span style="position:absolute; left:0; top:6px; width:5px; height:5px; background:var(--red); border-radius:50%; box-shadow:0 0 5px rgba(232,57,74,0.5);"></span>Correlation and factor analysis highlight a weakening of positive cross-asset betas, particularly between equities and riskier assets. As the market grapples with geopolitical uncertainty and persistent inflation concerns, we are observing a de-correlation trend where traditional drivers of market movement are becoming less reliable. Statistical boundaries are being tested as capital seeks perceived safety, leading to a fragmentation in asset class behavior and making traditional diversification strategies less effective.</li><li style="margin-bottom:10px; padding-left:14px; position:relative;"><span style="position:absolute; left:0; top:6px; width:5px; height:5px; background:var(--red); border-radius:50%; box-shadow:0 0 5px rgba(232,57,74,0.5);"></span>Gamma threshold tracking indicates that significant speculative option positions are concentrated around current price levels for major indices. These thresholds represent potential inflection points where dealer hedging activity could accelerate, leading to amplified price movements. We are observing a gathering of stop-losses and option expiries near key technical support and resistance levels, suggesting that a break through these boundaries could trigger rapid deleveraging or forced buying.</li><li style="margin-bottom:10px; padding-left:14px; position:relative;"><span style="position:absolute; left:0; top:6px; width:5px; height:5px; background:var(--red); border-radius:50%; box-shadow:0 0 5px rgba(232,57,74,0.5);"></span>Our tail-risk assessment points to an increasing probability of significant, rapid market dislocations, particularly driven by geopolitical catalysts. Tail-hedging targets are being recalibrated to account for the heightened risk of vector spikes in uncorrelated asset classes. The statistical probability of abrupt moves, exceeding three standard deviations within a single trading session, has demonstrably increased due to the confluence of geopolitical instability and central bank policy uncertainty.</li></ul></div><div class="brief-metrics"><div class="bm"><div class="bm-v">14.53</div><div class="bm-l">VIX</div></div><div class="bm"><div class="bm-v">$1,764</div><div class="bm-l">ETH</div></div><div class="bm"><div class="bm-v">N/A</div><div class="bm-l">Sentiment</div></div></div></div></div>
         </section>
 
         <!-- AGENT CONSENSUS MOVED UP -->
-        <section class="glass-card rv" style="margin-bottom:24px" id="agent-consensus"><div class="sec-title">ðŸ¤– AGENT CONSENSUS</div><div class="agent-panel" style="grid-template-columns:repeat(4,1fr)">
-        <div style="font-family:var(--font-mono);font-size:0.75rem;color:var(--muted);text-align:center;padding:20px;">Computing consensus matrix...</div>
-      </div><div style="text-align:center"><span class="debate-badge">âœ“ UNANIMOUS</span></div></section>
+        <section class="glass-card rv" style="margin-bottom:24px" id="agent-consensus"><div class="sec-title">🤖 AGENT CONSENSUS</div><div class="agent-panel" style="grid-template-columns:repeat(4,1fr)">
+        <div class="agent-card" style="border-top: 3px solid var(--muted); background: linear-gradient(180deg, transparent, rgba(10,10,15,0.9));">
+          <div class="agent-name" style="color: var(--muted);">
+            <span style="opacity:0.7;">🧠</span> Fundamental
+          </div>
+          <div class="agent-bias neut" style="border-bottom-color: var(--muted)40;">NEUTRAL</div>
+          <div class="agent-thesis">Waiting for data...</div>
+        </div>
+      
+        <div class="agent-card" style="border-top: 3px solid var(--red); background: linear-gradient(180deg, rgba(232,57,74,0.15), rgba(10,10,15,0.9));">
+          <div class="agent-name" style="color: var(--red);">
+            <span style="opacity:0.7;">🧠</span> Technical
+          </div>
+          <div class="agent-bias bear" style="border-bottom-color: var(--red)40;">BEARISH</div>
+          <div class="agent-thesis">Divergences widening, momentum weakening.</div>
+        </div>
+      
+        <div class="agent-card" style="border-top: 3px solid var(--red); background: linear-gradient(180deg, rgba(232,57,74,0.15), rgba(10,10,15,0.9));">
+          <div class="agent-name" style="color: var(--red);">
+            <span style="opacity:0.7;">🧠</span> Sentiment
+          </div>
+          <div class="agent-bias bear" style="border-bottom-color: var(--red)40;">BEARISH</div>
+          <div class="agent-thesis">Extreme fear masking potential downside.</div>
+        </div>
+      
+        <div class="agent-card" style="border-top: 3px solid var(--gold); background: linear-gradient(180deg, rgba(245,166,35,0.15), rgba(10,10,15,0.9));">
+          <div class="agent-name" style="color: var(--gold);">
+            <span style="opacity:0.7;">🧠</span> Geopolitical
+          </div>
+          <div class="agent-bias volt" style="border-bottom-color: var(--gold)40;">ELEVATED</div>
+          <div class="agent-thesis">Multiple active geopolitical flashpoints globally are increasing market volatility and risk aversion.</div>
+        </div>
+      </div><div style="text-align:center"><span class="debate-badge">✓ UNANIMOUS</span></div></section>
 
         <!-- 5-SECOND MARKET SNAPSHOT REMOVED -->
 
@@ -867,7 +874,7 @@
           <div class="plays-grid" id="plays-grid" aria-label="Tactical Plays">
         <div class="bg-card razor-play-card" style="animation-delay: 0ms; border-left: 3px solid var(--green); margin-bottom:0; padding:12px;">
           <div class="r-play-header" style="margin-bottom:6px;">
-            <span style="font-family:var(--font-mono); font-size:0.58rem; font-weight:700; color:var(--green); letter-spacing:1.5px; text-transform:uppercase;">ðŸ›¡ï¸ SAFE</span>
+            <span style="font-family:var(--font-mono); font-size:0.58rem; font-weight:700; color:var(--green); letter-spacing:1.5px; text-transform:uppercase;">🛡️ SAFE</span>
             <div class="r-play-asset" style="margin-top:4px; font-size:1rem; color:var(--text-pure); font-weight:700; font-family:var(--font-ui); letter-spacing:0.5px;">Short volatility due to geopolitical time bomb.</div>
           </div>
           <div style="color:var(--text-secondary); font-size:0.85rem; line-height:1.5; margin-bottom:8px;">
@@ -881,7 +888,7 @@
                 <div style="font-size:0.78rem; color:var(--text-bright); line-height:1.4;">2/4 agents aligned: Technical, Sentiment</div>
               </div>
               <div style="display:flex; align-items:flex-start; gap:8px; background:rgba(255,0,60,0.04); border:1px solid rgba(255,0,60,0.15); padding:5px 8px; border-radius:4px;">
-                <div style="color:var(--red); font-family:var(--font-mono); font-weight:bold; font-size:0.85rem; flex-shrink:0;">âˆ’</div>
+                <div style="color:var(--red); font-family:var(--font-mono); font-weight:bold; font-size:0.85rem; flex-shrink:0;">−</div>
                 <div style="font-size:0.78rem; color:var(--text-bright); line-height:1.4;">2 agents neutral/opposing: Fundamental (NEUTRAL), Geopolitical (ELEVATED)</div>
               </div>
             </div>
@@ -890,7 +897,7 @@
       
         <div class="bg-card razor-play-card" style="animation-delay: 100ms; border-left: 3px solid var(--accent-gold); margin-bottom:0; padding:12px;">
           <div class="r-play-header" style="margin-bottom:6px;">
-            <span style="font-family:var(--font-mono); font-size:0.58rem; font-weight:700; color:var(--accent-gold); letter-spacing:1.5px; text-transform:uppercase;">âš¡ AGGRESSIVE</span>
+            <span style="font-family:var(--font-mono); font-size:0.58rem; font-weight:700; color:var(--accent-gold); letter-spacing:1.5px; text-transform:uppercase;">⚡ AGGRESSIVE</span>
             <div class="r-play-asset" style="margin-top:4px; font-size:1rem; color:var(--text-pure); font-weight:700; font-family:var(--font-ui); letter-spacing:0.5px;">Long USD against emerging markets due to global instability.</div>
           </div>
           <div style="color:var(--text-secondary); font-size:0.85rem; line-height:1.5; margin-bottom:8px;">
@@ -904,7 +911,7 @@
                 <div style="font-size:0.78rem; color:var(--text-bright); line-height:1.4;">2/4 agents aligned: Technical, Sentiment</div>
               </div>
               <div style="display:flex; align-items:flex-start; gap:8px; background:rgba(255,0,60,0.04); border:1px solid rgba(255,0,60,0.15); padding:5px 8px; border-radius:4px;">
-                <div style="color:var(--red); font-family:var(--font-mono); font-weight:bold; font-size:0.85rem; flex-shrink:0;">âˆ’</div>
+                <div style="color:var(--red); font-family:var(--font-mono); font-weight:bold; font-size:0.85rem; flex-shrink:0;">−</div>
                 <div style="font-size:0.78rem; color:var(--text-bright); line-height:1.4;">2 agents neutral/opposing: Fundamental (NEUTRAL), Geopolitical (ELEVATED)</div>
               </div>
             </div>
@@ -913,7 +920,7 @@
       
         <div class="bg-card razor-play-card" style="animation-delay: 200ms; border-left: 3px solid var(--purple); margin-bottom:0; padding:12px;">
           <div class="r-play-header" style="margin-bottom:6px;">
-            <span style="font-family:var(--font-mono); font-size:0.58rem; font-weight:700; color:var(--purple); letter-spacing:1.5px; text-transform:uppercase;">ðŸ”„ CONTRARIAN</span>
+            <span style="font-family:var(--font-mono); font-size:0.58rem; font-weight:700; color:var(--purple); letter-spacing:1.5px; text-transform:uppercase;">🔄 CONTRARIAN</span>
             <div class="r-play-asset" style="margin-top:4px; font-size:1rem; color:var(--text-pure); font-weight:700; font-family:var(--font-ui); letter-spacing:0.5px;">Long beaten-down tech stocks anticipating capitulation.</div>
           </div>
           <div style="color:var(--text-secondary); font-size:0.85rem; line-height:1.5; margin-bottom:8px;">
@@ -927,7 +934,7 @@
                 <div style="font-size:0.78rem; color:var(--text-bright); line-height:1.4;">1/4 agents aligned: Geopolitical</div>
               </div>
               <div style="display:flex; align-items:flex-start; gap:8px; background:rgba(255,0,60,0.04); border:1px solid rgba(255,0,60,0.15); padding:5px 8px; border-radius:4px;">
-                <div style="color:var(--red); font-family:var(--font-mono); font-weight:bold; font-size:0.85rem; flex-shrink:0;">âˆ’</div>
+                <div style="color:var(--red); font-family:var(--font-mono); font-weight:bold; font-size:0.85rem; flex-shrink:0;">−</div>
                 <div style="font-size:0.78rem; color:var(--text-bright); line-height:1.4;">3 agents neutral/opposing: Fundamental, Technical, Sentiment</div>
               </div>
             </div>
@@ -937,7 +944,7 @@
         </section>
       </article>
 
-      <section class="chaos rv" id="chaos-line-card"><span class="chaos-tag"><span class="chaos-star">âœ¦</span> THE CHAOS LINE</span><div class="chaos-text" id="chaos-quote-text">â€œThe market doesn't care if you're right, it only cares if you're alive to collect.â€</div><div class="share-row"><a class="s-btn ghost" target="_blank" href="https://twitter.com/intent/tweet?text=%22The%20market%20doesn't%20care%20if%20you're%20right%2C%20it%20only%20cares%20if%20you're%20alive%20to%20collect.%22%20%E2%80%94%20Chaos%20Intelligence%0Ahttps%3A%2F%2Fchaos.sumanthworks.com">ð• Post</a><a class="s-btn ghost" target="_blank" href="https://t.me/share/url?url=https%3A%2F%2Fchaos.sumanthworks.com&amp;text=%22The%20market%20doesn't%20care%20if%20you're%20right%2C%20it%20only%20cares%20if%20you're%20alive%20to%20collect.%22%20%E2%80%94%20Chaos%20Intelligence">âœˆ Telegram</a><button class="s-btn ghost" onclick="copyLine()">ðŸ“‹ Copy Line</button><button class="s-btn ghost" id="export-btn" style="color:var(--gold); border-color:var(--gold); font-weight:700; font-family:var(--font-mono); letter-spacing:1px; background:rgba(212,168,67,0.05);" onclick="generateChaosImage()">âš¡ EXPORT VIRAL SIGNAL CARD</button></div></section>
+      <section class="chaos rv" id="chaos-line-card"><span class="chaos-tag"><span class="chaos-star">✦</span> THE CHAOS LINE</span><div class="chaos-text" id="chaos-quote-text">“The market doesn't care if you're right, it only cares if you're alive to collect.”</div><div class="share-row"><a class="s-btn ghost" target="_blank" href="https://twitter.com/intent/tweet?text=%22The%20market%20doesn't%20care%20if%20you're%20right%2C%20it%20only%20cares%20if%20you're%20alive%20to%20collect.%22%20%E2%80%94%20Chaos%20Intelligence%0Ahttps%3A%2F%2Fchaos.sumanthworks.com">𝕏 Post</a><a class="s-btn ghost" target="_blank" href="https://t.me/share/url?url=https%3A%2F%2Fchaos.sumanthworks.com&amp;text=%22The%20market%20doesn't%20care%20if%20you're%20right%2C%20it%20only%20cares%20if%20you're%20alive%20to%20collect.%22%20%E2%80%94%20Chaos%20Intelligence">✈ Telegram</a><button class="s-btn ghost" onclick="copyLine()">📋 Copy Line</button><button class="s-btn ghost" id="export-btn" style="color:var(--gold); border-color:var(--gold); font-weight:700; font-family:var(--font-mono); letter-spacing:1px; background:rgba(212,168,67,0.05);" onclick="generateChaosImage()">⚡ EXPORT VIRAL SIGNAL CARD</button></div></section>
 
         <div id="trap-card" class="bg-card trap" style="margin-bottom: 24px;"></div>
         <div id="edge-card" class="bg-card edge-section" style="margin-bottom: 24px;"></div>
@@ -945,19 +952,19 @@
     </div></main>
   </div>
 
-  <!-- â•â•â•â•â•â•â•â•â•â•â• LEDGER VIEW â•â•â•â•â•â•â•â•â•â•â• -->
+  <!-- ═══════════ LEDGER VIEW ═══════════ -->
   <div id="view-ledger" class="spa-view">
     <div class="wrap" style="padding-top:40px">
       <div class="page-title">PUBLIC SIGNAL LEDGER</div>
-      <div class="page-sub">VERIFIED â€¢ 24H CLOSE METHOD (+/- 1.5% PNL REQUIRED FOR WIN)</div>
+      <div class="page-sub">VERIFIED • 24H CLOSE METHOD</div>
       <section class="glass-card rv vis" style="margin-bottom:48px">
         <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;border-bottom:1px solid var(--s3);padding-bottom:15px;">
           <div>
-            <span style="font-family:var(--font-mono);font-size:1.5rem;color:var(--green);font-weight:700;" id="ledger-win-rate">...</span>
-            <span style="font-family:var(--font-mono);font-size:0.75rem;color:var(--muted);margin-left:8px;" id="ledger-sample-size">Loading signals...</span>
+            <span style="font-family:var(--font-mono);font-size:1.5rem;color:var(--green);font-weight:700;" id="ledger-win-rate">57.7%</span>
+            <span style="font-family:var(--font-mono);font-size:0.75rem;color:var(--muted);margin-left:8px;" id="ledger-sample-size">26 resolved signals</span>
           </div>
           <div style="font-family:var(--font-mono);font-size:0.95rem;color:var(--gold);">
-            Hot Streak: <strong id="ledger-streak" style="color:var(--green);">...</strong>
+            Hot Streak: <strong id="ledger-streak" style="color:var(--green);">2 WIN</strong>
           </div>
         </div>
         
@@ -968,17 +975,17 @@
           <div style="text-align:right;">Status</div>
         </div>
         
-        <div id="ledger" style="display:flex; flex-direction:column; gap:5px;"><div class="ledger-row" onclick="var el = document.getElementById('autopsy-note-0'); if(el) el.style.display = el.style.display === 'none' ? 'block' : 'none';" style="display:grid; grid-template-columns: 2fr 3fr 2fr 1fr; gap: 8px; align-items:center; cursor:pointer; background:transparent; border-radius:4px; padding:4px;"><span>2026-06-17</span><span style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis;" title="Global Chaos: Fear Reigns, Markets Brace">Global Chaos: Fear Reigns, Markets Brace</span><span style="font-size:0.45rem;">$64,889 | <span class="bear">--</span></span><span class="neut" style="text-align:right;">OPEN</span></div><div class="ledger-row" onclick="var el = document.getElementById('autopsy-note-1'); if(el) el.style.display = el.style.display === 'none' ? 'block' : 'none';" style="display:grid; grid-template-columns: 2fr 3fr 2fr 1fr; gap: 8px; align-items:center; cursor:pointer; background:rgba(0, 255, 102, 0.05); border-radius:4px; padding:4px;"><span>2026-06-03</span><span style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis;" title="Geopolitical Turmoil Sparks Extreme Fear, Markets on Edge">Geopolitical Turmoil Sparks Extreme Fear, Markets on Edge</span><span style="font-size:0.45rem;">$66,519 | <span class="bull">+2.45%</span></span><span class="bull" style="text-align:right;">WIN</span><div id="autopsy-note-1" style="display:none; grid-column: 1 / -1; font-size:0.65rem; color:var(--muted); padding:8px; background:rgba(0,0,0,0.3); border-top:1px solid var(--s3); margin-top:5px;">â†³ <strong>Autopsy Note:</strong> Price moved favorably beyond target within 24h window.</div></div><div class="ledger-row" onclick="var el = document.getElementById('autopsy-note-2'); if(el) el.style.display = el.style.display === 'none' ? 'block' : 'none';" style="display:grid; grid-template-columns: 2fr 3fr 2fr 1fr; gap: 8px; align-items:center; cursor:pointer; background:rgba(0, 255, 102, 0.05); border-radius:4px; padding:4px;"><span>2026-06-03</span><span style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis;" title="Fear Fuels Dollar Rally Amid Crypto Turmoil">Fear Fuels Dollar Rally Amid Crypto Turmoil</span><span style="font-size:0.45rem;">$66,679 | <span class="bull">+2.68%</span></span><span class="bull" style="text-align:right;">WIN</span><div id="autopsy-note-2" style="display:none; grid-column: 1 / -1; font-size:0.65rem; color:var(--muted); padding:8px; background:rgba(0,0,0,0.3); border-top:1px solid var(--s3); margin-top:5px;">â†³ <strong>Autopsy Note:</strong> Price moved favorably beyond target within 24h window.</div></div><div class="ledger-row" onclick="var el = document.getElementById('autopsy-note-3'); if(el) el.style.display = el.style.display === 'none' ? 'block' : 'none';" style="display:grid; grid-template-columns: 2fr 3fr 2fr 1fr; gap: 8px; align-items:center; cursor:pointer; background:rgba(255, 0, 60, 0.05); border-radius:4px; padding:4px;"><span>2026-06-03</span><span style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis;" title="Riskâ€‘off backdrop fuels defensive tilt">Riskâ€‘off backdrop fuels defensive tilt</span><span style="font-size:0.45rem;">$66,604 | <span class="bear">-2.57%</span></span><span class="bear" style="text-align:right;">LOSS</span><div id="autopsy-note-3" style="display:none; grid-column: 1 / -1; font-size:0.65rem; color:var(--muted); padding:8px; background:rgba(0,0,0,0.3); border-top:1px solid var(--s3); margin-top:5px;">â†³ <strong>Autopsy Note:</strong> Price broke key support level against signal thesis.</div></div><div class="ledger-row" onclick="var el = document.getElementById('autopsy-note-4'); if(el) el.style.display = el.style.display === 'none' ? 'block' : 'none';" style="display:grid; grid-template-columns: 2fr 3fr 2fr 1fr; gap: 8px; align-items:center; cursor:pointer; background:rgba(255, 0, 60, 0.05); border-radius:4px; padding:4px;"><span>2026-06-02</span><span style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis;" title="Market at a Breaking Point: Fear and Bitcoin Test Resilience">Market at a Breaking Point: Fear and Bitcoin Test Resilience</span><span style="font-size:0.45rem;">$69,482 | <span class="bear">-6.61%</span></span><span class="bear" style="text-align:right;">LOSS</span><div id="autopsy-note-4" style="display:none; grid-column: 1 / -1; font-size:0.65rem; color:var(--muted); padding:8px; background:rgba(0,0,0,0.3); border-top:1px solid var(--s3); margin-top:5px;">â†³ <strong>Autopsy Note:</strong> Price broke key support level against signal thesis.</div></div><div class="ledger-row" onclick="var el = document.getElementById('autopsy-note-5'); if(el) el.style.display = el.style.display === 'none' ? 'block' : 'none';" style="display:grid; grid-template-columns: 2fr 3fr 2fr 1fr; gap: 8px; align-items:center; cursor:pointer; background:rgba(0, 255, 102, 0.05); border-radius:4px; padding:4px;"><span>2026-06-02</span><span style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis;" title="Dollar Dominates, Bonds Stay Priced">Dollar Dominates, Bonds Stay Priced</span><span style="font-size:0.45rem;">$69,951 | <span class="bull">+7.24%</span></span><span class="bull" style="text-align:right;">WIN</span><div id="autopsy-note-5" style="display:none; grid-column: 1 / -1; font-size:0.65rem; color:var(--muted); padding:8px; background:rgba(0,0,0,0.3); border-top:1px solid var(--s3); margin-top:5px;">â†³ <strong>Autopsy Note:</strong> Price moved favorably beyond target within 24h window.</div></div><div class="ledger-row" onclick="var el = document.getElementById('autopsy-note-6'); if(el) el.style.display = el.style.display === 'none' ? 'block' : 'none';" style="display:grid; grid-template-columns: 2fr 3fr 2fr 1fr; gap: 8px; align-items:center; cursor:pointer; background:rgba(255, 0, 60, 0.05); border-radius:4px; padding:4px;"><span>2026-06-02</span><span style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis;" title="Dollar Hammers, Crypto Hovers">Dollar Hammers, Crypto Hovers</span><span style="font-size:0.45rem;">$70,032 | <span class="bear">-7.34%</span></span><span class="bear" style="text-align:right;">LOSS</span><div id="autopsy-note-6" style="display:none; grid-column: 1 / -1; font-size:0.65rem; color:var(--muted); padding:8px; background:rgba(0,0,0,0.3); border-top:1px solid var(--s3); margin-top:5px;">â†³ <strong>Autopsy Note:</strong> Price broke key support level against signal thesis.</div></div><div class="ledger-row" onclick="var el = document.getElementById('autopsy-note-7'); if(el) el.style.display = el.style.display === 'none' ? 'block' : 'none';" style="display:grid; grid-template-columns: 2fr 3fr 2fr 1fr; gap: 8px; align-items:center; cursor:pointer; background:rgba(255, 0, 60, 0.05); border-radius:4px; padding:4px;"><span>2026-06-02</span><span style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis;" title="Dollar Gains, Crypto Volatility">Dollar Gains, Crypto Volatility</span><span style="font-size:0.45rem;">$70,130 | <span class="bear">-7.47%</span></span><span class="bear" style="text-align:right;">LOSS</span><div id="autopsy-note-7" style="display:none; grid-column: 1 / -1; font-size:0.65rem; color:var(--muted); padding:8px; background:rgba(0,0,0,0.3); border-top:1px solid var(--s3); margin-top:5px;">â†³ <strong>Autopsy Note:</strong> Price broke key support level against signal thesis.</div></div><div class="ledger-row" onclick="var el = document.getElementById('autopsy-note-8'); if(el) el.style.display = el.style.display === 'none' ? 'block' : 'none';" style="display:grid; grid-template-columns: 2fr 3fr 2fr 1fr; gap: 8px; align-items:center; cursor:pointer; background:rgba(255, 0, 60, 0.05); border-radius:4px; padding:4px;"><span>2026-06-02</span><span style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis;" title="Crypto Flat, Bonds Tighten, Geopolitics Stir">Crypto Flat, Bonds Tighten, Geopolitics Stir</span><span style="font-size:0.45rem;">$69,896 | <span class="bear">-7.16%</span></span><span class="bear" style="text-align:right;">LOSS</span><div id="autopsy-note-8" style="display:none; grid-column: 1 / -1; font-size:0.65rem; color:var(--muted); padding:8px; background:rgba(0,0,0,0.3); border-top:1px solid var(--s3); margin-top:5px;">â†³ <strong>Autopsy Note:</strong> Price broke key support level against signal thesis.</div></div><div class="ledger-row" onclick="var el = document.getElementById('autopsy-note-9'); if(el) el.style.display = el.style.display === 'none' ? 'block' : 'none';" style="display:grid; grid-template-columns: 2fr 3fr 2fr 1fr; gap: 8px; align-items:center; cursor:pointer; background:rgba(0, 255, 102, 0.05); border-radius:4px; padding:4px;"><span>2026-06-02</span><span style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis;" title="Markets on Edge as Iranâ€‘Israel Tensions Rise">Markets on Edge as Iranâ€‘Israel Tensions Rise</span><span style="font-size:0.45rem;">$70,262 | <span class="bear">--</span></span><span class="bull" style="text-align:right;">WIN</span></div></div>
+        <div id="ledger" style="display:flex; flex-direction:column; gap:5px;"><div class="ledger-row" onclick="var el = document.getElementById('autopsy-note-0'); if(el) el.style.display = el.style.display === 'none' ? 'block' : 'none';" style="display:grid; grid-template-columns: 2fr 3fr 2fr 1fr; gap: 8px; align-items:center; cursor:pointer; background:transparent; border-radius:4px; padding:4px;"><span>2026-06-17</span><span style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis;" title="Global Chaos: Fear Reigns, Markets Brace">Global Chaos: Fear Reigns, Markets Brace</span><span style="font-size:0.45rem;">$64,889 | <span class="bear">--</span></span><span class="neut" style="text-align:right;">OPEN</span></div><div class="ledger-row" onclick="var el = document.getElementById('autopsy-note-1'); if(el) el.style.display = el.style.display === 'none' ? 'block' : 'none';" style="display:grid; grid-template-columns: 2fr 3fr 2fr 1fr; gap: 8px; align-items:center; cursor:pointer; background:rgba(0, 255, 102, 0.05); border-radius:4px; padding:4px;"><span>2026-06-03</span><span style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis;" title="Geopolitical Turmoil Sparks Extreme Fear, Markets on Edge">Geopolitical Turmoil Sparks Extreme Fear, Markets on Edge</span><span style="font-size:0.45rem;">$66,519 | <span class="bull">+2.45%</span></span><span class="bull" style="text-align:right;">WIN</span><div id="autopsy-note-1" style="display:none; grid-column: 1 / -1; font-size:0.65rem; color:var(--muted); padding:8px; background:rgba(0,0,0,0.3); border-top:1px solid var(--s3); margin-top:5px;">↳ <strong>Autopsy Note:</strong> Price moved favorably beyond target within 24h window.</div></div><div class="ledger-row" onclick="var el = document.getElementById('autopsy-note-2'); if(el) el.style.display = el.style.display === 'none' ? 'block' : 'none';" style="display:grid; grid-template-columns: 2fr 3fr 2fr 1fr; gap: 8px; align-items:center; cursor:pointer; background:rgba(0, 255, 102, 0.05); border-radius:4px; padding:4px;"><span>2026-06-03</span><span style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis;" title="Fear Fuels Dollar Rally Amid Crypto Turmoil">Fear Fuels Dollar Rally Amid Crypto Turmoil</span><span style="font-size:0.45rem;">$66,679 | <span class="bull">+2.68%</span></span><span class="bull" style="text-align:right;">WIN</span><div id="autopsy-note-2" style="display:none; grid-column: 1 / -1; font-size:0.65rem; color:var(--muted); padding:8px; background:rgba(0,0,0,0.3); border-top:1px solid var(--s3); margin-top:5px;">↳ <strong>Autopsy Note:</strong> Price moved favorably beyond target within 24h window.</div></div><div class="ledger-row" onclick="var el = document.getElementById('autopsy-note-3'); if(el) el.style.display = el.style.display === 'none' ? 'block' : 'none';" style="display:grid; grid-template-columns: 2fr 3fr 2fr 1fr; gap: 8px; align-items:center; cursor:pointer; background:rgba(255, 0, 60, 0.05); border-radius:4px; padding:4px;"><span>2026-06-03</span><span style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis;" title="Risk‑off backdrop fuels defensive tilt">Risk‑off backdrop fuels defensive tilt</span><span style="font-size:0.45rem;">$66,604 | <span class="bear">-2.57%</span></span><span class="bear" style="text-align:right;">LOSS</span><div id="autopsy-note-3" style="display:none; grid-column: 1 / -1; font-size:0.65rem; color:var(--muted); padding:8px; background:rgba(0,0,0,0.3); border-top:1px solid var(--s3); margin-top:5px;">↳ <strong>Autopsy Note:</strong> Price broke key support level against signal thesis.</div></div><div class="ledger-row" onclick="var el = document.getElementById('autopsy-note-4'); if(el) el.style.display = el.style.display === 'none' ? 'block' : 'none';" style="display:grid; grid-template-columns: 2fr 3fr 2fr 1fr; gap: 8px; align-items:center; cursor:pointer; background:rgba(255, 0, 60, 0.05); border-radius:4px; padding:4px;"><span>2026-06-02</span><span style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis;" title="Market at a Breaking Point: Fear and Bitcoin Test Resilience">Market at a Breaking Point: Fear and Bitcoin Test Resilience</span><span style="font-size:0.45rem;">$69,482 | <span class="bear">-6.61%</span></span><span class="bear" style="text-align:right;">LOSS</span><div id="autopsy-note-4" style="display:none; grid-column: 1 / -1; font-size:0.65rem; color:var(--muted); padding:8px; background:rgba(0,0,0,0.3); border-top:1px solid var(--s3); margin-top:5px;">↳ <strong>Autopsy Note:</strong> Price broke key support level against signal thesis.</div></div><div class="ledger-row" onclick="var el = document.getElementById('autopsy-note-5'); if(el) el.style.display = el.style.display === 'none' ? 'block' : 'none';" style="display:grid; grid-template-columns: 2fr 3fr 2fr 1fr; gap: 8px; align-items:center; cursor:pointer; background:rgba(0, 255, 102, 0.05); border-radius:4px; padding:4px;"><span>2026-06-02</span><span style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis;" title="Dollar Dominates, Bonds Stay Priced">Dollar Dominates, Bonds Stay Priced</span><span style="font-size:0.45rem;">$69,951 | <span class="bull">+7.24%</span></span><span class="bull" style="text-align:right;">WIN</span><div id="autopsy-note-5" style="display:none; grid-column: 1 / -1; font-size:0.65rem; color:var(--muted); padding:8px; background:rgba(0,0,0,0.3); border-top:1px solid var(--s3); margin-top:5px;">↳ <strong>Autopsy Note:</strong> Price moved favorably beyond target within 24h window.</div></div><div class="ledger-row" onclick="var el = document.getElementById('autopsy-note-6'); if(el) el.style.display = el.style.display === 'none' ? 'block' : 'none';" style="display:grid; grid-template-columns: 2fr 3fr 2fr 1fr; gap: 8px; align-items:center; cursor:pointer; background:rgba(255, 0, 60, 0.05); border-radius:4px; padding:4px;"><span>2026-06-02</span><span style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis;" title="Dollar Hammers, Crypto Hovers">Dollar Hammers, Crypto Hovers</span><span style="font-size:0.45rem;">$70,032 | <span class="bear">-7.34%</span></span><span class="bear" style="text-align:right;">LOSS</span><div id="autopsy-note-6" style="display:none; grid-column: 1 / -1; font-size:0.65rem; color:var(--muted); padding:8px; background:rgba(0,0,0,0.3); border-top:1px solid var(--s3); margin-top:5px;">↳ <strong>Autopsy Note:</strong> Price broke key support level against signal thesis.</div></div><div class="ledger-row" onclick="var el = document.getElementById('autopsy-note-7'); if(el) el.style.display = el.style.display === 'none' ? 'block' : 'none';" style="display:grid; grid-template-columns: 2fr 3fr 2fr 1fr; gap: 8px; align-items:center; cursor:pointer; background:rgba(255, 0, 60, 0.05); border-radius:4px; padding:4px;"><span>2026-06-02</span><span style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis;" title="Dollar Gains, Crypto Volatility">Dollar Gains, Crypto Volatility</span><span style="font-size:0.45rem;">$70,130 | <span class="bear">-7.47%</span></span><span class="bear" style="text-align:right;">LOSS</span><div id="autopsy-note-7" style="display:none; grid-column: 1 / -1; font-size:0.65rem; color:var(--muted); padding:8px; background:rgba(0,0,0,0.3); border-top:1px solid var(--s3); margin-top:5px;">↳ <strong>Autopsy Note:</strong> Price broke key support level against signal thesis.</div></div><div class="ledger-row" onclick="var el = document.getElementById('autopsy-note-8'); if(el) el.style.display = el.style.display === 'none' ? 'block' : 'none';" style="display:grid; grid-template-columns: 2fr 3fr 2fr 1fr; gap: 8px; align-items:center; cursor:pointer; background:rgba(255, 0, 60, 0.05); border-radius:4px; padding:4px;"><span>2026-06-02</span><span style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis;" title="Crypto Flat, Bonds Tighten, Geopolitics Stir">Crypto Flat, Bonds Tighten, Geopolitics Stir</span><span style="font-size:0.45rem;">$69,896 | <span class="bear">-7.16%</span></span><span class="bear" style="text-align:right;">LOSS</span><div id="autopsy-note-8" style="display:none; grid-column: 1 / -1; font-size:0.65rem; color:var(--muted); padding:8px; background:rgba(0,0,0,0.3); border-top:1px solid var(--s3); margin-top:5px;">↳ <strong>Autopsy Note:</strong> Price broke key support level against signal thesis.</div></div><div class="ledger-row" onclick="var el = document.getElementById('autopsy-note-9'); if(el) el.style.display = el.style.display === 'none' ? 'block' : 'none';" style="display:grid; grid-template-columns: 2fr 3fr 2fr 1fr; gap: 8px; align-items:center; cursor:pointer; background:rgba(0, 255, 102, 0.05); border-radius:4px; padding:4px;"><span>2026-06-02</span><span style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis;" title="Markets on Edge as Iran‑Israel Tensions Rise">Markets on Edge as Iran‑Israel Tensions Rise</span><span style="font-size:0.45rem;">$70,262 | <span class="bear">--</span></span><span class="bull" style="text-align:right;">WIN</span></div></div>
         
         <div style="margin-top:20px;font-size:0.72rem;color:var(--muted);line-height:1.6;border-top:1px solid var(--s3);padding-top:14px;font-family:var(--font-mono);">
-          Graded using 24-hour closing price. WIN â‰¥ +1.5% â€¢ LOSS â‰¤ -1.2% â€¢ SCRATCH = Â±0.3%.<br>
+          Graded using 24-hour closing price. WIN ≥ +1.5% • LOSS ≤ -1.2% • SCRATCH = ±0.3%.<br>
           All signals are SHA-256 hashed and publicly verifiable on GitHub.
         </div>
       </section>
     </div>
   </div>
 
-  <!-- â•â•â•â•â•â•â•â•â•â•â• VITALS VIEW â•â•â•â•â•â•â•â•â•â•â• -->
+  <!-- ═══════════ VITALS VIEW ═══════════ -->
   <div id="view-vitals" class="spa-view">
     <div class="wrap" style="padding-top:40px">
       <div class="page-title">MACRO DASHBOARD</div>
@@ -989,11 +996,11 @@
         <div class="glass-card"><div class="sec-title">S&amp;P 500 — LIVE CHART</div><div class="tv-widget" id="tv-spx"></div></div>
       </div>
 
-      <section class="glass-card macro rv vis"><div class="sec-title">MACRO DASHBOARD</div><div class="mgrid" id="macro-grid"><div class="mi"><div class="mi-l">10Y Treasury</div><div class="mi-v neut">...</div><div class="mi-s">Yield change</div></div><div class="mi"><div class="mi-l">DXY Dollar</div><div class="mi-v neut">...</div><div class="mi-s">— Neutral</div></div><div class="mi"><div class="mi-l">VIX</div><div class="mi-v neut">...</div><div class="mi-s">Implied vol</div></div><div class="mi"><div class="mi-l">S&amp;P 500</div><div class="mi-v neut">...</div><div class="mi-s"></div></div></div></section>
+      <section class="glass-card macro rv vis"><div class="sec-title">MACRO DASHBOARD</div><div class="mgrid" id="macro-grid"><div class="mi"><div class="mi-l">10Y Treasury</div><div class="mi-v neut">4.350%</div><div class="mi-s">Yield change</div></div><div class="mi"><div class="mi-l">DXY Dollar</div><div class="mi-v neut">103.71</div><div class="mi-s">— Neutral</div></div><div class="mi"><div class="mi-l">VIX</div><div class="mi-v neut">14.53</div><div class="mi-s">Implied vol</div></div><div class="mi"><div class="mi-l">S&amp;P 500</div><div class="mi-v bear">5,227</div><div class="mi-s"></div></div><div class="mi"><div class="mi-l">Recession Prob</div><div class="mi-v neut">N/A</div><div class="mi-s">FRED/NY Fed model</div></div><div class="mi"><div class="mi-l">BTC Dominance</div><div class="mi-v neut">N/A</div><div class="mi-s">Crypto MCap</div></div><div class="mi"><div class="mi-l">Gold /oz</div><div class="mi-v neut">N/A</div><div class="mi-s">Safe-haven demand</div></div><div class="mi"><div class="mi-l">WSB Sentiment</div><div class="mi-v neut">N/A</div><div class="mi-s">Retail positioning</div></div></div></section>
       <section class="ctx rv vis" style="margin-top:24px"><div class="sec-title">CROSS-MARKET CONTEXT</div><div class="ctx-grid" id="context-grid"><div class="ctx-card" style="--accent:var(--red)"><div class="ctx-l">Bond Market</div><div class="ctx-v neut">CAUTION</div><div class="ctx-d">10Y at 4.350%</div></div><div class="ctx-card" style="--accent:var(--green)"><div class="ctx-l">Equity Market</div><div class="ctx-v neut">BULLISH</div><div class="ctx-d">S&amp;P flat</div></div><div class="ctx-card" style="--accent:var(--gold)"><div class="ctx-l">Crypto</div><div class="ctx-v neut">HEDGING</div><div class="ctx-d">BTC at $64,889</div></div><div class="ctx-card" style="--accent:var(--purple)"><div class="ctx-l">Sentiment</div><div class="ctx-v bear">FEAR 22</div><div class="ctx-d">Mixed sentiment</div></div></div></section>
-      <section class="forces rv vis" style="margin-top:24px"><div class="sec-title">ACTIVE MACRO FORCES</div><div class="forces-grid" id="forces-grid" role="list" aria-label="Active macro forces"><div class="fc on"><span class="fc-dot"></span>ðŸ’° <span>MONEY</span></div><div class="fc off"><span class="fc-dot"></span>ðŸ¤– <span>TECH</span></div><div class="fc on"><span class="fc-dot"></span>âš¡ <span>ENERGY</span></div><div class="fc off"><span class="fc-dot"></span>ðŸ›ï¸ <span>POLITICS</span></div><div class="fc on"><span class="fc-dot"></span>âš”ï¸ <span>WAR</span></div><div class="fc off"><span class="fc-dot"></span>ðŸ’¸ <span>DEBT</span></div><div class="fc off"><span class="fc-dot"></span>ðŸ’¼ <span>JOBS</span></div><div class="fc off"><span class="fc-dot"></span>ðŸŒ¾ <span>FOOD</span></div><div class="fc off"><span class="fc-dot"></span>ðŸ§‘ <span>PEOPLE</span></div></div></section>
+      <section class="forces rv vis" style="margin-top:24px"><div class="sec-title">ACTIVE MACRO FORCES</div><div class="forces-grid" id="forces-grid" role="list" aria-label="Active macro forces"><div class="fc on"><span class="fc-dot"></span>💰 <span>MONEY</span></div><div class="fc off"><span class="fc-dot"></span>🤖 <span>TECH</span></div><div class="fc on"><span class="fc-dot"></span>⚡ <span>ENERGY</span></div><div class="fc off"><span class="fc-dot"></span>🏛️ <span>POLITICS</span></div><div class="fc on"><span class="fc-dot"></span>⚔️ <span>WAR</span></div><div class="fc off"><span class="fc-dot"></span>💸 <span>DEBT</span></div><div class="fc off"><span class="fc-dot"></span>💼 <span>JOBS</span></div><div class="fc off"><span class="fc-dot"></span>🌾 <span>FOOD</span></div><div class="fc off"><span class="fc-dot"></span>🧑 <span>PEOPLE</span></div></div></section>
       <section class="poly rv vis" style="margin-top: 24px; display: none;" id="poly-card"></section>
-      <section class="wires rv vis" style="margin-top: 24px; display: block;"><div class="wires-h"><span>INTEL WIRES</span><span style="font-size:.42rem;opacity:.5">CLICK TO EXPAND</span></div><div id="wires"><div class="wire" onclick="this.classList.toggle('open')"><div class="wire-src">GEOPOLITICS</div><div class="wire-hl">Trump adviser pushes power-sharing plan for oil-rich Libya</div><div class="wire-body">Massad Boulos tells FT he is attempting to forge â€˜one unified governmentâ€™ in war-torn country</div></div><div class="wire" onclick="this.classList.toggle('open')"><div class="wire-src">GEOPOLITICS</div><div class="wire-hl">UK inflation unexpectedly held steady at 2.8% in May</div><div class="wire-body">Figure will ease BoE fears of a lasting impact from the Iran war</div></div><div class="wire" onclick="this.classList.toggle('open')"><div class="wire-src">GEOPOLITICS</div><div class="wire-hl">Tehran selling deal with US as victory â€“ but for Iranians it was necessity</div><div class="wire-body">For many Iranians, the question is not whether the deal means victory, but whether it lowers prices and reduces fear of another war.</div></div><div class="wire" onclick="this.classList.toggle('open')"><div class="wire-src">GEOPOLITICS</div><div class="wire-hl">UK investigating reports Russian warship fired warning shots near yacht in English Channel</div><div class="wire-body">The retired couple tell BBC Newsnight they tried to show the warship they had changed course in the English Channel before the shots were fired.</div></div></div></section>
+      <section class="wires rv vis" style="margin-top: 24px; display: block;"><div class="wires-h"><span>INTEL WIRES</span><span style="font-size:.42rem;opacity:.5">CLICK TO EXPAND</span></div><div id="wires"><div class="wire" onclick="this.classList.toggle('open')"><div class="wire-src">GEOPOLITICS</div><div class="wire-hl">Trump adviser pushes power-sharing plan for oil-rich Libya</div><div class="wire-body">Massad Boulos tells FT he is attempting to forge ‘one unified government’ in war-torn country</div></div><div class="wire" onclick="this.classList.toggle('open')"><div class="wire-src">GEOPOLITICS</div><div class="wire-hl">UK inflation unexpectedly held steady at 2.8% in May</div><div class="wire-body">Figure will ease BoE fears of a lasting impact from the Iran war</div></div><div class="wire" onclick="this.classList.toggle('open')"><div class="wire-src">GEOPOLITICS</div><div class="wire-hl">Tehran selling deal with US as victory – but for Iranians it was necessity</div><div class="wire-body">For many Iranians, the question is not whether the deal means victory, but whether it lowers prices and reduces fear of another war.</div></div><div class="wire" onclick="this.classList.toggle('open')"><div class="wire-src">GEOPOLITICS</div><div class="wire-hl">UK investigating reports Russian warship fired warning shots near yacht in English Channel</div><div class="wire-body">The retired couple tell BBC Newsnight they tried to show the warship they had changed course in the English Channel before the shots were fired.</div></div></div></section>
     </div>
   </div>
 
@@ -1023,7 +1030,7 @@
   </div>
 
 
-  <!-- â•â•â•â•â•â•â•â•â•â•â• ARCHIVE VIEW â•â•â•â•â•â•â•â•â•â•â• -->
+  <!-- ═══════════ ARCHIVE VIEW ═══════════ -->
   <div id="view-archive" class="spa-view">
     <div class="wrap" style="padding-top:40px">
       <div class="page-title">SIGNAL ARCHIVE</div>
@@ -1044,23 +1051,23 @@
         <div id="archive-list" style="display:flex; flex-direction:column; gap:5px;"><div class="ledger-row" style="display:grid; grid-template-columns: 2fr 5fr 2fr; gap: 8px; align-items:center; background:rgba(255,255,255,0.02); border-radius:4px; padding:8px 12px; margin-bottom: 6px; border: 1px solid var(--s2); cursor:pointer;" onclick="window.open('/api/briefs/2026-06-17-morning.html', '_blank')">
             <span>2026-06-17</span>
             <span style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis; color: var(--text-bright);">MORNING REPORT</span>
-            <span style="text-align:right;"><a href="/api/briefs/2026-06-17-morning.html" target="_blank" style="color:var(--gold); text-decoration:none; font-weight:bold; font-size: 0.7rem; letter-spacing: 1px;">READ â†—</a></span>
+            <span style="text-align:right;"><a href="/api/briefs/2026-06-17-morning.html" target="_blank" style="color:var(--gold); text-decoration:none; font-weight:bold; font-size: 0.7rem; letter-spacing: 1px;">READ ↗</a></span>
           </div><div class="ledger-row" style="display:grid; grid-template-columns: 2fr 5fr 2fr; gap: 8px; align-items:center; background:rgba(255,255,255,0.02); border-radius:4px; padding:8px 12px; margin-bottom: 6px; border: 1px solid var(--s2); cursor:pointer;" onclick="window.open('/api/briefs/2026-06-13-morning.html', '_blank')">
             <span>2026-06-13</span>
             <span style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis; color: var(--text-bright);">MORNING REPORT</span>
-            <span style="text-align:right;"><a href="/api/briefs/2026-06-13-morning.html" target="_blank" style="color:var(--gold); text-decoration:none; font-weight:bold; font-size: 0.7rem; letter-spacing: 1px;">READ â†—</a></span>
+            <span style="text-align:right;"><a href="/api/briefs/2026-06-13-morning.html" target="_blank" style="color:var(--gold); text-decoration:none; font-weight:bold; font-size: 0.7rem; letter-spacing: 1px;">READ ↗</a></span>
           </div><div class="ledger-row" style="display:grid; grid-template-columns: 2fr 5fr 2fr; gap: 8px; align-items:center; background:rgba(255,255,255,0.02); border-radius:4px; padding:8px 12px; margin-bottom: 6px; border: 1px solid var(--s2); cursor:pointer;" onclick="window.open('/api/briefs/2026-06-05-morning.html', '_blank')">
             <span>2026-06-05</span>
             <span style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis; color: var(--text-bright);">MORNING REPORT</span>
-            <span style="text-align:right;"><a href="/api/briefs/2026-06-05-morning.html" target="_blank" style="color:var(--gold); text-decoration:none; font-weight:bold; font-size: 0.7rem; letter-spacing: 1px;">READ â†—</a></span>
+            <span style="text-align:right;"><a href="/api/briefs/2026-06-05-morning.html" target="_blank" style="color:var(--gold); text-decoration:none; font-weight:bold; font-size: 0.7rem; letter-spacing: 1px;">READ ↗</a></span>
           </div><div class="ledger-row" style="display:grid; grid-template-columns: 2fr 5fr 2fr; gap: 8px; align-items:center; background:rgba(255,255,255,0.02); border-radius:4px; padding:8px 12px; margin-bottom: 6px; border: 1px solid var(--s2); cursor:pointer;" onclick="window.open('/api/briefs/2026-06-03-session.html', '_blank')">
             <span>2026-06-03</span>
             <span style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis; color: var(--text-bright);">SESSION REPORT</span>
-            <span style="text-align:right;"><a href="/api/briefs/2026-06-03-session.html" target="_blank" style="color:var(--gold); text-decoration:none; font-weight:bold; font-size: 0.7rem; letter-spacing: 1px;">READ â†—</a></span>
+            <span style="text-align:right;"><a href="/api/briefs/2026-06-03-session.html" target="_blank" style="color:var(--gold); text-decoration:none; font-weight:bold; font-size: 0.7rem; letter-spacing: 1px;">READ ↗</a></span>
           </div><div class="ledger-row" style="display:grid; grid-template-columns: 2fr 5fr 2fr; gap: 8px; align-items:center; background:rgba(255,255,255,0.02); border-radius:4px; padding:8px 12px; margin-bottom: 6px; border: 1px solid var(--s2); cursor:pointer;" onclick="window.open('/api/briefs/2026-06-03-morning.html', '_blank')">
             <span>2026-06-03</span>
             <span style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis; color: var(--text-bright);">MORNING REPORT</span>
-            <span style="text-align:right;"><a href="/api/briefs/2026-06-03-morning.html" target="_blank" style="color:var(--gold); text-decoration:none; font-weight:bold; font-size: 0.7rem; letter-spacing: 1px;">READ â†—</a></span>
+            <span style="text-align:right;"><a href="/api/briefs/2026-06-03-morning.html" target="_blank" style="color:var(--gold); text-decoration:none; font-weight:bold; font-size: 0.7rem; letter-spacing: 1px;">READ ↗</a></span>
           </div></div>
       </section>
     </div>
@@ -1099,36 +1106,36 @@
       <a href="#archive" class="ftr-link" onclick="window.location.hash='#archive'; runClientRouter(); return false;">Archive</a>
       <a href="#" class="ftr-link" onclick="document.getElementById('creator-modal').classList.add('open');return false;">About the Creator</a>
     </div>
-    <div class="ftr-disc">Not financial advice. AI-generated from public data. Public ledger tracks closed signals (Â±1.5% required for WIN). Chaos Intelligence. © 2026 Chaos Intelligence · https://chaos.sumanthworks.com</div>
+    <div class="ftr-disc">Not financial advice. AI-generated from public data. Public ledger required before performance claims. Chaos Intelligence. © 2026 Chaos Intelligence · https://chaos.sumanthworks.com</div>
   </footer>
 
   <!-- CREATOR TRUST ANCHOR -->
   <div class="creator-modal-wrap" id="creator-modal" onclick="if(event.target===this)this.classList.remove('open')">
     <div class="creator-modal">
-      <button class="cm-close" onclick="document.getElementById('creator-modal').classList.remove('open')">Ã—</button>
+      <button class="cm-close" onclick="document.getElementById('creator-modal').classList.remove('open')">×</button>
       <div class="cm-brand">CHAOS INTELLIGENCE</div>
       <div class="cm-tag">AUTONOMOUS MACRO TERMINAL</div>
       <div class="cm-text">
         <p style="margin-bottom: 12px">Wall Street pays $24,000/year for Bloomberg terminals to tell them what already happened. I built Chaos to track live whale orderbook liquidations and macro sentiment to tell you what happens next.</p>
         <p>Built by a single engineer. 100% verifiable signal ledger. No black boxes. Pure asymmetric advantage.</p>
       </div>
-      <a href="https://x.com/sumanthworks" target="_blank" class="cm-link">CONNECT ON X (TWITTER) →</a>
+      <a href="https://x.com/yourhandle" target="_blank" class="cm-link">CONNECT ON X (TWITTER) →</a>
     </div>
   </div>
 
   <script>
-    /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+    /* ═══════════════════════════════════════
        CHAOS INTELLIGENCE v7 — FULL ENGINE
-       â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+       ═══════════════════════════════════════ */
 
-    // â”€â”€ CONSTANTS â”€â”€
+    // ── CONSTANTS ──
     const ALL_FORCES=['MONEY','TECH','ENERGY','POLITICS','WAR','DEBT','JOBS','FOOD','PEOPLE'];
-    const FI={MONEY:'ðŸ’°',TECH:'ðŸ¤–',ENERGY:'âš¡',POLITICS:'ðŸ›ï¸',WAR:'âš”ï¸',DEBT:'ðŸ’¸',JOBS:'ðŸ’¼',FOOD:'ðŸŒ¾',PEOPLE:'ðŸ§‘'};
+    const FI={MONEY:'💰',TECH:'🤖',ENERGY:'⚡',POLITICS:'🏛️',WAR:'⚔️',DEBT:'💸',JOBS:'💼',FOOD:'🌾',PEOPLE:'🧑'};
     const SITE='https://chaos.sumanthworks.com';
     const VIEWS=['view-terminal','view-ledger','view-vitals','view-alpha','view-archive'];
     let speechInst=null, currentLine='', lastHash='', tvLoaded=false;
 
-    // â”€â”€ SCROLL-DRIVEN HEADER GLOW & PROGRESS BAR â”€â”€
+    // ── SCROLL-DRIVEN HEADER GLOW & PROGRESS BAR ──
     (function(){
       const hdr = document.querySelector('.sticky-hdr');
       const scrollProgress = document.getElementById('scroll-progress');
@@ -1152,7 +1159,7 @@
       }, {passive:true});
     })();
 
-    // â”€â”€ HELPERS â”€â”€
+    // ── HELPERS ──
     function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
     function num(v,f=0){const n=parseFloat(String(v??'').replace(/[^0-9.-]/g,''));return Number.isFinite(n)?n:f}
     function sigCls(s){return s==='BULLISH'||s==='CALM'?'bull':s==='BEARISH'||s==='CRITICAL'?'bear':s==='VOLATILE'||s==='ELEVATED'||s==='MODERATE'?'volt':'neut'}
@@ -1173,7 +1180,7 @@
       return '<div class="bg-card"><div style="font-family: var(--font-mono); font-size: 0.65rem; color: var(--accent-gold); margin-bottom: 12px; letter-spacing: 1px;">TARGETED NARRATIVE STRIKE</div><ul style="list-style-type:none; padding:0; margin:0; color: var(--text-bright); line-height:1.5; font-size: 0.88rem;">' + bulletPoints + '</ul></div>';
     }
 
-    // â”€â”€ ODOMETER ANIMATION â”€â”€
+    // ── ODOMETER ANIMATION ──
     function animateNum(el, start, end, dur, fmt){
       if(!el)return;
       let t0=null;
@@ -1216,7 +1223,7 @@
       if (glow) glow.style.background = color;
     };
 
-    // â”€â”€ BUILDERS â”€â”€
+    // ── BUILDERS ──
     function vital(l,v,s,c='neut'){return'<div class="vital"><div class="vv '+c+'">'+esc(v)+'</div><div class="vl">'+esc(l)+'</div><div class="vd">'+esc(s)+'</div></div>';}
     function metric(l,v,s,c='neut'){return'<div class="mi"><div class="mi-l">'+esc(l)+'</div><div class="mi-v '+c+'">'+esc(v)+'</div><div class="mi-s">'+esc(s)+'</div></div>';}
 
@@ -1230,7 +1237,7 @@
       return `
         <div class="agent-card" style="border-top: 3px solid ${colorVar}; background: linear-gradient(180deg, ${rgbShadow}, rgba(10,10,15,0.9));">
           <div class="agent-name" style="color: ${colorVar};">
-            <span style="opacity:0.7;">ðŸ§ </span> ${esc(name)}
+            <span style="opacity:0.7;">🧠</span> ${esc(name)}
           </div>
           <div class="agent-bias ${bc}" style="border-bottom-color: ${colorVar}40;">${esc(biasRaw)}</div>
           <div class="agent-thesis">${esc(agent.thesis||'')}</div>
@@ -1240,7 +1247,7 @@
 
     function playCard(p, i, agents) {
       const typeLabel = (p.type || 'SAFE').toUpperCase();
-      const icon = typeLabel === 'SAFE' ? 'ðŸ›¡ï¸' : typeLabel === 'AGGRESSIVE' ? 'âš¡' : 'ðŸ”„';
+      const icon = typeLabel === 'SAFE' ? '🛡️' : typeLabel === 'AGGRESSIVE' ? '⚡' : '🔄';
       const borderClr = typeLabel === 'SAFE' ? 'var(--green)' : typeLabel === 'AGGRESSIVE' ? 'var(--accent-gold)' : 'var(--purple)';
       const labelClr = typeLabel === 'SAFE' ? 'var(--green)' : typeLabel === 'AGGRESSIVE' ? 'var(--accent-gold)' : 'var(--purple)';
 
@@ -1289,7 +1296,7 @@
                 <div style="font-size:0.78rem; color:var(--text-bright); line-height:1.4;">${alignTxt}</div>
               </div>
               <div style="display:flex; align-items:flex-start; gap:8px; background:rgba(255,0,60,0.04); border:1px solid rgba(255,0,60,0.15); padding:5px 8px; border-radius:4px;">
-                <div style="color:var(--red); font-family:var(--font-mono); font-weight:bold; font-size:0.85rem; flex-shrink:0;">âˆ’</div>
+                <div style="color:var(--red); font-family:var(--font-mono); font-weight:bold; font-size:0.85rem; flex-shrink:0;">−</div>
                 <div style="font-size:0.78rem; color:var(--text-bright); line-height:1.4;">${misalignTxt}</div>
               </div>
             </div>
@@ -1300,7 +1307,7 @@
 
     function pane(id,tag,time,text,metrics){
       const mh=metrics.map(function(m){return'<div class="bm"><div class="bm-v">'+esc(m[1]||'N/A')+'</div><div class="bm-l">'+esc(m[0])+'</div></div>';}).join('');
-      document.getElementById('pane-'+id).innerHTML='<div class="brief"><div class="brief-meta"><span class="brief-tag">â± '+esc(time)+'</span><button class="voice-btn" id="audio-btn-'+id+'" onclick="playAudio(\''+id+'\')">ðŸ”Š LISTEN</button></div>'+formatNarrativeStrike(text)+'<div class="brief-metrics">'+mh+'</div></div>';
+      document.getElementById('pane-'+id).innerHTML='<div class="brief"><div class="brief-meta"><span class="brief-tag">⏱ '+esc(time)+'</span><button class="voice-btn" id="audio-btn-'+id+'" onclick="playAudio(\''+id+'\')">🔊 LISTEN</button></div>'+formatNarrativeStrike(text)+'<div class="brief-metrics">'+mh+'</div></div>';
     }
 
     function renderContext(m,b){
@@ -1337,14 +1344,14 @@
         
         var noteHtml = '';
         if (s.autopsy_note) {
-          noteHtml = '<div id="autopsy-note-'+idx+'" style="display:none; grid-column: 1 / -1; font-size:0.65rem; color:var(--muted); padding:8px; background:rgba(0,0,0,0.3); border-top:1px solid var(--s3); margin-top:5px;">â†³ <strong>Autopsy Note:</strong> '+esc(s.autopsy_note)+'</div>';
+          noteHtml = '<div id="autopsy-note-'+idx+'" style="display:none; grid-column: 1 / -1; font-size:0.65rem; color:var(--muted); padding:8px; background:rgba(0,0,0,0.3); border-top:1px solid var(--s3); margin-top:5px;">↳ <strong>Autopsy Note:</strong> '+esc(s.autopsy_note)+'</div>';
         }
         
         return'<div class="ledger-row" onclick="var el = document.getElementById(\'autopsy-note-'+idx+'\'); if(el) el.style.display = el.style.display === \'none\' ? \'block\' : \'none\';" style="display:grid; grid-template-columns: 2fr 3fr 2fr 1fr; gap: 8px; align-items:center; cursor:pointer; background:'+rowBg+'; border-radius:4px; padding:4px;"><span>'+esc(s.date||'')+'</span><span style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis;" title="'+esc(s.headline||'')+'">'+esc(s.headline||s.signal||'')+'</span><span style="font-size:0.45rem;">'+esc(entryText)+' | <span class="'+pnlClass+'">'+esc(pnlText)+'</span></span><span class="'+rc+'" style="text-align:right;">'+esc(rs)+'</span>'+noteHtml+'</div>';
       }).join('');
     }
 
-    // â”€â”€ VOICE (Cinematic Backend Engine) â”€â”€
+    // ── VOICE (Cinematic Backend Engine) ──
     let currentAudio = null;
     let currentAudioId = null;
     window.activeAudioVersionToken = new Date().getTime();
@@ -1357,7 +1364,7 @@
         currentAudio.pause();
         currentAudio.currentTime = 0;
         const oldBtn = document.getElementById('audio-btn-' + currentAudioId);
-        if (oldBtn) oldBtn.innerHTML = 'ðŸ”Š LISTEN';
+        if (oldBtn) oldBtn.innerHTML = '🔊 LISTEN';
         
         // If clicking the same button, just stop it and return
         if (currentAudioId === id) {
@@ -1371,21 +1378,21 @@
       const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
       const baseUrl = isLocal ? '.' : 'https://raw.githubusercontent.com/gnsumanth81-boop/Final_chaos/main';
       const url = `${baseUrl}/api/audio/${id}.mp3?v=${window.activeAudioVersionToken}`;
-      console.log('ðŸŽ™ï¸ Streaming cinematic audio:', url);
+      console.log('🎙️ Streaming cinematic audio:', url);
       
       currentAudio = new Audio(url);
       currentAudioId = id;
       
-      if (btn) btn.innerHTML = 'â¹ï¸ STOP';
+      if (btn) btn.innerHTML = '⏹️ STOP';
       
       currentAudio.play().catch(e => {
         console.warn('Audio playback failed (might not exist yet):', e);
-        if (btn) btn.innerHTML = 'âš ï¸ ERROR';
-        setTimeout(() => { if (btn) btn.innerHTML = 'ðŸ”Š LISTEN'; }, 2000);
+        if (btn) btn.innerHTML = '⚠️ ERROR';
+        setTimeout(() => { if (btn) btn.innerHTML = '🔊 LISTEN'; }, 2000);
       });
       
       currentAudio.onended = function() {
-        if (btn) btn.innerHTML = 'ðŸ”Š LISTEN';
+        if (btn) btn.innerHTML = '🔊 LISTEN';
         currentAudio = null;
         currentAudioId = null;
       };
@@ -1402,7 +1409,7 @@
       document.getElementById('pane-'+id).classList.add('active');
     }
 
-    // â”€â”€ SPA ROUTER â”€â”€
+    // ── SPA ROUTER ──
     function runClientRouter(){
       var hash=window.location.hash||'#terminal';
       var map={'#terminal':'view-terminal','#ledger':'view-ledger','#vitals':'view-vitals','#alpha':'view-alpha','#archive':'view-archive'};
@@ -1415,7 +1422,7 @@
     }
     window.addEventListener('hashchange',runClientRouter);
 
-    // â”€â”€ MOBILE SWIPE â”€â”€
+    // ── MOBILE SWIPE ──
     var touchX=0;
     document.addEventListener('touchstart',function(e){touchX=e.changedTouches[0].screenX;},{passive:true});
     document.addEventListener('touchend',function(e){
@@ -1428,9 +1435,9 @@
       else if(dx<0&&idx>0)window.location.hash=hashes[idx-1];
     },{passive:true});
 
-    // â”€â”€ WORLD CLOCK â”€â”€
+    // ── WORLD CLOCK ──
     function updateWorldClock(){
-      var zones=[['ðŸŒ','UTC','UTC'],['ðŸ‡ºðŸ‡¸','NY','America/New_York'],['ðŸ‡¬ðŸ‡§','LDN','Europe/London'],['ðŸ‡®ðŸ‡³','MUM','Asia/Kolkata'],['ðŸ‡¯ðŸ‡µ','TKY','Asia/Tokyo']];
+      var zones=[['🌍','UTC','UTC'],['🇺🇸','NY','America/New_York'],['🇬🇧','LDN','Europe/London'],['🇮🇳','MUM','Asia/Kolkata'],['🇯🇵','TKY','Asia/Tokyo']];
       var bar=document.getElementById('world-clock-bar');
       function tick(){
         var now=new Date();
@@ -1439,13 +1446,13 @@
       tick();setInterval(tick,30000);
     }
 
-    // â”€â”€ REVEAL ON SCROLL â”€â”€
+    // ── REVEAL ON SCROLL ──
     function reveal(){
       var obs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('vis');obs.unobserve(e.target);}});},{threshold:.08});
       document.querySelectorAll('.rv').forEach(function(el){obs.observe(el);});
     }
 
-    // â”€â”€ TRADINGVIEW â”€â”€
+    // ── TRADINGVIEW ──
     function initTV(){
       tvLoaded=true;
       var script=document.createElement('script');
@@ -1459,15 +1466,15 @@
       document.head.appendChild(script);
     }
 
-    // â”€â”€ PROGRESS BAR â”€â”€
+    // ── PROGRESS BAR ──
     function updateProgress(){
       var w=0;var i=setInterval(function(){w=Math.min(w+Math.random()*12,95);document.getElementById('progress').style.width=w+'%';},120);
       return function(){clearInterval(i);document.getElementById('progress').style.width='100%';setTimeout(function(){document.getElementById('progress').style.opacity=0;},400);};
     }
 
-    // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+    // ═══════════════════════════════════
     //  RENDER — THE FULL MASTERPIECE
-    // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+    // ═══════════════════════════════════
     function render(latest,signals){
       var m=latest.market||{};
       var b=latest.brief||{};
@@ -1515,27 +1522,6 @@
         }
       }, 1000);
 
-      // Hash and verification
-      var hashEl = document.getElementById('hash-val');
-      if (hashEl) hashEl.textContent = latest.signal?.sha256 || latest.signal?.signal_hash || 'Hash pending...';
-
-      // Signal Row and Validation Target
-      var sigRowEl = document.getElementById('sig-row');
-      if (sigRowEl) {
-        var winRate = latest.ledger?.win_rate || '57.7%';
-        sigRowEl.innerHTML = '<span class="sig '+scls+'">'+esc(signal)+'</span><span class="ts-badge">THIS WEEK</span><span class="conf">'+winRate+' VERIFIED WR</span>';
-      }
-
-      var valTargetEl = document.getElementById('validation-target');
-      if (valTargetEl) {
-        if (b.validation_target || latest.signal?.validation_target) {
-          valTargetEl.style.display = 'block';
-          document.getElementById('vt-text').textContent = b.validation_target || latest.signal?.validation_target;
-        } else {
-          valTargetEl.style.display = 'none';
-        }
-      }
-
       // Populating the Delta Panel
       const btcChange = parseFloat(m.btcChange || 0);
       const deltaBtcEl = document.getElementById('delta-btc');
@@ -1565,39 +1551,15 @@
         ['10Y',(m.yieldVal||'N/A')+'%',num(m.yieldVal)>4.5?'bear':'neut'],['DXY',m.dxyVal||'N/A','neut']
       ];
       var tk=tickerItems.map(function(t){return'<span class="tk">'+esc(t[0])+' '+(t[1]?'<span class="v '+t[2]+'">'+esc(t[1])+'</span>':'')+'</span>';}).join('');
-      var tkEl = document.getElementById('ticker-inner');
-      if (tkEl) tkEl.innerHTML=tk+tk;
+      document.getElementById('ticker-inner').innerHTML=tk+tk;
 
       // Header
-      var tStatus = document.getElementById('terminal-status');
-      var dLine = document.getElementById('date-line');
-      if (tStatus) tStatus.textContent = dateStr+' · '+timeStr;
-      if (dLine) dLine.textContent = dateStr+' · '+timeStr;
-      
-      var hdrFear = document.getElementById('hdr-fear');
-      var hdrBtc = document.getElementById('hdr-btc');
-      var hdrBtcPct = document.getElementById('hdr-btc-pct');
-      var hdrSignal = document.getElementById('hdr-signal');
-      
-      if(hdrFear) {
-        hdrFear.textContent = fear;
-        hdrFear.style.color = fearColor;
-      }
-      if(hdrBtc) {
-        hdrBtc.textContent = m.btcPrice || '--';
-      }
-      if(hdrBtcPct) {
-        var pct = num(m.btcChange).toFixed(2);
-        hdrBtcPct.textContent = (pct >= 0 ? '+' : '') + pct + '%';
-        hdrBtcPct.style.color = pct >= 0 ? 'var(--green)' : 'var(--red)';
-      }
-      if(hdrSignal) {
-        hdrSignal.textContent = signal;
-        hdrSignal.style.color = scls === 'bull' ? 'var(--green)' : scls === 'bear' ? 'var(--red)' : 'var(--gold)';
-      }
-
+      document.getElementById('terminal-status').textContent=dateStr+' · '+timeStr;
+      document.getElementById('date-line').textContent=dateStr+' · '+timeStr;
       var sessionBadge = document.getElementById('session-badge');
       if (sessionBadge) sessionBadge.textContent=(m.session||'MORNING')+' BRIEF';
+      document.getElementById('hash-val').textContent=latest.signal?.signal_hash||'Hash pending...';
+
       // Vitals
       var perf = latest.performance || {};
       var tr = perf.total_resolved || 0;
@@ -1619,7 +1581,7 @@
       document.getElementById('updated-line').textContent=timeStr+' · ∞ BRAIN + LIVE DATA';
 
       var btcChangeVal = num(m.btcChange).toFixed(2);
-      var btcSign = num(m.btcChange) >= 0 ? 'â–² +' : 'â–¼ ';
+      var btcSign = num(m.btcChange) >= 0 ? '▲ +' : '▼ ';
       
       // Removed vitals-target ribbon injection to eliminate metric duplication
 
@@ -1638,43 +1600,25 @@
         var hasGeo = agents.geopolitical && agents.geopolitical.bias;
         var cols = hasGeo ? 4 : 3;
         var geoCard = hasGeo ? agentCard('Geopolitical', agents.geopolitical) : '';
-        acEl.innerHTML='<div class="sec-title">ðŸ¤– AGENT CONSENSUS</div><div class="agent-panel" style="grid-template-columns:repeat('+cols+',1fr)">'+agentCard('Fundamental',agents.fundamental)+agentCard('Technical',agents.technical)+agentCard('Sentiment',agents.sentiment)+geoCard+'</div><div style="text-align:center"><span class="debate-badge">'+esc(b.agent_consensus?.debate_required?'DEBATE RESOLVED':'âœ“ UNANIMOUS')+'</span></div>';
+        acEl.innerHTML='<div class="sec-title">🤖 AGENT CONSENSUS</div><div class="agent-panel" style="grid-template-columns:repeat('+cols+',1fr)">'+agentCard('Fundamental',agents.fundamental)+agentCard('Technical',agents.technical)+agentCard('Sentiment',agents.sentiment)+geoCard+'</div><div style="text-align:center"><span class="debate-badge">'+esc(b.agent_consensus?.debate_required?'DEBATE RESOLVED':'✓ UNANIMOUS')+'</span></div>';
       }
 
       // Chaos Line
       var clEl = document.getElementById('chaos-line-card');
       if (clEl) {
-        clEl.innerHTML='<span class="chaos-tag"><span class="chaos-star">âœ¦</span> THE CHAOS LINE</span><div class="chaos-text" id="chaos-quote-text">&ldquo;'+esc(b.chaos_line||'')+'&rdquo;</div><div class="share-row"><a class="s-btn ghost" target="_blank" href="https://twitter.com/intent/tweet?text='+encodeURIComponent('"'+(b.chaos_line||'')+'" — Chaos Intelligence\n'+SITE)+'">ð• Post</a><a class="s-btn ghost" target="_blank" href="https://t.me/share/url?url='+encodeURIComponent(SITE)+'&text='+encodeURIComponent('"'+(b.chaos_line||'')+'" — Chaos Intelligence')+'">âœˆ Telegram</a><button class="s-btn ghost" onclick="copyLine()">ðŸ“‹ Copy Line</button><button class="s-btn ghost" id="export-btn" style="color:var(--gold); border-color:var(--gold); font-weight:700; font-family:var(--font-mono); letter-spacing:1px; background:rgba(212,168,67,0.05);" onclick="generateChaosImage()">âš¡ EXPORT VIRAL SIGNAL CARD</button></div>';
-      }
-
-      // Fear Gauge
-      var fearNumEl = document.getElementById('fear-number');
-      var fearLabelEl = document.getElementById('fear-label-text');
-      var fearArcEl = document.getElementById('fear-arc');
-      if(fearNumEl) fearNumEl.textContent = fear;
-      if(fearNumEl) fearNumEl.style.color = fearColor;
-      if(fearLabelEl) {
-        fearLabelEl.textContent = fear < 25 ? 'EXTREME FEAR' : fear > 60 ? 'GREED' : 'NEUTRAL';
-        fearLabelEl.style.color = fearColor;
-      }
-      if(fearArcEl) {
-        var offset = 283 - ((fear / 100) * 283);
-        fearArcEl.style.strokeDashoffset = offset;
-        fearArcEl.style.stroke = fearColor;
+        clEl.innerHTML='<span class="chaos-tag"><span class="chaos-star">✦</span> THE CHAOS LINE</span><div class="chaos-text" id="chaos-quote-text">&ldquo;'+esc(b.chaos_line||'')+'&rdquo;</div><div class="share-row"><a class="s-btn ghost" target="_blank" href="https://twitter.com/intent/tweet?text='+encodeURIComponent('"'+(b.chaos_line||'')+'" — Chaos Intelligence\n'+SITE)+'">𝕏 Post</a><a class="s-btn ghost" target="_blank" href="https://t.me/share/url?url='+encodeURIComponent(SITE)+'&text='+encodeURIComponent('"'+(b.chaos_line||'')+'" — Chaos Intelligence')+'">✈ Telegram</a><button class="s-btn ghost" onclick="copyLine()">📋 Copy Line</button><button class="s-btn ghost" id="export-btn" style="color:var(--gold); border-color:var(--gold); font-weight:700; font-family:var(--font-mono); letter-spacing:1px; background:rgba(212,168,67,0.05);" onclick="generateChaosImage()">⚡ EXPORT VIRAL SIGNAL CARD</button></div>';
       }
 
       // Trap
       var tpEl = document.getElementById('trap-card');
       if (tpEl) {
-        var trapText = b.market_trap || b.trap || "The market is setting a classic liquidity trap — encouraging retail to buy the dip while smart money quietly de-risks.";
-        tpEl.innerHTML='<div class="trap-tag" style="color:var(--gold);">âš  MARKET TRAP</div><div class="trap-text">'+briefHtml(trapText)+'</div>';
+        tpEl.innerHTML='<div class="trap-tag">⚠ MARKET TRAP</div><div class="trap-text">'+briefHtml(b.trap)+'</div>';
       }
 
       // Edge
       var edEl = document.getElementById('edge-card');
       if (edEl) {
-        var edgeText = b.market_edge || b.edge || "The real edge is understanding that extreme fear + rising yields is forcing capital into safe-haven assets faster than most models predict.";
-        edEl.innerHTML='<div class="edge-tag" style="color:var(--blue);">ðŸ” THE EDGE</div><div class="edge-text">'+briefHtml(edgeText)+'</div>';
+        edEl.innerHTML='<div class="edge-tag">🔍 THE EDGE — WHAT OTHERS ARE MISSING</div><div class="edge-text">'+briefHtml(b.edge)+'</div>';
       }
 
       // Plays
@@ -1706,7 +1650,7 @@
               gazaCeasefire: "Geopolitical Ceasefire Resolution"
             };
             
-            let matrixHtml = '<span class="poly-tag" style="display:flex;justify-content:space-between;"><span>âš¡ LIVE POLYMARKET CLOB TELEMETRY MATRIX</span><span style="color:var(--green);animation:pulse 2s infinite">â— FEED_LIVE</span></span><div style="margin-top:16px;display:flex;flex-direction:column;gap:12px;">';
+            let matrixHtml = '<span class="poly-tag" style="display:flex;justify-content:space-between;"><span>⚡ LIVE POLYMARKET CLOB TELEMETRY MATRIX</span><span style="color:var(--green);animation:pulse 2s infinite">● FEED_LIVE</span></span><div style="margin-top:16px;display:flex;flex-direction:column;gap:12px;">';
             for (const [key, value] of Object.entries(pData)) {
               const label = labelsMap[key] || key;
               matrixHtml += `
@@ -1725,15 +1669,19 @@
             polyCard.innerHTML = matrixHtml;
           } else {
             const odds=num(m.marketOdds,50);
-            polyCard.innerHTML='<span class="poly-tag">âš¡ TOP PREDICTION MARKET</span><div class="poly-q">'+esc(m.marketTitle||'Prediction market unavailable')+'</div><div class="poly-row"><div class="poly-odds">'+esc(m.marketOdds||'50.0')+'%</div><div><div style="font-family:var(--font-mono);font-size:.44rem;color:var(--muted);margin-bottom:6px">YES probability</div><div class="poly-track"><div class="poly-fill" style="width:'+Math.max(0,Math.min(100,odds))+'%"></div></div></div></div><div style="margin-top:14px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px"><div class="vd">Volume: '+esc(m.marketVolume||'$0')+'</div><a class="poly-link" href="'+esc(m.marketLink||'https://polymarket.com')+'" target="_blank">VIEW LIVE →</a></div>';
+            polyCard.innerHTML='<span class="poly-tag">⚡ TOP PREDICTION MARKET</span><div class="poly-q">'+esc(m.marketTitle||'Prediction market unavailable')+'</div><div class="poly-row"><div class="poly-odds">'+esc(m.marketOdds||'50.0')+'%</div><div><div style="font-family:var(--font-mono);font-size:.44rem;color:var(--muted);margin-bottom:6px">YES probability</div><div class="poly-track"><div class="poly-fill" style="width:'+Math.max(0,Math.min(100,odds))+'%"></div></div></div></div><div style="margin-top:14px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px"><div class="vd">Volume: '+esc(m.marketVolume||'$0')+'</div><a class="poly-link" href="'+esc(m.marketLink||'https://polymarket.com')+'" target="_blank">VIEW LIVE →</a></div>';
           }
         }
       }
       document.getElementById('macro-grid').innerHTML=[
         metric('10Y Treasury',(m.yieldVal||'N/A')+'%','Yield change',num(m.yieldVal)>4.5?'bear':'neut'),
-        metric('DXY Dollar',m.dxyVal||'N/A',num(m.dxyVal)>104?'â†‘ EM pressure':'— Neutral','neut'),
+        metric('DXY Dollar',m.dxyVal||'N/A',num(m.dxyVal)>104?'↑ EM pressure':'— Neutral','neut'),
         metric('VIX',m.vixVal||'N/A','Implied vol',num(m.vixVal)>20?'bear':'neut'),
-        metric('S&P 500',m.spxVal||'N/A',m.spxChange||'',String(m.spxChange||'').startsWith('+')?'bull':'bear')
+        metric('S&P 500',m.spxVal||'N/A',m.spxChange||'',String(m.spxChange||'').startsWith('+')?'bull':'bear'),
+        metric('Recession Prob',m.recessionProb||'N/A','FRED/NY Fed model','neut'),
+        metric('BTC Dominance',m.btcDominance||'N/A',m.totalMarketCap||'Crypto MCap','neut'),
+        metric('Gold /oz',m.goldPrice||'N/A','Safe-haven demand','neut'),
+        metric('WSB Sentiment',m.wsbSentiment||'N/A','Retail positioning',m.wsbSentiment==='BULLISH'?'bull':m.wsbSentiment==='BEARISH'?'bear':'neut')
       ].join('');
 
       // Context
@@ -1750,7 +1698,7 @@
         }
       }
 
-      // â•â• CVX ENGINE â•â•
+      // ══ CVX ENGINE ══
       var cvxFear = num(m.fearIndex, 50);
       var cvxVix = num(m.vixVal, 15);
       var geoBias = (agents.geopolitical && agents.geopolitical.bias) ? String(agents.geopolitical.bias).toUpperCase() : 'NEUTRAL';
@@ -1775,7 +1723,7 @@
         var isWin = (perf.streak_direction || 'WIN') === 'WIN';
         streakEl.style.display = 'inline-flex';
         streakEl.className = 'streak-badge ' + (isWin ? 'win-streak' : 'loss-streak');
-        streakEl.textContent = (isWin ? 'ðŸ”¥' : 'â„ï¸') + ' ' + perf.current_streak + (isWin ? 'W' : 'L') + ' STREAK';
+        streakEl.textContent = (isWin ? '🔥' : '❄️') + ' ' + perf.current_streak + (isWin ? 'W' : 'L') + ' STREAK';
       }
 
       // Command bar population
@@ -1805,7 +1753,7 @@
         }
       }
 
-      // â•â• MOBILE SIGNAL CARD POPULATION â•â•
+      // ══ MOBILE SIGNAL CARD POPULATION ══
       var mHash = document.getElementById('m-hash');
       if (mHash) mHash.textContent = latest.signal && latest.signal.signal_hash ? latest.signal.signal_hash.substring(0, 12) : '';
 
@@ -1869,9 +1817,9 @@
       updateWorldClock();
     }
 
-    // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+    // ═══════════════════════════════════
     //  DATA LOADER + AUTO-POLL
-    // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+    // ═══════════════════════════════════
     async function loadData(isPoll){
       var done=isPoll?null:updateProgress();
       try{
@@ -1916,7 +1864,7 @@
       }
     }
 
-    // â”€â”€ BOOT â”€â”€
+    // ── BOOT ──
     window.addEventListener('load',function(){
       runClientRouter();
       setTimeout(function(){loadData(false);},900);
@@ -1927,16 +1875,16 @@
       // Register Service Worker for PWA
       if ('serviceWorker' in navigator) {
         navigator.serviceWorker.register('/sw.js').then(function(reg) {
-          console.log('âš¡ [PWA] Service Worker registered. Scope:', reg.scope);
+          console.log('⚡ [PWA] Service Worker registered. Scope:', reg.scope);
         }).catch(function(err) {
-          console.log('âš ï¸ [PWA] SW registration failed:', err);
+          console.log('⚠️ [PWA] SW registration failed:', err);
         });
       }
     });
 
-    // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+    // ─────────────────────────────────────────────────────────────────
     // CRYPTOGRAPHIC LEDGER AUDITING ENGINE HANDLERS
-    // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+    // ─────────────────────────────────────────────────────────────────
     function openHashVerifier() {
       const modal = document.getElementById('hash-verifier-modal');
       const jsonDump = document.getElementById('cli-json-dump');
@@ -1989,7 +1937,7 @@
       if (e.key === 'Escape') closeHashVerifier();
     });
 
-    // â”€â”€ FIRST-VISIT ONBOARDING â”€â”€
+    // ── FIRST-VISIT ONBOARDING ──
     var _onboardStep = 0;
     function initOnboard() {
       if (localStorage.getItem('chaos_onboarded')) return;
@@ -2007,7 +1955,7 @@
       document.getElementById('onboard-overlay').classList.add('hidden');
     }
 
-    // â”€â”€ CMD COUNTDOWN INIT â”€â”€
+    // ── CMD COUNTDOWN INIT ──
     function initCmdCountdown(generatedAt) {
       if (window.cmdCountdownInterval) clearInterval(window.cmdCountdownInterval);
       window.cmdCountdownInterval = setInterval(function() {
@@ -2020,10 +1968,10 @@
       }, 10000);
     }
 
-    // â”€â”€ VIRAL SIGNAL CARD GENERATOR (HTML2CANVAS) â”€â”€
+    // ── VIRAL SIGNAL CARD GENERATOR (HTML2CANVAS) ──
     async function generateChaosImage() {
       const btn = document.getElementById('export-btn');
-      if (btn) { btn.disabled = true; btn.innerText = 'âš¡ GENERATING...'; }
+      if (btn) { btn.disabled = true; btn.innerText = '⚡ GENERATING...'; }
       
       const card = document.getElementById('export-card-wrap');
       
@@ -2044,7 +1992,7 @@
       } catch (e) {
         console.error('Failed to generate viral card:', e);
       } finally {
-        if (btn) { btn.disabled = false; btn.innerText = 'âš¡ EXPORT VIRAL SIGNAL CARD'; }
+        if (btn) { btn.disabled = false; btn.innerText = '⚡ EXPORT VIRAL SIGNAL CARD'; }
       }
     }
   </script>
@@ -2053,8 +2001,8 @@
   <div class="cli-modal-bg" id="hash-verifier-modal" onclick="closeHashVerifierBg(event)">
     <div class="cli-window">
       <div class="cli-header">
-        <span class="cli-title">ðŸ” LEDGER AUDIT INTERFACE v7.1</span>
-        <button class="cli-close" onclick="closeHashVerifier()">âœ•</button>
+        <span class="cli-title">🔐 LEDGER AUDIT INTERFACE v7.1</span>
+        <button class="cli-close" onclick="closeHashVerifier()">✕</button>
       </div>
       <div class="cli-body">
         <div style="color: #8a8f9c; margin-bottom: 12px; font-size: 0.5rem; letter-spacing: 1px;">
@@ -2097,7 +2045,7 @@
       </div>
 
       <div style="border-top:1px solid rgba(255,255,255,0.1); padding-top:32px; display:flex; justify-content:space-between; align-items:center; font-size:1.2rem; color:var(--muted);">
-        <p>NOT FINANCIAL ADVICE â€¢ AI-GENERATED VIA GLOBAL DEEP LIQUIDITY DATA</p>
+        <p>NOT FINANCIAL ADVICE • AI-GENERATED VIA GLOBAL DEEP LIQUIDITY DATA</p>
         <p style="letter-spacing:4px; font-weight:700; color:#a1a1aa;">CHAOS-TERMINAL.ALPHA</p>
       </div>
     </div>
