@@ -688,6 +688,42 @@
     .hud-badge:hover { background: rgba(212,175,55,0.15); }
     /* mobile overrides moved to main @media block above */
 
+    /* ── POCKET CARD REDESIGN ── */
+    .pocket-card { display: flex; flex-direction: column; gap: 12px; margin-top: 10px; padding-bottom: 80px; }
+    .pocket-hero { display: flex; align-items: center; gap: 16px; background: var(--bg-card); padding: 16px; border-radius: 12px; border: 1px solid var(--border-light); }
+    .pocket-fear { display: flex; flex-direction: column; align-items: center; justify-content: center; width: 64px; height: 64px; border-radius: 50%; border: 3px solid var(--red); box-shadow: 0 0 15px var(--red-g); flex-shrink: 0; background: rgba(220,38,38,0.1); transition: all 0.5s ease; }
+    .pocket-fear-val { font-family: var(--font-big); font-size: 1.8rem; line-height: 1; color: var(--text-pure); font-weight: 900; }
+    .pocket-fear-lbl { font-family: var(--font-mono); font-size: 0.45rem; letter-spacing: 1px; text-transform: uppercase; margin-top: 2px; text-align: center; line-height: 1.1; color: var(--text-pure); }
+    .pocket-head { flex: 1; min-width: 0; }
+    .pocket-tag { font-family: var(--font-mono); font-size: 0.55rem; color: var(--muted); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 4px; display: block; }
+    .pocket-hl { font-family: var(--font-big); font-size: 1.4rem; line-height: 1.1; color: var(--text-pure); margin-bottom: 6px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .pocket-meta { display: flex; gap: 8px; font-family: var(--font-mono); font-size: 0.55rem; font-weight: 700; align-items: center; flex-wrap: wrap; }
+    
+    .pocket-plays { display: flex; gap: 8px; overflow-x: auto; padding-bottom: 4px; scrollbar-width: none; }
+    .pocket-plays::-webkit-scrollbar { display: none; }
+    .pocket-play { flex: 1; min-width: 200px; background: var(--bg-card); border-radius: 8px; padding: 12px; border: 1px solid var(--border-light); border-left-width: 3px; display: flex; flex-direction: column; gap: 6px; position: relative; }
+    .pocket-play.safe { border-left-color: var(--green); }
+    .pocket-play.agg { border-left-color: var(--accent-gold); }
+    .pocket-play.con { border-left-color: var(--purple); }
+    .pocket-play-hdr { display: flex; justify-content: space-between; align-items: center; }
+    .pocket-play-type { font-family: var(--font-mono); font-size: 0.55rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
+    .pocket-play-thesis { font-family: var(--font-ui); font-size: 0.85rem; color: var(--text-bright); line-height: 1.3; font-weight: 600; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+    .pocket-play-copy { background: transparent; border: 1px solid var(--border-focus); color: var(--text-muted); font-size: 0.5rem; padding: 3px 6px; border-radius: 4px; cursor: pointer; transition: all 0.2s; font-family: var(--font-mono); text-transform: uppercase; }
+    .pocket-play-copy:hover { background: var(--border-focus); color: var(--text-pure); }
+    
+    .pocket-agents { display: flex; gap: 6px; flex-wrap: wrap; background: var(--bg-card); padding: 8px 12px; border-radius: 8px; border: 1px solid var(--border-light); justify-content: space-between; align-items: center; }
+    .pocket-agent { display: flex; align-items: center; gap: 4px; font-family: var(--font-mono); font-size: 0.55rem; font-weight: 700; color: var(--text-muted); }
+    .pocket-agent-v { padding: 2px 4px; border-radius: 2px; color: #fff; }
+    
+    .pocket-chaos { background: var(--bg-card); padding: 16px; border-radius: 8px; border: 1px solid var(--border-light); display: flex; flex-direction: column; gap: 10px; }
+    .pocket-chaos-txt { font-family: var(--font-body); font-style: italic; font-size: 1rem; color: var(--text-bright); text-align: center; }
+    .pocket-chaos-acts { display: flex; justify-content: center; gap: 8px; }
+    
+    .pocket-expand-btn { width: 100%; background: var(--bg-card); border: 1px dashed var(--border-focus); color: var(--text-muted); font-family: var(--font-mono); font-size: 0.65rem; letter-spacing: 2px; padding: 12px; border-radius: 8px; cursor: pointer; text-transform: uppercase; transition: all 0.2s; font-weight: 700; margin-top: 8px; }
+    .pocket-expand-btn:hover { background: var(--s2); color: var(--text-pure); border-style: solid; }
+    .pocket-full { display: none; margin-top: 16px; animation: fadeUp 0.3s ease; }
+    .pocket-full.show { display: block; }
+    .pocket-timestamp { text-align: center; font-family: var(--font-mono); font-size: 0.5rem; color: var(--muted); margin-top: 16px; letter-spacing: 1px; }
 
   </style>
 </head>
@@ -775,50 +811,51 @@
 
   <!-- ═══════════ INTEL VIEW ═══════════ -->
   <div id="view-terminal" class="spa-view active">
-    <div class="wrap">
+    <main class="wrap"><div class="main pocket-card">
       
-      
-      
-      
-      <!-- FINAL CHAOS BIAS (Removed to reduce clutter per user request) -->
-
-    </div>
-    <!-- Vitals block removed to fix spacing gap -->
-
-    
-
-    <main class="wrap"><div class="main">
-      <article>
-        <div class="ed-tag" id="brief-tag">TODAY'S BRIEFING · NYC</div>
-        <h1 class="hl" id="headline">Global Chaos: Fear Reigns, Markets Brace</h1>
-        <div class="sig-row" id="sig-row"><span class="sig bear">BEARISH</span><span class="ts-badge">THIS WEEK</span><span class="conf">57.7% VERIFIED WR · 2 WIN STREAK</span></div>
-        <div class="upd"><span class="bull">●</span><span id="updated-line">08:50 UTC · ∞ BRAIN + LIVE DATA</span></div>
-
-        <section class="glass-card rv" style="margin-bottom: 24px; display: flex; flex-direction: column; align-items: center; text-align: center;">
-          <div class="sec-title" style="align-self: stretch; margin-top: 0;">MARKET FEAR GAUGE</div>
-          
-          <div class="gauge-wrap" style="margin-bottom: 16px;">
-            <div class="gauge-container" style="width: 260px; height: 150px;">
-              <svg viewBox="0 0 200 110">
-                <defs>
-                  <linearGradient id="gaugeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" stop-color="#E8394A"></stop> <!-- Red (Extreme Fear) -->
-                    <stop offset="50%" stop-color="#F5A623"></stop> <!-- Gold (Neutral) -->
-                    <stop offset="100%" stop-color="#22D45A"></stop> <!-- Green (Greed) -->
-                  </linearGradient>
-                </defs>
-                <!-- Thick background track with segments -->
-                <path d="M20,100 A80,80 0 0,1 180,100" fill="none" stroke="var(--s2)" stroke-width="14" stroke-linecap="round"></path>
-                <!-- Filled gradient track -->
-                <path class="gauge-fill" id="gauge-arc" d="M20,100 A80,80 0 0,1 180,100" fill="none" stroke="url(#gaugeGrad)" stroke-width="14" stroke-linecap="round" stroke-dasharray="251" stroke-dashoffset="251" style="filter: drop-shadow(0 0 8px rgba(245,166,35,0.4));"></path>
-              </svg>
-              <div class="gauge-glow" id="gauge-glow" style="width: 160px; height: 80px; bottom: 0; filter: blur(40px);"></div>
-              <div class="gauge-val" id="fear-num" style="font-size: 3.5rem; bottom: 20px;">0</div>
-              <div class="gauge-label" id="gauge-label" style="bottom: -5px; font-size: 0.55rem; letter-spacing: 3px; font-weight: 700;">NEUTRAL</div>
-            </div>
+      <!-- POCKET HERO (FEAR + HEADLINE) -->
+      <div class="pocket-hero">
+        <div class="pocket-fear" id="pocket-fear-circle">
+          <div class="pocket-fear-val" id="fear-num">0</div>
+          <div class="pocket-fear-lbl" id="gauge-label">NEUTRAL</div>
+        </div>
+        <div class="pocket-head">
+          <span class="pocket-tag" id="brief-tag">TODAY'S BRIEFING · NYC</span>
+          <h1 class="pocket-hl" id="headline">Loading intel...</h1>
+          <div class="pocket-meta" id="sig-row">
+            <span class="sig bear" style="padding:2px 6px; border-radius:4px;">BEARISH</span>
+            <span style="color:var(--text-muted)">·</span>
+            <span class="conf" style="color:var(--green)">72.1% WR</span>
+            <span style="color:var(--text-muted)">·</span>
+            <span style="color:var(--accent-gold)">🔥 12W STREAK</span>
           </div>
-        </section>
+        </div>
+      </div>
 
+      <!-- POCKET PLAYS -->
+      <div class="pocket-plays" id="plays-grid">
+        <!-- JS injected pocket plays go here -->
+      </div>
+
+      <!-- POCKET AGENTS -->
+      <div class="pocket-agents" id="agent-consensus">
+        <!-- JS injected pocket agents go here -->
+      </div>
+
+      <!-- POCKET CHAOS -->
+      <div class="pocket-chaos" id="chaos-line-card">
+        <div class="pocket-chaos-txt" id="chaos-quote-text">“The market doesn't care if you're right, it only cares if you're alive to collect.”</div>
+        <div class="pocket-chaos-acts share-row">
+          <button class="s-btn ghost" style="padding:4px 8px; font-size:0.6rem;" onclick="copyLine()">📋 COPY LINE</button>
+          <a class="s-btn ghost" style="padding:4px 8px; font-size:0.6rem;" target="_blank" href="https://twitter.com/intent/tweet?text=%22The%20market%20doesn't%20care%20if%20you're%20right%2C%20it%20only%20cares%20if%20you're%20alive%20to%20collect.%22%20%E2%80%94%20Chaos%20Intelligence%0Ahttps%3A%2F%2Fchaos.sumanthworks.com">𝕏 POST</a>
+        </div>
+      </div>
+
+      <!-- TOGGLE FULL ANALYSIS -->
+      <button class="pocket-expand-btn" onclick="toggleFullBrief(this)">▼ Full Analysis & Context</button>
+
+      <!-- FULL ANALYSIS (COLLAPSED BY DEFAULT) -->
+      <div class="pocket-full" id="pocket-full-view">
         <section class="cx-section rv">
           <div class="sec-title">INTELLIGENCE LEVEL — PICK YOURS</div>
           <div class="cx-tabs" role="tablist">
@@ -826,128 +863,7 @@
             <button class="cx-btn active" onclick="setCx('analyst',this)"><span class="cx-n">Analyst</span><span class="cx-sub">Intermediate · 5 min</span></button>
             <button class="cx-btn" onclick="setCx('quant',this)"><span class="cx-n">Quant</span><span class="cx-sub">Advanced · 7 min</span></button>
           </div>
-          <div class="pane" id="pane-eli5"><div class="brief"><div class="brief-meta"><span class="brief-tag">⏱ 3 MIN</span><button class="voice-btn" id="audio-btn-eli5" onclick="playAudio('eli5')">🔊 LISTEN</button></div><div class="bg-card"><div style="font-family: var(--font-mono); font-size: 0.65rem; color: var(--accent-gold); margin-bottom: 12px; letter-spacing: 1px;">TARGETED NARRATIVE STRIKE</div><ul style="list-style-type:none; padding:0; margin:0; color: var(--text-bright); line-height:1.5; font-size: 0.88rem;"><li style="margin-bottom:10px; padding-left:14px; position:relative;"><span style="position:absolute; left:0; top:6px; width:5px; height:5px; background:var(--red); border-radius:50%; box-shadow:0 0 5px rgba(232,57,74,0.5);"></span>Imagine the world is like a big, shaky amusement park ride right now. Everyone's feeling a bit nervous, like when you're at the top of the roller coaster, and that's why the 'Fear Index' is down at 22. <span style="color: var(--gold); font-weight: bold;">Bitcoin</span>, our digital playground money, is also taking a tumble, currently sitting at $64,889. It's like the ride has hit a bump, and people are holding on tight. There are a lot of little worries popping up everywhere, making everyone a bit jumpy. We need to keep an eye on these bumps, as they could shake things up even more.</li></ul></div><div class="brief-metrics"><div class="bm"><div class="bm-v">22</div><div class="bm-l">Fear Index</div></div><div class="bm"><div class="bm-v">$64,889</div><div class="bm-l">Bitcoin</div></div><div class="bm"><div class="bm-v">4.350%</div><div class="bm-l">10Y Yield</div></div></div></div></div>
-          <div class="pane active" id="pane-analyst"><div class="brief"><div class="brief-meta"><span class="brief-tag">⏱ 5 MIN</span><button class="voice-btn" id="audio-btn-analyst" onclick="playAudio('analyst')">🔊 LISTEN</button></div><div class="bg-card"><div style="font-family: var(--font-mono); font-size: 0.65rem; color: var(--accent-gold); margin-bottom: 12px; letter-spacing: 1px;">TARGETED NARRATIVE STRIKE</div><ul style="list-style-type:none; padding:0; margin:0; color: var(--text-bright); line-height:1.5; font-size: 0.88rem;"><li style="margin-bottom:10px; padding-left:14px; position:relative;"><span style="position:absolute; left:0; top:6px; width:5px; height:5px; background:var(--red); border-radius:50%; box-shadow:0 0 5px rgba(232,57,74,0.5);"></span>The fixed-income landscape is currently characterized by a persistent upward pressure on <span style="color: var(--gold); font-weight: bold;">yields</span>, with the <span style="color: var(--gold); font-weight: bold;">10-year Treasury yield</span> holding firm at 4.350%. This resilience in <span style="color: var(--gold); font-weight: bold;">yields</span>, despite broader market anxieties, is being supported by the Dollar Index (<span style="color: var(--gold); font-weight: bold;">DXY</span>) which remains elevated at 103.71. The strength in the dollar suggests a global demand for safe-haven assets, which in turn caps the upside potential for riskier investments and reinforces the current yield structure. Investors are closely monitoring central bank commentary for any shifts in policy outlook that could challenge this stability.</li><li style="margin-bottom:10px; padding-left:14px; position:relative;"><span style="position:absolute; left:0; top:6px; width:5px; height:5px; background:var(--red); border-radius:50%; box-shadow:0 0 5px rgba(232,57,74,0.5);"></span>Cross-asset correlations are exhibiting a pronounced sensitivity to bond market movements, acting as a primary gating mechanism for equity allocations. As <span style="color: var(--gold); font-weight: bold;">yields</span> remain sticky, the cost of capital for corporations increases, thereby directly impacting equity valuations and investor sentiment. This dynamic is creating a bifurcated market where defensive sectors may outperform, while growth-oriented equities face headwinds due to higher discount rates. The current bond behavior is thus dictating a cautious approach to equity exposure, prioritizing capital preservation over aggressive growth.</li><li style="margin-bottom:10px; padding-left:14px; position:relative;"><span style="position:absolute; left:0; top:6px; width:5px; height:5px; background:var(--red); border-radius:50%; box-shadow:0 0 5px rgba(232,57,74,0.5);"></span>Technical divergences are becoming increasingly apparent when comparing the performance of traditional equity indices like the S&amp;P 500 against cryptocurrency assets. While the S&amp;P 500 has shown some resilience, cryptocurrencies, including <span style="color: var(--gold); font-weight: bold;">Bitcoin</span>, are experiencing significant pullbacks. This divergence suggests a risk-off sentiment that is disproportionately affecting digital assets, potentially due to their higher beta and perceived speculative nature. The structural breakdown indicates a flight from riskier, more volatile assets towards perceived stability, even within the context of elevated global uncertainty.</li><li style="margin-bottom:10px; padding-left:14px; position:relative;"><span style="position:absolute; left:0; top:6px; width:5px; height:5px; background:var(--red); border-radius:50%; box-shadow:0 0 5px rgba(232,57,74,0.5);"></span>Our directional bias remains <span style="color: var(--gold); font-weight: bold;">bearish</span> in the short-term horizon, primarily driven by persistent geopolitical tensions and the sticky yield environment. We will be closely watching the S&amp;P 500 for validation targets around the 5,150 level, where a breakdown could signal further downside. Conversely, a sustained hold above 5,250, coupled with a decline in the <span style="color: var(--gold); font-weight: bold;">DXY</span>, could indicate a temporary reprieve, though underlying pressures suggest this is less likely in the immediate future.</li></ul></div><div class="brief-metrics"><div class="bm"><div class="bm-v">4.350%</div><div class="bm-l">10Y Treasury</div></div><div class="bm"><div class="bm-v">103.71</div><div class="bm-l">DXY</div></div><div class="bm"><div class="bm-v">5,227</div><div class="bm-l">S&amp;P 500</div></div></div></div></div>
-          <div class="pane" id="pane-quant"><div class="brief"><div class="brief-meta"><span class="brief-tag">⏱ 7 MIN</span><button class="voice-btn" id="audio-btn-quant" onclick="playAudio('quant')">🔊 LISTEN</button></div><div class="bg-card"><div style="font-family: var(--font-mono); font-size: 0.65rem; color: var(--accent-gold); margin-bottom: 12px; letter-spacing: 1px;">TARGETED NARRATIVE STRIKE</div><ul style="list-style-type:none; padding:0; margin:0; color: var(--text-bright); line-height:1.5; font-size: 0.88rem;"><li style="margin-bottom:10px; padding-left:14px; position:relative;"><span style="position:absolute; left:0; top:6px; width:5px; height:5px; background:var(--red); border-radius:50%; box-shadow:0 0 5px rgba(232,57,74,0.5);"></span>The current <span style="color: var(--gold); font-weight: bold;">volatility</span> regime analysis reveals a market characterized by suppressed realized <span style="color: var(--gold); font-weight: bold;">volatility</span> juxtaposed with elevated implied <span style="color: var(--gold); font-weight: bold;">volatility</span>, as indicated by the <span style="color: var(--gold); font-weight: bold;">VIX</span> at 14.53. This spread suggests that while recent price action has been relatively calm, market participants are pricing in a higher probability of future price swings. The variance premium parameters are reflecting this nervousness, indicating a demand for downside protection, which is creating an underlying tension in the market structure.</li><li style="margin-bottom:10px; padding-left:14px; position:relative;"><span style="position:absolute; left:0; top:6px; width:5px; height:5px; background:var(--red); border-radius:50%; box-shadow:0 0 5px rgba(232,57,74,0.5);"></span>Correlation and factor analysis highlight a weakening of positive cross-asset betas, particularly between equities and riskier assets. As the market grapples with geopolitical uncertainty and persistent inflation concerns, we are observing a de-correlation trend where traditional drivers of market movement are becoming less reliable. Statistical boundaries are being tested as capital seeks perceived safety, leading to a fragmentation in asset class behavior and making traditional diversification strategies less effective.</li><li style="margin-bottom:10px; padding-left:14px; position:relative;"><span style="position:absolute; left:0; top:6px; width:5px; height:5px; background:var(--red); border-radius:50%; box-shadow:0 0 5px rgba(232,57,74,0.5);"></span>Gamma threshold tracking indicates that significant speculative option positions are concentrated around current price levels for major indices. These thresholds represent potential inflection points where dealer hedging activity could accelerate, leading to amplified price movements. We are observing a gathering of stop-losses and option expiries near key technical support and resistance levels, suggesting that a break through these boundaries could trigger rapid deleveraging or forced buying.</li><li style="margin-bottom:10px; padding-left:14px; position:relative;"><span style="position:absolute; left:0; top:6px; width:5px; height:5px; background:var(--red); border-radius:50%; box-shadow:0 0 5px rgba(232,57,74,0.5);"></span>Our tail-risk assessment points to an increasing probability of significant, rapid market dislocations, particularly driven by geopolitical catalysts. Tail-hedging targets are being recalibrated to account for the heightened risk of vector spikes in uncorrelated asset classes. The statistical probability of abrupt moves, exceeding three standard deviations within a single trading session, has demonstrably increased due to the confluence of geopolitical instability and central bank policy uncertainty.</li></ul></div><div class="brief-metrics"><div class="bm"><div class="bm-v">14.53</div><div class="bm-l">VIX</div></div><div class="bm"><div class="bm-v">$1,764</div><div class="bm-l">ETH</div></div><div class="bm"><div class="bm-v">N/A</div><div class="bm-l">Sentiment</div></div></div></div></div>
-        </section>
-
-        <!-- AGENT CONSENSUS MOVED UP -->
-        <section class="glass-card rv" style="margin-bottom:24px" id="agent-consensus"><div class="sec-title">🤖 AGENT CONSENSUS</div><div class="agent-panel" style="grid-template-columns:repeat(4,1fr)">
-        <div class="agent-card" style="border-top: 3px solid var(--muted); background: linear-gradient(180deg, transparent, rgba(10,10,15,0.9));">
-          <div class="agent-name" style="color: var(--muted);">
-            <span style="opacity:0.7;">🧠</span> Fundamental
-          </div>
-          <div class="agent-bias neut" style="border-bottom-color: var(--muted)40;">NEUTRAL</div>
-          <div class="agent-thesis">Waiting for data...</div>
-        </div>
-      
-        <div class="agent-card" style="border-top: 3px solid var(--red); background: linear-gradient(180deg, rgba(232,57,74,0.15), rgba(10,10,15,0.9));">
-          <div class="agent-name" style="color: var(--red);">
-            <span style="opacity:0.7;">🧠</span> Technical
-          </div>
-          <div class="agent-bias bear" style="border-bottom-color: var(--red)40;">BEARISH</div>
-          <div class="agent-thesis">Divergences widening, momentum weakening.</div>
-        </div>
-      
-        <div class="agent-card" style="border-top: 3px solid var(--red); background: linear-gradient(180deg, rgba(232,57,74,0.15), rgba(10,10,15,0.9));">
-          <div class="agent-name" style="color: var(--red);">
-            <span style="opacity:0.7;">🧠</span> Sentiment
-          </div>
-          <div class="agent-bias bear" style="border-bottom-color: var(--red)40;">BEARISH</div>
-          <div class="agent-thesis">Extreme fear masking potential downside.</div>
-        </div>
-      
-        <div class="agent-card" style="border-top: 3px solid var(--gold); background: linear-gradient(180deg, rgba(245,166,35,0.15), rgba(10,10,15,0.9));">
-          <div class="agent-name" style="color: var(--gold);">
-            <span style="opacity:0.7;">🧠</span> Geopolitical
-          </div>
-          <div class="agent-bias volt" style="border-bottom-color: var(--gold)40;">ELEVATED</div>
-          <div class="agent-thesis">Multiple active geopolitical flashpoints globally are increasing market volatility and risk aversion.</div>
-        </div>
-      </div><div style="text-align:center"><span class="debate-badge">✓ UNANIMOUS</span></div></section>
-
-        <!-- 5-SECOND MARKET SNAPSHOT REMOVED -->
-
-        <!-- PROMOTED TACTICAL PLAYS -->
-        <section class="rv">
-          <div class="sec-title">TODAY'S PLAYS</div>
-          <div class="plays-grid" id="plays-grid" aria-label="Tactical Plays">
-        <div class="bg-card razor-play-card" style="animation-delay: 0ms; border-left: 3px solid var(--green); margin-bottom:0; padding:12px;">
-          <div class="r-play-header" style="margin-bottom:6px;">
-            <span style="font-family:var(--font-mono); font-size:0.58rem; font-weight:700; color:var(--green); letter-spacing:1.5px; text-transform:uppercase;">🛡️ SAFE</span>
-            <div class="r-play-asset" style="margin-top:4px; font-size:1rem; color:var(--text-pure); font-weight:700; font-family:var(--font-ui); letter-spacing:0.5px;">Short volatility due to geopolitical time bomb.</div>
-          </div>
-          <div style="color:var(--text-secondary); font-size:0.85rem; line-height:1.5; margin-bottom:8px;">
-            <p>Given the low VIX but high geopolitical tension, selling volatility is a high-risk, high-reward play. A sudden escalation could cause a sharp spike in volatility, benefiting short-volatility positions if managed carefully.</p>
-          </div>
-          <div style="border-top: 1px solid var(--border-light); margin-top:8px; padding-top:8px;">
-            <div style="font-family:var(--font-mono); font-size:0.55rem; color:var(--muted); margin-bottom:6px; letter-spacing:1px;">// AGENT ALIGNMENT</div>
-            <div style="display:flex; flex-direction:column; gap:4px;">
-              <div style="display:flex; align-items:flex-start; gap:8px; background:rgba(212,168,67,0.06); border:1px solid rgba(212,168,67,0.2); padding:5px 8px; border-radius:4px;">
-                <div style="color:var(--gold); font-family:var(--font-mono); font-weight:bold; font-size:0.85rem; flex-shrink:0;">+</div>
-                <div style="font-size:0.78rem; color:var(--text-bright); line-height:1.4;">2/4 agents aligned: Technical, Sentiment</div>
-              </div>
-              <div style="display:flex; align-items:flex-start; gap:8px; background:rgba(255,0,60,0.04); border:1px solid rgba(255,0,60,0.15); padding:5px 8px; border-radius:4px;">
-                <div style="color:var(--red); font-family:var(--font-mono); font-weight:bold; font-size:0.85rem; flex-shrink:0;">−</div>
-                <div style="font-size:0.78rem; color:var(--text-bright); line-height:1.4;">2 agents neutral/opposing: Fundamental (NEUTRAL), Geopolitical (ELEVATED)</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      
-        <div class="bg-card razor-play-card" style="animation-delay: 100ms; border-left: 3px solid var(--accent-gold); margin-bottom:0; padding:12px;">
-          <div class="r-play-header" style="margin-bottom:6px;">
-            <span style="font-family:var(--font-mono); font-size:0.58rem; font-weight:700; color:var(--accent-gold); letter-spacing:1.5px; text-transform:uppercase;">⚡ AGGRESSIVE</span>
-            <div class="r-play-asset" style="margin-top:4px; font-size:1rem; color:var(--text-pure); font-weight:700; font-family:var(--font-ui); letter-spacing:0.5px;">Long USD against emerging markets due to global instability.</div>
-          </div>
-          <div style="color:var(--text-secondary); font-size:0.85rem; line-height:1.5; margin-bottom:8px;">
-            <p>The DXY's resilience amidst global turmoil suggests a flight to safety. Capital is likely to flow into perceived safe-haven currencies, making a long USD position against riskier emerging market currencies a strong aggressive play.</p>
-          </div>
-          <div style="border-top: 1px solid var(--border-light); margin-top:8px; padding-top:8px;">
-            <div style="font-family:var(--font-mono); font-size:0.55rem; color:var(--muted); margin-bottom:6px; letter-spacing:1px;">// AGENT ALIGNMENT</div>
-            <div style="display:flex; flex-direction:column; gap:4px;">
-              <div style="display:flex; align-items:flex-start; gap:8px; background:rgba(212,168,67,0.06); border:1px solid rgba(212,168,67,0.2); padding:5px 8px; border-radius:4px;">
-                <div style="color:var(--gold); font-family:var(--font-mono); font-weight:bold; font-size:0.85rem; flex-shrink:0;">+</div>
-                <div style="font-size:0.78rem; color:var(--text-bright); line-height:1.4;">2/4 agents aligned: Technical, Sentiment</div>
-              </div>
-              <div style="display:flex; align-items:flex-start; gap:8px; background:rgba(255,0,60,0.04); border:1px solid rgba(255,0,60,0.15); padding:5px 8px; border-radius:4px;">
-                <div style="color:var(--red); font-family:var(--font-mono); font-weight:bold; font-size:0.85rem; flex-shrink:0;">−</div>
-                <div style="font-size:0.78rem; color:var(--text-bright); line-height:1.4;">2 agents neutral/opposing: Fundamental (NEUTRAL), Geopolitical (ELEVATED)</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      
-        <div class="bg-card razor-play-card" style="animation-delay: 200ms; border-left: 3px solid var(--purple); margin-bottom:0; padding:12px;">
-          <div class="r-play-header" style="margin-bottom:6px;">
-            <span style="font-family:var(--font-mono); font-size:0.58rem; font-weight:700; color:var(--purple); letter-spacing:1.5px; text-transform:uppercase;">🔄 CONTRARIAN</span>
-            <div class="r-play-asset" style="margin-top:4px; font-size:1rem; color:var(--text-pure); font-weight:700; font-family:var(--font-ui); letter-spacing:0.5px;">Long beaten-down tech stocks anticipating capitulation.</div>
-          </div>
-          <div style="color:var(--text-secondary); font-size:0.85rem; line-height:1.5; margin-bottom:8px;">
-            <p>With extreme fear prevalent, many quality tech stocks may be oversold. A contrarian approach would involve identifying fundamentally sound companies that have been unfairly punished, anticipating a potential rebound as fear subsides.</p>
-          </div>
-          <div style="border-top: 1px solid var(--border-light); margin-top:8px; padding-top:8px;">
-            <div style="font-family:var(--font-mono); font-size:0.55rem; color:var(--muted); margin-bottom:6px; letter-spacing:1px;">// AGENT ALIGNMENT</div>
-            <div style="display:flex; flex-direction:column; gap:4px;">
-              <div style="display:flex; align-items:flex-start; gap:8px; background:rgba(212,168,67,0.06); border:1px solid rgba(212,168,67,0.2); padding:5px 8px; border-radius:4px;">
-                <div style="color:var(--gold); font-family:var(--font-mono); font-weight:bold; font-size:0.85rem; flex-shrink:0;">+</div>
-                <div style="font-size:0.78rem; color:var(--text-bright); line-height:1.4;">1/4 agents aligned: Geopolitical</div>
-              </div>
-              <div style="display:flex; align-items:flex-start; gap:8px; background:rgba(255,0,60,0.04); border:1px solid rgba(255,0,60,0.15); padding:5px 8px; border-radius:4px;">
-                <div style="color:var(--red); font-family:var(--font-mono); font-weight:bold; font-size:0.85rem; flex-shrink:0;">−</div>
-                <div style="font-size:0.78rem; color:var(--text-bright); line-height:1.4;">3 agents neutral/opposing: Fundamental, Technical, Sentiment</div>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
-        </section>
-      </article>
-
-      <section class="chaos rv" id="chaos-line-card"><span class="chaos-tag"><span class="chaos-star">✦</span> THE CHAOS LINE</span><div class="chaos-text" id="chaos-quote-text">“The market doesn't care if you're right, it only cares if you're alive to collect.”</div><div class="share-row"><a class="s-btn ghost" target="_blank" href="https://twitter.com/intent/tweet?text=%22The%20market%20doesn't%20care%20if%20you're%20right%2C%20it%20only%20cares%20if%20you're%20alive%20to%20collect.%22%20%E2%80%94%20Chaos%20Intelligence%0Ahttps%3A%2F%2Fchaos.sumanthworks.com">𝕏 Post</a><a class="s-btn ghost" target="_blank" href="https://t.me/share/url?url=https%3A%2F%2Fchaos.sumanthworks.com&amp;text=%22The%20market%20doesn't%20care%20if%20you're%20right%2C%20it%20only%20cares%20if%20you're%20alive%20to%20collect.%22%20%E2%80%94%20Chaos%20Intelligence">✈ Telegram</a><button class="s-btn ghost" onclick="copyLine()">📋 Copy Line</button><button class="s-btn ghost" id="export-btn" style="color:var(--gold); border-color:var(--gold); font-weight:700; font-family:var(--font-mono); letter-spacing:1px; background:rgba(212,168,67,0.05);" onclick="generateChaosImage()">⚡ EXPORT VIRAL SIGNAL CARD</button></div></section>
-
-        <div id="trap-card" class="bg-card trap" style="margin-bottom: 24px;"></div>
-        <div id="edge-card" class="bg-card edge-section" style="margin-bottom: 24px;"></div>
 
     </div></main>
   </div>
@@ -1198,29 +1114,24 @@
       // DATA READY CHECK
       if (fearIndex === undefined || fearIndex === null || isNaN(parseInt(fearIndex))) return;
       const numEl = document.getElementById('fear-num');
-      const arc = document.getElementById('gauge-arc');
       const label = document.getElementById('gauge-label');
-      const glow = document.getElementById('gauge-glow');
-      if (!numEl || !arc || !label) return;
+      const circle = document.getElementById('pocket-fear-circle');
+      if (!numEl || !label) return;
       
       const value = Math.min(100, Math.max(0, parseInt(fearIndex)));
       animateNum(numEl, 0, value, 1400, Math.round);
       
-      // Calculate arc dashoffset (251 is full circle, 0 is full)
-      const maxOffset = 251;
-      const offset = maxOffset - (value / 100) * maxOffset;
-      setTimeout(() => { arc.style.strokeDashoffset = offset; }, 100);
-      
       let color = 'var(--gold)';
       let lblTxt = 'NEUTRAL';
-      if (value < 25) { color = 'var(--red)'; lblTxt = 'EXTREME FEAR'; }
-      else if (value > 60) { color = 'var(--green)'; lblTxt = 'GREED / BULLISH'; }
+      if (value < 25) { color = 'var(--red)'; lblTxt = 'EXT FEAR'; }
+      else if (value > 60) { color = 'var(--green)'; lblTxt = 'GREED'; }
       
-      arc.style.stroke = color;
       numEl.style.color = color;
       label.style.color = color;
-      label.textContent = lblTxt;
-      if (glow) glow.style.background = color;
+      if (circle) {
+        circle.style.borderColor = color;
+        circle.style.boxShadow = `0 0 15px ${color}`;
+      }
     };
 
     // ── BUILDERS ──
@@ -1228,19 +1139,15 @@
     function metric(l,v,s,c='neut'){return'<div class="mi"><div class="mi-l">'+esc(l)+'</div><div class="mi-v '+c+'">'+esc(v)+'</div><div class="mi-s">'+esc(s)+'</div></div>';}
 
     function agentCard(name,agent){
-      if(!agent)return'<div class="agent-card"><div class="agent-name" style="color:var(--muted)">'+esc(name)+'</div><div class="agent-bias neut">—</div></div>';
+      if(!agent)return'<div class="pocket-agent"><span>🧠 '+esc(name).substring(0,4)+'</span> <span class="pocket-agent-v" style="background:var(--muted)">—</span></div>';
       const biasRaw = agent.bias || 'NEUTRAL';
       const bc = sigCls(biasRaw);
       const colorVar = bc==='bull'?'var(--green)':bc==='bear'?'var(--red)':bc==='volt'?'var(--gold)':'var(--muted)';
-      const rgbShadow = bc==='bull'?'rgba(0,255,136,0.15)':bc==='bear'?'rgba(232,57,74,0.15)':bc==='volt'?'rgba(245,166,35,0.15)':'transparent';
-      
+      const shortBias = biasRaw.substring(0,4);
       return `
-        <div class="agent-card" style="border-top: 3px solid ${colorVar}; background: linear-gradient(180deg, ${rgbShadow}, rgba(10,10,15,0.9));">
-          <div class="agent-name" style="color: ${colorVar};">
-            <span style="opacity:0.7;">🧠</span> ${esc(name)}
-          </div>
-          <div class="agent-bias ${bc}" style="border-bottom-color: ${colorVar}40;">${esc(biasRaw)}</div>
-          <div class="agent-thesis">${esc(agent.thesis||'')}</div>
+        <div class="pocket-agent">
+          <span>🧠 ${esc(name).substring(0,4)}:</span> 
+          <span class="pocket-agent-v" style="background:${colorVar}">${esc(shortBias)}</span>
         </div>
       `;
     }
@@ -1248,59 +1155,15 @@
     function playCard(p, i, agents) {
       const typeLabel = (p.type || 'SAFE').toUpperCase();
       const icon = typeLabel === 'SAFE' ? '🛡️' : typeLabel === 'AGGRESSIVE' ? '⚡' : '🔄';
-      const borderClr = typeLabel === 'SAFE' ? 'var(--green)' : typeLabel === 'AGGRESSIVE' ? 'var(--accent-gold)' : 'var(--purple)';
-      const labelClr = typeLabel === 'SAFE' ? 'var(--green)' : typeLabel === 'AGGRESSIVE' ? 'var(--accent-gold)' : 'var(--purple)';
-
-      // Real agent alignment logic
-      const agentList = ['fundamental', 'technical', 'sentiment', 'geopolitical'];
-      const agentNames = { fundamental: 'Fundamental', technical: 'Technical', sentiment: 'Sentiment', geopolitical: 'Geopolitical' };
-      let aligned = [], misaligned = [];
-      agentList.forEach(key => {
-        const ag = agents && agents[key];
-        if (!ag) return;
-        const bias = (ag.bias || '').toUpperCase();
-        if (typeLabel === 'SAFE' || typeLabel === 'AGGRESSIVE') {
-          if (bias === 'BEARISH') aligned.push(agentNames[key]);
-          else if (bias === 'BULLISH') misaligned.push(agentNames[key]);
-          else misaligned.push(agentNames[key] + ' (' + bias + ')');
-        } else { // CONTRARIAN
-          if (bias === 'ELEVATED' || bias === 'BULLISH') aligned.push(agentNames[key]);
-          else misaligned.push(agentNames[key]);
-        }
-      });
-
-      const alignTxt = aligned.length
-        ? `${aligned.length}/${agentList.length} agents aligned: ${aligned.join(', ')}`
-        : 'No agents directly aligned — high-conviction contrarian';
-      const misalignTxt = misaligned.length
-        ? `${misaligned.length} agent${misaligned.length>1?'s':''} neutral/opposing: ${misaligned.join(', ')}`
-        : 'Full agent consensus';
-      const alignBg = aligned.length >= 3 ? 'rgba(52,211,153,0.06)' : 'rgba(212,168,67,0.06)';
-      const alignBorder = aligned.length >= 3 ? 'rgba(52,211,153,0.2)' : 'rgba(212,168,67,0.2)';
-      const alignColor = aligned.length >= 3 ? 'var(--green)' : 'var(--gold)';
-
+      const cssCls = typeLabel === 'SAFE' ? 'safe' : typeLabel === 'AGGRESSIVE' ? 'agg' : 'con';
+      
       return `
-        <div class="bg-card razor-play-card" style="animation-delay: ${i * 100}ms; border-left: 3px solid ${borderClr}; margin-bottom:0; padding:12px;">
-          <div class="r-play-header" style="margin-bottom:6px;">
-            <span style="font-family:var(--font-mono); font-size:0.58rem; font-weight:700; color:${labelClr}; letter-spacing:1.5px; text-transform:uppercase;">${icon} ${typeLabel}</span>
-            <div class="r-play-asset" style="margin-top:4px; font-size:1rem; color:var(--text-pure); font-weight:700; font-family:var(--font-ui); letter-spacing:0.5px;">${esc(p.thesis || 'Tactical Positioning')}</div>
+        <div class="pocket-play ${cssCls}">
+          <div class="pocket-play-hdr">
+            <span class="pocket-play-type">${icon} ${typeLabel}</span>
+            <button class="pocket-play-copy" onclick="copyText('${esc((p.thesis||'').replace(/'/g,"\\'"))}')">Copy</button>
           </div>
-          <div style="color:var(--text-secondary); font-size:0.85rem; line-height:1.5; margin-bottom:8px;">
-            ${briefHtml(p.details || '')}
-          </div>
-          <div style="border-top: 1px solid var(--border-light); margin-top:8px; padding-top:8px;">
-            <div style="font-family:var(--font-mono); font-size:0.55rem; color:var(--muted); margin-bottom:6px; letter-spacing:1px;">// AGENT ALIGNMENT</div>
-            <div style="display:flex; flex-direction:column; gap:4px;">
-              <div style="display:flex; align-items:flex-start; gap:8px; background:${alignBg}; border:1px solid ${alignBorder}; padding:5px 8px; border-radius:4px;">
-                <div style="color:${alignColor}; font-family:var(--font-mono); font-weight:bold; font-size:0.85rem; flex-shrink:0;">+</div>
-                <div style="font-size:0.78rem; color:var(--text-bright); line-height:1.4;">${alignTxt}</div>
-              </div>
-              <div style="display:flex; align-items:flex-start; gap:8px; background:rgba(255,0,60,0.04); border:1px solid rgba(255,0,60,0.15); padding:5px 8px; border-radius:4px;">
-                <div style="color:var(--red); font-family:var(--font-mono); font-weight:bold; font-size:0.85rem; flex-shrink:0;">−</div>
-                <div style="font-size:0.78rem; color:var(--text-bright); line-height:1.4;">${misalignTxt}</div>
-              </div>
-            </div>
-          </div>
+          <div class="pocket-play-thesis">${esc(p.thesis || 'Tactical Positioning')}</div>
         </div>
       `;
     }
@@ -1400,6 +1263,19 @@
 
     function copyLine(){
       navigator.clipboard.writeText(currentLine).then(function(){});
+    }
+    function copyText(text){
+      navigator.clipboard.writeText(text).then(function(){});
+    }
+    function toggleFullBrief(btn){
+      const full = document.getElementById('pocket-full-view');
+      if (!full) return;
+      full.classList.toggle('show');
+      if(full.classList.contains('show')) {
+        btn.innerText = '▲ COLLAPSE ANALYSIS';
+      } else {
+        btn.innerText = '▼ FULL ANALYSIS & CONTEXT';
+      }
     }
 
     function setCx(id,btn){
@@ -1577,8 +1453,11 @@
       var topConfText = tr < 10 ? 'CALIBRATING ('+tr+'/10 SIGNALS)' : perf.win_rate + '% VERIFIED WR · ' + perf.current_streak + ' ' + (perf.streak_direction || 'WIN') + ' STREAK';
       document.getElementById('brief-tag').textContent='TODAY\'S BRIEFING · '+(b.dateline||'NYC').toUpperCase();
       document.getElementById('headline').textContent=b.headline||'Market Update';
-      document.getElementById('sig-row').innerHTML='<span class="sig '+scls+'">'+esc(signal)+'</span><span class="ts-badge">'+esc(b.time_sensitivity||'THIS WEEK')+'</span><span class="conf">'+esc(topConfText)+'</span>';
-      document.getElementById('updated-line').textContent=timeStr+' · ∞ BRAIN + LIVE DATA';
+      document.getElementById('sig-row').innerHTML='<span class="sig '+scls+'" style="padding:2px 6px; border-radius:4px;">'+esc(signal)+'</span><span style="color:var(--text-muted)">·</span><span class="conf" style="color:var(--green)">'+(perf.win_rate||0)+'% WR</span><span style="color:var(--text-muted)">·</span><span style="color:var(--accent-gold)">🔥 '+(perf.current_streak||0)+'W STREAK</span>';
+      const updEl = document.getElementById('pocket-update-time');
+      if(updEl) updEl.textContent=timeStr;
+      const oldUpdEl = document.getElementById('updated-line');
+      if(oldUpdEl) oldUpdEl.textContent=timeStr+' · ∞ BRAIN + LIVE DATA';
 
       var btcChangeVal = num(m.btcChange).toFixed(2);
       var btcSign = num(m.btcChange) >= 0 ? '▲ +' : '▼ ';
@@ -1598,15 +1477,14 @@
       var acEl = document.getElementById('agent-consensus');
       if (acEl) {
         var hasGeo = agents.geopolitical && agents.geopolitical.bias;
-        var cols = hasGeo ? 4 : 3;
         var geoCard = hasGeo ? agentCard('Geopolitical', agents.geopolitical) : '';
-        acEl.innerHTML='<div class="sec-title">🤖 AGENT CONSENSUS</div><div class="agent-panel" style="grid-template-columns:repeat('+cols+',1fr)">'+agentCard('Fundamental',agents.fundamental)+agentCard('Technical',agents.technical)+agentCard('Sentiment',agents.sentiment)+geoCard+'</div><div style="text-align:center"><span class="debate-badge">'+esc(b.agent_consensus?.debate_required?'DEBATE RESOLVED':'✓ UNANIMOUS')+'</span></div>';
+        acEl.innerHTML=agentCard('Fundamental',agents.fundamental)+agentCard('Technical',agents.technical)+agentCard('Sentiment',agents.sentiment)+geoCard;
       }
 
       // Chaos Line
       var clEl = document.getElementById('chaos-line-card');
       if (clEl) {
-        clEl.innerHTML='<span class="chaos-tag"><span class="chaos-star">✦</span> THE CHAOS LINE</span><div class="chaos-text" id="chaos-quote-text">&ldquo;'+esc(b.chaos_line||'')+'&rdquo;</div><div class="share-row"><a class="s-btn ghost" target="_blank" href="https://twitter.com/intent/tweet?text='+encodeURIComponent('"'+(b.chaos_line||'')+'" — Chaos Intelligence\n'+SITE)+'">𝕏 Post</a><a class="s-btn ghost" target="_blank" href="https://t.me/share/url?url='+encodeURIComponent(SITE)+'&text='+encodeURIComponent('"'+(b.chaos_line||'')+'" — Chaos Intelligence')+'">✈ Telegram</a><button class="s-btn ghost" onclick="copyLine()">📋 Copy Line</button><button class="s-btn ghost" id="export-btn" style="color:var(--gold); border-color:var(--gold); font-weight:700; font-family:var(--font-mono); letter-spacing:1px; background:rgba(212,168,67,0.05);" onclick="generateChaosImage()">⚡ EXPORT VIRAL SIGNAL CARD</button></div>';
+        clEl.innerHTML='<div class="pocket-chaos-txt" id="chaos-quote-text">&ldquo;'+esc(b.chaos_line||'')+'&rdquo;</div><div class="pocket-chaos-acts share-row"><button class="s-btn ghost" style="padding:4px 8px; font-size:0.6rem;" onclick="copyLine()">📋 COPY LINE</button><a class="s-btn ghost" style="padding:4px 8px; font-size:0.6rem;" target="_blank" href="https://twitter.com/intent/tweet?text='+encodeURIComponent('"'+(b.chaos_line||'')+'" — Chaos Intelligence\n'+SITE)+'">𝕏 POST</a></div>';
       }
 
       // Trap
