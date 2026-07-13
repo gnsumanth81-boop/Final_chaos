@@ -1,13 +1,28 @@
 [
   {
+    "date": "2026-07-13",
+    "timestamp": "2026-07-13T03:53:27.228Z",
+    "signal_hash": "CI-KBWZYA21-B",
+    "signal": "BULLISH",
+    "headline": "Risk Assets Poised for Quick‑Fire Swing",
+    "btc_entry": 62792,
+    "resolved": false,
+    "resolution_status": "OPEN"
+  },
+  {
     "date": "2026-07-11",
     "timestamp": "2026-07-11T06:53:24.162Z",
     "signal_hash": "CI-1E97Y9WV-N",
     "signal": "NEUTRAL",
     "headline": "Liquidity Surge Meets Hidden Risks",
     "btc_entry": 64152,
-    "resolved": false,
-    "resolution_status": "OPEN"
+    "resolved": true,
+    "resolution_status": "LOSS",
+    "btc_exit": 62792,
+    "pnl_percent": -2.12,
+    "resolved_at": "2026-07-13T03:53:27.239Z",
+    "grading_method": "24h_btc_close",
+    "autopsy_note": "Price broke key support level against signal thesis."
   },
   {
     "date": "2026-06-22",
