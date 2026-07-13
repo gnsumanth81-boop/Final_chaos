@@ -1,6 +1,16 @@
 [
   {
     "date": "2026-07-13",
+    "timestamp": "2026-07-13T09:27:42.860Z",
+    "signal_hash": "CI-Z5F0IW3H-B",
+    "signal": "BULLISH",
+    "headline": "Risk‑On Rally Amid Low Fear",
+    "btc_entry": 63054,
+    "resolved": false,
+    "resolution_status": "OPEN"
+  },
+  {
+    "date": "2026-07-13",
     "timestamp": "2026-07-13T03:53:27.228Z",
     "signal_hash": "CI-KBWZYA21-B",
     "signal": "BULLISH",
