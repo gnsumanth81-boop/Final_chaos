@@ -1,6 +1,16 @@
 [
   {
     "date": "2026-07-16",
+    "timestamp": "2026-07-16T09:53:47.469Z",
+    "signal_hash": "CI-BQNC7NC0-B",
+    "signal": "BULLISH",
+    "headline": "Fearless Markets Amid Extreme Fear",
+    "btc_entry": 64042,
+    "resolved": false,
+    "resolution_status": "OPEN"
+  },
+  {
+    "date": "2026-07-16",
     "timestamp": "2026-07-16T06:53:39.878Z",
     "signal_hash": "CI-VW8Z5BIW-B",
     "signal": "BULLISH",
