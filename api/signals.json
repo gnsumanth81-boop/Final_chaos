@@ -1,13 +1,28 @@
 [
   {
+    "date": "2026-07-16",
+    "timestamp": "2026-07-16T06:53:39.878Z",
+    "signal_hash": "CI-VW8Z5BIW-B",
+    "signal": "BULLISH",
+    "headline": "Mad Max Market Pulse",
+    "btc_entry": 64711,
+    "resolved": false,
+    "resolution_status": "OPEN"
+  },
+  {
     "date": "2026-07-13",
     "timestamp": "2026-07-13T09:27:42.860Z",
     "signal_hash": "CI-Z5F0IW3H-B",
     "signal": "BULLISH",
     "headline": "Risk‑On Rally Amid Low Fear",
     "btc_entry": 63054,
-    "resolved": false,
-    "resolution_status": "OPEN"
+    "resolved": true,
+    "resolution_status": "WIN",
+    "btc_exit": 64711,
+    "pnl_percent": 2.63,
+    "resolved_at": "2026-07-16T06:53:39.888Z",
+    "grading_method": "24h_btc_close",
+    "autopsy_note": "Price moved favorably beyond target within 24h window."
   },
   {
     "date": "2026-07-13",
@@ -16,8 +31,13 @@
     "signal": "BULLISH",
     "headline": "Risk Assets Poised for Quick‑Fire Swing",
     "btc_entry": 62792,
-    "resolved": false,
-    "resolution_status": "OPEN"
+    "resolved": true,
+    "resolution_status": "WIN",
+    "btc_exit": 64711,
+    "pnl_percent": 3.06,
+    "resolved_at": "2026-07-16T06:53:39.888Z",
+    "grading_method": "24h_btc_close",
+    "autopsy_note": "Price moved favorably beyond target within 24h window."
   },
   {
     "date": "2026-07-11",
