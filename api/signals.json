@@ -1,5 +1,15 @@
 [
   {
+    "date": "2026-07-17",
+    "timestamp": "2026-07-17T06:53:19.586Z",
+    "signal_hash": "CI-VDKM8SZX-B",
+    "signal": "BULLISH",
+    "headline": "Risk‑On Momentum Amid Geopolitical Tension",
+    "btc_entry": 62829,
+    "resolved": false,
+    "resolution_status": "OPEN"
+  },
+  {
     "date": "2026-07-16",
     "timestamp": "2026-07-16T09:53:47.469Z",
     "signal_hash": "CI-BQNC7NC0-B",
