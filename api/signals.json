@@ -1,5 +1,15 @@
 [
   {
+    "date": "2026-07-18",
+    "timestamp": "2026-07-18T05:52:43.734Z",
+    "signal_hash": "CI-DCJRX9LE-B",
+    "signal": "BULLISH",
+    "headline": "Fearful markets, cheap volatility spark risk‑on play",
+    "btc_entry": 63926,
+    "resolved": false,
+    "resolution_status": "OPEN"
+  },
+  {
     "date": "2026-07-17",
     "timestamp": "2026-07-17T06:53:19.586Z",
     "signal_hash": "CI-VDKM8SZX-B",
@@ -16,8 +26,13 @@
     "signal": "BULLISH",
     "headline": "Fearless Markets Amid Extreme Fear",
     "btc_entry": 64042,
-    "resolved": false,
-    "resolution_status": "OPEN"
+    "resolved": true,
+    "resolution_status": "SCRATCH",
+    "btc_exit": 63926,
+    "pnl_percent": -0.18,
+    "resolved_at": "2026-07-18T05:52:43.739Z",
+    "grading_method": "24h_btc_close",
+    "autopsy_note": "Movement insufficient to trigger win or loss."
   },
   {
     "date": "2026-07-16",
@@ -26,8 +41,13 @@
     "signal": "BULLISH",
     "headline": "Mad Max Market Pulse",
     "btc_entry": 64711,
-    "resolved": false,
-    "resolution_status": "OPEN"
+    "resolved": true,
+    "resolution_status": "LOSS",
+    "btc_exit": 63926,
+    "pnl_percent": -1.21,
+    "resolved_at": "2026-07-18T05:52:43.739Z",
+    "grading_method": "24h_btc_close",
+    "autopsy_note": "Price broke key support level against signal thesis."
   },
   {
     "date": "2026-07-13",
