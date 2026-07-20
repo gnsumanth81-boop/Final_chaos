@@ -1,13 +1,28 @@
 [
   {
+    "date": "2026-07-20",
+    "timestamp": "2026-07-20T04:38:30.758Z",
+    "signal_hash": "CI-SWO7GEGP-B",
+    "signal": "BULLISH",
+    "headline": "Calm Before the Storm: Liquidity Fuels Rally",
+    "btc_entry": 64731,
+    "resolved": false,
+    "resolution_status": "OPEN"
+  },
+  {
     "date": "2026-07-18",
     "timestamp": "2026-07-18T05:52:43.734Z",
     "signal_hash": "CI-DCJRX9LE-B",
     "signal": "BULLISH",
     "headline": "Fearful markets, cheap volatility spark risk‑on play",
     "btc_entry": 63926,
-    "resolved": false,
-    "resolution_status": "OPEN"
+    "resolved": true,
+    "resolution_status": "WIN",
+    "btc_exit": 64731,
+    "pnl_percent": 1.26,
+    "resolved_at": "2026-07-20T04:38:30.764Z",
+    "grading_method": "24h_btc_close",
+    "autopsy_note": "Price moved favorably beyond target within 24h window."
   },
   {
     "date": "2026-07-17",
@@ -16,8 +31,13 @@
     "signal": "BULLISH",
     "headline": "Risk‑On Momentum Amid Geopolitical Tension",
     "btc_entry": 62829,
-    "resolved": false,
-    "resolution_status": "OPEN"
+    "resolved": true,
+    "resolution_status": "WIN",
+    "btc_exit": 64731,
+    "pnl_percent": 3.03,
+    "resolved_at": "2026-07-20T04:38:30.764Z",
+    "grading_method": "24h_btc_close",
+    "autopsy_note": "Price moved favorably beyond target within 24h window."
   },
   {
     "date": "2026-07-16",
