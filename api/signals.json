@@ -1,6 +1,16 @@
 [
   {
     "date": "2026-07-20",
+    "timestamp": "2026-07-20T06:53:23.612Z",
+    "signal_hash": "CI-WLT807SU-B",
+    "signal": "BULLISH",
+    "headline": "Risk‑On Rally Faces Geopolitical Headwinds",
+    "btc_entry": 63843,
+    "resolved": false,
+    "resolution_status": "OPEN"
+  },
+  {
+    "date": "2026-07-20",
     "timestamp": "2026-07-20T04:38:30.758Z",
     "signal_hash": "CI-SWO7GEGP-B",
     "signal": "BULLISH",
