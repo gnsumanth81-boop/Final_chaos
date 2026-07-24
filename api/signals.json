@@ -1,13 +1,28 @@
 [
   {
+    "date": "2026-07-24",
+    "timestamp": "2026-07-24T04:30:10.199Z",
+    "signal_hash": "CI-9XHOIWJU-B",
+    "signal": "BEARISH",
+    "headline": "Yield Curve Tightens, Crypto Slides",
+    "btc_entry": 65360,
+    "resolved": false,
+    "resolution_status": "OPEN"
+  },
+  {
     "date": "2026-07-20",
     "timestamp": "2026-07-20T12:57:49.024Z",
     "signal_hash": "CI-7WVV8CUG-B",
     "signal": "BULLISH",
     "headline": "Flat Fear, Calm Yields, Steady Equity",
     "btc_entry": 64595,
-    "resolved": false,
-    "resolution_status": "OPEN"
+    "resolved": true,
+    "resolution_status": "WIN",
+    "btc_exit": 65360,
+    "pnl_percent": 1.18,
+    "resolved_at": "2026-07-24T04:30:10.208Z",
+    "grading_method": "24h_btc_close",
+    "autopsy_note": "Price moved favorably beyond target within 24h window."
   },
   {
     "date": "2026-07-20",
@@ -16,8 +31,13 @@
     "signal": "BEARISH",
     "headline": "Dollar Dominance Fuels Risk‑Off Play",
     "btc_entry": 64203,
-    "resolved": false,
-    "resolution_status": "OPEN"
+    "resolved": true,
+    "resolution_status": "LOSS",
+    "btc_exit": 65360,
+    "pnl_percent": -1.8,
+    "resolved_at": "2026-07-24T04:30:10.208Z",
+    "grading_method": "24h_btc_close",
+    "autopsy_note": "Price broke key support level against signal thesis."
   },
   {
     "date": "2026-07-20",
@@ -26,8 +46,13 @@
     "signal": "BULLISH",
     "headline": "Risk‑On Rally Faces Geopolitical Headwinds",
     "btc_entry": 63843,
-    "resolved": false,
-    "resolution_status": "OPEN"
+    "resolved": true,
+    "resolution_status": "WIN",
+    "btc_exit": 65360,
+    "pnl_percent": 2.38,
+    "resolved_at": "2026-07-24T04:30:10.208Z",
+    "grading_method": "24h_btc_close",
+    "autopsy_note": "Price moved favorably beyond target within 24h window."
   },
   {
     "date": "2026-07-20",
@@ -36,8 +61,13 @@
     "signal": "BULLISH",
     "headline": "Calm Before the Storm: Liquidity Fuels Rally",
     "btc_entry": 64731,
-    "resolved": false,
-    "resolution_status": "OPEN"
+    "resolved": true,
+    "resolution_status": "WIN",
+    "btc_exit": 65360,
+    "pnl_percent": 0.97,
+    "resolved_at": "2026-07-24T04:30:10.208Z",
+    "grading_method": "24h_btc_close",
+    "autopsy_note": "Price moved favorably beyond target within 24h window."
   },
   {
     "date": "2026-07-18",
