@@ -1,13 +1,28 @@
 [
   {
+    "date": "2026-08-12",
+    "timestamp": "2026-08-12T04:05:12.731Z",
+    "signal_hash": "CI-CE5C13UH-N",
+    "signal": "NEUTRAL",
+    "headline": "Complacency is a Liquid Asset",
+    "btc_entry": 63772,
+    "resolved": false,
+    "resolution_status": "OPEN"
+  },
+  {
     "date": "2026-07-24",
     "timestamp": "2026-07-24T04:30:10.199Z",
     "signal_hash": "CI-9XHOIWJU-B",
     "signal": "BEARISH",
     "headline": "Yield Curve Tightens, Crypto Slides",
     "btc_entry": 65360,
-    "resolved": false,
-    "resolution_status": "OPEN"
+    "resolved": true,
+    "resolution_status": "WIN",
+    "btc_exit": 63772,
+    "pnl_percent": 2.43,
+    "resolved_at": "2026-08-12T04:05:12.745Z",
+    "grading_method": "24h_btc_close",
+    "autopsy_note": "Price moved favorably beyond target within 24h window."
   },
   {
     "date": "2026-07-20",
