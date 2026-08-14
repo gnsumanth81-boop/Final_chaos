@@ -1,13 +1,28 @@
 [
   {
+    "date": "2026-08-14",
+    "timestamp": "2026-08-14T03:54:56.430Z",
+    "signal_hash": "CI-84K6VVWP-B",
+    "signal": "BULLISH",
+    "headline": "Fed Pause Looms as Yields Edge Higher",
+    "btc_entry": 63316,
+    "resolved": false,
+    "resolution_status": "OPEN"
+  },
+  {
     "date": "2026-08-12",
     "timestamp": "2026-08-12T04:05:12.731Z",
     "signal_hash": "CI-CE5C13UH-N",
     "signal": "NEUTRAL",
     "headline": "Complacency is a Liquid Asset",
     "btc_entry": 63772,
-    "resolved": false,
-    "resolution_status": "OPEN"
+    "resolved": true,
+    "resolution_status": "WIN",
+    "btc_exit": 63316,
+    "pnl_percent": -0.72,
+    "resolved_at": "2026-08-14T03:54:56.439Z",
+    "grading_method": "24h_btc_close",
+    "autopsy_note": "Price moved favorably beyond target within 24h window."
   },
   {
     "date": "2026-07-24",
