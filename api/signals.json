@@ -1,13 +1,28 @@
 [
   {
+    "date": "2026-08-17",
+    "timestamp": "2026-08-17T04:20:19.965Z",
+    "signal_hash": "CI-JUZCO6DH-B",
+    "signal": "BEARISH",
+    "headline": "The Calm Before the Storm?",
+    "btc_entry": 63433,
+    "resolved": false,
+    "resolution_status": "OPEN"
+  },
+  {
     "date": "2026-08-14",
     "timestamp": "2026-08-14T03:54:56.430Z",
     "signal_hash": "CI-84K6VVWP-B",
     "signal": "BULLISH",
     "headline": "Fed Pause Looms as Yields Edge Higher",
     "btc_entry": 63316,
-    "resolved": false,
-    "resolution_status": "OPEN"
+    "resolved": true,
+    "resolution_status": "SCRATCH",
+    "btc_exit": 63433,
+    "pnl_percent": 0.18,
+    "resolved_at": "2026-08-17T04:20:19.970Z",
+    "grading_method": "24h_btc_close",
+    "autopsy_note": "Movement insufficient to trigger win or loss."
   },
   {
     "date": "2026-08-12",
