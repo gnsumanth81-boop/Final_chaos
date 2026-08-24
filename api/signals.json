@@ -1,13 +1,28 @@
 [
   {
+    "date": "2026-08-24",
+    "timestamp": "2026-08-24T13:08:36.494Z",
+    "signal_hash": "CI-M6W57FD7-B",
+    "signal": "BULLISH",
+    "headline": "Greed Index 73: The Market Is High on Its Own Supply",
+    "btc_entry": 79005,
+    "resolved": false,
+    "resolution_status": "OPEN"
+  },
+  {
     "date": "2026-08-17",
     "timestamp": "2026-08-17T04:20:19.965Z",
     "signal_hash": "CI-JUZCO6DH-B",
     "signal": "BEARISH",
     "headline": "The Calm Before the Storm?",
     "btc_entry": 63433,
-    "resolved": false,
-    "resolution_status": "OPEN"
+    "resolved": true,
+    "resolution_status": "LOSS",
+    "btc_exit": 79005,
+    "pnl_percent": -24.55,
+    "resolved_at": "2026-08-24T13:08:36.506Z",
+    "grading_method": "24h_btc_close",
+    "autopsy_note": "Price broke key support level against signal thesis."
   },
   {
     "date": "2026-08-14",
