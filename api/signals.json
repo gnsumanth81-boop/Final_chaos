@@ -1,6 +1,16 @@
 [
   {
     "date": "2026-08-25",
+    "timestamp": "2026-08-25T12:56:15.672Z",
+    "signal_hash": "CI-CJR0P393-B",
+    "signal": "BEARISH",
+    "headline": "Greed Peaks at 74 as VIX Lies: A Pressure Cooker with a Broken Gauge",
+    "btc_entry": 79068,
+    "resolved": false,
+    "resolution_status": "OPEN"
+  },
+  {
+    "date": "2026-08-25",
     "timestamp": "2026-08-25T06:56:46.837Z",
     "signal_hash": "CI-2XXZ646M-B",
     "signal": "BEARISH",
