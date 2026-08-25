@@ -1,5 +1,15 @@
 [
   {
+    "date": "2026-08-25",
+    "timestamp": "2026-08-25T06:56:46.837Z",
+    "signal_hash": "CI-2XXZ646M-B",
+    "signal": "BEARISH",
+    "headline": "Greed in a Bloodbath",
+    "btc_entry": 80490,
+    "resolved": false,
+    "resolution_status": "OPEN"
+  },
+  {
     "date": "2026-08-24",
     "timestamp": "2026-08-24T13:08:36.494Z",
     "signal_hash": "CI-M6W57FD7-B",
