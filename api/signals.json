@@ -1,5 +1,15 @@
 [
   {
+    "date": "2026-08-26",
+    "timestamp": "2026-08-26T10:00:42.052Z",
+    "signal_hash": "CI-83MF2V5U-B",
+    "signal": "BEARISH",
+    "headline": "Triple Threat: Fiscal, Trade, and Banking Risks Loom",
+    "btc_entry": 78405,
+    "resolved": false,
+    "resolution_status": "OPEN"
+  },
+  {
     "date": "2026-08-25",
     "timestamp": "2026-08-25T12:56:15.672Z",
     "signal_hash": "CI-CJR0P393-B",
@@ -16,8 +26,13 @@
     "signal": "BEARISH",
     "headline": "Greed in a Bloodbath",
     "btc_entry": 80490,
-    "resolved": false,
-    "resolution_status": "OPEN"
+    "resolved": true,
+    "resolution_status": "WIN",
+    "btc_exit": 78405,
+    "pnl_percent": 2.59,
+    "resolved_at": "2026-08-26T10:00:42.077Z",
+    "grading_method": "24h_btc_close",
+    "autopsy_note": "Price moved favorably beyond target within 24h window."
   },
   {
     "date": "2026-08-24",
@@ -26,8 +41,13 @@
     "signal": "BULLISH",
     "headline": "Greed Index 73: The Market Is High on Its Own Supply",
     "btc_entry": 79005,
-    "resolved": false,
-    "resolution_status": "OPEN"
+    "resolved": true,
+    "resolution_status": "LOSS",
+    "btc_exit": 78405,
+    "pnl_percent": -0.76,
+    "resolved_at": "2026-08-26T10:00:42.077Z",
+    "grading_method": "24h_btc_close",
+    "autopsy_note": "Price broke key support level against signal thesis."
   },
   {
     "date": "2026-08-17",
