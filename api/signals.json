@@ -1,6 +1,16 @@
 [
   {
     "date": "2026-08-28",
+    "timestamp": "2026-08-28T07:20:51.141Z",
+    "signal_hash": "CI-WXMQ2XV2-N",
+    "signal": "NEUTRAL",
+    "headline": "Profit Party, Wage Winter: Macro Divergence Cracks",
+    "btc_entry": 79705,
+    "resolved": false,
+    "resolution_status": "OPEN"
+  },
+  {
+    "date": "2026-08-28",
     "timestamp": "2026-08-28T05:21:03.907Z",
     "signal_hash": "CI-LI0FK4FY-N",
     "signal": "NEUTRAL",
