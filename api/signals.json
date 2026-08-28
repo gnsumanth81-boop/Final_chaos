@@ -1,13 +1,28 @@
 [
   {
+    "date": "2026-08-28",
+    "timestamp": "2026-08-28T05:21:03.907Z",
+    "signal_hash": "CI-LI0FK4FY-N",
+    "signal": "NEUTRAL",
+    "headline": "Greed Peaks, Caution Advised",
+    "btc_entry": 79597,
+    "resolved": false,
+    "resolution_status": "OPEN"
+  },
+  {
     "date": "2026-08-26",
     "timestamp": "2026-08-26T10:00:42.052Z",
     "signal_hash": "CI-83MF2V5U-B",
     "signal": "BEARISH",
     "headline": "Triple Threat: Fiscal, Trade, and Banking Risks Loom",
     "btc_entry": 78405,
-    "resolved": false,
-    "resolution_status": "OPEN"
+    "resolved": true,
+    "resolution_status": "LOSS",
+    "btc_exit": 79597,
+    "pnl_percent": -1.52,
+    "resolved_at": "2026-08-28T05:21:03.924Z",
+    "grading_method": "24h_btc_close",
+    "autopsy_note": "Price broke key support level against signal thesis."
   },
   {
     "date": "2026-08-25",
@@ -16,8 +31,13 @@
     "signal": "BEARISH",
     "headline": "Greed Peaks at 74 as VIX Lies: A Pressure Cooker with a Broken Gauge",
     "btc_entry": 79068,
-    "resolved": false,
-    "resolution_status": "OPEN"
+    "resolved": true,
+    "resolution_status": "LOSS",
+    "btc_exit": 79597,
+    "pnl_percent": -0.67,
+    "resolved_at": "2026-08-28T05:21:03.924Z",
+    "grading_method": "24h_btc_close",
+    "autopsy_note": "Price broke key support level against signal thesis."
   },
   {
     "date": "2026-08-25",
