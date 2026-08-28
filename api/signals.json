@@ -1,6 +1,16 @@
 [
   {
     "date": "2026-08-28",
+    "timestamp": "2026-08-28T10:02:06.091Z",
+    "signal_hash": "CI-EHVJAZ5Z-B",
+    "signal": "BEARISH",
+    "headline": "Record Highs, Low VIX: The Calm Before the Storm?",
+    "btc_entry": 79295,
+    "resolved": false,
+    "resolution_status": "OPEN"
+  },
+  {
+    "date": "2026-08-28",
     "timestamp": "2026-08-28T07:20:51.141Z",
     "signal_hash": "CI-WXMQ2XV2-N",
     "signal": "NEUTRAL",
