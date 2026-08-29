@@ -1,5 +1,15 @@
 [
   {
+    "date": "2026-08-29",
+    "timestamp": "2026-08-29T03:35:22.884Z",
+    "signal_hash": "CI-7B787EXL-B",
+    "signal": "BEARISH",
+    "headline": "The Jackson Hole Sugar Rush and the Greed Trap",
+    "btc_entry": 77676,
+    "resolved": false,
+    "resolution_status": "OPEN"
+  },
+  {
     "date": "2026-08-28",
     "timestamp": "2026-08-28T13:01:45.030Z",
     "signal_hash": "CI-G2UTHZTX-B",
