@@ -1,6 +1,16 @@
 [
   {
     "date": "2026-08-29",
+    "timestamp": "2026-08-29T06:54:06.080Z",
+    "signal_hash": "CI-3CO4YSCH-B",
+    "signal": "BEARISH",
+    "headline": "Greed at 68, Dollar at 103.36: The Crypto Dip Is a Resignation Letter",
+    "btc_entry": 77460,
+    "resolved": false,
+    "resolution_status": "OPEN"
+  },
+  {
+    "date": "2026-08-29",
     "timestamp": "2026-08-29T04:47:48.857Z",
     "signal_hash": "CI-RJTWJ61J-B",
     "signal": "BEARISH",
@@ -56,8 +66,13 @@
     "signal": "NEUTRAL",
     "headline": "Greed Peaks, Caution Advised",
     "btc_entry": 79597,
-    "resolved": false,
-    "resolution_status": "OPEN"
+    "resolved": true,
+    "resolution_status": "LOSS",
+    "btc_exit": 77460,
+    "pnl_percent": -2.68,
+    "resolved_at": "2026-08-29T06:54:06.091Z",
+    "grading_method": "24h_btc_close",
+    "autopsy_note": "Price broke key support level against signal thesis."
   },
   {
     "date": "2026-08-26",
