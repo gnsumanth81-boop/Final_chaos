@@ -1,6 +1,16 @@
 [
   {
     "date": "2026-08-29",
+    "timestamp": "2026-08-29T04:47:48.857Z",
+    "signal_hash": "CI-RJTWJ61J-B",
+    "signal": "BEARISH",
+    "headline": "The Fed Served Dessert, the Market Ate the Plate",
+    "btc_entry": 77619,
+    "resolved": false,
+    "resolution_status": "OPEN"
+  },
+  {
+    "date": "2026-08-29",
     "timestamp": "2026-08-29T03:35:22.884Z",
     "signal_hash": "CI-7B787EXL-B",
     "signal": "BEARISH",
