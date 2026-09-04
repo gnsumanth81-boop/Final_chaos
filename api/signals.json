@@ -1,13 +1,28 @@
 [
   {
+    "date": "2026-09-04",
+    "timestamp": "2026-09-04T02:18:47.886Z",
+    "signal_hash": "CI-SURYN87N-B",
+    "signal": "BULLISH",
+    "headline": "Greed‑flation fuels equity rally",
+    "btc_entry": 80789,
+    "resolved": false,
+    "resolution_status": "OPEN"
+  },
+  {
     "date": "2026-08-29",
     "timestamp": "2026-08-29T06:54:06.080Z",
     "signal_hash": "CI-3CO4YSCH-B",
     "signal": "BEARISH",
     "headline": "Greed at 68, Dollar at 103.36: The Crypto Dip Is a Resignation Letter",
     "btc_entry": 77460,
-    "resolved": false,
-    "resolution_status": "OPEN"
+    "resolved": true,
+    "resolution_status": "LOSS",
+    "btc_exit": 80789,
+    "pnl_percent": -4.3,
+    "resolved_at": "2026-09-04T02:18:47.894Z",
+    "grading_method": "24h_btc_close",
+    "autopsy_note": "Price broke key support level against signal thesis."
   },
   {
     "date": "2026-08-29",
@@ -16,8 +31,13 @@
     "signal": "BEARISH",
     "headline": "The Fed Served Dessert, the Market Ate the Plate",
     "btc_entry": 77619,
-    "resolved": false,
-    "resolution_status": "OPEN"
+    "resolved": true,
+    "resolution_status": "LOSS",
+    "btc_exit": 80789,
+    "pnl_percent": -4.08,
+    "resolved_at": "2026-09-04T02:18:47.894Z",
+    "grading_method": "24h_btc_close",
+    "autopsy_note": "Price broke key support level against signal thesis."
   },
   {
     "date": "2026-08-29",
@@ -26,8 +46,13 @@
     "signal": "BEARISH",
     "headline": "The Jackson Hole Sugar Rush and the Greed Trap",
     "btc_entry": 77676,
-    "resolved": false,
-    "resolution_status": "OPEN"
+    "resolved": true,
+    "resolution_status": "LOSS",
+    "btc_exit": 80789,
+    "pnl_percent": -4.01,
+    "resolved_at": "2026-09-04T02:18:47.894Z",
+    "grading_method": "24h_btc_close",
+    "autopsy_note": "Price broke key support level against signal thesis."
   },
   {
     "date": "2026-08-28",
@@ -36,8 +61,13 @@
     "signal": "BEARISH",
     "headline": "The 2% Solution",
     "btc_entry": 79370,
-    "resolved": false,
-    "resolution_status": "OPEN"
+    "resolved": true,
+    "resolution_status": "LOSS",
+    "btc_exit": 80789,
+    "pnl_percent": -1.79,
+    "resolved_at": "2026-09-04T02:18:47.894Z",
+    "grading_method": "24h_btc_close",
+    "autopsy_note": "Price broke key support level against signal thesis."
   },
   {
     "date": "2026-08-28",
@@ -46,8 +76,13 @@
     "signal": "BEARISH",
     "headline": "Record Highs, Low VIX: The Calm Before the Storm?",
     "btc_entry": 79295,
-    "resolved": false,
-    "resolution_status": "OPEN"
+    "resolved": true,
+    "resolution_status": "LOSS",
+    "btc_exit": 80789,
+    "pnl_percent": -1.88,
+    "resolved_at": "2026-09-04T02:18:47.894Z",
+    "grading_method": "24h_btc_close",
+    "autopsy_note": "Price broke key support level against signal thesis."
   },
   {
     "date": "2026-08-28",
@@ -56,8 +91,13 @@
     "signal": "NEUTRAL",
     "headline": "Profit Party, Wage Winter: Macro Divergence Cracks",
     "btc_entry": 79705,
-    "resolved": false,
-    "resolution_status": "OPEN"
+    "resolved": true,
+    "resolution_status": "WIN",
+    "btc_exit": 80789,
+    "pnl_percent": 1.36,
+    "resolved_at": "2026-09-04T02:18:47.894Z",
+    "grading_method": "24h_btc_close",
+    "autopsy_note": "Price moved favorably beyond target within 24h window."
   },
   {
     "date": "2026-08-28",
